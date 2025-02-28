@@ -43,7 +43,7 @@ interests:
 education:
   - area: Bachelor of Physics
     institution: Whuhan University
-    date_start: 2022-09
+    date_start: 2022-09-01
     data_end: still now
     summary: |
       GPA: 3.88/4.0
