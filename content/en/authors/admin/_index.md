@@ -34,8 +34,8 @@ profiles:
     url: https://github.com/lfcdepression
 
 interests:
-  - 统计物理与复杂系统
-  - 系统生物学
+  - Statistical Physics and Complex Systems
+  - Systemical Biology
   - AI4Science and Science4AI
 
 education:
