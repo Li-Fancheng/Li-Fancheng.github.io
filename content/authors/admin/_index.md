@@ -32,13 +32,12 @@ profiles:
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/lfcdepression
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
 
 interests:
   - Statistical Physics and Complex Systems
   - Systematic Biology
   - Mechanisms of Deep Learning
+  - AI for Science
 
 education:
   - area: Bachelor of Physics
@@ -50,29 +49,14 @@ education:
       Courses included:
       主持项目《基于物理原理与深度学习的RNA-配体对接理论建模研究》获批国家自然科学基金青年学生基础研究项目（本科生）资助
       获评武汉大学2023-2024年十大阅读之星
-      
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.88/4.0
-
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      Course included:
+      - Quantum Mechanics
+      - Statistical Physics
+      - Computational Physics
+      - Quantum Information
+      - Quantum Computing
+      - Machine Learning
+      - Deep Learning
 
 
 # Skills
