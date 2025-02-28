@@ -33,8 +33,8 @@ profiles:
   - icon: brands/github
     url: https://github.com/lfcdepression
 
-interests:
-  - Statistical Physics
+兴趣方向:
+  - 统计物理与复杂系统
   - Biologyical Complex Systems
   - Mechanisms of Deep Learning
 
