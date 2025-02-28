@@ -34,10 +34,9 @@ profiles:
     url: https://github.com/lfcdepression
 
 interests:
-  - Statistical Physics and Complex Systems
-  - Systematic Biology
+  - Statistical Physics
+  - Biologyical Complex Systems
   - Mechanisms of Deep Learning
-  - AI for Science
 
 education:
   - area: Bachelor of Physics
