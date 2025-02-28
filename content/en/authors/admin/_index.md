@@ -36,7 +36,7 @@ profiles:
 interests:
   - 统计物理与复杂系统
   - 系统生物学
-  - AI 4 Science and Science 4 AI
+  - AI4Science and Science4AI
 
 education:
   - area: Bachelor of Physics
