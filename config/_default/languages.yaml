@@ -16,26 +16,3 @@ zh:
   title: 李凡成
   params:
     description: Site description in Chinese...
-  menu:
-    main:
-      - name: 首页
-        url: /
-        weight: 10
-      - name: Papers
-        url: zh/#papers
-        weight: 11
-      - name: Talks
-        url: zh/#talks
-        weight: 12
-      - name: News
-        url: zh/#news
-        weight: 13
-      - name: 教育经历
-        url: zh/experience
-        weight: 20
-      - name: 科学研究
-        url: zh/projects/
-        weight: 30
-      - name: Teaching
-        url: zh/teaching/
-        weight: 40
