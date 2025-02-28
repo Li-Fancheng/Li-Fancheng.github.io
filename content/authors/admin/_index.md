@@ -39,16 +39,18 @@ interests:
   - Mechanisms of Deep Learning
   - AI for Science
 
-education:
+教育经历:
   - area: Bachelor of Physics
     institution: Whuhan University
     date_start: 2022-09-01
     data_end: still now
     summary: |
       GPA: 3.88/4.0
-      Courses included:
+      
       主持项目《基于物理原理与深度学习的RNA-配体对接理论建模研究》获批国家自然科学基金青年学生基础研究项目（本科生）资助
+
       获评武汉大学2023-2024年十大阅读之星
+
       Course included:
       - Quantum Mechanics
       - Statistical Physics
