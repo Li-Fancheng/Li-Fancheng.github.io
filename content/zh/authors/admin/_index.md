@@ -39,10 +39,10 @@ interests:
   - AI4Science and Science4AI
 
 education:
-  - area: Bachelor of Physics
-    institution: Whuhan University
+  - area: 本科
+    institution: 武汉大学
     date_start: 2022-09-01
-    data_end: still now
+    data_end: 至今
     summary: |
       GPA: 3.88/4.0
       
