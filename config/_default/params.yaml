@@ -35,8 +35,8 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      text: "Your Name"
-
+      text: "Li Fancheng"
+      icon: "custom/mylogo.jpg"
 # Site footer
 footer:
   copyright:
