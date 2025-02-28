@@ -36,17 +36,16 @@ profiles:
     url: https://scholar.google.com/
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Statistical Physics and Complex Systems
+  - Systematic Biology
+  - Mechanisms of Deep Learning
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: Bachelor of Physics
+    institution: Whuhan University
+    date_start: 2022-09
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      GPA: 3.8/4.0
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
@@ -55,7 +54,7 @@ education:
     date_start: 2016-01-01
     date_end: 2020-12-31
     summary: |
-      GPA: 3.8/4.0
+      GPA: 3.88/4.0
 
       Courses included:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
