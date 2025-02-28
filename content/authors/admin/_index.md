@@ -39,7 +39,7 @@ interests:
   - Mechanisms of Deep Learning
   - AI for Science
 
-教育经历:
+education:
   - area: Bachelor of Physics
     institution: Whuhan University
     date_start: 2022-09-01
