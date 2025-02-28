@@ -36,7 +36,6 @@ header:
     show_theme_chooser: true
     logo:
       text: "Li Fancheng"
-      icon: "custom/mylogo.jpg"
 # Site footer
 footer:
   copyright:
