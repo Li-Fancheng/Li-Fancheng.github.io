@@ -12,8 +12,8 @@ baseURL: 'https://fanchengl.github.io/'
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: zh
-hasCJKLanguage: false
+defaultContentLanguage: en
+hasCJKLanguage: true
 defaultContentLanguageInSubdir: false
 removePathAccents: true
 
