@@ -49,7 +49,8 @@ education:
       GPA: 3.88/4.0
       Courses included:
       主持项目《基于物理原理与深度学习的RNA-配体对接理论建模研究》获批国家自然科学基金青年学生基础研究项目（本科生）资助
-
+      获评武汉大学2023-2024年十大阅读之星
+      
   - area: MEng Artificial Intelligence
     institution: Massachusetts Institute of Technology
     date_start: 2016-01-01
