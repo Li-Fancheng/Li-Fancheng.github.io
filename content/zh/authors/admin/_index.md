@@ -54,8 +54,6 @@ education:
       - Quantum Mechanics
       - Statistical Physics
       - Computational Physics
-      - Quantum Information
-      - Quantum Computing
       - Machine Learning
       - Deep Learning
 

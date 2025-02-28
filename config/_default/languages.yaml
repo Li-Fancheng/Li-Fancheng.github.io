@@ -18,6 +18,24 @@ zh:
     description: Site description in Chinese...
   menu:
     main:
-      - name: 传
-        url: '#about'
-        weight: 1
+      - name: 首页
+        url: /
+        weight: 10
+      - name: Papers
+        url: /#papers
+        weight: 11
+      - name: Talks
+        url: /#talks
+        weight: 12
+      - name: News
+        url: /#news
+        weight: 13
+      - name: 教育经历
+        url: experience/
+        weight: 20
+      - name: 科学研究
+        url: projects/
+        weight: 30
+      - name: Teaching
+        url: teaching/
+        weight: 40
