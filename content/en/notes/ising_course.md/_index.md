@@ -1,5 +1,5 @@
 ---
-title: Ising 模型的数值模拟
+title: Numerical Simulation of the Ising Model
 data: 2024-03-01
 math: true
 ---
@@ -11,7 +11,7 @@ Ising Model的数值模拟
 Ising模型简述
 ------
 Ising模型是用来描述铁磁相变的一个著名的数学模型，也是最简单的复杂系统模型
-每个格点具有一个自旋{{< math >}}$\sigma${{< /math >}},自旋之间的作用选取最紧邻的相互作用，相互作用强度使用{{< math >}}$J${{< /math >}}来表示，第二项中的{{< math >}}$h${{< /math >}}为外加磁场 
+每个格点具有一个自旋{{< math >}}$\sigma${{< /math >}},自旋之间的作用选取最紧邻的相互作用，相互作用强度使用{{< math >}}$J${{< /math >}}来表示，第二项中的{{< math >}}$h${{< /math >}}为外加磁场
 
 {{< math >}}
 $$H(\sigma)=-\sum_{\langle ij\rangle}J_{i,j}\sigma_i\sigma_j-\mu\sum_jh_j\sigma_j$${{< /math >}}
