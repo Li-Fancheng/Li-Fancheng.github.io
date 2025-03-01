@@ -6,7 +6,7 @@ math: true
 
 热统课上的一个作业,使用了Metropolis算法和Wolff算法模拟Ising模型
 
-======
+
 Ising模型简述
 ------
 Ising模型是用来描述铁磁相变的一个著名的数学模型，也是最简单的复杂系统模型
