@@ -82,8 +82,8 @@ plt.show()
 
 最终算法可以被描述为：
 - 选取一个格点
-- 将格点进行翻转，并计算$\Delta E$.
-- 如果$\Delta E< 0$ 或 $\exp(\frac{-\Delta E}{k_B T})>$一个0-1之间的随机数
+- 将格点进行翻转，并计算{{< math >}}$\Delta E${{< /math >}}.
+- 如果{{< math >}}$\Delta E< 0${{< /math >}} 或 {{< math >}}$\exp(\frac{-\Delta E}{k_B T})>${{< /math >}}一个0-1之间的随机数
 - 格点翻转，否则不变
 
 
@@ -150,7 +150,7 @@ for l in range(0,4):
 plt.tight_layout()
 plt.show()
 ```    
-![png](ising_files/ising_6_1.png)
+![png](ising_6_1.png "Ising model simulation")
 ## 算法改进
 还没有开始计算各种性质，但是目前我们已经发现了问题：在较高温度两种初始状态可以收敛到同一状态（至少看起来是这样的），但是低温时似乎状态差别很大。并且，即使增加模拟的steps变化也不是太大（或许最终可以收敛到一个方向，但是计算成本无法接受）因此我们必须发现算法中的问题，并改进算法。我们选取更低的温度，看看disorder的初始状态会发生什么。
 ### 分析低温时disorder的结果
@@ -174,36 +174,36 @@ plt.show()
 ```
 
     
-![png](ising_files/ising_8_1.png)
+![png](ising_8_1.png "Ising model simulation in low temperature")
   
 ### 算法的问题与改进
 我们会发现这个结果和温度较高时的有很大的区别，系统确实演化了，但是为什么无法到达全部同向排列的稳态呢？从上面的图中可以观察到，系统演化会形成一个个很大的“块”，说明结果并不是杂乱的。进一步，如果对一个块中非边缘点选取进行翻转，加上低温时较少的热涨落，我们发现，系统状态不发生更新，所以如果没有选到边缘的点，这个系统的演化似乎“卡住了”。
 
 发现了问题之后我们可以开始改进算法：为了防止上面这种情况发生，我们把相同的自旋连成一个cluster正在某种程度上就可以解决这个问题。我们选取cluster的生成方式（类似广度优先的遍历算法）：
 - 选取一个格子
-- 如果与边上的自旋状态相同，就有一定的概率$P_{add}$（联通
+- 如果与边上的自旋状态相同，就有一定的概率{{< math >}}$P_{add}${{< /math >}}（联通
 - 将经历过的格子标记为operated，将新加入的格子作为新的原点向外进行搜索
 - 重复上述步骤，直到cluster中的格子全部被标记
 - 再加上接受率看看是否翻转
 
-开始寻找接受率$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\frac{g_{\nu\mu}P_{\mu\nu}}{g_{\mu\nu}P_{\mu\nu}}$，考虑的是最近邻联通，我们有
+开始寻找接受率{{< math >}}$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\frac{g_{\nu\mu}P_{\mu\nu}}{g_{\mu\nu}P_{\mu\nu}}${{< /math >}}，考虑的是最近邻联通，我们有
 
-$$\frac{g_{\mu\nu}}{g_{\nu\mu}}=\frac{(1-P_{\mathrm{add}})^m}{(1-P_{\mathrm{add}})^n}=(1-P_{\mathrm{add}})^{m-n}$$
+{{< math >}}$$\frac{g_{\mu\nu}}{g_{\nu\mu}}=\frac{(1-P_{\mathrm{add}})^m}{(1-P_{\mathrm{add}})^n}=(1-P_{\mathrm{add}})^{m-n}$${{< /math >}}
 
 更进一步我们有
 
-$$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\frac{g_{\nu\mu}P_{\mu\nu}}{g_{\mu\nu}P_{\mu\nu}}=(1-P_{\mathrm{add}})^{n-m}\frac{P_{\mu\nu}}{P_{\nu\mu}}$$
+{{< math >}}$$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\frac{g_{\nu\mu}P_{\mu\nu}}{g_{\mu\nu}P_{\mu\nu}}=(1-P_{\mathrm{add}})^{n-m}\frac{P_{\mu\nu}}{P_{\nu\mu}}$${{< /math >}}
 
 同时，根据之前考虑单粒子翻转时的情况，我们得到了
 
-$$\frac{P_{\mu\nu}}{P_{\nu\mu}}=\frac{P_{\nu}}{P_{\mu}}=\mathrm{e}^{-\beta\Delta E},\Delta E=2J(m-n)$$
+{{< math >}}$$\frac{P_{\mu\nu}}{P_{\nu\mu}}=\frac{P_{\nu}}{P_{\mu}}=\mathrm{e}^{-\beta\Delta E},\Delta E=2J(m-n)$${{< /math >}}
 
 
 至此，我们可以得到接受率为：
 
-$$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\left[\mathrm{e}^{2\beta J}(1-P_{add})\right]^{n-m}$$
+{{< math >}}$$\frac{A_{\mu\nu}}{A_{\nu\mu}}=\left[\mathrm{e}^{2\beta J}(1-P_{add})\right]^{n-m}$${{< /math >}}
 
-直接取接受率为1，使问题最简化，也可以减少代码的复杂度（少一步判断），我们得到$P_{\mathrm{add}}=1-\mathrm{e}^{-2\beta J}$。
+直接取接受率为1，使问题最简化，也可以减少代码的复杂度（少一步判断），我们得到{{< math >}}$P_{\mathrm{add}}=1-\mathrm{e}^{-2\beta J}${{< /math >}}。
 
 至此算法已经准备好了，可以开始代码实现
 
@@ -322,11 +322,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-
-
-    
-![png](ising_files/ising_11_1.png)
+![png](ising_11_1.png)
     
 
 
@@ -468,14 +464,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-
     
-
-
+![png](ising_15_1.png)
     
-![png](ising_files/ising_15_1.png)
-    
-
 
 可以明显看出两种方式都可以计算出结果，并且基本相同，我们选用一种即可，但是计算过程较多，因此我们使用python的numba来进行加速得到最终的代码和计算结果
 
@@ -690,9 +681,8 @@ plt.show()
 
 
   
-![png](ising_files/ising_17_0.png)
+![png](ising_17_0.png)
     
-文中的函数可以在[Ising模型构建及性质计算](ising_files/ising.py)中得到，还可以基于此计算其他的性质。
 
 ## 参考文献
 1.[当蒙特卡罗方法遇见伊辛模型](https://zhuanlan.zhihu.com/p/42836754)
