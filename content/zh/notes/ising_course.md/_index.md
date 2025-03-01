@@ -6,7 +6,6 @@ math: true
 
 热统课上的一个作业,使用了Metropolis算法和Wolff算法模拟Ising模型
 
-Ising Model的数值模拟
 ======
 Ising模型简述
 ------
