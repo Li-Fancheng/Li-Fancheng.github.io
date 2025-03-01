@@ -1,6 +1,10 @@
 ---
-title: SE(3) Generative Diffusion Models
-data: 2024-03-01
+title: SE(3) 等变的生成扩散模型
+date: 2024-04-20
 ---
 
-Hello world! This is my first post.
+在RNA结构生成中遇到的一篇难啃的文献
+
+扩散模型初步
+------
+[下载 Ising 模型的数值模拟 PDF](./扩散模型简介.pdf)
