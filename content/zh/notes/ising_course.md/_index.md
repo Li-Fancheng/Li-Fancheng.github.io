@@ -1,6 +1,6 @@
 ---
 title: Ising 模型的数值模拟
-data: 2024-03-01
+data: 2024-03-01T00:00:00Z
 math: true
 ---
 
