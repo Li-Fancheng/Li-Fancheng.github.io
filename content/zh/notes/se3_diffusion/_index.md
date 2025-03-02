@@ -5,7 +5,6 @@ date: 2024-04-20
 
 在蛋白质结构生成中遇到的一篇看到作者单位就感觉很难读的文献🥹（SE(3) diffusion model with application to protein backbone generation）。
 
-
 为了后续的研究需要，学习一下SE(3)等变的生成扩散模型。
 
 ## 1 扩散模型初步
