@@ -160,6 +160,70 @@ dX(t) = \frac{1}{2} X(t) dt + \nabla_X \log p_t(X | X_0) dt + dB_{\mathbb{R}^3}(
 \]
 训练过程中，我们让神经网络 \( s_\theta(X, t) \) 预测这个得分函数，最终用于反向采样。
 
+##### Ornstein–Uhlenbeck (OU) 过程 
+一种特殊的随机过程，用于描述具有均值回归（mean-reverting）特性的随机运动。它是一种扩展的布朗运动（Brownian Motion）。OU 过程是满足以下随机微分方程（SDE, Stochastic Differential Equation）的过程：
+\[
+dX_t = -\theta (X_t - \mu) dt + \sigma dW_t,
+\]
+其中：\( X_t \) 是随时间 \( t \) 变化的随机变量（状态变量）。\( \theta > 0 \)   是  均值回归速率（mean-reverting rate）  ，控制 \( X_t \) 向均值 \( \mu \) 回归的速度。\( \mu \)   是长期均值（long-term mean）  ，表示 OU 过程最终趋向的值。\( \sigma \)   是  扩散系数（diffusion coefficient）  ，控制噪声的强度。\( W_t \)   是标准布朗运动（Wiener 过程）。
+
+OU 过程的解可以用伊藤积分（Itô Integral）  表示：
+\[
+X_t = X_0 e^{-\theta t} + \mu (1 - e^{-\theta t}) + \sigma \int_0^t e^{-\theta (t-s)} dW_s.
+\]
+
+初始状态 \( X_0 \) 会随着时间指数衰减 \( e^{-\theta t} \)  ，逐渐被长期均值 \( \mu \) 吸引。噪声项 \( \sigma dW_t \) 影响 \( X_t \) 的随机波动  ，但不会无限增大，因此 OU 过程具有均值回归特性。
+
+OU 过程的期望值为：
+\[
+\mathbb{E}[X_t] = X_0 e^{-\theta t} + \mu (1 - e^{-\theta t}).
+\]
+随着 \( t \to \infty \)，期望值收敛到长期均值：
+\[
+\lim_{t \to \infty} \mathbb{E}[X_t] = \mu.
+\]
+
+OU 过程的方差为：
+\[
+\text{Var}[X_t] = \frac{\sigma^2}{2\theta} \left(1 - e^{-2\theta t} \right).
+\]
+当 \( t \to \infty \) 时，方差收敛到  稳态方差  ：
+\[
+\lim_{t \to \infty} \text{Var}[X_t] = \frac{\sigma^2}{2\theta}.
+\]
+
+当 \( t \to \infty \)，\( X_t \) 服从稳态分布：
+\[
+X_{\infty} \sim \mathcal{N} \left( \mu, \frac{\sigma^2}{2\theta} \right).
+\]
+即 OU 过程最终趋于一个  均值为 \( \mu \)，方差为 \( \sigma^2 / (2\theta) \) 的正态分布  。
+
+
+在SE(3) 扩散模型中，需要在 \( \mathbb{R}^3 \) 上进行扩散建模。为了防止 Cα 原子的平移部分无限扩散，使用均值回归 OU 过程来约束扩散：
+
+\[
+dX_t = -\frac{1}{2} X_t dt + dW_t.
+\]
+
+这是一个特殊的 OU 过程，其中：均值回归速率 \( \theta = \frac{1}{2} \)。长期均值 \( \mu = 0 \)，表示扩散最终收敛到零均值。方差随时间 \( t \) 变化：
+  \[
+  p_t(X | X_0) = \mathcal{N} \left( e^{-t/2} X_0, (1 - e^{-t}) I_3 \right).
+  \]
+逆扩散过程中，神经网络预测 OU 过程的  得分函数  ：
+  \[
+  \nabla \log p_t(X | X_0) = \frac{e^{-t/2} X_0 - X}{1 - e^{-t}}.
+  \]
+该得分用于去噪采样。
+
+| 过程 | 公式 | 主要特性 |
+|---|---|---|
+|   布朗运动   | \( dX_t = \sigma dW_t \) | 无均值回归，方差随时间无限增长 |
+|   OU 过程   | \( dX_t = -\theta (X_t - \mu) dt + \sigma dW_t \) | 具有均值回归，方差最终收敛到稳态值 |
+从表中我们可以得到：
+- 如果使用布朗运动  ，数据分布会变得无界，难以收敛。
+- OU 过程可确保分布不会无限扩散，而是收敛到稳态分布，从而保持数值稳定性。
+
+
 ### 3.3. SO(3) 上的扩散
 在 SO(3) 上，扩散过程通过李群上的布朗运动  进行建模，受控于 SO(3) 上的  拉普拉斯–贝尔特拉米算子   \( \Delta_{SO(3)} \)。
 
