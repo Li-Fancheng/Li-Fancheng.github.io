@@ -57,3 +57,82 @@ SE(3) 的群运算是：
 \]
 其中：\( [N^*, C^*, Cα^*] \) 是理想化残基的标准坐标。\( T_n = (R_n, x_n) \) 作用在这些坐标上，给出第 \( n \) 个残基在三维空间中的实际位置。
 
+
+## 3. SE(3) 扩散模型
+### 3.1. SE(3) 扩散模型的基本思想
+ 
+
+为了在 SE(3) 上进行扩散建模，我们需要定义 SE(3) 上的随机过程。然但，在 SE(3) 上直接进行扩散会带来计算上的复杂性。通过对 SE(3) 的度规进行适当的选择，我们可以证明：
+\[
+dT(t) = (dR(t), dX(t)),
+\]
+即 SE(3) 的扩散过程可以拆分成：
+-   SO(3) 上的旋转扩散 \( R(t) \)  （用于建模残基刚体框架的方向）。
+-   \( \mathbb{R}^3 \) 上的平移扩散 \( X(t) \)  （用于建模 Cα 原子的位置）。
+
+这一拆分的合理性基于：
+1.   SE(3) 可以用 SO(3) 和 ℝ³ 的直积表示，因此可以在两个部分分别定义扩散过程。  
+2.   在适当的度规下，SE(3) 上的拉普拉斯–贝尔特拉米算子（Riemannian 流形上的 Laplace 算子）可以拆分成 SO(3) 和 ℝ³ 上的拉普拉斯算子之和  ：
+   \[
+   \Delta_{SE(3)} = \Delta_{SO(3)} + \Delta_{\mathbb{R}^3}.
+   \]
+3.   SO(3) 上的扩散可以用李群上的布朗运动建模，而 ℝ³ 上的扩散可以用经典的 Ornstein–Uhlenbeck 过程建模。  
+
+#### 拉普拉斯–贝尔特拉米算子
+在 \( \mathbb{R}^n \) 中，标准的拉普拉斯算子（Laplace Operator）定义为：
+\[
+\Delta f = \nabla \cdot \nabla f = \sum_{i=1}^{n} \frac{\partial^2 f}{\partial x_i^2}.
+\]
+它表示标量场 \( f(x) \) 的二阶导数之和，通常用于描述：
+
+对于一个   一般的 Riemannian 流形 \( (M, g) \)  ，由于坐标系统不再是欧几里得直角坐标，我们需要用度规 \( g \) 来定义拉普拉斯算子，即拉普拉斯–贝尔特拉米算子。
+
+\[
+\Delta_M f = \text{div} (\text{grad} f).
+\]
+- 梯度算子（Gradient Operator）  ：
+  \[
+  \text{grad} f = g^{ij} \frac{\partial f}{\partial x^j} \frac{\partial}{\partial x^i}.
+  \]
+  其中 \( g^{ij} \) 是度规张量 \( g_{ij} \) 的逆矩阵。
+- 散度算子（Divergence Operator）  ：
+  \[
+  \text{div} X = \frac{1}{\sqrt{|g|}} \frac{\partial}{\partial x^i} \left( \sqrt{|g|} X^i \right).
+  \]
+  其中 \( |g| = \det(g_{ij}) \) 是度规张量的行列式。
+
+在局部坐标系 \( \{x^i\} \) 下，拉普拉斯–贝尔特拉米算子的显式形式为：
+\[
+\Delta_M f = \frac{1}{\sqrt{|g|}} \sum_{i,j} \frac{\partial}{\partial x^i} \left( \sqrt{|g|} g^{ij} \frac{\partial f}{\partial x^j} \right).
+\]
+这一公式在一般流形上定义了拉普拉斯算子，它依赖于流形的几何结构（即度量 \( g \)），因此在前面提到的 SE(3) 上的度规就产生了作用。
+
+#### SE(3) 上的度规
+这篇文章在 SE(3) 上选取的度量张量 \( g \) 使得 SE(3) 作为 Riemannian 流形可以分解为 \( SO(3) \) 和 \( \mathbb{R}^3 \) 的直积，并且保证旋转和平移部分的扩散过程可以独立建模。  
+
+对于 SE(3) 上的任意两个切向量 \( (a, x), (a', x') \in \text{Tan}_T SE(3) \)，本文选取的内积定义如下：
+\[
+\langle (a, x), (a', x') \rangle_{SE(3)} = \langle a, a' \rangle_{SO(3)} + \langle x, x' \rangle_{\mathbb{R}^3}.
+\]
+
+其中：
+-   旋转部分的度规（即 \( SO(3) \) 部分）：
+  \[
+  \langle a, a' \rangle_{SO(3)} = \frac{1}{2} \text{Tr}(a a'^T).
+  \]
+  这里 \( a, a' \in so(3) \) 是 \( SO(3) \) 李代数中的元素（即反对称矩阵）。
+-   平移部分的度规  （即 \( \mathbb{R}^3 \) 部分）：
+  \[
+  \langle x, x' \rangle_{\mathbb{R}^3} = \sum_{i=1}^{3} x_i x'_i.
+  \]
+  这里 \( x, x' \in \mathbb{R}^3 \) 是标准欧几里得空间中的向量。
+
+这种选取使得 SE(3) 在 Riemannian 意义下可视为 SO(3) 和 \( \mathbb{R}^3 \) 的直积  ，从而能够独立处理旋转和平移的扩散过程。并且拉普拉斯–贝尔特拉米算子可以分解为 \( \Delta_{SE(3)} = \Delta_{SO(3)} + \Delta_{\mathbb{R}^3} \)  ，从而扩散过程可以分别建模。旋转的 Frobenius 范数对应于经典刚体动力学中的角动量度量。平移的欧几里得度量对应于质点的物理运动。
+
+
+##   2. SE(3) 扩散的基本公式  
+#### 3.1.1. \( \mathbb{R}^3 \) 上的扩散
+
+#### 3.1.2. SO(3) 上的扩散
+
+#### 3.1.3. SE(3) 上的采样
