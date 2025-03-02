@@ -42,7 +42,7 @@ footer:
     notice: '© {year} Fancheng Li. Licensed under {license}'
     license:
       enable: true
-      allow_derivatives: true  # 允许改编作品
+      allow_derivatives: false  # 允许改编作品
       allow_commercial: false   # 禁止商用
 
 # Localization
