@@ -132,7 +132,124 @@ dT(t) = (dR(t), dX(t)),
 
 ##   2. SE(3) 扩散的基本公式  
 #### 3.1.1. \( \mathbb{R}^3 \) 上的扩散
+ 
+在  欧几里得空间 \( \mathbb{R}^3 \) 中  ，扩散过程可以使用  Ornstein–Uhlenbeck（OU）过程建模：
 
+##### 前向扩散过程  
+平移扩散建模 Cα 原子的位移，定义如下：
+\[
+dX(t) = -\frac{1}{2} X(t) dt + dB_{\mathbb{R}^3}(t),
+\]
+其中：\( X(t) \) 是 Cα 的位置。\( B_{\mathbb{R}^3}(t) \) 是标准布朗运动（Brownian motion）。漂移项 \( -\frac{1}{2} X(t) dt \) 使得扩散过程收敛到均匀噪声分布。
+
+这个过程的解为：
+\[
+X(t) = e^{-t/2} X(0) + \sqrt{1 - e^{-t}} \cdot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I_3).
+\]
+其  转移概率密度是：
+\[
+p_t(X | X_0) = \mathcal{N}(X; e^{-t/2} X_0, (1 - e^{-t}) I_3).
+\]
+
+#####   逆扩散过程  
+逆扩散过程是从噪声恢复数据，其公式为：
+\[
+dX(t) = \frac{1}{2} X(t) dt + \nabla_X \log p_t(X | X_0) dt + dB_{\mathbb{R}^3}(t).
+\]
+其中，  条件得分函数  为：
+\[
+\nabla_X \log p_t(X | X_0) = \frac{e^{-t/2} X_0 - X}{1 - e^{-t}}.
+\]
+训练过程中，我们让神经网络 \( s_\theta(X, t) \) 预测这个得分函数，最终用于反向采样。
+
+---
+
+##   3.1.2. SO(3) 上的扩散（旋转扩散）  
+在 SO(3) 上，扩散过程通过  李群上的布朗运动  进行建模，受控于 SO(3) 上的  拉普拉斯–贝尔特拉米算子   \( \Delta_{SO(3)} \)。
+
+###   (1) 前向扩散过程  
+SO(3) 上的扩散过程可以由以下随机微分方程（SDE）描述：
+\[
+dR(t) = R(t) \cdot dB_{SO(3)}(t),
+\]
+其中：
+- \( R(t) \in SO(3) \) 是旋转矩阵。
+- \( B_{SO(3)}(t) \) 是 SO(3) 上的布朗运动。
+- 该过程的稳态分布为均匀分布 \( U(SO(3)) \)。
+
+扩散过程的转移概率密度由  热核（heat kernel）展开  给出：
+\[
+p_t(R | R_0) = \sum_{\ell=0}^{\infty} (2\ell + 1) e^{-\ell(\ell+1)t/2} \chi_\ell(R_0^{-1} R).
+\]
+其中：
+- \( \chi_\ell(R) \) 是 SO(3) 上的特征函数（character function）。
+- \( e^{-\ell(\ell+1)t/2} \) 控制扩散程度。
+
+###   (2) 逆扩散过程  
+在逆扩散过程中，我们需要学习  条件得分函数  ：
+\[
+\nabla_R \log p_t(R | R_0).
+\]
+可以近似表示为：
+\[
+\nabla_R \log p_t(R | R_0) = R \cdot \frac{\omega(t) \log(R_0^{-1} R) \partial_\omega f(\omega, t)}{f(\omega, t)},
+\]
+其中：
+- \( \omega \) 是旋转角度。
+- \( f(\omega, t) \) 是旋转扩散的热核函数。
+
+神经网络 \( s_\theta(R, t) \) 训练过程中拟合这个得分函数，并在采样过程中用于去噪。
+
+---
+
+##   3.1.3. SE(3) 上的采样  
+在 SE(3) 上的采样是通过逆扩散过程进行的，并结合 SO(3) 和 \( \mathbb{R}^3 \) 的两个部分。
+
+###   (1) 逆扩散 SDE  
+SE(3) 逆扩散过程可以写成：
+\[
+dT(t) = (dR(t), dX(t)) = \big( s_\theta(R, t) dt + dB_{SO(3)}(t), s_\theta(X, t) dt + dB_{\mathbb{R}^3}(t) \big).
+\]
+其中：
+-   旋转部分  ：\( R(t) \) 通过 SO(3) 的逆扩散恢复。
+-   平移部分  ：\( X(t) \) 通过 \( \mathbb{R}^3 \) 的逆扩散恢复。
+
+###   (2) 逐步采样过程  
+我们从均匀噪声开始，并按照以下步骤进行采样：
+1.   初始化  ：
+   - 采样一个随机旋转 \( R(T_F) \sim U(SO(3)) \)。
+   - 采样一个随机平移 \( X(T_F) \sim \mathcal{N}(0, I_3) \)。
+2.   逐步逆扩散  ：
+   - 迭代计算：
+     \[
+     dT(t) = \big( \nabla_R \log p_{T-t}(R), \nabla_X \log p_{T-t}(X) \big) dt + \text{noise}.
+     \]
+   - 通过  Euler–Maruyama 方法  进行数值积分：
+     \[
+     R_{t-\delta t} = R_t + \delta t \cdot s_\theta(R_t, t) + \sqrt{\delta t} \cdot \eta_R, \quad \eta_R \sim \mathcal{N}(0, I).
+     \]
+     \[
+     X_{t-\delta t} = X_t + \delta t \cdot s_\theta(X_t, t) + \sqrt{\delta t} \cdot \eta_X, \quad \eta_X \sim \mathcal{N}(0, I).
+     \]
+3.   最终生成结构  ：
+   - 当 \( t \to 0 \) 时，我们得到合理的蛋白质结构 \( (R(0), X(0)) \)。
+
+---
+
+##   4. 总结  
+###   (1) \( \mathbb{R}^3 \) 上的扩散  
+- 采用   Ornstein–Uhlenbeck 过程  ，转移概率是高斯分布。
+- 逆扩散过程中学习得分函数 \( \nabla_X \log p_t(X) \)。
+
+###   (2) SO(3) 上的扩散  
+- 采用   李群上的布朗运动  ，转移概率通过热核展开计算。
+- 逆扩散过程中学习得分函数 \( \nabla_R \log p_t(R) \)。
+
+###   (3) SE(3) 采样  
+- 结合 SO(3) 和 \( \mathbb{R}^3 \) 的逆扩散进行逐步去噪。
+- 通过 Euler–Maruyama 方法数值积分，从均匀噪声恢复合理的蛋白质结构。
+
+这些公式构成了 SE(3) 扩散模型的数学基础，并确保其生成数据具有 SE(3) 等变性。
 #### 3.1.2. SO(3) 上的扩散
 
 #### 3.1.3. SE(3) 上的采样
