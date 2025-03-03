@@ -39,7 +39,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Fancheng Li. Licensed under {license}'
+    notice: '© {year} Li Fancheng. Licensed under {license}'
     license:
       enable: true
       allow_derivatives: false  # 允许改编作品
