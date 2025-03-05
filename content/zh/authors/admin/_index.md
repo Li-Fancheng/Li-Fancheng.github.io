@@ -33,10 +33,7 @@ profiles:
   - icon: brands/github
     url: https://github.com/lfcdepression
 
-interests:
-  - 统计物理与复杂系统
-  - 系统生物学
-  - AI4Science and Science4AI
+
 
 education:
   - area: 本科
