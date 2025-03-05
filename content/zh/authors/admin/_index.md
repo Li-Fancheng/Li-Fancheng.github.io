@@ -122,11 +122,10 @@ awards:
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
-## 简介
 
 **🌱 Hello！大家好** 
 
-个人经历：高中对生物感兴趣看到欧阳颀院士“读物理”，之后接触了例如《细胞的生物物理学》等书籍，感觉到对真实世界建模研究的神奇，上大学开始参加数模比赛，特别是在2022停课期间，研究疫情传播等复杂系统相关问题产生极大兴趣，并开始学习Python编程以及深度学习，意识到现实问题的困难和深度学习的“黑盒子”属性，开始对AI4Science and Science4AI产生浓厚兴趣。
+个人经历：高中对生物感兴趣看到欧阳颀院士“读物理”，之后接触了例如《细胞的生物物理学》等书籍，感觉到对真实世界建模研究的神奇，上大学开始参加数模比赛，特别是在2022停课期间，研究疫情传播等复杂系统相关问题产生极大兴趣，并开始学习Python编程以及深度学习2023年参加美赛获得M奖。之后和同学一起学习凝聚态理论，并加入袁声军老师课题组开始参与凝聚态计算课题，大三上进入谭志杰老师课题组进行RNA结构预测研究。意识到现实问题的困难和深度学习的“黑盒子”属性，开始对AI4Science and Science4AI产生浓厚兴趣。
 
 我目前是武汉大学物理学院的本科生，沉迷于[你的兴趣方向，比如：用AI生成可可爱怪的图像/在实验室养发光的细菌/用代码预测明天的天气]，日常状态：一边啃专业书，一边捣鼓好玩的项目。
 
