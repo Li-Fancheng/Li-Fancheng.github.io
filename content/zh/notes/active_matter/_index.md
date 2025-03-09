@@ -4,9 +4,7 @@ date: 2024-04-09
 math: true
 ---
 
-阅读活性物质领域经典论文《Flocks, Herds, and Schools: A Quantitative Theory of Flocking》的笔记
 
-## 1 什么是活性物质？为什么需要研究活性物质？
 ### 1.1 什么是活性物质
 活性物质（Active Matter）是一类由自驱动个体（self-propelled agents）组成的系统，这些个体能够消耗能量并将其转化为定向运动。这类系统广泛存在于自然界和人工系统中，例如：  
 
