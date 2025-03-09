@@ -2,6 +2,8 @@
 title: 活性物质基础
 date: 2024-04-09
 math: true
+design:
+  date_format: '2006年1月1日'
 ---
 
 
