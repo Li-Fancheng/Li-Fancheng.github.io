@@ -22,5 +22,8 @@ main:
   - name: 笔记
     url: notes/
     weight: 30
+  - name: 教育经历
+    url: experience/
+    weight: 40
 
 

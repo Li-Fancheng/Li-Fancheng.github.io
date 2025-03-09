@@ -22,4 +22,7 @@ main:
   - name: Notes
     url: notes/
     weight: 30
+  - name: Experience
+    url: experience/
+    weight: 40
 
