@@ -30,9 +30,9 @@ marketing:
 header:
   navbar:
     enable: true
+    show_search: true
     blox: "navbar"
     fixed_to_top: true
-    show_search: true
     show_theme_chooser: true
     logo:
       text: "Li Fancheng"

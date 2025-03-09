@@ -33,28 +33,6 @@ profiles:
   - icon: brands/github
     url: https://github.com/lfcdepression
 
-
-
-education:
-  - area: 本科
-    institution: 武汉大学
-    date_start: 2022-09-01
-    data_end: 至今
-    summary: |
-      GPA: 3.88/4.0
-      
-      主持项目《基于物理原理与深度学习的RNA-配体对接理论建模研究》获批国家自然科学基金青年学生基础研究项目（本科生）资助(Grant No. 124B1012)。
-
-      获评武汉大学2023-2024年十大阅读之星
-
-      Course included:
-      - Quantum Mechanics
-      - Statistical Physics
-      - Computational Physics
-      - Machine Learning
-      - Deep Learning
-
-
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
