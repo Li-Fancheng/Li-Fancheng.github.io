@@ -31,7 +31,7 @@ profiles:
     url: 'mailto:fanchengli@whu.edu.cn'
     label: E-mail Me
   - icon: brands/github
-    url: https://github.com/lfcdepression
+    url: https://github.com/Li-Fancheng
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
