@@ -3,6 +3,7 @@ title: 自组织的组织力学与胚胎调节
 date: 2025-04-04
 math: true
 ---
+
 对 Caldarelli 等 (2024) - *Self-organized tissue mechanics underlie embryonic regulation* 这篇文章的详细笔记
 
 ## 1. 引言（Introduction）
