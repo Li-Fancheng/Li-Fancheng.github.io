@@ -433,10 +433,12 @@ M^G_{mn}(\mathbf{k}, \mathbf{q}) = \sum_{\alpha} u_{m \mathbf{k}}^\alpha\, [u_{n
 2. 带结构截断：限制求和带指数在费米面附近，通常选取 \( n \in \{ n_F - N_b, ..., n_F + N_b \} \)；
 
 3. 静态响应函数的计算：
+   
    \[
    \chi_0^{G,G'}(\mathbf{q}) = \frac{1}{N_k} \sum_{\mathbf{k},n,m} \frac{f_{n \mathbf{k}} - f_{m \mathbf{k+q}}}{\varepsilon_{n \mathbf{k}} - \varepsilon_{m \mathbf{k+q}} + i\delta} \,
    M^G_{nm}(\mathbf{k}, \mathbf{k+q})\, [M^{G'}_{nm}(\mathbf{k}, \mathbf{k+q})]^*
    \]
+
    用于构造介电函数 \( \varepsilon_{G,G'}(\mathbf{q}) = \delta_{G,G'} - V_C^{G}(\mathbf{q}) \chi_0^{G,G'}(\mathbf{q}) \)，再反求 \( V_{\text{scr}} \)。
 
 4. 配对核矩阵构造：将 \( \Gamma(\mathbf{k}, \mathbf{q}) \) 在 \( (\mathbf{k},n_1,n_2) \) 空间展平为一个大矩阵 \( \Gamma_{a,b} \)，维度为 \( (N_k \cdot N_b^2) \times (N_k \cdot N_b^2) \)。
