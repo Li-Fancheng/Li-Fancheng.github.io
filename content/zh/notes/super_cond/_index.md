@@ -110,9 +110,7 @@ H_{e\text{-}ph} = \sum_{\mathbf{k},\mathbf{q}} g_{\mathbf{q}}\, c^\dagger_{\math
 Holstein模型是研究声子介导配对最基本的格点模型。其哈密顿量为：
 
 \[
-H = -t \sum_{\langle i,j \rangle,\sigma} c^\dagger_{i\sigma} c_{j\sigma}
-+ \omega_0 \sum_i b_i^\dagger b_i
-+ g \sum_{i,\sigma} (b_i^\dagger + b_i) n_{i\sigma}
+H = -t \sum_{\langle i,j \rangle,\sigma} c^\dagger_{i\sigma} c_{j\sigma}+ \omega_0 \sum_i b_i^\dagger b_i+ g \sum_{i,\sigma} (b_i^\dagger + b_i) n_{i\sigma}
 \]
 
 其中：第一项是电子跃迁；第二项为本征声子；第三项为局域电子-声子耦合，耦合常数为 \( g \)。
