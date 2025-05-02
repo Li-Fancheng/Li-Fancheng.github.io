@@ -423,7 +423,7 @@ T_c \sim \omega_D \cdot \exp\left(-\frac{1}{\lambda}\right)
 其中 \( M^G_{mn}(\mathbf{k}, \mathbf{q}) \) 为波函数 form factor，即布洛赫态在不同 \( G \) 成分上的投影：
 
 \[
-M^G_{mn}(\mathbf{k}, \mathbf{q}) = \sum_{\alpha} u_{m \mathbf{k}}^\alpha\, [u_{n \mathbf{q}}^\alpha]^\, e^{i G \cdot r_\alpha}
+M^G_{mn}(\mathbf{k}, \mathbf{q}) = \sum_{\alpha} u_{m \mathbf{k}}^\alpha\, [u_{n \mathbf{q}}^\alpha]^*\, e^{i G \cdot r_\alpha}
 \]
 
 数值求解的一般步骤包括：
