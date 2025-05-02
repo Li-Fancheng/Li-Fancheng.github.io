@@ -142,10 +142,10 @@ V_{\text{eff}} \approx -\frac{2g^2}{\omega_0}
 \]
 
 \[
-\Delta(i\omega_n) = \pi T \sum_m \left[ \lambda(i\omega_n - i\omega_m) - \mu^ \right] \frac{\Delta(i\omega_m)}{\sqrt{\omega_m^2 + \Delta^2(i\omega_m)}}
+\Delta(i\omega_n) = \pi T \sum_m \left[ \lambda(i\omega_n - i\omega_m) - \mu \right] \frac{\Delta(i\omega_m)}{\sqrt{\omega_m^2 + \Delta^2(i\omega_m)}}
 \]
 
-其中：\( \lambda(\omega) \)：由声子谱 \( \alpha^2F(\omega) \) 决定的谱函数；\( \mu^ \)：屏蔽后的库仑伪势；\( \Delta(\omega) = \Phi(\omega) / [1 - \Sigma(\omega)/\omega] \)。
+其中：\( \lambda(\omega) \)：由声子谱 \( \alpha^2F(\omega) \) 决定的谱函数；\( \mu \)：屏蔽后的库仑伪势；\( \Delta(\omega) = \Phi(\omega) / [1 - \Sigma(\omega)/\omega] \)。
 
 相比BCS理论，Eliashberg理论：更适用于强耦合（\( \lambda \sim 1 \)）；包含有限温度与动态效应；可用于预测非s波、非零频率对称性。
 
