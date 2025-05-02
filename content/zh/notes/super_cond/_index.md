@@ -142,10 +142,10 @@ V_{\text{eff}} \approx -\frac{2g^2}{\omega_0}
 \]
 
 \[
-\Delta(i\omega_n) = \pi T \sum_m \left[ \lambda(i\omega_n - i\omega_m) - \mu \right] \frac{\Delta(i\omega_m)}{\sqrt{\omega_m^2 + \Delta^2(i\omega_m)}}
+\Delta(i\omega_n) = \pi T \sum_m \left[ \lambda(i\omega_n - i\omega_m) - \mu* \right] \frac{\Delta(i\omega_m)}{\sqrt{\omega_m^2 + \Delta^2(i\omega_m)}}
 \]
 
-其中：\( \lambda(\omega) \)：由声子谱 \( \alpha^2F(\omega) \) 决定的谱函数；\( \mu \)：屏蔽后的库仑伪势；\( \Delta(\omega) = \Phi(\omega) / [1 - \Sigma(\omega)/\omega] \)。
+其中：\( \lambda(\omega) \)：由声子谱 \( \alpha^2F(\omega) \) 决定的谱函数；\( \mu* \)：屏蔽后的库仑伪势；\( \Delta(\omega) = \Phi(\omega) / [1 - \Sigma(\omega)/\omega] \)。
 
 相比BCS理论，Eliashberg理论：更适用于强耦合（\( \lambda \sim 1 \)）；包含有限温度与动态效应；可用于预测非s波、非零频率对称性。
 
@@ -193,7 +193,7 @@ V_l^{\text{eff}} = V_l^{(1)} + V_l^{(2)} < 0
 在具有准周期性（如Moire晶格）或Bloch结构的体系中，可以将配对函数 \( \Delta(r_1, r_2) \) 投影到Bloch态基底：
 
 \[
-\Delta_{n_1 n_2}(\mathbf{k}) = \int d^2r_1 d^2r_2\, \Phi^_{n_1 \mathbf{k}}(r_1)\, \Phi^_{n_2 -\mathbf{k}}(r_2)\, \Delta(r_1, r_2)
+\Delta_{n_1 n_2}(\mathbf{k}) = \int d^2r_1 d^2r_2\, \Phi^*_{n_1 \mathbf{k}}(r_1)\, \Phi^*_{n_2 -\mathbf{k}}(r_2)\, \Delta(r_1, r_2)
 \]
 
 配对方程被写作本征值问题：
