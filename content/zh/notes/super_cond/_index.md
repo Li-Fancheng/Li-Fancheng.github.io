@@ -451,13 +451,106 @@ M^G_{mn}(\mathbf{k}, \mathbf{q}) = \sum_{\alpha} u_{m \mathbf{k}}^\alpha\, [u_{n
    \Delta(\mathbf{k}) = \sum_l \Delta_l\, e^{i l \theta_\mathbf{k}}
    \]
 
-以上数值方法是实现从材料参数出发预测配对趋势与超导临界温度的基本框架，适用于传统BCS系统、KL机制、以及混合耦合的莫尔材料。
 
 ## 8 总结与理论迁移路线图
+
+Kohn-Luttinger（KL）理论与RPA修正为理解排斥诱导的非常规超导提供了一套可推广的理论框架。在不依赖强电子-声子耦合的情况下，它解释了在排斥主导条件下，通过高阶粒子-空穴过程诱导有效吸引，从而促成角动量非平庸（如d波、f波等）的配对态。本节概述该框架的适用性与迁移策略，重点详解其在 flat-band kagome 等体系中的推广。
+
 ### 8.1 KL框架与RPA耦合适用范围
-### 8.2 从TBG推广到其他系统的可行性分析
-   - Moiré体系（如TMD双层）
-   - 平带系统（如flat-band kagome）
-   - 高频振动主导的材料（如高压氢化物）
+
+KL + RPA 理论基于的基本形式如下：
+
+配对核方程（线性化 gap equation）：
+
+\[
+\lambda\, \Delta(\mathbf{k}) = \sum_{\mathbf{q}} \Gamma(\mathbf{k}, \mathbf{q})\, \Delta(\mathbf{q})
+\]
+
+其中配对核包含屏蔽后的有效相互作用：
+
+\[
+\Gamma(\mathbf{k}, \mathbf{q}) = - V_{\text{eff}}(\mathbf{k} - \mathbf{q}) \cdot \mathcal{F}(\mathbf{k}, \mathbf{q})
+\]
+
+有效相互作用通过RPA得到：
+
+\[
+V_{\text{eff}}(q) = \frac{V_C(q)}{1 - V_C(q) \chi_0(q)}
+\]
+
+此理论适用于：中等强度排斥主导；存在结构对称性或角动量分解通道；屏蔽结构（介电函数）可明确定义；可计算或拟合得出 \( \chi_0(\mathbf{q}) \)；需要数值求解 gap 本征值问题。
+
+
+### 8.2 从 TBG 推广到kagome体系
+
+物理特征：存在高度平坦的能带（极小带宽 \( W \)）；平带处态密度 \( D(\varepsilon_F) \to \infty \)，理论上有利于配对；三角格子下的kagome结构支持高对称性角动量展开（如 \( l = 2 \) 的 d波）；脆弱的相干性与可能的局域化效应是挑战。
+
+建模步骤：
+
+1. 能带结构输入  
+   使用 tight-binding 模型提取 kagome 能带结构，其中 flat band 一般出现在顶层或中层：
+   \[
+   H_{\text{TB}} = -t \sum_{\langle ij \rangle} c_i^\dagger c_j + \cdots
+   \]
+
+   得到色散关系 \( \varepsilon_n(\mathbf{k}) \)，提取 \( D(\varepsilon_F) \)：
+
+   \[
+   D(\varepsilon_F) = \frac{1}{N_k} \sum_{\mathbf{k}} \delta(\varepsilon_{\text{flat}} - \varepsilon_F)
+   \quad\Rightarrow\quad D \gg 1
+   \]
+
+2. 极化函数计算 \( \chi_0(q) \)  
+   即便平带电子无群速度，也存在粒子-空穴过程：
+
+   \[
+   \chi_0(\mathbf{q}) = \sum_{\mathbf{k}} \frac{f(\varepsilon_{\mathbf{k}}) - f(\varepsilon_{\mathbf{k+q}})}{\varepsilon_{\mathbf{k}} - \varepsilon_{\mathbf{k+q}} + i\eta}
+   \]
+
+   可通过小能量展开近似评估。
+
+3. 构造屏蔽势 \( V_{\text{eff}}(q) \)  
+   在二维kagome中，裸库仑势为：
+
+   \[
+   V_C(q) = \frac{2\pi e^2}{\varepsilon |q|}
+   \quad\Rightarrow\quad
+   V_{\text{eff}}(q) = \frac{2\pi e^2}{\varepsilon |q| - 2\pi e^2 \chi_0(q)}
+   \]
+
+   在 \( D(\varepsilon_F) \) 极大时，屏蔽增强，可导致有效吸引区间。
+
+4. 构建配对核并角动量展开  
+   构造动量空间配对核 \( \Gamma(\mathbf{k}, \mathbf{q}) \)，投影到角动量通道：
+
+   \[
+   \Gamma_l = \int d\theta\, d\theta'\, e^{-i l \theta} \Gamma(\theta - \theta') e^{i l \theta'}
+   \]
+
+   分析最具吸引性的通道（如 \( l = 2 \)，即 d波）。
+
+5. 求解本征值问题并提取 \( T_c \)  
+   形成离散化后的线性本征值问题：
+
+   \[
+   \lambda \vec{\Delta} = \Gamma \cdot \vec{\Delta}
+   \]
+
+   若 \( \lambda_{\text{max}}(T_c) = 1 \)，则对应超导临界点。
+
+6. 局域化效应修正  
+   Flat band 易受局域化影响。可定义相干重正化因子：
+
+   \[
+   Z_{\text{coh}} = \langle \psi_{\mathbf{k}} | \mathcal{P}_{\text{nonloc}} | \psi_{\mathbf{k}} \rangle
+   \quad\Rightarrow\quad
+   \tilde{\lambda} = Z_{\text{coh}}^2 \cdot \lambda
+   \]
+
+   若 \( Z_{\text{coh}} \ll 1 \)，超导相干性被破坏，需通过调节结构或杂质优化。
+
+总结：Flat-band kagome 为 KL + RPA 理论的重要适用候选；高DOS可有效放大微弱吸引；高角动量通道（如d波、f波）天然具备符号变化，可适配 KL 势；需结合局域态分析与结构调控提高配对稳定性。
+
+
 
 
