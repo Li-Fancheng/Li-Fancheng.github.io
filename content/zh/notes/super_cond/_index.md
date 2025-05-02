@@ -435,7 +435,7 @@ M^G_{mn}(\mathbf{k}, \mathbf{q}) = \sum_{\alpha} u_{m \mathbf{k}}^\alpha\, [u_{n
 3. 静态响应函数的计算：
    \[
    \chi_0^{G,G'}(\mathbf{q}) = \frac{1}{N_k} \sum_{\mathbf{k},n,m} \frac{f_{n \mathbf{k}} - f_{m \mathbf{k+q}}}{\varepsilon_{n \mathbf{k}} - \varepsilon_{m \mathbf{k+q}} + i\delta} \,
-   M^G_{nm}(\mathbf{k}, \mathbf{k+q})\, [M^{G'}_{nm}(\mathbf{k}, \mathbf{k+q})]^
+   M^G_{nm}(\mathbf{k}, \mathbf{k+q})\, [M^{G'}_{nm}(\mathbf{k}, \mathbf{k+q})]^*
    \]
    用于构造介电函数 \( \varepsilon_{G,G'}(\mathbf{q}) = \delta_{G,G'} - V_C^{G}(\mathbf{q}) \chi_0^{G,G'}(\mathbf{q}) \)，再反求 \( V_{\text{scr}} \)。
 
