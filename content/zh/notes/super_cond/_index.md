@@ -417,7 +417,7 @@ T_c \sim \omega_D \cdot \exp\left(-\frac{1}{\lambda}\right)
 其中 \( \Gamma(\mathbf{k}, \mathbf{q}) \) 为配对核，其典型形式为：
 
 \[
-\Gamma_{m_1 m_2, n_1 n_2}(\mathbf{k}, \mathbf{q}) = -\sum_{G_1,G_2} V_{\text{scr}}^{G_1,G_2}(\mathbf{k} - \mathbf{q}) \, M^{G_1}_{m_1 n_1}(\mathbf{k}, \mathbf{q})\, [M^{G_2}_{m_2 n_2}(\mathbf{k}, \mathbf{q})]^
+\Gamma_{m_1 m_2, n_1 n_2}(\mathbf{k}, \mathbf{q}) = -\sum_{G_1,G_2} V_{\text{scr}}^{G_1,G_2}(\mathbf{k} - \mathbf{q}) \, M^{G_1}_{m_1 n_1}(\mathbf{k}, \mathbf{q})\, [M^{G_2}_{m_2 n_2}(\mathbf{k}, \mathbf{q})]^*
 \]
 
 其中 \( M^G_{mn}(\mathbf{k}, \mathbf{q}) \) 为波函数 form factor，即布洛赫态在不同 \( G \) 成分上的投影：
