@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 李凡成
+title: Fancheng Li
 
 # Full name (for SEO)
 first_name: Fancheng
@@ -17,18 +17,18 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student
+role: PhD Student, Center for Interdisciplinary Studies
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Wuhan University
-    url: https://www.whu.edu.cn/
+  - name: Center for Interdisciplinary Studies, Westlake University
+    url: https://cis.westlake.edu.cn/en/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:fanchengli@whu.edu.cn'
+    url: 'mailto:lifancheng@westlake.edu.cn'
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/lfcdepression
@@ -39,10 +39,11 @@ interests:
   - AI4Science and Science4AI
 
 education:
+  - area: PhD Studies, Center for Interdisciplinary Studies
+    institution: Westlake University
   - area: Bachelor of Physics
-    institution: Whuhan University
+    institution: Wuhan University
     date_start: 2022-09-01
-    data_end: still now
     summary: |
       GPA: 3.88/4.0
       
@@ -124,5 +125,6 @@ awards:
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
-## 简介
+## About
 
+I graduated from Wuhan University and am now a PhD student at the Center for Interdisciplinary Studies, Westlake University.
