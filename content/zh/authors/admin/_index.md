@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 李凡成
+title: 李凡成（Fancheng Li）
 
 # Full name (for SEO)
 first_name: Fancheng
@@ -17,18 +17,18 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student
+role: 西湖大学交叉科学中心博士生
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Wuhan University
-    url: https://www.whu.edu.cn/
+  - name: 西湖大学交叉科学中心
+    url: https://cis.westlake.edu.cn/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:fanchengli@whu.edu.cn'
+    url: 'mailto:lifancheng@westlake.edu.cn'
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/Li-Fancheng
@@ -84,7 +84,7 @@ awards:
 
 
 **🌱 Hello！大家好**
-我是来自武汉大学的本科生，热衷于对真实系统展开理论建模研究，在探索跨学科知识的道路上不断前行。
+我已从武汉大学毕业，现于西湖大学交叉科学中心攻读博士学位，热衷于对真实系统展开理论建模研究，在探索跨学科知识的道路上不断前行。
 
 **🌌科研**
 之后和同学一起学习凝聚态理论，并加入袁声军老师课题组开始参与凝聚态计算课题，大三上进入谭志杰老师课题组进行RNA结构预测研究。意识到现实问题的困难和深度学习的“黑盒子”属性，开始对AI4Science and Science4AI产生浓厚兴趣。2024年参与谭志杰老师课题组进行RNA结构预测研究，并获得国自然本科生基金资助。
@@ -99,4 +99,3 @@ awards:
 
 **🌟 课余不止搞科研**  
 🖋️ **书法**$\qquad$🎨 **绘画**$\qquad$🏸 **羽毛球**$\qquad$🏀 **篮球**
-
