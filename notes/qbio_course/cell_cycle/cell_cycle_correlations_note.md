@@ -27,9 +27,9 @@
 
 <div id="1-why-an-independent-division-timer-does-not-regulate-size"></div>
 
-## 1. 实验起点：分裂有波动，size 却保持稳定 {#1-cell-size-homeostasis-and-the-failure-of-a-timer}
+## 1. 实验起点：分裂间隔有波动，size 却保持稳定 {#1-cell-size-homeostasis-and-the-failure-of-a-timer}
 
-单细胞追踪不仅记录每次分裂的时间，也能记录 birth size、division size 以及两次分裂之间的生长轨迹。初始偏小或偏大的细胞会逐渐恢复，birth size 又与分裂间隔时间有关。[Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的实验为比较不同分裂规则提供了依据：这些规则对继承的 birth size 有不同的响应。要解释分裂时间的差异，就需要先把这种响应纳入描述。
+单细胞追踪不仅记录每次分裂的时间，也能记录 birth size、division size 以及两次分裂之间的生长轨迹。birth size 偏离稳态均值时，后续几代细胞的平均 birth size 会逐渐向稳态均值靠近。同时，birth size 较大的细胞往往具有较短的分裂间隔，较小的细胞则往往需要更长时间才分裂。[Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的实验为比较不同分裂规则提供了依据：不同的分裂规则决定了 birth size 如何影响分裂间隔。例如，timer 规定细胞经过固定时间后分裂，与 birth size 无关；sizer 则规定细胞达到固定的 division size 后分裂，因此在相同的指数生长率下，birth size 较小的细胞需要更长时间。要解释分裂时间的差异，就需要同时考虑 birth size 和分裂规则。
 
 <div id="11-exponential-growth-between-divisions"></div>
 
