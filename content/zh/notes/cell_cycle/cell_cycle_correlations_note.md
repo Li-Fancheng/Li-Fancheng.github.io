@@ -17,7 +17,7 @@ Single-cell tracking experiments show both variability and **size homeostasis**:
 
 Our theoretical sequence is
 
-$$
+$$\boxed{
 \begin{gathered}
 \text{independent division-time noise}\\
 \downarrow\\
@@ -28,7 +28,7 @@ $$
 \text{size-control feedback}\\
 \downarrow\\
 \text{fluctuation spectra}
-\end{gathered}
+\end{gathered}}
 $$
 
 Two quantities will recur throughout the lecture:
@@ -1592,40 +1592,6 @@ $$
 $$
 
 and the sum no longer telescopes with one common prefactor. This is a natural route to genuinely new growth-versus-control effects.
-
-## Appendix D. Reproducing the two-state numerical example
-
-The following short Python code reproduces the growth-rate table by solving the exact Perron-eigenvalue condition.
-
-```python
-import numpy as np
-from scipy.optimize import brentq
-
-tau = np.array([2.0, 5.0])  # hours
-
-def population_growth_rate(p):
-    P = np.array([[p, 1 - p], [1 - p, p]])
-
-    def residual(Lambda):
-        K = 2 * np.diag(np.exp(-Lambda * tau)) @ P
-        return np.max(np.linalg.eigvals(K).real) - 1.0
-
-    return brentq(residual, 1e-10, 2.0)
-
-for p in [0.0, 0.25, 0.50, 0.75]:
-    Lambda = population_growth_rate(p)
-    print(f"p={p:.2f}, Lambda={Lambda:.6f} 1/h, "
-          f"doubling time={np.log(2)/Lambda:.3f} h")
-```
-
-Expected output (rounded):
-
-```text
-p=0.00, Lambda=0.198042 1/h, doubling time=3.500 h
-p=0.25, Lambda=0.202456 1/h, doubling time=3.424 h
-p=0.50, Lambda=0.212289 1/h, doubling time=3.265 h
-p=0.75, Lambda=0.244769 1/h, doubling time=2.832 h
-```
 
 ---
 
