@@ -1,45 +1,13 @@
 /* Long mathematical notes need room to scroll without widening the page. */
 .cell-cycle-article { max-width: 58rem; margin-inline: auto; }
-.cell-cycle-page { align-items: flex-start; }
-.cell-cycle-page > .hb-toc {
-  order: -1;
-  position: sticky;
-  top: calc(var(--navbar-height, 4rem) + .75rem);
-  align-self: flex-start;
-  max-height: calc(100dvh - var(--navbar-height, 4rem) - 1.5rem);
-  overflow-y: auto;
-  padding-top: .5rem;
-}
-/* Stick the whole navigation to the article's tall flex container. */
-.cell-cycle-page > .hb-toc > .hb-scrollbar {
-  position: static;
-  max-height: none;
-  overflow: visible;
-  padding-top: 0;
-}
 .cell-cycle-article h1 { line-height: 1.2; }
 .cell-cycle-subtitle { font-size: 1.2rem; opacity: .8; }
 .cell-cycle-meta { font-size: .85rem; opacity: .7; }
 .cell-cycle-article :is(h2, h3) { scroll-margin-top: 6rem; }
 .cell-cycle-article .katex-display { overflow-x: auto; overflow-y: hidden; padding: .75rem .25rem; }
 .cell-cycle-article table { display: block; overflow-x: auto; }
-.cell-cycle-article figure { margin: 2rem auto 1rem; }
-.cell-cycle-article figure > div > div { width: 100%; min-width: 0; max-width: 42rem; }
-.cell-cycle-article figure img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 34rem;
-  object-fit: contain;
-  margin-inline: auto;
-  height: auto;
-  background: white;
-  border-radius: .5rem;
-}
+.cell-cycle-article figure img { width: 100%; height: auto; background: white; border-radius: .5rem; }
 .cell-cycle-article figure + p:has(> em:first-child) { font-size: .9rem; line-height: 1.6; }
 .cell-cycle-mobile-toc { margin-block: 2rem; padding: 1rem; border: 1px solid #94a3b855; border-radius: .5rem; }
 .cell-cycle-mobile-toc nav { max-height: 22rem; overflow-y: auto; }
-@media (max-width: 767px) {
-  .cell-cycle-article figure img { max-height: 26rem; }
-}
 @media (min-width: 1280px) { .cell-cycle-mobile-toc { display: none; } }

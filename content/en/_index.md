@@ -2,8 +2,6 @@
 title: ""
 date: 2026-10-14
 type: landing
-cascade:
-  reading_time: false
 summary: "Fancheng Li — PhD student at Westlake University, exploring statistical physics, biological systems, and AI for science."
 design:
   spacing: "4rem"

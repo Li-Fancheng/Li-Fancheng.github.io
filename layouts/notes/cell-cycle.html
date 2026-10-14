@@ -6,7 +6,7 @@
       <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
       <h1>{{ .Title }}</h1>
       {{ with .Params.subtitle }}<p class="cell-cycle-subtitle">{{ . }}</p>{{ end }}
-      <p class="cell-cycle-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time></p>
+      <p class="cell-cycle-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time> · {{ .ReadingTime }} {{ i18n "minute_read" }}</p>
     </header>
     <details class="cell-cycle-mobile-toc">
       <summary>{{ i18n "table_of_contents" }}</summary>
