@@ -74,7 +74,7 @@ $$
 v_n^{\mathrm d}=v_n e^{\lambda\tau_n}.
 $$
 
-Assuming **symmetric division**, each daughter receives half of the mother's volume:
+Assuming symmetric division, each daughter receives half of the mother's volume:
 
 $$
 v_{n+1}=\frac12 v_n e^{\lambda\tau_n}.\tag{1.1}
@@ -131,7 +131,7 @@ This gives a physical reason not to assume independent division times indiscrimi
 
 ![Single-cell microscopy and birth-size correlations testing timer and sizer predictions.](figures/taheri_araghi_2015_f1_highres.png)
 
-*Fig 2. Testing size-control strategies.* Original Figure 1 from [Taheri-Araghi et al., *Current Biology* (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Focus on panel D: generation time decreases with birth size, whereas division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C provide microscopy and growth-condition context. Read alongside the timer instability in (1.4). Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
+*Fig 2. Testing size-control strategies.* Original Figure 1 from [Taheri-Araghi et al., *Current Biology* (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Focus on panel D: generation time decreases with birth size, whereas division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C provide microscopy and growth-condition context. Read alongside the timer instability in (1.4).
 
 **Question to carry forward.** What does independent division-time noise predict for the *population*, even though it is inconsistent with size homeostasis?
 
@@ -148,7 +148,7 @@ Consider an idealized binary branching population:
 - The two daughters subsequently reproduce according to the same statistical rule.
 - There is no death, and no common environment that imposes correlated lifetimes on the whole population.
 
-Let $M(t)$ denote the expected number of living descendants, including the initial cell. The initial cell has either not yet divided by time $t$, or it divided at a time $\tau<t$. Therefore
+Let $M(t)$ denote the expected number of living descendants, including the initial cell. The initial cell has either not yet divided by time $t$, or it divided at a time $\tau\lt t$. Therefore
 
 $$
 M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
@@ -302,7 +302,7 @@ $$
 \bar\tau=\frac{\ln2}{\lambda}
 $$
 
-(provided $\mathbb E|\ln v|<\infty$). Comparing this identity with the independent-lifetime prediction, we appear to have a contradiction:
+(provided $\mathbb E|\ln v|\lt \infty$). Comparing this identity with the independent-lifetime prediction, we appear to have a contradiction:
 
 $$
 \underbrace{\Lambda>\frac{\ln2}{\bar\tau}=\lambda}_{\text{independent noisy lifetimes}}
@@ -550,7 +550,7 @@ $$
 \tau_s=\mu-\delta,
 \qquad
 \tau_\ell=\mu+\delta,
-\qquad 0<\delta<\mu.
+\qquad 0\lt \delta\lt \mu.
 $$
 
 The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
@@ -564,7 +564,7 @@ p&1-p\\
 \tag{5.1}
 $$
 
-A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0<p<1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
+A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0\lt p\lt 1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
 
 $$
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
@@ -611,7 +611,7 @@ $$
 C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{5.3}
 $$
 
-For $0<p<1$, $|a|<1$. Equation (4.2) then gives
+For $0\lt p\lt 1$, $|a|\lt 1$. Equation (4.2) then gives
 
 $$
 \begin{aligned}
@@ -625,7 +625,7 @@ $$
 
 Three regimes follow:
 
-- $p<1/2$: successive generation times tend to alternate; correlations are negative at odd lags.
+- $p\lt 1/2$: successive generation times tend to alternate; correlations are negative at odd lags.
 - $p=1/2$: generation times are independent; $D_\tau=\delta^2$.
 - $p>1/2$: states persist; $D_\tau>\delta^2$.
 
@@ -673,7 +673,7 @@ $$
 Z_n(\Lambda)=\boldsymbol\pi K_\Lambda^n\mathbf 1.
 $$
 
-For $0<p<1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (3.6) is therefore equivalent to the **exact eigenvalue condition**
+For $0\lt p\lt 1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (3.6) is therefore equivalent to the **exact eigenvalue condition**
 
 $$
 \rho(K_\Lambda)=1.\tag{5.7}
@@ -819,7 +819,7 @@ This is an autoregressive process of order one (AR(1)), the discrete-time counte
 
 ![Added-size measurements and conditional distribution collapse supporting the adder in bacteria.](figures/taheri_araghi_2015_f2_highres.png)
 
-*Fig 6. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations. Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
+*Fig 6. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations.
 
 ### 6.2 Exact stationary variance
 
@@ -891,7 +891,7 @@ The important point is not merely the numerical agreement: a deterministic resto
 
 ![Adder predictions and experimental relaxation of initially small and large birth sizes.](figures/taheri_araghi_2015_f3_highres.png)
 
-*Fig 7. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements. Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
+*Fig 7. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements.
 
 ### 6.4 Connecting the adder to generation times
 
@@ -1055,7 +1055,7 @@ $$
 For a general stationary AR(1) process
 
 $$
-C_x(k)=\sigma_x^2 a^{|k|},\qquad 0<a<1,
+C_x(k)=\sigma_x^2 a^{|k|},\qquad 0\lt a\lt 1,
 $$
 
 we can compute the covariance of the differences explicitly. At lag zero,
@@ -1201,7 +1201,7 @@ Consider again
 
 $$
 x_{n+1}=a x_n+\xi_n,
-\qquad |a|<1,
+\qquad |a|\lt 1,
 $$
 
 with independent zero-mean noise of variance $\sigma_\xi^2$. In the stationary regime,
@@ -1270,7 +1270,7 @@ Notice that differencing may emphasize high-frequency fluctuations, even when th
 
 ### 7.4 An extra connection: the Markov model's spectrum
 
-For the two-state Markov model of Section 5, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|<1$ gives
+For the two-state Markov model of Section 5, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|\lt 1$ gives
 
 $$
 S_\tau(\omega)
@@ -1300,7 +1300,7 @@ The original slides motivate this question by juxtaposing adder fluctuations and
 
 ### 8.1 Relaxation is not oscillation
 
-An AR(1) model with $0<a<1$ has a single real positive eigenvalue $a$. Perturbations decay as $a^n$. Its normalized ACF is monotone:
+An AR(1) model with $0\lt a\lt 1$ has a single real positive eigenvalue $a$. Perturbations decay as $a^n$. Its normalized ACF is monotone:
 
 $$
 \rho_x(k)=a^{|k|}.
@@ -1308,7 +1308,7 @@ $$
 
 The spectrum has no isolated nonzero-frequency resonant mode. Random sample paths may visibly rise and fall, but this alone does not imply a periodic dynamical mechanism.
 
-If $-1<a<0$, the ACF alternates sign, $\rho_x(k)=a^{|k|}$, and the spectral maximum is at $\omega=\pi$, corresponding to a two-generation alternation. This already illustrates why the *sign and eigenstructure of feedback* matter more than the visual regularity of a noisy trace.
+If $-1\lt a\lt 0$, the ACF alternates sign, $\rho_x(k)=a^{|k|}$, and the spectral maximum is at $\omega=\pi$, corresponding to a two-generation alternation. This already illustrates why the *sign and eigenstructure of feedback* matter more than the visual regularity of a noisy trace.
 
 ### 8.2 A minimal model capable of damped oscillations
 
@@ -1316,8 +1316,8 @@ Introduce a delayed feedback term:
 
 $$
 x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
-\qquad 0<r<1,
-\quad0<\omega_0<\pi.
+\qquad 0\lt r\lt 1,
+\quad0\lt \omega_0\lt \pi.
 \tag{8.1}
 $$
 
@@ -1533,7 +1533,7 @@ where $x_n$ is deviation of birth size from its stationary mean.
 | Adder | $1/2$ | Half the birth-size deviation is inherited |
 | Timer, linearized near a balanced size | $1$ | No restoring feedback; random-walk/neutral behavior |
 
-For $|a|<1$,
+For $|a|\lt 1$,
 
 $$
 \operatorname{Var}(x)=\frac{\operatorname{Var}(\xi)}{1-a^2},
@@ -1599,13 +1599,13 @@ and the sum no longer telescopes with one common prefactor. This is a natural ro
 
 ### Problem 1. What does it take to remove size memory?
 
-For $x_{n+1}=ax_n+\xi_n$, derive $\mathbb E[x_{n+k}\mid x_n]$, the stationary variance, and the autocorrelation function. Which values of $a$ produce homeostasis? What changes if $a<0$?
+For $x_{n+1}=ax_n+\xi_n$, derive $\mathbb E[x_{n+k}\mid x_n]$, the stationary variance, and the autocorrelation function. Which values of $a$ produce homeostasis? What changes if $a\lt 0$?
 
-**Answer sketch.** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$, $\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$, and $\rho(k)=a^{|k|}$. Finite stationary variance requires $|a|<1$ for independent noise of finite nonzero variance. Negative $a$ leads to alternating-sign correlations.
+**Answer sketch.** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$, $\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$, and $\rho(k)=a^{|k|}$. Finite stationary variance requires $|a|\lt 1$ for independent noise of finite nonzero variance. Negative $a$ leads to alternating-sign correlations.
 
 ### Problem 2. Correlation without changing a histogram
 
-Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0<p<1$. Derive (5.3) and use it to estimate the growth-rate correction in (4.5). Why does that estimate break down as $p\to1^-$?
+Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$. Derive (5.3) and use it to estimate the growth-rate correction in (4.5). Why does that estimate break down as $p\to1^-$?
 
 **Answer sketch.** The transition matrix is symmetric, so its stationary probabilities are $1/2,1/2$. Correlations decay as $(2p-1)^k$. Therefore $D_\tau=\delta^2p/(1-p)$. As $p\to1^-$, the correlation time diverges and weak-noise/truncated-cumulant expansions cease to be uniform; use the exact matrix condition instead.
 

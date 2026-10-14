@@ -34,22 +34,23 @@ def finish(ax, xlabel, ylabel):
 fig, axes = plt.subplots(1, 2, figsize=(11, 4.1), layout="constrained")
 g = np.arange(61)
 rng = np.random.default_rng(14)
-for j in range(7):
+timer_color, feedback_color = "tab:orange", "tab:blue"
+for j in range(30):
     eps = rng.normal(0, .10, 60)
     timer = np.r_[0, np.cumsum(eps)]
     controlled = np.zeros(61)
     for n in range(60):
         controlled[n+1] = .5 * controlled[n] + eps[n]
-    axes[0].plot(g, timer, color=ORANGE, alpha=.35, lw=1.2)
-    axes[0].plot(g, controlled, color=BLUE, alpha=.50, lw=1.2)
-axes[0].plot([], [], color=ORANGE, label="Independent timer")
-axes[0].plot([], [], color=BLUE, label="Restoring log-size map")
+    axes[0].plot(g, timer, color=timer_color, alpha=.30, lw=1.0)
+    axes[0].plot(g, controlled, color=feedback_color, alpha=.35, lw=1.0)
+axes[0].plot([], [], color=timer_color, label="Independent timer")
+axes[0].plot([], [], color=feedback_color, label="Restoring log-size map")
 axes[0].axhline(0, color="#777777", lw=.7)
 axes[0].set_title("A  |  Illustrative lineage trajectories")
 axes[0].legend(loc="lower left", fontsize=9)
 finish(axes[0], "Generation n", r"Log-size deviation $y_n-y_*$")
-axes[1].plot(g, g, color=ORANGE, label=r"Timer: $n$")
-axes[1].plot(g, (1-.5**(2*g))/(1-.5**2), color=BLUE,
+axes[1].plot(g, g, color=timer_color, label=r"Timer: $n$")
+axes[1].plot(g, (1-.5**(2*g))/(1-.5**2), color=feedback_color,
              label=r"Restoring map: $(1-a^{2n})/(1-a^2)$")
 axes[1].set_title("B  |  Variance from a fixed initial size")
 axes[1].legend(fontsize=9)
