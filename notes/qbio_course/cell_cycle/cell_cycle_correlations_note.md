@@ -72,7 +72,15 @@ $$
 
 若 $\mu=\ln2/\lambda$ ，每一步随机增量的均值为零，log size 成为无漂移的 random walk 。但只要 $\sigma_\tau^2>0$，这些随机增量就会不断累积：从固定的 initial size 出发，log size 的均值保持不变，方差随 $n$ 线性增长。因此，消除平均漂移仍不能维持稳定的 size distribution。
 
-原因在于，timer 的分裂间隔不随 birth size 改变：细胞偏大或偏小时，都没有相应的调整来纠正偏差。即使去掉全部噪声，并令分裂间隔固定为 $\ln2/\lambda$，也只能得到 $v_{n+1}=v_n$，使每条 lineage 保持各自的 initial size；已有的 size 偏差不会缩小。要纠正这些偏差，分裂规则还需要随 birth size 作出相应调整。
+原因在于，timer 的分裂间隔不随 birth size 改变：细胞偏大或偏小时，都没有相应的调整来纠正偏差。即使去掉涨落，令分裂间隔固定为 $\ln2/\lambda$，也只能得到 $v_{n+1}=v_n$，每条 lineage 保持各自的 initial size；已有的 size 偏差不会缩小。要纠正这些偏差，分裂规则还需要随 birth size 作出相应调整。
+
+这种恢复性反馈可以用一个简单的 log size 映射表示。令 $z_n=\ln v_n-\ln v_*$ 表示 log size 相对参考 size $v_*$ 的偏差，设
+
+$$
+z_{n+1}=az_n+\xi_n,
+$$
+
+其中 $\xi_n$ 是均值为零、与当前偏差独立的随机扰动。**当 $|a|<1$ 时，无噪声情况下，偏差的绝对值每代缩小为原来的 $|a|$ 倍。** 有噪声时，给定当前偏差后的平均响应仍为 $\mathbb E[z_{n+1}\mid z_n]=az_n$：已有偏差会逐渐衰减，而新扰动会继续产生波动。若扰动独立同分布且方差有限，这种收缩可以使长期方差保持有限；相比之下，无漂移的 timer 对应 $a=1$，每代产生的偏差会一直保留并累积。
 
 ![定时分裂下的 cell size 不断游走，而恢复性反馈能限制 size 波动。](figures/01_timer_and_homeostasis.svg)
 
