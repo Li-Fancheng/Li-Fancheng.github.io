@@ -592,7 +592,7 @@ The condition $D_\tau=0$ removes the **quadratic weak-noise correction** to grow
 
 ## 5. The same lifetime distribution can give different growth rates
 
-A short example isolates the role of temporal correlations before we introduce size feedback. Each cell has either a short lifetime $\tau_s=\mu-\delta$ or a long lifetime $\tau_\ell=\mu+\delta$, with $0\lt\delta\lt\mu$. At division, a daughter retains its mother's lifetime state with probability $p$ and switches with probability $1-p$. For $0\le p\lt1$, the stationary chronological distribution has
+A short example isolates the role of temporal correlations before we introduce size feedback. Each cell has either a short lifetime $\tau_s=\mu-\delta$ or a long lifetime $\tau_\ell=\mu+\delta$, with $0\lt\delta\lt\mu$. At division, a daughter retains its mother's lifetime state with probability $p$ and switches with probability $1-p$. The stationary chronological distribution has
 
 $$
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,

@@ -2,8 +2,7 @@
 {{- $source := readFile "notes/cell_cycle/cell_cycle_correlations_note.md" -}}
 {{- $source = replaceRE `^# From Single-Cell Noise to Population Growth\n## Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics\n` "" $source -}}
 {{- $source = replace $source "# Optional technical appendices" "## Optional technical appendices" -}}
-{{- $source = replaceRE `(?m)^## Appendix ([A-Z])\.` "### Appendix $1." $source -}}
-{{- $source = replaceRE `(?m)^### ([A-Z]\.[0-9]+) ` "#### $1 " $source -}}
+{{- $source = replaceRE `(?m)^## Appendix ([A-D])\.` "### Appendix $1." $source -}}
 {{- $source = replace $source "# Problems for discussion or homework" "## Problems for discussion or homework" -}}
 {{- $source = replace $source "**References**" "## References" -}}
 {{- range findRE `figures/[a-zA-Z0-9_.-]+\.(png|jpg)` $source -}}
