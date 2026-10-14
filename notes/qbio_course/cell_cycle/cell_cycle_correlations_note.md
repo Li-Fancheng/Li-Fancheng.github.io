@@ -77,14 +77,14 @@ $$
 这种恢复性反馈可以用一个简单的 log size 映射表示。令 $z_n=\ln v_n-\ln v_*$ 表示 log size 相对参考 size $v_*$ 的偏差，设
 
 $$
-z_{n+1}=az_n+\xi_n,
+z_{n+1}=rz_n+\xi_n,
 $$
 
-其中 $\xi_n$ 是均值为零、与当前偏差独立的随机噪声。**当 $|a|<1$ 时，且无噪声情况下，偏差的绝对值每代缩小为原来的 $|a|$ 倍。** 已有偏差会逐渐衰减，若噪声是独立同分布且方差有限，这种收缩可以使长期方差保持有限；而无漂移的 timer 对应 $a=1$，每代产生的偏差会一直保留并累积。
+其中 $r$ 为偏差保留系数，$\xi_n$ 是均值为零、与当前偏差独立的随机噪声。**当 $|r|<1$ 且无噪声时，偏差的绝对值每代缩小为原来的 $|r|$ 倍。** 已有偏差会逐渐衰减，若噪声是独立同分布且方差有限，这种收缩可以使长期方差保持有限；而无漂移的 timer 对应 $r=1$，每代产生的偏差会一直保留并累积。
 
 ![定时分裂下的 cell size 不断游走，而恢复性反馈能限制 size 波动。](figures/01_timer_and_homeostasis.svg)
 
-*图 1. 为什么需要反馈。* 橙色轨迹遵循式（1.2）中无漂移的 log size timer；蓝色轨迹采用 $a=1/2$ 的恢复性**log size**映射，两者使用相同的随机扰动。蓝色模型仅用于示意，并不是以 added size 定义的精确 adder 模型。B 图比较从固定 initial size 出发时的理论方差。所有轨迹均为模拟结果。
+*图 1. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
 
 ### 1.3 Timer、adder 与 sizer：三种分裂规则 {#13-timer-adder-and-sizer}
 
@@ -649,7 +649,7 @@ $$
 
 ![协方差矩阵中的非对角项成对出现；交替、独立与持续正相关三种情形下，累计时间方差的增长速度不同。](figures/07_accumulated_time_covariances.svg)
 
-*图 8. 哪些波动会累积？* A 图的每个方格都对 $\operatorname{Var}(T_n)$ 有贡献。圈出的两个方格，是同一个协方差按 $(i,j)$ 和 $(j,i)$ 分别计数，因而产生下式中的系数 $2$。B 图对 $C_\tau(k)=\sigma_\tau^2a^{|k|}$ 使用式（4.2），其中 $a=-1/2,0,1/2$；A 图对应 $a=-1/2$。三个过程的单代方差相同，但长期斜率 $D_\tau/\sigma_\tau^2=(1+a)/(1-a)$ 不同。图中协方差均来自平稳模型的解析结果。
+*图 8. 哪些波动会累积？* A 图的每个方格都对 $\operatorname{Var}(T_n)$ 有贡献。圈出的两个方格，是同一个协方差按 $(i,j)$ 和 $(j,i)$ 分别计数，因而产生下式中的系数 $2$。B 图对 $C_\tau(k)=\sigma_\tau^2r^{|k|}$ 使用式（4.2），其中 $r=-1/2,0,1/2$；A 图对应 $r=-1/2$。三个过程的单代方差相同，但长期斜率 $D_\tau/\sigma_\tau^2=(1+r)/(1-r)$ 不同。图中协方差均来自平稳模型的解析结果。
 
 间隔为零的项共有 $n$ 个，间隔为 $k$ 的有序配对共有 $2(n-k)$ 个。因此，对有限的 $n$，精确地有
 
@@ -814,7 +814,7 @@ $$
 =\frac{1+\widehat B(s)}{2s}.\tag{C.8}
 $$
 
-因此，存活数期望与加权出生数级数具有相同的正收敛边界。如果 $r(s)=\ln2+\psi(s)<0$，根值判别法保证 $\sum_n Z_n(s)$ 收敛；如果 $r(s)>0$，级数的项甚至不趋于零。在 $r(s)=0$ 处，根值判别法无法决定该点本身是否收敛。不过，只要 $r$ 连续，且在唯一的正值 $s_*$ 处穿过零，收敛边界仍然是 $s_*$。若 $\lim_{t\to\infty}t^{-1}\ln M(t)$ 存在，通过与指数函数比较，就能把该边界等同于此极限，从而证明式（C.6）描述的是**期望**增长率。仅知道 $\psi$ 存在，却没有连续性、过零条件或期望增长率极限，还不足以完成论证。
+因此，存活数期望与加权出生数级数具有相同的正收敛边界。如果 $g(s)=\ln2+\psi(s)<0$，根值判别法保证 $\sum_n Z_n(s)$ 收敛；如果 $g(s)>0$，级数的项甚至不趋于零。在 $g(s)=0$ 处，根值判别法无法决定该点本身是否收敛。不过，只要 $g$ 连续，且在唯一的正值 $s_*$ 处穿过零，收敛边界仍然是 $s_*$。若 $\lim_{t\to\infty}t^{-1}\ln M(t)$ 存在，通过与指数函数比较，就能把该边界等同于此极限，从而证明式（C.6）描述的是**期望**增长率。仅知道 $\psi$ 存在，却没有连续性、过零条件或期望增长率极限，还不足以完成论证。
 
 要在典型的实际群体中得到同一指数，还需要针对具体模型的分枝过程定理，包括适当的不可约性、可积性，以及繁殖由局部规则而非共同随机环境支配。例如，有限状态、不可约的年龄依赖分枝过程，如果分裂间隔时间有上界且与零保持距离，每次产生两个子细胞，且给定状态后两个子树相互独立，就是一组标准的充分条件。多对一恒等式的期望计算本身不要求姐妹细胞独立；但若繁殖存在依赖，要声称典型增长率相同，就必须另行给出条件。某些恒定渐近振幅的极限需要非格点条件，但并非所有对数增长指数都需要它。$\psi$ 使用的是平稳的 chronological lineage 规律；若初始细胞的分布不同，要使用同一个根，必须保证指数渐近行为相同。
 
@@ -941,28 +941,28 @@ $$
 令
 
 $$
-a=2p-1.
+r=2p-1.
 $$
 
 迭代条件期望，得到
 
 $$
-\mathbb E[z_{n+k}\mid z_n]=a^k z_n.
+\mathbb E[z_{n+k}\mid z_n]=r^k z_n.
 $$
 
 由于 $\mathbb E[z_n]=0$ 且 $z_n^2=1$，
 
 $$
-C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{D.3}
+C_\tau(k)=\delta^2 r^{|k|},\qquad r=2p-1.\tag{D.3}
 $$
 
-当 $0\lt p\lt 1$ 时，$|a|\lt 1$。由式（4.3）得到
+当 $0\lt p\lt 1$ 时，$|r|\lt 1$。由式（4.3）得到
 
 $$
 \begin{aligned}
 D_\tau
-&=\delta^2\left(1+2\sum_{k=1}^\infty a^k\right)\\
-&=\delta^2\frac{1+a}{1-a}\\
+&=\delta^2\left(1+2\sum_{k=1}^\infty r^k\right)\\
+&=\delta^2\frac{1+r}{1-r}\\
 &=\delta^2\frac{p}{1-p}.
 \end{aligned}
 \tag{D.4}
@@ -1120,7 +1120,7 @@ $$
 对于第 3 节中 added size 独立同分布的模型，以 $\Delta$ 为中心定义 $v_n$ 的偏差，写成
 
 $$
-x_{n+1}=a x_n+\xi_n,\qquad a=1/2,\quad\xi_n=\eta_n/2.\tag{E.1}
+x_{n+1}=r x_n+\xi_n,\qquad r=1/2,\quad\xi_n=\eta_n/2.\tag{E.1}
 $$
 
 ![偏小和偏大的细胞在分裂前增加相同的 size，其子细胞的 birth size 更接近均值。](figures/03_adder_size_control.svg)
@@ -1135,22 +1135,22 @@ $$
 
 $$
 \operatorname{Var}(x_{n+1})
-=a^2\operatorname{Var}(x_n)+\operatorname{Var}(\xi_n).
+=r^2\operatorname{Var}(x_n)+\operatorname{Var}(\xi_n).
 $$
 
 令 $\sigma_x^2=\operatorname{Var}(x_n)$，则
 
 $$
-\sigma_x^2=a^2\sigma_x^2+\sigma_\xi^2,
+\sigma_x^2=r^2\sigma_x^2+\sigma_\xi^2,
 $$
 
 即
 
 $$
-\sigma_x^2=\frac{\sigma_\xi^2}{1-a^2}.\tag{E.2}
+\sigma_x^2=\frac{\sigma_\xi^2}{1-r^2}.\tag{E.2}
 $$
 
-对于 $a=1/2$、$\sigma_\xi^2=\sigma_\eta^2/4$，
+对于 $r=1/2$、$\sigma_\xi^2=\sigma_\eta^2/4$，
 
 $$
 \operatorname{Var}(v_n)=\frac{\sigma_\eta^2}{3}.\tag{E.3}
@@ -1166,8 +1166,8 @@ $$
 
 $$
 x_{n+k}
-=a^k x_n+
-\sum_{j=0}^{k-1}a^{k-1-j}\xi_{n+j}.
+=r^k x_n+
+\sum_{j=0}^{k-1}r^{k-1-j}\xi_{n+j}.
 \tag{E.4}
 $$
 
@@ -1175,7 +1175,7 @@ $$
 
 $$
 \operatorname{Cov}(x_n,x_{n+k})
-=a^k\sigma_x^2.
+=r^k\sigma_x^2.
 $$
 
 除以 $\sigma_x^2$，得到
@@ -1183,7 +1183,7 @@ $$
 $$
 \rho_v(k)
 \equiv\operatorname{Corr}(v_n,v_{n+k})
-=a^k=2^{-k}.
+=r^k=2^{-k}.
 \tag{E.5}
 $$
 
@@ -1232,7 +1232,7 @@ $$
 对一般的平稳 AR(1) 过程，
 
 $$
-C_x(k)=\sigma_x^2 a^{|k|},\qquad 0\lt a\lt 1,
+C_x(k)=\sigma_x^2 r^{|k|},\qquad 0\lt r\lt 1,
 $$
 
 可以显式计算差分的协方差。在零滞后处，
@@ -1242,7 +1242,7 @@ $$
 C_{\delta\tau}(0)
 &\simeq\frac1{(\lambda\Delta)^2}
 \mathbb E[(x_{n+1}-x_n)^2]\\
-&=\frac{2\sigma_x^2(1-a)}{(\lambda\Delta)^2}.
+&=\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}.
 \end{aligned}
 \tag{E.7}
 $$
@@ -1255,7 +1255,7 @@ C_{\delta\tau}(k)
 &\simeq\frac1{(\lambda\Delta)^2}
 \operatorname{Cov}(x_{n+1}-x_n,\,x_{n+k+1}-x_{n+k})\\
 &=\frac{2C_x(k)-C_x(k-1)-C_x(k+1)}{(\lambda\Delta)^2}\\
-&=-\frac{\sigma_x^2(1-a)^2 a^{k-1}}{(\lambda\Delta)^2}.
+&=-\frac{\sigma_x^2(1-r)^2 r^{k-1}}{(\lambda\Delta)^2}.
 \end{aligned}
 \tag{E.8}
 $$
@@ -1264,12 +1264,12 @@ $$
 
 $$
 \rho_\tau(k)
-\simeq-\frac{1-a}{2}a^{k-1},
+\simeq-\frac{1-r}{2}r^{k-1},
 \qquad k\ge1.
 \tag{E.9}
 $$
 
-对于 adder，$a=1/2$：
+对于 adder，$r=1/2$：
 
 $$
 \rho_\tau(k)\simeq-2^{-(k+1)},\qquad k\ge1.\tag{E.10}
@@ -1299,11 +1299,11 @@ $$
 \begin{aligned}
 D_\tau
 &\simeq C_{\delta\tau}(0)+2\sum_{k=1}^\infty C_{\delta\tau}(k)\\
-&=\frac{2\sigma_x^2(1-a)}{(\lambda\Delta)^2}
--\frac{2\sigma_x^2(1-a)^2}{(\lambda\Delta)^2}
-\sum_{k=1}^\infty a^{k-1}\\
-&=\frac{2\sigma_x^2(1-a)}{(\lambda\Delta)^2}
--\frac{2\sigma_x^2(1-a)}{(\lambda\Delta)^2}\\
+&=\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}
+-\frac{2\sigma_x^2(1-r)^2}{(\lambda\Delta)^2}
+\sum_{k=1}^\infty r^{k-1}\\
+&=\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}
+-\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}\\
 &=0.
 \end{aligned}
 \tag{E.11}
@@ -1325,24 +1325,24 @@ $$
 统一的局部描述为
 
 $$
-x_{n+1}=a x_n+\xi_n,
+x_{n+1}=r x_n+\xi_n,
 \tag{F.1}
 $$
 
 其中 $x_n$ 为 birth size 相对稳态均值的偏差。
 
-| 策略 | 典型 size 映射的斜率 $a$ | 物理行为 |
+| 策略 | 典型 size 映射的斜率 $r$ | 物理行为 |
 |---|---:|---|
 | Sizer（定 size 分裂） | $0$ | division size 与 birth size 无关，不继承线性 size memory |
 | Adder（定增量分裂） | $1/2$ | 继承 birth size 偏差的一半 |
 | Timer（在平衡 size 附近线性化） | $1$ | 没有恢复性反馈，表现为 random walk 或偏差不变 |
 
-当 $|a|\lt 1$ 时，
+当 $|r|\lt 1$ 时，
 
 $$
-\operatorname{Var}(x)=\frac{\operatorname{Var}(\xi)}{1-a^2},
+\operatorname{Var}(x)=\frac{\operatorname{Var}(\xi)}{1-r^2},
 \qquad
-\rho_x(k)=a^{|k|}.
+\rho_x(k)=r^{|k|}.
 $$
 
 这些调控策略的差别，在于**birth size 的扰动消退得多快**。观测到的斜率能约束有效动力学，但无法唯一确定具体的生化实现方式。
@@ -1410,21 +1410,21 @@ $$
 再次考虑
 
 $$
-x_{n+1}=a x_n+\xi_n,
-\qquad |a|\lt 1,
+x_{n+1}=r x_n+\xi_n,
+\qquad |r|\lt 1,
 $$
 
 其中噪声 $\xi_n$ 相互独立、均值为零、方差为 $\sigma_\xi^2$。在平稳状态下，
 
 $$
-x_n=\sum_{j=0}^\infty a^j\xi_{n-1-j}.
+x_n=\sum_{j=0}^\infty r^j\xi_{n-1-j}.
 \tag{F.4}
 $$
 
 这相当于对白噪声进行线性滤波。在频域中，包含一代延迟的传递函数为
 
 $$
-H(\omega)=\frac{e^{-i\omega}}{1-ae^{-i\omega}},
+H(\omega)=\frac{e^{-i\omega}}{1-re^{-i\omega}},
 $$
 
 因此
@@ -1434,12 +1434,12 @@ $$
 S_x(\omega)
 &=\sigma_\xi^2|H(\omega)|^2\\
 &=\frac{\sigma_\xi^2}
-{1+a^2-2a\cos\omega}.
+{1+r^2-2r\cos\omega}.
 \end{aligned}
 \tag{F.5}
 $$
 
-对于 adder，$a=1/2$。size 频谱在 $\omega=0$ 附近最大，随后向 $\pi$ 平滑下降，不存在内禀的*非零频率*振荡共振。
+对于 adder，$r=1/2$。size 频谱在 $\omega=0$ 附近最大，随后向 $\pi$ 平滑下降，不存在内禀的*非零频率*振荡共振。
 
 这对应于单调、正值的自相关：
 
@@ -1484,18 +1484,18 @@ $$
 
 #### F.5 补充联系：马尔可夫模型的频谱 {#f5-an-extra-connection-the-markov-models-spectrum}
 
-对于附录 D 的两状态马尔可夫模型，$C_\tau(k)=\delta^2a^{|k|}$，其中 $a=2p-1$。在 $|a|\lt 1$ 时，将傅里叶级数求和，得到
+对于附录 D 的两状态马尔可夫模型，$C_\tau(k)=\delta^2r^{|k|}$，其中 $r=2p-1$。在 $|r|\lt 1$ 时，将傅里叶级数求和，得到
 
 $$
 S_\tau(\omega)
-=\delta^2\frac{1-a^2}{1+a^2-2a\cos\omega}.
+=\delta^2\frac{1-r^2}{1+r^2-2r\cos\omega}.
 \tag{F.8}
 $$
 
 特别地，
 
 $$
-S_\tau(0)=\delta^2\frac{1+a}{1-a}
+S_\tau(0)=\delta^2\frac{1+r}{1-r}
 =\delta^2\frac{p}{1-p},
 $$
 
@@ -1538,22 +1538,22 @@ $$
 
 推导没有用到 division size 调控规则的具体函数形式。因此，任何满足这两个关系的平稳正 size 过程都满足式（3.5）。Sizer、adder 或其他反馈规则，只要能提供足够的 size homeostasis，都可能出现同样的抵消。
 
-如果分裂不对称，所追踪的子细胞获得母 cell size 的比例为 $r_n$，那么
+如果分裂不对称，所追踪的子细胞获得母 cell size 的比例为 $f_n$，那么
 
 $$
-v_{n+1}=r_n v_ne^{\lambda\tau_n},
+v_{n+1}=f_n v_ne^{\lambda\tau_n},
 $$
 
 于是
 
 $$
-\tau_n=\frac{-\ln r_n+\ln v_{n+1}-\ln v_n}{\lambda}.
+\tau_n=\frac{-\ln f_n+\ln v_{n+1}-\ln v_n}{\lambda}.
 $$
 
 累计时间变为
 
 $$
-T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln r_j)
+T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln f_j)
 +\frac{\ln v_n-\ln v_0}{\lambda}.
 \tag{G.2}
 $$
@@ -1640,15 +1640,15 @@ $$
 
 ### FT.1 弛豫不等于振荡 {#ft1-relaxation-is-not-oscillation}
 
-当 $0\lt a\lt 1$ 时，AR(1) 模型只有一个正实特征值 $a$，扰动按 $a^n$ 衰减。这种向稳态恢复的过程称为弛豫（relaxation）。归一化自相关函数单调衰减：
+当 $0\lt r\lt 1$ 时，AR(1) 模型只有一个正实特征值 $r$，扰动按 $r^n$ 衰减。这种向稳态恢复的过程称为弛豫（relaxation）。归一化自相关函数单调衰减：
 
 $$
-\rho_x(k)=a^{|k|}.
+\rho_x(k)=r^{|k|}.
 $$
 
 频谱中没有独立的非零频率共振模态。随机轨迹看起来可能时升时降，但这并不能单独证明存在周期性的动力学机制。
 
-如果 $-1\lt a\lt 0$，自相关函数 $\rho_x(k)=a^{|k|}$ 的符号会交替，谱峰位于 $\omega=\pi$，对应每两代一次的交替。这已经说明，*反馈的符号和特征值结构*比噪声轨迹看起来有多规律更重要。
+如果 $-1\lt r\lt 0$，自相关函数 $\rho_x(k)=r^{|k|}$ 的符号会交替，谱峰位于 $\omega=\pi$，对应每两代一次的交替。这已经说明，*反馈的符号和特征值结构*比噪声轨迹看起来有多规律更重要。
 
 <div id="82-a-minimal-model-capable-of-damped-oscillations"></div>
 
@@ -1657,8 +1657,8 @@ $$
 引入一个延迟反馈项：
 
 $$
-x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
-\qquad 0\lt r\lt 1,
+x_{n+1}=2R\cos\omega_0\,x_n-R^2x_{n-1}+\xi_n,
+\qquad 0\lt R\lt 1,
 \quad0\lt \omega_0\lt \pi.
 \tag{FT.1}
 $$
@@ -1666,19 +1666,19 @@ $$
 确定性递推的特征方程为
 
 $$
-z^2-2r\cos\omega_0\,z+r^2=0.
+z^2-2R\cos\omega_0\,z+R^2=0.
 $$
 
 其根为
 
 $$
-z_\pm=re^{\pm i\omega_0}.\tag{FT.2}
+z_\pm=Re^{\pm i\omega_0}.\tag{FT.2}
 $$
 
-模长 $r$ 控制阻尼，辐角 $\omega_0$ 决定特征角频率。因此，确定性响应中含有如下形式的项：
+模长 $R$ 控制阻尼，辐角 $\omega_0$ 决定特征角频率。因此，确定性响应中含有如下形式的项：
 
 $$
-x_n\sim r^n\cos(n\omega_0+\phi).
+x_n\sim R^n\cos(n\omega_0+\phi).
 \tag{FT.3}
 $$
 
@@ -1687,7 +1687,7 @@ $$
 在非零滞后处，平稳自协方差满足同一个二阶递推关系：
 
 $$
-C_x(k+1)=2r\cos\omega_0\,C_x(k)-r^2C_x(k-1),
+C_x(k+1)=2R\cos\omega_0\,C_x(k)-R^2C_x(k-1),
 \quad k\ge1.
 \tag{FT.4}
 $$
@@ -1695,14 +1695,14 @@ $$
 因此，归一化自相关函数具有如下形式：
 
 $$
-\rho_x(k)=r^{|k|}
+\rho_x(k)=R^{|k|}
 \big[\cos(k\omega_0)+b\sin(|k|\omega_0)\big],
 $$
 
 系数 $b$ 由 stationarity 确定。对这个二阶自回归模型（AR(2)），
 
 $$
-b=\frac{1-r^2}{1+r^2}\cot\omega_0.
+b=\frac{1-R^2}{1+R^2}\cot\omega_0.
 \tag{FT.5}
 $$
 
@@ -1710,8 +1710,8 @@ $$
 
 $$
 S_x(\omega)=\frac{\sigma_\xi^2}
-{\left|1-2r\cos\omega_0\,e^{-i\omega}
-+r^2e^{-2i\omega}\right|^2}.
+{\left|1-2R\cos\omega_0\,e^{-i\omega}
++R^2e^{-2i\omega}\right|^2}.
 \tag{FT.6}
 $$
 
@@ -1719,7 +1719,7 @@ $$
 
 ![Adder 抑制时间噪声的零频分量，而延迟反馈振荡器具有非零频率谱峰和振荡的自相关。](figures/05_spectra_and_oscillations.svg)
 
-*图 14. 零频抵消与振荡模态回答不同的问题。* A 图使用 adder 的 $a=1/2$ 和线性化分裂间隔时间关系（F.6），每条频谱除以各自过程的方差。B 图比较 AR(1) size 过程与 AR(2) 模型（FT.1），参数为 $r=0.9$、$\omega_0=\pi/3$ 弧度/分裂间隔。虚线标出模态的辐角，实际谱峰可能因阻尼而偏移。C 图展示相应的解析自相关。所有频谱都以分裂间隔数为基准，不是按实际时间定义的频率。
+*图 14. 零频抵消与振荡模态回答不同的问题。* A 图使用 adder 的 $r=1/2$ 和线性化分裂间隔时间关系（F.6），每条频谱除以各自过程的方差。B 图比较 AR(1) size 过程与 AR(2) 模型（FT.1），参数为 $R=0.9$、$\omega_0=\pi/3$ 弧度/分裂间隔。虚线标出模态的辐角，实际谱峰可能因阻尼而偏移。C 图展示相应的解析自相关。所有频谱都以分裂间隔数为基准，不是按实际时间定义的频率。
 
 <div id="83-what-the-spectrum-can-and-cannot-establish"></div>
 
@@ -1739,9 +1739,9 @@ $$
 
 ### 1. 如何消除 size memory？ {#problem-1-what-does-it-take-to-remove-size-memory}
 
-对于 $x_{n+1}=ax_n+\xi_n$，size memory 可以用条件期望 $\mathbb E[x_{n+k}\mid x_n]$、稳态方差和自相关函数描述。反馈系数 $a$ 决定偏差如何衰减；$a\lt 0$ 时，偏差还会交替变号。
+对于 $x_{n+1}=rx_n+\xi_n$，size memory 可以用条件期望 $\mathbb E[x_{n+k}\mid x_n]$、稳态方差和自相关函数描述。反馈系数 $r$ 决定偏差如何衰减；$r\lt 0$ 时，偏差还会交替变号。
 
-**结果：** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$，$\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$，$\rho(k)=a^{|k|}$。对于方差有限且非零的独立噪声，要有有限稳态方差，需满足 $|a|\lt 1$。负的 $a$ 会使相关性的符号交替。
+**结果：** $\mathbb E[x_{n+k}\mid x_n]=r^kx_n$，$\operatorname{Var}(x)=\sigma_\xi^2/(1-r^2)$，$\rho(k)=r^{|k|}$。对于方差有限且非零的独立噪声，要有有限稳态方差，需满足 $|r|\lt 1$。负的 $r$ 会使相关性的符号交替。
 
 ### 2. 直方图不变，相关性如何改变？ {#problem-2-correlation-without-changing-a-histogram}
 
@@ -1759,7 +1759,7 @@ $$
 
 AR(1) 频谱也可以直接从自协方差函数求出。结合式（F.6），可以看出分裂间隔时间频谱在 $\omega=0$ 处为零的原因。
 
-**结果：** 对几何级数求和，$\sum_{k=-\infty}^{\infty}a^{|k|}e^{-i\omega k}=(1-a^2)/(1+a^2-2a\cos\omega)$，再乘以 $\sigma_x^2=\sigma_\xi^2/(1-a^2)$。差分使每个傅里叶分量乘以 $e^{i\omega}-1$，该因子在零频处为零。
+**结果：** 对几何级数求和，$\sum_{k=-\infty}^{\infty}r^{|k|}e^{-i\omega k}=(1-r^2)/(1+r^2-2r\cos\omega)$，再乘以 $\sigma_x^2=\sigma_\xi^2/(1-r^2)$。差分使每个傅里叶分量乘以 $e^{i\omega}-1$，该因子在零频处为零。
 
 ### 5. 频谱的哪一部分影响增长？ {#problem-5-which-part-of-a-spectrum-matters-for-growth}
 

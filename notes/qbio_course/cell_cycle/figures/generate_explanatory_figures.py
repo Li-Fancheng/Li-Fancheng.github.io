@@ -116,10 +116,10 @@ def accumulated_time_covariances():
                  label=r"$\mathrm{Cov}(\tau_i,\tau_j)/\sigma_\tau^2$", ticks=[-1, 0, 1])
 
     ns = np.arange(1, 41)
-    for a, color, label in ((-.5, BLUE, r"Alternating memory: $a=-1/2$"),
-                             (0., GREEN, r"Independent: $a=0$"),
-                             (.5, ORANGE, r"Persistent memory: $a=1/2$")):
-        values = np.array([n + 2*np.sum((n-np.arange(1, n))*a**np.arange(1, n))
+    for r, color, label in ((-.5, BLUE, r"Alternating memory: $r=-1/2$"),
+                             (0., GREEN, r"Independent: $r=0$"),
+                             (.5, ORANGE, r"Persistent memory: $r=1/2$")):
+        values = np.array([n + 2*np.sum((n-np.arange(1, n))*r**np.arange(1, n))
                            for n in ns])
         variance.plot(ns, values, color=color, label=label)
     variance.set_title("B  |  Same variance per generation", loc="left", pad=14)

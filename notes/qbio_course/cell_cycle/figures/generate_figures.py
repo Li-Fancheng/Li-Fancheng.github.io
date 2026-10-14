@@ -44,12 +44,12 @@ for j in range(30):
 axes[0].plot([], [], color=timer_color, label="Independent timer")
 axes[0].plot([], [], color=feedback_color, label="Restoring log-size map")
 axes[0].axhline(0, color="#777777", lw=.7)
-axes[0].set_title("A  |  Illustrative lineage trajectories")
+axes[0].set_title("A  |  Lineage trajectories")
 axes[0].legend(loc="lower left", fontsize=10)
-finish(axes[0], r"Generation $n$", r"Log-size deviation $y_n-y_*$")
+finish(axes[0], r"Generation $n$", r"Log-size deviation $z_n$")
 axes[1].plot(g, g, color=timer_color, label=r"Timer: $n$")
 axes[1].plot(g, (1-.5**(2*g))/(1-.5**2), color=feedback_color,
-             label=r"Restoring map: $(1-a^{2n})/(1-a^2)$")
+             label=r"Restoring map: $(1-r^{2n})/(1-r^2)$")
 axes[1].set_title("B  |  Variance from a fixed initial size")
 axes[1].legend(fontsize=10)
 finish(axes[1], r"Generation $n$", "Variance / innovation variance")
@@ -134,16 +134,16 @@ save(fig, "04_noise_cancellation")
 # 5. Analytic spectra and ACFs; each PSD is scaled to unit process variance.
 fig, axes = plt.subplots(1, 3, figsize=(14, 4.2), layout="constrained")
 w = np.linspace(0, np.pi, 2001)
-a = .5
-sx = (1-a*a)/(1+a*a-2*a*np.cos(w))
-st = 4*np.sin(w/2)**2*sx/(2*(1-a))
+r = .5
+sx = (1-r*r)/(1+r*r-2*r*np.cos(w))
+st = 4*np.sin(w/2)**2*sx/(2*(1-r))
 axes[0].plot(w/np.pi, sx, color=BLUE, label="Birth size")
 axes[0].plot(w/np.pi, st, color=ORANGE, label="Generation time (linearized)")
 axes[0].set_title("A  |  Feedback suppresses zero frequency")
 axes[0].legend(fontsize=10)
 finish(axes[0], r"Angular frequency $\omega/\pi$", "PSD / process variance")
-r, w0 = .9, np.pi/3
-ar2 = 1/abs(1-2*r*np.cos(w0)*np.exp(-1j*w)+r*r*np.exp(-2j*w))**2
+R, w0 = .9, np.pi/3
+ar2 = 1/abs(1-2*R*np.cos(w0)*np.exp(-1j*w)+R*R*np.exp(-2j*w))**2
 ar2 /= np.trapezoid(ar2, w)/np.pi
 axes[1].plot(w/np.pi, sx, color=BLUE, label="AR(1): relaxation")
 axes[1].plot(w/np.pi, ar2, color=PURPLE, label="AR(2): damped oscillation")
@@ -152,9 +152,9 @@ axes[1].set_title("B  |  Delayed feedback creates a peak")
 axes[1].legend(fontsize=10)
 finish(axes[1], r"Angular frequency $\omega/\pi$", "PSD / process variance")
 k = np.arange(21)
-b = (1-r*r)/(1+r*r)/np.tan(w0)
-rho2 = r**k*(np.cos(k*w0)+b*np.sin(k*w0))
-axes[2].plot(k, a**k, "o-", color=BLUE, ms=4, label="AR(1)")
+b = (1-R*R)/(1+R*R)/np.tan(w0)
+rho2 = R**k*(np.cos(k*w0)+b*np.sin(k*w0))
+axes[2].plot(k, r**k, "o-", color=BLUE, ms=4, label="AR(1)")
 axes[2].plot(k, rho2, "o-", color=PURPLE, ms=4, label="AR(2)")
 axes[2].axhline(0, color="#777777", lw=.8)
 axes[2].set_title("C  |  The corresponding memories")
