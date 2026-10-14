@@ -3,7 +3,7 @@
 
 > 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-> **核心问题：** 单细胞的分裂时间有明显波动，这些波动能否转化为群体长期增长的差异？细胞大小调控如何影响这种转化？
+> **核心问题：** 单细胞的分裂时间波动能否转化为群体长期增长的差异？
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->
 
@@ -15,9 +15,9 @@
 
 <div id="lecture-roadmap-and-learning-objectives"></div>
 
-在相同环境中，即使遗传背景相同，细胞也不会同时分裂：有些世代短，有些世代长。与此同时，细胞大小虽然波动，却能够维持稳定的分布。单细胞追踪使这两类现象可以一起测量，也带来了一个预测问题：**知道单细胞世代时间的分布，是否足以推算群体的繁殖速度？**
+在相同环境中，即使基因型相同，细胞也不会同时分裂：有些世代短，有些世代长。同时，细胞大小虽然波动，却能够维持稳定的分布。单细胞追踪使这两类现象可以一起测量，也带来了一个预测问题：**知道单细胞世代时间的分布，是否足以推算群体的繁殖速度？**
 
-最直接的估计是把沿谱系测得的平均世代时间当作群体倍增时间。但群体中各条谱系的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均世代时间；相关实验图见[附录 A.2](#a2-experimental-doubling-time-comparison)。这一观测提示我们，单细胞平均值与群体增长之间需要一个明确的统计模型。
+最直接的估计是把沿谱系测得的平均世代时间当作群体倍增时间。但群体中各条谱系的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均世代时间；相关实验结果见正文第 2.2 节的[图 4](#experimental-doubling-time-comparison)。这一观测提示我们，单细胞平均值与群体增长之间需要一个明确的统计模型。
 
 另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的大小处分裂。在后一种情况下，子细胞继承了较小的出生大小，大小反馈又会影响它下一次何时分裂。因此，单代时间的快慢既涉及生长，也涉及分裂调控和大小继承。
 
@@ -168,7 +168,17 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.5}
 $$
 
-逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对倍增时间的实验比较保留在附录 A 的图 7 中。要注意，式（2.4）的比较基准是平均世代时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞大小增长率为 $\lambda$ 的群体**。
+逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均世代时间与群体倍增时间的实验比较见图 4。要注意，式（2.4）的比较基准是平均世代时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞大小增长率为 $\lambda$ 的群体**。
+
+<div id="a2-experimental-doubling-time-comparison"></div>
+
+<div id="experimental-doubling-time-comparison"></div>
+
+![大肠杆菌的世代时间变异、群体倍增时间及增长率增益的实验测量。](figures/hashimoto_2016_fig03.jpg)
+
+*图 4. 实验中的平均世代时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原图 3。B 图比较平均世代时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与世代时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示世代时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
+
+**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示细胞大小的指数增长率。把该图与式（2.7）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持大小稳态、且所有细胞共有恒定大小增长率的群体违反了质量守恒。
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
@@ -229,7 +239,7 @@ $$
 
 ![细菌实验中，大小增量近似不依赖出生大小。](figures/taheri_araghi_2015_f2_highres.png)
 
-*图 4. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 2。在各培养条件下，平均大小增量近似不依赖出生大小；重新缩放后，不同出生大小对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和细胞大小相关突变株。
+*图 5. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 2。在各培养条件下，平均大小增量近似不依赖出生大小；重新缩放后，不同出生大小对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和细胞大小相关突变株。
 
 对式（3.1）取期望，得到
 
@@ -289,7 +299,7 @@ $$
 
 ![中间各代的对数大小贡献相互抵消，只留下起点和终点的大小。](figures/09_telescoping_identity.svg)
 
-*图 5. 时间波动化为边界项。* 蓝色和紫色的对数大小项在相邻世代间抵消，只留下橙色的初始项和绿色的末尾项。这种抵消对每一个 $n$ 都严格成立。式（3.5）称为逐项相消恒等式（telescoping identity），也常称望远镜求和恒等式。
+*图 6. 时间波动化为边界项。* 蓝色和紫色的对数大小项在相邻世代间抵消，只留下橙色的初始项和绿色的末尾项。这种抵消对每一个 $n$ 都严格成立。式（3.5）称为逐项相消恒等式（telescoping identity），也常称望远镜求和恒等式。
 
 **单个世代时间有波动，并不意味着这些波动会经过许多代不断累积。** 如果各代时间独立，每一代都会给累计时间增加一份新的不确定性。而这里，同一个继承的大小在相邻世代中以相反符号出现。反馈使起点和终点的大小保持在平稳分布内，因此边界项的方差不会随世代数成比例增长。
 
@@ -337,7 +347,7 @@ $$
 
 ![大小的正相关与世代时间的负相关，使累计时间的方差保持有界。](figures/04_noise_cancellation.svg)
 
-*图 6. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的出生大小相关性与式（3.8）中线性化的世代时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
+*图 7. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的出生大小相关性与式（3.8）中线性化的世代时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
 
 ---
 
@@ -502,15 +512,9 @@ $$
 
 其中 $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ 是从一个新生细胞出发时的渐近振幅；$\sim$ 表示 $M(t)/(Ae^{\Lambda t})\to1$。下面计算振幅，并说明同步分裂时需要怎样修正。
 
-#### A.2 实验中的倍增时间比较 {#a2-experimental-doubling-time-comparison}
+<div id="a3-the-renewal-amplitude-and-lattice-exception"></div>
 
-![大肠杆菌的世代时间变异、群体倍增时间及增长率增益的实验测量。](figures/hashimoto_2016_fig03.jpg)
-
-*图 7. 实验中的平均世代时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原图 3。B 图比较平均世代时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与世代时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示世代时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
-
-**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示细胞大小的指数增长率。把该图与式（2.7）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持大小稳态、且所有细胞共有恒定大小增长率的群体违反了质量守恒。
-
-#### A.3 更新方程的渐近振幅与格点分布例外 {#a3-the-renewal-amplitude-and-lattice-exception}
+#### A.2 更新方程的渐近振幅与格点分布例外 {#a2-the-renewal-amplitude-and-lattice-exception}
 
 第 2.1 节通过 $1-2\widehat p(s)=0$ 的正根 $\Lambda$ 得到群体增长指数。它右侧没有其他极点，因为
 
@@ -1771,10 +1775,10 @@ AR(1) 频谱也可以直接从自协方差函数求出。结合式（F.6），�
 
 ### 参考文献 {#references}
 
-- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原图 1–3 对应本笔记的图 2、4、13。
+- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原图 1–3 对应本笔记的图 2、5、13。
 - Ho 等，*Annual Review of Biophysics*（2018）：细胞大小调控、谱系相关性与波动。
 - Godin 等，*Nature Methods*（2010）：单细胞生长测量。
-- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原图 3 对应本笔记的图 7。
+- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原图 3 对应本笔记的图 4。
 - Wallden 等，*Cell*（2016）；Ho 和 Amir，*Frontiers in Microbiology*（2015）；Micali 等，*Cell Reports*（2018）：与复制相关的模型，以及唯象大小调控和分子实现之间的区别。
 - [Ho 实验室资料](https://ho.lab.westlake.edu.cn/teaching_en.html)
 - Pigolotti, S. (2021). *Generalized Euler–Lotka equation for correlated cell divisions*. **Physical Review E, 103**, L060402. [doi:10.1103/PhysRevE.103.L060402](https://doi.org/10.1103/PhysRevE.103.L060402)。
