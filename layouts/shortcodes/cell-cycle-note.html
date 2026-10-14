@@ -1,7 +1,7 @@
-{{- /* Select the note text for the current language edition. */ -}}
+{{- /* The current note is maintained in Chinese; old English URLs redirect to it. */ -}}
 {{- $path := "notes/qbio_course/cell_cycle/cell_cycle_correlations_note.md" -}}
-{{- if eq .Page.Lang "en" -}}
-  {{- $path = "notes/qbio_course/cell_cycle/cell_cycle_correlations_note_en.md" -}}
+{{- if not (fileExists $path) -}}
+  {{- errorf "Missing cell-cycle note source: %s" $path -}}
 {{- end -}}
 {{- $source := readFile $path -}}
 {{- /* The page header already displays the note title and subtitle. */ -}}

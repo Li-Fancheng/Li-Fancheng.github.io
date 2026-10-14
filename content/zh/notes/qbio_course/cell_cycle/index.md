@@ -1,8 +1,8 @@
 ---
-title: "细胞周期：从单细胞噪声到群体增长"
-subtitle: "细胞周期调控、时间相关性与随机动力学"
+title: "从单细胞分裂差异到群体增长"
+subtitle: "size inheritance、细胞周期调控与 lineage 相关性"
 date: 2026-10-14
-summary: "关于细胞周期的统计物理笔记：从分裂时间噪声与细胞大小稳态出发，通过定增量分裂模型和逐项相消恒等式解释群体增长，并整理完整推导与适用条件。"
+summary: "从细胞大小稳态与分裂间隔的实验现象出发，比较独立分裂模型与 size inheritance，推导 lineage 相关性、时间噪声抵消及群体增长的关系，并整理适用条件与技术附录。"
 translationKey: cell-cycle-correlations
 layout: cell-cycle
 math: true
@@ -13,6 +13,6 @@ tags:
   - 统计物理
 ---
 
-这篇笔记整理细胞大小调控、分裂时间波动与群体增长之间的关系。重点是大小反馈如何产生代际相关性，以及这些相关性如何抵消长期累积的时间噪声。
+这篇笔记围绕“单细胞的分裂时间波动能否转化为群体长期增长的差异”展开，从实验现象、独立模型的比较基准讲到 size inheritance 与 lineage 相关性，并在技术附录中整理推导与适用条件。
 
 {{% cell-cycle-note %}}

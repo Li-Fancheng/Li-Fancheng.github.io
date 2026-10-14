@@ -1,4 +1,13 @@
-{{- $target := .Site.GetPage .Params.redirect -}}
+{{- $targetSite := .Site -}}
+{{- with .Params.redirect_language -}}
+  {{- $language := . -}}
+  {{- range $targetSite.Sites -}}
+    {{- if eq .Language.Lang $language -}}
+      {{- $targetSite = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $target := $targetSite.GetPage .Params.redirect -}}
 {{- if not $target -}}
   {{- errorf "Missing note redirect target: %s" .Params.redirect -}}
 {{- end -}}
