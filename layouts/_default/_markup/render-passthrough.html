@@ -1,0 +1,6 @@
+{{- /* Preserve LaTeX as text: inequality signs must not become HTML tags. */ -}}
+{{- if eq .Type "block" -}}
+<div class="math-block">\[{{ .Inner | htmlEscape | safeHTML }}\]</div>
+{{- else -}}
+<span class="math-inline">\({{ .Inner | htmlEscape | safeHTML }}\)</span>
+{{- end -}}

@@ -18,7 +18,6 @@ Single-cell tracking experiments show both variability and **size homeostasis**:
 Our theoretical sequence is
 
 $$
-
 \begin{gathered}
 \text{independent division-time noise}\\
 \downarrow\\
@@ -30,7 +29,6 @@ $$
 \downarrow\\
 \text{fluctuation spectra}
 \end{gathered}
-
 $$
 
 Two quantities will recur throughout the lecture:
@@ -251,7 +249,6 @@ $$
 Therefore
 
 $$
-
 \Lambda\simeq
 \frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.
@@ -377,7 +374,6 @@ $$
 Equivalently,
 
 $$
-
 \ln2+
 \lim_{n\to\infty}\frac1n
 \ln\mathbb E\!\left[
@@ -465,7 +461,6 @@ $$
 There are $n$ terms of separation zero, and $2(n-k)$ ordered pairs separated by $k$. Hence the exact finite-$n$ formula is
 
 $$
-
 \operatorname{Var}(T_n)
 =nC_\tau(0)
 +2\sum_{k=1}^{n-1}(n-k)C_\tau(k).
@@ -531,10 +526,8 @@ The approximation assumes sufficiently weak fluctuations and a regular expansion
 **Main conclusion so far:**
 
 $$
-
 \text{Population growth responds to accumulated lineage noise,}
 \;\text{not merely one-generation noise.}
-
 $$
 
 It is a *long-time* and *long-wavelength* property of the chronological process.
@@ -563,7 +556,6 @@ $$
 The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
 
 $$
-
 P=
 \begin{pmatrix}
 p&1-p\\
@@ -575,7 +567,6 @@ $$
 A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0<p<1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
 
 $$
-
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
 \quad
 \mathbb E[\tau]=\mu,
@@ -651,7 +642,6 @@ $$
 At each generation, binary division contributes a factor of 2. Therefore the propagation matrix for expected discounted descendant weights is
 
 $$
-
 K_\Lambda=
 2\begin{pmatrix}
 e^{-\Lambda\tau_s}&0\\
@@ -700,7 +690,6 @@ $$
 The Perron eigenvalue is
 
 $$
-
 \rho(K_\Lambda)
 =p(A+B)+\sqrt{p^2(A-B)^2+4(1-p)^2AB}.
 \tag{5.8}
@@ -882,7 +871,6 @@ $$
 Dividing by $\sigma_x^2$ gives
 
 $$
-
 \rho_v(k)
 \equiv\operatorname{Corr}(v_n,v_{n+k})
 =a^k=2^{-k}.
@@ -928,7 +916,6 @@ $$
 Thus the **exact lineage identity** is
 
 $$
-
 \tau_n=\frac{\ln2}{\lambda}
 +\frac{\ln v_{n+1}-\ln v_n}{\lambda}.
 \tag{6.9}
@@ -988,7 +975,6 @@ $$
 which is finite. Therefore
 
 $$
-
 D_\tau
 =\lim_{n\to\infty}\frac{\operatorname{Var}(T_n)}n
 =0.
@@ -1060,7 +1046,6 @@ $$
 Therefore
 
 $$
-
 \delta\tau_n
 \equiv\tau_n-\frac{\ln2}{\lambda}
 \simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
@@ -1101,7 +1086,6 @@ $$
 Dividing by (6.18) yields
 
 $$
-
 \rho_\tau(k)
 \simeq-\frac{1-a}{2}a^{k-1},
 \qquad k\ge1.
@@ -1171,7 +1155,6 @@ $$
 Its two-sided power spectral density is
 
 $$
-
 S_y(\omega)=\sum_{k=-\infty}^{\infty}
 C_y(k)e^{-i\omega k},
 \qquad -\pi\le\omega\le\pi.
@@ -1181,7 +1164,6 @@ $$
 The inverse relation is
 
 $$
-
 C_y(k)=\frac1{2\pi}\int_{-\pi}^{\pi}
 S_y(\omega)e^{i\omega k}\,d\omega.
 \tag{7.2}
@@ -1205,7 +1187,6 @@ $$
 This gives equation (4.5) a spectral form:
 
 $$
-
 \Lambda\simeq
 \frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}S_\tau(0).
@@ -1292,7 +1273,6 @@ Notice that differencing may emphasize high-frequency fluctuations, even when th
 For the two-state Markov model of Section 5, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|<1$ gives
 
 $$
-
 S_\tau(\omega)
 =\delta^2\frac{1-a^2}{1+a^2-2a\cos\omega}.
 \tag{7.9}
@@ -1335,7 +1315,6 @@ If $-1<a<0$, the ACF alternates sign, $\rho_x(k)=a^{|k|}$, and the spectral maxi
 Introduce a delayed feedback term:
 
 $$
-
 x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
 \qquad 0<r<1,
 \quad0<\omega_0<\pi.
@@ -1388,7 +1367,6 @@ $$
 The power spectrum is
 
 $$
-
 S_x(\omega)=\frac{\sigma_\xi^2}
 {\left|1-2r\cos\omega_0\,e^{-i\omega}
 +r^2e^{-2i\omega}\right|^2}.
@@ -1450,7 +1428,6 @@ Under size homeostasis and the stated moment conditions, the accumulated noise i
 **Finally:** in a weak-noise expansion, the effect of temporal correlations on population growth is summarized by
 
 $$
-
 \Lambda\simeq\frac{\ln2}{\bar\tau}
 +\frac{(\ln2)^2}{2\bar\tau^3}\,S_\tau(0).
 \tag{9.4}
@@ -1528,7 +1505,6 @@ $$
 If $\mathbb E[T_n]=n\bar\tau$ and $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$, dividing by $n$ gives
 
 $$
-
 \lim_{n\to\infty}\frac1nD_{\mathrm{KL}}(p_n\|q_n)
 =\Lambda\bar\tau-\ln2.
 \tag{A.5}
@@ -1596,7 +1572,6 @@ $$
 The accumulated time becomes
 
 $$
-
 T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln r_j)
 +\frac{\ln v_n-\ln v_0}{\lambda}.
 \tag{C.1}
