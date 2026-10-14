@@ -12,7 +12,10 @@
       <summary>{{ i18n "table_of_contents" }}</summary>
       {{ .TableOfContents }}
     </details>
-    {{ .Content }}
+    {{- /* Keep native table layout; scroll its wrapper on narrow screens. */ -}}
+    {{- $content := replaceRE `(<table(?:\s[^>]*)?>)` `<div class="cell-cycle-table">$1` .Content -}}
+    {{- $content = replace $content "</table>" "</table></div>" -}}
+    {{ $content | safeHTML }}
   </article>
 </div>
 {{ end }}
