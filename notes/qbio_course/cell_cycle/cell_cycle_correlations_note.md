@@ -52,7 +52,7 @@ $$
 
 <div id="12-the-timer-becomes-a-random-walk-in-log-size"></div>
 
-### 1.2 独立分裂时间遗漏了 size inheritance 的反馈 {#12-a-timer-is-a-random-walk-in-log-size}
+### 1.2 i.i.d.分裂时间模型 {#12-a-timer-is-a-random-walk-in-log-size}
 
 考虑与 size 无关的定时分裂模型（timer），假设每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
 
@@ -68,7 +68,11 @@ $$
 \operatorname{Var}(y_n-y_0)=n\lambda^2\sigma_\tau^2.\tag{1.3}
 $$
 
-把均值调到 $\mu=\ln2/\lambda$，可以消除平均漂移，但方差仍会无限增长。**没有漂移，不等于存在把 size 拉回正常范围的反馈。** 即使完全没有噪声，平衡的 timer 也只是给出 $v_{n+1}=v_n$：initial size 的偏差会一直保留。具有恢复作用的映射则会让偏差每代缩小为原来的 $|a|<1$ 倍。去掉噪声只能阻止新的随机游走；要纠正已有偏差，还需要反馈。
+式（1.2）表明，log size 每代增加一个独立的随机量 $\lambda\tau_n-\ln2$，沿 lineage 形成 random walk ）。当 $\lambda\mu>\ln2$ 时，这个 random walk 平均向较大的 size 漂移；当 $\lambda\mu<\ln2$ 时，则平均向较小的 size 漂移。
+
+若 $\mu=\ln2/\lambda$ ，每一步随机增量的均值为零，log size 成为无漂移的 random walk 。但只要 $\sigma_\tau^2>0$，这些随机增量就会不断累积：从固定的 initial size 出发，log size 的均值保持不变，方差随 $n$ 线性增长。因此，消除平均漂移仍不能维持稳定的 size distribution。
+
+原因在于，timer 的分裂间隔不随 birth size 改变：细胞偏大或偏小时，都没有相应的调整来纠正偏差。即使去掉全部噪声，并令分裂间隔固定为 $\ln2/\lambda$，也只能得到 $v_{n+1}=v_n$，使每条 lineage 保持各自的 initial size；已有的 size 偏差不会缩小。要纠正这些偏差，分裂规则还需要随 birth size 作出相应调整。
 
 ![定时分裂下的 cell size 不断游走，而恢复性反馈能限制 size 波动。](figures/01_timer_and_homeostasis.svg)
 
@@ -1323,7 +1327,7 @@ $$
 |---|---:|---|
 | Sizer（定 size 分裂） | $0$ | division size 与 birth size 无关，不继承线性 size memory |
 | Adder（定增量分裂） | $1/2$ | 继承 birth size 偏差的一半 |
-| Timer（在平衡 size 附近线性化） | $1$ | 没有恢复性反馈，表现为随机游走或偏差不变 |
+| Timer（在平衡 size 附近线性化） | $1$ | 没有恢复性反馈，表现为 random walk 或偏差不变 |
 
 当 $|a|\lt 1$ 时，
 
@@ -1335,7 +1339,7 @@ $$
 
 这些调控策略的差别，在于**birth size 的扰动消退得多快**。观测到的斜率能约束有效动力学，但无法唯一确定具体的生化实现方式。
 
-表中的 timer 是局部或加性近似；精确的乘性 timer 映射，对应第 1 节推导的 log size 随机游走。
+表中的 timer 是局部或加性近似；精确的乘性 timer 映射，对应第 1 节推导的 log size  random walk 。
 
 下面给出第 4.3 节所用的完整频谱，频率以分裂间隔数为基准。
 
