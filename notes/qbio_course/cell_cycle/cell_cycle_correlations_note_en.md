@@ -1,9 +1,9 @@
-# From Single-Cell Noise to Population Growth
-## Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics
+# From Single-Cell Division Variability to Population Growth {#from-single-cell-noise-to-population-growth}
+## Size Inheritance, Cell-Cycle Regulation, and Lineage Correlations {#cell-cycle-regulation-temporal-correlations-and-stochastic-dynamics}
 
 > Personal notes for Introduction to Quantitative Biology, Westlake University, Fall 2026.
 
-> **Central question.** Why can independent division-time fluctuations accelerate population growth, while size-homeostatic cells may eliminate this apparent growth advantage?
+> **Central question.** Can fluctuations in single-cell division times translate into differences in long-term population growth? How does cell-size regulation affect this translation?
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->
 
@@ -15,7 +15,15 @@
 
 <div id="lecture-roadmap-and-learning-objectives"></div>
 
-Cells fluctuate in size while maintaining a stable size distribution, so a stochastic division model must account for that stability. Euler–Lotka theory creates an apparent conflict between noisy population growth and conserved biomass. The adder provides an explanation: inherited size makes successive division times correlated, allowing their fluctuations to cancel over many generations.
+Even cells with the same genetic background in the same environment do not divide at the same time: some generations are short and others long. Meanwhile, cell sizes fluctuate while their distribution can remain stable. Single-cell tracking lets us measure both phenomena and poses a prediction problem: **is the distribution of single-cell generation times sufficient to infer how fast a population multiplies?**
+
+The most direct estimate treats the mean generation time measured along a lineage as the population doubling time. Yet lineages contribute different numbers of descendants, and earlier-dividing ancestors usually leave more offspring. [Hashimoto et al. (2016)](https://doi.org/10.1073/pnas.1519412113) observed population doubling times shorter than mean generation times; the experimental figure is in [Appendix A.2](#a2-experimental-doubling-time-comparison). This observation calls for an explicit statistical model connecting single-cell averages to population growth.
+
+A second question is essential: **can an early division become a timing lead that persists over many generations?** Early division may reflect faster biomass accumulation, or division at a smaller size. In the latter case, daughters inherit a smaller birth size, and size feedback can affect when they divide next. The duration of one generation therefore involves growth, division regulation, and size inheritance.
+
+We first use experimental size stability to establish the relation between growth and division, then use independent division times as a baseline for understanding how population sampling favors faster histories. The adder then shows how size deviations propagate to later generations, distinguishing local timing fluctuations from differences that accumulate over many generations. Finally, we summarize how size regulation constrains whole lineage histories. The main analysis holds every cell's size-growth rate fixed to isolate division timing; variability in growth rates is an extension discussed at the end.
+
+**Size homeostasis** describes correction of size deviations; **stationarity** means that a statistical distribution does not change with generation. They are related but distinct. We write cell size as $v$ and use volume for the conservation argument.
 
 We distinguish the **population growth rate** $\Lambda=\lim_{t\to\infty}t^{-1}\ln N(t)$, when this limit exists, from the common **single-cell size growth rate** $\lambda$ in $\dot v=\lambda v$. Branching calculations first determine the exponent of $M(t)=\mathbb E[N(t)]$; identifying it with the exponent of a typical population requires the branching regularity conditions discussed in [Appendix C](#appendix-c). The volume argument instead applies directly to a realized population.
 
@@ -33,9 +41,9 @@ A **chronological lineage** follows one daughter chosen with probability $1/2$ a
 
 <div id="1-why-an-independent-division-timer-does-not-regulate-size"></div>
 
-## 1. Cell-size homeostasis and the failure of a timer
+## 1. Experimental starting point: variable division times, stable sizes {#1-cell-size-homeostasis-and-the-failure-of-a-timer}
 
-Single-cell tracking experiments show variability together with recovery from initially small or large sizes. A stationary size distribution is therefore a dynamical constraint, not simply a narrow histogram. The observations of [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009) motivate comparing division rules that respond differently to inherited birth size.
+Single-cell tracking records division times, birth and division sizes, and growth trajectories between divisions. Initially small or large cells recover toward normal sizes, and generation time depends on birth size. The observations of [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009) motivate comparing division rules that respond differently to inherited birth size. Explaining generation-time variability requires accounting for this response.
 
 <div id="11-exponential-growth-between-divisions"></div>
 
@@ -54,11 +62,11 @@ v_n^{\mathrm d}=v_n e^{\lambda\tau_n},\qquad
 v_{n+1}=\frac12v_n e^{\lambda\tau_n}.\tag{1.1}
 $$
 
-This relation separates the division rule, which chooses $\tau_n$, from the growth and partition kinematics.
+This relation separates the division rule, which chooses $\tau_n$, from the growth and partition kinematics. At the same birth size and the same $\lambda$, earlier division means a smaller division size and smaller daughters. A change in division timing therefore changes the next generation's initial state.
 
 <div id="12-the-timer-becomes-a-random-walk-in-log-size"></div>
 
-### 1.2 A timer is a random walk in log size
+### 1.2 Independent division times omit feedback from inherited size {#12-a-timer-is-a-random-walk-in-log-size}
 
 A size-independent timer draws i.i.d. positive times with mean $\mu$ and variance $\sigma_\tau^2$. Set $y_n=\ln v_n$. Taking logarithms of (1.1) and iterating gives
 
@@ -96,15 +104,15 @@ The slopes describe loss of size memory, rather than unique molecular mechanisms
 
 *Fig 2. Experimental size control.* Original Figure 1 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). In panel D, generation time decreases with birth size while division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C give microscopy and growth-condition context.
 
-The timer fails one biological test. Its population-growth prediction nevertheless reveals an important statistical mechanism, which we examine next.
+These observations and models show that generation times cannot be specified freely without regard to birth size. We now temporarily set size feedback aside and use independent division times as a prediction baseline: why does the single-cell mean underestimate the population's multiplication rate in this model?
 
 ---
 
 <div id="2-eulerlotka-theory-why-division-time-noise-can-accelerate-a-population"></div>
 
-## 2. Division-time noise and the population growth paradox
+## 2. Predicting population growth from single-cell statistics: an independent baseline {#2-division-time-noise-and-the-population-growth-paradox}
 
-Independent lifetime fluctuations can make a population double faster than its mean chronological generation time. Understanding this effect requires both sampling bias and biomass conservation.
+For a chronological mean generation time $\mu$, the simplest estimate is $\Lambda=\ln2/\mu$. An independent branching model explains what this estimate omits: histories with different division times contribute different numbers of descendants to the later population. The model first answers a statistical prediction question; applying it to size-regulating cells also requires checking the physiological constraints on growth and division.
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
@@ -164,9 +172,9 @@ The step-by-step expansion is in [Appendix B](#appendix-b); an information-theor
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
-### 2.3 The conservation constraint
+### 2.3 Cell-number growth and biomass growth: what is held fixed? {#23-the-conservation-constraint}
 
-Return to cells growing at one common constant size-growth rate $\lambda$. Define
+Equation (2.4) holds mean generation time $\mu$ fixed, without fixing cell sizes or biomass accumulation rates. To distinguish earlier division from faster growth, return to cells growing at one common constant size-growth rate $\lambda$. Define
 
 $$
 V_{\mathrm{tot}}(t)=\sum_{i\text{ alive at }t}v_i(t).
@@ -194,15 +202,17 @@ $$
 
 Convergence of the snapshot mean to a finite positive value is sufficient; bounded periodic modulation also suffices. A stationary **chronological birth-size** distribution alone does not establish this snapshot condition, because the population weights cells differently.
 
-For a stationary chronological lineage with $\mathbb E|\ln v|<\infty$, taking expectations of (1.2) gives $\mu=\ln2/\lambda$. Independent noisy lifetimes would then predict $\Lambda>\lambda$, whereas (2.7) fixes $\Lambda=\lambda$ under snapshot homeostasis. The assumptions are incompatible: the timer's size distribution wanders, as Section 1 already showed. In a physically size-regulating system, division times respond to inherited sizes and acquire temporal correlations. The apparent paradox therefore identifies the missing dynamical constraint.
+At fixed $\lambda$, a cell-number exponent $\Lambda>\lambda$ would require the mean snapshot size to decrease exponentially. The independent timer's growth increment relative to the same-mean-generation-time baseline therefore cannot be interpreted directly as a proliferation benefit available to size-homeostatic cells. It also does not establish a growth cost of size regulation.
+
+As a model consistency check, stationarity along a chronological lineage with $\mathbb E|\ln v|<\infty$ gives $\mu=\ln2/\lambda$ by taking expectations of (1.2). Substituting this mean into a noisy independent model would predict $\Lambda>\lambda$, incompatible with (2.7) under its snapshot condition. Section 1 explains why: the independent timer itself cannot maintain size homeostasis. Predicting a real population from single-cell measurements requires describing how division times respond to inherited sizes and how that response affects whole lineage histories.
 
 ---
 
 <div id="6-exactly-solvable-example-ii-the-adder-as-a-size-homeostatic-stochastic-map"></div>
 
-## 3. Size feedback, the adder, and exact cancellation
+## 3. Can an early division create a lasting lead? Size inheritance and the adder {#3-size-feedback-the-adder-and-exact-cancellation}
 
-The adder is a concrete mechanism; the central cancellation will follow from growth and partition kinematics more generally.
+We now follow the consequences of a timing change. At the same birth size and a fixed growth rate, an earlier division leaves smaller daughters. If the next generation divides after adding a fixed size, its smaller birth size tends to lengthen its generation time. The adder provides a concrete example of this feedback. We first calculate how size deviations recover, then ask whether they can make accumulated time depart from the usual pace over many generations.
 
 <div id="61-definition-of-the-adder"></div>
 
@@ -238,7 +248,7 @@ The autocorrelation follows by iterating the restoring map: future innovations h
 
 <div id="64-connecting-the-adder-to-generation-times"></div>
 
-### 3.2 From growth to generation time
+### 3.2 How generation time records size changes {#32-from-growth-to-generation-time}
 
 Exponential growth and symmetric division require
 
@@ -257,7 +267,7 @@ A generation time is a **difference** of adjacent log sizes. This is an exact id
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
-### 3.3 The telescoping identity {#33-telescoping-the-theoretical-core}
+### 3.3 From individual cycles to accumulated time: telescoping {#33-telescoping-the-theoretical-core}
 
 Summing (3.4) from $0$ to $n-1$,
 
@@ -333,9 +343,9 @@ Birth sizes remain positively correlated, yet generation times are negatively co
 
 <div id="4-why-integrated-temporal-correlations-control-growth"></div>
 
-## 4. Temporal correlations and long-time fluctuations
+## 4. Which lineage statistics predict population growth? {#4-temporal-correlations-and-long-time-fluctuations}
 
-We now express the mechanism without committing to an adder and identify the controlled approximation behind a general correlation-based growth correction.
+The adder shows that a one-generation histogram does not tell us whether a fast generation is followed by another fast generation or compensated by a slower one. In general, growth calculations require the statistics of whole histories. At second order in a weak-noise expansion, that information reduces to the integrated covariance across generations. We develop both levels to establish when a correlation function can predict growth.
 
 <div id="3-correlated-division-times-a-generalized-eulerlotka-relation"></div>
 
@@ -420,17 +430,25 @@ If $S_y$ is finite at zero, differencing removes zero-frequency timing noise. Sl
 
 <div id="what-remains-biologically-open"></div>
 
-## 5. Synthesis and outlook
+## 5. Returning to biology: which single-cell differences affect long-term growth? {#5-synthesis-and-outlook}
 
-An independent timer ignores inherited size, turning log size into a random walk. Independent lifetime noise nevertheless increases the growth rate of its branching population relative to a deterministic population with the same mean lifetime, because fast histories receive greater descendant weight. These two statements are consistent: that timer population does not maintain size homeostasis under common exponential growth and symmetric division.
+### 5.1 Division variability and long-term proliferation differences
 
-The adder supplies restoring feedback and creates positive birth-size memory alongside negative timing correlations in its small-fluctuation limit. The more general result is kinematic: under one constant $\lambda$ and symmetric division, each generation time contains a difference of adjacent log sizes. Summing makes every interior fluctuation cancel. Stationary log sizes with finite variance therefore give $D_\tau=0$, even when individual times fluctuate appreciably.
+A mean generation time measured along a lineage is generally insufficient to predict the population doubling time. In the independent model, earlier-dividing ancestors leave more descendants, and Euler–Lotka supplies the statistical weighting. In cells with a fixed size-growth rate, however, earlier division also changes daughters' birth sizes. Their subsequent response determines whether the timing differences accumulate.
 
-The exact population-growth conclusion needs more: snapshot homeostasis in the conservation argument, or subexponential endpoint weights and a valid correlated branching-growth relation in the lineage argument. Under those conditions $\Lambda=\lambda$ exactly. By contrast, the formula involving $D_\tau$ or $S_\tau(0)$ is a second-order weak-noise approximation for a more general correlated lifetime model. It cannot establish an all-noise growth theorem merely by setting its correction to zero.
+The adder demonstrates a specific mechanism: size feedback corrects inherited deviations and produces negative generation-time correlations in the small-fluctuation limit. More generally, at constant $\lambda$ with symmetric division, accumulated timing deviations depend only on the initial and final log sizes. Stationary log sizes with finite variance keep the accumulated variance bounded, giving $D_\tau=0$. Individual cycles still vary, but their timing fluctuations have no persistent variance accumulation.
 
-This is a statistical-physics route from observation to mechanism: test whether a stochastic model respects biological stability, use conservation to expose incompatible assumptions, and examine which fluctuations survive over long times. The adder provides a transparent realization, while telescoping extends to other homeostatic control laws within the same kinematics. Random partition asymmetry and growth-rate variability change those kinematics, as qualified in [Appendix G](#appendix-g).
+The exact population exponent additionally requires the snapshot mean-size condition, or subexponential endpoint weights and a valid correlated branching-growth relation. Under the respective conditions, $\Lambda=\lambda$. This is a joint constraint from fixed growth rate and size stability; the analysis does not establish a tradeoff between size regulation and proliferation. For more general correlated lifetime models, $D_\tau$ or $S_\tau(0)$ controls the growth correction only within a valid second-order weak-noise expansion. Its vanishing alone cannot establish an exact result at arbitrary noise strength.
 
-**An open question:** What changes when the single-cell exponential growth rate itself fluctuates and carries intergenerational correlations?
+### 5.2 From one-generation distributions to lineage histories
+
+A one-generation distribution describes how often short and long cycles occur, without specifying their order along a lineage. The two-state model in [Appendix D](#appendix-d) makes the distinction explicit: strict alternation fixes the total duration of every two generations, whereas persistence produces runs of fast or slow generations. Identical one-generation distributions can therefore yield different time weights for whole histories and different population growth rates. Connecting single cells to populations requires retaining the links between generations.
+
+Size regulation further restricts which timing histories can occur. Under the growth and partition conditions used here, a lineage that keeps accumulating a timing lead or delay must have birth sizes that keep decreasing or increasing, respectively. Homeostasis constrains that long-term accumulation, beyond the width of the size distribution. The adder makes the feedback mechanism explicitly calculable; telescoping extends to other size-control rules under the same growth and partition conditions. The central distinction is that a one-generation distribution describes local fluctuations, while size inheritance and feedback determine whether they can become lasting differences between lineage histories.
+
+### 5.3 From division timing to variable growth capacity
+
+Holding $\lambda$ fixed isolates how division regulation rearranges timing for a given biomass accumulation law. The next biological question is: **what changes when cells accumulate biomass at different rates and pass those differences to their daughters?** When growth rates vary across generations, there is no common proportionality factor between generation time and log-size change, so accumulated time no longer telescopes in the manner used here. Growth-rate differences and their intergenerational correlations then enter the growth problem, beyond the conclusions of the fixed-$\lambda$ model. [Lin and Amir (2020)](https://doi.org/10.1103/PhysRevE.101.012401) studies these effects. How growth-rate variability and random partition asymmetry change the relations used here is discussed in [Appendix G](#appendix-g).
 
 
 ---
@@ -484,11 +502,11 @@ $$
 
 Here $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ is the asymptotic amplitude for one initial newborn cell, and $\sim$ means $M(t)/(Ae^{\Lambda t})\to1$. Its amplitude and the qualification for synchronized divisions are calculated below.
 
-#### A.2 Experimental doubling-time comparison
+#### A.2 Experimental doubling-time comparison {#a2-experimental-doubling-time-comparison}
 
 ![Measured generation-time variability, population doubling time, and growth-rate gain in E. coli.](figures/hashimoto_2016_fig03.jpg)
 
-*Fig 7. Experimental population growth advantage.* Original Figure 3 from [Hashimoto et al., *PNAS* (2016)](https://doi.org/10.1073/pnas.1519412113). Panel B compares mean generation time with population doubling time; ratios above one indicate faster population doubling. Panel C relates the gain to generation-time variability; panel E compares Euler–Lotka predictions with measurements. Panels A and D show the lifetime distribution and model, respectively. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03).
+*Fig 7. Experimental mean generation time and population doubling time.* Original Figure 3 from [Hashimoto et al., *PNAS* (2016)](https://doi.org/10.1073/pnas.1519412113). Panel B compares mean generation time with population doubling time; ratios above one indicate faster population doubling. Panel C relates the gain to generation-time variability; panel E compares Euler–Lotka predictions with measurements. Panels A and D show the lifetime distribution and model, respectively. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03).
 
 **Notation and scope.** In this paper's gain definition, $\lambda=\ln2/\langle\tau\rangle_g$; our $\lambda$ denotes the exponential growth rate of cell size. These definitions must be distinguished when comparing this figure with (2.7). The figure supports the experimental doubling-time comparison; it does not establish that a size-homeostatic population with one common constant size-growth rate violates mass conservation.
 
@@ -549,7 +567,7 @@ The two expansions below share one idea: expand the logarithm of the chronologic
 
 #### B.1 Independent lifetime expansion
 
-The inequality establishes a growth advantage but does not give its magnitude. To estimate the excess, write the mean and variance of the chronological lifetime distribution explicitly as
+The inequality establishes faster growth relative to a deterministic baseline with the same mean generation time, but does not give the size of the increment. To estimate the excess, write the mean and variance of the chronological lifetime distribution explicitly as
 
 $$
 \mu=\bar\tau=\int_0^\infty \tau p(\tau)\,d\tau,
@@ -1090,7 +1108,7 @@ Solving (D.8)–(D.7):
 | 0.50 | Independent | 0.212289 | 3.265 |
 | 0.75 | Persistent | 0.244769 | 2.832 |
 
-Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
+Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ. This branching model isolates the statistical role of correlations; it does not require all cases to satisfy both fixed size-growth rate and size homeostasis. The rows should therefore not be interpreted directly as cellular controls under identical physiological conditions.
 
 > **Lifetime distributions and correlations.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
 
@@ -1559,7 +1577,7 @@ and the sum no longer telescopes with one common prefactor. This is a natural ro
 
 ### Appendix H. KL divergence for lifetime and trajectory distributions {#appendix-h}
 
-The weighted density $q$ introduced in Section 2.1 gives an information-theoretic expression for the growth advantage. For independent lifetimes with $\bar\tau=\mathbb E_p[\tau]\lt\infty$, the Kullback–Leibler (KL) divergence between $p$ and $q$ is
+The weighted density $q$ introduced in Section 2.1 gives an information-theoretic expression for the growth increment relative to the mean-generation-time baseline. For independent lifetimes with $\bar\tau=\mathbb E_p[\tau]\lt\infty$, the Kullback–Leibler (KL) divergence between $p$ and $q$ is
 
 $$
 \begin{aligned}
