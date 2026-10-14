@@ -164,7 +164,7 @@ Consider an idealized binary branching population:
 - The two daughters subsequently reproduce according to the same statistical rule.
 - There is no death, and no common environment that imposes correlated lifetimes on the whole population.
 
-Let $M(t)$ denote the expected number of living descendants, including the initial cell. The initial cell has either not yet divided by time $t$, or it divided at a time $\tau\lt t$. Therefore
+Starting from one newborn cell at $t=0$, let $M(t)$ denote the expected number of living descendants, including the initial cell while it remains undivided. The initial cell has either not yet divided by time $t$, or it divided at a time $\tau\lt t$. Therefore
 
 $$
 M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
@@ -172,25 +172,82 @@ M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
 \tag{2.1}
 $$
 
-At long times we seek a growing solution
+To extract the long-time growth from (2.1), write $S(t)=\mathbb P(\tau>t)$ and introduce the exponentially rescaled population $m_s(t)=e^{-st}M(t)$, where $s$ is a trial rate with units of inverse time. Multiplying (2.1) by $e^{-st}$ yields the exact equation
 
 $$
-M(t)\sim A e^{\Lambda t}.
+m_s(t)=e^{-st}S(t)
+       +\int_0^t \underbrace{2p(\tau)e^{-s\tau}}_{q_s(\tau)}
+         m_s(t-\tau)\,d\tau.
 $$
 
-Substitution into the renewal term, and division by $Ae^{\Lambda t}$, give
+The rescaling changes the renewal kernel from $2p$ to $q_s$. Its total mass is
 
 $$
-1=2\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau.
+\int_0^\infty q_s(\tau)\,d\tau
+=2\mathbb E[e^{-s\tau}].
 $$
 
-Thus the **Euler–Lotka equation** is
+At $s=0$ this mass is $2$, reflecting the two daughters produced at each division. As $s$ increases, it decreases continuously and strictly to zero, since $\tau>0$ almost surely. There is therefore a unique positive rate, denoted by $\Lambda$, at which the kernel has unit mass and becomes a probability density. This normalization gives the **Euler–Lotka equation**,
 
 $$
 \boxed{2\,\mathbb E[e^{-\Lambda\tau}]=1.}\tag{2.2}
 $$
 
-The survival term in (2.1) does not contribute to the leading exponential asymptotics under the usual conditions for a supercritical age-dependent branching process. Equation (2.2) also identifies the long-time growth exponent of a typical sufficiently large branching population under standard nondegeneracy assumptions.
+With this choice of rate, set
+
+$$
+m(t)=e^{-\Lambda t}M(t),\qquad
+g(t)=e^{-\Lambda t}S(t),\qquad
+q(\tau)=2p(\tau)e^{-\Lambda\tau}.
+$$
+
+The rescaled population now obeys an ordinary renewal equation,
+
+$$
+m(t)=g(t)+\int_0^t q(\tau)m(t-\tau)\,d\tau.
+$$
+
+The waiting-time density $q$ has finite positive mean
+
+$$
+\mu_q=\int_0^\infty \tau q(\tau)\,d\tau
+     =2\mathbb E[\tau e^{-\Lambda\tau}].
+$$
+
+The mean is finite because $\tau e^{-\Lambda\tau}\le 1/(e\Lambda)$. For a waiting-time distribution with a density and finite mean, and a nonnegative, decreasing, integrable forcing term $g$, the renewal limit theorem gives
+
+$$
+m(t)\longrightarrow
+\frac{\int_0^\infty g(u)\,du}{\mu_q}.
+$$
+
+The limiting level is the mean renewal rate $1/\mu_q$ times the integrated contribution of $g$. Here $g(t)=e^{-\Lambda t}S(t)$ is nonnegative, decreasing, and bounded above by $e^{-\Lambda t}$, so it is integrable. Its integral is
+
+$$
+\begin{aligned}
+\int_0^\infty g(u)\,du
+&=\mathbb E\!\left[\int_0^\tau e^{-\Lambda u}\,du\right]\\
+&=\frac{1-\mathbb E[e^{-\Lambda\tau}]}{\Lambda}
+=\frac{1}{2\Lambda}.
+\end{aligned}
+$$
+
+Denoting this positive limiting level by $A$, we obtain
+
+$$
+e^{-\Lambda t}M(t)\longrightarrow
+A=\frac{1}{4\Lambda\,\mathbb E[\tau e^{-\Lambda\tau}]}.
+$$
+
+Equivalently,
+
+$$
+M(t)\sim Ae^{\Lambda t},
+\qquad
+\Lambda=\lim_{t\to\infty}\frac{\log M(t)}{t}.
+$$
+
+Thus $\Lambda$ is the population growth exponent, and $A$ is the amplitude of the long-time exponential: $\sim$ means that $M(t)/(Ae^{\Lambda t})\to 1$. The amplitude here corresponds to one initial newborn cell; it need not equal $M(0)=1$, because the initial transient is not described by the asymptotic exponential. Under standard nondegeneracy assumptions for the branching process, $\Lambda$ also gives the long-time growth exponent of a typical sufficiently large population.
 
 If every lifetime is identical, $\tau=\tau_0$, then
 
@@ -200,6 +257,8 @@ $$
 \Lambda=\frac{\ln2}{\tau_0}.
 \tag{2.3}
 $$
+
+In this case all divisions are synchronized, giving $M(t)=2^{\lfloor t/\tau_0\rfloor}$. Its growth exponent is still (2.3), but $e^{-\Lambda t}M(t)$ oscillates periodically. Convergence to a constant amplitude requires a nonlattice lifetime distribution, as provided by the density assumed above; fixed lifetimes are an exception.
 
 ### 2.2 Jensen's inequality and the apparent growth advantage
 
