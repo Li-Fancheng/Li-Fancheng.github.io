@@ -250,7 +250,36 @@ For a nondegenerate lifetime distribution, strict convexity makes the inequality
 
 ### 2.3 A weak-noise estimate
 
-The inequality establishes a growth advantage but does not give its magnitude. To estimate the excess from the chronological lifetime statistics, let $\mu=\bar\tau$ and $\sigma_\tau^2=\operatorname{Var}_p(\tau)$. For small relative fluctuations, the second-order cumulant expansion of (2.2) is
+The inequality establishes a growth advantage but does not give its magnitude. To estimate the excess, write the mean and variance of the chronological lifetime distribution explicitly as
+
+$$
+\mu=\bar\tau=\int_0^\infty \tau p(\tau)\,d\tau,
+\qquad
+\sigma_\tau^2=\int_0^\infty (\tau-\mu)^2p(\tau)\,d\tau.
+$$
+
+We expand around the mean lifetime, so the small quantity in the exponential is $\Lambda(\tau-\mu)$. Assume $\Lambda\sigma_\tau\ll1$ and a regular expansion in the fluctuation amplitude, with third and higher centered moments negligible at second order. Factoring out $e^{-\Lambda\mu}$ and expanding the remaining exponential gives
+
+$$
+\begin{aligned}
+\mathbb E_p[e^{-\Lambda\tau}]
+&=\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau\\
+&=e^{-\Lambda\mu}\int_0^\infty p(\tau)e^{-\Lambda(\tau-\mu)}\,d\tau\\
+&\simeq e^{-\Lambda\mu}\int_0^\infty p(\tau)
+  \left[1-\Lambda(\tau-\mu)+\frac{\Lambda^2}{2}(\tau-\mu)^2\right]d\tau\\
+&=e^{-\Lambda\mu}\left(1+\frac{\Lambda^2}{2}\sigma_\tau^2\right).
+\end{aligned}
+$$
+
+The constant term integrates to $1$, the linear term vanishes because $\int_0^\infty(\tau-\mu)p(\tau)\,d\tau=0$, and the quadratic term gives the variance. Taking the logarithm and using $\ln(1+x)=x+O(x^2)$ with $x=\Lambda^2\sigma_\tau^2/2$ yields
+
+$$
+\ln\mathbb E_p[e^{-\Lambda\tau}]
+\simeq-\Lambda\mu+\ln\left(1+\frac{\Lambda^2}{2}\sigma_\tau^2\right)
+\simeq-\Lambda\mu+\frac{\Lambda^2}{2}\sigma_\tau^2.
+$$
+
+Here $x$ is already second order in the fluctuation amplitude, so the additional $x^2$ term from the logarithm is fourth order. Substituting into the logarithm of Euler–Lotka gives the second-order cumulant expansion
 
 $$
 0=\ln2+\ln\mathbb E_p[e^{-\Lambda\tau}]
@@ -258,7 +287,18 @@ $$
 \tag{2.5}
 $$
 
-Solving perturbatively about $\Lambda_0=\ln2/\mu$ gives
+To solve for the growth rate, write $\Lambda=\Lambda_0+\delta\Lambda$, where $\Lambda_0=\ln2/\mu$ is the noise-free rate. There is no first-order noise term in (2.5), so $\delta\Lambda$ also starts at second order. Substituting and retaining terms through this order gives
+
+$$
+\begin{aligned}
+0
+&\simeq\ln2-\mu(\Lambda_0+\delta\Lambda)
+       +\frac{(\Lambda_0+\delta\Lambda)^2}{2}\sigma_\tau^2\\
+&\simeq-\mu\,\delta\Lambda+\frac{\Lambda_0^2}{2}\sigma_\tau^2.
+\end{aligned}
+$$
+
+The product $\delta\Lambda\,\sigma_\tau^2$ is fourth order and is discarded, which allows $\Lambda^2$ to be replaced by $\Lambda_0^2$ in the variance term. Solving gives $\delta\Lambda\simeq\Lambda_0^2\sigma_\tau^2/(2\mu)$, hence
 
 $$
 \Lambda\simeq
