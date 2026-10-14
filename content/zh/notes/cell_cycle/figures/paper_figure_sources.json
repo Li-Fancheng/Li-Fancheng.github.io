@@ -1,0 +1,42 @@
+[
+  {
+    "file": "figures/taheri_araghi_2015_f1.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ce63/4323405/eced69cfa9d6/nihms-647747-f0001.jpg",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f1",
+    "retrieved_on": "2026-10-14",
+    "modification": "none",
+    "sha256": "833b7f91de1539ae94847d7779ccf2d4a74df8cb4be82f596c7a569ce158b81a",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/taheri_araghi_2015_f2.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ce63/4323405/cffdcbed77b6/nihms-647747-f0002.jpg",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f2",
+    "retrieved_on": "2026-10-14",
+    "modification": "none",
+    "sha256": "f276387cdef753d6c4e8b33813c9300460a6a705f2c7aec6d556a0e6af5e0db4",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/taheri_araghi_2015_f3.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ce63/4323405/241a190466c6/nihms-647747-f0003.jpg",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f3",
+    "retrieved_on": "2026-10-14",
+    "modification": "none",
+    "sha256": "474314b09edf04ab9904cf13c240929af0ab8df8c7c2f6eff643ba1737fbbdd0",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/hashimoto_2016_fig03.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9778/4812751/695b89ddf26e/pnas.1519412113fig03.jpg",
+    "article_doi": "10.1073/pnas.1519412113",
+    "figure": "fig03",
+    "retrieved_on": "2026-10-14",
+    "modification": "none",
+    "sha256": "81aa8bf720b7773d3a645ed477011777a4d357f1781c070576ce607d1e367d19",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  }
+]

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="cell-cycle-page mx-auto flex max-w-screen-xl">
+  {{ partial "components/toc.html" . }}
+  <article class="cell-cycle-article prose prose-slate dark:prose-invert w-full min-w-0 px-6 py-8 md:px-12">
+    <header>
+      <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="cell-cycle-subtitle">{{ . }}</p>{{ end }}
+      <p class="cell-cycle-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time> · {{ .ReadingTime }} {{ i18n "minute_read" }}</p>
+    </header>
+    <details class="cell-cycle-mobile-toc">
+      <summary>{{ i18n "table_of_contents" }}</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

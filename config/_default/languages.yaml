@@ -4,13 +4,20 @@
 
 # Default language
 en:
+  languageName: English
   languageCode: en-us
   contentDir: content/en
+  params:
+    marketing:
+      seo:
+        description: 'Fancheng Li, PhD student at Westlake University. Research interests in statistical physics, biological dynamics, and AI for science.'
+        twitter: ''
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
   #contentDir: content/en
 
 # Uncomment the lines below to configure your website in a second language.
 zh:
+  languageName: 中文
   languageCode: zh-Hans
   contentDir: content/zh
   title: 李凡成（Fancheng Li）
