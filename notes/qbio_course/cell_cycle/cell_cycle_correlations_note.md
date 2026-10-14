@@ -17,7 +17,7 @@
 
 在相同环境中，即使基因型相同，细胞也不会同时分裂：有些分裂间隔短，有些分裂间隔长。同时，cell size 虽然波动，却能够维持稳定的分布。单细胞追踪使这两类现象可以一起测量，也带来了一个预测问题：**知道单细胞分裂间隔时间的分布，是否足以推算群体的繁殖速度？**
 
-最直接的估计是把沿 lineage 测得的平均分裂间隔时间当作群体倍增时间。但群体中各条 lineage 的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均分裂间隔时间；相关实验结果见正文第 2.2 节的[图 4](#experimental-doubling-time-comparison)。这一观测说明，单细胞的平均分裂间隔不一定等于群体倍增时间，要联系这两个量，需要考虑不同 lineage 对群体增长的贡献。
+最直接的估计是把沿 lineage 测得的平均分裂间隔时间当作群体倍增时间。但群体中各条 lineage 的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均分裂间隔时间；相关实验结果见正文第 2.2 节的[Fig. 4](#experimental-doubling-time-comparison)。这一观测说明，单细胞的平均分裂间隔不一定等于群体倍增时间，要联系这两个量，需要考虑不同 lineage 对群体增长的贡献。
 
 另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的时候就分裂。在后一种情况下，子细胞的 birth size 也会较小。如果细胞分裂的分布和 size 相关，那么 birth size 就会影响它下一次分裂所需的时间：较小的子细胞需要更长时间才能满足这些分裂条件。这样，母细胞提前分裂带来的时间领先，可能被子细胞较长的分裂间隔部分抵消。
 
@@ -84,7 +84,7 @@ $$
 
 ![定时分裂下的 cell size 不断游走，而恢复性反馈能限制 size 波动。](figures/01_timer_and_homeostasis.svg)
 
-*图 1. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
+*Fig. 1. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
 
 ### 1.3 Timer、adder 与 sizer：三种分裂规则 {#13-timer-adder-and-sizer}
 
@@ -96,11 +96,11 @@ size feedback 可以用三种理想化规则描述。其中 adder 指“增加�
 | 定增量分裂（adder） | size 增加固定量 $\Delta$ | $v_{n+1}=(v_n+\Delta)/2$：偏差逐代缩小，斜率为 $1/2$ |
 | 定 size 分裂（sizer） | 达到固定 division size $v_*$ | $v_{n+1}=v_*/2$：不再继承 size 偏差，斜率为 $0$ |
 
-这些斜率描述的是 size memory 消退的速度，不能据此唯一确定背后的分子机制。带噪声的 adder 或 sizer 可以维持平稳的 size distribution；在上述生长和分配关系下，带噪声的独立 timer 做不到这一点。[附录 F](#appendix-f)给出了统一的局部线性模型。
+上表中的斜率表示，母细胞的 birth size 偏差有多少会传给子细胞：平衡的 timer 完整保留偏差，adder 保留一半，sizer 则消除偏差。因此，这些斜率描述了 size memory 在代际间的保留程度。
 
 ![单细胞显微成像及 birth size 与分裂行为的关系，用于检验 timer 和 sizer 的预测。](figures/taheri_araghi_2015_f1_highres.png)
 
-*图 2. 实验中的 size control。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 1。D 图显示，出生越大的细胞，分裂间隔时间越短，分裂时的 size 却越大。这两种趋势分别与 size 无关的 timer 和固定阈值的 sizer 不符。A–C 图展示显微成像结果和培养条件。
+*Fig. 2. 实验中的 size control。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 1。D 图显示，出生越大的细胞，分裂间隔时间越短，分裂时的 size 却越大。这两种趋势分别与 size 无关的 timer 和固定阈值的 sizer 不符。A–C 图展示显微成像结果和培养条件。
 
 这些实验与模型说明，分裂间隔时间不能随意脱离 birth size 来指定。接下来暂时把 size feedback 放在一边，用独立分裂时间模型建立一个预测基准：为什么从单细胞平均时间出发，会低估这个模型中的群体繁殖速度？
 
@@ -140,7 +140,7 @@ $$
 
 ![更新过程及偏向较短分裂间隔时间的增长加权。](figures/06_renewal_and_sampling.svg)
 
-*图 3. 分裂越早，留下的后代越多。* A 图展示式（2.1）中尚未分裂的细胞，以及分裂后两棵后代子树的贡献。B 图使用形状参数和速率参数均为 $4$ 的伽马分布，平均分裂间隔时间为 $1$，对应的 Euler–Lotka 增长率为 $4(2^{1/4}-1)$。按增长贡献加权后，祖先的分裂间隔时间分布向较短时间偏移。虚线标出两种分布的均值。
+*Fig. 3. 分裂越早，留下的后代越多。* A 图展示式（2.1）中尚未分裂的细胞，以及分裂后两棵后代子树的贡献。B 图使用形状参数和速率参数均为 $4$ 的伽马分布，平均分裂间隔时间为 $1$，对应的 Euler–Lotka 增长率为 $4(2^{1/4}-1)$。按增长贡献加权后，祖先的分裂间隔时间分布向较短时间偏移。虚线标出两种分布的均值。
 
 <div id="22-jensens-inequality-and-the-population-growth-advantage"></div>
 
@@ -166,7 +166,7 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.5}
 $$
 
-逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见图 4。要注意，式（2.4）的比较基准是平均分裂间隔时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞的 size growth rate 为 $\lambda$ 的群体**。
+逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见 Fig. 4。要注意，式（2.4）的比较基准是平均分裂间隔时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞的 size growth rate 为 $\lambda$ 的群体**。
 
 <div id="a2-experimental-doubling-time-comparison"></div>
 
@@ -174,7 +174,7 @@ $$
 
 ![大肠杆菌的分裂间隔时间变异、群体倍增时间及增长率增益的实验测量。](figures/hashimoto_2016_fig03.jpg)
 
-*图 4. 实验中的平均分裂间隔时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原图 3。B 图比较平均分裂间隔时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与分裂间隔时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示分裂间隔时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
+*Fig. 4. 实验中的平均分裂间隔时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原文 Fig. 3。B 图比较平均分裂间隔时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与分裂间隔时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示分裂间隔时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
 
 **符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示 cell size 的指数增长率。把该图与式（2.7）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持 size homeostasis、且所有细胞共有恒定 size growth rate 的群体违反了质量守恒。
 
@@ -237,7 +237,7 @@ $$
 
 ![细菌实验中，added size 近似不依赖 birth size。](figures/taheri_araghi_2015_f2_highres.png)
 
-*图 5. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 2。在各培养条件下，平均 added size 近似不依赖 birth size；重新缩放后，不同 birth size 对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和 cell size 相关突变株。
+*Fig. 5. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 2。在各培养条件下，平均 added size 近似不依赖 birth size；重新缩放后，不同 birth size 对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和 cell size 相关突变株。
 
 对式（3.1）取期望，得到
 
@@ -297,7 +297,7 @@ $$
 
 ![中间各代的 log size 贡献相互抵消，只留下起点和终点的 size。](figures/09_telescoping_identity.svg)
 
-*图 6. 时间波动化为边界项。* 蓝色和紫色的 log size 项在相邻分裂间隔间抵消，只留下橙色的初始项和绿色的末尾项。这种抵消对每一个 $n$ 都严格成立。式（3.5）称为逐项相消恒等式（telescoping identity），也常称望远镜求和恒等式。
+*Fig. 6. 时间波动化为边界项。* 蓝色和紫色的 log size 项在相邻分裂间隔间抵消，只留下橙色的初始项和绿色的末尾项。这种抵消对每一个 $n$ 都严格成立。式（3.5）称为逐项相消恒等式（telescoping identity），也常称望远镜求和恒等式。
 
 **单个分裂间隔时间有波动，并不意味着这些波动会经过许多代不断累积。** 如果各代时间独立，每一代都会给累计时间增加一份新的不确定性。而这里，同一个继承的 size 在相邻分裂间隔中以相反符号出现。反馈使起点和终点的 size 保持在平稳分布内，因此边界项的方差不会随分裂间隔数成比例增长。
 
@@ -345,7 +345,7 @@ $$
 
 ![size 的正相关与分裂间隔时间的负相关，使累计时间的方差保持有界。](figures/04_noise_cancellation.svg)
 
-*图 7. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的 birth size 相关性与式（3.8）中线性化的分裂间隔时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
+*Fig. 7. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的 birth size 相关性与式（3.8）中线性化的分裂间隔时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
 
 ---
 
@@ -430,7 +430,7 @@ $$
 S_\tau(\omega)=\frac{4\sin^2(\omega/2)}{\lambda^2}S_y(\omega).\tag{4.6}
 $$
 
-若 $S_y$ 在零频处有限，差分就会消除分裂间隔时间的零频噪声。缓慢变化的 size 偏差在相邻周期中几乎相同，作差后便相互抵消。逐项相消、协方差总和为零、零频噪声被抑制，是同一机制的三种表达。完整的一阶自回归模型（AR(1)）频谱见[附录 F](#appendix-f)；非零频率的振荡模态回答的是另一个问题，见[进阶专题](#further-topic)。
+若 $S_y$ 在零频处有限，差分就会消除分裂间隔时间的零频噪声。缓慢变化的 size 偏差在相邻周期中几乎相同，作差后便相互抵消。逐项相消、协方差总和为零、零频噪声被抑制，是同一机制的三种表达。协方差与频谱的关系、线性反馈模型的频谱及零频抵消的推导见[附录 F](#appendix-f)；非零频率的振荡模态回答的是另一个问题，见[进阶专题](#further-topic)。
 
 ---
 
@@ -649,7 +649,7 @@ $$
 
 ![协方差矩阵中的非对角项成对出现；交替、独立与持续正相关三种情形下，累计时间方差的增长速度不同。](figures/07_accumulated_time_covariances.svg)
 
-*图 8. 哪些波动会累积？* A 图的每个方格都对 $\operatorname{Var}(T_n)$ 有贡献。圈出的两个方格，是同一个协方差按 $(i,j)$ 和 $(j,i)$ 分别计数，因而产生下式中的系数 $2$。B 图对 $C_\tau(k)=\sigma_\tau^2r^{|k|}$ 使用式（4.2），其中 $r=-1/2,0,1/2$；A 图对应 $r=-1/2$。三个过程的单代方差相同，但长期斜率 $D_\tau/\sigma_\tau^2=(1+r)/(1-r)$ 不同。图中协方差均来自平稳模型的解析结果。
+*Fig. 8. 哪些波动会累积？* A 图的每个方格都对 $\operatorname{Var}(T_n)$ 有贡献。圈出的两个方格，是同一个协方差按 $(i,j)$ 和 $(j,i)$ 分别计数，因而产生下式中的系数 $2$。B 图对 $C_\tau(k)=\sigma_\tau^2r^{|k|}$ 使用式（4.2），其中 $r=-1/2,0,1/2$；A 图对应 $r=-1/2$。三个过程的单代方差相同，但长期斜率 $D_\tau/\sigma_\tau^2=(1+r)/(1-r)$ 不同。图中协方差均来自平稳模型的解析结果。
 
 间隔为零的项共有 $n$ 个，间隔为 $k$ 的有序配对共有 $2(n-k)$ 个。因此，对有限的 $n$，精确地有
 
@@ -751,7 +751,7 @@ $$
 
 ![独立与交替的两代历史具有相同的单代时间分布，但总耗时的分布不同。](figures/10_histories_and_total_time.svg)
 
-*图 9. 分裂间隔时间分布不能完全描述 lineage 历史。* 两种情形中，两种时间各自的概率都是 $1/2$。A 图列出有序时间对的概率：独立抽样允许全部四种配对，严格交替则只允许一长一短的两种配对。因此，B 图中独立抽样有三种可能的总时间，而交替配对的总时间始终为 $\tau_s+\tau_\ell$。有相关性时，必须使用取决于联合历史的 $T_n$ 分布。
+*Fig. 9. 分裂间隔时间分布不能完全描述 lineage 历史。* 两种情形中，两种时间各自的概率都是 $1/2$。A 图列出有序时间对的概率：独立抽样允许全部四种配对，严格交替则只允许一长一短的两种配对。因此，B 图中独立抽样有三种可能的总时间，而交替配对的总时间始终为 $\tau_s+\tau_\ell$。有相关性时，必须使用取决于联合历史的 $T_n$ 分布。
 
 经过 $n$ 代二叉分裂，有 $2^n$ 条可能的后代路径。对于规则由局部状态决定的分枝过程，若每代均匀选择一个子细胞得到的路径服从 chronological lineage 的统计规律，利用期望的线性性可得
 
@@ -918,7 +918,7 @@ $$
 
 ![两状态模型的分裂间隔时间自相关，以及状态持续性增强时的精确群体增长率。](figures/02_correlations_and_growth.svg)
 
-*图 10. 时间分布不变，相关性仍能改变增长率。* A 图绘制 $\rho_\tau(k)=(2p-1)^k$。B 图使用与下表相同的 2 小时和 5 小时分裂间隔时间，求解精确的 Perron 特征值条件（D.7）；圆点对应表中的四行。虚线为 $\ln2/\mu$。曲线在 $p=1$ 之前结束，因为该点的链变为可约。这些是两状态分枝模型的预测，不是维持 size homeostasis 的细胞的实验测量。
+*Fig. 10. 时间分布不变，相关性仍能改变增长率。* A 图绘制 $\rho_\tau(k)=(2p-1)^k$。B 图使用与下表相同的 2 小时和 5 小时分裂间隔时间，求解精确的 Perron 特征值条件（D.7）；圆点对应表中的四行。虚线为 $\ln2/\mu$。曲线在 $p=1$ 之前结束，因为该点的链变为可约。这些是两状态分枝模型的预测，不是维持 size homeostasis 的细胞的实验测量。
 
 <div id="52-exact-autocorrelation"></div>
 
@@ -990,7 +990,7 @@ $$
 
 ![两状态有向图：每次子细胞状态转移的权重等于二倍继承概率乘以母细胞分裂间隔时间的指数衰减因子。](figures/08_discounted_branching.svg)
 
-*图 11. 将转移矩阵理解为分枝图。* 从状态 $i$ 出发的每条箭头，其权重为子细胞数的期望 $2P_{ij}$ 乘以 $e^{-s\tau_i}$。沿路径将这些权重相乘，便得到该路径对 $Z_n(s)$ 的贡献。图中使用试探增长率 $s$；在选定的增长率 $s=\Lambda$ 处，主特征值为 $1$，即式（D.7）。
+*Fig. 11. 将转移矩阵理解为分枝图。* 从状态 $i$ 出发的每条箭头，其权重为子细胞数的期望 $2P_{ij}$ 乘以 $e^{-s\tau_i}$。沿路径将这些权重相乘，便得到该路径对 $Z_n(s)$ 的贡献。图中使用试探增长率 $s$；在选定的增长率 $s=\Lambda$ 处，主特征值为 $1$，即式（D.7）。
 
 因此，用来传播后代时间权重的期望的矩阵为
 
@@ -1125,7 +1125,7 @@ $$
 
 ![偏小和偏大的细胞在分裂前增加相同的 size，其子细胞的 birth size 更接近均值。](figures/03_adder_size_control.svg)
 
-*图 12. Adder 如何通过反馈恢复 size。* 这个无噪声示意中，birth size 为 $0.70\Delta$ 和 $1.30\Delta$ 的细胞都增加 $\Delta$，然后对称分裂。它们的子细胞 birth size 为 $0.85\Delta$ 和 $1.15\Delta$，相对均值的偏差减半。胶囊形状的长度只示意相对 size，不是显微图像。加入 added size 噪声后，就得到随机映射（E.1）。
+*Fig. 12. Adder 如何通过反馈恢复 size。* 这个无噪声示意中，birth size 为 $0.70\Delta$ 和 $1.30\Delta$ 的细胞都增加 $\Delta$，然后对称分裂。它们的子细胞 birth size 为 $0.85\Delta$ 和 $1.15\Delta$，相对均值的偏差减半。胶囊形状的长度只示意相对 size，不是显微图像。加入 added size 噪声后，就得到随机映射（E.1）。
 
 <div id="62-exact-stationary-variance"></div>
 
@@ -1201,7 +1201,7 @@ $$
 
 ![Adder 的预测与实验比较：初始偏小或偏大的 birth size 如何逐渐恢复。](figures/taheri_araghi_2015_f3_highres.png)
 
-*图 13. birth size 向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（E.5）彼此相关，但它们是不同的测量量。
+*Fig. 13. birth size 向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（E.5）彼此相关，但它们是不同的测量量。
 
 #### E.3 小波动极限下的分裂间隔时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
 
@@ -1316,40 +1316,20 @@ $$
 
 <div id="appendix-b-general-linear-size-control-laws-timer-adder-and-sizer"></div>
 
-### 附录 F. 一般线性 size control 与完整频谱 {#appendix-f}
+### 附录 F. 频谱表示与零频噪声抵消 {#appendix-f}
 
-第 1.3 节已经比较了不同调控策略，这里给出统一的线性描述，并补充完整的频域计算。
+本附录补充正文第 4.3 节的频域推导：先建立协方差与功率谱的关系，再计算线性反馈模型的 size 频谱，最后说明 size 的差分如何消除分裂间隔时间的零频噪声。频率以分裂间隔数为基准。
 
-#### F.1 局部线性反馈规则 {#f1-local-linear-feedback-laws}
+#### F.1 线性反馈模型与计算条件 {#f1-local-linear-feedback-laws}
 
-统一的局部描述为
+沿用附录 E 的线性反馈形式，令 $x_n$ 为 birth size 相对稳态均值的偏差：
 
 $$
-x_{n+1}=r x_n+\xi_n,
+x_{n+1}=r x_n+\xi_n.
 \tag{F.1}
 $$
 
-其中 $x_n$ 为 birth size 相对稳态均值的偏差。
-
-| 策略 | 典型 size 映射的斜率 $r$ | 物理行为 |
-|---|---:|---|
-| Sizer（定 size 分裂） | $0$ | division size 与 birth size 无关，不继承线性 size memory |
-| Adder（定增量分裂） | $1/2$ | 继承 birth size 偏差的一半 |
-| Timer（在平衡 size 附近线性化） | $1$ | 没有恢复性反馈，表现为 random walk 或偏差不变 |
-
-当 $|r|\lt 1$ 时，
-
-$$
-\operatorname{Var}(x)=\frac{\operatorname{Var}(\xi)}{1-r^2},
-\qquad
-\rho_x(k)=r^{|k|}.
-$$
-
-这些调控策略的差别，在于**birth size 的扰动消退得多快**。观测到的斜率能约束有效动力学，但无法唯一确定具体的生化实现方式。
-
-表中的 timer 是局部或加性近似；精确的乘性 timer 映射，对应第 1 节推导的 log size  random walk 。
-
-下面给出第 4.3 节所用的完整频谱，频率以分裂间隔数为基准。
+以下假设 $|r|<1$，噪声 $\xi_n$ 独立同分布、均值为零、方差为 $\sigma_\xi^2<\infty$，并在平稳状态下计算频谱。Adder 对应 $r=1/2$；稳态方差和自相关的推导见[附录 E](#appendix-e)。
 
 <div id="71-autocovariance-and-the-wienerkhinchin-relation"></div>
 
@@ -1407,14 +1387,7 @@ $$
 
 #### F.3 AR(1) size control 模型的频谱 {#f3-spectrum-of-the-ar1-size-control-model}
 
-再次考虑
-
-$$
-x_{n+1}=r x_n+\xi_n,
-\qquad |r|\lt 1,
-$$
-
-其中噪声 $\xi_n$ 相互独立、均值为零、方差为 $\sigma_\xi^2$。在平稳状态下，
+迭代式（F.1），在平稳状态下得到
 
 $$
 x_n=\sum_{j=0}^\infty r^j\xi_{n-1-j}.
@@ -1479,33 +1452,6 @@ $$
 同一个结果，已经在式（3.5）的逐项相消和式（E.11）的协方差抵消中出现过。这是**同一个物理机制**的三种数学描述。
 
 要注意，即使原本的 size 过程没有振荡模态，差分也可能使高频波动更突出。因此，奈奎斯特频率 $\omega=\pi$ 附近的谱值较大，本身不足以证明存在生物振荡器。这里的奈奎斯特频率对应离散采样能分辨的最高频率。
-
-<div id="74-an-extra-connection-the-markov-models-spectrum"></div>
-
-#### F.5 补充联系：马尔可夫模型的频谱 {#f5-an-extra-connection-the-markov-models-spectrum}
-
-对于附录 D 的两状态马尔可夫模型，$C_\tau(k)=\delta^2r^{|k|}$，其中 $r=2p-1$。在 $|r|\lt 1$ 时，将傅里叶级数求和，得到
-
-$$
-S_\tau(\omega)
-=\delta^2\frac{1-r^2}{1+r^2-2r\cos\omega}.
-\tag{F.8}
-$$
-
-特别地，
-
-$$
-S_\tau(0)=\delta^2\frac{1+r}{1-r}
-=\delta^2\frac{p}{1-p},
-$$
-
-这样无需单独对协方差求和，就回到式（D.4）。
-
-因此，两种模型都能从频谱角度理解：
-
-- 马尔可夫模型通过改变状态持续性，改变低频分裂时间噪声。
-- Adder 将 size 波动转化为差分，抑制分裂时间噪声的零频分量。
-
 
 <div id="appendix-c-why-the-division-time-cancellation-is-more-general-than-the-adder"></div>
 
@@ -1719,7 +1665,7 @@ $$
 
 ![Adder 抑制时间噪声的零频分量，而延迟反馈振荡器具有非零频率谱峰和振荡的自相关。](figures/05_spectra_and_oscillations.svg)
 
-*图 14. 零频抵消与振荡模态回答不同的问题。* A 图使用 adder 的 $r=1/2$ 和线性化分裂间隔时间关系（F.6），每条频谱除以各自过程的方差。B 图比较 AR(1) size 过程与 AR(2) 模型（FT.1），参数为 $R=0.9$、$\omega_0=\pi/3$ 弧度/分裂间隔。虚线标出模态的辐角，实际谱峰可能因阻尼而偏移。C 图展示相应的解析自相关。所有频谱都以分裂间隔数为基准，不是按实际时间定义的频率。
+*Fig. 14. 零频抵消与振荡模态回答不同的问题。* A 图使用 adder 的 $r=1/2$ 和线性化分裂间隔时间的频谱关系（F.6），每条频谱除以各自过程的方差。B 图比较 AR(1) size 过程与 AR(2) 模型（FT.1），参数为 $R=0.9$、$\omega_0=\pi/3$ 弧度/分裂间隔。虚线标出模态的辐角，实际谱峰可能因阻尼而偏移。C 图展示相应的解析自相关。所有频谱都以分裂间隔数为基准，不是按实际时间定义的频率。
 
 <div id="83-what-the-spectrum-can-and-cannot-establish"></div>
 
@@ -1773,10 +1719,10 @@ AR(1) 频谱也可以直接从自协方差函数求出。结合式（F.6），�
 
 ### 参考文献 {#references}
 
-- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原图 1–3 对应本笔记的图 2、5、13。
+- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原文 Fig. 1–3 对应本笔记的 Fig. 2、5、13。
 - Ho 等，*Annual Review of Biophysics*（2018）：cell size 调控、lineage 相关性与波动。
 - Godin 等，*Nature Methods*（2010）：单细胞生长测量。
-- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原图 3 对应本笔记的图 4。
+- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原文 Fig. 3 对应本笔记的 Fig. 4。
 - Wallden 等，*Cell*（2016）；Ho 和 Amir，*Frontiers in Microbiology*（2015）；Micali 等，*Cell Reports*（2018）：与复制相关的模型，以及唯象 size control 和分子实现之间的区别。
 - [Ho 实验室资料](https://ho.lab.westlake.edu.cn/teaching_en.html)
 - Pigolotti, S. (2021). *Generalized Euler–Lotka equation for correlated cell divisions*. **Physical Review E, 103**, L060402. [doi:10.1103/PhysRevE.103.L060402](https://doi.org/10.1103/PhysRevE.103.L060402)。
