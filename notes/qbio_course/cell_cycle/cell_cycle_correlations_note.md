@@ -35,7 +35,7 @@
 
 ### 1.1 指数生长与对称分裂 {#11-exponential-growth-and-symmetric-division}
 
-在某些细菌培养条件下，可以近似认为所有细胞都以相同的恒定速率 $\lambda>0$ 指数生长：
+在某些细菌培养条件下，可以近似认为所有细胞都以相同的恒定速率 $\lambda>0$ 生长：
 
 $$
 \frac{dv}{dt}=\lambda v,\qquad v(t)=v_n e^{\lambda t}.
@@ -54,10 +54,10 @@ $$
 
 ### 1.2 独立分裂时间遗漏了 size inheritance 的反馈 {#12-a-timer-is-a-random-walk-in-log-size}
 
-与 size 无关的定时分裂模型（timer）假定每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
+考虑与 size 无关的定时分裂模型（timer），假设每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
 
 $$
-y_{n+1}-y_n=\lambda\tau_n-\ln2,\qquad
+y_{n+1}-y_n=\lambda\tau_n-\ln2,\Rightarrow
 y_n-y_0=\sum_{j=0}^{n-1}(\lambda\tau_j-\ln2).\tag{1.2}
 $$
 
