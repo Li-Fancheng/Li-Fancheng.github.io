@@ -205,15 +205,15 @@ $$
 
 Here $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ is the asymptotic amplitude for one initial newborn cell, and $\sim$ means $M(t)/(Ae^{\Lambda t})\to1$. Its calculation and the qualification for synchronized divisions are given in Appendix D.
 
-The same Euler–Lotka equation normalizes the weighted lifetime density
+In the renewal term of (2.1), first divisions in the interval $[\tau,\tau+d\tau]$ contribute $2p(\tau)M(t-\tau)\,d\tau$ to the expected population at time $t$. Dividing by $M(t)$ gives their relative contribution. Using the long-time exponential above, its limiting density is
 
 $$
-q(\tau)=2e^{-\Lambda\tau}p(\tau),
-\qquad
-\int_0^\infty q(\tau)\,d\tau=1.
+q(\tau)\equiv\lim_{t\to\infty}
+\frac{2p(\tau)M(t-\tau)}{M(t)}
+=2e^{-\Lambda\tau}p(\tau).
 $$
 
-The ratio $q(\tau)/p(\tau)=2e^{-\Lambda\tau}$ decreases with $\tau$, giving short lifetimes greater relative weight. This reflects the advantage of early reproduction: earlier divisions leave more time for descendants to multiply. In this independent-lifetime model, $p$ describes a chronological lineage, while $q$ describes complete ancestral lifetimes in a population-biased retrospective sample. We denote expectations under these densities by $\mathbb E_p$ and $\mathbb E_q$.
+Euler–Lotka ensures $\int_0^\infty q(\tau)\,d\tau=1$, so these limiting contributions form a probability distribution. The factor $2$ counts the two daughters, while $e^{-\Lambda\tau}$ accounts for the time available to their descendants: an earlier division leaves more time to multiply and therefore receives greater relative weight. Thus $p$ describes chronological lifetimes, and $q$ describes the same lifetimes weighted by their contribution to population growth. In this independent-lifetime model, $q$ also describes complete ancestral lifetimes in a population-biased retrospective sample. We denote expectations under these densities by $\mathbb E_p$ and $\mathbb E_q$.
 
 ### 2.2 Jensen's inequality and the population growth advantage
 
