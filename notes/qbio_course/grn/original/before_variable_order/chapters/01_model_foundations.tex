@@ -1,0 +1,87 @@
+\chapter{从反应到调控模型}
+一个以恒定速率产生、以一阶速率降解的蛋白质，总会逐渐回到同一个浓度。基因调控的作用，是让产生率依赖其他分子，甚至依赖自身：同样的外部条件下，系统于是可能保留不同表达状态，也可能持续振荡，或者只对输入变化作出短暂响应。要理解这些现象，需要依次回答三个问题：产生率从什么反应机制来？反馈如何改变稳态和扰动的演化？这些局部行为在随机性与网络背景中还能否成立？
+
+每个模型依次讲解回路、方程与适用条件，比较新增环节怎样带来状态选择、振荡或适应，再回到分子计数和真实网络。
+
+网络节点常表示基因表达产物（例如蛋白质）的有效浓度。启动子状态、RNA 聚合酶、mRNA、配体和代谢物等微观变量可能在简化时被省略。本文用 $x,y,z$ 表示按参考浓度换算后的数值，例如 $x=1$ 表示达到参考浓度。激活边表示：调控因子增加时，目标的产生率上升；抑制边表示产生率下降。用公式说，就是 $\partial F_i/\partial x_j$ 分别为正或负。边的符号说明作用方向，具体结合方式还要另外建模。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=22mm]
+\node[gene] (x) {$X$}; \node[gene,right=of x] (y) {$Y$};
+\draw[act] (x)--node[above]{激活：$+$}(y);
+\node[gene,right=35mm of y] (u) {$X$}; \node[gene,right=of u] (v) {$Y$};
+\draw[rep] (u)--node[above]{抑制：$-$}(v);
+\end{tikzpicture}
+\caption{调控边的记号。箭头表示产生率随调控变量增加，钝头表示产生率下降；边的符号不能单独指定结合机制。}\label{fig:signs}
+\end{figure}
+
+标准连续模型为
+\begin{equation}\dot x_i=F_i(\bm{x};\bm{u})-\gamma_i x_i,\qquad F_i\geq0,\quad\gamma_i>0.\end{equation}
+其中 $F_i$ 为有效产生率，$\bm u$ 为外部输入，$\gamma_i$ 汇总一阶降解及相应的稀释效应。讨论稳态时固定输入；讨论响应时再指定输入怎样变化。同一组初始浓度能否决定唯一一条轨迹，是后面所有相图分析的前提。一个常用的保证条件叫\emph{局部 Lipschitz 连续}：在每个所考察状态附近，变化率 $\bm v(\bm x)$ 满足
+\[
+\|\bm v(\bm x)-\bm v(\bm y)\|\leq L\|\bm x-\bm y\|,
+\]
+其中 $L$ 是局部范围内的有限常数，$\|\cdot\|$ 表示状态之间的距离。直观地说，浓度只改动一点，变化率也只能改动有限的一点，不能在很小的浓度差上出现无限陡的变化。这个条件比“曲线不断开”更强，却不要求每个位置都有斜率；它保证同一起点不会分叉出两种未来。例如 $v(x)=|x|$ 满足 $|v(x)-v(y)|\leq|x-y|$，可取 $L=1$；虽然零点处有尖角、没有导数，它仍然是 Lipschitz 连续的。“局部”表示不同浓度范围可以用不同的 $L$，并不是要求整个浓度空间共用一个限制。
+
+使用导数分析小扰动时，本文通常进一步假设产生率为 $C^1$。这个记号表示\emph{函数可求一阶导数，且一阶导数连续}：不仅曲线不断开，斜率本身也连续变化。$C^1$ 函数在足够小的范围内满足上述 Lipschitz 条件，因此本文的 Hill 等常见模型可以同时支持唯一轨迹和斜率分析。这些是假设在所分析的浓度范围内成立；若模型有开关式跳变或边界处无限陡的斜率，就要重新检查。
+
+\emph{稳态}指产生与损失平衡、浓度不再变化。\emph{稳定}指小偏差下轨迹始终留在附近；若偏差逐渐消失，则称为\emph{渐近稳定}。局部结论只涉及稳态附近，不代表所有初始浓度都回到它。
+所有回路共享同一个骨架：分子通过反应产生和消耗。先把这个骨架写清楚，再讨论哪些微观变量可以消去，以及调控如何进入产生率。
+\section{从反应规则建立表达模型}
+对于 $\sum_i\alpha_{ir}X_i\xrightarrow{k_r}\sum_i\beta_{ir}X_i$，质量作用律给出 $v_r(\bm x)=k_r\prod_i x_i^{\alpha_{ir}}$，以及
+\begin{equation}\dot{\bm x}=S\bm v(\bm x),\qquad S_{ir}=\beta_{ir}-\alpha_{ir}.\end{equation}
+其中 $S$ 记录每次反应使各类分子增加或减少多少，$v_r$ 则表示第 $r$ 个反应发生得多快。例如一次反应消耗一个 $X$、产生两个 $Y$，对应的变化量就是 $-1$ 和 $+2$。对于 $\varnothing\xrightarrow{\alpha}X$, $X\xrightarrow{\gamma}\varnothing$，
+\begin{equation}\dot x=\alpha-\gamma x,\qquad x(t)=\frac\alpha\gamma+\left(x(0)-\frac\alpha\gamma\right)e^{-\gamma t}.\end{equation}
+这个解把后文的基线完整地展示出来：唯一稳态是 $x^*=\alpha/\gamma$，任何非负初值与它的差都以 $e^{-\gamma t}$ 衰减，恢复时间为 $1/\gamma$。没有反馈时，系统不会选择多个长期状态。
+
+
+蛋白质的产生通常还经过转录和翻译。保留 mRNA 时，反应与方程为
+\begin{align}
+\varnothing\xrightarrow{k_m}M,\quad M\xrightarrow{\delta_m}\varnothing,\quad M\xrightarrow{k_p}M+P,\quad P\xrightarrow{\delta_p}\varnothing,\\[-2pt]
+\dot m=k_m-\delta_m m,\qquad\dot p=k_pm-\delta_p p.
+\end{align}
+仅当 mRNA 恢复远快于蛋白质变化时，可近似令 $m\simeq k_m/\delta_m$；若研究振荡或短时间响应，该时间尺度消去可能失效。
+
+要判断上述消去何时可靠，可以先把两阶段模型完整解出来。记两个稳态浓度为
+\[
+m^*=\frac{k_m}{\delta_m},\qquad p^*=\frac{k_pk_m}{\delta_p\delta_m}.
+\]
+分别把两个方程乘以相应的指数因子再积分，这种方法称为\emph{积分因子法}；指数因子帮助把左边合成一个乘积的导数，从而得到
+\begin{align}
+m(t)&=m^*+(m_0-m^*)e^{-\delta_mt},\\
+p(t)&=p^*+(p_0-p^*)e^{-\delta_pt}
+ +k_p(m_0-m^*)\frac{e^{-\delta_mt}-e^{-\delta_pt}}{\delta_p-\delta_m}.
+\end{align}
+当 $\delta_p=\delta_m=\delta$ 时，最后一项取极限为 $k_p(m_0-m^*)te^{-\delta t}$。各项均随时间减小到零，所以无论从什么非负浓度出发，两个变量最终都会回到同一个稳态。若转录率变为随时间变化的 $r(t)$，则
+$m(t)=m_0e^{-\delta_mt}+\int_0^t e^{-\delta_m(t-s)}r(s)\dd s$。
+如果转录率 $r(t)$ 为 $C^2$（有连续的一阶和二阶导数，即变化速度及其变化也连续），并且输入变化的时间尺度远长于 mRNA 的恢复时间，那么起始时的快速调整结束后，即 $t\gg1/\delta_m$，就可以把积分近似写成
+$m(t)\simeq r(t)/\delta_m-\dot r(t)/\delta_m^2$。故仅有 $\delta_m\gg\delta_p$ 还不够，输入与其他调控变量也必须在 mRNA 时间尺度上缓慢变化。
+
+这些速率也决定了自然的时间和浓度单位。若物理浓度 $P$ 满足 $\dot P=A+B P^n/(K_P^n+P^n)-\gamma P$，取 $x=P/K_P$、$\tau=\gamma t$，则
+$\dd x/\dd\tau=a+b x^n/(1+x^n)-x$，其中 $a=A/(\gamma K_P)$、$b=B/(\gamma K_P)$。后文的阈值应在对应单位下解读。
+
+\section{从启动子结合到有效调控}
+前面的产生率是常数。若调控因子与启动子结合，不同结合状态可以有不同转录率，产生率就成为调控因子浓度的函数。考虑 $D+X\rightleftharpoons DX$，令总启动子浓度 $D_T=[D]+[DX]$ 守恒。固定游离调控因子浓度 $x$ 时，平衡条件为
+\[
+k_{\rm on}[D]x=k_{\rm off}[DX],\qquad K_d=\frac{k_{\rm off}}{k_{\rm on}}=\frac{[D]x}{[DX]}.
+\]
+把守恒关系代入，得到结合概率 $p=[DX]/D_T=x/(K_d+x)$。若未结合与已结合的转录速率分别为 $r_0,r_1$，对两个状态加权就有
+\begin{equation}F(x)=r_0(1-p)+r_1p=r_0+(r_1-r_0)\frac{x}{K_d+x}.\label{eq:occupancy}\end{equation}
+由这个式子直接看出，$r_1>r_0$ 是激活，$r_1<r_0$ 是抑制；结合本身的存在并不能决定调控符号。这里的 $x$ 是游离浓度。若结合显著耗竭调控因子，还需要同时解其守恒关系，不能把总浓度直接代入。
+
+这种有效产生率把启动子状态隐藏在占据概率中，因此还须检查启动子能否足够快地跟上浓度变化。固定 $x$ 时，结合概率满足
+\[
+\dot p=k_{\rm on}x(1-p)-k_{\rm off}p,
+\]
+启动子接近结合平衡的速率为 $k_{\rm on}x+k_{\rm off}$。如果结合与解离远快于表达量的变化，就可以近似认为：浓度每次改变后，启动子几乎立即重新达到相应的结合比例。这就是后文所说的“准平衡”近似。Hill 函数 $x^n/(K^n+x^n)$ 则进一步把复杂结合压缩为有效的陡峭响应；$n$ 不应直接解读为实际结合分子数。多个操纵位点、协同结合及 DNA loop 等机制都可能改变这种压缩的具体形式。
+
+
+产生率的非负性和一阶降解还有一个共同作用：确保模型始终描述有物理意义的浓度。当浓度降到 $x_i=0$ 时，有 $\dot x_i=F_i\geq0$，变化方向只能向上或暂时不变，所以浓度不会继续降成负数。在上述唯一轨迹的条件下，从非负浓度出发就始终保持非负；数学上称为非负浓度区域的\emph{正向不变性}。“正向”指随着时间向前演化，“不变”指轨迹不会离开这个区域。把方程两侧乘以 $e^{\gamma_i t}$ 再积分，还可以写出：
+\[
+x_i(t)=e^{-\gamma_it}x_i(0)+\int_0^t e^{-\gamma_i(t-s)}F_i(\bm x(s))\dd s.
+\]
+如果产生率进一步有上界 $F_i\leq M_i$，就得到
+\begin{equation}
+0\leq x_i(t)\leq x_i(0)e^{-\gamma_it}+\frac{M_i}{\gamma_i}(1-e^{-\gamma_it}).\label{eq:bound}
+\end{equation}
+这个上界说明，产生率最高为 $M_i$ 时，一阶降解会限制浓度的增长；它不会在有限时间内升到无限大，方程也能一直计算下去。后文的 Hill 产生率都有这样的上限。接下来可以据此分析系统最终停在哪里，以及不同初始状态会不会导致不同结果。

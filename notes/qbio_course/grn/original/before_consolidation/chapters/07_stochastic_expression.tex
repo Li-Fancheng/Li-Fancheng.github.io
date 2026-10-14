@@ -1,0 +1,53 @@
+\chapter{分子数较少时：从浓度轨迹转向概率分布}
+前面的轨迹把表达量当作连续浓度。在分子数较多、涨落相对较小时，这能突出反馈的主要作用；但同一个产生--降解机制在低分子数下也会不断随机变化。此时，长期“稳定”不再意味着每条轨迹停在同一个数值，而是分子数的概率分布保持不变。先回到最简单的无反馈反应，看看这一转换怎样进行。
+
+\section{同一组反应怎样产生主方程？}
+考虑 $k>0,\gamma>0$ 的出生--死亡过程
+\begin{equation}\varnothing\xrightarrow{k}X,\qquad X\xrightarrow{\gamma}\varnothing.\end{equation}
+令 $P_n(t)$ 表示时刻 $t$ 恰有 $n$ 个分子的概率。在短时间 $\dd t$ 内，出生使 $n-1\to n$，跃迁率为 $k$；死亡使 $n+1\to n$，跃迁率为 $\gamma(n+1)$；从 $n$ 离开的总率为 $k+\gamma n$。流入减去流出，只保留 $\dd t$ 的一阶项，就得到
+\begin{equation}\dot P_n=kP_{n-1}+\gamma(n+1)P_{n+1}-(k+\gamma n)P_n,\qquad P_{-1}=0.\end{equation}
+零边界没有向负分子数的跃迁。确定性方程描述一个浓度的导数，而主方程同时描述所有可能分子数之间的概率转移。
+
+\section{稳态为什么是泊松分布？}
+先寻找长期不变的分布。定义从 $n$ 到 $n+1$ 的净概率流
+$j_n=kP_n-\gamma(n+1)P_{n+1}$，主方程就是 $\dot P_n=j_{n-1}-j_n$。在稳态各相邻概率流必须相等，而零边界给出 $j_{-1}=0$，所以所有 $j_n=0$。这就推出相邻态的\emph{详细平衡}：每一对相邻分子数之间，向上与向下转移的概率流分别相等。它比只要求总分布不再变化更具体。递推得到
+\[
+P_n=P_0\frac{\mu^n}{n!},\qquad\mu=\frac k\gamma.
+\]
+归一化要求 $1=P_0\sum_{n=0}^{\infty}\mu^n/n!=P_0e^\mu$，从而
+\begin{equation}P_n=e^{-\mu}\frac{\mu^n}{n!}.\end{equation}
+因此泊松分布是这条链的唯一归一化稳态；平均分子数 $\mu$ 与此前产生--降解的平衡值对应，但单次观测仍可偏离平均值。
+\begin{figure}[H]\centering\includegraphics[width=.74\linewidth]{figures/birth_death.pdf}\caption{基本出生--死亡模型的稳态泊松分布。平均分子数越低，涨落相对于平均值越明显。}\end{figure}
+
+\section{平均值、涨落幅度与恢复时间怎样联系？}
+为了比较主方程与浓度模型，可以直接计算平均值与方差。先假设平均值与方差都是有限的，数学上称为\emph{有限二阶矩}：$\langle n^2\rangle<\infty$，所以分子数平方的平均值不会无限大。下面分别关心分子数 $h(n)=n$ 和它的平方 $h(n)=n^2$。把每次出生、死亡对这些数量的改变，按照发生概率加起来，就有
+\[
+\frac{\dd\langle h(n)\rangle}{\dd t}
+=\left\langle k[h(n+1)-h(n)]+\gamma n[h(n-1)-h(n)]\right\rangle.
+\]
+先取 $h=n$，得到
+\begin{equation}\frac{\dd\langle n\rangle}{\dd t}=k-\gamma\langle n\rangle.\end{equation}
+这个平均值方程与确定性产生--降解模型具有相同形式，是线性反应下的精确关系。再取 $h=n^2$，得到
+\[
+\frac{\dd\langle n^2\rangle}{\dd t}=2k\langle n\rangle+k-2\gamma\langle n^2\rangle+\gamma\langle n\rangle.
+\]
+减去 $\dd\langle n\rangle^2/\dd t$，就有
+\begin{equation}\frac{\dd\operatorname{Var}(n)}{\dd t}=k+\gamma\langle n\rangle-2\gamma\operatorname{Var}(n).\end{equation}
+在稳态代入 $\langle n\rangle=\mu=k/\gamma$，得到 $\operatorname{Var}(n)=\mu$。因此变异系数为 $1/\sqrt\mu$，分子数越低，相对内禀涨落越大。
+
+涨落还具有时间结构。由平均值方程，从给定 $n(0)$ 出发的条件均值为
+\[
+\mathbb E[n(t)\mid n(0)]=\mu+(n(0)-\mu)e^{-\gamma t}.
+\]
+减去 $\mu$，再乘以 $n(0)-\mu$ 并在稳态平均，得到
+\begin{equation}\operatorname{Cov}(n(t),n(0))=\mu e^{-\gamma t},\qquad t\geq0.\end{equation}
+所以同一个 $1/\gamma$ 既描述平均浓度的恢复，也描述这条线性反应链的涨落相关时间。若产生率带有非线性反馈，通常有 $\langle F(n)\rangle\ne F(\langle n\rangle)$，平均值不再自动满足原来的非线性浓度方程。
+
+\section{两个概率峰是否意味着两个确定性稳定状态？}
+前面的自激活和互抑制开关有两个确定性吸引态，但在随机模型中，两个概率峰还可能来自另一种时间结构：启动子在两种产生率之间缓慢切换。取关闭与开启状态的产生率为 $k_0,k_1$，共享降解率 $\gamma$，切换率为 $k_{\rm on},k_{\rm off}$。
+
+如果两种切换均远慢于 $\gamma$，蛋白质常有足够时间接近当前启动子状态的条件平衡。二态链的稳态流量平衡给出开启概率 $q=k_{\rm on}/(k_{\rm on}+k_{\rm off})$，整体分布的领先阶近似于是为
+\[
+P_n\simeq(1-q)\operatorname{Pois}_{k_0/\gamma}(n)+q\operatorname{Pois}_{k_1/\gamma}(n).
+\]
+若两个均值相距足够远且两权重均显著，这个混合分布可以双峰；每个固定启动子状态下的浓度模型却都只有唯一稳定的稳态。该式是慢切换近似，有限切换速率下不是精确公式。由此可见，解释两个峰时还需要看时间序列、驻留时间和扰动响应，判断状态选择来自确定性反馈，还是来自慢切换或其他机制。

@@ -1,0 +1,18 @@
+{{- /* Keep the readable Markdown source and its resources together. */ -}}
+{{- $path := printf "notes/qbio_course/%s" (.Get 0) -}}
+{{- $directory := path.Dir $path -}}
+{{- $source := readFile $path -}}
+{{- /* The page header displays these two title lines. */ -}}
+{{- $source = replaceRE `^# [^\n]+\n## [^\n]+\n` "" $source -}}
+{{- range findRE `\]\([^\s)]+` $source -}}
+  {{- $destination := strings.TrimPrefix "](" . -}}
+  {{- if not (or (strings.HasPrefix $destination "#") (strings.HasPrefix $destination "/") (strings.Contains $destination "://")) -}}
+    {{- $resourcePath := path.Join $directory (strings.TrimPrefix "./" $destination) -}}
+    {{- with resources.Get $resourcePath -}}
+      {{- $source = replace $source (printf "](%s" $destination) (printf "](%s" .RelPermalink) -}}
+    {{- else -}}
+      {{- errorf "Missing qbio note resource: %s (referenced by %s)" $destination $path -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{ $source | safeHTML }}

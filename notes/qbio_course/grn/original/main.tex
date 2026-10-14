@@ -1,0 +1,152 @@
+\documentclass[11pt,a4paper,UTF8]{ctexart}
+\usepackage[margin=2.35cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,graphicx,hyperref,xcolor,enumitem,fancyhdr}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!45!black,citecolor=blue!45!black}
+setlength{\headheight}{15pt}
+\setlength{\parindent}{2em}\setlength{\parskip}{.25em}
+\setcounter{tocdepth}{2}\numberwithin{equation}{section}
+\newtheorem{proposition}{命题}[section]
+\newtheorem{remark}{注}[section]
+\newcommand{\dd}{\mathrm d}\newcommand{\R}{\mathbb R}\newcommand{\ssv}{\mathrm{ss}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{最小基因调控回路：从反应到动力学}\fancyhead[R]{\thepage}
+\title{\bfseries 最小基因调控回路的理论基础\\[4pt]\large 从化学反应到一、二、三组分系统及真实网络}
+\author{可复现学习笔记（含源代码与数值图）}
+\date{2026 年 10 月}
+\begin{document}\maketitle
+\begin{abstract}
+本文采用明确的反应规则与动力学假设，从产生--降解、启动子结合和质量作用定律出发，研究少组分基因调控回路所允许的行为。主体依次涵盖单组分无反馈及自反馈、双组分单向和相互调控、三组分负反馈与前馈回路、出生--死亡随机过程；最后联系乳糖操纵子、组合调控、网络模体和模块嵌入。重点在于区分\emph{结构所允许的机制}、\emph{特定参数下实现的动力学}与\emph{具体生物学功能}，而非追求复杂网络的完整重构。
+\end{abstract}
+\tableofcontents\newpage
+\section{范围、对象和约定}
+基因调控网络的节点常取为基因表达产物（例如蛋白质）的有效浓度，并不意味着微观反应中只含这些分子。启动子状态、RNA 聚合酶、mRNA、配体、代谢物均可能在粗粒化中被消去。本文用 $x,y,z$ 表示无量纲浓度；正边表示偏导数 $\partial F_i/\partial x_j>0$，负边表示小于零，\emph{并不}指定具体结合机制。
+
+标准连续模型为
+\begin{equation}\dot x_i=F_i(\bm{x};\bm{u})-\gamma_i x_i,\qquad F_i\geq0,\quad\gamma_i>0.\end{equation}
+其中 $F_i$ 为有效产生率，$\bm u$ 为外部输入。结论若只对无自反馈、瞬时调控或一阶降解成立，均明确标出；不将某一特殊参数结果当作结构本身的普遍性质。
+
+\section{从基本化学反应到速率方程}
+\subsection{质量作用与产生--降解}
+对于 $\sum_i\alpha_{ir}X_i\xrightarrow{k_r}\sum_i\beta_{ir}X_i$，质量作用律给出 $v_r(\bm x)=k_r\prod_i x_i^{\alpha_{ir}}$，以及
+\begin{equation}\dot{\bm x}=S\bm v(\bm x),\qquad S_{ir}=\beta_{ir}-\alpha_{ir}.\end{equation}
+其中 $S$ 是化学计量矩阵。对于 $\varnothing\xrightarrow{\alpha}X$, $X\xrightarrow{\gamma}\varnothing$，
+\begin{equation}\dot x=\alpha-\gamma x,\qquad x(t)=\frac\alpha\gamma+\left(x(0)-\frac\alpha\gamma\right)e^{-\gamma t}.\end{equation}
+唯一稳态 $x^*=\alpha/\gamma$ 全局稳定（对 $x\geq0$）。若增加 mRNA，
+\begin{align}
+\varnothing\xrightarrow{k_m}M,\quad M\xrightarrow{\delta_m}\varnothing,\quad M\xrightarrow{k_p}M+P,\quad P\xrightarrow{\delta_p}\varnothing,\\[-2pt]
+\dot m=k_m-\delta_m m,\qquad\dot p=k_pm-\delta_p p.
+\end{align}
+仅当 mRNA 弛豫远快于蛋白质变化时，可近似令 $m\simeq k_m/\delta_m$；若研究振荡或短时间响应，该时间尺度消去可能失效。
+
+\subsection{启动子结合与调控函数}
+考虑 $D+X\rightleftharpoons DX$，定义解离常数 $K_d=[D][X]/[DX]$。位点结合概率为 $p=x/(K_d+x)$。若未结合与已结合的转录速率分别为 $r_0,r_1$，则
+\begin{equation}F(x)=r_0+(r_1-r_0)\frac{x}{K_d+x}.\label{eq:occupancy}\end{equation}
+$r_1>r_0$ 表示激活，$r_1<r_0$ 表示抑制。这一式子需要结合状态相对表达动力学快速准平衡（或具有等效稳态占据）。Hill 表达式 $x^n/(K^n+x^n)$ 是有用的有效模型，但 $n$ 不应被直接解读为实际结合分子数。真实细菌启动子还可以出现多个操纵位点、协同结合和 DNA loop。
+
+\section{单组分系统：穷尽基本调控符号}
+\subsection{无反馈与单调自抑制}
+考虑 $\dot x=F(x)-\gamma x$。若 $F(x)$ 连续、非负、严格递减且有界，则 $F(x)-\gamma x$ 严格递减；在合理边界条件下只有一个定态，且 $F'(x^*)-\gamma<0$。自抑制可以改变响应时间和随机涨落，却不会在该标量模型下产生多稳态。
+
+\subsection{自激活与双稳态}
+取
+\begin{equation}\dot x=a+b\frac{x^n}{K^n+x^n}-\gamma x.\label{eq:auto}\end{equation}
+定态是产生曲线与线性降解直线的交点。局部稳定条件为
+\begin{equation}F'(x^*)-\gamma<0.\end{equation}
+图~\ref{fig:auto} 的参数 $a=0.05,b=3.5,K=\gamma=1,n=4$ 产生三个定态，外侧稳定，中间不稳定。关键不是正反馈必然双稳态，而是正反馈与足够的非线性产生多个交点。临界折叠点满足 $F(x^*)=\gamma x^*$ 和 $F'(x^*)=\gamma$。
+\begin{figure}[htbp]\centering\includegraphics[width=.74\linewidth]{figures/self_activation.pdf}\caption{自激活模型的产生率与降解率，黑点为定态；中间交点不稳定。}\label{fig:auto}\end{figure}
+\begin{proposition}光滑的一维自治 ODE $\dot x=f(x)$ 不存在非平凡周期解。\end{proposition}
+\noindent 证明思路：若轨道在一个非定态点反复返回，必须在一维相线上逆转运动方向；但自治 ODE 在任意不含定态的区间内 $f$ 的符号固定，不能如此。显式延迟或额外动态变量不属于该命题的假设。
+
+\section{双组分系统：符号分类与稳定性}
+\subsection{单向调控}
+\begin{equation}\dot x=\alpha_x-\gamma_xx,\qquad\dot y=G(x)-\gamma_yy.\end{equation}
+$x$ 的定态先独立确定，再决定 $y$。纯前向连接不能让 $y$ 反过来影响 $x$；它改变输出幅度、响应时间和滤波性质，而不是构成闭合反馈回路。
+
+\subsection{双向调控：四种符号组合}
+最简单的无自反馈模型是
+\begin{equation}\dot x=f(y)-\gamma_xx,\qquad\dot y=g(x)-\gamma_yy.\label{eq:two}\end{equation}
+两个交叉导数的符号给出 $++$（互激活）、$--$（互抑制）、$+-$ 和 $-+$（负反馈）。在定态，
+\begin{equation}J=\begin{pmatrix}-\gamma_x&f'(y^*)\\g'(x^*)&-\gamma_y\end{pmatrix},\quad \operatorname{tr}J=-\gamma_x-\gamma_y<0,\quad\det J=\gamma_x\gamma_y-f'g'.\end{equation}
+正反馈：$f'g'>0$。只有当 $f'g'>\gamma_x\gamma_y$ 时该定态变成鞍点；是否双稳态必须进一步分析全局零流线与非线性边界。负反馈：$f'g'<0$，每个定态局部稳定，且可能具有复特征值，产生衰减振荡。
+
+\begin{proposition}对于模型~\eqref{eq:two}，在单连通正象限区域内不存在周期轨道。\end{proposition}
+\noindent 因为向量场散度恒为 $-\gamma_x-\gamma_y<0$，可用 Bendixson 判据。注意此证明\emph{不适用于}任意二维负反馈系统：自调控使对角导数变化，非线性降解也改变散度。
+
+\subsection{互相抑制与双稳态开关}
+典型无量纲模型：
+\begin{equation}\dot x=\frac{a}{1+y^n}-x,\qquad\dot y=\frac{a}{1+x^n}-y.\label{eq:toggle}\end{equation}
+零流线 $x=a/(1+y^n)$ 与 $y=a/(1+x^n)$ 的交点就是定态。图~\ref{fig:toggle} 展示 $a=3,n=3$ 的示例：两个不对称表达态和中间的对称定态。可通过雅可比矩阵逐一判定稳定性。该模型展示状态选择的最小机制，但生物学中的细胞命运并不等同于某一对基因浓度。
+\begin{figure}[htbp]\centering\includegraphics[width=.67\linewidth]{figures/toggle_nullclines.pdf}\caption{互抑开关的两条零流线（$a=3,n=3$）。}\label{fig:toggle}\end{figure}
+
+\subsection{自调控使分类增多}
+若允许 $x\to x$ 与 $y\to y$ 的正、负或缺失边，共有 $3^4=81$ 种带标签的二节点符号拓扑（四条可能有向边，每条三种取值）。这是\emph{拓扑计数}，不是 81 种不等价动力学机制；交换节点可合并部分结构，而固定符号也不唯一确定启动子逻辑、时延和参数。应先掌握无自调控的解析分类，再考察自调控如何改变迹、行列式与 Bendixson 条件。
+
+\section{三组分：为什么增加一个环节有意义}
+\subsection{负反馈环与振荡}
+三个相互抑制环节可写为
+\begin{equation}\dot x_1=f_1(x_3)-\gamma x_1,\quad\dot x_2=f_2(x_1)-\gamma x_2,\quad\dot x_3=f_3(x_2)-\gamma x_3.\end{equation}
+若平衡点处 $f'_1f'_2f'_3=-k^3<0$，特征方程为
+\begin{equation}(\lambda+\gamma)^3=-k^3.\end{equation}
+因此 $\lambda_1=-\gamma-k$ 与 $\lambda_{2,3}=-\gamma+k/2\pm i\sqrt3k/2$，在 $k=2\gamma$ 时一对特征值过虚轴。这给出线性失稳门槛；真正的稳定极限环还需要检查非线性、边界有界性及分岔条件。图~\ref{fig:rep} 使用 Hill 抑制 $f(s)=20/(1+s^3)$ 作数值说明，不能由图代替定理。
+\begin{figure}[htbp]\centering\includegraphics[width=.78\linewidth]{figures/repressilator.pdf}\caption{三节点负反馈环的数值轨迹，生成脚本见 \texttt{code/make\_figures.py}。}\label{fig:rep}\end{figure}
+
+\subsection{不一致前馈与适应}
+输入 $u$ 可以直接激活输出 $y$，又通过慢变量 $z$ 抑制 $y$：
+\begin{equation}\tau_y\dot y=H(u,z)-y,\qquad\tau_z\dot z=G(u)-z.\end{equation}
+若 $z$ 比 $y$ 慢，阶跃输入引起 $y$ 先增加，随后 $z$ 增加抑制 $y$，形成脉冲。\emph{脉冲}与\emph{精确适应}不同：精确适应要求稳态输出 $y^*(u)$ 与持续输入的幅度无关，这对 $H$、$G$ 有额外条件；拓扑本身不保证这种性质。Ma 等（2009）对三节点生化适应网络进行系统枚举，识别出不一致前馈和带缓冲节点负反馈等机制，但其研究对象并不是所有可能的三基因转录网络。
+
+\section{随机化学反应：从平均值到分布}
+出生--死亡过程
+\begin{equation}\varnothing\xrightarrow{k}X,\qquad X\xrightarrow{\gamma}\varnothing\end{equation}
+的主方程是
+\begin{equation}\dot P_n=kP_{n-1}+\gamma(n+1)P_{n+1}-(k+\gamma n)P_n,\quad P_{-1}=0.\end{equation}
+稳态满足相邻态详细平衡关系 $kP_{n-1}=\gamma nP_n$，故
+\begin{equation}P_n=e^{-\mu}\frac{\mu^n}{n!},\qquad\mu=k/\gamma,\qquad\operatorname{Var}(n)=\langle n\rangle=\mu.\end{equation}
+\begin{figure}[htbp]\centering\includegraphics[width=.74\linewidth]{figures/birth_death.pdf}\caption{基本出生--死亡模型的稳态泊松分布。}\end{figure}
+启动子随机切换 $D_{\rm off}\rightleftharpoons D_{\rm on}$ 会产生表达爆发；慢启动子切换本身就可能导致双峰分布。因此双峰直方图不构成确定性双稳态的充分证据。识别机制需结合时间序列、驻留时间、扰动响应与遗传谱系等信息。
+
+\section{连接真实 GRN：三个必要的桥梁}
+\subsection{组合调控：符号拓扑不等于启动子逻辑}
+两个转录因子 $X,Y$ 结合启动子 $D$ 的四个状态为 $D,DX,DY,DXY$。在特定准平衡模型中，统计权重为
+\begin{equation}1,\quad x/K_x,\quad y/K_y,\quad\omega xy/(K_xK_y),\end{equation}
+$\omega$ 表示协同性。令 $Z=1+x/K_x+y/K_y+\omega xy/(K_xK_y)$，则
+\begin{equation}F(x,y)=\frac{r_0+r_xx/K_x+r_yy/K_y+r_{xy}\omega xy/(K_xK_y)}{Z}.\end{equation}
+同样两条激活边，由 $r_s$ 的不同可形成 AND-like、OR-like 等不同调控逻辑。仅有网络连边不能确定动力学方程。
+
+\subsection{网络模体和局部功能}
+真实网络中常统计自调控、前馈回路、反馈环等小拓扑是否相对某一合理随机网络零模型富集。富集不等于因果功能，也不能自动认定局部回路独立于网络其余部分。较妥当的问题是：哪些局部动力学性质在给定输入变化和网络背景下依然可观察？
+
+\subsection{网络嵌入与有效模块}
+将已分析的局部变量记为 $\bm x$，其余网络记为 $\bm z$：
+\begin{equation}\dot{\bm x}=\bm f(\bm x,\bm z),\qquad\dot{\bm z}=\bm g(\bm x,\bm z).\end{equation}
+线性化矩阵按块写为 $J=\begin{psmallmatrix}A&B\\C&D\end{psmallmatrix}$。即便 $A,D$ 分别稳定，耦合后的系统仍可能失稳；两块的特征值通常不足以推断整体特征值。只有在外部输入近似固定、存在明确时间尺度分离或耦合可控时，局部回路才可能构成有效的自治模块。这解释了为何最小回路有用，但不能无条件拼装成真实系统。
+
+\section{生物学案例：乳糖操纵子及其限度}
+大肠杆菌 lac 系统包括 LacI 阻遏蛋白、lacZYA 转录单位以及乳糖/异乳糖相关代谢与摄取过程。lacI 具有自身的转录调控，不属于 lacZYA 同一多顺反子转录单位。异乳糖降低 LacI 的阻遏活性；CAP--cAMP 及葡萄糖相关效应调节转录和摄取。
+
+在最简单的结合占据近似下，活性 LacI 浓度为 $R_a$ 时，解除阻遏的分数可写作 $K_d/(K_d+R_a)$，从而给出有效转录率 $F(R_a)$。进一步引入 LacY 蛋白 $y$ 与细胞内诱导物 $a$，
+\begin{equation}\dot y=F(a)-\gamma_y y,\qquad\dot a=v_{\rm in}(y,L_{\rm ext})-v_{\rm out/met}(a,y).\end{equation}
+这体现了 ``LacY 增强摄取 $\to$ 诱导物增加 $\to$ 阻遏解除 $\to$ LacY 增加'' 的有效正反馈，但真正的乳糖代谢、透过酶动力学、葡萄糖作用和生长稀释会改变反馈强度。特别应区分代谢性乳糖与非代谢型诱导物的实验情形，不能笼统声称 lac 网络必然双稳态。
+
+\section{一张机制地图与自检清单}
+\begin{center}\begin{tabular}{p{2.9cm}p{5.6cm}p{4.2cm}}\toprule
+模型 & 可确立的典型结论 & 不应推出的结论\\\midrule
+线性产生--降解 & 唯一指数稳定定态；出生--死亡离散模型为泊松稳态 & 所有表达分布均为泊松\\
+一维单调自抑制 & 唯一稳定定态；无自治周期轨道 & 负反馈系统普遍不振荡\\
+一维自激活 & 足够非线性时可能双稳态 & 正反馈必定双稳态\\
+双组分互相调控 & 正/负回路符号影响特征值和稳定性 & 仅凭符号能决定所有行为\\
+三节点负反馈 & 可发生复特征值过虚轴、支持振荡机制 & 所有负反馈环都会自振\\
+前馈回路 & 可实现脉冲、滤波和特定条件下适应 & 前馈拓扑自动保证精确适应\\
+\bottomrule\end{tabular}\end{center}
+
+\noindent 阅读和复现每个模型时，依次检查：\textbf{反应规则}是什么？\textbf{消去变量}需要什么时间尺度？\textbf{定态}是否完整？\textbf{局部稳定性}与\textbf{全局动力学}是否区分？\textbf{网络结构}是否真的唯一指定调控函数？\textbf{生物功能}是否得到独立实验支持？
+
+\section*{参考文献与延伸阅读}\addcontentsline{toc}{section}{参考文献与延伸阅读}
+\begin{enumerate}[leftmargin=*]
+\item Bintu, L. et al. (2005). Transcriptional regulation by the numbers: models. \emph{Current Opinion in Genetics \& Development}, 15, 116--124. DOI: \href{https://doi.org/10.1016/j.gde.2005.02.007}{10.1016/j.gde.2005.02.007}.
+\item Gardner, T. S., Cantor, C. R., \& Collins, J. J. (2000). Construction of a genetic toggle switch in Escherichia coli. \emph{Nature}, 403, 339--342. DOI: \href{https://doi.org/10.1038/35002131}{10.1038/35002131}.
+\item Elowitz, M. B. \& Leibler, S. (2000). A synthetic oscillatory network of transcriptional regulators. \emph{Nature}, 403, 335--338. DOI: \href{https://doi.org/10.1038/35002125}{10.1038/35002125}.
+\item Shen-Orr, S. S. et al. (2002). Network motifs in the transcriptional regulation network of Escherichia coli. \emph{Nature Genetics}, 31, 64--68. DOI: \href{https://doi.org/10.1038/ng881}{10.1038/ng881}.
+\item Alon, U. (2007). Network motifs: theory and experimental approaches. \emph{Nature Reviews Genetics}, 8, 450--461. DOI: \href{https://doi.org/10.1038/nrg2102}{10.1038/nrg2102}.
+\item Ma, W., Trusina, A., El-Samad, H., Lim, W. A., \& Tang, C. (2009). Defining network topologies that can achieve biochemical adaptation. \emph{Cell}, 138, 760--773. DOI: \href{https://doi.org/10.1016/j.cell.2009.06.013}{10.1016/j.cell.2009.06.013}.
+\end{enumerate}
+\end{document}

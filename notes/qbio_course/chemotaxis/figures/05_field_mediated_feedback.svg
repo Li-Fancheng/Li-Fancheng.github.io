@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="597.78pt" height="232.654125pt" viewBox="0 0 597.78 232.654125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T13:53:52.253257</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 232.654125 
+L 597.78 232.654125 
+L 597.78 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 31.06116 144.022125 
+L 173.02194 144.022125 
+Q 181.0683 144.022125 181.0683 136.025325 
+L 181.0683 80.618925 
+Q 181.0683 72.622125 173.02194 72.622125 
+L 31.06116 72.622125 
+Q 23.0148 72.622125 23.0148 80.618925 
+L 23.0148 136.025325 
+Q 23.0148 144.022125 31.06116 144.022125 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #e6f3f6; stroke: #56636d; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 226.47276 144.022125 
+L 368.43354 144.022125 
+Q 376.4799 144.022125 376.4799 136.025325 
+L 376.4799 80.618925 
+Q 376.4799 72.622125 368.43354 72.622125 
+L 226.47276 72.622125 
+Q 218.4264 72.622125 218.4264 80.618925 
+L 218.4264 136.025325 
+Q 218.4264 144.022125 226.47276 144.022125 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #e3eee7; stroke: #56636d; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 421.88436 144.022125 
+L 563.84514 144.022125 
+Q 571.8915 144.022125 571.8915 136.025325 
+L 571.8915 80.618925 
+Q 571.8915 72.622125 563.84514 72.622125 
+L 421.88436 72.622125 
+Q 413.838 72.622125 413.838 80.618925 
+L 413.838 136.025325 
+Q 413.838 144.022125 421.88436 144.022125 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #ecedf9; stroke: #56636d; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 185.365239 110.321325 
+Q 200.033391 110.321325 213.024492 110.321325 
+" clip-path="url(#pfc72ff0f01)" style="fill: none; stroke: #44515c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 206.624492 107.121325 
+L 213.024492 110.321325 
+L 206.624492 113.521325 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #44515c; stroke: #44515c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 380.776839 110.321325 
+Q 395.444991 110.321325 408.436092 110.321325 
+" clip-path="url(#pfc72ff0f01)" style="fill: none; stroke: #44515c; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 402.036092 107.121325 
+L 408.436092 110.321325 
+L 402.036092 113.521325 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #44515c; stroke: #44515c; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 493.604455 150.50608 
+Q 298.02657 231.880459 104.100281 151.192173 
+" clip-path="url(#pfc72ff0f01)" style="fill: none; stroke: #b24b3b; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 109.072402 156.943522 
+L 104.100281 151.192173 
+L 111.684633 150.665285 
+z
+" clip-path="url(#pfc72ff0f01)" style="fill: #b24b3b; stroke: #b24b3b; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 500; font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="102.04155" y="99.214606" transform="rotate(-0 102.04155 99.214606)">More cells locally</text>
+   </g>
+   <g id="text_2">
+    <!-- $\delta \rho &gt; 0$ -->
+    <g transform="translate(81.76155 126.448506)">
+     <text>
+      <tspan x="0" y="-0.34375" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">δ</tspan>
+      <tspan x="7.953613" y="-0.34375" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">ρ</tspan>
+      <tspan x="18.738281" y="-0.34375" style="font-size: 13px; font-family: 'DejaVu Sans'">&gt;</tspan>
+      <tspan x="32.163574" y="-0.34375" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 500; font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="297.45315" y="99.214606" transform="rotate(-0 297.45315 99.214606)">More attractant</text>
+   </g>
+   <g id="text_4">
+    <!-- $\delta c &gt; 0$ -->
+    <g transform="translate(277.75815 126.474912)">
+     <text>
+      <tspan x="0" y="-0.34375" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">δ</tspan>
+      <tspan x="7.953613" y="-0.34375" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">c</tspan>
+      <tspan x="17.633789" y="-0.34375" style="font-size: 13px; font-family: 'DejaVu Sans'">&gt;</tspan>
+      <tspan x="31.059082" y="-0.34375" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 500; font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="492.86475" y="99.214606" transform="rotate(-0 492.86475 99.214606)">Inward drift</text>
+   </g>
+   <g id="text_6">
+    <!-- $J_{\rm chem} \propto \rho \nabla c$ -->
+    <g transform="translate(458.86975 126.448506)">
+     <text>
+      <tspan x="0" y="-0.515625" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">J</tspan>
+      <tspan x="43.775342" y="-0.515625" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">ρ</tspan>
+      <tspan x="60.723584" y="-0.515625" style="font-style: oblique; font-size: 13px; font-family: 'DejaVu Sans'">c</tspan>
+      <tspan x="3.833984" y="1.617188" style="font-size: 9.1px; font-family: 'DejaVu Sans'">c</tspan>
+      <tspan x="8.837207" y="1.617188" style="font-size: 9.1px; font-family: 'DejaVu Sans'">h</tspan>
+      <tspan x="14.604688" y="1.617188" style="font-size: 9.1px; font-family: 'DejaVu Sans'">e</tspan>
+      <tspan x="20.20332" y="1.617188" style="font-size: 9.1px; font-family: 'DejaVu Sans'">m</tspan>
+      <tspan x="31.956006" y="-0.515625" style="font-size: 13px; font-family: 'DejaVu Sans'">∝</tspan>
+      <tspan x="52.027295" y="-0.515625" style="font-size: 13px; font-family: 'DejaVu Sans'">∇</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="200.03472" y="66.910125" transform="rotate(-0 200.03472 66.910125)">secretion</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle" x="395.44632" y="66.910125" transform="rotate(-0 395.44632 66.910125)">chemotaxis</text>
+   </g>
+   <g id="text_9">
+    <g id="patch_8">
+     <path d="M 164.647031 217.165494 
+L 433.132969 217.165494 
+L 433.132969 204.539556 
+L 164.647031 204.539556 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #a34133" x="298.89" y="213.887837" transform="rotate(-0 298.89 213.887837)">Positive feedback amplifies a density fluctuation</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 600; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="298.89" y="20.638125" transform="rotate(-0 298.89 20.638125)">Cells change the field they follow</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfc72ff0f01">
+   <rect x="11.52" y="32.638125" width="574.74" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

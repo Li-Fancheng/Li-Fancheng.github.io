@@ -1,6 +1,8 @@
 # From Single-Cell Noise to Population Growth
 ## Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics
 
+> Personal notes for Introduction to Quantitative Biology, Westlake University, Fall 2026.
+
 > **Central question.** Why can independent division-time fluctuations accelerate population growth, while size-homeostatic cells may eliminate this apparent growth advantage?
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->

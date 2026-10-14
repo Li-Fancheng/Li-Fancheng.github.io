@@ -1,0 +1,16 @@
+{{- $target := .Site.GetPage .Params.redirect -}}
+{{- if not $target -}}
+  {{- errorf "Missing note redirect target: %s" .Params.redirect -}}
+{{- end -}}
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ $target.Title }}</title>
+  <link rel="canonical" href="{{ $target.Permalink }}">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ $target.RelPermalink }}">
+  <script>window.location.replace({{ $target.RelPermalink | jsonify | safeJS }} + window.location.search + window.location.hash);</script>
+</head>
+<body><a href="{{ $target.RelPermalink }}">{{ $target.Title }}</a></body>
+</html>

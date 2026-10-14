@@ -1,14 +1,14 @@
-{{- /* Select the lecture text for the current language edition. */ -}}
-{{- $path := "notes/cell_cycle/cell_cycle_correlations_note.md" -}}
+{{- /* Select the note text for the current language edition. */ -}}
+{{- $path := "notes/qbio_course/cell_cycle/cell_cycle_correlations_note.md" -}}
 {{- if eq .Page.Lang "en" -}}
-  {{- $path = "notes/cell_cycle/cell_cycle_correlations_note_en.md" -}}
+  {{- $path = "notes/qbio_course/cell_cycle/cell_cycle_correlations_note_en.md" -}}
 {{- end -}}
 {{- $source := readFile $path -}}
-{{- /* The page header already displays the lecture title and subtitle. */ -}}
+{{- /* The page header already displays the note title and subtitle. */ -}}
 {{- $source = replaceRE `^# [^\n]+\n## [^\n]+\n` "" $source -}}
 {{- range findRE `figures/[a-zA-Z0-9_.-]+\.(png|jpg|svg)` $source -}}
   {{- $figure := . -}}
-  {{- with resources.Get (printf "notes/cell_cycle/%s" $figure) -}}
+  {{- with resources.Get (printf "notes/qbio_course/cell_cycle/%s" $figure) -}}
     {{- $source = replace $source $figure .RelPermalink -}}
   {{- else -}}
     {{- errorf "Missing cell-cycle figure: %s" . -}}

@@ -1,0 +1,43 @@
+\chapter{从局部回路到真实网络：还需要补上什么？}
+lac 的摄取支路已经说明，简化图上的一条边可能压缩了多个过程。真实网络还存在组合输入、与其余变量的动态耦合，以及统计意义上的模体富集。理解这些层面，才能判断最小模型的解释在何种条件下可以迁移。
+\section{组合调控：符号拓扑不等于启动子逻辑}
+两个转录因子 $X,Y$ 结合启动子 $D$ 的四个状态为 $D,DX,DY,DXY$。在特定准平衡模型中，统计权重为
+\begin{equation}1,\quad x/K_x,\quad y/K_y,\quad\omega xy/(K_xK_y),\end{equation}
+$\omega$ 表示协同性。令 $Z=1+x/K_x+y/K_y+\omega xy/(K_xK_y)$，则
+\begin{equation}F(x,y)=\frac{r_0+r_xx/K_x+r_yy/K_y+r_{xy}\omega xy/(K_xK_y)}{Z}.\end{equation}
+同样两条激活边，由 $r_s$ 的不同可形成 AND-like、OR-like 等不同调控逻辑。仅有网络连边不能确定动力学方程。
+
+具体的差别可以从状态概率直接算出来。写 $a=x/K_x,b=y/K_y$。准平衡时四种状态的概率是各自统计权重除以总权重 $Z$，所以 $F=\sum_s r_s p_s$，即前述有理式。$\omega=1$ 时 $Z=(1+a)(1+b)$，记 $p_x=a/(1+a),p_y=b/(1+b)$。
+若只有双结合态转录，$r_{xy}=r$、其余为零，得到
+$F_{\rm AND}=rp_xp_y$；若除空态以外均以速率 $r$ 转录，得到
+$F_{\rm OR}=r(p_x+p_y-p_xp_y)$。
+二者对 $x,y$ 均非减，却有不同的低输入响应。极限 $a,b\ll1$ 或 $\gg1$ 将连续调控近似为布尔真值表。若 $r_{xy}$ 小于单结合态速率，增加另一个因子甚至可能降低输出；因此指定某些 $r_s$ 后还要实际检查偏导数，不能只凭结合就称为激活。
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=20mm]
+\node[gene] (d) {$D$};\node[gene,right=of d] (dx) {$DX$};
+\node[gene,below=of d] (dy) {$DY$};\node[gene,right=of dy] (dxy) {$DXY$};
+\draw[<->] (d)--node[above]{$X$}(dx);\draw[<->] (d)--node[left]{$Y$}(dy);
+\draw[<->] (dx)--node[right]{$Y$}(dxy);\draw[<->] (dy)--node[below]{$X$}(dxy);
+\node[align=left,right=15mm of dx,anchor=west] {状态权重：$1,a,b,\omega ab$\\状态转录率：$r_0,r_x,r_y,r_{xy}$};
+\end{tikzpicture}
+\caption{两种调控因子的启动子占据状态。图示可逆结合；协同性必须与相容的结合常数共同指定，最终输出由状态概率与各状态转录率共同决定。}
+\end{figure}
+
+\section{模块嵌入：局部稳定为何不能直接拼装？}
+将已分析的局部变量记为 $\bm x$，其余网络记为 $\bm z$：
+\begin{equation}\dot{\bm x}=\bm f(\bm x,\bm z),\qquad\dot{\bm z}=\bm g(\bm x,\bm z).\end{equation}
+在稳态附近，两个模块的小偏差怎样相互影响，可以整理成四块： $J=\begin{psmallmatrix}A&B\\C&D\end{psmallmatrix}$。其中 $A,D$ 描述两个模块各自的变化，$B,C$ 描述它们如何影响对方。即使两个模块单独运行都能恢复，连接起来也可能让某些偏差不断放大，因此不能只用单独模块的结果判断整个网络。只有在外部输入近似固定、存在明确时间尺度分离或耦合可控时，局部回路才可能构成近似独立运行的模块。这解释了为何最小回路有用，但不能无条件拼装成真实系统。
+
+一个两维线性扰动例子足以看出耦合的影响。取 $A=D=-1$、$B=C=2$。单独运行时，两块的偏差都按 $e^{-t}$ 衰减。连接后，描述小偏差的雅可比矩阵
+$\begin{psmallmatrix}-1&2\\2&-1\end{psmallmatrix}$ 的特征值却是 $1,-3$，所以耦合足以使系统失稳。这是线性扰动系统的反例，不把可取负值的扰动直接解释为绝对浓度。
+要继续计算连接后的影响，可以先从外部模块的方程中解出它的偏差，再代回局部模块。只要 $\lambda I-D$ 有逆矩阵，这一代入就给出
+\[
+\det(\lambda I-J)=\det(\lambda I-D)
+\det\left[\lambda I-A-B(\lambda I-D)^{-1}C\right].
+\]
+这个消去外部变量后的组合称为\emph{Schur 补}：它把外部变量的响应折算成局部方程中的修正。这里的 $B(\lambda I-D)^{-1}C$ 就是“局部影响外部，再由外部传回局部”的整条反馈路径。代入的矩阵计算相当于左乘 $\begin{psmallmatrix}I&B(\lambda I-D)^{-1}\\0&I\end{psmallmatrix}$，把右上块消成零；这个操作不改变行列式，剩下的两块分别取行列式再相乘，就得到上式。这个式子说明：外部模块传回来的影响取决于偏差变化的快慢，即时间因子 $e^{\lambda t}$ 中的 $\lambda$；不能简单地当成一个固定输入。
+如果外部变量恢复得远快于局部变量，就可以近似认为它们总能及时跟上。令外部变量的变化率接近零，即 $0=C\delta\bm x+D\delta\bm z$ 给出 $\delta\bm z=-D^{-1}C\delta\bm x$，从而 $A_{\rm eff}=A-BD^{-1}C$。所以即使把外部变量从方程中省去，它们的影响仍留在 $-BD^{-1}C$ 这一项里，局部模块的实际恢复行为通常也会改变。
+
+\section{网络模体：结构富集怎样与功能分析连接？}
+明确了调控函数与网络背景之后，再讨论一个小回路为何在真实网络中反复出现。
+真实网络中常统计自调控、前馈回路、反馈环等小拓扑是否相对某一合理随机网络零模型富集。富集不等于因果功能，也不能自动认定局部回路独立于网络其余部分。较妥当的问题是：哪些局部动力学性质在给定输入变化和网络背景下依然可观察？
