@@ -1,6 +1,11 @@
-{{- /* Keep one source for the lecture shared by both language editions. */ -}}
-{{- $source := readFile "notes/cell_cycle/cell_cycle_correlations_note.md" -}}
-{{- $source = replaceRE `^# From Single-Cell Noise to Population Growth\n## Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics\n` "" $source -}}
+{{- /* Select the lecture text for the current language edition. */ -}}
+{{- $path := "notes/cell_cycle/cell_cycle_correlations_note.md" -}}
+{{- if eq .Page.Lang "en" -}}
+  {{- $path = "notes/cell_cycle/cell_cycle_correlations_note_en.md" -}}
+{{- end -}}
+{{- $source := readFile $path -}}
+{{- /* The page header already displays the lecture title and subtitle. */ -}}
+{{- $source = replaceRE `^# [^\n]+\n## [^\n]+\n` "" $source -}}
 {{- range findRE `figures/[a-zA-Z0-9_.-]+\.(png|jpg|svg)` $source -}}
   {{- $figure := . -}}
   {{- with resources.Get (printf "notes/cell_cycle/%s" $figure) -}}

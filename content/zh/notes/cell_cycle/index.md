@@ -1,18 +1,18 @@
 ---
 title: "细胞周期：从单细胞噪声到群体增长"
-subtitle: "Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics"
+subtitle: "细胞周期调控、时间相关性与随机动力学"
 date: 2026-10-14
-summary: "三小时统计物理讲义：从分裂时间噪声与尺寸稳态出发，以 adder 和 telescoping identity 解释群体增长；完整技术推导保留在附录。"
+summary: "三小时统计物理讲义：从分裂时间噪声与细胞大小稳态出发，通过定增量分裂模型和逐项相消恒等式解释群体增长，并附完整推导与练习。"
 translationKey: cell-cycle-correlations
 layout: cell-cycle
 math: true
 toc: true
 tags:
-  - Cell Cycle
-  - Stochastic Dynamics
-  - Statistical Physics
+  - 细胞周期
+  - 随机动力学
+  - 统计物理
 ---
 
-这份三小时课程的英文讲义围绕一个问题展开：独立分裂时间噪声为什么能加速群体增长，而尺寸反馈如何通过代际关联抵消这一效应？第 1–5 节构成主课，完整计算与可解模型保留在技术附录；振荡模式作为独立进阶专题，随后提供练习与进一步阅读。
+这份三小时课程讲义围绕一个问题展开：独立的分裂时间噪声为什么能加快群体增长，而大小反馈又如何通过代际相关性抵消这一效应？第 1–5 节为正文，技术附录给出完整计算和可解模型，随后是振荡模态的进阶专题、练习与进一步阅读。
 
 {{% cell-cycle-note %}}

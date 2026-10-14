@@ -1,265 +1,267 @@
-# From Single-Cell Noise to Population Growth
-## Cell-Cycle Regulation, Temporal Correlations, and Stochastic Dynamics
+# 从单细胞噪声到群体增长
+## 细胞周期调控、时间相关性与随机动力学
 
-> **Central question.** Why can independent division-time fluctuations accelerate population growth, while size-homeostatic cells may eliminate this apparent growth advantage?
+> **核心问题：** 为什么彼此独立的分裂时间波动能加快群体增长，而维持大小稳态的细胞却可能消除这种看似存在的增长优势？
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->
 
-## Main Lecture
+## 正文 {#main-lecture}
 
 <div id="0-the-physical-problem-and-the-roadmap"></div>
 
 <div id="notation"></div>
 
-### Lecture roadmap and learning objectives
+### 课程安排与学习目标 {#lecture-roadmap-and-learning-objectives}
 
-We begin with a biological observation—cells fluctuate in size but maintain a stable size distribution—and ask which stochastic division models respect it. Euler–Lotka theory then creates an apparent conflict between noisy population growth and conserved biomass. The adder resolves that conflict through a simple physical mechanism: inherited size makes successive division times correlated, so their fluctuations cancel over many generations.
+我们从一个生物学现象出发：细胞的大小虽然不断波动，但其分布能够保持稳定。什么样的随机分裂模型能解释这一点？接着，Euler–Lotka 理论会引出一个表面上的矛盾：分裂时间的噪声似乎能加快群体增长，但生物量又必须守恒。adder 模型给出了一个直观的解释：子细胞继承了母细胞的大小，因此相邻世代的分裂时间会产生相关性；经过许多代之后，这些时间波动可以相互抵消。
 
-The three-hour session allocates **160 minutes to the main text**, a **10-minute break after Section 2**, and **10 minutes to closing discussion**. Sections 1–5 take approximately **30, 35, 50, 35, and 10 minutes**, respectively. The technical appendices and further topic are for subsequent reading. By the end, students should be able to derive the timer instability and telescoping identity, distinguish chronological from population-biased sampling, and explain why integrated temporal correlations matter more than a single-generation variance.
+这节课共三小时，其中**正文讲授 160 分钟**，**第 2 节后休息 10 分钟**，最后留出 **10 分钟讨论**。第 1–5 节分别约需 **30、35、50、35 和 10 分钟**。技术附录和进阶专题供课后阅读。学完后，应能推导定时分裂模型的不稳定性和逐项相消恒等式，区分沿谱系向前追踪与带有群体抽样偏倚的统计，并说明为什么跨世代的时间协方差总和比单个世代的方差更能影响长期增长。
 
-We distinguish the **population growth rate** $\Lambda=\lim_{t\to\infty}t^{-1}\ln N(t)$, when this limit exists, from the common **single-cell size growth rate** $\lambda$ in $\dot v=\lambda v$. Branching calculations first determine the exponent of $M(t)=\mathbb E[N(t)]$; identifying it with the exponent of a typical population requires the branching regularity conditions discussed in [Appendix C](#appendix-c). The volume argument instead applies directly to a realized population.
+术语上，**细胞大小稳态（size homeostasis）** 强调细胞能够纠正大小偏差；**平稳性（stationarity）** 则指统计分布不随世代改变。两者有关，但不是同一个概念。本文用 $v$ 表示细胞大小，守恒论证以体积为例。
 
-| Symbol | Meaning |
+先区分两个增长率：**群体增长率** $\Lambda=\lim_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞大小增长率** $\lambda$，后者满足 $\dot v=\lambda v$。分枝过程的计算首先确定的是 $M(t)=\mathbb E[N(t)]$ 的增长指数。要把它等同于一次典型群体实现中的增长指数，还需要满足[附录 C](#appendix-c)讨论的正则性条件。相比之下，利用总体积得到的结论直接适用于实际发生的一次群体演化。
+
+| 符号 | 含义 |
 |---|---|
-| $v_n$, $v_n^{\mathrm d}$ | Birth and division sizes in generation $n$ |
-| $\tau_n$, $T_n=\sum_{j=0}^{n-1}\tau_j$ | One generation time and accumulated time |
-| $\mu=\mathbb E[\tau_n]$ | Mean chronological generation time |
-| $\Delta$ | Mean added size in the adder |
-| $C_y(k)$, $S_y(\omega)$ | Stationary covariance and two-sided PSD, with $\omega$ in radians per generation |
+| $v_n$、$v_n^{\mathrm d}$ | 第 $n$ 代细胞的出生大小和分裂大小 |
+| $\tau_n$、$T_n=\sum_{j=0}^{n-1}\tau_j$ | 一个世代的持续时间，以及经过多个世代的累计时间 |
+| $\mu=\mathbb E[\tau_n]$ | 沿谱系向前追踪时的平均世代时间 |
+| $\Delta$ | adder 模型中的平均大小增量 |
+| $C_y(k)$、$S_y(\omega)$ | 平稳过程的协方差函数和双边功率谱密度（PSD）；$\omega$ 的单位为弧度/世代 |
 
-A **chronological lineage** follows one daughter chosen with probability $1/2$ at each division, without weighting by her eventual descendants. A **retrospective lineage** traces the ancestors of a cell sampled from a later population snapshot. These procedures generally produce different statistics.
+**前向谱系（chronological lineage）** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条谱系继续追踪，选择时不考虑它后来会有多少后代。**回溯谱系（retrospective lineage）** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
 
 ---
 
 <div id="1-why-an-independent-division-timer-does-not-regulate-size"></div>
 
-## 1. Cell-size homeostasis and the failure of a timer
+## 1. 细胞大小稳态与定时分裂模型的不足 {#1-cell-size-homeostasis-and-the-failure-of-a-timer}
 
-**Scientific question: how can cell sizes fluctuate without wandering indefinitely across generations?** Single-cell tracking experiments show variability together with recovery from initially small or large sizes. A stationary size distribution is therefore a dynamical constraint, not simply a narrow histogram. The observations of [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009) motivate comparing division rules that respond differently to inherited birth size.
+**这一节的问题是：细胞大小为什么可以波动，却不会随着世代更替无限偏离正常范围？** 单细胞追踪实验发现，细胞之间存在大小差异，但初始偏小或偏大的细胞又会逐渐恢复。因此，稳定的大小分布意味着动力学中存在约束，不能只把它理解为一张比较窄的直方图。[Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的实验启发我们比较不同分裂规则，看看它们如何响应从母细胞继承的出生大小。
 
 <div id="11-exponential-growth-between-divisions"></div>
 
-### 1.1 Exponential growth and symmetric division
+### 1.1 指数生长与对称分裂 {#11-exponential-growth-and-symmetric-division}
 
-For some bacterial growth conditions, a useful approximation is exponential growth at the same constant rate $\lambda>0$ for every cell:
+在某些细菌培养条件下，可以近似认为所有细胞都以相同的恒定速率 $\lambda>0$ 指数生长：
 
 $$
 \frac{dv}{dt}=\lambda v,\qquad v(t)=v_n e^{\lambda t}.
 $$
 
-If division occurs after $\tau_n$ and each daughter receives half the mother's volume, then
+如果细胞经过 $\tau_n$ 后分裂，两个子细胞各获得母细胞一半的体积，那么
 
 $$
 v_n^{\mathrm d}=v_n e^{\lambda\tau_n},\qquad
 v_{n+1}=\frac12v_n e^{\lambda\tau_n}.\tag{1.1}
 $$
 
-This relation separates the division rule, which chooses $\tau_n$, from the growth and partition kinematics.
+这里，分裂规则决定 $\tau_n$；细胞如何生长、体积如何分配，则由上面的关系描述。
 
 <div id="12-the-timer-becomes-a-random-walk-in-log-size"></div>
 
-### 1.2 A timer is a random walk in log size
+### 1.2 定时分裂使对数大小做随机游走 {#12-a-timer-is-a-random-walk-in-log-size}
 
-A size-independent timer draws i.i.d. positive times with mean $\mu$ and variance $\sigma_\tau^2$. Set $y_n=\ln v_n$. Taking logarithms of (1.1) and iterating gives
+与大小无关的定时分裂模型（timer）假定每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
 
 $$
 y_{n+1}-y_n=\lambda\tau_n-\ln2,\qquad
 y_n-y_0=\sum_{j=0}^{n-1}(\lambda\tau_j-\ln2).\tag{1.2}
 $$
 
-Independence now makes both consequences transparent:
+由于各代时间独立，均值和方差分别为
 
 $$
 \mathbb E[y_n-y_0]=n(\lambda\mu-\ln2),\qquad
 \operatorname{Var}(y_n-y_0)=n\lambda^2\sigma_\tau^2.\tag{1.3}
 $$
 
-Tuning $\mu=\ln2/\lambda$ removes the drift but leaves unbounded variance. **Zero drift is not restoring feedback.** Even the noise-free balanced timer gives $v_{n+1}=v_n$, preserving an initial size perturbation forever. A restoring map instead shrinks the perturbation by a factor $|a|<1$ each generation. Eliminating noise prevents wandering; feedback corrects an existing deviation.
+把均值调到 $\mu=\ln2/\lambda$，可以消除平均漂移，但方差仍会无限增长。**没有漂移，不等于存在把大小拉回正常范围的反馈。** 即使完全没有噪声，平衡的 timer 也只是给出 $v_{n+1}=v_n$：初始大小的偏差会一直保留。具有恢复作用的映射则会让偏差每代缩小为原来的 $|a|<1$ 倍。去掉噪声只能阻止新的随机游走；要纠正已有偏差，还需要反馈。
 
-![Timer trajectories wander while restoring feedback bounds size fluctuations.](figures/01_timer_and_homeostasis.svg)
+![定时分裂下的细胞大小不断游走，而恢复性反馈能限制大小波动。](figures/01_timer_and_homeostasis.svg)
 
-*Fig 1. Why feedback matters.* Orange trajectories obey the zero-drift log-size timer (1.2); blue trajectories obey an illustrative restoring **log-size** map with $a=1/2$ and the same innovations. The blue map is not the exact additive-size adder. Panel B compares analytic variances from a fixed initial size. All trajectories are synthetic.
+*图 1. 为什么需要反馈。* 橙色轨迹遵循式（1.2）中无漂移的对数大小 timer；蓝色轨迹采用 $a=1/2$ 的恢复性**对数大小**映射，两者使用相同的随机扰动。蓝色模型仅用于示意，并不是以大小增量定义的精确 adder 模型。B 图比较从固定初始大小出发时的理论方差。所有轨迹均为模拟结果。
 
-### 1.3 Timer, adder, and sizer
+### 1.3 Timer、adder 与 sizer：三种分裂规则 {#13-timer-adder-and-sizer}
 
-Three idealized rules illustrate what feedback means:
+三种理想化规则可以帮助我们理解大小反馈。其中 adder 指“增加固定大小后分裂”，sizer 指“达到固定大小后分裂”：
 
-| Rule | Division criterion | Noise-free birth-size response near balance |
+| 规则 | 分裂条件 | 无噪声时，平衡附近的出生大小如何变化 |
 |---|---|---|
-| Timer | Wait a fixed duration, independent of birth size | $v_{n+1}=v_n$: neutral, slope $1$ |
-| Adder | Add a fixed size $\Delta$ | $v_{n+1}=(v_n+\Delta)/2$: restoring, slope $1/2$ |
-| Sizer | Reach a fixed division size $v_*$ | $v_{n+1}=v_*/2$: no inherited size deviation, slope $0$ |
+| 定时分裂（timer） | 等待固定时间，与出生大小无关 | $v_{n+1}=v_n$：偏差保持不变，斜率为 $1$ |
+| 定增量分裂（adder） | 大小增加固定量 $\Delta$ | $v_{n+1}=(v_n+\Delta)/2$：偏差逐代缩小，斜率为 $1/2$ |
+| 定大小分裂（sizer） | 达到固定分裂大小 $v_*$ | $v_{n+1}=v_*/2$：不再继承大小偏差，斜率为 $0$ |
 
-The slopes describe loss of size memory, rather than unique molecular mechanisms. A noisy adder or sizer can retain a stationary size distribution; a noisy independent timer with the kinematics above cannot. A unified local linear model is developed in [Appendix F](#appendix-f).
+这些斜率描述的是大小记忆消退的速度，不能据此唯一确定背后的分子机制。带噪声的 adder 或 sizer 可以维持平稳的大小分布；在上述生长和分配关系下，带噪声的独立 timer 做不到这一点。[附录 F](#appendix-f)给出了统一的局部线性模型。
 
-![Single-cell microscopy and birth-size dependence testing timer and sizer predictions.](figures/taheri_araghi_2015_f1_highres.png)
+![单细胞显微成像及出生大小与分裂行为的关系，用于检验 timer 和 sizer 的预测。](figures/taheri_araghi_2015_f1_highres.png)
 
-*Fig 2. Experimental size control.* Original Figure 1 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). In panel D, generation time decreases with birth size while division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C give microscopy and growth-condition context.
+*图 2. 实验中的大小调控。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 1。D 图显示，出生越大的细胞，世代时间越短，分裂时的大小却越大。这两种趋势分别与大小无关的 timer 和固定阈值的 sizer 不符。A–C 图展示显微成像结果和培养条件。
 
-The timer fails one biological test. Its population-growth prediction nevertheless reveals an important statistical mechanism, which we examine next.
+Timer 无法解释大小稳态，但它对群体增长的预测揭示了一个重要的统计机制。下一节就来看这个机制。
 
 ---
 
 <div id="2-eulerlotka-theory-why-division-time-noise-can-accelerate-a-population"></div>
 
-## 2. Division-time noise and the population growth paradox
+## 2. 分裂时间噪声与群体增长的表面矛盾 {#2-division-time-noise-and-the-population-growth-paradox}
 
-**Scientific question: why do independent noisy lifetimes make a population double faster than its mean chronological generation time, and how can this coexist with biomass conservation?**
+**这一节的问题是：为什么独立的分裂时间波动会使群体倍增时间短于沿谱系测得的平均世代时间？这与生物量守恒是否矛盾？**
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
-### 2.1 Euler–Lotka and sampling bias
+### 2.1 Euler–Lotka 方程与抽样偏倚 {#21-eulerlotka-and-sampling-bias}
 
-Consider a binary branching model with no death: every newborn draws an independent positive lifetime from a density $p(\tau)$ and produces two daughters following the same rule. There is no shared random environment. Let $M(t)$ be the expected number of living descendants of one newborn. Conditioning on its first division gives
+考虑一个没有死亡的二叉分枝模型：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个正的世代时间，到时产生两个遵循相同规则的子细胞。模型中没有共同作用于所有细胞的随机环境。这里的“寿命”（lifetime）特指细胞从出生到分裂的时间，也就是世代时间。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
 
 $$
 M(t)=\mathbb P(\tau>t)+2\int_0^t p(\tau)M(t-\tau)\,d\tau.\tag{2.1}
 $$
 
-In an exponentially growing solution, a division delayed by $\tau$ leaves the descendants less time to multiply, supplying a factor $e^{-\Lambda\tau}$. Balancing the factor of two from reproduction gives the **Euler–Lotka equation**:
+在指数增长的解中，分裂推迟 $\tau$，就意味着后代少了 $\tau$ 的繁殖时间，对应权重 $e^{-\Lambda\tau}$。将这一时间权重与每次分裂带来的两倍繁殖因子平衡，得到 **Euler–Lotka 方程（欧拉–洛特卡方程）**：
 
 $$
 \boxed{2\mathbb E_p[e^{-\Lambda\tau}]=1.}\tag{2.2}
 $$
 
-Its positive root is unique because the left side decreases continuously from $2$ to $0$. [Appendix A](#appendix-a) derives it by Laplace transformation and discusses renewal amplitudes and synchronized divisions.
+左侧随 $\Lambda$ 连续地从 $2$ 减小到 $0$，因此正根唯一。[附录 A](#appendix-a)用拉普拉斯变换推导该方程，并讨论更新方程解的渐近振幅与同步分裂的特殊情况。
 
-The same discount explains population-biased sampling. In this independent model, complete ancestral lifetimes in a retrospective sample have density
+同样的时间权重也解释了群体抽样中的偏倚。在这个独立模型中，回溯抽样得到的祖先完整世代时间的密度为
 
 $$
 q(\tau)=2e^{-\Lambda\tau}p(\tau),\qquad \int_0^\infty q(\tau)\,d\tau=1.\tag{2.3}
 $$
 
-Short-lived ancestors leave more descendants and receive more weight. This $q$ is a distribution of **completed ancestral lifetimes**, not the age or eventual lifetime distribution of all cells currently alive. In a correlated model, the weighting acts on whole histories and need not reduce to (2.3).
+分裂较快的祖先留下更多后代，因此被抽中的权重更大。这里的 $q$ 描述的是**祖先已经完成的世代时间**，不能把它当成当前所有存活细胞的年龄分布，或这些细胞最终的完整世代时间分布。在具有相关性的模型中，加权作用于整段谱系历史，不一定能简化成式（2.3）。
 
-![Renewal histories and growth weighting toward shorter lifetimes.](figures/06_renewal_and_sampling.svg)
+![更新过程及偏向较短世代时间的增长加权。](figures/06_renewal_and_sampling.svg)
 
-*Fig 3. Earlier divisions leave more descendants.* Panel A shows the survivor and two-subtree terms in (2.1). Panel B uses a gamma lifetime density with shape and rate $4$ (mean $1$); its Euler–Lotka rate is $4(2^{1/4}-1)$. Growth weighting shifts the ancestral lifetime distribution toward short times. Dotted lines mark the two means.
+*图 3. 分裂越早，留下的后代越多。* A 图展示式（2.1）中尚未分裂的细胞，以及分裂后两棵后代子树的贡献。B 图使用形状参数和速率参数均为 $4$ 的伽马分布，平均世代时间为 $1$，对应的 Euler–Lotka 增长率为 $4(2^{1/4}-1)$。按增长贡献加权后，祖先的世代时间分布向较短时间偏移。虚线标出两种分布的均值。
 
 <div id="22-jensens-inequality-and-the-population-growth-advantage"></div>
 
-### 2.2 Jensen's inequality and the reference population
+### 2.2 Jensen 不等式与比较基准 {#22-jensens-inequality-and-the-reference-population}
 
-A deterministic lifetime $\mu$ gives growth rate $\ln2/\mu$. For variable lifetimes with the **same chronological mean** $\mu<\infty$, convexity yields
+如果所有细胞的世代时间都固定为 $\mu$，群体增长率就是 $\ln2/\mu$。若世代时间有波动，但**沿前向谱系测得的均值仍为同一个** $\mu<\infty$，利用凸性可得
 
 $$
 \frac12=\mathbb E_p[e^{-\Lambda\tau}]
 \ge e^{-\Lambda\mathbb E_p[\tau]}=e^{-\Lambda\mu}.
 $$
 
-Taking logarithms,
+取对数，得到
 
 $$
 \boxed{\Lambda\ge\frac{\ln2}{\mu}.}\tag{2.4}
 $$
 
-The inequality is strict for a nondegenerate independent lifetime distribution. Earlier divisions contribute disproportionately to later populations; late divisions do not compensate for that benefit at fixed mean time. For weak noise, with $\Lambda\sigma_\tau\ll1$ and a regular fluctuation-amplitude expansion whose higher cumulants are negligible at second order,
+只要独立的世代时间分布不是集中在一个值上，这个不等式就是严格的。在平均时间不变的条件下，早分裂的细胞对后续群体的贡献更大，而晚分裂造成的损失无法完全抵消这一收益。对于弱噪声，若 $\Lambda\sigma_\tau\ll1$，且关于波动幅度的展开是正则的，高阶累积量在二阶近似中可以忽略，则有
 
 $$
 \Lambda\simeq\frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.5}
 $$
 
-The step-by-step expansion is in [Appendix B](#appendix-b); an information-theoretic interpretation is in [Appendix H](#appendix-h). The experimental doubling-time comparison of [Hashimoto et al. (2016)](https://doi.org/10.1073/pnas.1519412113) is retained as Fig 7 in Appendix A. The reference in (2.4) is an independent-lifetime population with mean $\mu$, **not automatically a population whose cells grow in size at rate $\lambda$**.
+逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对倍增时间的实验比较保留在附录 A 的图 7 中。要注意，式（2.4）的比较基准是平均世代时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞大小增长率为 $\lambda$ 的群体**。
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
-### 2.3 The conservation constraint
+### 2.3 守恒条件带来的约束 {#23-the-conservation-constraint}
 
-Return to cells growing at one common constant size-growth rate $\lambda$. Define
+现在回到所有细胞都以同一个恒定速率 $\lambda$ 增长的情形。定义
 
 $$
-V_{\mathrm{tot}}(t)=\sum_{i\text{ alive at }t}v_i(t).
+V_{\mathrm{tot}}(t)=\sum_{i\text{在 }t\text{ 时存活}}v_i(t).
 $$
 
-Between divisions, $\dot V_{\mathrm{tot}}=\lambda V_{\mathrm{tot}}$. At division, daughters' volumes sum to the mother's volume, so there is no jump. Thus, with no death or biomass loss and no explosion of division events,
+两次分裂之间，$\dot V_{\mathrm{tot}}=\lambda V_{\mathrm{tot}}$。分裂瞬间，两个子细胞的体积之和等于母细胞体积，因此总体积没有跳变。只要没有死亡、生物量损失，也不会在有限时间内发生无限次分裂（即分裂过程非爆炸），就有
 
 $$
 \boxed{V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.}\tag{2.6}
 $$
 
-Divisions increase cell number but redistribute existing volume. Write the mean size in a population snapshot as $\overline v_{\mathrm{snap}}(t)=V_{\mathrm{tot}}(t)/N(t)$. Then exactly
+分裂增加了细胞数量，却只是重新分配已有体积。把某一时刻群体中所有细胞的平均大小记作 $\overline v_{\mathrm{snap}}(t)=V_{\mathrm{tot}}(t)/N(t)$，则严格有
 
 $$
 \frac{\ln N(t)}t=\lambda+
 \frac{\ln V_{\mathrm{tot}}(0)-\ln\overline v_{\mathrm{snap}}(t)}t.
 $$
 
-Consequently,
+因此，
 
 $$
-\boxed{\Lambda=\lambda\quad\text{if}\quad
+\boxed{\Lambda=\lambda\quad\text{若}\quad
 \lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.7}
 $$
 
-Convergence of the snapshot mean to a finite positive value is sufficient; bounded periodic modulation also suffices. A stationary **chronological birth-size** distribution alone does not establish this snapshot condition, because the population weights cells differently.
+如果这个群体瞬时平均值收敛到有限的正数，上述条件就成立；有界的周期变化也足够。仅仅知道**沿前向谱系的出生大小**服从平稳分布，并不能保证这一条件，因为群体瞬时抽样对细胞的加权方式不同。
 
-For a stationary chronological lineage with $\mathbb E|\ln v|<\infty$, taking expectations of (1.2) gives $\mu=\ln2/\lambda$. Independent noisy lifetimes would then predict $\Lambda>\lambda$, whereas (2.7) fixes $\Lambda=\lambda$ under snapshot homeostasis. The assumptions are incompatible: the timer's size distribution wanders, as Section 1 already showed. In a physically size-regulating system, division times respond to inherited sizes and acquire temporal correlations. The apparent paradox therefore identifies the missing dynamical constraint.
+若前向谱系是平稳的，且 $\mathbb E|\ln v|<\infty$，对式（1.2）取期望可得 $\mu=\ln2/\lambda$。独立且有噪声的世代时间模型随后会预测 $\Lambda>\lambda$，而在群体瞬时大小满足稳态条件时，式（2.7）又要求 $\Lambda=\lambda$。问题出在这些假设无法同时成立：第 1 节已经说明，timer 的大小分布会不断游走。真正能调控大小的系统中，分裂时间会响应继承的大小，因而产生时间相关性。这个表面矛盾指出了模型中缺少的动力学约束。
 
 ---
 
 <div id="6-exactly-solvable-example-ii-the-adder-as-a-size-homeostatic-stochastic-map"></div>
 
-## 3. Size feedback, the adder, and exact cancellation
+## 3. 大小反馈、adder 与波动的精确抵消 {#3-size-feedback-the-adder-and-exact-cancellation}
 
-**Scientific question: how does a restoring size rule generate timing correlations strong enough to remove accumulated division-time noise?** The adder is a concrete mechanism; the central cancellation will follow from growth and partition kinematics more generally.
+**这一节的问题是：把细胞大小拉回正常范围的规则，如何产生足以抵消累计时间噪声的相关性？** Adder 提供了一个具体例子；不过，核心的抵消关系可以仅从生长和分配关系推导出来，适用范围更广。
 
 <div id="61-definition-of-the-adder"></div>
 
-### 3.1 The stochastic map and recovery of mean size
+### 3.1 随机映射与平均大小的恢复 {#31-the-stochastic-map-and-recovery-of-mean-size}
 
-An adder divides at
+Adder 的分裂条件为
 
 $$
 v_n^{\mathrm d}=v_n+\Delta+\eta_n,\qquad
 v_{n+1}=\frac12(v_n+\Delta+\eta_n).\tag{3.1}
 $$
 
-Here $\eta_n$ are i.i.d. added-size fluctuations of mean zero and finite variance $\sigma_\eta^2$, independent of inherited size. We require $\Delta+\eta_n>0$ so added size and lifetimes are positive; an untruncated Gaussian noise is only a small-fluctuation idealization. Experiments motivate approximately birth-size-independent addition, not by themselves the i.i.d. noise assumption.
+其中 $\eta_n$ 是独立同分布的大小增量波动，均值为零，方差 $\sigma_\eta^2$ 有限，且与继承的大小独立。要求 $\Delta+\eta_n>0$，以保证增量和世代时间都为正。未经截断的高斯噪声只能作为小波动下的理想化近似。实验支持的是增量近似不依赖出生大小，不能单凭这一观察就认定噪声独立同分布。
 
-![Birth-size-independent added size in bacterial experiments.](figures/taheri_araghi_2015_f2_highres.png)
+![细菌实验中，大小增量近似不依赖出生大小。](figures/taheri_araghi_2015_f2_highres.png)
 
-*Fig 4. Experimental input to the adder.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition, and rescaled conditional distributions collapse. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants.
+*图 4. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 2。在各培养条件下，平均大小增量近似不依赖出生大小；重新缩放后，不同出生大小对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和细胞大小相关突变株。
 
-Taking expectations in (3.1) shows
+对式（3.1）取期望，得到
 
 $$
 \mathbb E[v_n]-\Delta=2^{-n}(\mathbb E[v_0]-\Delta).\tag{3.2}
 $$
 
-Thus the stationary mean is $\Delta$ and a mean-size perturbation is halved each generation. For $x_n=v_n-\Delta$, the map is $x_{n+1}=x_n/2+\eta_n/2$. In stationarity, independence of the new noise gives $\sigma_x^2=\sigma_x^2/4+\sigma_\eta^2/4$, hence
+因此，稳态均值为 $\Delta$，平均大小的偏差每代减半。令 $x_n=v_n-\Delta$，映射变为 $x_{n+1}=x_n/2+\eta_n/2$。在平稳状态下，新加入的噪声与已有大小独立，故 $\sigma_x^2=\sigma_x^2/4+\sigma_\eta^2/4$，从而
 
 $$
 \operatorname{Var}(v)=\frac{\sigma_\eta^2}{3},\qquad
 \rho_v(k)=2^{-k},\quad k\ge0.\tag{3.3}
 $$
 
-The autocorrelation follows by iterating the restoring map: future innovations have zero covariance with $x_n$, leaving $\operatorname{Cov}(x_n,x_{n+k})=2^{-k}\sigma_x^2$. Noise fixes the width; feedback fixes memory. [Appendix E](#appendix-e) contains the full calculations and experimental relaxation figure.
+自相关可通过迭代上述映射求出：后续加入的随机扰动与 $x_n$ 的协方差为零，因此 $\operatorname{Cov}(x_n,x_{n+k})=2^{-k}\sigma_x^2$。噪声决定分布有多宽，反馈决定大小记忆消退得多快。[附录 E](#appendix-e)给出完整计算及实验中的恢复过程。
 
 <div id="64-connecting-the-adder-to-generation-times"></div>
 
-### 3.2 From growth to generation time
+### 3.2 从生长关系得到世代时间 {#32-from-growth-to-generation-time}
 
-Exponential growth and symmetric division require
+指数生长和对称分裂要求
 
 $$
 v_ne^{\lambda\tau_n}=v_n^{\mathrm d}=2v_{n+1}.
 $$
 
-Taking logarithms gives $\lambda\tau_n=\ln2+\ln v_{n+1}-\ln v_n$, or
+取对数，得到 $\lambda\tau_n=\ln2+\ln v_{n+1}-\ln v_n$，即
 
 $$
 \boxed{\tau_n=\frac{\ln2}{\lambda}
 +\frac{\ln v_{n+1}-\ln v_n}{\lambda}.}\tag{3.4}
 $$
 
-A generation time is a **difference** of adjacent log sizes. This is an exact identity for positive sizes with common constant $\lambda$ and symmetric division. No adder assumption, stationarity, or weak-noise expansion was used.
+世代时间中包含相邻两代对数大小的**差值**。只要大小为正、所有细胞共有恒定的 $\lambda$，且分裂对称，这就是精确恒等式。推导没有用到 adder 假设、平稳性或弱噪声展开。
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
-### 3.3 Telescoping: the theoretical core
+### 3.3 逐项相消：讲义的核心结果 {#33-telescoping-the-theoretical-core}
 
-Summing (3.4) from $0$ to $n-1$,
+把式（3.4）从 $0$ 到 $n-1$ 相加，得到
 
 $$
 \begin{aligned}
@@ -270,20 +272,20 @@ T_n&=\sum_{j=0}^{n-1}\tau_j\\
 \end{aligned}
 $$
 
-Each interior size appears once with each sign, leaving
+每个中间时刻的大小都以正负号各出现一次，最终只剩
 
 $$
 \boxed{T_n=\frac{n\ln2}{\lambda}
 +\frac{\ln v_n-\ln v_0}{\lambda}.}\tag{3.5}
 $$
 
-![Interior log-size contributions cancel, leaving only endpoint sizes.](figures/09_telescoping_identity.svg)
+![中间各代的对数大小贡献相互抵消，只留下起点和终点的大小。](figures/09_telescoping_identity.svg)
 
-*Fig 5. Timing fluctuations become a boundary term.* Blue and purple log-size terms cancel between adjacent generations; only the initial orange and final green terms remain. This cancellation is exact for every $n$.
+*图 5. 时间波动化为边界项。* 蓝色和紫色的对数大小项在相邻世代间抵消，只留下橙色的初始项和绿色的末尾项。这种抵消对每一个 $n$ 都严格成立。式（3.5）称为逐项相消恒等式（telescoping identity），也常称望远镜求和恒等式。
 
-**The fluctuations of individual generation times need not accumulate over many generations.** For independent times, every generation supplies a new contribution to the timing uncertainty. Here the same inherited size contributes with opposite signs in neighboring generations. Feedback maintains the endpoint sizes within a stationary distribution, so the boundary term cannot develop an extensive variance.
+**单个世代时间有波动，并不意味着这些波动会经过许多代不断累积。** 如果各代时间独立，每一代都会给累计时间增加一份新的不确定性。而这里，同一个继承的大小在相邻世代中以相反符号出现。反馈使起点和终点的大小保持在平稳分布内，因此边界项的方差不会随世代数成比例增长。
 
-To state this precisely, let $y_n=\ln v_n$ be stationary with finite variance. Equation (3.5) gives
+更准确地说，设 $y_n=\ln v_n$ 是方差有限的平稳过程。由式（3.5）可得
 
 $$
 \operatorname{Var}(T_n)
@@ -291,13 +293,13 @@ $$
 \le\frac{4\operatorname{Var}(y)}{\lambda^2}.\tag{3.6}
 $$
 
-Thus $D_\tau\equiv\lim_{n\to\infty}\operatorname{Var}(T_n)/n=0$; mixing is not needed for this bound. If the endpoint covariance tends to zero, the variance tends to $2\operatorname{Var}(\ln v)/\lambda^2$. Stationarity with finite first log moment also gives $\mu=\ln2/\lambda$ exactly. Ergodicity supplies the corresponding long-record mean. Finite birth-size variance alone does not guarantee finite log-size variance near $v=0$.
+所以 $D_\tau\equiv\lim_{n\to\infty}\operatorname{Var}(T_n)/n=0$。这个方差上界不需要混合性（mixing，即间隔足够远的状态逐渐失去统计依赖）。若两端的协方差趋于零，累计时间的方差就趋于 $2\operatorname{Var}(\ln v)/\lambda^2$。平稳性加上有限的一阶对数矩，还能精确给出 $\mu=\ln2/\lambda$；遍历性则保证单条长记录的时间平均得到同样结果。注意，出生大小的方差有限，并不保证其对数的方差有限，问题可能出在接近 $v=0$ 的区域。
 
 <div id="66-exact-consequence-for-population-growth"></div>
 
-### 3.4 The exact growth consequence and its conditions
+### 3.4 群体增长的精确结论及其条件 {#34-the-exact-growth-consequence-and-its-conditions}
 
-Population growth weights unusually fast **whole histories**, so a variance bound alone is not enough to control their exponential weights. From the exact identity,
+群体增长会对异常快速的**整段谱系历史**赋予更大权重，所以仅有方差上界，还不足以控制这些历史的指数权重。从精确恒等式出发，
 
 $$
 \mathbb E[e^{-sT_n}]
@@ -305,17 +307,17 @@ $$
 \mathbb E\left[\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right].\tag{3.7}
 $$
 
-If the endpoint expectation has logarithm $o(n)$ for $s$ near the selected growth rate, the exponential rate per generation is simply $-s\ln2/\lambda$. Reproduction supplies $2^n$ paths; its exponential increase balances the time discount when $\ln2-s\ln2/\lambda=0$, giving **$\Lambda=\lambda$** under the branching conditions formalized in Section 4 and [Appendix C](#appendix-c).
+如果 $s$ 在所选增长率附近时，两端大小比值的期望取对数后为 $o(n)$，那么每代的指数率就是 $-s\ln2/\lambda$。繁殖产生 $2^n$ 条路径；当 $\ln2-s\ln2/\lambda=0$ 时，路径数的指数增长与时间权重的指数衰减达到平衡。在第 4 节及[附录 C](#appendix-c)明确的分枝过程条件下，这给出 **$\Lambda=\lambda$**。
 
-A transparent sufficient endpoint condition is stationary positive sizes with finite positive and inverse moments $\mathbb E[v^{2s/\lambda}]$ and $\mathbb E[v^{-2s/\lambda}]$ near $s=\lambda$: Cauchy–Schwarz bounds the expectation uniformly, while Jensen bounds it below by $1$. Sizes bounded above and away from zero are an especially simple case. These are sufficient conditions, not automatic consequences of the adder's finite size variance; [Appendix G](#appendix-g) makes the hierarchy explicit.
+一个清楚的充分条件是：细胞大小始终为正且服从平稳分布，并且在 $s=\lambda$ 附近，正阶矩 $\mathbb E[v^{2s/\lambda}]$ 和负阶矩 $\mathbb E[v^{-2s/\lambda}]$ 都有限。Cauchy–Schwarz 不等式给出该期望与 $n$ 无关的上界，Jensen 不等式则给出下界 $1$。大小有上界、又与零保持一定距离，是最简单的例子。这些是额外的充分条件，不能仅从 adder 的大小方差有限推出；各层条件的区别见[附录 G](#appendix-g)。
 
-This lineage explanation complements the realized-population volume argument in Section 2.3. Both give exact growth constraints with their respective additional conditions. A sizer or another homeostatic rule can obey the same telescoping cancellation. Adder-specific results are the slope $1/2$, variance $\sigma_\eta^2/3$, and birth-size ACF $2^{-k}$, not the identity (3.5).
+这个谱系解释与第 2.3 节对实际群体总体积的论证相互补充。两者都能给出精确的增长约束，但各自需要额外条件。Sizer 或其他维持大小稳态的规则，也可以满足同样的逐项相消关系。真正属于 adder 的特定结果，是斜率 $1/2$、方差 $\sigma_\eta^2/3$ 和出生大小的自相关函数（ACF）$2^{-k}$，而不是恒等式（3.5）本身。
 
 <div id="67-a-counterintuitive-prediction-size-is-positively-correlated-time-is-negatively-correlated"></div>
 
-### 3.5 Positive size memory, negative timing memory
+### 3.5 大小呈正相关，世代时间却呈负相关 {#35-positive-size-memory-negative-timing-memory}
 
-For small relative size fluctuations, $\ln(\Delta+x_n)\simeq\ln\Delta+x_n/\Delta$, so
+当相对大小波动很小时，$\ln(\Delta+x_n)\simeq\ln\Delta+x_n/\Delta$，因此
 
 $$
 \delta\tau_n\equiv\tau_n-\frac{\ln2}{\lambda}
@@ -323,96 +325,96 @@ $$
 \rho_\tau(k)\simeq-2^{-(k+1)},\quad k\ge1.\tag{3.8}
 $$
 
-Birth sizes remain positively correlated, yet generation times are negatively correlated in this linearized adder. A long cycle tends to produce a larger daughter, which needs less time to add the next increment. This interpretation refers to the stated model; the negative ACF formula is an approximation, whereas telescoping is exact.
+在线性化的 adder 中，出生大小保持正相关，世代时间却呈负相关。某一代耗时较长，通常会产生较大的子细胞；这个子细胞要再增加同样的大小，就只需要较短时间。这个解释针对的是上述模型。世代时间的负自相关公式是近似结果，而逐项相消关系是精确的。
 
-![Positive size correlations and negative timing correlations lead to bounded accumulated variance.](figures/04_noise_cancellation.svg)
+![大小的正相关与世代时间的负相关，使累计时间的方差保持有界。](figures/04_noise_cancellation.svg)
 
-*Fig 6. Noisy divisions, zero long-run timing noise.* Panel A compares exact adder birth-size correlations with linearized timing correlations (3.8). With matched one-generation timing variance, panel B shows $\operatorname{Var}(T_n)/C_\tau(0)=n$ for independent times and $2(1-2^{-n})$ for the linearized stationary adder. Full covariance calculations are in Appendix E.
+*图 6. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的出生大小相关性与式（3.8）中线性化的世代时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
 
 ---
 
 <div id="4-why-integrated-temporal-correlations-control-growth"></div>
 
-## 4. Temporal correlations and long-time fluctuations
+## 4. 时间相关性与长期波动 {#4-temporal-correlations-and-long-time-fluctuations}
 
-**Scientific question: which statistic distinguishes noise that accumulates from noise that cancels?** We now express the mechanism without committing to an adder and identify the controlled approximation behind a general correlation-based growth correction.
+**这一节的问题是：什么统计量能区分会累积的噪声和会抵消的噪声？** 下面不再限定使用 adder，而是从一般的相关过程出发描述这一机制，并说明用相关性修正增长率时，近似需要哪些条件。
 
 <div id="3-correlated-division-times-a-generalized-eulerlotka-relation"></div>
 
-### 4.1 Correlated Euler–Lotka
+### 4.1 有时间相关性时的 Euler–Lotka 关系 {#41-correlated-eulerlotka}
 
-Let $T_n$ be the time to the generation-$n$ birth along a chronological daughter path. Binary reproduction creates $2^n$ paths. The expected sum of their discounted birth weights is $2^n\mathbb E_{\mathrm{chron}}[e^{-sT_n}]$, even when paths share ancestry. Define
+设 $T_n$ 是沿前向子细胞谱系到达第 $n$ 代出生时的累计时间。二叉繁殖产生 $2^n$ 条路径。即使这些路径共享祖先，按出生时间加权后，权重之和的期望仍为 $2^n\mathbb E_{\mathrm{chron}}[e^{-sT_n}]$。定义
 
 $$
 \psi(s)=\lim_{n\to\infty}\frac1n\ln\mathbb E_{\mathrm{chron}}[e^{-sT_n}].
 $$
 
-For a locally specified, nonexplosive branching process with finite expected birth counts on bounded time intervals, a well-defined limit $\psi$, and a growth exponent selected by the discounted-birth convergence boundary,
+假定分枝过程的规则由局部状态决定、过程非爆炸、任意有限时间区间内的出生数期望有限，且极限 $\psi$ 存在；同时，增长指数由加权出生数级数的收敛边界确定。那么
 
 $$
 \boxed{\ln2+\psi(\Lambda)=0.}\tag{4.1}
 $$
 
-Stationary/ergodic lineage statistics alone are not sufficient: the limit and its connection to a population exponent must also hold. A shared random environment or nonergodic mixture can make expected and typical growth differ. [Appendix C](#appendix-c) gives the many-to-one derivation and precise convergence argument; [Appendix D](#appendix-d) supplies a complete finite-state Markov example.
+仅有谱系统计的平稳性和遍历性还不够：上面的极限必须存在，而且它确实要与群体增长指数相联系。共同随机环境或非遍历的混合过程，都可能使期望增长率与典型实现中的增长率不同。[附录 C](#appendix-c)给出多对一恒等式的推导和具体收敛论证，[附录 D](#appendix-d)提供完整的有限状态马尔可夫模型例子。
 
-Independence gives $\mathbb E[e^{-sT_n}]=(\mathbb E[e^{-s\tau}])^n$, recovering (2.2). Correlation changes this whole-history weight. Jensen applied to $T_n$ still yields $\psi(s)\ge-s\mu$ and hence $\Lambda\ge\ln2/\mu$ when (4.1) holds. Unlike independent noisy lifetimes, correlated noisy lifetimes can attain equality: Section 3 showed how.
+独立时，$\mathbb E[e^{-sT_n}]=(\mathbb E[e^{-s\tau}])^n$，于是回到式（2.2）。相关性改变的则是整段历史的权重。对 $T_n$ 使用 Jensen 不等式，仍可得 $\psi(s)\ge-s\mu$；当式（4.1）成立时，便有 $\Lambda\ge\ln2/\mu$。与独立的有噪声世代时间不同，相关的有噪声世代时间可以取到等号，第 3 节已经展示了具体机制。
 
 <div id="41-variance-of-the-accumulated-generation-time"></div>
 
 <div id="43-an-important-qualification"></div>
 
-### 4.2 The integrated covariance
+### 4.2 跨世代协方差的总和 {#42-the-integrated-covariance}
 
-For stationary times with finite variance, define $C_\tau(k)=\operatorname{Cov}(\tau_j,\tau_{j+k})$. Summing all covariance pairs gives
+对于方差有限的平稳世代时间过程，定义 $C_\tau(k)=\operatorname{Cov}(\tau_j,\tau_{j+k})$。将所有成对协方差相加，得到
 
 $$
 \operatorname{Var}(T_n)=nC_\tau(0)
 +2\sum_{k=1}^{n-1}(n-k)C_\tau(k).\tag{4.2}
 $$
 
-There are $n$ diagonal terms, and $n-k$ pairs separated by $k$, counted in both orders. If $\sum_{k\ge1}|C_\tau(k)|<\infty$, divide by $n$ and pass to the limit:
+对角线上有 $n$ 项；间隔为 $k$ 的配对有 $n-k$ 对，每一对按两个顺序计算。若 $\sum_{k\ge1}|C_\tau(k)|<\infty$，除以 $n$ 并取极限，得到
 
 $$
 \boxed{D_\tau=C_\tau(0)+2\sum_{k=1}^\infty C_\tau(k).}\tag{4.3}
 $$
 
-$D_\tau$ is the long-run variance per generation, in units of time squared. It is nonnegative since it is a limit of variances divided by $n$. The one-generation variance measures local noise; the covariance sum measures whether future cycles reinforce or compensate for it. Independent times have $D_\tau=\sigma_\tau^2$, persistence generally increases the sum, and anticorrelations can cancel it. Absolute summability justifies the covariance representation; the direct variance-limit definition can still make sense when the sum does not converge.
+$D_\tau$ 表示长期累计时间的方差除以世代数 $n$ 后得到的极限，单位为时间的平方。因为它是非负量的极限，所以 $D_\tau\ge0$。单代方差描述局部噪声；协方差总和则描述后续世代会放大还是补偿当前波动。独立时间满足 $D_\tau=\sigma_\tau^2$；持续的正相关通常会增大这个量，负相关则可能将它抵消。协方差绝对可和保证了求和表达式成立；即使级数不收敛，直接通过方差极限定义 $D_\tau$ 仍可能有意义。
 
-With a regular weak-noise expansion of asymptotic cumulants, the independent result (2.5) becomes
+如果渐近累积量具有正则的弱噪声展开，独立模型的结果（2.5）可推广为
 
 $$
 \boxed{\Lambda\simeq\frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}D_\tau.}\tag{4.4}
 $$
 
-The replacement is physical: the second cumulant of a long history is $\operatorname{Var}(T_n)$, not $n\operatorname{Var}(\tau)$. [Appendix B](#appendix-b) gives the expansion once, including the required interchange of limits and control of higher cumulant rates. Small single-generation variance alone is insufficient when persistence becomes large.
+这一替换有明确的物理含义：长历史的二阶累积量是 $\operatorname{Var}(T_n)$，而不是 $n\operatorname{Var}(\tau)$。[附录 B](#appendix-b)给出推导，并说明交换极限和控制高阶累积量率所需的条件。如果相关性持续很久，仅有很小的单代方差并不足以保证近似有效。
 
-**$D_\tau=0$ removes the second-order weak-noise correction; by itself it does not guarantee exact $\Lambda=\lambda$.** Exact equality in Section 3 uses the stronger endpoint structure and exponential-moment condition, or the independent volume argument. Neither follows from retaining only a quadratic cumulant term.
+**$D_\tau=0$ 只能消除弱噪声展开中的二阶修正，不能单凭这一点就断言精确地有 $\Lambda=\lambda$。** 第 3 节的精确等式依赖更强的端点结构和指数矩条件，也可以由独立的总体积论证得到。只保留累积量展开中的二次项，无法推出这两种精确结论。
 
 <div id="7-from-temporal-correlations-to-power-spectra"></div>
 
-### 4.3 Zero frequency is the same mechanism
+### 4.3 从零频分量看同一个机制 {#43-zero-frequency-is-the-same-mechanism}
 
-For centered generation-time fluctuations, use the two-sided PSD convention
+对减去均值后的世代时间波动，采用如下双边功率谱密度（power spectral density，PSD）约定：
 
 $$
 S_\tau(\omega)=\sum_{k=-\infty}^\infty C_\tau(k)e^{-i\omega k},
 \qquad -\pi\le\omega\le\pi.
 $$
 
-With absolutely summable covariances,
+若协方差绝对可和，则
 
 $$
 \boxed{S_\tau(0)=D_\tau.}\tag{4.5}
 $$
 
-The zero-frequency component measures fluctuations that persist across many generations. For $y_n=\ln v_n$, the exact timing identity is $\delta\tau_n=(y_{n+1}-y_n)/\lambda$. Differencing multiplies a Fourier mode by $e^{i\omega}-1$, so for a stationary log-size process with a regular spectral density,
+零频分量描述的是能够持续许多代的波动。令 $y_n=\ln v_n$，世代时间的精确关系为 $\delta\tau_n=(y_{n+1}-y_n)/\lambda$。差分使每个傅里叶模态乘以 $e^{i\omega}-1$，因此，对于具有正则谱密度的平稳对数大小过程，
 
 $$
 S_\tau(\omega)=\frac{4\sin^2(\omega/2)}{\lambda^2}S_y(\omega).\tag{4.6}
 $$
 
-If $S_y$ is finite at zero, differencing removes zero-frequency timing noise. Slowly varying size deviations appear with almost equal values in adjacent cycles and subtract out. Telescoping, integrated covariance cancellation, and suppression at zero frequency are three expressions of this same mechanism. The full AR(1) spectra are in [Appendix F](#appendix-f); finite-frequency oscillatory modes address a separate question in the [Further Topic](#further-topic).
+若 $S_y$ 在零频处有限，差分就会消除世代时间的零频噪声。缓慢变化的大小偏差在相邻周期中几乎相同，作差后便相互抵消。逐项相消、协方差总和为零、零频噪声被抑制，是同一机制的三种表达。完整的一阶自回归模型（AR(1)）频谱见[附录 F](#appendix-f)；非零频率的振荡模态回答的是另一个问题，见[进阶专题](#further-topic)。
 
 ---
 
@@ -420,38 +422,38 @@ If $S_y$ is finite at zero, differencing removes zero-frequency timing noise. Sl
 
 <div id="what-remains-biologically-open"></div>
 
-## 5. Synthesis and outlook
+## 5. 总结与展望 {#5-synthesis-and-outlook}
 
-**Scientific question: which conclusions are model-specific, which are structural, and which are approximate?** An independent timer ignores inherited size, turning log size into a random walk. Independent lifetime noise nevertheless increases the growth rate of its branching population relative to a deterministic population with the same mean lifetime, because fast histories receive greater descendant weight. These two statements are consistent: that timer population does not maintain size homeostasis under common exponential growth and symmetric division.
+**最后需要分清：哪些结论只属于某个模型，哪些来自一般结构，哪些只是近似？** 独立 timer 忽略继承的大小，使对数大小做随机游走。但与平均世代时间相同的定时群体相比，独立的时间噪声又确实提高了该分枝群体的增长率，因为较快的谱系历史拥有更大的后代权重。这两点并不矛盾：在统一的指数生长和对称分裂条件下，这样的 timer 群体本来就不能维持大小稳态。
 
-The adder supplies restoring feedback and creates positive birth-size memory alongside negative timing correlations in its small-fluctuation limit. The more general result is kinematic: under one constant $\lambda$ and symmetric division, each generation time contains a difference of adjacent log sizes. Summing makes every interior fluctuation cancel. Stationary log sizes with finite variance therefore give $D_\tau=0$, even when individual times fluctuate appreciably.
+Adder 提供了把大小拉回正常范围的反馈；在小波动极限下，出生大小呈正相关，世代时间呈负相关。更一般的结论来自生长和分配关系：当 $\lambda$ 恒定且分裂对称时，每个世代时间都包含相邻对数大小的差值。求和后，中间各代的波动全部抵消。因此，只要对数大小是方差有限的平稳过程，就有 $D_\tau=0$，即使每一代的时间仍有明显波动。
 
-The exact population-growth conclusion needs more: snapshot homeostasis in the conservation argument, or subexponential endpoint weights and a valid correlated branching-growth relation in the lineage argument. Under those conditions $\Lambda=\lambda$ exactly. By contrast, the formula involving $D_\tau$ or $S_\tau(0)$ is a second-order weak-noise approximation for a more general correlated lifetime model. It cannot establish an all-noise growth theorem merely by setting its correction to zero.
+要得到群体增长的精确结论，还需要额外条件：在守恒论证中，需要群体瞬时平均大小满足稳态条件；在谱系论证中，需要端点权重只按次指数速度变化，并且相关分枝过程的增长关系有效。在这些条件下，精确地有 $\Lambda=\lambda$。相比之下，包含 $D_\tau$ 或 $S_\tau(0)$ 的公式，是一般相关世代时间模型的二阶弱噪声近似。不能仅因修正项为零，就把它当成适用于任意噪声强度的定理。
 
-This is a statistical-physics route from observation to mechanism: test whether a stochastic model respects biological stability, use conservation to expose incompatible assumptions, and examine which fluctuations survive over long times. The adder provides a transparent realization, while telescoping extends to other homeostatic control laws within the same kinematics. Random partition asymmetry and growth-rate variability change those kinematics, as qualified in [Appendix G](#appendix-g).
+这条思路体现了统计物理如何从观察走向机制：先检验随机模型能否维持生物系统的稳定性，再用守恒关系发现互不相容的假设，最后分析哪些波动会在长时间后留下影响。Adder 是一个直观的实现，而在相同生长和分配条件下，逐项相消关系也适用于其他维持稳态的调控规则。随机的不对称分配和生长率波动会改变这些条件，详见[附录 G](#appendix-g)。
 
-**Open question for the closing discussion:** What changes when the single-cell exponential growth rate itself fluctuates and carries intergenerational correlations?
+**课堂结束前的讨论问题：** 如果单细胞的指数生长率本身也有波动，而且存在代际相关性，以上结论会怎样变化？
 
 
 ---
 
 <div id="optional-technical-appendices"></div>
 
-## Technical Appendices
+## 技术附录 {#technical-appendices}
 
-These appendices retain the full calculations and worked models. They are not required to follow the main lecture. Equation labels use appendix letters; figure numbering continues from the main text.
+附录保留完整计算和具体模型，理解正文不需要先读这些内容。公式编号使用附录字母，图号则接续正文。
 
 <div id="appendix-d-the-asymptotic-amplitude-of-the-renewal-solution"></div>
 
-### Appendix A. Renewal theory, population sampling, and asymptotic amplitude {#appendix-a}
+### 附录 A. 更新理论、群体抽样与渐近振幅 {#appendix-a}
 
-This appendix supplies the renewal calculation behind Section 2. The exponent belongs first to the expected population; standard nonexplosive, supercritical age-dependent branching assumptions are needed to identify the typical exponent.
+这里补充第 2 节所用的更新过程计算。首先得到的是群体数量期望的增长指数；要把它等同于典型实现中的增长指数，还需要年龄依赖分枝过程通常采用的非爆炸、超临界等条件。
 
-#### A.1 Laplace-transform derivation
+#### A.1 用拉普拉斯变换推导 {#a1-laplace-transform-derivation}
 
-To obtain the population growth rate from (2.1), take Laplace transforms.
+对式（2.1）做拉普拉斯变换，可以求出群体增长率。
 
-Write $S(t)=\mathbb P(\tau>t)$ and define
+记 $S(t)=\mathbb P(\tau>t)$，并定义
 
 $$
 \widehat M(s)=\int_0^\infty e^{-st}M(t)\,dt,
@@ -460,7 +462,7 @@ $$
              =\mathbb E[e^{-s\tau}],
 $$
 
-with $s$ initially chosen large enough for the integrals to converge. Since $S(t)=\int_t^\infty p(\tau)\,d\tau$, its transform is $\widehat S(s)=[1-\widehat p(s)]/s$. The convolution in (2.1) becomes a product, giving
+先取足够大的 $s$，使积分收敛。由于 $S(t)=\int_t^\infty p(\tau)\,d\tau$，其变换为 $\widehat S(s)=[1-\widehat p(s)]/s$。式（2.1）的卷积变为乘积，得到
 
 $$
 \widehat M(s)=\widehat S(s)+2\widehat p(s)\widehat M(s)
@@ -468,13 +470,13 @@ $$
 \widehat M(s)=\frac{1-\widehat p(s)}{s[1-2\widehat p(s)]}.
 $$
 
-The denominator vanishes at a positive rate $s=\Lambda$ satisfying the **Euler–Lotka equation**,
+分母在正值 $s=\Lambda$ 处为零，此时满足 **Euler–Lotka 方程**：
 
 $$
 \boxed{2\,\mathbb E[e^{-\Lambda\tau}]=1.}
 $$
 
-The function $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ on the positive real axis, so this root is unique. It is the leading pole of $\widehat M(s)$; since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, the renewal asymptotics for the lifetime density assumed here give
+在正实轴上，$2\widehat p(s)$ 连续且严格地从 $2$ 减小到 $0$，所以这个根唯一。它是 $\widehat M(s)$ 的主导极点。因为 $1/(s-\Lambda)$ 是 $e^{\Lambda t}$ 的拉普拉斯变换，在这里假定的世代时间密度条件下，更新过程的渐近结果给出
 
 $$
 M(t)\sim Ae^{\Lambda t},
@@ -482,26 +484,26 @@ M(t)\sim Ae^{\Lambda t},
 \Lambda=\lim_{t\to\infty}\frac{\log M(t)}{t}.
 $$
 
-Here $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ is the asymptotic amplitude for one initial newborn cell, and $\sim$ means $M(t)/(Ae^{\Lambda t})\to1$. Its amplitude and the qualification for synchronized divisions are calculated below.
+其中 $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ 是从一个新生细胞出发时的渐近振幅；$\sim$ 表示 $M(t)/(Ae^{\Lambda t})\to1$。下面计算振幅，并说明同步分裂时需要怎样修正。
 
-#### A.2 Experimental doubling-time comparison
+#### A.2 实验中的倍增时间比较 {#a2-experimental-doubling-time-comparison}
 
-![Measured generation-time variability, population doubling time, and growth-rate gain in E. coli.](figures/hashimoto_2016_fig03.jpg)
+![大肠杆菌的世代时间变异、群体倍增时间及增长率增益的实验测量。](figures/hashimoto_2016_fig03.jpg)
 
-*Fig 7. Experimental population growth advantage.* Original Figure 3 from [Hashimoto et al., *PNAS* (2016)](https://doi.org/10.1073/pnas.1519412113). Panel B compares mean generation time with population doubling time; ratios above one indicate faster population doubling. Panel C relates the gain to generation-time variability; panel E compares Euler–Lotka predictions with measurements. Panels A and D show the lifetime distribution and model, respectively. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03).
+*图 7. 实验中的群体增长优势。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原图 3。B 图比较平均世代时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与世代时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示世代时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
 
-**Notation and scope.** In this paper's gain definition, $\lambda=\ln2/\langle\tau\rangle_g$; our $\lambda$ denotes the exponential growth rate of cell size. These definitions must be distinguished when comparing this figure with (2.7). The figure supports the experimental doubling-time comparison; it does not establish that a size-homeostatic population with one common constant size-growth rate violates mass conservation.
+**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本讲义的 $\lambda$ 表示细胞大小的指数增长率。把该图与式（2.7）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持大小稳态、且所有细胞共有恒定大小增长率的群体违反了质量守恒。
 
-#### A.3 The renewal amplitude and lattice exception
+#### A.3 更新方程的渐近振幅与格点分布例外 {#a3-the-renewal-amplitude-and-lattice-exception}
 
-Section 2.1 obtains the population growth exponent from the positive root $\Lambda$ of $1-2\widehat p(s)=0$. No pole lies further to the right, since
+第 2.1 节通过 $1-2\widehat p(s)=0$ 的正根 $\Lambda$ 得到群体增长指数。它右侧没有其他极点，因为
 
 $$
 |2\widehat p(s)|\le2\widehat p(\operatorname{Re}s)<1
-\qquad\text{for }\operatorname{Re}s>\Lambda.
+\qquad\text{当 }\operatorname{Re}s>\Lambda.
 $$
 
-For a lifetime density, the inequality $|2\widehat p(\Lambda+i\omega)|<1$ also holds for $\omega\ne0$, excluding other poles on the same vertical line. Moreover,
+对于具有密度的世代时间分布，当 $\omega\ne0$ 时，$|2\widehat p(\Lambda+i\omega)|<1$ 也成立，所以同一条竖直线上没有其他极点。此外，
 
 $$
 -2\widehat p'(\Lambda)
@@ -509,7 +511,7 @@ $$
 =\mathbb E_q[\tau]>0,
 $$
 
-so the pole is simple. Expanding the transform from Section 2.1 about this pole gives
+因此这是一个简单极点。将第 2.1 节的变换在该极点附近展开，得到
 
 $$
 \widehat M(s)=\frac{A}{s-\Lambda}+O(1),
@@ -518,7 +520,7 @@ A=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}.
 \tag{A.1}
 $$
 
-Using $\widehat p(\Lambda)=1/2$, the residue becomes
+利用 $\widehat p(\Lambda)=1/2$，留数变为
 
 $$
 \boxed{
@@ -527,9 +529,9 @@ A=\frac{1}{4\Lambda\,\mathbb E_p[\tau e^{-\Lambda\tau}]}
 }\tag{A.2}
 $$
 
-The nonlattice renewal asymptotics applicable to a lifetime density then give $e^{-\Lambda t}M(t)\to A$. This amplitude is for one initial newborn cell; it need not equal $M(0)=1$, because the initial transient is not described by the asymptotic exponential.
+有密度的世代时间分布满足非格点条件，即时间取值不局限于某个固定步长的整数倍。相应的更新理论渐近结果给出 $e^{-\Lambda t}M(t)\to A$。这个振幅针对的是从一个新生细胞出发的群体，不必等于 $M(0)=1$，因为初始暂态并不由长期的指数渐近式描述。
 
-Fixed lifetimes are an exception to constant-amplitude asymptotics. If every cell divides after exactly $\tau_0$, all division events are synchronized and
+固定世代时间是恒定渐近振幅的一个例外。如果所有细胞都在恰好经过 $\tau_0$ 后分裂，所有分裂事件就会同步发生，此时
 
 $$
 M(t)=2^{\lfloor t/\tau_0\rfloor},
@@ -538,18 +540,18 @@ M(t)=2^{\lfloor t/\tau_0\rfloor},
 \tag{A.3}
 $$
 
-The logarithmic growth rate still tends to $\Lambda$, but $e^{-\Lambda t}M(t)$ oscillates periodically instead of converging to a constant. Thus the noise-free growth exponent used in Section 2.2 remains valid, while the stronger limit defining $A$ requires the nonlattice condition.
+对数增长率仍趋于 $\Lambda$，但 $e^{-\Lambda t}M(t)$ 会周期性变化，而不会收敛到常数。因此，第 2.2 节所用的无噪声增长指数仍然有效；要使定义 $A$ 的更强极限成立，则需要非格点条件。
 
 
-### Appendix B. Independent and correlated weak-noise calculations {#appendix-b}
+### 附录 B. 独立与相关情形下的弱噪声计算 {#appendix-b}
 
-The two expansions below share one idea: expand the logarithm of the chronological-history weight. Equation (2.5) is the independent result; (4.4) is its long-history counterpart.
+下面两种展开使用同一个思路：对前向谱系历史权重的对数进行展开。式（2.5）对应独立情形，式（4.4）则是长历史下的推广。
 
 <div id="23-a-weak-noise-estimate"></div>
 
-#### B.1 Independent lifetime expansion
+#### B.1 独立世代时间的展开 {#b1-independent-lifetime-expansion}
 
-The inequality establishes a growth advantage but does not give its magnitude. To estimate the excess, write the mean and variance of the chronological lifetime distribution explicitly as
+不等式只能说明有增长优势，不能给出优势有多大。为估计增长率的增量，先把前向谱系世代时间分布的均值和方差写出来：
 
 $$
 \mu=\bar\tau=\int_0^\infty \tau p(\tau)\,d\tau,
@@ -557,7 +559,7 @@ $$
 \sigma_\tau^2=\int_0^\infty (\tau-\mu)^2p(\tau)\,d\tau.
 $$
 
-We expand around the mean lifetime, so the small quantity in the exponential is $\Lambda(\tau-\mu)$. Assume $\Lambda\sigma_\tau\ll1$ and a regular expansion in the fluctuation amplitude, with third and higher centered moments negligible at second order. Factoring out $e^{-\Lambda\mu}$ and expanding the remaining exponential gives
+我们在平均世代时间附近展开，因此指数中的小量为 $\Lambda(\tau-\mu)$。假定 $\Lambda\sigma_\tau\ll1$，且关于波动幅度的展开是正则的，三阶及更高阶中心矩在二阶近似中可以忽略。先提出 $e^{-\Lambda\mu}$，再展开剩下的指数项：
 
 $$
 \begin{aligned}
@@ -570,7 +572,7 @@ $$
 \end{aligned}
 $$
 
-The constant term integrates to $1$, the linear term vanishes because $\int_0^\infty(\tau-\mu)p(\tau)\,d\tau=0$, and the quadratic term gives the variance. Taking the logarithm and using $\ln(1+x)=x+O(x^2)$ with $x=\Lambda^2\sigma_\tau^2/2$ yields
+常数项积分为 $1$；一次项由于 $\int_0^\infty(\tau-\mu)p(\tau)\,d\tau=0$ 而消失；二次项给出方差。取对数，并在 $x=\Lambda^2\sigma_\tau^2/2$ 时使用 $\ln(1+x)=x+O(x^2)$，得到
 
 $$
 \ln\mathbb E_p[e^{-\Lambda\tau}]
@@ -578,7 +580,7 @@ $$
 \simeq-\Lambda\mu+\frac{\Lambda^2}{2}\sigma_\tau^2.
 $$
 
-Here $x$ is already second order in the fluctuation amplitude, so the additional $x^2$ term from the logarithm is fourth order. Substituting into the logarithm of Euler–Lotka gives the second-order cumulant expansion
+这里的 $x$ 已经是波动幅度的二阶量，因此对数展开中新增的 $x^2$ 项属于四阶。代入 Euler–Lotka 方程的对数形式，得到二阶累积量展开。累积量（cumulant）是对数矩母函数展开中的系数；一阶为均值，二阶为方差：
 
 $$
 0=\ln2+\ln\mathbb E_p[e^{-\Lambda\tau}]
@@ -586,7 +588,7 @@ $$
 \tag{B.1}
 $$
 
-To solve for the growth rate, write $\Lambda=\Lambda_0+\delta\Lambda$, where $\Lambda_0=\ln2/\mu$ is the noise-free rate. There is no first-order noise term in (B.1), so $\delta\Lambda$ also starts at second order. Substituting and retaining terms through this order gives
+为求增长率，令 $\Lambda=\Lambda_0+\delta\Lambda$，其中 $\Lambda_0=\ln2/\mu$ 是无噪声增长率。式（B.1）没有噪声的一阶项，所以 $\delta\Lambda$ 也从二阶开始。代入并保留到二阶，得到
 
 $$
 \begin{aligned}
@@ -597,7 +599,7 @@ $$
 \end{aligned}
 $$
 
-The product $\delta\Lambda\,\sigma_\tau^2$ is fourth order and is discarded, which allows $\Lambda^2$ to be replaced by $\Lambda_0^2$ in the variance term. Solving gives $\delta\Lambda\simeq\Lambda_0^2\sigma_\tau^2/(2\mu)$, hence
+乘积 $\delta\Lambda\,\sigma_\tau^2$ 是四阶量，可以舍去；因此方差项中的 $\Lambda^2$ 可用 $\Lambda_0^2$ 替代。解得 $\delta\Lambda\simeq\Lambda_0^2\sigma_\tau^2/(2\mu)$，于是
 
 $$
 \Lambda\simeq
@@ -605,11 +607,11 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.
 $$
 
-In the independent model, the leading correction is controlled by the lifetime variance. The correlated calculation below replaces the single-generation variance by the long-run variance of accumulated time.
+在独立模型中，最低阶修正由世代时间方差决定。下面的相关情形则会把单代方差替换为累计时间的长期方差率。
 
-#### B.2 Covariance bookkeeping
+#### B.2 如何计算协方差的贡献 {#b2-covariance-bookkeeping}
 
-Assume the $\tau_n$ form a stationary process. Write
+假设 $\tau_n$ 构成平稳过程，记
 
 $$
 C_\tau(k)
@@ -617,7 +619,7 @@ C_\tau(k)
 \qquad C_\tau(-k)=C_\tau(k).
 $$
 
-Since $T_n=\sum_{j=0}^{n-1}\tau_j$,
+由于 $T_n=\sum_{j=0}^{n-1}\tau_j$，
 
 $$
 \operatorname{Var}(T_n)
@@ -625,13 +627,13 @@ $$
 \operatorname{Cov}(\tau_i,\tau_j).
 $$
 
-Viewing this sum as a covariance matrix makes the bookkeeping explicit: diagonal entries contribute the individual variances, and off-diagonal entries occur in symmetric pairs.
+把这个求和看作协方差矩阵，就很容易数清每一项：对角线贡献各代自身的方差，非对角项则成对、对称地出现。
 
-![A covariance matrix highlights mirrored off-diagonal contributions, while accumulated-time variance grows at different rates for alternating, independent, and persistent correlations.](figures/07_accumulated_time_covariances.svg)
+![协方差矩阵中的非对角项成对出现；交替、独立与持续正相关三种情形下，累计时间方差的增长速度不同。](figures/07_accumulated_time_covariances.svg)
 
-*Fig 8. Counting the fluctuations that accumulate.* Each square in panel A contributes to $\operatorname{Var}(T_n)$. The circled squares are the same covariance counted as $(i,j)$ and $(j,i)$, explaining the factor $2$ below. Panel B evaluates (4.2) for $C_\tau(k)=\sigma_\tau^2a^{|k|}$ with $a=-1/2,0,1/2$; panel A shows the $a=-1/2$ case. All three processes have the same one-generation variance, but their long-time slopes $D_\tau/\sigma_\tau^2=(1+a)/(1-a)$ differ. These are analytic stationary model covariances.
+*图 8. 哪些波动会累积？* A 图的每个方格都对 $\operatorname{Var}(T_n)$ 有贡献。圈出的两个方格，是同一个协方差按 $(i,j)$ 和 $(j,i)$ 分别计数，因而产生下式中的系数 $2$。B 图对 $C_\tau(k)=\sigma_\tau^2a^{|k|}$ 使用式（4.2），其中 $a=-1/2,0,1/2$；A 图对应 $a=-1/2$。三个过程的单代方差相同，但长期斜率 $D_\tau/\sigma_\tau^2=(1+a)/(1-a)$ 不同。图中协方差均来自平稳模型的解析结果。
 
-There are $n$ terms of separation zero, and $2(n-k)$ ordered pairs separated by $k$. Hence the exact finite-$n$ formula is
+间隔为零的项共有 $n$ 个，间隔为 $k$ 的有序配对共有 $2(n-k)$ 个。因此，对有限的 $n$，精确地有
 
 $$
 \operatorname{Var}(T_n)
@@ -639,7 +641,7 @@ $$
 +2\sum_{k=1}^{n-1}(n-k)C_\tau(k).
 $$
 
-If correlations are absolutely summable, division by $n$ and passage to the limit give
+如果协方差绝对可和，除以 $n$ 再取极限，得到
 
 $$
 \boxed{
@@ -649,17 +651,17 @@ D_\tau
 }
 $$
 
-$D_\tau$ has units of time squared per generation. It measures *long-run fluctuations of accumulated division time*, not just fluctuations of a single generation. It is nonnegative because it is a limit of variances divided by $n$.
+$D_\tau$ 的单位是时间平方/世代。它描述的是*累计分裂时间的长期波动*，而不只是单个世代的波动。它是方差除以 $n$ 后的极限，因此非负。
 
-For independent division times, all nonzero-lag covariances vanish and $D_\tau=\sigma_\tau^2$. Positive correlations increase $D_\tau$; negative correlations can reduce it, even to zero.
+当各代分裂时间独立时，所有非零滞后的协方差都为零，所以 $D_\tau=\sigma_\tau^2$。正相关会增大 $D_\tau$；负相关则能减小它，甚至将其降为零。
 
 <div id="42-cumulant-expansion-of-the-correlated-eulerlotka-equation"></div>
 
-#### B.3 Asymptotic cumulants
+#### B.3 渐近累积量 {#b3-asymptotic-cumulants}
 
-One sufficient framework for the calculation is a family $\tau_j=\mu+\epsilon u_j$ with positive lifetimes, fixed correlation scales, and a scaled cumulant-generating function admitting a uniform expansion in $\epsilon$ near $s=\ln2/\mu$. Its cumulant rates must exist, with $K_m=O(\epsilon^m)$ and the higher-order remainder controlled there. Differentiating a large-$n$ limit or exchanging the cumulant series with that limit requires this regularity; covariance summability alone does not justify it. The approximation can fail when the correlation time diverges as noise is reduced, even if each lifetime has a small variance.
+一种足以支持上述计算的设定，是考虑 $\tau_j=\mu+\epsilon u_j$ 这一族正世代时间过程，保持相关尺度不变，并要求按世代数归一化的累积量生成函数在 $s=\ln2/\mu$ 附近能对 $\epsilon$ 作一致展开。相应的累积量率必须存在，满足 $K_m=O(\epsilon^m)$，且该邻域内的高阶余项可控。对大 $n$ 极限求导，或把累积量级数与极限交换，都需要这种正则性；仅有协方差可和并不够。即使每个世代时间的方差很小，若噪声减小时相关时间反而发散，近似也可能失效。
 
-For small enough $s$ and a process with well-behaved asymptotic cumulants,
+当 $s$ 足够小，且过程的渐近累积量满足所需正则性时，
 
 $$
 \begin{aligned}
@@ -670,7 +672,7 @@ $$
 \end{aligned}
 $$
 
-Taking $n\to\infty$,
+令 $n\to\infty$，得到
 
 $$
 \psi(s)=-s\mu+\frac{s^2}{2}D_\tau
@@ -678,17 +680,17 @@ $$
 \tag{B.2}
 $$
 
-where $K_3=\lim_{n\to\infty}\kappa_3(T_n)/n$, if the limit exists.
+其中 $K_3=\lim_{n\to\infty}\kappa_3(T_n)/n$，假定这个极限存在。
 
-Substitute $s=\Lambda$ into (C.6):
+将 $s=\Lambda$ 代入式（C.6）：
 
 $$
 0=\ln2-\Lambda\mu
- +\frac{\Lambda^2}{2}D_\tau+O(\text{third cumulants}).
+ +\frac{\Lambda^2}{2}D_\tau+O(\text{三阶累积量项}).
 \tag{B.3}
 $$
 
-Using $\Lambda_0=\ln2/\mu$ as the zero-noise solution yields
+以 $\Lambda_0=\ln2/\mu$ 为无噪声解，得到
 
 $$
 \boxed{
@@ -697,68 +699,68 @@ $$
 }
 $$
 
-The approximation assumes sufficiently weak fluctuations and a regular expansion; it may fail quantitatively for large persistence times or broad lifetime distributions.
+这个近似要求波动足够弱、展开具有正则性。若相关状态持续很久，或世代时间分布很宽，它在数值上可能不再准确。
 
-**Main conclusion so far:**
+**到这里的主要结论是：**
 
 $$
-\text{Population growth responds to accumulated lineage noise,}
-\;\text{not merely one-generation noise.}
+\text{群体增长取决于沿谱系累积的噪声，}
+\;\text{而不只是单代噪声。}
 $$
 
-It is a *long-time* and *long-wavelength* property of the chronological process.
+这反映的是前向谱系过程的*长时间、长波长*性质。
 
 
-### Appendix C. Many-to-one identity and correlated Euler–Lotka {#appendix-c}
+### 附录 C. 多对一恒等式与相关 Euler–Lotka 关系 {#appendix-c}
 
 <div id="31-from-one-lifetime-to-an-entire-lineage"></div>
 
-#### C.1 From one lifetime to an entire lineage
+#### C.1 从一个世代时间到整段谱系 {#c1-from-one-lifetime-to-an-entire-lineage}
 
-Consider a chronological lineage with correlated division times
+考虑一条前向谱系，其分裂时间之间存在相关性：
 
 $$
 \tau_0,\tau_1,\ldots,\tau_{n-1}.
 $$
 
-Its $n$-th division/birth generation is reached at time
+到达第 $n$ 代出生（即沿该谱系完成第 $n$ 次分裂）的时间为
 
 $$
 T_n=\sum_{j=0}^{n-1}\tau_j.\tag{C.1}
 $$
 
-A one-generation histogram records how often each lifetime occurs, but not which lifetimes follow each other. For example, let a short lifetime $\tau_s$ and a long lifetime $\tau_\ell$ each occur with probability $1/2$. The following comparison shows how their ordering changes the distribution of their sum.
+单代直方图只记录每种世代时间出现的频率，不记录它们的先后顺序。例如，设短时间 $\tau_s$ 和长时间 $\tau_\ell$ 各以 $1/2$ 的概率出现。下面的比较展示了不同排列如何改变总时间的分布。
 
-![Independent and alternating two-cycle histories have identical single-cycle lifetime probabilities but different distributions of total elapsed time.](figures/10_histories_and_total_time.svg)
+![独立与交替的两代历史具有相同的单代时间分布，但总耗时的分布不同。](figures/10_histories_and_total_time.svg)
 
-*Fig 9. A lifetime distribution does not specify a lineage history.* Both examples assign probability $1/2$ to each of the two lifetimes. Panel A lists the probabilities of their ordered pairs. Independent sampling allows all four pairs; strict alternation allows only the two mixed pairs. Consequently, panel B has three possible total durations for independent sampling, while the alternating pair always lasts $\tau_s+\tau_\ell$. The correlated calculation must therefore use the distribution of $T_n$, which depends on the joint history.
+*图 9. 世代时间分布不能完全描述谱系历史。* 两种情形中，两种时间各自的概率都是 $1/2$。A 图列出有序时间对的概率：独立抽样允许全部四种配对，严格交替则只允许一长一短的两种配对。因此，B 图中独立抽样有三种可能的总时间，而交替配对的总时间始终为 $\tau_s+\tau_\ell$。有相关性时，必须使用取决于联合历史的 $T_n$ 分布。
 
-After $n$ binary divisions there are $2^n$ possible descendant paths. For a locally defined branching process in which the statistical law along a uniformly sampled daughter path is the chronological-lineage law, linearity of expectation gives
+经过 $n$ 代二叉分裂，有 $2^n$ 条可能的后代路径。对于规则由局部状态决定的分枝过程，若每代均匀选择一个子细胞得到的路径服从前向谱系的统计规律，利用期望的线性性可得
 
 $$
-\mathbb E\!\left[\sum_{\text{generation-}n\text{ descendants}}
+\mathbb E\!\left[\sum_{\text{第 }n\text{ 代后代}}
    e^{-s\,T_{n,\mathrm{path}}}\right]
 =2^n\,\mathbb E_{\mathrm{chron}}[e^{-sT_n}].
 \tag{C.2}
 $$
 
-This is the elementary *many-to-one* identity. It does not require all descendant paths to be statistically independent: it requires the correct marginal law for a randomly chosen daughter path.
+这就是基本的*多对一恒等式（many-to-one identity）*：把许多后代路径上的求和期望，转化为一条随机谱系上的期望。它不要求所有后代路径相互独立，只要求随机选出的子细胞路径具有正确的边缘分布。
 
-Define the expected discounted number of generation-$n$ births,
+定义按出生时间加权后的第 $n$ 代出生数期望：
 
 $$
 Z_n(s)=2^n\mathbb E_{\mathrm{chron}}[e^{-sT_n}].
 \tag{C.3}
 $$
 
-The expected Laplace transform of all birth events is formally
+全部出生事件的拉普拉斯变换取期望后，形式上可写为
 
 $$
 \widehat B(s)=\sum_{n=0}^{\infty}Z_n(s).
 \tag{C.4}
 $$
 
-The exponential growth rate is the boundary between convergence and divergence of this series. If the correlated process admits an appropriate large-$n$ limit and the usual branching-process regularity conditions, define
+指数增长率对应这个级数的收敛与发散边界。如果相关过程存在适当的大 $n$ 极限，并满足分枝过程所需的正则性条件，定义
 
 $$
 \psi(s)=\lim_{n\to\infty}
@@ -766,13 +768,13 @@ $$
 \tag{C.5}
 $$
 
-Then $Z_n(s)$ has exponential rate $\ln2+\psi(s)$. Its critical value is determined by
+那么 $Z_n(s)$ 的指数率为 $\ln2+\psi(s)$。临界值由下式确定：
 
 $$
 \boxed{\ln2+\psi(\Lambda)=0.}\tag{C.6}
 $$
 
-Equivalently,
+等价地，
 
 $$
 \ln2+
@@ -783,26 +785,26 @@ $$
 \tag{C.7}
 $$
 
-This is the correlated-lineage generalization we will use. Its derivation is particularly transparent, and mathematically exact, for the finite-state Markov model of Appendix D.
+这就是后面使用的相关谱系推广式。对于附录 D 的有限状态马尔可夫模型，其推导尤其清楚，而且在数学上是精确的。
 
-**Assumption check.** Equation (C.7) is an asymptotic relation, not a universal identity for every imaginable correlated or environmentally forced population. We assume a stationary/ergodic lineage law, an appropriate scaled cumulant-generating-function limit, and a branching population in which a well-defined Malthusian exponent is selected by this discounted-birth condition. Strong common-environment noise, nonergodic mixtures, or unbounded-growth pathologies require separate care.
+**检查假设。** 式（C.7）是渐近关系，不能无条件套用于任意相关群体或受随机环境驱动的群体。这里假定谱系的统计规律平稳且遍历，按世代数归一化的累积量生成函数具有适当极限，并且出生时间加权条件确实选出了分枝群体的马尔萨斯增长指数（Malthusian exponent，即长期指数增长率）。强烈的共同环境噪声、非遍历混合过程，以及增长无界等病态情况，都需要单独分析。
 
-For clarity, the convergence argument can be made explicit. Assume strictly positive generation times, no explosion, and finite expected birth counts on every bounded time interval. Let $B_{\mathrm{cum}}(t)$ count all births up to time $t$, including the founder. In a binary population without death, each division creates two births and increases the living count by one, so pathwise $N(t)=[B_{\mathrm{cum}}(t)+1]/2$. Tonelli's theorem for nonnegative weights gives, for real $s>0$,
+可以把收敛论证写得更具体。假设世代时间严格为正、分枝过程非爆炸，且任意有限时间区间内的出生数期望有限。令 $B_{\mathrm{cum}}(t)$ 统计截至 $t$ 的全部出生数，包括最初的细胞。在没有死亡的二叉群体中，每次分裂产生两个新生细胞，并使存活数增加一个，因此对每条实现都有 $N(t)=[B_{\mathrm{cum}}(t)+1]/2$。对非负权重使用 Tonelli 定理，当实数 $s>0$ 时得到
 
 $$
 \int_0^\infty e^{-st}M(t)\,dt
 =\frac{1+\widehat B(s)}{2s}.\tag{C.8}
 $$
 
-Thus expected living counts and the expected discounted-birth series have the same positive convergence boundary. If $r(s)=\ln2+\psi(s)<0$, the root test makes $\sum_n Z_n(s)$ converge; if $r(s)>0$, its terms do not even tend to zero. At $r(s)=0$ the root test is inconclusive about convergence exactly at that point. If $r$ is continuous and crosses zero at a unique positive $s_*$, the boundary is nevertheless $s_*$. When $\lim_{t\to\infty}t^{-1}\ln M(t)$ exists, comparison with exponentials identifies this boundary with that limit, proving (C.6) for **expected** growth. Existence of $\psi$ without continuity, a crossing, or an expected-growth limit does not complete this argument.
+因此，存活数期望与加权出生数级数具有相同的正收敛边界。如果 $r(s)=\ln2+\psi(s)<0$，根值判别法保证 $\sum_n Z_n(s)$ 收敛；如果 $r(s)>0$，级数的项甚至不趋于零。在 $r(s)=0$ 处，根值判别法无法决定该点本身是否收敛。不过，只要 $r$ 连续，且在唯一的正值 $s_*$ 处穿过零，收敛边界仍然是 $s_*$。若 $\lim_{t\to\infty}t^{-1}\ln M(t)$ 存在，通过与指数函数比较，就能把该边界等同于此极限，从而证明式（C.6）描述的是**期望**增长率。仅知道 $\psi$ 存在，却没有连续性、过零条件或期望增长率极限，还不足以完成论证。
 
-To identify the same exponent in a typical realized population requires a branching theorem for the specified model: appropriate irreducibility and integrability, and reproduction governed locally rather than by a shared random environment. For example, finite-state irreducible age-dependent branching with lifetimes bounded above and away from zero, two offspring, and conditionally independent daughter subtrees supplies a standard sufficient setting. Sibling independence is not required for the many-to-one expectation itself; a typical-growth assertion with dependent reproduction needs its own hypotheses. Nonlattice lifetimes are needed for some constant-amplitude limits, not for every logarithmic growth exponent. The stationary chronological law is the input to $\psi$; a different founder law must have the same exponential asymptotics for the same root to apply.
+要在典型的实际群体中得到同一指数，还需要针对具体模型的分枝过程定理，包括适当的不可约性、可积性，以及繁殖由局部规则而非共同随机环境支配。例如，有限状态、不可约的年龄依赖分枝过程，如果世代时间有上界且与零保持距离，每次产生两个子细胞，且给定状态后两个子树相互独立，就是一组标准的充分条件。多对一恒等式的期望计算本身不要求姐妹细胞独立；但若繁殖存在依赖，要声称典型增长率相同，就必须另行给出条件。某些恒定渐近振幅的极限需要非格点条件，但并非所有对数增长指数都需要它。$\psi$ 使用的是平稳的前向谱系规律；若初始细胞的分布不同，要使用同一个根，必须保证指数渐近行为相同。
 
 <div id="32-independent-times-reappear-as-a-special-case"></div>
 
-#### C.2 Independent times reappear as a special case
+#### C.2 独立时间是一个特例 {#c2-independent-times-reappear-as-a-special-case}
 
-If $\tau_0,\ldots,\tau_{n-1}$ are independent,
+若 $\tau_0,\ldots,\tau_{n-1}$ 相互独立，
 
 $$
 \mathbb E[e^{-sT_n}]
@@ -810,25 +812,25 @@ $$
 =\big(\mathbb E[e^{-s\tau}]\big)^n.
 $$
 
-Thus
+于是
 
 $$
 \psi(s)=\ln\mathbb E[e^{-s\tau}],
 $$
 
-and (C.6) reduces immediately to
+式（C.6）立即化为
 
 $$
 2\mathbb E[e^{-\Lambda\tau}]=1.
 $$
 
-The original Euler–Lotka equation has **not been discarded**; it is the uncorrelated limit of the new calculation.
+原来的 Euler–Lotka 方程依然适用，它就是这个推广计算在无相关性时的结果。
 
 <div id="33-the-mean-time-inequality-still-holds"></div>
 
-#### C.3 The mean-time inequality still holds
+#### C.3 平均时间给出的不等式仍成立 {#c3-the-mean-time-inequality-still-holds}
 
-For stationary generation times with mean $\mu=\mathbb E[\tau_n]$, Jensen's inequality applied to the *entire sum* gives
+对于均值为 $\mu=\mathbb E[\tau_n]$ 的平稳世代时间过程，把 Jensen 不等式用于*整个时间之和*，得到
 
 $$
 \begin{aligned}
@@ -838,32 +840,32 @@ $$
 \end{aligned}
 $$
 
-Therefore $\psi(s)\ge-s\mu$. At $s=\Lambda$,
+因此 $\psi(s)\ge-s\mu$。在 $s=\Lambda$ 处，
 
 $$
 -\ln2=\psi(\Lambda)\ge-\Lambda\mu,
 $$
 
-so
+所以
 
 $$
 \Lambda\ge\frac{\ln2}{\mu}.\tag{C.9}
 $$
 
-Unlike the independent case, equality can hold **even when each $\tau_n$ has nonzero variance**. The key is whether fluctuations of $T_n$ accumulate extensively as $n$ grows.
+与独立情形不同，**即使每个 $\tau_n$ 的方差都非零**，这里仍然可以取等号。关键在于：随着 $n$ 增大，$T_n$ 的波动是否按世代数成比例累积。
 
 
 <div id="5-exactly-solvable-example-i-a-two-state-markov-model"></div>
 
-### Appendix D. A complete two-state Markov branching model {#appendix-d}
+### 附录 D. 完整的两状态马尔可夫分枝模型 {#appendix-d}
 
-This model isolates the effect of temporal correlation while **holding the one-generation distribution fixed**. It is a phenomenological branching model, not automatically a physically consistent constant-$\lambda$, size-homeostatic cell model.
+这个模型在**保持单代分布不变**的条件下，单独考察时间相关性的作用。它是一个唯象分枝模型，不能直接视为具有恒定 $\lambda$ 且维持大小稳态的物理细胞模型。
 
 <div id="51-definition"></div>
 
-#### D.1 Definition
+#### D.1 模型定义 {#d1-definition}
 
-There are two possible generation times:
+世代时间只有两个可能值：
 
 $$
 \tau_s=\mu-\delta,
@@ -872,7 +874,7 @@ $$
 \qquad 0\lt \delta\lt \mu.
 $$
 
-The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
+细胞处于 $s$（短）或 $\ell$（长）状态。从一代到下一代，以概率 $p$ 保持原状态：
 
 $$
 P=
@@ -883,7 +885,7 @@ p&1-p\\
 \tag{D.1}
 $$
 
-A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0\lt p\lt 1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
+状态为 $i$ 的细胞经过 $\tau_i$ 后产生两个子细胞。给定母细胞状态，每个子细胞的状态遵循转移矩阵 $P$。当 $0\lt p\lt 1$ 时，前向谱系的平稳状态概率为 $(1/2,1/2)$，与 $p$ 无关。因此
 
 $$
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
@@ -894,23 +896,23 @@ $$
 \tag{D.2}
 $$
 
-Changing $p$ changes **only the temporal organization** of the division times.
+改变 $p$，改变的**只有分裂时间沿谱系的排列和相关性**。
 
-![Two-state generation-time autocorrelations and exact population growth as state persistence increases.](figures/02_correlations_and_growth.svg)
+![两状态模型的世代时间自相关，以及状态持续性增强时的精确群体增长率。](figures/02_correlations_and_growth.svg)
 
-*Fig 10. Correlation changes growth without changing the lifetime histogram.* Panel A plots $\rho_\tau(k)=(2p-1)^k$. Panel B solves the exact Perron-eigenvalue condition (D.7) for the same 2 h and 5 h lifetimes used in the table; dots mark its four rows. The dashed line is $\ln2/\mu$. The curve ends below $p=1$, where the chain becomes reducible. These are predictions of the two-state branching model, not measurements of size-homeostatic cells.
+*图 10. 时间分布不变，相关性仍能改变增长率。* A 图绘制 $\rho_\tau(k)=(2p-1)^k$。B 图使用与下表相同的 2 小时和 5 小时世代时间，求解精确的 Perron 特征值条件（D.7）；圆点对应表中的四行。虚线为 $\ln2/\mu$。曲线在 $p=1$ 之前结束，因为该点的链变为可约。这些是两状态分枝模型的预测，不是维持大小稳态的细胞的实验测量。
 
 <div id="52-exact-autocorrelation"></div>
 
-#### D.2 Exact autocorrelation
+#### D.2 精确自相关 {#d2-exact-autocorrelation}
 
-Let $z_n=-1$ in state $s$ and $z_n=+1$ in state $\ell$. Then
+令 $s$ 状态对应 $z_n=-1$，$\ell$ 状态对应 $z_n=+1$，则
 
 $$
 \tau_n=\mu+\delta z_n.
 $$
 
-Conditional on the current state,
+给定当前状态，
 
 $$
 \mathbb E[z_{n+1}\mid z_n]
@@ -918,25 +920,25 @@ $$
 =(2p-1)z_n.
 $$
 
-Set
+令
 
 $$
 a=2p-1.
 $$
 
-By iterating conditional expectations,
+迭代条件期望，得到
 
 $$
 \mathbb E[z_{n+k}\mid z_n]=a^k z_n.
 $$
 
-Since $\mathbb E[z_n]=0$ and $z_n^2=1$,
+由于 $\mathbb E[z_n]=0$ 且 $z_n^2=1$，
 
 $$
 C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{D.3}
 $$
 
-For $0\lt p\lt 1$, $|a|\lt 1$. Equation (4.3) then gives
+当 $0\lt p\lt 1$ 时，$|a|\lt 1$。由式（4.3）得到
 
 $$
 \begin{aligned}
@@ -948,31 +950,31 @@ D_\tau
 \tag{D.4}
 $$
 
-Three regimes follow:
+因此有三种情形：
 
-- $p\lt 1/2$: successive generation times tend to alternate; correlations are negative at odd lags.
-- $p=1/2$: generation times are independent; $D_\tau=\delta^2$.
-- $p>1/2$: states persist; $D_\tau>\delta^2$.
+- $p\lt 1/2$：相邻世代时间倾向于交替，在奇数滞后处呈负相关。
+- $p=1/2$：世代时间相互独立，$D_\tau=\delta^2$。
+- $p>1/2$：状态倾向于持续，$D_\tau>\delta^2$。
 
-At exactly $p=0$, the states alternate deterministically; the absolute covariance sum in (4.3) does not converge, but directly from $T_n$ one finds $\operatorname{Var}(T_n)=O(1)$ and $D_\tau=0$. At $p=1$, the chain is nonergodic; its two disjoint subpopulations require separate treatment.
+恰好在 $p=0$ 时，状态确定性交替，式（4.3）中的协方差绝对值级数不收敛；但直接计算 $T_n$ 可得 $\operatorname{Var}(T_n)=O(1)$，所以 $D_\tau=0$。在 $p=1$ 时，链不再遍历，两个互不连通的子群体需要分别处理。
 
 <div id="53-exact-population-growth-via-a-transfer-matrix"></div>
 
-#### D.3 Exact population growth via a transfer matrix
+#### D.3 用转移矩阵求精确群体增长率 {#d3-exact-population-growth-via-a-transfer-matrix}
 
-The joint probability of a state path $i_0,i_1,\ldots,i_n$ contains a product of transition probabilities. Its discounted birth-time weight contains
+状态路径 $i_0,i_1,\ldots,i_n$ 的联合概率包含各步转移概率的乘积，按出生时间加权的因子则包含
 
 $$
 \exp\left(-\Lambda\sum_{j=0}^{n-1}\tau_{i_j}\right).
 $$
 
-At each generation, binary division contributes a factor of 2. Inheritance supplies the transition probability, and the mother's lifetime supplies the exponential discount, as shown below.
+每一代的二叉分裂贡献因子 2，状态继承贡献转移概率，母细胞的世代时间贡献指数衰减因子，如下图所示。
 
-![A two-state directed graph assigns each offspring transition the weight two times its inheritance probability times the discount for the mother's lifetime.](figures/08_discounted_branching.svg)
+![两状态有向图：每次子细胞状态转移的权重等于二倍继承概率乘以母细胞世代时间的指数衰减因子。](figures/08_discounted_branching.svg)
 
-*Fig 11. Reading the transfer matrix as a branching graph.* Each outgoing arrow from state $i$ carries the expected daughter count $2P_{ij}$ multiplied by $e^{-s\tau_i}$. Multiplying these weights along a path gives its contribution to $Z_n(s)$. The diagram uses a trial rate $s$; at the selected growth rate $s=\Lambda$, the leading eigenvalue is $1$, as in (D.7).
+*图 11. 将转移矩阵理解为分枝图。* 从状态 $i$ 出发的每条箭头，其权重为子细胞数的期望 $2P_{ij}$ 乘以 $e^{-s\tau_i}$。沿路径将这些权重相乘，便得到该路径对 $Z_n(s)$ 的贡献。图中使用试探增长率 $s$；在选定的增长率 $s=\Lambda$ 处，主特征值为 $1$，即式（D.7）。
 
-Therefore the propagation matrix for expected discounted descendant weights is
+因此，用来传播后代时间权重的期望的矩阵为
 
 $$
 K_\Lambda=
@@ -983,13 +985,13 @@ e^{-\Lambda\tau_s}&0\\
 \tag{D.5}
 $$
 
-Define
+定义
 
 $$
 A=e^{-\Lambda\tau_s},\qquad B=e^{-\Lambda\tau_\ell}.
 $$
 
-Then
+则
 
 $$
 K_\Lambda=
@@ -1000,19 +1002,19 @@ pA&(1-p)A\\
 \tag{D.6}
 $$
 
-For an initial-state probability row vector $\boldsymbol\pi$, the generation-$n$ discounted weight is
+若初始状态概率写成行向量 $\boldsymbol\pi$，第 $n$ 代的时间权重为
 
 $$
 Z_n(\Lambda)=\boldsymbol\pi K_\Lambda^n\mathbf 1.
 $$
 
-For $0\lt p\lt 1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (C.6) is therefore equivalent to the **exact eigenvalue condition**
+当 $0\lt p\lt 1$ 时，Perron–Frobenius 理论给出主导增长因子 $\rho(K_\Lambda)^n$，其中 $\rho$ 表示谱半径，也就是特征值模的最大值。因此，式（C.6）等价于以下**精确特征值条件**：
 
 $$
 \rho(K_\Lambda)=1.\tag{D.7}
 $$
 
-To compute it explicitly, the trace and determinant are
+为显式计算，先写出迹和行列式：
 
 $$
 \operatorname{tr}K_\Lambda=2p(A+B),
@@ -1020,7 +1022,7 @@ $$
 \det K_\Lambda=4AB(2p-1).
 $$
 
-The Perron eigenvalue is
+Perron 特征值为
 
 $$
 \rho(K_\Lambda)
@@ -1028,50 +1030,50 @@ $$
 \tag{D.8}
 $$
 
-Solving $\rho(K_\Lambda)=1$ for $\Lambda$ yields the population growth rate. This calculation is exact for the specified model; it is not a cumulant approximation.
+对 $\Lambda$ 求解 $\rho(K_\Lambda)=1$，即可得到群体增长率。对这里定义的模型，这个计算是精确的，没有使用累积量近似。
 
 <div id="54-two-analytically-transparent-limits"></div>
 
-#### D.4 Two analytically transparent limits
+#### D.4 两个容易解析的极限 {#d4-two-analytically-transparent-limits}
 
-**Case 1: $p=1/2$, independent generations.** Then
+**情形 1：$p=1/2$，各代独立。** 此时
 
 $$
 \rho(K_\Lambda)=A+B,
 $$
 
-so (D.7) becomes
+因此式（D.7）变为
 
 $$
 e^{-\Lambda\tau_s}+e^{-\Lambda\tau_\ell}=1.
 \tag{D.9}
 $$
 
-This is precisely $2\mathbb E[e^{-\Lambda\tau}]=1$ for the two-point distribution.
+这恰好就是两点分布对应的 $2\mathbb E[e^{-\Lambda\tau}]=1$。
 
-**Case 2: $p=0$, strict alternation.** Then
+**情形 2：$p=0$，严格交替。** 此时
 
 $$
 \rho(K_\Lambda)=2\sqrt{AB}
 =2e^{-\Lambda(\tau_s+\tau_\ell)/2}.
 $$
 
-Therefore
+因此
 
 $$
 \Lambda=\frac{\ln2}{(\tau_s+\tau_\ell)/2}
       =\frac{\ln2}{\mu}.\tag{D.10}
 $$
 
-The single-generation distribution still has variance $\delta^2>0$, yet the growth advantage disappears. Every pair of successive generation times has exactly the same total duration.
+单代分布仍有方差 $\delta^2>0$，但增长优势消失了，因为每两个相邻世代的总时间完全相同。
 
-For $p\to1^-$, long-lived state persistence lets fast lineages dominate the population; the growth exponent approaches $\ln2/\tau_s$. The point $p=1$ itself is reducible, so the observed exponent depends on which state classes are initially present.
+当 $p\to1^-$ 时，状态长时间保持不变，使快速谱系逐渐主导群体，增长指数趋于 $\ln2/\tau_s$。但 $p=1$ 本身是可约情形，观察到的增长指数取决于初始群体包含哪些状态类别。
 
 <div id="55-numerical-example-same-marginal-distribution-different-growth"></div>
 
-#### D.5 Numerical example: same marginal distribution, different growth
+#### D.5 数值例子：边缘分布相同，增长率不同 {#d5-numerical-example-same-marginal-distribution-different-growth}
 
-Choose
+取
 
 $$
 \tau_s=2\ \mathrm h,
@@ -1081,68 +1083,68 @@ $$
 \mu=C.5\ \mathrm h.
 $$
 
-Solving (D.8)–(D.7):
+求解式（D.8）与（D.7），得到
 
-| Persistence $p$ | Correlation structure | $\Lambda$ ($\mathrm h^{-1}$) | Doubling time $\ln2/\Lambda$ (h) |
+| 状态保持概率 $p$ | 相关结构 | $\Lambda$（$\mathrm h^{-1}$） | 倍增时间 $\ln2/\Lambda$（小时） |
 |---:|---|---:|---:|
-| 0 | Strict alternation | 0.198042 | 3.500 |
-| 0.25 | Antipersistent | 0.202456 | 3.424 |
-| 0.50 | Independent | 0.212289 | 3.265 |
-| 0.75 | Persistent | 0.244769 | 2.832 |
+| 0 | 严格交替 | 0.198042 | 3.500 |
+| 0.25 | 倾向于切换状态 | 0.202456 | 3.424 |
+| 0.50 | 相互独立 | 0.212289 | 3.265 |
+| 0.75 | 倾向于保持状态 | 0.244769 | 2.832 |
 
-Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
+每一行都有**相同的** $p(\tau)$、$\bar\tau$ 和 $\operatorname{Var}(\tau)$，只有相关性不同。
 
-> **Lesson of model I.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
+> **模型 I 的启示：** 单代直方图不足以预测群体增殖率。同样的随机变量，沿谱系以不同方式排列，就能产生不同的群体增长率。
 
 
-### Appendix E. Adder variance, size memory, and covariance cancellation {#appendix-e}
+### 附录 E. Adder 的方差、大小记忆与协方差抵消 {#appendix-e}
 
-For the i.i.d. added-size model in Section 3, center $v_n$ at $\Delta$ and write
+对于第 3 节中大小增量独立同分布的模型，以 $\Delta$ 为中心定义 $v_n$ 的偏差，写成
 
 $$
 x_{n+1}=a x_n+\xi_n,\qquad a=1/2,\quad\xi_n=\eta_n/2.\tag{E.1}
 $$
 
-![Small and large cells add the same size increment before division, and their daughters move closer to the mean birth size.](figures/03_adder_size_control.svg)
+![偏小和偏大的细胞在分裂前增加相同的大小，其子细胞的出生大小更接近均值。](figures/03_adder_size_control.svg)
 
-*Fig 12. The adder as restoring feedback.* In this noise-free illustration, cells born at $0.70\Delta$ and $1.30\Delta$ both add $\Delta$ and divide symmetrically. Their daughters are born at $0.85\Delta$ and $1.15\Delta$: the deviation from the mean is halved. Capsule lengths encode relative size schematically; they are not microscopy images. Added-size noise produces the stochastic map (E.1).
+*图 12. Adder 如何通过反馈恢复大小。* 这个无噪声示意中，出生大小为 $0.70\Delta$ 和 $1.30\Delta$ 的细胞都增加 $\Delta$，然后对称分裂。它们的子细胞出生大小为 $0.85\Delta$ 和 $1.15\Delta$，相对均值的偏差减半。胶囊形状的长度只示意相对大小，不是显微图像。加入大小增量噪声后，就得到随机映射（E.1）。
 
 <div id="62-exact-stationary-variance"></div>
 
-#### E.1 Exact stationary variance
+#### E.1 精确的稳态方差 {#e1-exact-stationary-variance}
 
-In the stationary state, $x_n$ and $\xi_n$ are independent because $\xi_n$ is newly sampled noise. Thus
+在平稳状态下，$\xi_n$ 是新抽取的噪声，因此 $x_n$ 与 $\xi_n$ 独立。于是
 
 $$
 \operatorname{Var}(x_{n+1})
 =a^2\operatorname{Var}(x_n)+\operatorname{Var}(\xi_n).
 $$
 
-Let $\sigma_x^2=\operatorname{Var}(x_n)$. Then
+令 $\sigma_x^2=\operatorname{Var}(x_n)$，则
 
 $$
 \sigma_x^2=a^2\sigma_x^2+\sigma_\xi^2,
 $$
 
-or
+即
 
 $$
 \sigma_x^2=\frac{\sigma_\xi^2}{1-a^2}.\tag{E.2}
 $$
 
-For $a=1/2$ and $\sigma_\xi^2=\sigma_\eta^2/4$,
+对于 $a=1/2$、$\sigma_\xi^2=\sigma_\eta^2/4$，
 
 $$
 \operatorname{Var}(v_n)=\frac{\sigma_\eta^2}{3}.\tag{E.3}
 $$
 
-Unlike the timer, the adder has a finite stationary size variance. The deterministic part of the map shrinks deviations by a factor of 2 every generation.
+与 timer 不同，adder 的稳态大小方差有限。映射中的确定性部分使偏差每代减半。
 
 <div id="63-exact-birth-size-autocorrelation"></div>
 
-#### E.2 Exact birth-size autocorrelation
+#### E.2 精确的出生大小自相关 {#e2-exact-birth-size-autocorrelation}
 
-Iterating (E.1) $k$ times,
+将式（E.1）迭代 $k$ 次，得到
 
 $$
 x_{n+k}
@@ -1151,14 +1153,14 @@ x_{n+k}
 \tag{E.4}
 $$
 
-The future noises are independent of $x_n$, so
+后续噪声与 $x_n$ 独立，因此
 
 $$
 \operatorname{Cov}(x_n,x_{n+k})
 =a^k\sigma_x^2.
 $$
 
-Dividing by $\sigma_x^2$ gives
+除以 $\sigma_x^2$，得到
 
 $$
 \rho_v(k)
@@ -1167,7 +1169,7 @@ $$
 \tag{E.5}
 $$
 
-For example,
+例如，
 
 $$
 \rho_v(1)=\frac12,
@@ -1175,32 +1177,32 @@ $$
 \rho_v(2)=\frac14.
 $$
 
-These values agree closely with the correlations $\approx0.49$ and $\approx0.24$ illustrated in the adder slide (original slides p. 5, citing Ho et al., *Annual Review of Biophysics*, 2018).
+这些数值与 adder 教学幻灯片中展示的相关性 $\approx0.49$ 和 $\approx0.24$ 很接近（原幻灯片第 5 页，引用 Ho 等，*Annual Review of Biophysics*，2018）。
 
-The important point is not merely the numerical agreement: a deterministic restoring factor fixes the decay of the correlation function. Noise sets the variance, while feedback sets the memory time.
+关键不只是数值吻合，而是确定性的恢复系数决定了相关函数如何衰减。噪声决定方差，反馈决定记忆持续的时间。
 
-![Adder predictions and experimental relaxation of initially small and large birth sizes.](figures/taheri_araghi_2015_f3_highres.png)
+![Adder 的预测与实验比较：初始偏小或偏大的出生大小如何逐渐恢复。](figures/taheri_araghi_2015_f3_highres.png)
 
-*Fig 13. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (E.1). Conditional mean relaxation and the stationary ACF (E.5) are related observables, but are distinct measurements.
+*图 13. 出生大小向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原图 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（E.5）彼此相关，但它们是不同的测量量。
 
-#### E.3 Generation-time covariances in the small-fluctuation limit
+#### E.3 小波动极限下的世代时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
 
-In the adder, nearby birth sizes satisfy
+在 adder 中，相邻世代的出生大小满足
 
 $$
 \rho_v(k)=2^{-k}>0.
 $$
 
-What about division times?
+那么分裂时间之间是什么关系？
 
-For small size fluctuations $|x_n|\ll\Delta$, expand the logarithm in (3.4):
+当大小波动较小，即 $|x_n|\ll\Delta$，将式（3.4）中的对数展开：
 
 $$
 \ln v_n=\ln(\Delta+x_n)
 \simeq\ln\Delta+\frac{x_n}{\Delta}.
 $$
 
-Therefore
+因此
 
 $$
 \delta\tau_n
@@ -1209,13 +1211,13 @@ $$
 \tag{E.6}
 $$
 
-For a general stationary AR(1) process
+对一般的平稳 AR(1) 过程，
 
 $$
 C_x(k)=\sigma_x^2 a^{|k|},\qquad 0\lt a\lt 1,
 $$
 
-we can compute the covariance of the differences explicitly. At lag zero,
+可以显式计算差分的协方差。在零滞后处，
 
 $$
 \begin{aligned}
@@ -1227,7 +1229,7 @@ C_{\delta\tau}(0)
 \tag{E.7}
 $$
 
-For $k\ge1$,
+对于 $k\ge1$，
 
 $$
 \begin{aligned}
@@ -1240,7 +1242,7 @@ C_{\delta\tau}(k)
 \tag{E.8}
 $$
 
-Dividing by (E.7) yields
+除以式（E.7），得到
 
 $$
 \rho_\tau(k)
@@ -1249,13 +1251,13 @@ $$
 \tag{E.9}
 $$
 
-For the adder, $a=1/2$:
+对于 adder，$a=1/2$：
 
 $$
 \rho_\tau(k)\simeq-2^{-(k+1)},\qquad k\ge1.\tag{E.10}
 $$
 
-Thus
+于是
 
 $$
 \rho_\tau(1)\simeq-\tfrac14,
@@ -1265,15 +1267,15 @@ $$
 \rho_\tau(3)\simeq-\tfrac1{16}.
 $$
 
-**A distinction worth emphasizing to students:** birth sizes are positively correlated across generations, while successive *generation-time fluctuations* are negatively correlated in this model. Confusing these two autocorrelation functions would obscure the mechanism.
+**需要明确区分两种自相关：** 在这个模型中，出生大小在不同世代间呈正相关，而相邻*世代时间的波动*呈负相关。把这两个自相关函数混为一谈，就会看不清抵消机制。
 
-The negative correlation has a simple interpretation: a cell with a longer-than-usual division time tends to produce a larger daughter, and that daughter typically requires less time to divide next.
+负相关有一个直观解释：某个细胞的分裂时间比通常更长时，往往会产生较大的子细胞，而这个子细胞下一次分裂通常需要更短时间。
 
 <div id="68-an-explicit-check-of-the-cancellation"></div>
 
-#### E.4 An explicit check of the cancellation
+#### E.4 显式验证抵消关系 {#e4-an-explicit-check-of-the-cancellation}
 
-Using (E.7)–(E.8),
+利用式（E.7）–（E.8），
 
 $$
 \begin{aligned}
@@ -1289,35 +1291,35 @@ D_\tau
 \tag{E.11}
 $$
 
-The sum of the negative nonzero-lag covariances cancels the positive single-generation variance. Equation (3.5) showed that the cancellation is actually exact at the level of cumulative times, even when the small-noise approximation used in (E.6) is not justified.
+所有非零滞后的负协方差之和，恰好抵消正的单代方差。式（3.5）进一步说明，在累计时间层面，这个抵消其实是精确的；即使式（E.6）所用的小噪声近似不再适用，逐项相消关系仍成立。
 
-> **Lesson of model II.** Size homeostasis is not just a narrow size distribution. It imposes a dynamical constraint on the entire lineage history. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
+> **模型 II 的启示：** 大小稳态不只是大小分布比较窄，它还约束整段谱系历史的动力学。在恒定指数生长和对称分裂下，这一约束消除了累计世代时间波动中随世代数成比例增长的部分。
 
 
 <div id="appendix-b-general-linear-size-control-laws-timer-adder-and-sizer"></div>
 
-### Appendix F. General linear size control and complete spectra {#appendix-f}
+### 附录 F. 一般线性大小调控与完整频谱 {#appendix-f}
 
-The strategy comparison is introduced in Section 1.3; here we retain the unified linear description and the full frequency-domain calculations.
+第 1.3 节已经比较了不同调控策略，这里给出统一的线性描述，并补充完整的频域计算。
 
-#### F.1 Local linear feedback laws
+#### F.1 局部线性反馈规则 {#f1-local-linear-feedback-laws}
 
-A unified local description is
+统一的局部描述为
 
 $$
 x_{n+1}=a x_n+\xi_n,
 \tag{F.1}
 $$
 
-where $x_n$ is deviation of birth size from its stationary mean.
+其中 $x_n$ 为出生大小相对稳态均值的偏差。
 
-| Strategy | Typical size-map slope $a$ | Physical behavior |
+| 策略 | 典型大小映射的斜率 $a$ | 物理行为 |
 |---|---:|---|
-| Sizer | $0$ | Division size independent of birth size; no inherited linear size memory |
-| Adder | $1/2$ | Half the birth-size deviation is inherited |
-| Timer, linearized near a balanced size | $1$ | No restoring feedback; random-walk/neutral behavior |
+| Sizer（定大小分裂） | $0$ | 分裂大小与出生大小无关，不继承线性大小记忆 |
+| Adder（定增量分裂） | $1/2$ | 继承出生大小偏差的一半 |
+| Timer（在平衡大小附近线性化） | $1$ | 没有恢复性反馈，表现为随机游走或偏差不变 |
 
-For $|a|\lt 1$,
+当 $|a|\lt 1$ 时，
 
 $$
 \operatorname{Var}(x)=\frac{\operatorname{Var}(\xi)}{1-a^2},
@@ -1325,23 +1327,23 @@ $$
 \rho_x(k)=a^{|k|}.
 $$
 
-These familiar control strategies differ in **how quickly birth-size perturbations are forgotten**. The observed slope alone constrains the effective dynamics, but not a unique biochemical implementation.
+这些调控策略的差别，在于**出生大小的扰动消退得多快**。观测到的斜率能约束有效动力学，但无法唯一确定具体的生化实现方式。
 
-The timer row is a local or additive approximation: the exact multiplicative timer map is the log-size random walk derived in Section 1.
+表中的 timer 是局部或加性近似；精确的乘性 timer 映射，对应第 1 节推导的对数大小随机游走。
 
-The following calculations give the full spectra behind Section 4.3, using frequency per generation.
+下面给出第 4.3 节所用的完整频谱，频率以世代数为基准。
 
 <div id="71-autocovariance-and-the-wienerkhinchin-relation"></div>
 
-#### F.2 Autocovariance and the Wiener–Khinchin relation
+#### F.2 自协方差与 Wiener–Khinchin 关系 {#f2-autocovariance-and-the-wienerkhinchin-relation}
 
-For a stationary discrete-time process $y_n$, define
+对平稳离散时间过程 $y_n$，定义
 
 $$
 C_y(k)=\mathbb E[(y_n-\bar y)(y_{n+k}-\bar y)].
 $$
 
-Its two-sided power spectral density is
+其双边功率谱密度为
 
 $$
 S_y(\omega)=\sum_{k=-\infty}^{\infty}
@@ -1350,7 +1352,7 @@ C_y(k)e^{-i\omega k},
 \tag{F.2}
 $$
 
-The inverse relation is
+逆变换关系为
 
 $$
 C_y(k)=\frac1{2\pi}\int_{-\pi}^{\pi}
@@ -1358,22 +1360,22 @@ S_y(\omega)e^{i\omega k}\,d\omega.
 \tag{F.3}
 $$
 
-These are the discrete-time Wiener–Khinchin relations. The frequency $\omega$ is angular frequency **per generation**. This distinction matters when comparing lineage-indexed observations with measurements sampled in physical time.
+这就是离散时间的 Wiener–Khinchin 关系（维纳–辛钦关系）：自协方差与功率谱密度互为傅里叶变换。这里 $\omega$ 是**以世代数为基准**的角频率。比较按世代编号的谱系记录与按实际时间间隔采样的测量时，必须注意这一点。
 
-At zero frequency,
+在零频处，
 
 $$
 S_\tau(0)=\sum_{k=-\infty}^{\infty}C_\tau(k)
 =C_\tau(0)+2\sum_{k=1}^\infty C_\tau(k).
 $$
 
-Thus, whenever the covariance sum converges,
+因此，只要协方差级数收敛，就有
 
 $$
 S_\tau(0)=D_\tau.
 $$
 
-This gives equation (4.4) a spectral form:
+式（4.4）便可写成频谱形式：
 
 $$
 \Lambda\simeq
@@ -1381,33 +1383,33 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}S_\tau(0).
 $$
 
-**Why frequency appears in a population-growth lecture:** at quadratic order, long-time population growth is controlled by *zero-frequency generation-time noise*. The full power spectrum additionally tells us whether there are preferred dynamical timescales.
+**为什么讨论群体增长时要引入频率？** 在二阶近似下，长期群体增长由*世代时间噪声的零频分量*决定；完整功率谱还可以告诉我们，系统是否存在特征性的动力学时间尺度。
 
 <div id="72-spectrum-of-the-ar1-size-control-model"></div>
 
-#### F.3 Spectrum of the AR(1) size-control model
+#### F.3 AR(1) 大小调控模型的频谱 {#f3-spectrum-of-the-ar1-size-control-model}
 
-Consider again
+再次考虑
 
 $$
 x_{n+1}=a x_n+\xi_n,
 \qquad |a|\lt 1,
 $$
 
-with independent zero-mean noise of variance $\sigma_\xi^2$. In the stationary regime,
+其中噪声 $\xi_n$ 相互独立、均值为零、方差为 $\sigma_\xi^2$。在平稳状态下，
 
 $$
 x_n=\sum_{j=0}^\infty a^j\xi_{n-1-j}.
 \tag{F.4}
 $$
 
-This is a linear filter of white noise. In the frequency domain the transfer function (including the one-generation delay) is
+这相当于对白噪声进行线性滤波。在频域中，包含一代延迟的传递函数为
 
 $$
 H(\omega)=\frac{e^{-i\omega}}{1-ae^{-i\omega}},
 $$
 
-and therefore
+因此
 
 $$
 \begin{aligned}
@@ -1419,9 +1421,9 @@ S_x(\omega)
 \tag{F.5}
 $$
 
-For an adder, $a=1/2$. The size spectrum is greatest near $\omega=0$ and decreases smoothly toward $\pi$. There is no intrinsic *finite-frequency* oscillatory resonance.
+对于 adder，$a=1/2$。大小频谱在 $\omega=0$ 附近最大，随后向 $\pi$ 平滑下降，不存在内禀的*非零频率*振荡共振。
 
-This is the spectral counterpart of the monotone, positive autocorrelation
+这对应于单调、正值的自相关：
 
 $$
 C_x(k)=\sigma_x^2(1/2)^{|k|}.
@@ -1429,15 +1431,15 @@ $$
 
 <div id="73-spectrum-of-generation-time-feedback-filters-out-zero-frequency"></div>
 
-#### F.4 Spectrum of generation time: feedback filters out zero frequency
+#### F.4 世代时间的频谱：差分滤掉零频噪声 {#f4-spectrum-of-generation-time-feedback-filters-out-zero-frequency}
 
-From (E.6),
+由式（E.6），
 
 $$
 \delta\tau_n\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
 $$
 
-Taking a difference multiplies a Fourier mode $e^{i\omega n}$ by $e^{i\omega}-1$. Hence
+作差会使傅里叶模态 $e^{i\omega n}$ 乘以 $e^{i\omega}-1$，所以
 
 $$
 \begin{aligned}
@@ -1450,21 +1452,21 @@ S_\tau(\omega)
 \tag{F.6}
 $$
 
-At zero frequency the numerator vanishes:
+在零频处，分子为零：
 
 $$
 S_\tau(0)=0.\tag{F.7}
 $$
 
-The same fact appeared as the telescoping sum in (3.5) and the covariance cancellation in (E.11). These are three mathematical descriptions of **one physical mechanism**.
+同一个结果，已经在式（3.5）的逐项相消和式（E.11）的协方差抵消中出现过。这是**同一个物理机制**的三种数学描述。
 
-Notice that differencing may emphasize high-frequency fluctuations, even when the underlying size process does not have an oscillatory mode. A large spectral value near the Nyquist frequency $\omega=\pi$ is not, by itself, evidence for a biological oscillator.
+要注意，即使原本的大小过程没有振荡模态，差分也可能使高频波动更突出。因此，奈奎斯特频率 $\omega=\pi$ 附近的谱值较大，本身不足以证明存在生物振荡器。这里的奈奎斯特频率对应离散采样能分辨的最高频率。
 
 <div id="74-an-extra-connection-the-markov-models-spectrum"></div>
 
-#### F.5 An extra connection: the Markov model's spectrum
+#### F.5 补充联系：马尔可夫模型的频谱 {#f5-an-extra-connection-the-markov-models-spectrum}
 
-For the two-state Markov model of Appendix D, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|\lt 1$ gives
+对于附录 D 的两状态马尔可夫模型，$C_\tau(k)=\delta^2a^{|k|}$，其中 $a=2p-1$。在 $|a|\lt 1$ 时，将傅里叶级数求和，得到
 
 $$
 S_\tau(\omega)
@@ -1472,43 +1474,43 @@ S_\tau(\omega)
 \tag{F.8}
 $$
 
-In particular,
+特别地，
 
 $$
 S_\tau(0)=\delta^2\frac{1+a}{1-a}
 =\delta^2\frac{p}{1-p},
 $$
 
-which recovers (D.4) without separately summing the covariances.
+这样无需单独对协方差求和，就回到式（D.4）。
 
-Thus both models are readily understood through spectra:
+因此，两种模型都能从频谱角度理解：
 
-- The Markov model can change low-frequency division-time noise by changing persistence.
-- The adder converts size fluctuations into differences, suppressing division-time noise at zero frequency.
+- 马尔可夫模型通过改变状态持续性，改变低频分裂时间噪声。
+- Adder 将大小波动转化为差分，抑制分裂时间噪声的零频分量。
 
 
 <div id="appendix-c-why-the-division-time-cancellation-is-more-general-than-the-adder"></div>
 
-### Appendix G. Scope of exact cancellation and sufficient asymptotic conditions {#appendix-g}
+### 附录 G. 精确抵消的适用范围与充分的渐近条件 {#appendix-g}
 
-#### G.1 Identity, moments, and growth are different levels of assertion
+#### G.1 恒等式、矩条件与增长结论是三个层次 {#g1-identity-moments-and-growth-are-different-levels-of-assertion}
 
-The identity (3.5) holds at every finite $n$ whenever sizes are positive, growth has one constant exponential rate, and divisions are symmetric. It is valid even for a nonstationary size process; homeostasis is needed to bound its endpoint term, not to make it telescope. In a stationary process, finite $\mathbb E|\ln v|$ fixes the mean time, and finite $\operatorname{Var}(\ln v)$ bounds $\operatorname{Var}(T_n)$ and gives $D_\tau=0$. Mixing strengthens this bound to the variance limit in Section 3.3. None of these moment conditions alone controls the exponential tilt in (3.7).
+只要大小为正、细胞共有恒定的指数增长率、分裂对称，恒等式（3.5）就对每个有限的 $n$ 成立。即使大小过程不平稳，它也成立：大小稳态的作用是限制端点项，而不是让求和能够逐项相消。在平稳过程中，$\mathbb E|\ln v|$ 有限可确定平均时间；$\operatorname{Var}(\ln v)$ 有限可保证 $\operatorname{Var}(T_n)$ 有界，并给出 $D_\tau=0$。混合性进一步给出第 3.3 节的方差极限。但这些矩条件都不能单独控制式（3.7）的指数倾斜，也就是按指数因子对概率重新加权。
 
-For a stationary positive-size process, put $q=s/\lambda>0$. A useful sufficient condition for that tilt is
+对平稳的正大小过程，令 $q=s/\lambda>0$。控制该指数加权的一个实用充分条件是
 
 $$
 1\le\mathbb E[(v_n/v_0)^{-q}]
 \le\big(\mathbb E[v^{2q}]\mathbb E[v^{-2q}]\big)^{1/2}<\infty.\tag{G.1}
 $$
 
-The lower bound follows from Jensen and $\mathbb E[\ln v_n-\ln v_0]=0$; Cauchy–Schwarz supplies the upper bound without requiring endpoint independence. These moments imply integrability of the logarithm, and the bounds are uniform in $n$. They therefore give $\lim_n n^{-1}\ln\mathbb E[(v_n/v_0)^{-q}]=0$. If they hold for $s$ in a neighborhood of $\lambda$, the expected discounted-birth weights have exponential rate $\ln2-s\ln2/\lambda$ there, selecting $\lambda$ under Appendix C's conditions. Fixed initial sizes can be treated with corresponding uniform endpoint bounds, but are not covered just by assuming stationary marginals.
+下界来自 Jensen 不等式和 $\mathbb E[\ln v_n-\ln v_0]=0$；上界来自 Cauchy–Schwarz 不等式，不需要两端独立。这些矩条件也保证对数可积，而且上下界对所有 $n$ 都成立。因此，$\lim_n n^{-1}\ln\mathbb E[(v_n/v_0)^{-q}]=0$。若这些条件对 $\lambda$ 邻域内的 $s$ 都成立，出生时间权重的期望在该邻域内就具有指数率 $\ln2-s\ln2/\lambda$，并在附录 C 的条件下选出增长率 $\lambda$。固定初始大小也可用相应的端点一致界处理，但不能仅凭平稳边缘分布的假设就覆盖这一情形。
 
-An adder with added increments bounded above and bounded away from zero provides a simple stationary realization with all these moments. Merely requiring positive increments and finite added-size variance does not automatically establish the inverse moments or the population snapshot condition. The alternative conservation proof uses $t^{-1}\ln\overline v_{\mathrm{snap}}(t)\to0$ and applies directly to a realized population. Chronological stationarity and snapshot homeostasis should not be silently interchanged.
+如果 adder 的大小增量有上界，且与零保持一定距离，就能构造一个满足全部这些矩条件的简单平稳过程。只要求增量为正、增量方差有限，并不自动保证负阶矩有限，也不保证群体瞬时平均大小的条件成立。另一条守恒证明使用 $t^{-1}\ln\overline v_{\mathrm{snap}}(t)\to0$，直接适用于一次实际群体演化。不能把前向谱系的平稳性和群体瞬时大小的稳态条件当成同一件事。
 
-#### G.2 Universality within the stated kinematics
+#### G.2 在给定生长与分配条件下的普适性 {#g2-universality-within-the-stated-kinematics}
 
-Equation (3.4) used only
+式（3.4）只用到了
 
 $$
 v_n^{\mathrm d}=v_n e^{\lambda\tau_n},
@@ -1516,21 +1518,21 @@ v_n^{\mathrm d}=v_n e^{\lambda\tau_n},
 v_{n+1}=\frac12v_n^{\mathrm d}.
 $$
 
-The functional form of the division-size control law did not enter. Therefore any stationary positive-size process satisfying those two relations obeys (3.5). A sizer, adder, or another feedback law can all exhibit this cancellation if they provide sufficient homeostasis.
+推导没有用到分裂大小调控规则的具体函数形式。因此，任何满足这两个关系的平稳正大小过程都满足式（3.5）。Sizer、adder 或其他反馈规则，只要能提供足够的大小稳态，都可能出现同样的抵消。
 
-For an asymmetric division where the followed daughter receives fraction $r_n$ of the mother's size,
+如果分裂不对称，所追踪的子细胞获得母细胞大小的比例为 $r_n$，那么
 
 $$
 v_{n+1}=r_n v_ne^{\lambda\tau_n},
 $$
 
-and hence
+于是
 
 $$
 \tau_n=\frac{-\ln r_n+\ln v_{n+1}-\ln v_n}{\lambda}.
 $$
 
-The accumulated time becomes
+累计时间变为
 
 $$
 T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln r_j)
@@ -1538,28 +1540,28 @@ T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln r_j)
 \tag{G.2}
 $$
 
-The first term is no longer deterministic when partition fractions fluctuate. Thus the statement $D_\tau=0$ does *not* follow from homeostasis alone under random asymmetry. Nevertheless, population-level mass conservation still gives $\Lambda=\lambda$ when every division conserves total size and the population mean snapshot size remains stationary. The appropriate lineage growth calculation must account for how daughter partition fractions and sampling are weighted.
+当分配比例有波动时，第一项就不再是确定性的。因此，在随机不对称分裂下，不能仅由大小稳态推出 $D_\tau=0$。不过，只要每次分裂都保持总大小守恒，且群体瞬时平均大小保持平稳，群体层面的质量守恒仍给出 $\Lambda=\lambda$。此时，正确的谱系增长计算必须考虑子细胞分配比例，以及抽样时采用的权重。
 
-A similar caution applies when individual growth rates fluctuate: if
+单细胞生长率有波动时也需要注意。若第 $n$ 代中满足
 
 $$
 \dot v=\lambda_n v
 $$
 
-during generation $n$, then
+则
 
 $$
 \tau_n=\frac{\ln2+\ln v_{n+1}-\ln v_n}{\lambda_n},
 $$
 
-and the sum no longer telescopes with one common prefactor. This is a natural route to genuinely new growth-versus-control effects.
+此时求和各项没有统一的前因子，因而不能再按原来的方式逐项相消。生长率波动由此可能带来新的增长与调控效应。
 
 
 <div id="appendix-a-kl-divergence-for-lifetime-and-trajectory-distributions"></div>
 
-### Appendix H. KL divergence for lifetime and trajectory distributions {#appendix-h}
+### 附录 H. 世代时间分布与轨迹分布的 KL 散度 {#appendix-h}
 
-The weighted density $q$ introduced in Section 2.1 gives an information-theoretic expression for the growth advantage. For independent lifetimes with $\bar\tau=\mathbb E_p[\tau]\lt\infty$, the Kullback–Leibler (KL) divergence between $p$ and $q$ is
+第 2.1 节引入的加权密度 $q$，可以给出增长优势的信息论表达。对于独立的世代时间，若 $\bar\tau=\mathbb E_p[\tau]\lt\infty$，$p$ 与 $q$ 之间的 Kullback–Leibler 散度（KL 散度，也称相对熵）为
 
 $$
 \begin{aligned}
@@ -1571,9 +1573,9 @@ D_{\mathrm{KL}}(p\|q)
 \tag{H.1}
 $$
 
-Nonnegativity of KL divergence recovers the Jensen bound (2.4), while $D_{\mathrm{KL}}(p\|q)/\bar\tau$ gives the exact excess of $\Lambda$ over $\ln2/\bar\tau$. The same distributional bias therefore has both a sampling interpretation and a KL representation.
+KL 散度非负，因此回到式（2.4）的 Jensen 下界；$D_{\mathrm{KL}}(p\|q)/\bar\tau$ 则精确给出 $\Lambda$ 比 $\ln2/\bar\tau$ 大多少。同一种分布偏倚，既可以从抽样角度理解，也可以用 KL 散度表示。
 
-For correlated lifetimes, Section 4.1 shows that the growth rate depends on complete division histories. The KL identity therefore uses a joint distribution of lifetimes. Let $\boldsymbol\tau=(\tau_0,\ldots,\tau_{n-1})$, let $p_n(\boldsymbol\tau)$ denote its chronological joint law, and write $T_n=\sum_{j=0}^{n-1}\tau_j$. Define the weighted trajectory distribution
+对于相关世代时间，第 4.1 节说明增长率取决于完整的分裂历史。因此，KL 恒等式需要使用世代时间的联合分布。令 $\boldsymbol\tau=(\tau_0,\ldots,\tau_{n-1})$，用 $p_n(\boldsymbol\tau)$ 表示前向谱系的联合概率分布，并记 $T_n=\sum_{j=0}^{n-1}\tau_j$。定义加权轨迹分布
 
 $$
 q_n(\boldsymbol\tau)
@@ -1583,7 +1585,7 @@ Z_n(\Lambda)=2^n\mathbb E_p[e^{-\Lambda T_n}].
 \tag{H.2}
 $$
 
-This is normalized by construction. For independent lifetimes, $Z_n(\Lambda)=1$ and $q_n(\boldsymbol\tau)=\prod_{j=0}^{n-1}q(\tau_j)$, recovering the single-lifetime weighting in Section 2.1. For a general joint law, the KL divergence is
+这个定义已经保证归一化。若世代时间独立，则 $Z_n(\Lambda)=1$，且 $q_n(\boldsymbol\tau)=\prod_{j=0}^{n-1}q(\tau_j)$，得到第 2.1 节中的单代加权。对于一般联合分布，KL 散度为
 
 $$
 \begin{aligned}
@@ -1595,7 +1597,7 @@ D_{\mathrm{KL}}(p_n\|q_n)
 \tag{H.3}
 $$
 
-If $\mathbb E[T_n]=n\bar\tau$ and $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$, dividing by $n$ gives
+若 $\mathbb E[T_n]=n\bar\tau$，且 $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$，除以 $n$ 后得到
 
 $$
 \lim_{n\to\infty}\frac1nD_{\mathrm{KL}}(p_n\|q_n)
@@ -1603,40 +1605,40 @@ $$
 \tag{H.4}
 $$
 
-The nonnegative KL divergence *rate* extends (H.1) to correlated histories and recovers the generalized Jensen bound in Section 4.1. For correlated processes, $q_n$ is an exponentially tilted trajectory ensemble; identifying it with a specific retrospective sampling protocol can involve boundary effects and additional assumptions.
+非负的 KL 散度*率*把式（H.1）推广到相关历史，并得到第 4.1 节的广义 Jensen 下界。这里“率”指长轨迹的 KL 散度除以世代数后的极限。对于相关过程，$q_n$ 是按指数权重重新加权的轨迹系综；要把它等同于某种具体回溯抽样得到的分布，还可能需要处理边界效应和额外假设。
 
-In a size-homeostatic, constant-$\lambda$ model, the extensive KL rate vanishes under the same conditions that yield $\Lambda\bar\tau=\ln2$, even though finite-path distributions need not be identical.
+在维持大小稳态、$\lambda$ 恒定的模型中，在保证 $\Lambda\bar\tau=\ln2$ 的同一组条件下，KL 散度除以世代数后的极限为零，但有限长度路径的两个分布仍不必完全相同。
 
 
 ---
 
 <div id="8-ordinary-fluctuations-or-an-oscillatory-dynamical-mode"></div>
 
-## Further Topic: Fluctuations versus Oscillatory Modes {#further-topic}
+## 进阶专题：随机波动与振荡模态 {#further-topic}
 
-This optional topic asks a different scientific question: what creates a preferred nonzero frequency? It does not add a requirement to the growth-cancellation argument.
+这个选读专题讨论另一个问题：什么机制会产生特征性的非零频率？它不为前面的增长抵消论证增加额外条件。
 
-The original teaching slides juxtapose adder fluctuations and oscillatory behavior (slides p. 5). Here we treat the latter as a separate modeling question: **what dynamical structure creates a preferred nonzero frequency?**
+原教学幻灯片在第 5 页并列讨论了 adder 的波动与振荡行为。这里把振荡作为独立的建模问题：**什么样的动力学结构会产生特征性的非零频率？**
 
 <div id="81-relaxation-is-not-oscillation"></div>
 
-### FT.1 Relaxation is not oscillation
+### FT.1 弛豫不等于振荡 {#ft1-relaxation-is-not-oscillation}
 
-An AR(1) model with $0\lt a\lt 1$ has a single real positive eigenvalue $a$. Perturbations decay as $a^n$. Its normalized ACF is monotone:
+当 $0\lt a\lt 1$ 时，AR(1) 模型只有一个正实特征值 $a$，扰动按 $a^n$ 衰减。这种向稳态恢复的过程称为弛豫（relaxation）。归一化自相关函数单调衰减：
 
 $$
 \rho_x(k)=a^{|k|}.
 $$
 
-The spectrum has no isolated nonzero-frequency resonant mode. Random sample paths may visibly rise and fall, but this alone does not imply a periodic dynamical mechanism.
+频谱中没有独立的非零频率共振模态。随机轨迹看起来可能时升时降，但这并不能单独证明存在周期性的动力学机制。
 
-If $-1\lt a\lt 0$, the ACF alternates sign, $\rho_x(k)=a^{|k|}$, and the spectral maximum is at $\omega=\pi$, corresponding to a two-generation alternation. This already illustrates why the *sign and eigenstructure of feedback* matter more than the visual regularity of a noisy trace.
+如果 $-1\lt a\lt 0$，自相关函数 $\rho_x(k)=a^{|k|}$ 的符号会交替，谱峰位于 $\omega=\pi$，对应每两代一次的交替。这已经说明，*反馈的符号和特征值结构*比噪声轨迹看起来有多规律更重要。
 
 <div id="82-a-minimal-model-capable-of-damped-oscillations"></div>
 
-### FT.2 A minimal model capable of damped oscillations
+### FT.2 能产生阻尼振荡的最简模型 {#ft2-a-minimal-model-capable-of-damped-oscillations}
 
-Introduce a delayed feedback term:
+引入一个延迟反馈项：
 
 $$
 x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
@@ -1645,28 +1647,28 @@ x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
 \tag{FT.1}
 $$
 
-The deterministic recurrence has characteristic equation
+确定性递推的特征方程为
 
 $$
 z^2-2r\cos\omega_0\,z+r^2=0.
 $$
 
-Its roots are
+其根为
 
 $$
 z_\pm=re^{\pm i\omega_0}.\tag{FT.2}
 $$
 
-The modulus $r$ controls damping, while the argument $\omega_0$ fixes the characteristic angular frequency. The deterministic response therefore contains terms of the form
+模长 $r$ 控制阻尼，辐角 $\omega_0$ 决定特征角频率。因此，确定性响应中含有如下形式的项：
 
 $$
 x_n\sim r^n\cos(n\omega_0+\phi).
 \tag{FT.3}
 $$
 
-White noise continually excites these damped modes, leading to a stationary noisy oscillator.
+白噪声不断激发这些阻尼模态，使系统形成平稳的含噪振荡过程。
 
-The stationary autocovariance obeys the same second-order recurrence at nonzero lags:
+在非零滞后处，平稳自协方差满足同一个二阶递推关系：
 
 $$
 C_x(k+1)=2r\cos\omega_0\,C_x(k)-r^2C_x(k-1),
@@ -1674,21 +1676,21 @@ C_x(k+1)=2r\cos\omega_0\,C_x(k)-r^2C_x(k-1),
 \tag{FT.4}
 $$
 
-Hence its normalized ACF has the form
+因此，归一化自相关函数具有如下形式：
 
 $$
 \rho_x(k)=r^{|k|}
 \big[\cos(k\omega_0)+b\sin(|k|\omega_0)\big],
 $$
 
-where the coefficient $b$ is fixed by stationarity. For this AR(2) model,
+系数 $b$ 由平稳性确定。对这个二阶自回归模型（AR(2)），
 
 $$
 b=\frac{1-r^2}{1+r^2}\cot\omega_0.
 \tag{FT.5}
 $$
 
-The power spectrum is
+功率谱为
 
 $$
 S_x(\omega)=\frac{\sigma_\xi^2}
@@ -1697,69 +1699,69 @@ S_x(\omega)=\frac{\sigma_\xi^2}
 \tag{FT.6}
 $$
 
-For sufficiently weak damping and a frequency away from the boundaries, this exhibits a resonant peak near $\omega_0$. The exact peak location need not equal $\omega_0$ at finite damping.
+当阻尼足够弱，且频率不靠近边界时，频谱会在 $\omega_0$ 附近出现共振峰。阻尼不为零时，精确峰位不一定等于 $\omega_0$。
 
-![Adder spectra suppress zero-frequency time noise, while a delayed-feedback oscillator has a finite-frequency peak and oscillating autocorrelation.](figures/05_spectra_and_oscillations.svg)
+![Adder 抑制时间噪声的零频分量，而延迟反馈振荡器具有非零频率谱峰和振荡的自相关。](figures/05_spectra_and_oscillations.svg)
 
-*Fig 14. Zero-frequency cancellation and oscillatory modes answer different questions.* Panel A uses the adder's $a=1/2$ and the linearized generation-time relation (F.6); each spectrum is divided by its own process variance. Panel B compares the AR(1) size process with the AR(2) model (FT.1), using $r=0.9$ and $\omega_0=\pi/3$ radians per generation. The dotted line marks the mode angle; the spectral maximum can be shifted by damping. Panel C shows the corresponding analytic autocorrelations. All spectra use generation-indexed frequency, not physical-time frequency.
+*图 14. 零频抵消与振荡模态回答不同的问题。* A 图使用 adder 的 $a=1/2$ 和线性化世代时间关系（F.6），每条频谱除以各自过程的方差。B 图比较 AR(1) 大小过程与 AR(2) 模型（FT.1），参数为 $r=0.9$、$\omega_0=\pi/3$ 弧度/世代。虚线标出模态的辐角，实际谱峰可能因阻尼而偏移。C 图展示相应的解析自相关。所有频谱都以世代数为基准，不是按实际时间定义的频率。
 
 <div id="83-what-the-spectrum-can-and-cannot-establish"></div>
 
-### FT.3 What the spectrum can and cannot establish
+### FT.3 频谱能说明什么，不能说明什么 {#ft3-what-the-spectrum-can-and-cannot-establish}
 
-A finite-frequency peak suggests a preferred dynamical timescale, but does not, by itself, identify a unique molecular mechanism. A noisy linearly stable oscillator, a deterministic limit cycle with noise, or suitably structured inherited environmental variations can produce superficially similar spectra.
+非零频率谱峰提示系统存在特征性的动力学时间尺度，但不能单独确定唯一的分子机制。含噪声的线性稳定振荡器、加入噪声的确定性极限环，或具有适当结构并能代际传递的环境波动，都可能产生表面相似的频谱。
 
-Similarly, a finite record of independent or correlated noise can show spurious bumps in its estimated power spectrum. Robust claims require sufficiently long records, multiple lineages/replicates, uncertainty estimates, and attention to whether the data were sampled in generation count or in physical time.
+同样，独立或相关噪声的有限长度记录，也可能在估计功率谱时出现偶然的凸起。要得到可靠结论，需要足够长的记录、多条谱系或重复实验、不确定性估计，并区分数据是按世代数还是按实际时间采样。
 
-> **Lesson of the spectral analysis.** The zero-frequency component controls long-time accumulation of generation-time noise. Finite-frequency structure diagnoses dynamical modes. Both emerge from the same correlation function, but they answer different questions.
+> **频谱分析的启示：** 零频分量决定世代时间噪声如何长期累积，非零频率结构则帮助识别动力学模态。两者都来自同一个相关函数，但回答的问题不同。
 
 ---
 
 <div id="problems-for-discussion-or-homework"></div>
 
-## Problems / Further Reading {#problems-further-reading}
+## 练习与进一步阅读 {#problems-further-reading}
 
-### Problem 1. What does it take to remove size memory?
+### 练习 1. 如何消除大小记忆？ {#problem-1-what-does-it-take-to-remove-size-memory}
 
-For $x_{n+1}=ax_n+\xi_n$, derive $\mathbb E[x_{n+k}\mid x_n]$, the stationary variance, and the autocorrelation function. Which values of $a$ produce homeostasis? What changes if $a\lt 0$?
+对 $x_{n+1}=ax_n+\xi_n$，推导 $\mathbb E[x_{n+k}\mid x_n]$、稳态方差和自相关函数。哪些 $a$ 值能维持大小稳态？如果 $a\lt 0$，会有什么变化？
 
-**Answer sketch.** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$, $\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$, and $\rho(k)=a^{|k|}$. Finite stationary variance requires $|a|\lt 1$ for independent noise of finite nonzero variance. Negative $a$ leads to alternating-sign correlations.
+**解答提示：**$\mathbb E[x_{n+k}\mid x_n]=a^kx_n$，$\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$，$\rho(k)=a^{|k|}$。对于方差有限且非零的独立噪声，要有有限稳态方差，需满足 $|a|\lt 1$。负的 $a$ 会使相关性的符号交替。
 
-### Problem 2. Correlation without changing a histogram
+### 练习 2. 直方图不变，相关性如何改变？ {#problem-2-correlation-without-changing-a-histogram}
 
-Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$. Derive (D.3) and use it to estimate the growth-rate correction in (4.4). Why does that estimate break down as $p\to1^-$?
+证明两状态马尔可夫模型在任意 $0\lt p\lt 1$ 时，都具有边缘分布 $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$。推导式（D.3），并用它估计式（4.4）中的增长率修正。为什么当 $p\to1^-$ 时，该估计会失效？
 
-**Answer sketch.** The transition matrix is symmetric, so its stationary probabilities are $1/2,1/2$. Correlations decay as $(2p-1)^k$. Therefore $D_\tau=\delta^2p/(1-p)$. As $p\to1^-$, the correlation time diverges and weak-noise/truncated-cumulant expansions cease to be uniform; use the exact matrix condition instead.
+**解答提示：** 转移矩阵对称，因此平稳概率为 $1/2,1/2$。相关性按 $(2p-1)^k$ 衰减，所以 $D_\tau=\delta^2p/(1-p)$。当 $p\to1^-$ 时，相关时间发散，弱噪声或截断累积量展开不再一致有效，应改用精确矩阵条件。
 
-### Problem 3. Can noisy lifetimes have zero long-run noise?
+### 练习 3. 每代时间有噪声，长期噪声还能为零吗？ {#problem-3-can-noisy-lifetimes-have-zero-long-run-noise}
 
-Use (3.5) to show that $\operatorname{Var}(T_n)$ remains bounded as $n\to\infty$ for a mixing stationary size process with finite $\operatorname{Var}(\ln v)$. Explain why this does not require each $\tau_n$ to be deterministic.
+对于具有混合性、且 $\operatorname{Var}(\ln v)$ 有限的平稳大小过程，利用式（3.5）证明：当 $n\to\infty$ 时，$\operatorname{Var}(T_n)$ 仍然有界。解释为什么这不要求每个 $\tau_n$ 都是确定性的。
 
-**Answer sketch.** $T_n-n\ln2/\lambda=(\ln v_n-\ln v_0)/\lambda$. Its variance tends to $2\operatorname{Var}(\ln v)/\lambda^2$ if endpoints decorrelate. Individual times are noisy, but their integrated correlations cancel the variance accumulation.
+**解答提示：**$T_n-n\ln2/\lambda=(\ln v_n-\ln v_0)/\lambda$。如果两端逐渐失去相关性，其方差趋于 $2\operatorname{Var}(\ln v)/\lambda^2$。每个世代时间仍有噪声，但跨世代协方差的总和抵消了方差的累积。
 
-### Problem 4. ACF versus PSD
+### 练习 4. 自相关函数与功率谱密度 {#problem-4-acf-versus-psd}
 
-Derive the AR(1) spectrum from its autocovariance function rather than from the filter representation. Then use (F.6) to explain why the generation-time spectrum has a zero at $\omega=0$.
+从自协方差函数出发推导 AR(1) 频谱，而不是使用滤波器表示。再利用式（F.6），解释为什么世代时间频谱在 $\omega=0$ 处为零。
 
-**Answer sketch.** Sum the geometric series $\sum_{k=-\infty}^{\infty}a^{|k|}e^{-i\omega k}=(1-a^2)/(1+a^2-2a\cos\omega)$; multiply by $\sigma_x^2=\sigma_\xi^2/(1-a^2)$. Differencing multiplies each Fourier component by $e^{i\omega}-1$, which vanishes at zero frequency.
+**解答提示：** 对几何级数求和，$\sum_{k=-\infty}^{\infty}a^{|k|}e^{-i\omega k}=(1-a^2)/(1+a^2-2a\cos\omega)$，再乘以 $\sigma_x^2=\sigma_\xi^2/(1-a^2)$。差分使每个傅里叶分量乘以 $e^{i\omega}-1$，该因子在零频处为零。
 
-### Problem 5. Which part of a spectrum matters for growth?
+### 练习 5. 频谱的哪一部分影响增长？ {#problem-5-which-part-of-a-spectrum-matters-for-growth}
 
-Compare two stochastic lineage processes with the same $\bar\tau$ and $\operatorname{Var}(\tau)$, but different correlation functions. Is a pronounced nonzero-frequency peak enough to predict a larger population growth rate? Under what approximation is the answer determined solely by $S_\tau(0)$?
+比较两个 $\bar\tau$ 和 $\operatorname{Var}(\tau)$ 相同、但相关函数不同的随机谱系过程。一个明显的非零频率谱峰，是否足以预测更大的群体增长率？在什么近似下，增长修正仅由 $S_\tau(0)$ 决定？
 
-**Answer sketch.** No. Finite-frequency peaks and zero-frequency noise answer different questions. At quadratic order in a valid weak-noise cumulant expansion, the growth correction is proportional to $S_\tau(0)$, not to the height of a nonzero-frequency peak. Beyond this approximation, higher cumulant rates can matter.
+**解答提示：** 不够。非零频率谱峰与零频噪声回答不同的问题。在有效的弱噪声累积量展开中，二阶增长修正正比于 $S_\tau(0)$，而不是非零频率谱峰的高度。超出这一近似后，高阶累积量率也可能产生影响。
 
-### Further reading
+### 进一步阅读 {#further-reading}
 
-For the experimental motivation, start with Taheri-Araghi et al. (2015) and Hashimoto et al. (2016). For the correlated-history formulation, see [Pigolotti (2021)](https://doi.org/10.1103/PhysRevE.103.L060402), read alongside Appendix C's distinction between expected and typical growth. [Lin and Amir (2020)](https://doi.org/10.1103/PhysRevE.101.012401) develops the growth-rate-variability question raised at the end of the lecture. The mechanistic references below provide background on why phenomenological size-control slopes do not uniquely identify molecular regulation.
+实验背景可以先读 Taheri-Araghi 等（2015）和 Hashimoto 等（2016）。关于相关历史的增长关系，可读 [Pigolotti（2021）](https://doi.org/10.1103/PhysRevE.103.L060402)，并结合附录 C 对期望增长率与典型增长率的区分。[Lin 和 Amir（2020）](https://doi.org/10.1103/PhysRevE.101.012401)进一步讨论了课程结尾提出的生长率波动问题。下列机制研究则有助于理解：为什么唯象模型中的大小调控斜率，不能唯一确定分子调控机制。
 
-### References
+### 参考文献 {#references}
 
-- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009). Original Figures 1–3 reproduced as Figs 2, 4, and 13.
-- Ho et al., *Annual Review of Biophysics* (2018): cell-size regulation, lineage correlations, and fluctuations.
-- Godin et al., *Nature Methods* (2010): single-cell growth measurements.
-- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113). Original Figure 3 reproduced as Fig 7.
-- Wallden et al., *Cell* (2016); Ho and Amir, *Frontiers in Microbiology* (2015); Micali et al., *Cell Reports* (2018): replication-linked models and the distinction between phenomenological size control and molecular implementation.
-- [Ho laboratory teaching materials](https://ho.lab.westlake.edu.cn/teaching_en.html)
-- Pigolotti, S. (2021). *Generalized Euler–Lotka equation for correlated cell divisions*. **Physical Review E, 103**, L060402. [doi:10.1103/PhysRevE.103.L060402](https://doi.org/10.1103/PhysRevE.103.L060402).
-- Lin, J., and Amir, A. (2020). *From single-cell variability to population growth*. **Physical Review E, 101**, 012401. [doi:10.1103/PhysRevE.101.012401](https://doi.org/10.1103/PhysRevE.101.012401).
+- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原图 1–3 对应本讲义的图 2、4、13。
+- Ho 等，*Annual Review of Biophysics*（2018）：细胞大小调控、谱系相关性与波动。
+- Godin 等，*Nature Methods*（2010）：单细胞生长测量。
+- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原图 3 对应本讲义的图 7。
+- Wallden 等，*Cell*（2016）；Ho 和 Amir，*Frontiers in Microbiology*（2015）；Micali 等，*Cell Reports*（2018）：与复制相关的模型，以及唯象大小调控和分子实现之间的区别。
+- [Ho 实验室教学材料](https://ho.lab.westlake.edu.cn/teaching_en.html)
+- Pigolotti, S. (2021). *Generalized Euler–Lotka equation for correlated cell divisions*. **Physical Review E, 103**, L060402. [doi:10.1103/PhysRevE.103.L060402](https://doi.org/10.1103/PhysRevE.103.L060402)。
+- Lin, J., and Amir, A. (2020). *From single-cell variability to population growth*. **Physical Review E, 101**, 012401. [doi:10.1103/PhysRevE.101.012401](https://doi.org/10.1103/PhysRevE.101.012401)。
