@@ -298,7 +298,7 @@ $$
 
 This is the simplest demonstration of **noise-driven growth-rate gain**.
 
-### 2.4 The first paradox: volume conservation
+### 2.4 The apparent paradox: volume conservation
 
 Return to the biological setting of cells growing in size at the *same constant* rate $\lambda$. Define the total population volume
 
