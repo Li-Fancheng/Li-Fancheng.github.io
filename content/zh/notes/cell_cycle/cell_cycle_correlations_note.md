@@ -152,7 +152,7 @@ Let $M(t)$ denote the expected number of living descendants, including the initi
 
 $$
 M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
-     +2\int_0^t p(\tau)M(t-\tau)\,d\tau.
+     +\underbrace{2\int_0^t p(\tau)M(t-\tau)\,d\tau}_{\text{renewal term}}.
 \tag{2.1}
 $$
 
