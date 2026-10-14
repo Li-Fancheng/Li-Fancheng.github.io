@@ -1,4 +1,4 @@
-"""Generate five explanatory figures with NumPy and Matplotlib.
+"""Generate five explanatory PNG/SVG figures with NumPy and Matplotlib.
 
 Run from any directory: python notes/cell_cycle/figures/generate_explanatory_figures.py
 These are diagrams and analytic model calculations, not experimental data.
@@ -14,23 +14,17 @@ from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 from matplotlib.path import Path as PlotPath
 import numpy as np
+from figure_style import configure_style, save_figure
 
 
 OUT = Path(__file__).resolve().parent
 BLUE, ORANGE, GREEN, PURPLE = "#2767a0", "#d47725", "#238579", "#8057a5"
 INK, MUTED = "#243747", "#637181"
-plt.rcParams.update({
-    "font.family": "DejaVu Sans", "font.size": 12,
-    "axes.titlesize": 14, "axes.labelsize": 12,
-    "axes.spines.top": False, "axes.spines.right": False,
-    "figure.facecolor": "white", "savefig.facecolor": "white",
-    "text.color": INK, "axes.labelcolor": INK,
-    "legend.frameon": False, "lines.linewidth": 2.7,
-})
+configure_style(line_width=2.7, text_color=INK)
 
 
 def save(fig, name):
-    fig.savefig(OUT / f"{name}.png", dpi=190, bbox_inches="tight")
+    save_figure(fig, OUT, name)
     plt.close(fig)
 
 
@@ -113,7 +107,7 @@ def accumulated_time_covariances():
     matrix.set_title("A  |  Every square enters the variance", loc="left", pad=14)
     matrix.set(xticks=np.arange(n_matrix), yticks=np.arange(n_matrix),
                xticklabels=np.arange(1, n_matrix+1), yticklabels=np.arange(1, n_matrix+1),
-               xlabel="Generation j", ylabel="Generation i")
+               xlabel=r"Generation $j$", ylabel=r"Generation $i$")
     for j in range(n_matrix):
         matrix.text(j, j, "1", ha="center", va="center", color="white", fontsize=11)
     for x, y in ((2, 3), (3, 2)):
@@ -129,7 +123,7 @@ def accumulated_time_covariances():
                            for n in ns])
         variance.plot(ns, values, color=color, label=label)
     variance.set_title("B  |  Same variance per generation", loc="left", pad=14)
-    variance.set(xlim=(0, 40), ylim=(0, 120), xlabel="Number of generations n",
+    variance.set(xlim=(0, 40), ylim=(0, 120), xlabel=r"Number of generations $n$",
                  ylabel=r"Accumulated variance $\mathrm{Var}(T_n)/\sigma_\tau^2$")
     variance.legend(loc="upper left", fontsize=10)
     variance.grid(alpha=.14)
