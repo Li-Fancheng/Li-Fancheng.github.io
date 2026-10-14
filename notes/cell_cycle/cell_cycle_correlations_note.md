@@ -155,7 +155,7 @@ We have seen that independent division-time noise cannot maintain size homeostas
 
 ## 2. Euler–Lotka theory: why division-time noise can accelerate a population
 
-### 2.1 Deriving the renewal equation
+### 2.1 From the renewal equation to the population growth rate
 
 Consider an idealized binary branching population:
 
@@ -172,74 +172,39 @@ M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
 \tag{2.1}
 $$
 
-To extract the long-time growth from (2.1), write $S(t)=\mathbb P(\tau>t)$ and introduce the exponentially rescaled population $m_s(t)=e^{-st}M(t)$, where $s$ is a trial rate with units of inverse time. Multiplying (2.1) by $e^{-st}$ yields the exact equation
+To obtain the population growth rate from (2.1), take Laplace transforms. Write $S(t)=\mathbb P(\tau>t)$ and define
 
 $$
-m_s(t)=e^{-st}S(t)
-       +\int_0^t \underbrace{2p(\tau)e^{-s\tau}}_{q_s(\tau)}
-         m_s(t-\tau)\,d\tau.
+\widehat M(s)=\int_0^\infty e^{-st}M(t)\,dt,
+\qquad
+\widehat p(s)=\int_0^\infty e^{-s\tau}p(\tau)\,d\tau
+             =\mathbb E[e^{-s\tau}],
 $$
 
-The rescaling changes the renewal kernel from $2p$ to $q_s$. Its total mass is
+with $s$ initially chosen large enough for the integrals to converge. Since $S(t)=\int_t^\infty p(\tau)\,d\tau$, its transform is $\widehat S(s)=[1-\widehat p(s)]/s$. The convolution in (2.1) becomes a product, giving
 
 $$
-\int_0^\infty q_s(\tau)\,d\tau
-=2\mathbb E[e^{-s\tau}].
+\widehat M(s)=\widehat S(s)+2\widehat p(s)\widehat M(s)
+\quad\Rightarrow\quad
+\widehat M(s)=\frac{1-\widehat p(s)}{s[1-2\widehat p(s)]}.
 $$
 
-At $s=0$ this mass is $2$, reflecting the two daughters produced at each division. As $s$ increases, it decreases continuously and strictly to zero, since $\tau>0$ almost surely. There is therefore a unique positive rate, denoted by $\Lambda$, at which the kernel has unit mass and becomes a probability density. This normalization gives the **Euler–Lotka equation**,
+The denominator vanishes at a positive rate $s=\Lambda$ satisfying the **Euler–Lotka equation**,
 
 $$
 \boxed{2\,\mathbb E[e^{-\Lambda\tau}]=1.}\tag{2.2}
 $$
 
-With this choice of rate, set
+This root is unique because $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ as real $s$ runs from $0$ to $\infty$. It is also the rightmost pole: for complex $s$ with $\operatorname{Re}s>\Lambda$, $|2\widehat p(s)|\le 2\widehat p(\operatorname{Re}s)<1$. Expanding about $s=\Lambda$ gives
 
 $$
-m(t)=e^{-\Lambda t}M(t),\qquad
-g(t)=e^{-\Lambda t}S(t),\qquad
-q(\tau)=2p(\tau)e^{-\Lambda\tau}.
+\widehat M(s)=\frac{A}{s-\Lambda}+O(1),
+\qquad
+A=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}
+ =\frac{1}{4\Lambda\,\mathbb E[\tau e^{-\Lambda\tau}]}.
 $$
 
-The rescaled population now obeys an ordinary renewal equation,
-
-$$
-m(t)=g(t)+\int_0^t q(\tau)m(t-\tau)\,d\tau.
-$$
-
-The waiting-time density $q$ has finite positive mean
-
-$$
-\mu_q=\int_0^\infty \tau q(\tau)\,d\tau
-     =2\mathbb E[\tau e^{-\Lambda\tau}].
-$$
-
-The mean is finite because $\tau e^{-\Lambda\tau}\le 1/(e\Lambda)$. For a waiting-time distribution with a density and finite mean, and a nonnegative, decreasing, integrable forcing term $g$, the renewal limit theorem gives
-
-$$
-m(t)\longrightarrow
-\frac{\int_0^\infty g(u)\,du}{\mu_q}.
-$$
-
-The limiting level is the mean renewal rate $1/\mu_q$ times the integrated contribution of $g$. Here $g(t)=e^{-\Lambda t}S(t)$ is nonnegative, decreasing, and bounded above by $e^{-\Lambda t}$, so it is integrable. Its integral is
-
-$$
-\begin{aligned}
-\int_0^\infty g(u)\,du
-&=\mathbb E\!\left[\int_0^\tau e^{-\Lambda u}\,du\right]\\
-&=\frac{1-\mathbb E[e^{-\Lambda\tau}]}{\Lambda}
-=\frac{1}{2\Lambda}.
-\end{aligned}
-$$
-
-Denoting this positive limiting level by $A$, we obtain
-
-$$
-e^{-\Lambda t}M(t)\longrightarrow
-A=\frac{1}{4\Lambda\,\mathbb E[\tau e^{-\Lambda\tau}]}.
-$$
-
-Equivalently,
+Here we used $\widehat p(\Lambda)=1/2$ and $\widehat p'(\Lambda)=-\mathbb E[\tau e^{-\Lambda\tau}]$. Since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, this pole yields the leading long-time term, under the renewal asymptotics applicable to the lifetime density assumed here:
 
 $$
 M(t)\sim Ae^{\Lambda t},
@@ -247,9 +212,9 @@ M(t)\sim Ae^{\Lambda t},
 \Lambda=\lim_{t\to\infty}\frac{\log M(t)}{t}.
 $$
 
-Thus $\Lambda$ is the population growth exponent, and $A$ is the amplitude of the long-time exponential: $\sim$ means that $M(t)/(Ae^{\Lambda t})\to 1$. The amplitude here corresponds to one initial newborn cell; it need not equal $M(0)=1$, because the initial transient is not described by the asymptotic exponential. Under standard nondegeneracy assumptions for the branching process, $\Lambda$ also gives the long-time growth exponent of a typical sufficiently large population.
+Thus $\Lambda$ is the population growth exponent, and $A$ is its asymptotic amplitude: $M(t)/(Ae^{\Lambda t})\to 1$. The amplitude corresponds to one initial newborn cell and need not equal $M(0)=1$, because the exponential describes the long-time behavior rather than the initial transient.
 
-If every lifetime is identical, $\tau=\tau_0$, then
+For a noise-free population in which every lifetime equals $\tau_0$, Euler–Lotka reduces to
 
 $$
 2e^{-\Lambda\tau_0}=1
@@ -258,15 +223,16 @@ $$
 \tag{2.3}
 $$
 
-In this case all divisions are synchronized, giving $M(t)=2^{\lfloor t/\tau_0\rfloor}$. Its growth exponent is still (2.3), but $e^{-\Lambda t}M(t)$ oscillates periodically. Convergence to a constant amplitude requires a nonlattice lifetime distribution, as provided by the density assumed above; fixed lifetimes are an exception.
+In this synchronized case, $M(t)=2^{\lfloor t/\tau_0\rfloor}$ has the same growth exponent but a periodically varying prefactor; convergence to a constant $A$ uses the nonlattice condition provided by a lifetime density. Equation (2.3) nevertheless supplies the noise-free growth rate against which we can compare a population with variable lifetimes at the same mean.
 
 ### 2.2 Jensen's inequality and the apparent growth advantage
 
-For random division times, the exponential is convex:
+Let $\bar\tau=\mathbb E[\tau]$. The noise-free population with this lifetime grows at rate $\ln2/\bar\tau$, whereas the variable-lifetime population has its rate determined by (2.2). To compare them, apply Jensen's inequality to the convex function $\tau\mapsto e^{-\Lambda\tau}$:
 
 $$
 \mathbb E[e^{-\Lambda\tau}]
-\ge e^{-\Lambda\mathbb E[\tau]}.
+\ge e^{-\Lambda\mathbb E[\tau]}
+=e^{-\Lambda\bar\tau}.
 $$
 
 Using (2.2),
