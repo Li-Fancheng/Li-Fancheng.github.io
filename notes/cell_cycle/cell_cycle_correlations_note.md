@@ -121,7 +121,23 @@ $$
       =n\lambda^2\sigma_\tau^2.\tag{1.4}
 $$
 
-Thus log size performs an unbiased random walk. Its fluctuations grow without bound: **the timer is not a size-homeostatic mechanism**. If division times are perfectly deterministic, the random walk disappears, but the initial size is still never corrected; the system has neutral rather than restorative dynamics.
+Thus log size performs an unbiased random walk. Its fluctuations grow without bound: **the timer is not a size-homeostatic mechanism**.
+
+Removing division-time noise does not supply the missing size feedback. In the same zero-drift setting, perfectly deterministic division times satisfy $\tau_n=\tau_0=\ln2/\lambda$. Equation (1.1) then reduces to
+
+$$
+v_{n+1}=\frac12 e^{\lambda\tau_0}v_n=v_n,
+\qquad
+y_{n+1}=y_n.
+$$
+
+Thus, relative to any proposed target log size $y_*$, the initial deviation is preserved:
+
+$$
+y_n-y_*=y_0-y_*.
+$$
+
+This is **neutral dynamics**: a size perturbation neither grows nor shrinks. By contrast, a restoring map $y_{n+1}-y_*=a(y_n-y_*)$ with $|a|\lt 1$ gives $y_n-y_*=a^n(y_0-y_*)\to 0$. **Eliminating noise stops random wandering; restoring feedback corrects an existing size deviation.**
 
 This gives a physical reason not to assume independent division times indiscriminately: with constant $\lambda$ and symmetric division, correlations or feedback are needed for size regulation.
 
@@ -133,13 +149,13 @@ This gives a physical reason not to assume independent division times indiscrimi
 
 *Fig 2. Testing size-control strategies.* Original Figure 1 from [Taheri-Araghi et al., *Current Biology* (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Focus on panel D: generation time decreases with birth size, whereas division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C provide microscopy and growth-condition context. Read alongside the timer instability in (1.4).
 
-**Question to carry forward.** What does independent division-time noise predict for the *population*, even though it is inconsistent with size homeostasis?
+We have seen that independent division-time noise cannot maintain size homeostasis in this model. The same assumption has another prediction worth examining: division-time noise makes the population grow faster. We next derive this result, then examine why it appears incompatible with size homeostasis and how correlations between successive division times resolve the apparent contradiction.
 
 ---
 
 ## 2. Euler–Lotka theory: why division-time noise can accelerate a population
 
-### 2.1 A renewal argument
+### 2.1 Deriving the renewal equation
 
 Consider an idealized binary branching population:
 
