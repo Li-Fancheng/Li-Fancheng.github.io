@@ -110,7 +110,7 @@ size feedback 可以用三种理想化规则描述。其中 adder 指“增加�
 
 ## 2. 从单细胞统计预测群体增长：独立模型的基准 {#2-division-time-noise-and-the-population-growth-paradox}
 
-先考虑群体已经进入指数增长阶段、且增长率近似恒定的情形。用连续近似描述细胞数量时，
+考虑群体数量指数增长、且增长率近似恒定的情形。用连续近似描述细胞数量时，
 
 $$
 \frac{dN}{dt}=\Lambda N,
@@ -125,7 +125,7 @@ e^{\Lambda T_{\mathrm d}}=2
 \Lambda=\frac{\ln2}{T_{\mathrm d}}.
 $$
 
-这里联系的是**群体增长率与群体倍增时间**。沿 chronological lineage 测得平均分裂间隔 $\mu$ 后，如果进一步将它当作群体倍增时间，即令 $T_{\mathrm d}\approx\mu$，就得到直观估计 $\Lambda\approx\ln2/\mu$。但平均分裂间隔是单细胞统计量，它是否等于群体倍增时间，需要由具体的生长与分裂模型判断。所有细胞的分裂间隔都固定为 $\mu$、没有死亡且每次产生两个子细胞，是长期增长率满足 $\Lambda=\ln2/\mu$ 的一个简单基准。
+沿 chronological lineage 测得平均分裂间隔 $\mu$，若将它作为群体倍增时间，即 $T_{\mathrm d}\approx\mu$，得到直观估计 $\Lambda\approx\ln2/\mu$。但平均分裂间隔是单细胞统计量，它是否等于群体倍增时间，需要由具体的生长与分裂模型判断。所有细胞的分裂间隔都固定为 $\mu$、没有死亡且每次产生两个子细胞，是长期增长率满足 $\Lambda=\ln2/\mu$ 的一个简单基准。
 
 branching model with i.i.d. interdivision times 说明了这一估计为什么会遗漏群体中的后代数量差异：不同分裂间隔时间的 lineage，对后来群体的贡献不同。这个模型首先回答统计上的预测问题；将它用于具有 size control 的细胞时，还要检查生长与分裂的生理约束。
 
