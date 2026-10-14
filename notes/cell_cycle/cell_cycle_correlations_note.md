@@ -172,6 +172,12 @@ M(t)=\underbrace{\mathbb P(\tau>t)}_{\text{initial cell survives}}
 \tag{2.1}
 $$
 
+The two terms correspond to the alternative histories in the following diagram: one surviving cell, or two daughter subtrees that each restart the same process.
+
+![An undivided initial cell contributes one survivor; a division at tau creates two daughter subtrees. Growth weighting shifts the lifetime density toward shorter lifetimes.](figures/06_renewal_and_sampling.png)
+
+*Fig 3. From one division to population growth.* Panel A depicts the two contributions in (2.1). Each daughter has $t-\tau$ time to reproduce, which explains both the factor $2$ and the argument $M(t-\tau)$. Panel B previews the growth weighting $q$ derived below: short lifetimes receive greater relative weight. The illustrative density $p$ is gamma with shape $4$ and rate $4$ (mean $1$); $q$ uses its Euler–Lotka rate $\Lambda=4(2^{1/4}-1)$. Dotted lines mark the two means.
+
 To obtain the population growth rate from (2.1), take Laplace transforms. Write $S(t)=\mathbb P(\tau>t)$ and define
 
 $$
@@ -244,7 +250,7 @@ For a nondegenerate lifetime distribution, strict convexity makes the inequality
 
 ![Measured generation-time variability, population doubling time, and growth-rate gain in E. coli.](figures/hashimoto_2016_fig03.jpg)
 
-*Fig 3. Experimental population growth advantage.* Original Figure 3 from [Hashimoto et al., *PNAS* (2016)](https://doi.org/10.1073/pnas.1519412113). Panel B compares mean generation time with population doubling time; ratios above one indicate faster population doubling. Panel C relates the gain to generation-time variability; panel E compares Euler–Lotka predictions with measurements. Panels A and D show the lifetime distribution and model, respectively. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03).
+*Fig 4. Experimental population growth advantage.* Original Figure 3 from [Hashimoto et al., *PNAS* (2016)](https://doi.org/10.1073/pnas.1519412113). Panel B compares mean generation time with population doubling time; ratios above one indicate faster population doubling. Panel C relates the gain to generation-time variability; panel E compares Euler–Lotka predictions with measurements. Panels A and D show the lifetime distribution and model, respectively. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03).
 
 **Notation and scope.** In this paper's gain definition, $\lambda=\ln2/\langle\tau\rangle_g$; our $\lambda$ denotes the exponential growth rate of cell size. These definitions must be distinguished when comparing this figure with (2.8). The figure supports the experimental doubling-time comparison; it does not establish that a size-homeostatic population with one common constant size-growth rate violates mass conservation.
 
@@ -384,6 +390,12 @@ $$
 T_n=\sum_{j=0}^{n-1}\tau_j.\tag{3.1}
 $$
 
+A one-generation histogram records how often each lifetime occurs, but not which lifetimes follow each other. For example, let a short lifetime $\tau_s$ and a long lifetime $\tau_\ell$ each occur with probability $1/2$. The following comparison shows how their ordering changes the distribution of their sum.
+
+![Independent and alternating two-cycle histories have identical single-cycle lifetime probabilities but different distributions of total elapsed time.](figures/10_histories_and_total_time.png)
+
+*Fig 5. A lifetime distribution does not specify a lineage history.* Both examples assign probability $1/2$ to each of the two lifetimes. Panel A lists the probabilities of their ordered pairs. Independent sampling allows all four pairs; strict alternation allows only the two mixed pairs. Consequently, panel B has three possible total durations for independent sampling, while the alternating pair always lasts $\tau_s+\tau_\ell$. The correlated calculation must therefore use the distribution of $T_n$, which depends on the joint history.
+
 After $n$ binary divisions there are $2^n$ possible descendant paths. For a locally defined branching process in which the statistical law along a uniformly sampled daughter path is the chronological-lineage law, linearity of expectation gives
 
 $$
@@ -510,6 +522,12 @@ $$
 \operatorname{Cov}(\tau_i,\tau_j).
 $$
 
+Viewing this sum as a covariance matrix makes the bookkeeping explicit: diagonal entries contribute the individual variances, and off-diagonal entries occur in symmetric pairs.
+
+![A covariance matrix highlights mirrored off-diagonal contributions, while accumulated-time variance grows at different rates for alternating, independent, and persistent correlations.](figures/07_accumulated_time_covariances.png)
+
+*Fig 6. Counting the fluctuations that accumulate.* Each square in panel A contributes to $\operatorname{Var}(T_n)$. The circled squares are the same covariance counted as $(i,j)$ and $(j,i)$, explaining the factor $2$ below. Panel B evaluates (4.1) for $C_\tau(k)=\sigma_\tau^2a^{|k|}$ with $a=-1/2,0,1/2$; panel A shows the $a=-1/2$ case. All three processes have the same one-generation variance, but their long-time slopes $D_\tau/\sigma_\tau^2=(1+a)/(1-a)$ differ. These are analytic stationary model covariances.
+
 There are $n$ terms of separation zero, and $2(n-k)$ ordered pairs separated by $k$. Hence the exact finite-$n$ formula is
 
 $$
@@ -629,6 +647,10 @@ $$
 
 Changing $p$ changes **only the temporal organization** of the division times.
 
+![Two-state generation-time autocorrelations and exact population growth as state persistence increases.](figures/02_correlations_and_growth.png)
+
+*Fig 7. Correlation changes growth without changing the lifetime histogram.* Panel A plots $\rho_\tau(k)=(2p-1)^k$. Panel B solves the exact Perron-eigenvalue condition (5.7) for the same 2 h and 5 h lifetimes used in the table; dots mark its four rows. The dashed line is $\ln2/\mu$. The curve ends below $p=1$, where the chain becomes reducible. These are predictions of the two-state branching model, not measurements of size-homeostatic cells.
+
 ### 5.2 Exact autocorrelation
 
 Let $z_n=-1$ in state $s$ and $z_n=+1$ in state $\ell$. Then
@@ -691,7 +713,13 @@ $$
 \exp\left(-\Lambda\sum_{j=0}^{n-1}\tau_{i_j}\right).
 $$
 
-At each generation, binary division contributes a factor of 2. Therefore the propagation matrix for expected discounted descendant weights is
+At each generation, binary division contributes a factor of 2. Inheritance supplies the transition probability, and the mother's lifetime supplies the exponential discount, as shown below.
+
+![A two-state directed graph assigns each offspring transition the weight two times its inheritance probability times the discount for the mother's lifetime.](figures/08_discounted_branching.png)
+
+*Fig 8. Reading the transfer matrix as a branching graph.* Each outgoing arrow from state $i$ carries the expected daughter count $2P_{ij}$ multiplied by $e^{-s\tau_i}$. Multiplying these weights along a path gives its contribution to $Z_n(s)$. The diagram uses a trial rate $s$; at the selected growth rate $s=\Lambda$, the leading eigenvalue is $1$, as in (5.7).
+
+Therefore the propagation matrix for expected discounted descendant weights is
 
 $$
 K_\Lambda=
@@ -807,10 +835,6 @@ Solving (5.8)–(5.7):
 
 Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
 
-![Two-state generation-time autocorrelations and exact population growth as state persistence increases.](figures/02_correlations_and_growth.png)
-
-*Fig 4. Correlation changes growth without changing the lifetime histogram.* Panel A plots $\rho_\tau(k)=(2p-1)^k$. Panel B solves the exact Perron-eigenvalue condition (5.7) for the same 2 h and 5 h lifetimes used in the table; dots mark its four rows. The dashed line is $\ln2/\mu$. The curve ends below $p=1$, where the chain becomes reducible. These are predictions of the two-state branching model, not measurements of size-homeostatic cells.
-
 > **Lesson of model I.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
 
 ---
@@ -867,11 +891,11 @@ This is an autoregressive process of order one (AR(1)), the discrete-time counte
 
 ![Small and large cells add the same size increment before division, and their daughters move closer to the mean birth size.](figures/03_adder_size_control.png)
 
-*Fig 5. The adder as restoring feedback.* In this noise-free illustration, cells born at $0.70\Delta$ and $1.30\Delta$ both add $\Delta$ and divide symmetrically. Their daughters are born at $0.85\Delta$ and $1.15\Delta$: the deviation from the mean is halved. Capsule lengths encode relative size schematically; they are not microscopy images. Added-size noise produces the stochastic map (6.4).
+*Fig 9. The adder as restoring feedback.* In this noise-free illustration, cells born at $0.70\Delta$ and $1.30\Delta$ both add $\Delta$ and divide symmetrically. Their daughters are born at $0.85\Delta$ and $1.15\Delta$: the deviation from the mean is halved. Capsule lengths encode relative size schematically; they are not microscopy images. Added-size noise produces the stochastic map (6.4).
 
 ![Added-size measurements and conditional distribution collapse supporting the adder in bacteria.](figures/taheri_araghi_2015_f2_highres.png)
 
-*Fig 6. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations.
+*Fig 10. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations.
 
 ### 6.2 Exact stationary variance
 
@@ -943,7 +967,7 @@ The important point is not merely the numerical agreement: a deterministic resto
 
 ![Adder predictions and experimental relaxation of initially small and large birth sizes.](figures/taheri_araghi_2015_f3_highres.png)
 
-*Fig 7. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements.
+*Fig 11. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements.
 
 ### 6.4 Connecting the adder to generation times
 
@@ -976,6 +1000,12 @@ $$
 This relation applies to **any** symmetric-division model with constant exponential size growth, not only to the adder. The adder supplies a concrete homeostatic dynamics for $v_n$.
 
 ### 6.5 The telescoping identity: the central result of the lecture
+
+The same birth size enters two adjacent cycles with opposite signs. The diagram tracks this cancellation across three cycles; extending the chain leaves only the initial and final sizes.
+
+![The positive log-size term of one cycle cancels the negative term of the next, leaving only the first and last birth sizes.](figures/09_telescoping_identity.png)
+
+*Fig 12. Why timing fluctuations become a boundary term.* Each box is the size difference in $\lambda\tau_j-\ln2=\ln v_{j+1}-\ln v_j$. Blue and purple terms cancel between adjacent cycles; the orange initial term and green final term remain. The same cancellation holds for any number of generations and gives the exact identity (6.10).
 
 Sum (6.9) from generation $0$ to $n-1$:
 
@@ -1079,6 +1109,12 @@ The population-volume argument in Section 2.4 provides an independent, physicall
 **This resolves the initial paradox.** Independent generation-time noise can accelerate a binary branching population relative to its mean lifetime. Yet in constant-$\lambda$, symmetric, size-homeostatic cells, the correlations are so constrained that the accumulated division-time fluctuations become boundary terms; the population growth exponent is exactly the single-cell size growth exponent.
 
 ### 6.7 A counterintuitive prediction: size is positively correlated, time is negatively correlated
+
+The following comparison previews the size and timing correlations, together with their consequence for accumulated timing noise. We derive these curves below.
+
+![Positive birth-size correlations and negative generation-time correlations make accumulated time variance saturate instead of growing linearly.](figures/04_noise_cancellation.png)
+
+*Fig 13. Noisy divisions can have zero long-run timing noise.* Panel A compares the exact adder birth-size autocorrelation with the small-fluctuation generation-time approximation (6.21). Panel B matches the one-generation time variance in the two models: independent times give $\operatorname{Var}(T_n)/C_\tau(0)=n$, while the linearized stationary adder gives $2(1-2^{-n})$. The latter saturates because time deviations telescope to endpoint size deviations. This analytic linearized example illustrates the more general exact boundary-term identity (6.10).
 
 In the adder, nearby birth sizes satisfy
 
@@ -1187,10 +1223,6 @@ The sum of the negative nonzero-lag covariances cancels the positive single-gene
 > **Lesson of model II.** Size homeostasis is not just a narrow size distribution. It imposes a dynamical constraint on the entire lineage history. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
 
 ---
-
-![Positive birth-size correlations and negative generation-time correlations make accumulated time variance saturate instead of growing linearly.](figures/04_noise_cancellation.png)
-
-*Fig 8. Noisy divisions can have zero long-run timing noise.* Panel A compares the exact adder birth-size autocorrelation with the small-fluctuation generation-time approximation (6.21). Panel B matches the one-generation time variance in the two models: independent times give $\operatorname{Var}(T_n)/C_\tau(0)=n$, while the linearized stationary adder gives $2(1-2^{-n})$. The latter saturates because time deviations telescope to endpoint size deviations. This analytic linearized example illustrates the more general exact boundary-term identity (6.10).
 
 ## 7. From temporal correlations to power spectra
 
@@ -1429,7 +1461,7 @@ For sufficiently weak damping and a frequency away from the boundaries, this exh
 
 ![Adder spectra suppress zero-frequency time noise, while a delayed-feedback oscillator has a finite-frequency peak and oscillating autocorrelation.](figures/05_spectra_and_oscillations.png)
 
-*Fig 9. Zero-frequency cancellation and oscillatory modes answer different questions.* Panel A uses the adder's $a=1/2$ and the linearized generation-time relation (7.7); each spectrum is divided by its own process variance. Panel B compares the AR(1) size process with the AR(2) model (8.1), using $r=0.9$ and $\omega_0=\pi/3$ radians per generation. The dotted line marks the mode angle; the spectral maximum can be shifted by damping. Panel C shows the corresponding analytic autocorrelations. All spectra use generation-indexed frequency, not physical-time frequency.
+*Fig 14. Zero-frequency cancellation and oscillatory modes answer different questions.* Panel A uses the adder's $a=1/2$ and the linearized generation-time relation (7.7); each spectrum is divided by its own process variance. Panel B compares the AR(1) size process with the AR(2) model (8.1), using $r=0.9$ and $\omega_0=\pi/3$ radians per generation. The dotted line marks the mode angle; the spectral maximum can be shifted by damping. Panel C shows the corresponding analytic autocorrelations. All spectra use generation-indexed frequency, not physical-time frequency.
 
 ### 8.3 What the spectrum can and cannot establish
 
@@ -1710,9 +1742,9 @@ Compare two stochastic lineage processes with the same $\bar\tau$ and $\operator
 
 ---
 **References**
-- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009). Original Figures 1–3 reproduced as Figs 2, 6, and 7.
+- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009). Original Figures 1–3 reproduced as Figs 2, 10, and 11.
 - Ho et al., *Annual Review of Biophysics* (2018): cell-size regulation, lineage correlations, and fluctuations.
 - Godin et al., *Nature Methods* (2010): single-cell growth measurements.
-- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113). Original Figure 3 reproduced as Fig 3.
+- Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113). Original Figure 3 reproduced as Fig 4.
 - Wallden et al., *Cell* (2016); Ho and Amir, *Frontiers in Microbiology* (2015); Micali et al., *Cell Reports* (2018): replication-linked models and the distinction between phenomenological size control and molecular implementation.
 - https://ho.lab.westlake.edu.cn/teaching_en.html
