@@ -1,0 +1,13 @@
+{{- /* Language-specific page metadata stays in content; note bodies live in notes. */ -}}
+{{- $name := .Get 0 -}}
+{{- $source := readFile (printf "notes/%s/body.md" $name) -}}
+{{- /* The theme's math shortcode returns its inner text unchanged. */ -}}
+{{- $source = replaceRE `\{\{<\s*/?math\s*>\}\}` "" $source -}}
+{{- range findRE `\]\([^\s)]+` $source -}}
+  {{- $destination := strings.TrimPrefix "](" . -}}
+  {{- $path := strings.TrimPrefix "./" $destination -}}
+  {{- with resources.Get (printf "notes/%s/%s" $name $path) -}}
+    {{- $source = replace $source (printf "](%s" $destination) (printf "](%s" .RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+{{ $source | safeHTML }}
