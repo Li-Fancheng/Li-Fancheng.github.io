@@ -195,25 +195,7 @@ $$
 \boxed{2\,\mathbb E[e^{-\Lambda\tau}]=1.}\tag{2.2}
 $$
 
-This root is unique because $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ as real $s$ runs from $0$ to $\infty$. It is also the rightmost pole: for complex $s$ with $\operatorname{Re}s>\Lambda$, $|2\widehat p(s)|\le 2\widehat p(\operatorname{Re}s)<1$. At this rate, Euler–Lotka normalizes the weighted lifetime density
-
-$$
-q(\tau)=2e^{-\Lambda\tau}p(\tau),
-\qquad
-\int_0^\infty q(\tau)\,d\tau=1.
-$$
-
-The ratio $q(\tau)/p(\tau)=2e^{-\Lambda\tau}$ decreases with $\tau$, so $q$ gives greater relative weight to short lifetimes. Expectations with respect to these two densities will be denoted by $\mathbb E_p$ and $\mathbb E_q$. Expanding the transform about $s=\Lambda$ gives
-
-$$
-\begin{aligned}
-\widehat M(s)&=\frac{A}{s-\Lambda}+O(1),\\
-A&=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}
-  =\frac{1}{2\Lambda\,\mathbb E_q[\tau]}.
-\end{aligned}
-$$
-
-Here we used $\widehat p(\Lambda)=1/2$ and $-2\widehat p'(\Lambda)=2\mathbb E_p[\tau e^{-\Lambda\tau}]=\mathbb E_q[\tau]$. Since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, this pole yields the leading long-time term, under the renewal asymptotics applicable to the lifetime density assumed here:
+The function $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ on the positive real axis, so this root is unique. It is the leading pole of $\widehat M(s)$; since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, the renewal asymptotics for the lifetime density assumed here give
 
 $$
 M(t)\sim Ae^{\Lambda t},
@@ -221,7 +203,19 @@ M(t)\sim Ae^{\Lambda t},
 \Lambda=\lim_{t\to\infty}\frac{\log M(t)}{t}.
 $$
 
-Thus $\Lambda$ is the population growth exponent, and $A$ is its asymptotic amplitude: $M(t)/(Ae^{\Lambda t})\to 1$. The amplitude corresponds to one initial newborn cell and need not equal $M(0)=1$, because the exponential describes the long-time behavior rather than the initial transient.
+Here $A=\lim_{t\to\infty}e^{-\Lambda t}M(t)>0$ is the asymptotic amplitude for one initial newborn cell, and $\sim$ means $M(t)/(Ae^{\Lambda t})\to1$. Its calculation and the qualification for synchronized divisions are given in Appendix D.
+
+The same Euler–Lotka equation normalizes the weighted lifetime density
+
+$$
+q(\tau)=2e^{-\Lambda\tau}p(\tau),
+\qquad
+\int_0^\infty q(\tau)\,d\tau=1.
+$$
+
+We denote expectations under these densities by $\mathbb E_p$ and $\mathbb E_q$. The relation between $p$ and $q$ now lets us express the growth advantage due to variable lifetimes.
+
+### 2.2 Population growth advantage as a KL divergence
 
 For a noise-free population in which every lifetime equals $\tau_0$, Euler–Lotka reduces to
 
@@ -231,10 +225,6 @@ $$
 \Lambda=\frac{\ln2}{\tau_0}.
 \tag{2.3}
 $$
-
-In this synchronized case, $M(t)=2^{\lfloor t/\tau_0\rfloor}$ has the same growth exponent but a periodically varying prefactor; convergence to a constant $A$ uses the nonlattice condition provided by a lifetime density. Equation (2.3) nevertheless supplies the noise-free growth rate against which we can compare a population with variable lifetimes at the same mean.
-
-### 2.2 Population growth advantage as a KL divergence
 
 Let $\bar\tau=\mathbb E_p[\tau]\lt\infty$. The noise-free population with this lifetime grows at rate $\ln2/\bar\tau$. For variable lifetimes, the relation between $p$ and $q$ gives an exact expression for the difference from this reference rate. Their Kullback–Leibler (KL) divergence is
 
@@ -266,14 +256,7 @@ is **shorter** than the average single-cell division time $\bar\tau$.
 
 The weighting in $q$ reflects the advantage of early reproduction: short-lived cells produce descendants earlier, giving those descendants more time to reproduce. In this independent-lifetime model, $p$ is the distribution along a chronological lineage, while $q$ describes complete ancestral lifetimes in a population-biased retrospective sample. The KL identity expresses the growth-rate excess in terms of the difference between these two distributions.
 
-The same bound follows directly from Jensen's inequality for the convex function $\tau\mapsto e^{-\Lambda\tau}$:
-
-$$
-\frac12=\mathbb E_p[e^{-\Lambda\tau}]
-\ge e^{-\Lambda\bar\tau}
-\quad\Rightarrow\quad
-\Lambda\ge\frac{\ln2}{\bar\tau}.
-$$
+Jensen's inequality, $\mathbb E_p[e^{-\Lambda\tau}]\ge e^{-\Lambda\bar\tau}$, gives the same bound directly using (2.2).
 
 ![Measured generation-time variability, population doubling time, and growth-rate gain in E. coli.](figures/hashimoto_2016_fig03.jpg)
 
@@ -283,29 +266,15 @@ $$
 
 ### 2.3 A weak-noise estimate
 
-Let $\bar\tau=\mu$, $\operatorname{Var}(\tau)=\sigma_\tau^2$. For small relative fluctuations, expand the logarithm of (2.2):
+The KL identity gives the exact growth-rate excess, but $q$ itself depends on $\Lambda$. To estimate the excess from the chronological lifetime statistics, let $\mu=\bar\tau$ and $\sigma_\tau^2=\operatorname{Var}_p(\tau)$. For small relative fluctuations, the second-order cumulant expansion of (2.2) is
 
 $$
-\begin{aligned}
-0
-&=\ln2+\ln\mathbb E[e^{-\Lambda\tau}]\\
-&=\ln2-\Lambda\mu
-   +\frac{\Lambda^2}{2}\sigma_\tau^2
-   -\frac{\Lambda^3}{6}\kappa_3(\tau)+\cdots.
-\end{aligned}
+0=\ln2+\ln\mathbb E_p[e^{-\Lambda\tau}]
+\simeq\ln2-\Lambda\mu+\frac{\Lambda^2}{2}\sigma_\tau^2.
 \tag{2.5}
 $$
 
-Keeping terms through second order in the noise and writing
-$\Lambda=\Lambda_0+\delta\Lambda$, where
-$\Lambda_0=\ln2/\mu$, gives
-
-$$
--\mu\,\delta\Lambda
-+\frac{\Lambda_0^2}{2}\sigma_\tau^2\simeq0.
-$$
-
-Therefore
+Solving perturbatively about $\Lambda_0=\ln2/\mu$ gives
 
 $$
 \Lambda\simeq
@@ -314,7 +283,7 @@ $$
 \tag{2.6}
 $$
 
-This is the simplest demonstration of **noise-driven growth-rate gain**.
+In the independent model, the leading correction is controlled by the lifetime variance. Section 4 will replace this with the long-run variance of accumulated division time when lifetimes are correlated. We first check whether the independent model is compatible with cell-size homeostasis.
 
 ### 2.4 The apparent paradox: volume conservation
 
@@ -1618,6 +1587,54 @@ $$
 $$
 
 and the sum no longer telescopes with one common prefactor. This is a natural route to genuinely new growth-versus-control effects.
+
+## Appendix D. The asymptotic amplitude of the renewal solution
+
+Section 2.1 obtains the population growth exponent from the positive root $\Lambda$ of $1-2\widehat p(s)=0$. No pole lies further to the right, since
+
+$$
+|2\widehat p(s)|\le2\widehat p(\operatorname{Re}s)<1
+\qquad\text{for }\operatorname{Re}s>\Lambda.
+$$
+
+For a lifetime density, the inequality $|2\widehat p(\Lambda+i\omega)|<1$ also holds for $\omega\ne0$, excluding other poles on the same vertical line. Moreover,
+
+$$
+-2\widehat p'(\Lambda)
+=2\mathbb E_p[\tau e^{-\Lambda\tau}]
+=\mathbb E_q[\tau]>0,
+$$
+
+so the pole is simple. Expanding the transform from Section 2.1 about this pole gives
+
+$$
+\widehat M(s)=\frac{A}{s-\Lambda}+O(1),
+\qquad
+A=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}.
+\tag{D.1}
+$$
+
+Using $\widehat p(\Lambda)=1/2$, the residue becomes
+
+$$
+\boxed{
+A=\frac{1}{4\Lambda\,\mathbb E_p[\tau e^{-\Lambda\tau}]}
+ =\frac{1}{2\Lambda\,\mathbb E_q[\tau]}.
+}\tag{D.2}
+$$
+
+The nonlattice renewal asymptotics applicable to a lifetime density then give $e^{-\Lambda t}M(t)\to A$. This amplitude is for one initial newborn cell; it need not equal $M(0)=1$, because the initial transient is not described by the asymptotic exponential.
+
+Fixed lifetimes are an exception to constant-amplitude asymptotics. If every cell divides after exactly $\tau_0$, all division events are synchronized and
+
+$$
+M(t)=2^{\lfloor t/\tau_0\rfloor},
+\qquad
+\Lambda=\frac{\ln2}{\tau_0}.
+\tag{D.3}
+$$
+
+The logarithmic growth rate still tends to $\Lambda$, but $e^{-\Lambda t}M(t)$ oscillates periodically instead of converging to a constant. Thus the noise-free growth exponent used in Section 2.2 remains valid, while the stronger limit defining $A$ requires the nonlattice condition.
 
 ---
 
