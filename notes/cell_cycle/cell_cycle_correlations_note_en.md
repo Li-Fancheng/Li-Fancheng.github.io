@@ -5,17 +5,15 @@
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->
 
-## Main Lecture
+## Overview {#main-lecture}
 
 <div id="0-the-physical-problem-and-the-roadmap"></div>
 
 <div id="notation"></div>
 
-### Lecture roadmap and learning objectives
+<div id="lecture-roadmap-and-learning-objectives"></div>
 
-We begin with a biological observation—cells fluctuate in size but maintain a stable size distribution—and ask which stochastic division models respect it. Euler–Lotka theory then creates an apparent conflict between noisy population growth and conserved biomass. The adder resolves that conflict through a simple physical mechanism: inherited size makes successive division times correlated, so their fluctuations cancel over many generations.
-
-The three-hour session allocates **160 minutes to the main text**, a **10-minute break after Section 2**, and **10 minutes to closing discussion**. Sections 1–5 take approximately **30, 35, 50, 35, and 10 minutes**, respectively. The technical appendices and further topic are for subsequent reading. By the end, students should be able to derive the timer instability and telescoping identity, distinguish chronological from population-biased sampling, and explain why integrated temporal correlations matter more than a single-generation variance.
+Cells fluctuate in size while maintaining a stable size distribution, so a stochastic division model must account for that stability. Euler–Lotka theory creates an apparent conflict between noisy population growth and conserved biomass. The adder provides an explanation: inherited size makes successive division times correlated, allowing their fluctuations to cancel over many generations.
 
 We distinguish the **population growth rate** $\Lambda=\lim_{t\to\infty}t^{-1}\ln N(t)$, when this limit exists, from the common **single-cell size growth rate** $\lambda$ in $\dot v=\lambda v$. Branching calculations first determine the exponent of $M(t)=\mathbb E[N(t)]$; identifying it with the exponent of a typical population requires the branching regularity conditions discussed in [Appendix C](#appendix-c). The volume argument instead applies directly to a realized population.
 
@@ -35,11 +33,11 @@ A **chronological lineage** follows one daughter chosen with probability $1/2$ a
 
 ## 1. Cell-size homeostasis and the failure of a timer
 
-**Scientific question: how can cell sizes fluctuate without wandering indefinitely across generations?** Single-cell tracking experiments show variability together with recovery from initially small or large sizes. A stationary size distribution is therefore a dynamical constraint, not simply a narrow histogram. The observations of [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009) motivate comparing division rules that respond differently to inherited birth size.
+Single-cell tracking experiments show variability together with recovery from initially small or large sizes. A stationary size distribution is therefore a dynamical constraint, not simply a narrow histogram. The observations of [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009) motivate comparing division rules that respond differently to inherited birth size.
 
 <div id="11-exponential-growth-between-divisions"></div>
 
-### 1.1 Exponential growth and symmetric division
+### 1.1 Exponential growth and symmetric division {#problem-1-what-does-it-take-to-remove-size-memory}
 
 For some bacterial growth conditions, a useful approximation is exponential growth at the same constant rate $\lambda>0$ for every cell:
 
@@ -104,11 +102,11 @@ The timer fails one biological test. Its population-growth prediction neverthele
 
 ## 2. Division-time noise and the population growth paradox
 
-**Scientific question: why do independent noisy lifetimes make a population double faster than its mean chronological generation time, and how can this coexist with biomass conservation?**
+Independent lifetime fluctuations can make a population double faster than its mean chronological generation time. Understanding this effect requires both sampling bias and biomass conservation.
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
-### 2.1 Euler–Lotka and sampling bias
+### 2.1 Euler–Lotka and sampling bias {#problem-2-correlation-without-changing-a-histogram}
 
 Consider a binary branching model with no death: every newborn draws an independent positive lifetime from a density $p(\tau)$ and produces two daughters following the same rule. There is no shared random environment. Let $M(t)$ be the expected number of living descendants of one newborn. Conditioning on its first division gives
 
@@ -202,11 +200,11 @@ For a stationary chronological lineage with $\mathbb E|\ln v|<\infty$, taking ex
 
 ## 3. Size feedback, the adder, and exact cancellation
 
-**Scientific question: how does a restoring size rule generate timing correlations strong enough to remove accumulated division-time noise?** The adder is a concrete mechanism; the central cancellation will follow from growth and partition kinematics more generally.
+The adder is a concrete mechanism; the central cancellation will follow from growth and partition kinematics more generally.
 
 <div id="61-definition-of-the-adder"></div>
 
-### 3.1 The stochastic map and recovery of mean size
+### 3.1 The stochastic map and recovery of mean size {#problem-3-can-noisy-lifetimes-have-zero-long-run-noise}
 
 An adder divides at
 
@@ -257,7 +255,7 @@ A generation time is a **difference** of adjacent log sizes. This is an exact id
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
-### 3.3 Telescoping: the theoretical core
+### 3.3 The telescoping identity {#33-telescoping-the-theoretical-core}
 
 Summing (3.4) from $0$ to $n-1$,
 
@@ -335,11 +333,11 @@ Birth sizes remain positively correlated, yet generation times are negatively co
 
 ## 4. Temporal correlations and long-time fluctuations
 
-**Scientific question: which statistic distinguishes noise that accumulates from noise that cancels?** We now express the mechanism without committing to an adder and identify the controlled approximation behind a general correlation-based growth correction.
+We now express the mechanism without committing to an adder and identify the controlled approximation behind a general correlation-based growth correction.
 
 <div id="3-correlated-division-times-a-generalized-eulerlotka-relation"></div>
 
-### 4.1 Correlated Euler–Lotka
+### 4.1 Correlated Euler–Lotka {#problem-4-acf-versus-psd}
 
 Let $T_n$ be the time to the generation-$n$ birth along a chronological daughter path. Binary reproduction creates $2^n$ paths. The expected sum of their discounted birth weights is $2^n\mathbb E_{\mathrm{chron}}[e^{-sT_n}]$, even when paths share ancestry. Define
 
@@ -422,7 +420,7 @@ If $S_y$ is finite at zero, differencing removes zero-frequency timing noise. Sl
 
 ## 5. Synthesis and outlook
 
-**Scientific question: which conclusions are model-specific, which are structural, and which are approximate?** An independent timer ignores inherited size, turning log size into a random walk. Independent lifetime noise nevertheless increases the growth rate of its branching population relative to a deterministic population with the same mean lifetime, because fast histories receive greater descendant weight. These two statements are consistent: that timer population does not maintain size homeostasis under common exponential growth and symmetric division.
+An independent timer ignores inherited size, turning log size into a random walk. Independent lifetime noise nevertheless increases the growth rate of its branching population relative to a deterministic population with the same mean lifetime, because fast histories receive greater descendant weight. These two statements are consistent: that timer population does not maintain size homeostasis under common exponential growth and symmetric division.
 
 The adder supplies restoring feedback and creates positive birth-size memory alongside negative timing correlations in its small-fluctuation limit. The more general result is kinematic: under one constant $\lambda$ and symmetric division, each generation time contains a difference of adjacent log sizes. Summing makes every interior fluctuation cancel. Stationary log sizes with finite variance therefore give $D_\tau=0$, even when individual times fluctuate appreciably.
 
@@ -430,7 +428,7 @@ The exact population-growth conclusion needs more: snapshot homeostasis in the c
 
 This is a statistical-physics route from observation to mechanism: test whether a stochastic model respects biological stability, use conservation to expose incompatible assumptions, and examine which fluctuations survive over long times. The adder provides a transparent realization, while telescoping extends to other homeostatic control laws within the same kinematics. Random partition asymmetry and growth-rate variability change those kinematics, as qualified in [Appendix G](#appendix-g).
 
-**Open question for the closing discussion:** What changes when the single-cell exponential growth rate itself fluctuates and carries intergenerational correlations?
+**An open question:** What changes when the single-cell exponential growth rate itself fluctuates and carries intergenerational correlations?
 
 
 ---
@@ -439,7 +437,7 @@ This is a statistical-physics route from observation to mechanism: test whether 
 
 ## Technical Appendices
 
-These appendices retain the full calculations and worked models. They are not required to follow the main lecture. Equation labels use appendix letters; figure numbering continues from the main text.
+These appendices collect complete derivations, solvable models, and conditions for the results. Equation labels use appendix letters; figure numbering continues from the main text.
 
 <div id="appendix-d-the-asymptotic-amplitude-of-the-renewal-solution"></div>
 
@@ -699,7 +697,7 @@ $$
 
 The approximation assumes sufficiently weak fluctuations and a regular expansion; it may fail quantitatively for large persistence times or broad lifetime distributions.
 
-**Main conclusion so far:**
+**Accumulated noise and population growth:**
 
 $$
 \text{Population growth responds to accumulated lineage noise,}
@@ -1092,7 +1090,7 @@ Solving (D.8)–(D.7):
 
 Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
 
-> **Lesson of model I.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
+> **Lifetime distributions and correlations.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
 
 
 ### Appendix E. Adder variance, size memory, and covariance cancellation {#appendix-e}
@@ -1175,7 +1173,7 @@ $$
 \rho_v(2)=\frac14.
 $$
 
-These values agree closely with the correlations $\approx0.49$ and $\approx0.24$ illustrated in the adder slide (original slides p. 5, citing Ho et al., *Annual Review of Biophysics*, 2018).
+These values agree closely with the correlations $\approx0.49$ and $\approx0.24$ listed on p. 5 of the [Ho laboratory materials](https://ho.lab.westlake.edu.cn/teaching_en.html), which cite Ho et al., *Annual Review of Biophysics* (2018).
 
 The important point is not merely the numerical agreement: a deterministic restoring factor fixes the decay of the correlation function. Noise sets the variance, while feedback sets the memory time.
 
@@ -1265,7 +1263,7 @@ $$
 \rho_\tau(3)\simeq-\tfrac1{16}.
 $$
 
-**A distinction worth emphasizing to students:** birth sizes are positively correlated across generations, while successive *generation-time fluctuations* are negatively correlated in this model. Confusing these two autocorrelation functions would obscure the mechanism.
+**Two distinct autocorrelation functions:** birth sizes are positively correlated across generations, while successive *generation-time fluctuations* are negatively correlated in this model. Confusing these two autocorrelation functions would obscure the mechanism.
 
 The negative correlation has a simple interpretation: a cell with a longer-than-usual division time tends to produce a larger daughter, and that daughter typically requires less time to divide next.
 
@@ -1291,7 +1289,7 @@ $$
 
 The sum of the negative nonzero-lag covariances cancels the positive single-generation variance. Equation (3.5) showed that the cancellation is actually exact at the level of cumulative times, even when the small-noise approximation used in (E.6) is not justified.
 
-> **Lesson of model II.** Size homeostasis is not just a narrow size distribution. It imposes a dynamical constraint on the entire lineage history. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
+> **The dynamical constraint from size homeostasis.** Size homeostasis is not just a narrow size distribution. It imposes a dynamical constraint on the entire lineage history. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
 
 
 <div id="appendix-b-general-linear-size-control-laws-timer-adder-and-sizer"></div>
@@ -1381,7 +1379,7 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}S_\tau(0).
 $$
 
-**Why frequency appears in a population-growth lecture:** at quadratic order, long-time population growth is controlled by *zero-frequency generation-time noise*. The full power spectrum additionally tells us whether there are preferred dynamical timescales.
+**Growth corrections in the frequency domain:** at quadratic order, long-time population growth is controlled by *zero-frequency generation-time noise*. The full power spectrum additionally tells us whether there are preferred dynamical timescales.
 
 <div id="72-spectrum-of-the-ar1-size-control-model"></div>
 
@@ -1614,9 +1612,7 @@ In a size-homeostatic, constant-$\lambda$ model, the extensive KL rate vanishes 
 
 ## Further Topic: Fluctuations versus Oscillatory Modes {#further-topic}
 
-This optional topic asks a different scientific question: what creates a preferred nonzero frequency? It does not add a requirement to the growth-cancellation argument.
-
-The original teaching slides juxtapose adder fluctuations and oscillatory behavior (slides p. 5). Here we treat the latter as a separate modeling question: **what dynamical structure creates a preferred nonzero frequency?**
+Zero-frequency noise cancellation and nonzero-frequency oscillatory modes address different questions. The former concerns whether fluctuations accumulate over many generations; the latter concerns whether the dynamics have a characteristic oscillatory timescale.
 
 <div id="81-relaxation-is-not-oscillation"></div>
 
@@ -1711,47 +1707,47 @@ A finite-frequency peak suggests a preferred dynamical timescale, but does not, 
 
 Similarly, a finite record of independent or correlated noise can show spurious bumps in its estimated power spectrum. Robust claims require sufficiently long records, multiple lineages/replicates, uncertainty estimates, and attention to whether the data were sampled in generation count or in physical time.
 
-> **Lesson of the spectral analysis.** The zero-frequency component controls long-time accumulation of generation-time noise. Finite-frequency structure diagnoses dynamical modes. Both emerge from the same correlation function, but they answer different questions.
+> **Zero and nonzero frequencies.** The zero-frequency component controls long-time accumulation of generation-time noise. Finite-frequency structure diagnoses dynamical modes. Both emerge from the same correlation function, but they answer different questions.
 
 ---
 
 <div id="problems-for-discussion-or-homework"></div>
 
-## Problems / Further Reading {#problems-further-reading}
+## Supplementary Derivations / Further Reading {#problems-further-reading}
 
-### Problem 1. What does it take to remove size memory?
+### 1. What does it take to remove size memory?
 
-For $x_{n+1}=ax_n+\xi_n$, derive $\mathbb E[x_{n+k}\mid x_n]$, the stationary variance, and the autocorrelation function. Which values of $a$ produce homeostasis? What changes if $a\lt 0$?
+For $x_{n+1}=ax_n+\xi_n$, size memory is described by $\mathbb E[x_{n+k}\mid x_n]$, the stationary variance, and the autocorrelation function. The feedback coefficient $a$ determines how perturbations decay; $a\lt 0$ also makes their signs alternate.
 
-**Answer sketch.** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$, $\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$, and $\rho(k)=a^{|k|}$. Finite stationary variance requires $|a|\lt 1$ for independent noise of finite nonzero variance. Negative $a$ leads to alternating-sign correlations.
+**Result.** $\mathbb E[x_{n+k}\mid x_n]=a^kx_n$, $\operatorname{Var}(x)=\sigma_\xi^2/(1-a^2)$, and $\rho(k)=a^{|k|}$. Finite stationary variance requires $|a|\lt 1$ for independent noise of finite nonzero variance. Negative $a$ leads to alternating-sign correlations.
 
-### Problem 2. Correlation without changing a histogram
+### 2. Correlation without changing a histogram
 
-Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$. Derive (D.3) and use it to estimate the growth-rate correction in (4.4). Why does that estimate break down as $p\to1^-$?
+The two-state Markov model has the same marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$, but the correlations in (D.3) vary with $p$. Thus the growth correction in (4.4) also varies, and its approximation fails as $p\to1^-$.
 
-**Answer sketch.** The transition matrix is symmetric, so its stationary probabilities are $1/2,1/2$. Correlations decay as $(2p-1)^k$. Therefore $D_\tau=\delta^2p/(1-p)$. As $p\to1^-$, the correlation time diverges and weak-noise/truncated-cumulant expansions cease to be uniform; use the exact matrix condition instead.
+**Result.** The transition matrix is symmetric, so its stationary probabilities are $1/2,1/2$. Correlations decay as $(2p-1)^k$. Therefore $D_\tau=\delta^2p/(1-p)$. As $p\to1^-$, the correlation time diverges and weak-noise/truncated-cumulant expansions cease to be uniform; use the exact matrix condition instead.
 
-### Problem 3. Can noisy lifetimes have zero long-run noise?
+### 3. Can noisy lifetimes have zero long-run noise?
 
-Use (3.5) to show that $\operatorname{Var}(T_n)$ remains bounded as $n\to\infty$ for a mixing stationary size process with finite $\operatorname{Var}(\ln v)$. Explain why this does not require each $\tau_n$ to be deterministic.
+For a mixing stationary size process with finite $\operatorname{Var}(\ln v)$, equation (3.5) keeps $\operatorname{Var}(T_n)$ bounded as $n\to\infty$, without requiring each $\tau_n$ to be deterministic.
 
-**Answer sketch.** $T_n-n\ln2/\lambda=(\ln v_n-\ln v_0)/\lambda$. Its variance tends to $2\operatorname{Var}(\ln v)/\lambda^2$ if endpoints decorrelate. Individual times are noisy, but their integrated correlations cancel the variance accumulation.
+**Result.** $T_n-n\ln2/\lambda=(\ln v_n-\ln v_0)/\lambda$. Its variance tends to $2\operatorname{Var}(\ln v)/\lambda^2$ if endpoints decorrelate. Individual times are noisy, but their integrated correlations cancel the variance accumulation.
 
-### Problem 4. ACF versus PSD
+### 4. ACF versus PSD
 
-Derive the AR(1) spectrum from its autocovariance function rather than from the filter representation. Then use (F.6) to explain why the generation-time spectrum has a zero at $\omega=0$.
+The AR(1) spectrum can also be derived directly from its autocovariance function. Combined with (F.6), this explains the zero of the generation-time spectrum at $\omega=0$.
 
-**Answer sketch.** Sum the geometric series $\sum_{k=-\infty}^{\infty}a^{|k|}e^{-i\omega k}=(1-a^2)/(1+a^2-2a\cos\omega)$; multiply by $\sigma_x^2=\sigma_\xi^2/(1-a^2)$. Differencing multiplies each Fourier component by $e^{i\omega}-1$, which vanishes at zero frequency.
+**Result.** Sum the geometric series $\sum_{k=-\infty}^{\infty}a^{|k|}e^{-i\omega k}=(1-a^2)/(1+a^2-2a\cos\omega)$; multiply by $\sigma_x^2=\sigma_\xi^2/(1-a^2)$. Differencing multiplies each Fourier component by $e^{i\omega}-1$, which vanishes at zero frequency.
 
-### Problem 5. Which part of a spectrum matters for growth?
+### 5. Which part of a spectrum matters for growth? {#problem-5-which-part-of-a-spectrum-matters-for-growth}
 
-Compare two stochastic lineage processes with the same $\bar\tau$ and $\operatorname{Var}(\tau)$, but different correlation functions. Is a pronounced nonzero-frequency peak enough to predict a larger population growth rate? Under what approximation is the answer determined solely by $S_\tau(0)$?
+Two stochastic lineage processes with the same $\bar\tau$ and $\operatorname{Var}(\tau)$ can have different growth rates because their correlation functions differ. A pronounced nonzero-frequency peak alone does not determine growth; in the quadratic weak-noise approximation, the correction depends on $S_\tau(0)$.
 
-**Answer sketch.** No. Finite-frequency peaks and zero-frequency noise answer different questions. At quadratic order in a valid weak-noise cumulant expansion, the growth correction is proportional to $S_\tau(0)$, not to the height of a nonzero-frequency peak. Beyond this approximation, higher cumulant rates can matter.
+**Result.** Finite-frequency peaks and zero-frequency noise answer different questions. At quadratic order in a valid weak-noise cumulant expansion, the growth correction is proportional to $S_\tau(0)$, not to the height of a nonzero-frequency peak. Beyond this approximation, higher cumulant rates can matter.
 
 ### Further reading
 
-For the experimental motivation, start with Taheri-Araghi et al. (2015) and Hashimoto et al. (2016). For the correlated-history formulation, see [Pigolotti (2021)](https://doi.org/10.1103/PhysRevE.103.L060402), read alongside Appendix C's distinction between expected and typical growth. [Lin and Amir (2020)](https://doi.org/10.1103/PhysRevE.101.012401) develops the growth-rate-variability question raised at the end of the lecture. The mechanistic references below provide background on why phenomenological size-control slopes do not uniquely identify molecular regulation.
+For the experimental motivation, start with Taheri-Araghi et al. (2015) and Hashimoto et al. (2016). For the correlated-history formulation, see [Pigolotti (2021)](https://doi.org/10.1103/PhysRevE.103.L060402), read alongside Appendix C's distinction between expected and typical growth. [Lin and Amir (2020)](https://doi.org/10.1103/PhysRevE.101.012401) develops the effect of single-cell growth-rate variability on population growth. The mechanistic references below provide background on why phenomenological size-control slopes do not uniquely identify molecular regulation.
 
 ### References
 
@@ -1760,6 +1756,6 @@ For the experimental motivation, start with Taheri-Araghi et al. (2015) and Hash
 - Godin et al., *Nature Methods* (2010): single-cell growth measurements.
 - Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113). Original Figure 3 reproduced as Fig 7.
 - Wallden et al., *Cell* (2016); Ho and Amir, *Frontiers in Microbiology* (2015); Micali et al., *Cell Reports* (2018): replication-linked models and the distinction between phenomenological size control and molecular implementation.
-- [Ho laboratory teaching materials](https://ho.lab.westlake.edu.cn/teaching_en.html)
+- [Ho laboratory materials](https://ho.lab.westlake.edu.cn/teaching_en.html)
 - Pigolotti, S. (2021). *Generalized Euler–Lotka equation for correlated cell divisions*. **Physical Review E, 103**, L060402. [doi:10.1103/PhysRevE.103.L060402](https://doi.org/10.1103/PhysRevE.103.L060402).
 - Lin, J., and Amir, A. (2020). *From single-cell variability to population growth*. **Physical Review E, 101**, 012401. [doi:10.1103/PhysRevE.101.012401](https://doi.org/10.1103/PhysRevE.101.012401).
