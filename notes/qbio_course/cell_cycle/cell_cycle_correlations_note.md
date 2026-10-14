@@ -21,21 +21,7 @@
 
 另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的时候就分裂。在后一种情况下，子细胞的 birth size 也会较小。如果细胞分裂的分布和 size 相关，那么 birth size 就会影响它下一次分裂所需的时间：较小的子细胞需要更长时间才能满足这些分裂条件。这样，母细胞提前分裂带来的时间领先，可能被子细胞较长的分裂间隔部分抵消。
 
-本文先从实验中的 size 稳定性建立生长与分裂的关系，再用独立分裂时间模型说明群体抽样如何偏向较快的 lineage。随后，通过 adder 追踪 size 偏差如何传递到后续分裂间隔，区分单代波动与能长期累积的时间差异，最后归纳 size control 对整段 lineage 历史施加的约束。正文首先固定所有细胞的 size growth rate，以单独考察分裂时序的作用；生长率本身的波动留作最后的延伸问题。
-
-术语上，**size homeostasis** 强调细胞能够纠正 size 偏差；**stationarity** 则指统计分布不随分裂间隔改变。两者有关，但不是同一个概念。本文用 $v$ 表示 cell size，守恒论证以体积为例。
-
-先区分两个增长率：**群体增长率** $\Lambda=\lim_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞的 size growth rate** $\lambda$，后者满足 $\dot v=\lambda v$。分枝过程的计算首先确定的是 $M(t)=\mathbb E[N(t)]$ 的增长指数。要把它等同于一次典型群体实现中的增长指数，还需要满足[附录 C](#appendix-c)讨论的正则性条件。相比之下，利用总体积得到的结论直接适用于实际发生的一次群体演化。
-
-| 符号 | 含义 |
-|---|---|
-| $v_n$、$v_n^{\mathrm d}$ | 第 $n$ 代细胞的 birth size 和 division size |
-| $\tau_n$、$T_n=\sum_{j=0}^{n-1}\tau_j$ | 一个分裂间隔的持续时间，以及经过多个分裂间隔的累计时间 |
-| $\mu=\mathbb E[\tau_n]$ | 沿 lineage 向前追踪时的平均分裂间隔时间 |
-| $\Delta$ | adder 模型中的平均 added size |
-| $C_y(k)$、$S_y(\omega)$ | 平稳过程的协方差函数和双边功率谱密度（PSD）；$\omega$ 的单位为弧度/分裂间隔 |
-
-**chronological lineage** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条 lineage 继续追踪，选择时不考虑它后来会有多少后代。**retrospective lineage** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
+文中，**size homeostasis** 强调细胞能够纠正 size 偏差；**stationarity** 则指统计分布不随分裂间隔改变。以及两个增长率：**群体增长率** $\Lambda=\lim\limits_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞的 size growth rate** $\lambda$，满足 $\dot v=\lambda v$。**chronological lineage** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条 lineage 继续追踪，选择时不考虑它后来会有多少后代。**retrospective lineage** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
 
 ---
 
