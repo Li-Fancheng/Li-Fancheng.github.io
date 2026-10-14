@@ -434,7 +434,7 @@ $$
 \tag{3.7}
 $$
 
-This is the correlated-lineage generalization we will use. Its derivation is particularly transparent, and mathematically exact, for the finite-state Markov model of Section 5.
+This is the correlated-lineage generalization we will use. Appendix E verifies this condition exactly through a transfer matrix for the two-state Markov model.
 
 **Assumption check.** Equation (3.7) is an asymptotic relation, not a universal identity for every imaginable correlated or environmentally forced population. We assume a stationary/ergodic lineage law, an appropriate scaled cumulant-generating-function limit, and a branching population in which a well-defined Malthusian exponent is selected by this discounted-birth condition. Strong common-environment noise, nonergodic mixtures, or unbounded-growth pathologies require separate care.
 
@@ -590,234 +590,48 @@ The condition $D_\tau=0$ removes the **quadratic weak-noise correction** to grow
 
 ---
 
-## 5. Exactly solvable example I: a two-state Markov model
+## 5. The same lifetime distribution can give different growth rates
 
-This model isolates the effect of temporal correlation while **holding the one-generation distribution fixed**. It is a phenomenological branching model, not automatically a physically consistent constant-$\lambda$, size-homeostatic cell model.
-
-### 5.1 Definition
-
-There are two possible generation times:
-
-$$
-\tau_s=\mu-\delta,
-\qquad
-\tau_\ell=\mu+\delta,
-\qquad 0\lt \delta\lt \mu.
-$$
-
-The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
-
-$$
-P=
-\begin{pmatrix}
-p&1-p\\
-1-p&p
-\end{pmatrix}.
-\tag{5.1}
-$$
-
-A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0\lt p\lt 1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
+A short example isolates the role of temporal correlations before we introduce size feedback. Each cell has either a short lifetime $\tau_s=\mu-\delta$ or a long lifetime $\tau_\ell=\mu+\delta$, with $0\lt\delta\lt\mu$. At division, a daughter retains its mother's lifetime state with probability $p$ and switches with probability $1-p$. For $0\le p\lt1$, the stationary chronological distribution has
 
 $$
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
-\quad
+\qquad
 \mathbb E[\tau]=\mu,
-\quad
+\qquad
 \operatorname{Var}(\tau)=\delta^2.
+\tag{5.1}
+$$
+
+Two arrangements of these same lifetimes give different population growth rates. For $p=1/2$, successive lifetimes are independent, and Euler–Lotka gives
+
+$$
+e^{-\Lambda\tau_s}+e^{-\Lambda\tau_\ell}=1
+\quad\Rightarrow\quad
+\Lambda>\frac{\ln2}{\mu}.
 \tag{5.2}
 $$
 
-Changing $p$ changes **only the temporal organization** of the division times.
-
-### 5.2 Exact autocorrelation
-
-Let $z_n=-1$ in state $s$ and $z_n=+1$ in state $\ell$. Then
+For $p=0$, short and long lifetimes alternate. Every pair has the same total duration, so
 
 $$
-\tau_n=\mu+\delta z_n.
-$$
-
-Conditional on the current state,
-
-$$
-\mathbb E[z_{n+1}\mid z_n]
-=p z_n+(1-p)(-z_n)
-=(2p-1)z_n.
-$$
-
-Set
-
-$$
-a=2p-1.
-$$
-
-By iterating conditional expectations,
-
-$$
-\mathbb E[z_{n+k}\mid z_n]=a^k z_n.
-$$
-
-Since $\mathbb E[z_n]=0$ and $z_n^2=1$,
-
-$$
-C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{5.3}
-$$
-
-For $0\lt p\lt 1$, $|a|\lt 1$. Equation (4.2) then gives
-
-$$
-\begin{aligned}
-D_\tau
-&=\delta^2\left(1+2\sum_{k=1}^\infty a^k\right)\\
-&=\delta^2\frac{1+a}{1-a}\\
-&=\delta^2\frac{p}{1-p}.
-\end{aligned}
-\tag{5.4}
-$$
-
-Three regimes follow:
-
-- $p\lt 1/2$: successive generation times tend to alternate; correlations are negative at odd lags.
-- $p=1/2$: generation times are independent; $D_\tau=\delta^2$.
-- $p>1/2$: states persist; $D_\tau>\delta^2$.
-
-At exactly $p=0$, the states alternate deterministically; the absolute covariance sum in (4.2) does not converge, but directly from $T_n$ one finds $\operatorname{Var}(T_n)=O(1)$ and $D_\tau=0$. At $p=1$, the chain is nonergodic; its two disjoint subpopulations require separate treatment.
-
-### 5.3 Exact population growth via a transfer matrix
-
-The joint probability of a state path $i_0,i_1,\ldots,i_n$ contains a product of transition probabilities. Its discounted birth-time weight contains
-
-$$
-\exp\left(-\Lambda\sum_{j=0}^{n-1}\tau_{i_j}\right).
-$$
-
-At each generation, binary division contributes a factor of 2. Therefore the propagation matrix for expected discounted descendant weights is
-
-$$
-K_\Lambda=
-2\begin{pmatrix}
-e^{-\Lambda\tau_s}&0\\
-0&e^{-\Lambda\tau_\ell}
-\end{pmatrix}P.
-\tag{5.5}
-$$
-
-Define
-
-$$
-A=e^{-\Lambda\tau_s},\qquad B=e^{-\Lambda\tau_\ell}.
-$$
-
-Then
-
-$$
-K_\Lambda=
-2\begin{pmatrix}
-pA&(1-p)A\\
-(1-p)B&pB
-\end{pmatrix}.
-\tag{5.6}
-$$
-
-For an initial-state probability row vector $\boldsymbol\pi$, the generation-$n$ discounted weight is
-
-$$
-Z_n(\Lambda)=\boldsymbol\pi K_\Lambda^n\mathbf 1.
-$$
-
-For $0\lt p\lt 1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (3.6) is therefore equivalent to the **exact eigenvalue condition**
-
-$$
-\rho(K_\Lambda)=1.\tag{5.7}
-$$
-
-To compute it explicitly, the trace and determinant are
-
-$$
-\operatorname{tr}K_\Lambda=2p(A+B),
+T_{2m}=m(\tau_s+\tau_\ell)=2m\mu,
 \qquad
-\det K_\Lambda=4AB(2p-1).
+\Lambda=\frac{\ln2}{\mu}.
+\tag{5.3}
 $$
 
-The Perron eigenvalue is
-
-$$
-\rho(K_\Lambda)
-=p(A+B)+\sqrt{p^2(A-B)^2+4(1-p)^2AB}.
-\tag{5.8}
-$$
-
-Solving $\rho(K_\Lambda)=1$ for $\Lambda$ yields the population growth rate. This calculation is exact for the specified model; it is not a cumulant approximation.
-
-### 5.4 Two analytically transparent limits
-
-**Case 1: $p=1/2$, independent generations.** Then
-
-$$
-\rho(K_\Lambda)=A+B,
-$$
-
-so (5.7) becomes
-
-$$
-e^{-\Lambda\tau_s}+e^{-\Lambda\tau_\ell}=1.
-\tag{5.9}
-$$
-
-This is precisely $2\mathbb E[e^{-\Lambda\tau}]=1$ for the two-point distribution.
-
-**Case 2: $p=0$, strict alternation.** Then
-
-$$
-\rho(K_\Lambda)=2\sqrt{AB}
-=2e^{-\Lambda(\tau_s+\tau_\ell)/2}.
-$$
-
-Therefore
-
-$$
-\Lambda=\frac{\ln2}{(\tau_s+\tau_\ell)/2}
-      =\frac{\ln2}{\mu}.\tag{5.10}
-$$
-
-The single-generation distribution still has variance $\delta^2>0$, yet the growth advantage disappears. Every pair of successive generation times has exactly the same total duration.
-
-For $p\to1^-$, long-lived state persistence lets fast lineages dominate the population; the growth exponent approaches $\ln2/\tau_s$. The point $p=1$ itself is reducible, so the observed exponent depends on which state classes are initially present.
-
-### 5.5 Numerical example: same marginal distribution, different growth
-
-Choose
-
-$$
-\tau_s=2\ \mathrm h,
-\qquad
-\tau_\ell=5\ \mathrm h,
-\qquad
-\mu=3.5\ \mathrm h.
-$$
-
-Solving (5.8)–(5.7):
-
-| Persistence $p$ | Correlation structure | $\Lambda$ ($\mathrm h^{-1}$) | Doubling time $\ln2/\Lambda$ (h) |
-|---:|---|---:|---:|
-| 0 | Strict alternation | 0.198042 | 3.500 |
-| 0.25 | Antipersistent | 0.202456 | 3.424 |
-| 0.50 | Independent | 0.212289 | 3.265 |
-| 0.75 | Persistent | 0.244769 | 2.832 |
-
-Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
+The single-generation variance is still $\delta^2>0$, but accumulated timing fluctuations remain bounded and the growth advantage disappears. Thus a lifetime histogram alone does not determine growth; the organization of lifetimes along a lineage also matters. Figure 4 extends this comparison to intermediate persistence probabilities. Appendix E gives the autocorrelation, exact transfer-matrix calculation, numerical table, and spectrum.
 
 ![Two-state generation-time autocorrelations and exact population growth as state persistence increases.](figures/02_correlations_and_growth.png)
 
-*Fig 4. Correlation changes growth without changing the lifetime histogram.* Panel A plots $\rho_\tau(k)=(2p-1)^k$. Panel B solves the exact Perron-eigenvalue condition (5.7) for the same 2 h and 5 h lifetimes used in the table; dots mark its four rows. The dashed line is $\ln2/\mu$. The curve ends below $p=1$, where the chain becomes reducible. These are predictions of the two-state branching model, not measurements of size-homeostatic cells.
-
-> **Lesson of model I.** A one-generation histogram is not enough to predict the proliferation rate. The same random variables, arranged differently along a lineage, can produce different collective growth rates.
+*Fig 4. Correlation changes growth without changing the lifetime histogram.* Panel A plots $\rho_\tau(k)=(2p-1)^k$. Panel B solves the exact Perron-eigenvalue condition (E.7) for 2 h and 5 h lifetimes; dots mark persistence probabilities 0, 0.25, 0.50, and 0.75. The full calculation is in Appendix E. The dashed line is $\ln2/\mu$. The curve ends below $p=1$, where the chain becomes reducible. These are predictions of the two-state branching model, not measurements of size-homeostatic cells.
 
 ---
 
-## 6. Exactly solvable example II: the adder as a size-homeostatic stochastic map
+## 6. The adder: how size homeostasis generates temporal correlations
 
-The Markov model showed what correlations *do*. We now want to understand a physical mechanism that *produces* them. The adder provides the simplest example connected directly to cell-size data.
+Sections 3–4 connect population growth to fluctuations of accumulated division time. We now derive how cell-size feedback constrains those fluctuations and generates temporal correlations. The adder provides a simple mechanism connected directly to cell-size data.
 
 ### 6.1 Definition of the adder
 
@@ -1184,7 +998,7 @@ $$
 
 The sum of the negative nonzero-lag covariances cancels the positive single-generation variance. Equation (6.10) showed that the cancellation is actually exact at the level of cumulative times, even when the small-noise approximation used in (6.17) is not justified.
 
-> **Lesson of model II.** Size homeostasis is not just a narrow size distribution. It imposes a dynamical constraint on the entire lineage history. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
+> **Size homeostasis constrains lineage histories.** It imposes a dynamical constraint on the entire sequence of division times. Under constant exponential size growth and symmetric division, this constraint removes the extensive component of accumulated generation-time fluctuations.
 
 ---
 
@@ -1320,29 +1134,6 @@ The same fact appeared as the telescoping sum in (6.10) and the covariance cance
 
 Notice that differencing may emphasize high-frequency fluctuations, even when the underlying size process does not have an oscillatory mode. A large spectral value near the Nyquist frequency $\omega=\pi$ is not, by itself, evidence for a biological oscillator.
 
-### 7.4 An extra connection: the Markov model's spectrum
-
-For the two-state Markov model of Section 5, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|\lt 1$ gives
-
-$$
-S_\tau(\omega)
-=\delta^2\frac{1-a^2}{1+a^2-2a\cos\omega}.
-\tag{7.9}
-$$
-
-In particular,
-
-$$
-S_\tau(0)=\delta^2\frac{1+a}{1-a}
-=\delta^2\frac{p}{1-p},
-$$
-
-which recovers (5.4) without separately summing the covariances.
-
-Thus both models are readily understood through spectra:
-
-- The Markov model can change low-frequency division-time noise by changing persistence.
-- The adder converts size fluctuations into differences, suppressing division-time noise at zero frequency.
 
 ---
 
@@ -1465,7 +1256,7 @@ $$
 \tag{9.2}
 $$
 
-For an ergodic finite-state Markov branching model, this is exactly a transfer-matrix eigenvalue condition.
+For an ergodic finite-state Markov branching model, this is exactly a transfer-matrix eigenvalue condition, as shown in Appendix E.
 
 **Third:** for a constant single-cell exponential size-growth rate and symmetric division,
 
@@ -1674,6 +1465,249 @@ $$
 
 The logarithmic growth rate still tends to $\Lambda$, but $e^{-\Lambda t}M(t)$ oscillates periodically instead of converging to a constant. Thus the noise-free growth exponent used in Section 2.2 remains valid, while the stronger limit defining $A$ requires the nonlattice condition.
 
+## Appendix E. A two-state Markov model: exact correlations, growth, and spectrum
+
+The comparison in Section 5 prescribes correlations while keeping the chronological lifetime distribution fixed. This appendix supplies the exact calculations for that model; the adder's generation of correlations through size feedback is developed separately in Section 6.
+
+### E.1 Definition
+
+There are two possible generation times:
+
+$$
+\tau_s=\mu-\delta,
+\qquad
+\tau_\ell=\mu+\delta,
+\qquad 0\lt \delta\lt \mu.
+$$
+
+The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
+
+$$
+P=
+\begin{pmatrix}
+p&1-p\\
+1-p&p
+\end{pmatrix}.
+\tag{E.1}
+$$
+
+A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0\lt p\lt 1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
+
+$$
+\mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
+\quad
+\mathbb E[\tau]=\mu,
+\quad
+\operatorname{Var}(\tau)=\delta^2.
+\tag{E.2}
+$$
+
+Changing $p$ changes **only the temporal organization** of the division times.
+
+### E.2 Exact autocorrelation
+
+Let $z_n=-1$ in state $s$ and $z_n=+1$ in state $\ell$. Then
+
+$$
+\tau_n=\mu+\delta z_n.
+$$
+
+Conditional on the current state,
+
+$$
+\mathbb E[z_{n+1}\mid z_n]
+=p z_n+(1-p)(-z_n)
+=(2p-1)z_n.
+$$
+
+Set
+
+$$
+a=2p-1.
+$$
+
+By iterating conditional expectations,
+
+$$
+\mathbb E[z_{n+k}\mid z_n]=a^k z_n.
+$$
+
+Since $\mathbb E[z_n]=0$ and $z_n^2=1$,
+
+$$
+C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{E.3}
+$$
+
+For $0\lt p\lt 1$, $|a|\lt 1$. Equation (4.2) then gives
+
+$$
+\begin{aligned}
+D_\tau
+&=\delta^2\left(1+2\sum_{k=1}^\infty a^k\right)\\
+&=\delta^2\frac{1+a}{1-a}\\
+&=\delta^2\frac{p}{1-p}.
+\end{aligned}
+\tag{E.4}
+$$
+
+Three regimes follow:
+
+- $p\lt 1/2$: successive generation times tend to alternate; correlations are negative at odd lags.
+- $p=1/2$: generation times are independent; $D_\tau=\delta^2$.
+- $p>1/2$: states persist; $D_\tau>\delta^2$.
+
+At exactly $p=0$, the states alternate deterministically; the absolute covariance sum in (4.2) does not converge, but directly from $T_n$ one finds $\operatorname{Var}(T_n)=O(1)$ and $D_\tau=0$. At $p=1$, the chain is nonergodic; its two disjoint subpopulations require separate treatment.
+
+### E.3 Exact population growth via a transfer matrix
+
+The joint probability of a state path $i_0,i_1,\ldots,i_n$ contains a product of transition probabilities. Its discounted birth-time weight contains
+
+$$
+\exp\left(-\Lambda\sum_{j=0}^{n-1}\tau_{i_j}\right).
+$$
+
+At each generation, binary division contributes a factor of 2. Therefore the propagation matrix for expected discounted descendant weights is
+
+$$
+K_\Lambda=
+2\begin{pmatrix}
+e^{-\Lambda\tau_s}&0\\
+0&e^{-\Lambda\tau_\ell}
+\end{pmatrix}P.
+\tag{E.5}
+$$
+
+Define
+
+$$
+A=e^{-\Lambda\tau_s},\qquad B=e^{-\Lambda\tau_\ell}.
+$$
+
+Then
+
+$$
+K_\Lambda=
+2\begin{pmatrix}
+pA&(1-p)A\\
+(1-p)B&pB
+\end{pmatrix}.
+\tag{E.6}
+$$
+
+For an initial-state probability row vector $\boldsymbol\pi$, the generation-$n$ discounted weight is
+
+$$
+Z_n(\Lambda)=\boldsymbol\pi K_\Lambda^n\mathbf 1.
+$$
+
+For $0\lt p\lt 1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (3.6) is therefore equivalent to the **exact eigenvalue condition**
+
+$$
+\rho(K_\Lambda)=1.\tag{E.7}
+$$
+
+To compute it explicitly, the trace and determinant are
+
+$$
+\operatorname{tr}K_\Lambda=2p(A+B),
+\qquad
+\det K_\Lambda=4AB(2p-1).
+$$
+
+The Perron eigenvalue is
+
+$$
+\rho(K_\Lambda)
+=p(A+B)+\sqrt{p^2(A-B)^2+4(1-p)^2AB}.
+\tag{E.8}
+$$
+
+Solving $\rho(K_\Lambda)=1$ for $\Lambda$ yields the population growth rate. This calculation is exact for the specified model; it is not a cumulant approximation.
+
+### E.4 Checks and boundary cases
+
+The two comparisons in Section 5 follow from the same eigenvalue condition.
+
+**Case 1: $p=1/2$, independent generations.** Then
+
+$$
+\rho(K_\Lambda)=A+B,
+$$
+
+so (E.7) becomes
+
+$$
+e^{-\Lambda\tau_s}+e^{-\Lambda\tau_\ell}=1.
+\tag{E.9}
+$$
+
+This is precisely $2\mathbb E[e^{-\Lambda\tau}]=1$ for the two-point distribution.
+
+**Case 2: $p=0$, strict alternation.** Then
+
+$$
+\rho(K_\Lambda)=2\sqrt{AB}
+=2e^{-\Lambda(\tau_s+\tau_\ell)/2}.
+$$
+
+Therefore
+
+$$
+\Lambda=\frac{\ln2}{(\tau_s+\tau_\ell)/2}
+      =\frac{\ln2}{\mu}.\tag{E.10}
+$$
+
+The single-generation distribution still has variance $\delta^2>0$, yet the growth advantage disappears. Every pair of successive generation times has exactly the same total duration.
+
+For $p\to1^-$, long-lived state persistence lets fast lineages dominate the population; the growth exponent approaches $\ln2/\tau_s$. The point $p=1$ itself is reducible, so the observed exponent depends on which state classes are initially present.
+
+### E.5 Numerical example: same marginal distribution, different growth
+
+Choose
+
+$$
+\tau_s=2\ \mathrm h,
+\qquad
+\tau_\ell=5\ \mathrm h,
+\qquad
+\mu=3.5\ \mathrm h.
+$$
+
+Solving (E.8)–(E.7):
+
+| Persistence $p$ | Correlation structure | $\Lambda$ ($\mathrm h^{-1}$) | Doubling time $\ln2/\Lambda$ (h) |
+|---:|---|---:|---:|
+| 0 | Strict alternation | 0.198042 | 3.500 |
+| 0.25 | Antipersistent | 0.202456 | 3.424 |
+| 0.50 | Independent | 0.212289 | 3.265 |
+| 0.75 | Persistent | 0.244769 | 2.832 |
+
+Every row has **the same** $p(\tau)$, $\bar\tau$, and $\operatorname{Var}(\tau)$. Only correlations differ.
+
+### E.6 Power spectrum of the Markov model
+
+For the two-state Markov model, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|\lt 1$ gives
+
+$$
+S_\tau(\omega)
+=\delta^2\frac{1-a^2}{1+a^2-2a\cos\omega}.
+\tag{E.11}
+$$
+
+In particular,
+
+$$
+S_\tau(0)=\delta^2\frac{1+a}{1-a}
+=\delta^2\frac{p}{1-p},
+$$
+
+which recovers (E.4) without separately summing the covariances.
+
+Thus both models are readily understood through spectra:
+
+- The Markov model can change low-frequency division-time noise by changing persistence.
+- The adder converts size fluctuations into differences, suppressing division-time noise at zero frequency.
+
 ---
 
 # Problems for discussion or homework
@@ -1686,7 +1720,7 @@ For $x_{n+1}=ax_n+\xi_n$, derive $\mathbb E[x_{n+k}\mid x_n]$, the stationary va
 
 ### Problem 2. Correlation without changing a histogram
 
-Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$. Derive (5.3) and use it to estimate the growth-rate correction in (4.5). Why does that estimate break down as $p\to1^-$?
+Show explicitly that the two-state Markov model has marginal distribution $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$ for every $0\lt p\lt 1$. Derive (E.3) and use it to estimate the growth-rate correction in (4.5). Why does that estimate break down as $p\to1^-$?
 
 **Answer sketch.** The transition matrix is symmetric, so its stationary probabilities are $1/2,1/2$. Correlations decay as $(2p-1)^k$. Therefore $D_\tau=\delta^2p/(1-p)$. As $p\to1^-$, the correlation time diverges and weak-noise/truncated-cumulant expansions cease to be uniform; use the exact matrix condition instead.
 
