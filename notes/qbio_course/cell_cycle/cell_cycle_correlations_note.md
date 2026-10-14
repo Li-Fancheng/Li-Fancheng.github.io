@@ -110,13 +110,30 @@ size feedback 可以用三种理想化规则描述。其中 adder 指“增加�
 
 ## 2. 从单细胞统计预测群体增长：独立模型的基准 {#2-division-time-noise-and-the-population-growth-paradox}
 
-设沿 chronological lineage 测得平均分裂间隔时间 $\mu$，最简单的估计是 $\Lambda=\ln2/\mu$。独立分枝模型说明了这一估计为什么会遗漏群体中的后代数量差异：不同分裂间隔时间的 lineage，对后来群体的贡献不同。这个模型首先回答统计上的预测问题；将它用于具有 size control 的细胞时，还要检查生长与分裂的生理约束。
+先考虑群体已经进入指数增长阶段、且增长率近似恒定的情形。用连续近似描述细胞数量时，
+
+$$
+\frac{dN}{dt}=\Lambda N,
+\qquad N(t)=N(0)e^{\Lambda t}.
+$$
+
+将群体倍增时间记为 $T_{\mathrm d}$，由 $N(t+T_{\mathrm d})=2N(t)$ 得到
+
+$$
+e^{\Lambda T_{\mathrm d}}=2
+\quad\Rightarrow\quad
+\Lambda=\frac{\ln2}{T_{\mathrm d}}.
+$$
+
+这里联系的是**群体增长率与群体倍增时间**。沿 chronological lineage 测得平均分裂间隔 $\mu$ 后，如果进一步将它当作群体倍增时间，即令 $T_{\mathrm d}\approx\mu$，就得到直观估计 $\Lambda\approx\ln2/\mu$。但平均分裂间隔是单细胞统计量，它是否等于群体倍增时间，需要由具体的生长与分裂模型判断。所有细胞的分裂间隔都固定为 $\mu$、没有死亡且每次产生两个子细胞，是长期增长率满足 $\Lambda=\ln2/\mu$ 的一个简单基准。
+
+branching model with i.i.d. interdivision times 说明了这一估计为什么会遗漏群体中的后代数量差异：不同分裂间隔时间的 lineage，对后来群体的贡献不同。这个模型首先回答统计上的预测问题；将它用于具有 size control 的细胞时，还要检查生长与分裂的生理约束。
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
 ### 2.1 Euler–Lotka 方程与抽样偏倚 {#21-eulerlotka-and-sampling-bias}
 
-考虑一个没有死亡的二叉分枝模型：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个正的分裂间隔时间，到时产生两个遵循相同规则的子细胞。模型中没有共同作用于所有细胞的随机环境。这里的“寿命”（lifetime）特指细胞从出生到分裂的时间，也就是分裂间隔时间。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
+考虑一个没有死亡的 binary branching model：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个正的分裂间隔时间，到时产生两个遵循相同规则的子细胞。模型中没有共同作用于所有细胞的随机环境。这里的“寿命”（lifetime）特指细胞从出生到分裂的时间，也就是分裂间隔时间。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
 
 $$
 M(t)=\mathbb P(\tau>t)+2\int_0^t p(\tau)M(t-\tau)\,d\tau.\tag{2.1}
@@ -323,7 +340,7 @@ $$
 \mathbb E\left[\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right].\tag{3.7}
 $$
 
-如果 $s$ 在所选增长率附近时，两端 size 比值的期望取对数后为 $o(n)$，那么每代的指数率就是 $-s\ln2/\lambda$。繁殖产生 $2^n$ 条路径；当 $\ln2-s\ln2/\lambda=0$ 时，路径数的指数增长与时间权重的指数衰减达到平衡。在第 4 节及[附录 C](#appendix-c)明确的分枝过程条件下，这给出 **$\Lambda=\lambda$**。
+如果 $s$ 在所选增长率附近时，两端 size 比值的期望取对数后为 $o(n)$，那么每代的指数率就是 $-s\ln2/\lambda$。繁殖产生 $2^n$ 条路径；当 $\ln2-s\ln2/\lambda=0$ 时，路径数的指数增长与时间权重的指数衰减达到平衡。在第 4 节及[附录 C](#appendix-c)明确的 branching process 条件下，这给出 **$\Lambda=\lambda$**。
 
 一个清楚的充分条件是：cell size 始终为正且服从平稳分布，并且在 $s=\lambda$ 附近，正阶矩 $\mathbb E[v^{2s/\lambda}]$ 和负阶矩 $\mathbb E[v^{-2s/\lambda}]$ 都有限。Cauchy–Schwarz 不等式给出该期望与 $n$ 无关的上界，Jensen 不等式则给出下界 $1$。size 有上界、又与零保持一定距离，是最简单的例子。这些是额外的充分条件，不能仅从 adder 的 size 方差有限推出；各层条件的区别见[附录 G](#appendix-g)。
 
@@ -365,7 +382,7 @@ $$
 \psi(s)=\lim_{n\to\infty}\frac1n\ln\mathbb E_{\mathrm{chron}}[e^{-sT_n}].
 $$
 
-假定分枝过程的规则由局部状态决定、过程非爆炸、任意有限时间区间内的出生数期望有限，且极限 $\psi$ 存在；同时，增长指数由加权出生数级数的收敛边界确定。那么
+假定 branching process 的规则由局部状态决定、过程非爆炸、任意有限时间区间内的出生数期望有限，且极限 $\psi$ 存在；同时，增长指数由加权出生数级数的收敛边界确定。那么
 
 $$
 \boxed{\ln2+\psi(\Lambda)=0.}\tag{4.1}
@@ -446,7 +463,7 @@ $$
 
 Adder 展示了具体机制：size feedback 纠正继承的偏差，并在小波动极限下产生分裂间隔时间的负相关。更一般地，当 $\lambda$ 恒定且分裂对称时，多代累计时间偏差只取决于起点与终点的 log size。若 log size 是方差有限的平稳过程，累计时间方差就保持有界，$D_\tau=0$。单代分裂仍然有快有慢，但这种时序波动没有持续累积的方差分量。
 
-要进一步得到精确的群体增长率，还需要群体瞬时 mean size 的稳态条件，或者次指数的端点权重与有效的相关分枝增长关系。在相应条件下有 $\Lambda=\lambda$。这是固定生长率与 size 稳定性的共同约束；本文没有建立 size control 与繁殖速度之间的代价关系。对于更一般的相关时间模型，$D_\tau$ 或 $S_\tau(0)$ 只在有效的二阶弱噪声展开中决定增长修正，不能单凭其为零就推出任意噪声下的精确结论。
+要进一步得到精确的群体增长率，还需要群体瞬时 mean size 的稳态条件，或者次指数的端点权重与有效的相关 branching growth relation。在相应条件下有 $\Lambda=\lambda$。这是固定生长率与 size 稳定性的共同约束；本文没有建立 size control 与繁殖速度之间的代价关系。对于更一般的相关时间模型，$D_\tau$ 或 $S_\tau(0)$ 只在有效的二阶弱噪声展开中决定增长修正，不能单凭其为零就推出任意噪声下的精确结论。
 
 ### 5.2 从单代分布到 lineage 历史
 
@@ -471,7 +488,7 @@ size control 进一步限制了哪些时间历史能够出现。在本文的生�
 
 ### 附录 A. 更新理论、群体抽样与渐近振幅 {#appendix-a}
 
-这里补充第 2 节所用的更新过程计算。首先得到的是群体数量期望的增长指数；要把它等同于典型实现中的增长指数，还需要年龄依赖分枝过程通常采用的非爆炸、超临界等条件。
+这里补充第 2 节所用的更新过程计算。首先得到的是群体数量期望的增长指数；要把它等同于典型实现中的增长指数，还需要 age-dependent branching process 通常采用的非爆炸、超临界等条件。
 
 #### A.1 用拉普拉斯变换推导 {#a1-laplace-transform-derivation}
 
@@ -569,7 +586,7 @@ $$
 
 #### B.1 独立分裂间隔时间的展开 {#b1-independent-lifetime-expansion}
 
-不等式只能说明，相对于平均分裂间隔时间相同的定时基准，独立分枝模型的增长率更大，不能给出增量有多大。为估计增长率的增量，先把 chronological lineage 分裂间隔时间分布的均值和方差写出来：
+不等式只能说明，相对于平均分裂间隔时间相同的定时基准，branching model with i.i.d. interdivision times 的增长率更大，不能给出增量有多大。为估计增长率的增量，先把 chronological lineage 分裂间隔时间分布的均值和方差写出来：
 
 $$
 \mu=\bar\tau=\int_0^\infty \tau p(\tau)\,d\tau,
@@ -753,7 +770,7 @@ $$
 
 *Fig. 9. 分裂间隔时间分布不能完全描述 lineage 历史。* 两种情形中，两种时间各自的概率都是 $1/2$。A 图列出有序时间对的概率：独立抽样允许全部四种配对，严格交替则只允许一长一短的两种配对。因此，B 图中独立抽样有三种可能的总时间，而交替配对的总时间始终为 $\tau_s+\tau_\ell$。有相关性时，必须使用取决于联合历史的 $T_n$ 分布。
 
-经过 $n$ 代二叉分裂，有 $2^n$ 条可能的后代路径。对于规则由局部状态决定的分枝过程，若每代均匀选择一个子细胞得到的路径服从 chronological lineage 的统计规律，利用期望的线性性可得
+经过 $n$ 代二叉分裂，有 $2^n$ 条可能的后代路径。对于规则由局部状态决定的 branching process，若每代均匀选择一个子细胞得到的路径服从 chronological lineage 的统计规律，利用期望的线性性可得
 
 $$
 \mathbb E\!\left[\sum_{\text{第 }n\text{ 代后代}}
@@ -778,7 +795,7 @@ $$
 \tag{C.4}
 $$
 
-指数增长率对应这个级数的收敛与发散边界。如果相关过程存在适当的大 $n$ 极限，并满足分枝过程所需的正则性条件，定义
+指数增长率对应这个级数的收敛与发散边界。如果相关过程存在适当的大 $n$ 极限，并满足 branching process 所需的正则性条件，定义
 
 $$
 \psi(s)=\lim_{n\to\infty}
@@ -805,9 +822,9 @@ $$
 
 这就是后面使用的相关 lineage 推广式。对于附录 D 的有限状态马尔可夫模型，其推导尤其清楚，而且在数学上是精确的。
 
-**检查假设。** 式（C.7）是渐近关系，不能无条件套用于任意相关群体或受随机环境驱动的群体。这里假定 lineage 的统计规律平稳且遍历，按分裂间隔数归一化的累积量生成函数具有适当极限，并且出生时间加权条件确实选出了分枝群体的马尔萨斯增长指数（Malthusian exponent，即长期指数增长率）。强烈的共同环境噪声、非遍历混合过程，以及增长无界等病态情况，都需要单独分析。
+**检查假设。** 式（C.7）是渐近关系，不能无条件套用于任意相关群体或受随机环境驱动的群体。这里假定 lineage 的统计规律平稳且遍历，按分裂间隔数归一化的累积量生成函数具有适当极限，并且出生时间加权条件确实选出了 branching population 的马尔萨斯增长指数（Malthusian exponent，即长期指数增长率）。强烈的共同环境噪声、非遍历混合过程，以及增长无界等病态情况，都需要单独分析。
 
-可以把收敛论证写得更具体。假设分裂间隔时间严格为正、分枝过程非爆炸，且任意有限时间区间内的出生数期望有限。令 $B_{\mathrm{cum}}(t)$ 统计截至 $t$ 的全部出生数，包括最初的细胞。在没有死亡的二叉群体中，每次分裂产生两个新生细胞，并使存活数增加一个，因此对每条实现都有 $N(t)=[B_{\mathrm{cum}}(t)+1]/2$。对非负权重使用 Tonelli 定理，当实数 $s>0$ 时得到
+可以把收敛论证写得更具体。假设分裂间隔时间严格为正、branching process 非爆炸，且任意有限时间区间内的出生数期望有限。令 $B_{\mathrm{cum}}(t)$ 统计截至 $t$ 的全部出生数，包括最初的细胞。在没有死亡的二叉群体中，每次分裂产生两个新生细胞，并使存活数增加一个，因此对每条实现都有 $N(t)=[B_{\mathrm{cum}}(t)+1]/2$。对非负权重使用 Tonelli 定理，当实数 $s>0$ 时得到
 
 $$
 \int_0^\infty e^{-st}M(t)\,dt
@@ -816,7 +833,7 @@ $$
 
 因此，存活数期望与加权出生数级数具有相同的正收敛边界。如果 $g(s)=\ln2+\psi(s)<0$，根值判别法保证 $\sum_n Z_n(s)$ 收敛；如果 $g(s)>0$，级数的项甚至不趋于零。在 $g(s)=0$ 处，根值判别法无法决定该点本身是否收敛。不过，只要 $g$ 连续，且在唯一的正值 $s_*$ 处穿过零，收敛边界仍然是 $s_*$。若 $\lim_{t\to\infty}t^{-1}\ln M(t)$ 存在，通过与指数函数比较，就能把该边界等同于此极限，从而证明式（C.6）描述的是**期望**增长率。仅知道 $\psi$ 存在，却没有连续性、过零条件或期望增长率极限，还不足以完成论证。
 
-要在典型的实际群体中得到同一指数，还需要针对具体模型的分枝过程定理，包括适当的不可约性、可积性，以及繁殖由局部规则而非共同随机环境支配。例如，有限状态、不可约的年龄依赖分枝过程，如果分裂间隔时间有上界且与零保持距离，每次产生两个子细胞，且给定状态后两个子树相互独立，就是一组标准的充分条件。多对一恒等式的期望计算本身不要求姐妹细胞独立；但若繁殖存在依赖，要声称典型增长率相同，就必须另行给出条件。某些恒定渐近振幅的极限需要非格点条件，但并非所有对数增长指数都需要它。$\psi$ 使用的是平稳的 chronological lineage 规律；若初始细胞的分布不同，要使用同一个根，必须保证指数渐近行为相同。
+要在典型的实际群体中得到同一指数，还需要针对具体模型的 branching process 定理，包括适当的不可约性、可积性，以及繁殖由局部规则而非共同随机环境支配。例如，有限状态、不可约的 age-dependent branching process，如果分裂间隔时间有上界且与零保持距离，每次产生两个子细胞，且给定状态后两个子树相互独立，就是一组标准的充分条件。多对一恒等式的期望计算本身不要求姐妹细胞独立；但若繁殖存在依赖，要声称典型增长率相同，就必须另行给出条件。某些恒定渐近振幅的极限需要非格点条件，但并非所有对数增长指数都需要它。$\psi$ 使用的是平稳的 chronological lineage 规律；若初始细胞的分布不同，要使用同一个根，必须保证指数渐近行为相同。
 
 <div id="32-independent-times-reappear-as-a-special-case"></div>
 
@@ -875,9 +892,9 @@ $$
 
 <div id="5-exactly-solvable-example-i-a-two-state-markov-model"></div>
 
-### 附录 D. 完整的两状态马尔可夫分枝模型 {#appendix-d}
+### 附录 D. 完整的两状态马尔可夫 branching model {#appendix-d}
 
-这个模型在**保持单代分布不变**的条件下，单独考察时间相关性的作用。它是一个唯象分枝模型，不能直接视为具有恒定 $\lambda$ 且维持 size homeostasis 的物理细胞模型。
+这个模型在**保持单代分布不变**的条件下，单独考察时间相关性的作用。它是一个唯象 branching model，不能直接视为具有恒定 $\lambda$ 且维持 size homeostasis 的物理细胞模型。
 
 <div id="51-definition"></div>
 
@@ -918,7 +935,7 @@ $$
 
 ![两状态模型的分裂间隔时间自相关，以及状态持续性增强时的精确群体增长率。](figures/02_correlations_and_growth.svg)
 
-*Fig. 10. 时间分布不变，相关性仍能改变增长率。* A 图绘制 $\rho_\tau(k)=(2p-1)^k$。B 图使用与下表相同的 2 小时和 5 小时分裂间隔时间，求解精确的 Perron 特征值条件（D.7）；圆点对应表中的四行。虚线为 $\ln2/\mu$。曲线在 $p=1$ 之前结束，因为该点的链变为可约。这些是两状态分枝模型的预测，不是维持 size homeostasis 的细胞的实验测量。
+*Fig. 10. 时间分布不变，相关性仍能改变增长率。* A 图绘制 $\rho_\tau(k)=(2p-1)^k$。B 图使用与下表相同的 2 小时和 5 小时分裂间隔时间，求解精确的 Perron 特征值条件（D.7）；圆点对应表中的四行。虚线为 $\ln2/\mu$。曲线在 $p=1$ 之前结束，因为该点的链变为可约。这些是两状态 branching model 的预测，不是维持 size homeostasis 的细胞的实验测量。
 
 <div id="52-exact-autocorrelation"></div>
 
@@ -990,7 +1007,7 @@ $$
 
 ![两状态有向图：每次子细胞状态转移的权重等于二倍继承概率乘以母细胞分裂间隔时间的指数衰减因子。](figures/08_discounted_branching.svg)
 
-*Fig. 11. 将转移矩阵理解为分枝图。* 从状态 $i$ 出发的每条箭头，其权重为子细胞数的期望 $2P_{ij}$ 乘以 $e^{-s\tau_i}$。沿路径将这些权重相乘，便得到该路径对 $Z_n(s)$ 的贡献。图中使用试探增长率 $s$；在选定的增长率 $s=\Lambda$ 处，主特征值为 $1$，即式（D.7）。
+*Fig. 11. 将转移矩阵理解为 branching diagram。* 从状态 $i$ 出发的每条箭头，其权重为子细胞数的期望 $2P_{ij}$ 乘以 $e^{-s\tau_i}$。沿路径将这些权重相乘，便得到该路径对 $Z_n(s)$ 的贡献。图中使用试探增长率 $s$；在选定的增长率 $s=\Lambda$ 处，主特征值为 $1$，即式（D.7）。
 
 因此，用来传播后代时间权重的期望的矩阵为
 
@@ -1110,7 +1127,7 @@ $$
 | 0.50 | 相互独立 | 0.212289 | 3.265 |
 | 0.75 | 倾向于保持状态 | 0.244769 | 2.832 |
 
-每一行都有**相同的** $p(\tau)$、$\bar\tau$ 和 $\operatorname{Var}(\tau)$，只有相关性不同。这个分枝模型用来隔离相关性的统计作用，并未要求各组同时满足固定 size growth rate 与 size homeostasis，不能将这些行直接解释为同一生理条件下的细胞对照。
+每一行都有**相同的** $p(\tau)$、$\bar\tau$ 和 $\operatorname{Var}(\tau)$，只有相关性不同。这个 branching model 用来隔离相关性的统计作用，并未要求各组同时满足固定 size growth rate 与 size homeostasis，不能将这些行直接解释为同一生理条件下的细胞对照。
 
 > **时间分布与相关性：** 单代直方图不足以预测群体增殖率。同样的随机变量，沿 lineage 以不同方式排列，就能产生不同的群体增长率。
 
@@ -1320,7 +1337,7 @@ $$
 
 本附录补充正文第 4.3 节的频域推导：先建立协方差与功率谱的关系，再计算线性反馈模型的 size 频谱，最后说明 size 的差分如何消除分裂间隔时间的零频噪声。频率以分裂间隔数为基准。
 
-#### F.1 线性反馈模型与计算条件 {#f1-local-linear-feedback-laws}
+<div id="f1-local-linear-feedback-laws"></div>
 
 沿用附录 E 的线性反馈形式，令 $x_n$ 为 birth size 相对稳态均值的偏差：
 
@@ -1333,7 +1350,9 @@ $$
 
 <div id="71-autocovariance-and-the-wienerkhinchin-relation"></div>
 
-#### F.2 自协方差与 Wiener–Khinchin 关系 {#f2-autocovariance-and-the-wienerkhinchin-relation}
+<div id="f2-autocovariance-and-the-wienerkhinchin-relation"></div>
+
+#### F.1 自协方差与 Wiener–Khinchin 关系 {#f1-autocovariance-and-the-wienerkhinchin-relation}
 
 对平稳离散时间过程 $y_n$，定义
 
@@ -1385,7 +1404,9 @@ $$
 
 <div id="72-spectrum-of-the-ar1-size-control-model"></div>
 
-#### F.3 AR(1) size control 模型的频谱 {#f3-spectrum-of-the-ar1-size-control-model}
+<div id="f3-spectrum-of-the-ar1-size-control-model"></div>
+
+#### F.2 AR(1) size control 模型的频谱 {#f2-spectrum-of-the-ar1-size-control-model}
 
 迭代式（F.1），在平稳状态下得到
 
@@ -1422,7 +1443,9 @@ $$
 
 <div id="73-spectrum-of-generation-time-feedback-filters-out-zero-frequency"></div>
 
-#### F.4 分裂间隔时间的频谱：差分滤掉零频噪声 {#f4-spectrum-of-generation-time-feedback-filters-out-zero-frequency}
+<div id="f4-spectrum-of-generation-time-feedback-filters-out-zero-frequency"></div>
+
+#### F.3 分裂间隔时间的频谱：差分滤掉零频噪声 {#f3-spectrum-of-generation-time-feedback-filters-out-zero-frequency}
 
 由式（E.6），
 
