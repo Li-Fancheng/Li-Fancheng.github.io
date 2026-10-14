@@ -195,16 +195,25 @@ $$
 \boxed{2\,\mathbb E[e^{-\Lambda\tau}]=1.}\tag{2.2}
 $$
 
-This root is unique because $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ as real $s$ runs from $0$ to $\infty$. It is also the rightmost pole: for complex $s$ with $\operatorname{Re}s>\Lambda$, $|2\widehat p(s)|\le 2\widehat p(\operatorname{Re}s)<1$. Expanding about $s=\Lambda$ gives
+This root is unique because $2\widehat p(s)$ decreases continuously and strictly from $2$ to $0$ as real $s$ runs from $0$ to $\infty$. It is also the rightmost pole: for complex $s$ with $\operatorname{Re}s>\Lambda$, $|2\widehat p(s)|\le 2\widehat p(\operatorname{Re}s)<1$. At this rate, Euler–Lotka normalizes the weighted lifetime density
 
 $$
-\widehat M(s)=\frac{A}{s-\Lambda}+O(1),
+q(\tau)=2e^{-\Lambda\tau}p(\tau),
 \qquad
-A=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}
- =\frac{1}{4\Lambda\,\mathbb E[\tau e^{-\Lambda\tau}]}.
+\int_0^\infty q(\tau)\,d\tau=1.
 $$
 
-Here we used $\widehat p(\Lambda)=1/2$ and $\widehat p'(\Lambda)=-\mathbb E[\tau e^{-\Lambda\tau}]$. Since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, this pole yields the leading long-time term, under the renewal asymptotics applicable to the lifetime density assumed here:
+The ratio $q(\tau)/p(\tau)=2e^{-\Lambda\tau}$ decreases with $\tau$, so $q$ gives greater relative weight to short lifetimes. Expectations with respect to these two densities will be denoted by $\mathbb E_p$ and $\mathbb E_q$. Expanding the transform about $s=\Lambda$ gives
+
+$$
+\begin{aligned}
+\widehat M(s)&=\frac{A}{s-\Lambda}+O(1),\\
+A&=\frac{1-\widehat p(\Lambda)}{\Lambda[-2\widehat p'(\Lambda)]}
+  =\frac{1}{2\Lambda\,\mathbb E_q[\tau]}.
+\end{aligned}
+$$
+
+Here we used $\widehat p(\Lambda)=1/2$ and $-2\widehat p'(\Lambda)=2\mathbb E_p[\tau e^{-\Lambda\tau}]=\mathbb E_q[\tau]$. Since $1/(s-\Lambda)$ is the Laplace transform of $e^{\Lambda t}$, this pole yields the leading long-time term, under the renewal asymptotics applicable to the lifetime density assumed here:
 
 $$
 M(t)\sim Ae^{\Lambda t},
@@ -225,29 +234,29 @@ $$
 
 In this synchronized case, $M(t)=2^{\lfloor t/\tau_0\rfloor}$ has the same growth exponent but a periodically varying prefactor; convergence to a constant $A$ uses the nonlattice condition provided by a lifetime density. Equation (2.3) nevertheless supplies the noise-free growth rate against which we can compare a population with variable lifetimes at the same mean.
 
-### 2.2 Jensen's inequality and the apparent growth advantage
+### 2.2 Population growth advantage as a KL divergence
 
-Let $\bar\tau=\mathbb E[\tau]$. The noise-free population with this lifetime grows at rate $\ln2/\bar\tau$, whereas the variable-lifetime population has its rate determined by (2.2). To compare them, apply Jensen's inequality to the convex function $\tau\mapsto e^{-\Lambda\tau}$:
-
-$$
-\mathbb E[e^{-\Lambda\tau}]
-\ge e^{-\Lambda\mathbb E[\tau]}
-=e^{-\Lambda\bar\tau}.
-$$
-
-Using (2.2),
+Let $\bar\tau=\mathbb E_p[\tau]\lt\infty$. The noise-free population with this lifetime grows at rate $\ln2/\bar\tau$. For variable lifetimes, the relation between $p$ and $q$ gives an exact expression for the difference from this reference rate. Their Kullback–Leibler (KL) divergence is
 
 $$
-\frac12\ge e^{-\Lambda\bar\tau}.
+\begin{aligned}
+D_{\mathrm{KL}}(p\|q)
+&=\int_0^\infty p(\tau)\ln\frac{p(\tau)}{q(\tau)}\,d\tau\\
+&=\int_0^\infty p(\tau)(\Lambda\tau-\ln2)\,d\tau\\
+&=\Lambda\bar\tau-\ln2.
+\end{aligned}
 $$
 
-Taking logarithms yields
+Since KL divergence is nonnegative,
 
 $$
-\Lambda\ge\frac{\ln2}{\bar\tau}.\tag{2.4}
+\boxed{
+\Lambda-\frac{\ln2}{\bar\tau}
+=\frac{D_{\mathrm{KL}}(p\|q)}{\bar\tau}\ge0.
+}\tag{2.4}
 $$
 
-For a nondegenerate lifetime distribution, the inequality is strict. Accordingly, the population doubling time
+For a nondegenerate lifetime distribution, $p\ne q$ and the inequality is strict. Accordingly, the population doubling time
 
 $$
 t_{\mathrm{double}}=\frac{\ln2}{\Lambda}
@@ -255,7 +264,16 @@ $$
 
 is **shorter** than the average single-cell division time $\bar\tau$.
 
-**Physical interpretation.** Division time is not averaged arithmetically by the population. Short-lived cells produce descendants earlier, and these descendants have more time to reproduce. Branching amplifies early reproduction.
+The weighting in $q$ reflects the advantage of early reproduction: short-lived cells produce descendants earlier, giving those descendants more time to reproduce. In this independent-lifetime model, $p$ is the distribution along a chronological lineage, while $q$ describes complete ancestral lifetimes in a population-biased retrospective sample. The KL identity expresses the growth-rate excess in terms of the difference between these two distributions.
+
+The same bound follows directly from Jensen's inequality for the convex function $\tau\mapsto e^{-\Lambda\tau}$:
+
+$$
+\frac12=\mathbb E_p[e^{-\Lambda\tau}]
+\ge e^{-\Lambda\bar\tau}
+\quad\Rightarrow\quad
+\Lambda\ge\frac{\ln2}{\bar\tau}.
+$$
 
 ![Measured generation-time variability, population doubling time, and growth-rate gain in E. coli.](figures/hashimoto_2016_fig03.jpg)
 
@@ -1488,50 +1506,19 @@ A useful next-lecture question is: **when the individual growth rate $\lambda$ i
 
 # Optional technical appendices
 
-## Appendix A. Where the KL divergence fits: chronological versus retrospective sampling
+## Appendix A. KL divergence for correlated division histories
 
-The original notes derive a KL-divergence identity for independent division times. It is correct, but its biological interpretation deserves emphasis.
-
-For independent lifetimes, Euler–Lotka normalizes the distribution
-
-$$
-q(\tau)=2e^{-\Lambda\tau}p(\tau).\tag{A.1}
-$$
-
-Indeed,
-
-$$
-\int_0^\infty q(\tau)\,d\tau
-=2\mathbb E_p[e^{-\Lambda\tau}]=1.
-$$
-
-The distribution $p$ describes times observed from a chronological lineage. The exponentially tilted $q$ characterizes division-time statistics favored in a population-biased ancestral (retrospective) sample, in the independent-lifetime setting.
-
-Their KL divergence is
-
-$$
-\begin{aligned}
-D_{\mathrm{KL}}(p\|q)
-&=\int p(\tau)\ln\frac{p(\tau)}{q(\tau)}\,d\tau\\
-&=\int p(\tau)(\Lambda\tau-\ln2)\,d\tau\\
-&=\Lambda\bar\tau-\ln2.
-\end{aligned}
-\tag{A.2}
-$$
-
-Because $D_{\mathrm{KL}}\ge0$, we recover $\Lambda\ge\ln2/\bar\tau$.
-
-For correlated lifetimes, an analogous **trajectory-level tilt** is available. Let $p_n(\boldsymbol\tau)$ denote the chronological joint law for $n$ consecutive lifetimes. Define
+Section 2.2 expresses the growth advantage for independent lifetimes through $D_{\mathrm{KL}}(p\|q)$. For correlated lifetimes, Section 3 shows that the growth rate depends on complete division histories. The corresponding KL identity therefore uses a joint distribution of lifetimes. Let $\boldsymbol\tau=(\tau_0,\ldots,\tau_{n-1})$, let $p_n(\boldsymbol\tau)$ denote its chronological joint law, and write $T_n=\sum_{j=0}^{n-1}\tau_j$. Define the weighted trajectory distribution
 
 $$
 q_n(\boldsymbol\tau)
 =\frac{2^n e^{-\Lambda T_n}p_n(\boldsymbol\tau)}{Z_n(\Lambda)},
 \quad
 Z_n(\Lambda)=2^n\mathbb E_p[e^{-\Lambda T_n}].
-\tag{A.3}
+\tag{A.1}
 $$
 
-This is normalized by construction. Then
+This is normalized by construction. For independent lifetimes, $Z_n(\Lambda)=1$ and $q_n(\boldsymbol\tau)=\prod_{j=0}^{n-1}q(\tau_j)$, recovering the single-lifetime weighting in Section 2.1. For a general joint law, the KL divergence is
 
 $$
 \begin{aligned}
@@ -1540,7 +1527,7 @@ D_{\mathrm{KL}}(p_n\|q_n)
 \ln\frac{p_n}{q_n}\right]\\
 &=\Lambda\mathbb E_p[T_n]-n\ln2+\ln Z_n(\Lambda).
 \end{aligned}
-\tag{A.4}
+\tag{A.2}
 $$
 
 If $\mathbb E[T_n]=n\bar\tau$ and $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$, dividing by $n$ gives
@@ -1548,14 +1535,12 @@ If $\mathbb E[T_n]=n\bar\tau$ and $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$, divid
 $$
 \lim_{n\to\infty}\frac1nD_{\mathrm{KL}}(p_n\|q_n)
 =\Lambda\bar\tau-\ln2.
-\tag{A.5}
+\tag{A.3}
 $$
 
-The nonnegative KL divergence *rate* provides another interpretation of the generalized Jensen bound. For correlated processes, $q_n$ is an exponentially tilted trajectory ensemble; identifying it with a specific retrospective sampling protocol can involve boundary effects and additional assumptions.
+The nonnegative KL divergence *rate* extends the growth-advantage identity (2.4) to correlated histories and recovers the generalized Jensen bound in Section 3. For correlated processes, $q_n$ is an exponentially tilted trajectory ensemble; identifying it with a specific retrospective sampling protocol can involve boundary effects and additional assumptions.
 
 In a size-homeostatic, constant-$\lambda$ model, the extensive KL rate vanishes under the same conditions that yield $\Lambda\bar\tau=\ln2$, even though finite-path distributions need not be identical.
-
-**Teaching choice:** the KL formulation is illuminating if the course emphasizes trajectory ensembles or information theory. Otherwise, leave it as an appendix; the Jensen inequality and cumulant expansions provide a shorter route to the central physical result.
 
 ## Appendix B. General linear size-control laws: timer, adder, and sizer
 
