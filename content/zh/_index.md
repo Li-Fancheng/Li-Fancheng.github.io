@@ -3,6 +3,8 @@
 title: ""
 date: 2022-10-24
 type: landing
+cascade:
+  reading_time: false
 
 design:
   # Default section spacing

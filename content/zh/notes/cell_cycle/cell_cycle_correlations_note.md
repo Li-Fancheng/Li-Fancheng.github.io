@@ -18,7 +18,7 @@ Single-cell tracking experiments show both variability and **size homeostasis**:
 Our theoretical sequence is
 
 $$
-\boxed{
+
 \begin{gathered}
 \text{independent division-time noise}\\
 \downarrow\\
@@ -30,7 +30,7 @@ $$
 \downarrow\\
 \text{fluctuation spectra}
 \end{gathered}
-}
+
 $$
 
 Two quantities will recur throughout the lecture:
@@ -79,7 +79,7 @@ $$
 Assuming **symmetric division**, each daughter receives half of the mother's volume:
 
 $$
-\boxed{v_{n+1}=\frac12 v_n e^{\lambda\tau_n}.}\tag{1.1}
+v_{n+1}=\frac12 v_n e^{\lambda\tau_n}.\tag{1.1}
 $$
 
 The assumptions here are important: $\lambda$ is the same for all cells, sizes grow exponentially between divisions, and the two daughters divide the mother size equally.
@@ -95,7 +95,7 @@ $$
 Define the logarithmic birth size $y_n=\ln v_n$. Then
 
 $$
-\boxed{y_{n+1}=y_n+\lambda\tau_n-\ln2.}\tag{1.2}
+y_{n+1}=y_n+\lambda\tau_n-\ln2.\tag{1.2}
 $$
 
 A timer model sets division times without responding to size. Suppose the $\tau_n$ are independent and identically distributed, with mean $\bar\tau$ and variance $\sigma_\tau^2$. Iterating the map gives
@@ -119,8 +119,8 @@ $$
 If we tune the mean time to $\bar\tau=\ln2/\lambda$, the mean drift vanishes, but
 
 $$
-\boxed{\operatorname{Var}(\ln v_n-\ln v_0)
-      =n\lambda^2\sigma_\tau^2.}\tag{1.4}
+\operatorname{Var}(\ln v_n-\ln v_0)
+      =n\lambda^2\sigma_\tau^2.\tag{1.4}
 $$
 
 Thus log size performs an unbiased random walk. Its fluctuations grow without bound: **the timer is not a size-homeostatic mechanism**. If division times are perfectly deterministic, the random walk disappears, but the initial size is still never corrected; the system has neutral rather than restorative dynamics.
@@ -131,9 +131,9 @@ This gives a physical reason not to assume independent division times indiscrimi
 
 *Fig 1. Why feedback matters.* The orange trajectories obey the zero-drift log-size timer map (1.2). The blue trajectories illustrate a restoring **log-size** map, $y_{n+1}-y_*=a(y_n-y_*)+\epsilon_n$ with $a=1/2$, using the same innovations and a fixed initial size. This blue map is an illustrative feedback model, not the exact additive-size adder. Panel B shows the analytic variances divided by the innovation variance: unbounded timer diffusion versus saturation with feedback. Trajectories are synthetic model realizations.
 
-![Single-cell microscopy and birth-size correlations testing timer and sizer predictions.](figures/taheri_araghi_2015_f1.jpg)
+![Single-cell microscopy and birth-size correlations testing timer and sizer predictions.](figures/taheri_araghi_2015_f1_highres.png)
 
-*Fig 2. Testing size-control strategies.* Original Figure 1 from [Taheri-Araghi et al., *Current Biology* (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Focus on panel D: generation time decreases with birth size, whereas division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C provide microscopy and growth-condition context. Read alongside the timer instability in (1.4). Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4323405/#F1).
+*Fig 2. Testing size-control strategies.* Original Figure 1 from [Taheri-Araghi et al., *Current Biology* (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Focus on panel D: generation time decreases with birth size, whereas division size increases. These trends challenge a size-independent timer and a fixed-threshold sizer, respectively. Panels A–C provide microscopy and growth-condition context. Read alongside the timer instability in (1.4). Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
 
 **Question to carry forward.** What does independent division-time noise predict for the *population*, even though it is inconsistent with size homeostasis?
 
@@ -183,7 +183,7 @@ If every lifetime is identical, $\tau=\tau_0$, then
 $$
 2e^{-\Lambda\tau_0}=1
 \quad\Rightarrow\quad
-\boxed{\Lambda=\frac{\ln2}{\tau_0}.}
+\Lambda=\frac{\ln2}{\tau_0}.
 \tag{2.3}
 $$
 
@@ -205,7 +205,7 @@ $$
 Taking logarithms yields
 
 $$
-\boxed{\Lambda\ge\frac{\ln2}{\bar\tau}.}\tag{2.4}
+\Lambda\ge\frac{\ln2}{\bar\tau}.\tag{2.4}
 $$
 
 For a nondegenerate lifetime distribution, the inequality is strict. Accordingly, the population doubling time
@@ -251,11 +251,11 @@ $$
 Therefore
 
 $$
-\boxed{
+
 \Lambda\simeq
 \frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.
-}\tag{2.6}
+\tag{2.6}
 $$
 
 This is the simplest demonstration of **noise-driven growth-rate gain**.
@@ -277,7 +277,7 @@ $$
 At division, a mother is replaced by two daughters whose volumes sum to the mother's. Therefore $V_{\mathrm{tot}}$ does not jump. The exact result is
 
 $$
-\boxed{V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.}\tag{2.7}
+V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.\tag{2.7}
 $$
 
 Let
@@ -296,7 +296,7 @@ $$
 Hence
 
 $$
-\boxed{\Lambda=\lambda.}\tag{2.8}
+\Lambda=\lambda.\tag{2.8}
 $$
 
 In the same setting, (1.2) gives, for a size-homeostatic lineage,
@@ -332,7 +332,7 @@ $$
 Its $n$-th division/birth generation is reached at time
 
 $$
-\boxed{T_n=\sum_{j=0}^{n-1}\tau_j.}\tag{3.1}
+T_n=\sum_{j=0}^{n-1}\tau_j.\tag{3.1}
 $$
 
 After $n$ binary divisions there are $2^n$ possible descendant paths. For a locally defined branching process in which the statistical law along a uniformly sampled daughter path is the chronological-lineage law, linearity of expectation gives
@@ -377,13 +377,13 @@ $$
 Equivalently,
 
 $$
-\boxed{
+
 \ln2+
 \lim_{n\to\infty}\frac1n
 \ln\mathbb E\!\left[
 \exp\left(-\Lambda\sum_{j=0}^{n-1}\tau_j\right)
 \right]=0.
-}\tag{3.7}
+\tag{3.7}
 $$
 
 This is the correlated-lineage generalization we will use. Its derivation is particularly transparent, and mathematically exact, for the finite-state Markov model of Section 5.
@@ -435,7 +435,7 @@ $$
 so
 
 $$
-\boxed{\Lambda\ge\frac{\ln2}{\mu}.}\tag{3.8}
+\Lambda\ge\frac{\ln2}{\mu}.\tag{3.8}
 $$
 
 Unlike the independent case, equality can hold **even when each $\tau_n$ has nonzero variance**. The key is whether fluctuations of $T_n$ accumulate extensively as $n$ grows.
@@ -465,11 +465,11 @@ $$
 There are $n$ terms of separation zero, and $2(n-k)$ ordered pairs separated by $k$. Hence the exact finite-$n$ formula is
 
 $$
-\boxed{
+
 \operatorname{Var}(T_n)
 =nC_\tau(0)
 +2\sum_{k=1}^{n-1}(n-k)C_\tau(k).
-}\tag{4.1}
+\tag{4.1}
 $$
 
 If correlations are absolutely summable, division by $n$ and passage to the limit give
@@ -531,10 +531,10 @@ The approximation assumes sufficiently weak fluctuations and a regular expansion
 **Main conclusion so far:**
 
 $$
-\boxed{
+
 \text{Population growth responds to accumulated lineage noise,}
 \;\text{not merely one-generation noise.}
-}
+
 $$
 
 It is a *long-time* and *long-wavelength* property of the chronological process.
@@ -563,25 +563,25 @@ $$
 The cell has a state $s$ (short) or $\ell$ (long). From one generation to the next, the state is retained with probability $p$:
 
 $$
-\boxed{
+
 P=
 \begin{pmatrix}
 p&1-p\\
 1-p&p
 \end{pmatrix}.
-}\tag{5.1}
+\tag{5.1}
 $$
 
 A cell in state $i$ lives for a time $\tau_i$ and then produces two daughters. Each daughter's state follows the transition matrix $P$, conditional on the mother's state. For $0<p<1$, the chronological stationary state probabilities are $(1/2,1/2)$, independent of $p$. Therefore
 
 $$
-\boxed{
+
 \mathbb P(\tau=\tau_s)=\mathbb P(\tau=\tau_\ell)=\tfrac12,
 \quad
 \mathbb E[\tau]=\mu,
 \quad
 \operatorname{Var}(\tau)=\delta^2.
-}\tag{5.2}
+\tag{5.2}
 $$
 
 Changing $p$ changes **only the temporal organization** of the division times.
@@ -617,7 +617,7 @@ $$
 Since $\mathbb E[z_n]=0$ and $z_n^2=1$,
 
 $$
-\boxed{C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.}\tag{5.3}
+C_\tau(k)=\delta^2 a^{|k|},\qquad a=2p-1.\tag{5.3}
 $$
 
 For $0<p<1$, $|a|<1$. Equation (4.2) then gives
@@ -627,7 +627,7 @@ $$
 D_\tau
 &=\delta^2\left(1+2\sum_{k=1}^\infty a^k\right)\\
 &=\delta^2\frac{1+a}{1-a}\\
-&=\boxed{\delta^2\frac{p}{1-p}}.
+&=\delta^2\frac{p}{1-p}.
 \end{aligned}
 \tag{5.4}
 $$
@@ -651,13 +651,13 @@ $$
 At each generation, binary division contributes a factor of 2. Therefore the propagation matrix for expected discounted descendant weights is
 
 $$
-\boxed{
+
 K_\Lambda=
 2\begin{pmatrix}
 e^{-\Lambda\tau_s}&0\\
 0&e^{-\Lambda\tau_\ell}
 \end{pmatrix}P.
-}\tag{5.5}
+\tag{5.5}
 $$
 
 Define
@@ -686,7 +686,7 @@ $$
 For $0<p<1$, Perron–Frobenius theory gives its leading growth factor $\rho(K_\Lambda)^n$, where $\rho$ is the spectral radius. Equation (3.6) is therefore equivalent to the **exact eigenvalue condition**
 
 $$
-\boxed{\rho(K_\Lambda)=1.}\tag{5.7}
+\rho(K_\Lambda)=1.\tag{5.7}
 $$
 
 To compute it explicitly, the trace and determinant are
@@ -700,10 +700,10 @@ $$
 The Perron eigenvalue is
 
 $$
-\boxed{
+
 \rho(K_\Lambda)
 =p(A+B)+\sqrt{p^2(A-B)^2+4(1-p)^2AB}.
-}\tag{5.8}
+\tag{5.8}
 $$
 
 Solving $\rho(K_\Lambda)=1$ for $\Lambda$ yields the population growth rate. This calculation is exact for the specified model; it is not a cumulant approximation.
@@ -735,8 +735,8 @@ $$
 Therefore
 
 $$
-\boxed{\Lambda=\frac{\ln2}{(\tau_s+\tau_\ell)/2}
-      =\frac{\ln2}{\mu}.}\tag{5.10}
+\Lambda=\frac{\ln2}{(\tau_s+\tau_\ell)/2}
+      =\frac{\ln2}{\mu}.\tag{5.10}
 $$
 
 The single-generation distribution still has variance $\delta^2>0$, yet the growth advantage disappears. Every pair of successive generation times has exactly the same total duration.
@@ -783,7 +783,7 @@ The Markov model showed what correlations *do*. We now want to understand a phys
 An adder divides after adding approximately a constant size increment:
 
 $$
-\boxed{v_n^{\mathrm d}=v_n+\Delta+\eta_n,}\tag{6.1}
+v_n^{\mathrm d}=v_n+\Delta+\eta_n,\tag{6.1}
 $$
 
 where $\mathbb E[\eta_n]=0$, $\operatorname{Var}(\eta_n)=\sigma_\eta^2$, and the added-size noises are independent across generations. We assume these noise values and the process keep cell sizes positive.
@@ -805,7 +805,7 @@ and therefore
 $$
 \bar v=\frac12\bar v+\frac12\Delta
 \quad\Rightarrow\quad
-\boxed{\bar v=\Delta.}\tag{6.3}
+\bar v=\Delta.\tag{6.3}
 $$
 
 Center the birth size around this mean:
@@ -817,9 +817,9 @@ $$
 Then (6.2) is
 
 $$
-\boxed{x_{n+1}=a x_n+\xi_n,
+x_{n+1}=a x_n+\xi_n,
 \qquad a=\frac12,
-\quad\xi_n=\frac12\eta_n.}\tag{6.4}
+\quad\xi_n=\frac12\eta_n.\tag{6.4}
 $$
 
 This is an autoregressive process of order one (AR(1)), the discrete-time counterpart of a linearly relaxing stochastic dynamical system.
@@ -828,9 +828,9 @@ This is an autoregressive process of order one (AR(1)), the discrete-time counte
 
 *Fig 5. The adder as restoring feedback.* In this noise-free illustration, cells born at $0.70\Delta$ and $1.30\Delta$ both add $\Delta$ and divide symmetrically. Their daughters are born at $0.85\Delta$ and $1.15\Delta$: the deviation from the mean is halved. Capsule lengths encode relative size schematically; they are not microscopy images. Added-size noise produces the stochastic map (6.4).
 
-![Added-size measurements and conditional distribution collapse supporting the adder in bacteria.](figures/taheri_araghi_2015_f2.jpg)
+![Added-size measurements and conditional distribution collapse supporting the adder in bacteria.](figures/taheri_araghi_2015_f2_highres.png)
 
-*Fig 6. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4323405/#F2).
+*Fig 6. Experimental input to the adder map.* Original Figure 2 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Mean added size is approximately independent of birth size within each condition; conditional distributions also collapse after rescaling. Panels A–C cover *E. coli*, *B. subtilis*, and size mutants. This motivates (6.1), but does not establish independent added-size noise across generations. Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
 
 ### 6.2 Exact stationary variance
 
@@ -850,13 +850,13 @@ $$
 or
 
 $$
-\boxed{\sigma_x^2=\frac{\sigma_\xi^2}{1-a^2}.}\tag{6.5}
+\sigma_x^2=\frac{\sigma_\xi^2}{1-a^2}.\tag{6.5}
 $$
 
 For $a=1/2$ and $\sigma_\xi^2=\sigma_\eta^2/4$,
 
 $$
-\boxed{\operatorname{Var}(v_n)=\frac{\sigma_\eta^2}{3}.}\tag{6.6}
+\operatorname{Var}(v_n)=\frac{\sigma_\eta^2}{3}.\tag{6.6}
 $$
 
 Unlike the timer, the adder has a finite stationary size variance. The deterministic part of the map shrinks deviations by a factor of 2 every generation.
@@ -882,11 +882,11 @@ $$
 Dividing by $\sigma_x^2$ gives
 
 $$
-\boxed{
+
 \rho_v(k)
 \equiv\operatorname{Corr}(v_n,v_{n+k})
 =a^k=2^{-k}.
-}\tag{6.8}
+\tag{6.8}
 $$
 
 For example,
@@ -901,9 +901,9 @@ These values agree closely with the correlations $\approx0.49$ and $\approx0.24$
 
 The important point is not merely the numerical agreement: a deterministic restoring factor fixes the decay of the correlation function. Noise sets the variance, while feedback sets the memory time.
 
-![Adder predictions and experimental relaxation of initially small and large birth sizes.](figures/taheri_araghi_2015_f3.jpg)
+![Adder predictions and experimental relaxation of initially small and large birth sizes.](figures/taheri_araghi_2015_f3_highres.png)
 
-*Fig 7. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements. Original figure reproduced without modification; source: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4323405/#F3).
+*Fig 7. Observed return toward the stationary birth size.* Original Figure 3 from [Taheri-Araghi et al. (2015)](https://doi.org/10.1016/j.cub.2014.12.009). Panel A predicts convergence under constant added size; panels B and C compare with *E. coli* and *B. subtilis*. This illustrates the restoring factor in (6.4). Conditional mean relaxation and the stationary ACF (6.8) are related observables, but are distinct measurements. Figure extracted at 360 dpi from the [author-hosted paper PDF](https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf), preserving the original panels. Click the image to enlarge.
 
 ### 6.4 Connecting the adder to generation times
 
@@ -928,10 +928,10 @@ $$
 Thus the **exact lineage identity** is
 
 $$
-\boxed{
+
 \tau_n=\frac{\ln2}{\lambda}
 +\frac{\ln v_{n+1}-\ln v_n}{\lambda}.
-}\tag{6.9}
+\tag{6.9}
 $$
 
 This relation applies to **any** symmetric-division model with constant exponential size growth, not only to the adder. The adder supplies a concrete homeostatic dynamics for $v_n$.
@@ -988,11 +988,11 @@ $$
 which is finite. Therefore
 
 $$
-\boxed{
+
 D_\tau
 =\lim_{n\to\infty}\frac{\operatorname{Var}(T_n)}n
 =0.
-}\tag{6.12}
+\tag{6.12}
 $$
 
 A noisy generation time does **not** imply an extensively noisy sum of generation times. The time fluctuations from consecutive generations cancel because division adjusts to inherited size.
@@ -1000,7 +1000,7 @@ A noisy generation time does **not** imply an extensively noisy sum of generatio
 Taking expectations in (6.10), the boundary contribution vanishes per generation:
 
 $$
-\boxed{\mathbb E[\tau_n]=\frac{\ln2}{\lambda}.}\tag{6.13}
+\mathbb E[\tau_n]=\frac{\ln2}{\lambda}.\tag{6.13}
 $$
 
 ### 6.6 Exact consequence for population growth
@@ -1021,7 +1021,7 @@ $$
 If the stationary size process has sufficient positive/negative moments so that the last expectation has no exponential growth or decay in $n$, then
 
 $$
-\boxed{\psi(s)=-\frac{s\ln2}{\lambda}.}\tag{6.15}
+\psi(s)=-\frac{s\ln2}{\lambda}.\tag{6.15}
 $$
 
 Equation (3.6) becomes
@@ -1060,11 +1060,11 @@ $$
 Therefore
 
 $$
-\boxed{
+
 \delta\tau_n
 \equiv\tau_n-\frac{\ln2}{\lambda}
 \simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
-}\tag{6.17}
+\tag{6.17}
 $$
 
 For a general stationary AR(1) process
@@ -1101,17 +1101,17 @@ $$
 Dividing by (6.18) yields
 
 $$
-\boxed{
+
 \rho_\tau(k)
 \simeq-\frac{1-a}{2}a^{k-1},
 \qquad k\ge1.
-}\tag{6.20}
+\tag{6.20}
 $$
 
 For the adder, $a=1/2$:
 
 $$
-\boxed{\rho_\tau(k)\simeq-2^{-(k+1)},\qquad k\ge1.}\tag{6.21}
+\rho_\tau(k)\simeq-2^{-(k+1)},\qquad k\ge1.\tag{6.21}
 $$
 
 Thus
@@ -1171,20 +1171,20 @@ $$
 Its two-sided power spectral density is
 
 $$
-\boxed{
+
 S_y(\omega)=\sum_{k=-\infty}^{\infty}
 C_y(k)e^{-i\omega k},
 \qquad -\pi\le\omega\le\pi.
-}\tag{7.1}
+\tag{7.1}
 $$
 
 The inverse relation is
 
 $$
-\boxed{
+
 C_y(k)=\frac1{2\pi}\int_{-\pi}^{\pi}
 S_y(\omega)e^{i\omega k}\,d\omega.
-}\tag{7.2}
+\tag{7.2}
 $$
 
 These are the discrete-time Wiener–Khinchin relations. The frequency $\omega$ is angular frequency **per generation**. This distinction matters when comparing lineage-indexed observations with measurements sampled in physical time.
@@ -1199,17 +1199,17 @@ $$
 Thus, whenever the covariance sum converges,
 
 $$
-\boxed{S_\tau(0)=D_\tau.}\tag{7.3}
+S_\tau(0)=D_\tau.\tag{7.3}
 $$
 
 This gives equation (4.5) a spectral form:
 
 $$
-\boxed{
+
 \Lambda\simeq
 \frac{\ln2}{\mu}
 +\frac{(\ln2)^2}{2\mu^3}S_\tau(0).
-}\tag{7.4}
+\tag{7.4}
 $$
 
 **Why frequency appears in a population-growth lecture:** at quadratic order, long-time population growth is controlled by *zero-frequency generation-time noise*. The full power spectrum additionally tells us whether there are preferred dynamical timescales.
@@ -1242,8 +1242,8 @@ $$
 \begin{aligned}
 S_x(\omega)
 &=\sigma_\xi^2|H(\omega)|^2\\
-&=\boxed{\frac{\sigma_\xi^2}
-{1+a^2-2a\cos\omega}}.
+&=\frac{\sigma_\xi^2}
+{1+a^2-2a\cos\omega}.
 \end{aligned}
 \tag{7.6}
 $$
@@ -1280,7 +1280,7 @@ $$
 At zero frequency the numerator vanishes:
 
 $$
-\boxed{S_\tau(0)=0.}\tag{7.8}
+S_\tau(0)=0.\tag{7.8}
 $$
 
 The same fact appeared as the telescoping sum in (6.10) and the covariance cancellation in (6.22). These are three mathematical descriptions of **one physical mechanism**.
@@ -1292,10 +1292,10 @@ Notice that differencing may emphasize high-frequency fluctuations, even when th
 For the two-state Markov model of Section 5, $C_\tau(k)=\delta^2a^{|k|}$, where $a=2p-1$. Summing the Fourier series for $|a|<1$ gives
 
 $$
-\boxed{
+
 S_\tau(\omega)
 =\delta^2\frac{1-a^2}{1+a^2-2a\cos\omega}.
-}\tag{7.9}
+\tag{7.9}
 $$
 
 In particular,
@@ -1335,11 +1335,11 @@ If $-1<a<0$, the ACF alternates sign, $\rho_x(k)=a^{|k|}$, and the spectral maxi
 Introduce a delayed feedback term:
 
 $$
-\boxed{
+
 x_{n+1}=2r\cos\omega_0\,x_n-r^2x_{n-1}+\xi_n,
 \qquad 0<r<1,
 \quad0<\omega_0<\pi.
-}\tag{8.1}
+\tag{8.1}
 $$
 
 The deterministic recurrence has characteristic equation
@@ -1351,7 +1351,7 @@ $$
 Its roots are
 
 $$
-\boxed{z_\pm=re^{\pm i\omega_0}.}\tag{8.2}
+z_\pm=re^{\pm i\omega_0}.\tag{8.2}
 $$
 
 The modulus $r$ controls damping, while the argument $\omega_0$ fixes the characteristic angular frequency. The deterministic response therefore contains terms of the form
@@ -1388,11 +1388,11 @@ $$
 The power spectrum is
 
 $$
-\boxed{
+
 S_x(\omega)=\frac{\sigma_\xi^2}
 {\left|1-2r\cos\omega_0\,e^{-i\omega}
 +r^2e^{-2i\omega}\right|^2}.
-}\tag{8.6}
+\tag{8.6}
 $$
 
 For sufficiently weak damping and a frequency away from the boundaries, this exhibits a resonant peak near $\omega_0$. The exact peak location need not equal $\omega_0$ at finite damping.
@@ -1450,10 +1450,10 @@ Under size homeostasis and the stated moment conditions, the accumulated noise i
 **Finally:** in a weak-noise expansion, the effect of temporal correlations on population growth is summarized by
 
 $$
-\boxed{
+
 \Lambda\simeq\frac{\ln2}{\bar\tau}
 +\frac{(\ln2)^2}{2\bar\tau^3}\,S_\tau(0).
-}\tag{9.4}
+\tag{9.4}
 $$
 
 This expression is a controlled approximation, not an exact all-noise formula. It explains why the correlation and power-spectrum discussions belong in the same lecture as Euler–Lotka theory.
@@ -1477,7 +1477,7 @@ The original notes derive a KL-divergence identity for independent division time
 For independent lifetimes, Euler–Lotka normalizes the distribution
 
 $$
-\boxed{q(\tau)=2e^{-\Lambda\tau}p(\tau).}\tag{A.1}
+q(\tau)=2e^{-\Lambda\tau}p(\tau).\tag{A.1}
 $$
 
 Indeed,
@@ -1496,7 +1496,7 @@ $$
 D_{\mathrm{KL}}(p\|q)
 &=\int p(\tau)\ln\frac{p(\tau)}{q(\tau)}\,d\tau\\
 &=\int p(\tau)(\Lambda\tau-\ln2)\,d\tau\\
-&=\boxed{\Lambda\bar\tau-\ln2.}
+&=\Lambda\bar\tau-\ln2.
 \end{aligned}
 \tag{A.2}
 $$
@@ -1528,10 +1528,10 @@ $$
 If $\mathbb E[T_n]=n\bar\tau$ and $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$, dividing by $n$ gives
 
 $$
-\boxed{
+
 \lim_{n\to\infty}\frac1nD_{\mathrm{KL}}(p_n\|q_n)
 =\Lambda\bar\tau-\ln2.
-}\tag{A.5}
+\tag{A.5}
 $$
 
 The nonnegative KL divergence *rate* provides another interpretation of the generalized Jensen bound. For correlated processes, $q_n$ is an exponentially tilted trajectory ensemble; identifying it with a specific retrospective sampling protocol can involve boundary effects and additional assumptions.
@@ -1596,10 +1596,10 @@ $$
 The accumulated time becomes
 
 $$
-\boxed{
+
 T_n=\frac1\lambda\sum_{j=0}^{n-1}(-\ln r_j)
 +\frac{\ln v_n-\ln v_0}{\lambda}.
-}\tag{C.1}
+\tag{C.1}
 $$
 
 The first term is no longer deterministic when partition fractions fluctuate. Thus the statement $D_\tau=0$ does *not* follow from homeostasis alone under random asymmetry. Nevertheless, population-level mass conservation still gives $\Lambda=\lambda$ when every division conserves total size and the population mean snapshot size remains stationary. The appropriate lineage growth calculation must account for how daughter partition fractions and sampling are weighted.

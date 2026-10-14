@@ -38,5 +38,59 @@
     "modification": "none",
     "sha256": "81aa8bf720b7773d3a645ed477011777a4d357f1781c070576ce607d1e367d19",
     "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/taheri_araghi_2015_f1_highres.png",
+    "source_pdf": "https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f1",
+    "pdf_page": 2,
+    "dpi": 360,
+    "crop_points": [
+      88,
+      80,
+      430,
+      383
+    ],
+    "retrieved_on": "2026-10-14",
+    "modification": "Figure region extracted from the PDF at 360 dpi; panels unchanged.",
+    "sha256": "f9c75091de0bb3fb17509c2df32aea4bf9ea6dd6779f5a66b15489fcf96aa46c",
+    "rights": "Original publisher/author rights retained."
+  },
+  {
+    "file": "figures/taheri_araghi_2015_f2_highres.png",
+    "source_pdf": "https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f2",
+    "pdf_page": 3,
+    "dpi": 360,
+    "crop_points": [
+      56,
+      80,
+      490,
+      291
+    ],
+    "retrieved_on": "2026-10-14",
+    "modification": "Figure region extracted from the PDF at 360 dpi; panels unchanged.",
+    "sha256": "b23bc1302c3304863fa1902494abd6490e57b355cfd248777d6febc1fcd29b3f",
+    "rights": "Original publisher/author rights retained."
+  },
+  {
+    "file": "figures/taheri_araghi_2015_f3_highres.png",
+    "source_pdf": "https://jun.ucsd.edu/files/publications/Sizecontrol_CurrBiol.pdf",
+    "article_doi": "10.1016/j.cub.2014.12.009",
+    "figure": "f3",
+    "pdf_page": 4,
+    "dpi": 360,
+    "crop_points": [
+      88,
+      80,
+      432,
+      115
+    ],
+    "retrieved_on": "2026-10-14",
+    "modification": "Figure region extracted from the PDF at 360 dpi; panels unchanged.",
+    "sha256": "822978a601c3803596d23f01ccc52ac30482420de5408f98a867d1a945315915",
+    "rights": "Original publisher/author rights retained."
   }
 ]
