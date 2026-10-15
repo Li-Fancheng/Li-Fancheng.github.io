@@ -23,6 +23,7 @@
 
 文中，**size homeostasis** 强调细胞能够纠正 size 偏差；**stationarity** 则指统计分布不随代数改变。文中还区分两个增长率：**群体增长率** $\Lambda=\lim\limits_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞 size growth rate** $\lambda$，满足 $\dot v=\lambda v$。**chronological lineage** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条 lineage 继续追踪，选择时不考虑它后来会有多少后代。**retrospective lineage** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
 
+希望解决如下几个问题：
 
 1. **为什么单细胞的分裂时间存在显著波动，细胞大小的分布却能在世代之间保持稳定？**
 
