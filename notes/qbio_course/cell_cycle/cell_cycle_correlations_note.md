@@ -314,7 +314,7 @@ $$
 两次分裂之间，$\dot V_{\mathrm{tot}}=\lambda V_{\mathrm{tot}}$。分裂瞬间，两个子细胞的体积之和等于母细胞体积，因此总体积没有跳变。只要没有死亡、生物量损失，也不会在有限时间内发生无限次分裂（即分裂过程非爆炸），就有总体积为
 
 $$
-\boxed{V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.}\tag{2.8}
+V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.\tag{2.8}
 $$
 
 分裂增加了细胞数量，却只是重新分配已有体积。把某一时刻群体中所有细胞的 mean size 记作 $\overline v_{\mathrm{snap}}(t)=V_{\mathrm{tot}}(t)/N(t)$，则严格有
