@@ -331,7 +331,25 @@ $$
 \lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.9}
 $$
 
-这里需要检查的是：**在同一时刻，把所有存活细胞的体积取平均，这个平均值是否随时间持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后就趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零，因此群体数量与总体积具有相同的长期增长率。
+**在同一时刻，把所有存活细胞的体积取平均，这个平均值是否随时间持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零。
+
+为什么这意味着两个增长率相同？由 $V_{\mathrm{tot}}(t)=N(t)\overline v_{\mathrm{snap}}(t)$，取对数并除以 $t$，有
+
+$$
+\frac{\ln V_{\mathrm{tot}}(t)}t
+=\frac{\ln N(t)}t
++\frac{\ln\overline v_{\mathrm{snap}}(t)}t.
+$$
+
+总体积满足 $V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}$，所以左侧趋于 $\lambda$。如果右侧最后一项趋于零，就有
+
+$$
+\lim_{t\to\infty}\frac{\ln N(t)}t
+=\lim_{t\to\infty}\frac{\ln V_{\mathrm{tot}}(t)}t
+=\lambda.
+$$
+
+按群体增长率 $\Lambda$ 的定义，这就得到 $\Lambda=\lambda$：细胞数量与总体积具有相同的长期指数增长率。
 
 这个群体平均体积，需要与沿 chronological lineage 记录的 birth size 区分。前者统计某一时刻所有存活细胞的当前体积，留下更多后代的 lineage 在其中占比更大；后者沿一条 lineage 逐代记录出生时的 size。因此，即使沿 lineage 测得的 birth size 分布保持稳定，也还需要检查群体平均体积是否满足式（2.9）的条件。
 
