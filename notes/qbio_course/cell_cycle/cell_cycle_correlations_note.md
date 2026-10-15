@@ -139,7 +139,13 @@ $$
 M(t)=\mathbb P(\tau>t)+2\int_0^t p(\tau)M(t-\tau)\,d\tau.\tag{2.1}
 $$
 
-在指数增长的解中，分裂推迟 $\tau$，就意味着后代少了 $\tau$ 的繁殖时间，对应权重 $e^{-\Lambda\tau}$。将这一时间权重与每次分裂带来的两倍繁殖因子平衡，得到 **Euler–Lotka 方程（欧拉–洛特卡方程）**：
+为求出群体的长期增长率，考虑 $M(t)\sim Ae^{\Lambda t}$ 的渐近形式。此时，对固定的 $\tau$，有
+
+$$
+\frac{M(t-\tau)}{M(t)}\longrightarrow e^{-\Lambda\tau}.
+$$
+
+也就是说，首次分裂发生在 $\tau$ 的细胞，其后代比立即分裂的情形少了 $\tau$ 的繁殖时间，对应相对权重 $e^{-\Lambda\tau}$。将式（2.1）两边除以 $M(t)$，在长期极限下，尚未分裂的初始细胞的贡献 $\mathbb P(\tau>t)/M(t)$ 趋于零。对积分项取极限，便得到 **Euler–Lotka 方程（欧拉–洛特卡方程）**；该渐近形式及取极限的依据见[附录 A](#appendix-a)：
 
 $$
 \boxed{2\mathbb E_p[e^{-\Lambda\tau}]=1.}\tag{2.2}
