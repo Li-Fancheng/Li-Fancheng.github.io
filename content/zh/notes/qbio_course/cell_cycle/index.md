@@ -1,8 +1,8 @@
 ---
 title: "从单细胞分裂差异到群体增长"
 subtitle: "size inheritance、细胞周期调控与 lineage 相关性"
-date: 2026-10-14
-summary: "从细胞大小稳态与分裂间隔的实验现象出发，比较独立分裂模型与 size inheritance，推导 lineage 相关性、时间噪声抵消及群体增长的关系，并整理适用条件与技术附录。"
+date: 2026-10-15
+summary: "从细胞大小稳态与分裂间隔的实验现象出发，比较独立分裂模型与 size inheritance，推导 lineage 相关性、时间噪声抵消及群体增长的关系。"
 translationKey: cell-cycle-correlations
 layout: cell-cycle
 math: true

@@ -19,9 +19,9 @@
 
 最直接的估计是把沿 lineage 测得的平均分裂间隔时间当作群体倍增时间。但群体中各条 lineage 的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均分裂间隔时间；相关实验结果见正文第 2.2 节的[Fig. 4](#experimental-doubling-time-comparison)。这一观测说明，单细胞的平均分裂间隔不一定等于群体倍增时间，要联系这两个量，需要考虑不同 lineage 对群体增长的贡献。
 
-另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的时候就分裂。在后一种情况下，子细胞的 birth size 也会较小。如果细胞分裂的分布和 size 相关，那么 birth size 就会影响它下一次分裂所需的时间：较小的子细胞需要更长时间才能满足这些分裂条件。这样，母细胞提前分裂带来的时间领先，可能被子细胞较长的分裂间隔部分抵消。
+另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的时候就分裂。在后一种情况下，子细胞的 birth size 也会较小。如果细胞的分裂条件和 size 相关，那么 birth size 就会影响它下一次分裂所需的时间：较小的子细胞需要更长时间才能满足这些分裂条件。这样，母细胞提前分裂带来的时间领先，可能被子细胞较长的分裂间隔部分抵消。
 
-文中，**size homeostasis** 强调细胞能够纠正 size 偏差；**stationarity** 则指统计分布不随分裂间隔改变。以及两个增长率：**群体增长率** $\Lambda=\lim\limits_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞的 size growth rate** $\lambda$，满足 $\dot v=\lambda v$。**chronological lineage** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条 lineage 继续追踪，选择时不考虑它后来会有多少后代。**retrospective lineage** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
+文中，**size homeostasis** 强调细胞能够纠正 size 偏差；**stationarity** 则指统计分布不随代数改变。文中还区分两个增长率：**群体增长率** $\Lambda=\lim\limits_{t\to\infty}t^{-1}\ln N(t)$（假定此极限存在），以及所有细胞共有的**单细胞 size growth rate** $\lambda$，满足 $\dot v=\lambda v$。**chronological lineage** 指每次分裂时以 $1/2$ 的概率选择一个子细胞，沿着这条 lineage 继续追踪，选择时不考虑它后来会有多少后代。**retrospective lineage** 则是在较晚时刻的群体中抽取一个细胞，再向前追溯其祖先。两种抽样方式通常会得到不同的统计结果。
 
 ---
 
@@ -52,7 +52,7 @@ $$
 
 <div id="12-the-timer-becomes-a-random-walk-in-log-size"></div>
 
-### 1.2 i.i.d.分裂时间模型 {#12-a-timer-is-a-random-walk-in-log-size}
+### 1.2 i.i.d. 分裂时间模型 {#12-a-timer-is-a-random-walk-in-log-size}
 
 考虑与 size 无关的定时分裂模型（timer），假设每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
 
@@ -131,7 +131,7 @@ $$
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
-### 2.1 Euler–Lotka 方程{#21-eulerlotka-and-sampling-bias}
+### 2.1 Euler–Lotka 方程 {#21-eulerlotka-and-sampling-bias}
 
 考虑一个没有死亡的 binary branching model：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个分裂间隔时间，到时间后产生两个遵循相同规则的子细胞。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
 
@@ -331,7 +331,7 @@ $$
 \lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.9}
 $$
 
-**在同一时刻，把所有存活细胞的体积取平均，这个平均值是否随时间持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零。由 $V_{\mathrm{tot}}(t)=N(t)\overline v_{\mathrm{snap}}(t)$，取对数并除以 $t$，有
+**这里需要检查：在同一时刻，把所有存活细胞的体积取平均后，这个平均值是否以指数速度持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零。由 $V_{\mathrm{tot}}(t)=N(t)\overline v_{\mathrm{snap}}(t)$，取对数并除以 $t$，有
 
 $$
 \frac{\ln V_{\mathrm{tot}}(t)}t
@@ -619,7 +619,7 @@ $$
 =-\frac{s\ln2}{\lambda}.
 $$
 
-接下来把一条 lineage 的时间权重与整个 branching structure联系起来。每次分裂产生两个子细胞，所以第 $n$ 代共有 $2^n$ 条从初始细胞出发的祖先路径。记第 $u$ 条路径到达第 $n$ 代出生时的累计时间为 $T_{n,u}$，并将所有路径的时间权重之和的期望记为 $Z_n(s)$。各条路径按相同规则产生，因此利用期望的线性性质，有
+接下来把一条 lineage 的时间权重与整个 branching structure 联系起来。每次分裂产生两个子细胞，所以第 $n$ 代共有 $2^n$ 条从初始细胞出发的祖先路径。记第 $u$ 条路径到达第 $n$ 代出生时的累计时间为 $T_{n,u}$，并将所有路径的时间权重之和的期望记为 $Z_n(s)$。各条路径按相同规则产生，因此利用期望的线性性质，有
 
 $$
 Z_n(s)\equiv\mathbb E\!\left[
@@ -834,14 +834,14 @@ size control 进一步限制了哪些时间历史能够出现。在本文的生�
 
 ### 5.3 从分裂时序延伸到生长能力的波动
 
-正文固定 $\lambda$，考察的是生物量积累规律给定时，分裂调控如何重新安排时间。下一步的生物问题是：**如果细胞之间的生物量积累速度本身不同，而且这种差异能够传给子代，群体增长会如何改变？** 当生长率随分裂间隔变化时，分裂间隔时间与 log size 变化之间不再有统一的比例系数，累计时间也不能按本文的方式逐项相消。生长率差异及其代际相关性由此进入增长问题，超出了固定 $\lambda$ 模型的结论。[Lin 和 Amir（2020）](https://doi.org/10.1103/PhysRevE.101.012401)讨论了这类效应；生长率波动与随机不对称分配如何改变本文的关系，见[附录 G](#appendix-g)。
+正文固定 $\lambda$，考察的是生物量积累规律给定时，分裂调控如何重新安排时间。下一步的生物问题是：**如果细胞之间的生物量积累速度本身不同，而且这种差异能够传给子代，群体增长会如何改变？** 当生长率在不同代之间变化时，分裂间隔时间与 log size 变化之间不再有统一的比例系数，累计时间也不能按本文的方式逐项相消。生长率差异及其代际相关性由此进入增长问题，超出了固定 $\lambda$ 模型的结论。[Lin 和 Amir（2020）](https://doi.org/10.1103/PhysRevE.101.012401)讨论了这类效应；生长率波动与随机不对称分配如何改变本文的关系，见[附录 G](#appendix-g)。
 
 
 ---
 
 <div id="optional-technical-appendices"></div>
 
-## 技术附录 {#technical-appendices}
+## 技术 {#technical-appendices}
 
 附录整理完整推导、可解模型和结论的适用条件。公式编号使用附录字母，图号接续正文。
 
@@ -907,7 +907,7 @@ $$
 =\mathbb E_q[\tau]>0,
 $$
 
-因此这是一个简单极点。将第 2.1 节的变换在该极点附近展开，得到
+因此这是一个简单极点。将附录 A.1 的拉普拉斯变换在该极点附近展开，得到
 
 $$
 \widehat M(s)=\frac{A}{s-\Lambda}+O(1),
@@ -1476,7 +1476,7 @@ $$
 \qquad
 \tau_\ell=5\ \mathrm h,
 \qquad
-\mu=C.5\ \mathrm h.
+\mu=3.5\ \mathrm h.
 $$
 
 求解式（D.8）与（D.7），得到
