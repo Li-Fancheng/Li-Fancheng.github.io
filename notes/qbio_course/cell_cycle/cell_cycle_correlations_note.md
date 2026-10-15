@@ -371,7 +371,7 @@ $$
 
 但若群体平均体积也满足式（2.9）的条件，体积守恒又要求 $\Lambda=\lambda$。两种预测之所以不同，是因为我们额外加入了“各代分裂间隔独立”的假设。第 1 节已经表明：在固定 $\lambda$ 和对称分裂下，具有独立分裂时间波动的 timer 会使 log size 发生 random walk，无法同时维持稳定的 size distribution。
 
-那么，size control 如何改变各代分裂间隔之间的关系？在 birth size 相同、$\lambda$ 固定的条件下，母细胞提前分裂会使子细胞的 birth size 更小。如果子细胞需要增加一定的 size 后才分裂，较小的 birth size 就会使它需要更长的生长时间。于是，母细胞较短的分裂间隔可能由子细胞较长的分裂间隔补偿。**size inheritance 与分裂规则由此把不同代的分裂间隔联系起来，产生代际 correlation（相关性）。**
+那么，size control 如何改变各代分裂间隔之间的关系？在 birth size 相同、$\lambda$ 固定的条件下，母细胞提前分裂会使子细胞的 birth size 更小。如果子细胞需要增加一定的 size 后才分裂，较小的 birth size 就会使它需要更长的生长时间。于是，母细胞较短的分裂间隔可能由子细胞较长的分裂间隔补偿。**size inheritance 与分裂规则由此把不同代的分裂间隔联系起来，产生代际 correlation。**
 
 这也说明，只知道分裂间隔的均值和分布还不够：还需要知道一次较短的分裂间隔之后，更可能接着较短还是较长的分裂间隔。下一节用 adder 模型计算这种 correlation 如何产生，以及它如何改变多代累计时间的波动。
 
@@ -400,20 +400,85 @@ $$
 
 *Fig. 5. Adder 模型的实验依据。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 2。在各培养条件下，平均 added size 近似不依赖 birth size；重新缩放后，不同 birth size 对应的条件分布近似重合。A–C 图分别涉及大肠杆菌（*E. coli*）、枯草芽孢杆菌（*B. subtilis*）和 cell size 相关突变株。
 
-对式（3.1）取期望，得到
+由式（3.1）的 $v_{n+1}=(v_n+\Delta+\eta_n)/2$，利用期望的线性性质，并代入 $\mathbb E[\eta_n]=0$，得到
 
 $$
-\mathbb E[v_n]-\Delta=2^{-n}(\mathbb E[v_0]-\Delta).\tag{3.2}
+\begin{aligned}
+\mathbb E[v_{n+1}]
+&=\frac12\mathbb E[v_n+\Delta+\eta_n]\\
+&=\frac12\bigl(\mathbb E[v_n]+\Delta+\mathbb E[\eta_n]\bigr)\\
+&=\frac12\bigl(\mathbb E[v_n]+\Delta\bigr).
+\end{aligned}
 $$
 
-因此，稳态均值为 $\Delta$，mean size 的偏差每代减半。令 $x_n=v_n-\Delta$，映射变为 $x_{n+1}=x_n/2+\eta_n/2$。在平稳状态下，新加入的噪声与已有 size 独立，故 $\sigma_x^2=\sigma_x^2/4+\sigma_\eta^2/4$，从而
+两边减去 $\Delta$，就得到平均 birth size 相对 $\Delta$ 的偏差满足
+
+$$
+\mathbb E[v_{n+1}]-\Delta
+=\frac12\bigl(\mathbb E[v_n]-\Delta\bigr).
+$$
+
+因此，每经过一代，均值与 $\Delta$ 的差就缩小为原来的一半。从第 $0$ 代开始迭代 $n$ 次，有
+
+$$
+\mathbb E[v_n]-\Delta
+=\frac12\bigl(\mathbb E[v_{n-1}]-\Delta\bigr)
+=\cdots
+=2^{-n}(\mathbb E[v_0]-\Delta).\tag{3.2}
+$$
+
+因此，稳态均值为 $\Delta$，mean size 的偏差每代减半。接下来计算稳态分布的方差。令 $x_n=v_n-\Delta$，式（3.1）变为
+
+$$
+x_{n+1}=\frac12x_n+\frac12\eta_n.
+$$
+
+新抽取的 $\eta_n$ 与已有偏差 $x_n$ 独立，所以交叉协方差为零：
+
+$$
+\begin{aligned}
+\operatorname{Var}(x_{n+1})
+&=\frac14\operatorname{Var}(x_n)
++\frac14\operatorname{Var}(\eta_n)
++\frac12\operatorname{Cov}(x_n,\eta_n)\\
+&=\frac14\operatorname{Var}(x_n)+\frac14\sigma_\eta^2.
+\end{aligned}
+$$
+
+在平稳状态下，相邻两代方差相同，记为 $\sigma_x^2$。于是
+
+$$
+\sigma_x^2=\frac14\sigma_x^2+\frac14\sigma_\eta^2
+\quad\Rightarrow\quad
+\sigma_x^2=\frac{\sigma_\eta^2}{3}.
+$$
+
+再计算不同代之间的自相关。将偏差映射连续迭代 $k$ 次，得到
+
+$$
+x_{n+k}=2^{-k}x_n
++\sum_{j=0}^{k-1}2^{-(k-j)}\eta_{n+j}.
+$$
+
+求和中的后续噪声都与 $x_n$ 独立。因此，在平稳状态下，
+
+$$
+\begin{aligned}
+\operatorname{Cov}(x_n,x_{n+k})
+&=2^{-k}\operatorname{Var}(x_n)
++\sum_{j=0}^{k-1}2^{-(k-j)}\operatorname{Cov}(x_n,\eta_{n+j})\\
+&=2^{-k}\sigma_x^2.
+\end{aligned}
+$$
+
+当噪声方差非零时，两代的标准差都为 $\sigma_x$，将协方差除以 $\sigma_x^2$ 就得到自相关系数。由于减去常数 $\Delta$ 不改变方差和相关系数，最终有
 
 $$
 \operatorname{Var}(v)=\frac{\sigma_\eta^2}{3},\qquad
-\rho_v(k)=2^{-k},\quad k\ge0.\tag{3.3}
+\rho_v(k)\equiv\operatorname{Corr}(v_n,v_{n+k})=2^{-k},\quad k\ge0.\tag{3.3}
 $$
 
-自相关可通过迭代上述映射求出：后续加入的随机扰动与 $x_n$ 的协方差为零，因此 $\operatorname{Cov}(x_n,x_{n+k})=2^{-k}\sigma_x^2$。噪声决定分布有多宽，反馈决定 size memory 消退得多快。[附录 E](#appendix-e)给出完整计算及实验中的恢复过程。
+例如，母细胞与子细胞的 birth size 相关系数为 $1/2$，相隔两代时为 $1/4$。这里噪声的强度决定分布有多宽，而偏差每代减半的反馈决定 size memory 消退得多快。恢复过程的示意和实验比较见[附录 E](#appendix-e)。
 
 <div id="64-connecting-the-adder-to-generation-times"></div>
 
@@ -494,19 +559,56 @@ $$
 
 ### 3.5 size 呈正相关，分裂间隔时间却呈负相关 {#35-positive-size-memory-negative-timing-memory}
 
-当相对 size 波动很小时，$\ln(\Delta+x_n)\simeq\ln\Delta+x_n/\Delta$，因此
+由第 3.1 节可知，birth size 的偏差具有正协方差 $C_x(k)=\sigma_x^2 2^{-|k|}$。分裂间隔却取决于相邻两代 size 的差值。当相对 size 波动很小时，
+
+$$
+\ln(\Delta+x_n)\simeq\ln\Delta+\frac{x_n}{\Delta}.
+$$
+
+代入式（3.4），得到
 
 $$
 \delta\tau_n\equiv\tau_n-\frac{\ln2}{\lambda}
-\simeq\frac{x_{n+1}-x_n}{\lambda\Delta},\qquad
-\rho_\tau(k)\simeq-2^{-(k+1)},\quad k\ge1.\tag{3.8}
+\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
 $$
+
+因此，要计算分裂间隔的自相关，需要先计算 size 差值的协方差。在零滞后处，
+
+$$
+\begin{aligned}
+C_\tau(0)
+&\simeq\frac{\operatorname{Var}(x_{n+1}-x_n)}{(\lambda\Delta)^2}\\
+&=\frac{2C_x(0)-2C_x(1)}{(\lambda\Delta)^2}
+=\frac{\sigma_x^2}{(\lambda\Delta)^2}.
+\end{aligned}
+$$
+
+对于 $k\ge1$，将两个差值的协方差展开为四项：
+
+$$
+\begin{aligned}
+C_\tau(k)
+&\simeq\frac{\operatorname{Cov}(x_{n+1}-x_n,\,x_{n+k+1}-x_{n+k})}{(\lambda\Delta)^2}\\
+&=\frac{C_x(k)-C_x(k-1)-C_x(k+1)+C_x(k)}{(\lambda\Delta)^2}\\
+&=\frac{\sigma_x^2\bigl[2\cdot2^{-k}-2^{-(k-1)}-2^{-(k+1)}\bigr]}{(\lambda\Delta)^2}\\
+&=-\frac{\sigma_x^2\,2^{-(k+1)}}{(\lambda\Delta)^2}.
+\end{aligned}
+$$
+
+再除以单代方差 $C_\tau(0)$，就得到
+
+$$
+\boxed{\rho_\tau(k)=\frac{C_\tau(k)}{C_\tau(0)}
+\simeq-2^{-(k+1)},\qquad k\ge1.}\tag{3.8}
+$$
+
+例如，相邻两代的分裂间隔相关系数约为 $-1/4$，相隔两代时约为 $-1/8$。
 
 在线性化的 adder 中，birth size 保持正相关，分裂间隔时间却呈负相关。某一代耗时较长，通常会产生较大的子细胞；这个子细胞要再增加同样的 size，就只需要较短时间。这个解释针对的是上述模型。分裂间隔时间的负自相关公式是近似结果，而逐项相消关系是精确的。
 
 ![size 的正相关与分裂间隔时间的负相关，使累计时间的方差保持有界。](figures/04_noise_cancellation.svg)
 
-*Fig. 7. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的 birth size 相关性与式（3.8）中线性化的分裂间隔时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。完整协方差计算见附录 E。
+*Fig. 7. 每次分裂有噪声，长期累计时间噪声却可以为零。* A 图比较 adder 精确的 birth size 相关性与式（3.8）中线性化的分裂间隔时间相关性。在单代时间方差相同的条件下，B 图显示：独立时间模型满足 $\operatorname{Var}(T_n)/C_\tau(0)=n$，线性化的平稳 adder 则满足 $2(1-2^{-n})$。一般反馈系数下的协方差计算与抵消验证见[附录 E](#appendix-e)。
 
 ---
 
@@ -1276,7 +1378,7 @@ $$
 > **时间分布与相关性：** 单代直方图不足以预测群体增殖率。同样的随机变量，沿 lineage 以不同方式排列，就能产生不同的群体增长率。
 
 
-### 附录 E. Adder 的方差、size memory 与协方差抵消 {#appendix-e}
+### 附录 E. Size 恢复实验与一般线性反馈的协方差抵消 {#appendix-e}
 
 对于第 3 节中 added size 独立同分布的模型，以 $\Delta$ 为中心定义 $v_n$ 的偏差，写成
 
@@ -1289,64 +1391,12 @@ $$
 *Fig. 12. Adder 如何通过反馈恢复 size。* 这个无噪声示意中，birth size 为 $0.70\Delta$ 和 $1.30\Delta$ 的细胞都增加 $\Delta$，然后对称分裂。它们的子细胞 birth size 为 $0.85\Delta$ 和 $1.15\Delta$，相对均值的偏差减半。胶囊形状的长度只示意相对 size，不是显微图像。加入 added size 噪声后，就得到随机映射（E.1）。
 
 <div id="62-exact-stationary-variance"></div>
-
-#### E.1 精确的稳态方差 {#e1-exact-stationary-variance}
-
-在平稳状态下，$\xi_n$ 是新抽取的噪声，因此 $x_n$ 与 $\xi_n$ 独立。于是
-
-$$
-\operatorname{Var}(x_{n+1})
-=r^2\operatorname{Var}(x_n)+\operatorname{Var}(\xi_n).
-$$
-
-令 $\sigma_x^2=\operatorname{Var}(x_n)$，则
-
-$$
-\sigma_x^2=r^2\sigma_x^2+\sigma_\xi^2,
-$$
-
-即
-
-$$
-\sigma_x^2=\frac{\sigma_\xi^2}{1-r^2}.\tag{E.2}
-$$
-
-对于 $r=1/2$、$\sigma_\xi^2=\sigma_\eta^2/4$，
-
-$$
-\operatorname{Var}(v_n)=\frac{\sigma_\eta^2}{3}.\tag{E.3}
-$$
-
-与 timer 不同，adder 的稳态 size 方差有限。映射中的确定性部分使偏差每代减半。
-
+<div id="e1-exact-stationary-variance"></div>
 <div id="63-exact-birth-size-autocorrelation"></div>
 
-#### E.2 精确的 birth size 自相关 {#e2-exact-birth-size-autocorrelation}
+#### E.1 size 恢复与实验比较 {#e2-exact-birth-size-autocorrelation}
 
-将式（E.1）迭代 $k$ 次，得到
-
-$$
-x_{n+k}
-=r^k x_n+
-\sum_{j=0}^{k-1}r^{k-1-j}\xi_{n+j}.
-\tag{E.4}
-$$
-
-后续噪声与 $x_n$ 独立，因此
-
-$$
-\operatorname{Cov}(x_n,x_{n+k})
-=r^k\sigma_x^2.
-$$
-
-除以 $\sigma_x^2$，得到
-
-$$
-\rho_v(k)
-\equiv\operatorname{Corr}(v_n,v_{n+k})
-=r^k=2^{-k}.
-\tag{E.5}
-$$
+第 3.1 节已推导 adder 的稳态方差和 birth size 自相关。这里将其与恢复实验联系起来。模型预测
 
 例如，
 
@@ -1362,32 +1412,15 @@ $$
 
 ![Adder 的预测与实验比较：初始偏小或偏大的 birth size 如何逐渐恢复。](figures/taheri_araghi_2015_f3_highres.png)
 
-*Fig. 13. birth size 向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（E.5）彼此相关，但它们是不同的测量量。
+*Fig. 13. birth size 向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（3.3）彼此相关，但它们是不同的测量量。
 
-#### E.3 小波动极限下的分裂间隔时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
+#### E.2 一般线性反馈下的分裂间隔时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
 
-在 adder 中，相邻分裂间隔的 birth size 满足
-
-$$
-\rho_v(k)=2^{-k}>0.
-$$
-
-那么分裂时间之间是什么关系？
-
-当 size 波动较小，即 $|x_n|\ll\Delta$，将式（3.4）中的对数展开：
+第 3.5 节已计算 $r=1/2$ 的 adder。这里保留一般反馈系数 $0<r<1$，并沿用小波动近似
 
 $$
-\ln v_n=\ln(\Delta+x_n)
-\simeq\ln\Delta+\frac{x_n}{\Delta}.
-$$
-
-因此
-
-$$
-\delta\tau_n
-\equiv\tau_n-\frac{\ln2}{\lambda}
-\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
-\tag{E.6}
+\delta\tau_n\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
+\tag{E.2}
 $$
 
 对一般的平稳 AR(1) 过程，
@@ -1405,7 +1438,7 @@ C_{\delta\tau}(0)
 \mathbb E[(x_{n+1}-x_n)^2]\\
 &=\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}.
 \end{aligned}
-\tag{E.7}
+\tag{E.3}
 $$
 
 对于 $k\ge1$，
@@ -1418,43 +1451,25 @@ C_{\delta\tau}(k)
 &=\frac{2C_x(k)-C_x(k-1)-C_x(k+1)}{(\lambda\Delta)^2}\\
 &=-\frac{\sigma_x^2(1-r)^2 r^{k-1}}{(\lambda\Delta)^2}.
 \end{aligned}
-\tag{E.8}
+\tag{E.4}
 $$
 
-除以式（E.7），得到
+除以式（E.3），得到
 
 $$
 \rho_\tau(k)
 \simeq-\frac{1-r}{2}r^{k-1},
 \qquad k\ge1.
-\tag{E.9}
+\tag{E.5}
 $$
 
-对于 adder，$r=1/2$：
-
-$$
-\rho_\tau(k)\simeq-2^{-(k+1)},\qquad k\ge1.\tag{E.10}
-$$
-
-于是
-
-$$
-\rho_\tau(1)\simeq-\tfrac14,
-\qquad
-\rho_\tau(2)\simeq-\tfrac18,
-\qquad
-\rho_\tau(3)\simeq-\tfrac1{16}.
-$$
-
-**需要明确区分两种自相关：** 在这个模型中，birth size 在不同分裂间隔间呈正相关，而相邻*分裂间隔时间的波动*呈负相关。把这两个自相关函数混为一谈，就会看不清抵消机制。
-
-负相关有一个直观解释：某个细胞的分裂时间比通常更长时，往往会产生较大的子细胞，而这个子细胞下一次分裂通常需要更短时间。
+取 $r=1/2$ 即回到正文式（3.8）的负自相关结果。
 
 <div id="68-an-explicit-check-of-the-cancellation"></div>
 
-#### E.4 显式验证抵消关系 {#e4-an-explicit-check-of-the-cancellation}
+#### E.3 显式验证抵消关系 {#e4-an-explicit-check-of-the-cancellation}
 
-利用式（E.7）–（E.8），
+利用式（E.3）–（E.4），
 
 $$
 \begin{aligned}
@@ -1467,10 +1482,10 @@ D_\tau
 -\frac{2\sigma_x^2(1-r)}{(\lambda\Delta)^2}\\
 &=0.
 \end{aligned}
-\tag{E.11}
+\tag{E.6}
 $$
 
-所有非零滞后的负协方差之和，恰好抵消正的单代方差。式（3.5）进一步说明，在累计时间层面，这个抵消其实是精确的；即使式（E.6）所用的小噪声近似不再适用，逐项相消关系仍成立。
+所有非零滞后的负协方差之和，恰好抵消正的单代方差。式（3.5）进一步说明，在累计时间层面，这个抵消其实是精确的；即使式（E.2）所用的小噪声近似不再适用，逐项相消关系仍成立。
 
 > **size homeostasis 的动力学约束：** size homeostasis 不只是 size distribution 比较窄，它还约束整段 lineage 历史的动力学。在恒定指数生长和对称分裂下，这一约束消除了累计分裂间隔时间波动中随分裂间隔数成比例增长的部分。
 
@@ -1483,14 +1498,14 @@ $$
 
 <div id="f1-local-linear-feedback-laws"></div>
 
-沿用附录 E 的线性反馈形式，令 $x_n$ 为 birth size 相对稳态均值的偏差：
+沿用第 3.1 节及附录 E 的线性反馈形式，令 $x_n$ 为 birth size 相对稳态均值的偏差：
 
 $$
 x_{n+1}=r x_n+\xi_n.
 \tag{F.1}
 $$
 
-以下假设 $|r|<1$，噪声 $\xi_n$ 独立同分布、均值为零、方差为 $\sigma_\xi^2<\infty$，并在平稳状态下计算频谱。Adder 对应 $r=1/2$；稳态方差和自相关的推导见[附录 E](#appendix-e)。
+以下假设 $|r|<1$，噪声 $\xi_n$ 独立同分布、均值为零、方差为 $\sigma_\xi^2<\infty$，并在平稳状态下计算频谱。Adder 对应 $r=1/2$；adder 的稳态方差和自相关推导见[第 3.1 节](#31-the-stochastic-map-and-recovery-of-mean-size)。
 
 <div id="71-autocovariance-and-the-wienerkhinchin-relation"></div>
 
@@ -1591,7 +1606,7 @@ $$
 
 #### F.3 分裂间隔时间的频谱：差分滤掉零频噪声 {#f3-spectrum-of-generation-time-feedback-filters-out-zero-frequency}
 
-由式（E.6），
+由式（E.2），
 
 $$
 \delta\tau_n\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
@@ -1616,7 +1631,7 @@ $$
 S_\tau(0)=0.\tag{F.7}
 $$
 
-同一个结果，已经在式（3.5）的逐项相消和式（E.11）的协方差抵消中出现过。这是**同一个物理机制**的三种数学描述。
+同一个结果，已经在式（3.5）的逐项相消和式（E.6）的协方差抵消中出现过。这是**同一个物理机制**的三种数学描述。
 
 要注意，即使原本的 size 过程没有振荡模态，差分也可能使高频波动更突出。因此，奈奎斯特频率 $\omega=\pi$ 附近的谱值较大，本身不足以证明存在生物振荡器。这里的奈奎斯特频率对应离散采样能分辨的最高频率。
 
