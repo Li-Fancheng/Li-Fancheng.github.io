@@ -1,6 +1,7 @@
 ---
 title: Research Notes
 view: article-grid
+translationKey: notes
 summary: "Reading notes and worked derivations on statistical physics, biological systems, and machine learning."
 ---
 

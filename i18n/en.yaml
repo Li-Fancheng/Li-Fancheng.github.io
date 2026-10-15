@@ -282,7 +282,7 @@
 # Published with
 
 - id: published_with
-  translation: Published with {hugoblox} — the free, {repo_link}open source{/repo_link} website builder that empowers creators.
+  translation: Built with {hugoblox}.
 
 # Feedback widget
 

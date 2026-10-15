@@ -1,0 +1,80 @@
+{{/* Curated notes, styled like the theme's collection / article-grid view. */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $items := slice }}
+
+{{ range $index, $item := $block.content.items }}
+  {{ $language := $item.language | default $page.Site.Language.Lang }}
+  {{ $sites := where $page.Site.Sites "Language.Lang" $language }}
+  {{ if not $item.page }}
+    {{ errorf "note-highlights on %s: item %d requires a page path" $page.Path $index }}
+  {{ else if not $sites }}
+    {{ errorf "note-highlights on %s: language %q does not exist (item %d)" $page.Path $language $index }}
+  {{ else }}
+    {{ $targetSite := index $sites 0 }}
+    {{ with $targetSite.GetPage $item.page }}
+      {{ $items = $items | append (dict "content" $item "page" .) }}
+    {{ else }}
+      {{ errorf "note-highlights on %s: page %q does not exist in language %q" $page.Path $item.page $language }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $block.content.title }}
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $block.content.title | emojify | $page.RenderString }}
+  </div>
+  {{ with $block.content.text }}<p>{{ . | emojify | $page.RenderString }}</p>{{ end }}
+</div>
+{{ end }}
+
+<div class="flex flex-col items-center px-6">
+  <div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-screen-lg">
+    <div class="grid gap-10 md:grid-cols-2 lg:gap-10">
+      {{ range $items }}
+        {{ $item := .content }}
+        {{ $link := .page.RelPermalink }}
+        <div class="group cursor-pointer">
+          {{ with $item.label }}
+          <div class="flex gap-3">
+            <span class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">{{ . | emojify }}</span>
+          </div>
+          {{ end }}
+          <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white">
+            <a href="{{ $link }}"><span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">{{ $item.title | emojify }}</span></a>
+          </h2>
+          {{ with $item.text }}
+          <div class="grow">
+            <p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a href="{{ $link }}">{{ . | emojify }}</a></p>
+          </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ with $block.content.archive }}
+  {{ $archive := . }}
+  {{ $language := .language | default $page.Site.Language.Lang }}
+  {{ $sites := where $page.Site.Sites "Language.Lang" $language }}
+  {{ if not .page }}
+    {{ errorf "note-highlights on %s: archive requires a page path" $page.Path }}
+  {{ else if not $sites }}
+    {{ errorf "note-highlights on %s: archive language %q does not exist" $page.Path $language }}
+  {{ else }}
+    {{ $targetSite := index $sites 0 }}
+    {{ with $targetSite.GetPage .page }}
+    <div class="container mx-auto max-w-screen-lg px-8 xl:px-5 pb-5 lg:pb-8">
+      <div class="mt-10 flex justify-center">
+        <a class="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300" href="{{ .RelPermalink }}">
+          <span>{{ $archive.text | emojify }}</span>
+        </a>
+      </div>
+    </div>
+    {{ else }}
+      {{ errorf "note-highlights on %s: archive page %q does not exist in language %q" $page.Path $archive.page $language }}
+    {{ end }}
+  {{ end }}
+{{ end }}

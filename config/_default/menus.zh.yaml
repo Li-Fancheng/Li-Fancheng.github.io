@@ -1,29 +1,24 @@
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-  #     desired widget in your `content/home/` folder.
-  #   The weight parameter defines the order that the links will appear in.
+# 各栏目链接到对应的独立页面。
 
 main:
   - name: 首页
     url: /
     weight: 10
-  - name: Papers
-    url: /#papers
+  - name: 论文
+    url: /publication/
     weight: 11
-  - name: Talks
-    url: /#talks
+  - name: 学术报告
+    url: /event/
     weight: 12
-  - name: News
-    url: /#news
-    weight: 13
-  - name: Projects
-    url: projects/
+  - name: 项目
+    url: /projects/
     weight: 20
   - name: 笔记
-    url: notes/
+    url: /notes/
     weight: 30
-  - name: 教育经历
-    url: experience/
+  - name: 个人经历
+    url: /experience/
     weight: 40
-
-
+  - name: 联系我
+    url: /contact/
+    weight: 50

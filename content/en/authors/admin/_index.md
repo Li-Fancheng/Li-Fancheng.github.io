@@ -39,4 +39,6 @@ I am a PhD student at the Center for Interdisciplinary Studies, Westlake Univers
 
 I enjoy building theoretical models of real systems and exploring the connections between statistical physics, biological dynamics, and machine learning. My research experience includes computational condensed matter physics and RNA structure prediction; I am particularly interested in how physical insight and deep learning can inform one another.
 
+This website collects my research interests, course notes, and reading notes, including worked derivations, model assumptions, and open questions.
+
 Outside research, I enjoy calligraphy, painting, badminton, and basketball.

@@ -22,4 +22,7 @@ zh:
   contentDir: content/zh
   title: 李凡成（Fancheng Li）
   params:
-    description: Site description in Chinese...
+    marketing:
+      seo:
+        description: '李凡成，西湖大学交叉科学中心博士生。记录统计物理、生物系统与机器学习的研究兴趣、课程笔记和阅读思考。'
+        twitter: ''

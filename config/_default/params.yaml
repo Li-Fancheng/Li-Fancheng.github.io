@@ -14,8 +14,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    description: '李凡成，西湖大学交叉科学中心博士生。记录统计物理、生物系统与机器学习的研究兴趣、课程笔记和阅读思考。'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''

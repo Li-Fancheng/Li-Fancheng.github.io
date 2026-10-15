@@ -1,8 +1,8 @@
 ---
 title: ""
-date: 2026-10-14
 type: landing
-summary: "Fancheng Li — PhD student at Westlake University, exploring statistical physics, biological systems, and AI for science."
+translationKey: home
+summary: "Fancheng Li, PhD student at Westlake University. Research interests and study notes on statistical physics, biological systems, and machine learning."
 design:
   spacing: "4rem"
 sections:
@@ -14,13 +14,13 @@ sections:
         text: Download CV
         url: /uploads/resume.pdf
     design:
-      css_class: dark
+      css_class: 'dark personal-intro'
       background:
-        color: black
+        color: '#111827'
         image:
           filename: mybackground.jpg
           filters:
-            brightness: 0.7
+            brightness: 0.45
           size: cover
           position: center
           parallax: false
@@ -36,29 +36,74 @@ sections:
         - **AI for Science & Science for AI.** Using deep learning to study RNA structures and using ideas from physics to understand and improve neural networks.
 
         My earlier work at Wuhan University included computational condensed matter physics and RNA structure prediction. I hope to bring methods from different disciplines together to answer concrete scientific questions.
+
+        [More about my research and learning](/en/projects/)
     design:
       columns: '1'
   - block: collection
-    id: notes
+    id: papers
     content:
-      title: Research Notes
-      text: "Reading notes and worked derivations on physics, biology, and stochastic dynamics."
-      count: 6
+      title: Featured Publications
       filters:
         folders:
-          - notes
-      order: desc
+          - publication
+        featured_only: true
     design:
       view: article-grid
+      columns: 2
+  - block: collection
+    id: recent-publications
+    content:
+      title: Recent Publications
+      filters:
+        folders:
+          - publication
+        exclude_featured: false
+    design:
+      view: citation
+  - block: collection
+    id: talks
+    content:
+      title: Recent & Upcoming Talks
+      filters:
+        folders:
+          - event
+    design:
+      view: article-grid
+      columns: 1
+  - block: note-highlights
+    id: notes
+    content:
+      title: Study & Reading Notes
+      text: Course notes, reading notes, and worked derivations on physics, biological systems, and machine learning. Most detailed notes are in Chinese.
+      items:
+        - page: /notes/qbio_course
+          label: Course notes · Fall 2026
+          title: Introduction to Quantitative Biology
+          text: Notes on cell cycles, population growth, gene regulation, and chemotaxis. The detailed notes are in Chinese.
+        - page: /notes/qbio_course/cell_cycle
+          language: zh
+          label: Biological dynamics · 中文
+          title: Cell Cycles & Population Growth
+          text: Notes in Chinese on cell-size regulation, cell-cycle correlations, and population growth, with worked derivations.
+        - page: /notes
+          language: zh
+          label: Reading collection · 中文
+          title: More Notes in Chinese
+          text: Explore the larger collection on statistical physics, biological systems, and generative models.
+      archive:
+        page: /notes
+        text: Browse all notes →
+    design:
       columns: 2
   - block: markdown
     id: contact
     content:
       title: Get in Touch
       text: |-
-        I welcome conversations about statistical physics, biological modeling, and AI for science.
+        I welcome conversations about statistical physics, biological modeling, and AI for science, as well as corrections to these notes.
 
-        [Email me](mailto:lifancheng@westlake.edu.cn) · [GitHub](https://github.com/Li-Fancheng) · [Browse all notes](/en/notes/) · [中文主页](/)
+        [Email me](mailto:lifancheng@westlake.edu.cn) · [GitHub](https://github.com/Li-Fancheng) · [Background](/en/experience/)
     design:
       columns: '1'
 ---

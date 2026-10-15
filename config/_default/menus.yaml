@@ -5,9 +5,18 @@ main:
   - name: Research
     url: /en/#research
     weight: 20
+  - name: Papers
+    url: /en/publication/
+    weight: 21
+  - name: Talks
+    url: /en/event/
+    weight: 22
+  - name: Projects
+    url: /en/projects/
+    weight: 25
   - name: Notes
     url: /en/notes/
     weight: 30
   - name: Contact
-    url: /en/#contact
+    url: /en/contact/
     weight: 40

@@ -8,6 +8,7 @@ from fixed_field import make_fixed_field_figure
 from feedback_diagram import make_feedback_figure
 from collective_1d import make_collective_figures
 from collective_2d import make_2d_figure
+from teaching_diagrams import make_teaching_diagrams
 
 
 def main():
@@ -16,7 +17,8 @@ def main():
     make_feedback_figure()
     make_collective_figures()
     make_2d_figure()
-    print('Done. All 9 numbered figures are in figures/.')
+    make_teaching_diagrams()
+    print('Done. All 14 figures are in figures/; see README.md for article figure numbers.')
 
 
 if __name__ == '__main__':

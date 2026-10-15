@@ -1,4 +1,4 @@
-"""Figure 09 (optional extension): minimal Keller--Segel on a 2D torus.
+"""Asset 09 (article Fig. 13): minimal Keller--Segel on a 2D torus.
 
 A finite-volume update of cell transport uses conservative face fluxes
 and upwinding for chemotactic drift. The chemical field evolves via a
@@ -72,7 +72,7 @@ def make_2d_figure():
         ax.set(title=f't = {tm:g}', xlabel='x', ylabel='y', aspect='equal')
         cb = fig.colorbar(im, ax=ax, fraction=.046, pad=.03)
         cb.set_label(r'$\rho(x,y)$')
-    fig.suptitle('Optional 2D extension: transient density clusters',
+    fig.suptitle('Two-dimensional chemotaxis: early density aggregation',
                  fontsize=14, fontweight='semibold')
     finish(fig, '09_optional_2d_patterns', dpi=180)
 

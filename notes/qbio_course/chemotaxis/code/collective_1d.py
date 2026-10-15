@@ -105,7 +105,7 @@ def make_collective_figures():
     fig.tight_layout(h_pad=1.2)
     finish(fig, '07_collective_1d_snapshots')
 
-    # Figure 08: fast-chemical linear growth rate, an optional teacher add-on.
+    # Figure 08: fast-chemical linear growth rate (article Fig. 12).
     q = np.linspace(.00001, 2.4, 550)
     fig, ax = plt.subplots(figsize=(8.7, 4.3))
     p = PARAMS
@@ -119,7 +119,7 @@ def make_collective_figures():
     ax.axvline(q_min, color='gray', lw=1, ls=':',
                label=r'First periodic mode $2\pi/L$')
     ax.set(xlabel='Wave number q', ylabel=r'Approximate growth rate $\sigma(q)$',
-           title='Optional: when can a density fluctuation grow?', xlim=(0, 2.4))
+           title='Linear growth rates in the fast-chemical approximation', xlim=(0, 2.4))
     ax.legend(frameon=False, loc='lower left')
     fig.tight_layout()
     finish(fig, '08_optional_growth_rate')

@@ -2,7 +2,27 @@
 
 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-正文见 [趋化笔记](lecture_notes.md)，从一维随机游走推导扩散和漂移，再加入吸引物分泌与化学场反馈，建立 Keller–Segel 类型的最简趋化模型。图像为可复现的理论图和数值模拟结果。
+正文见[趋化笔记](lecture_notes.md)。正文分为五部分：无梯度对照、趋化通量、共享场反馈、聚集失稳，以及模型的生物学含义。技术附录 A 连接 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率；进阶专题讨论早期增长尺度与化学响应核。
+
+文中 14 张图片按阅读顺序统一编号为 Fig. 1–14，包含模型示意图、理论曲线和可复现模拟。图片文件名保留生成脚本中的标识，正文图号可按下表查找：
+
+| 正文图号 | 图片文件（位于 `figures/`） |
+|---|---|
+| Fig. 1 | `01_random_walk_trajectories.png` |
+| Fig. 2 | `A_walk_probability_bookkeeping.png` / `.svg` |
+| Fig. 3 | `B_diffusion_boundary_flux.png` / `.svg` |
+| Fig. 4 | `02_random_walk_to_diffusion.png` |
+| Fig. 5 | `03_biased_random_walk.png` |
+| Fig. 6 | `C_gradient_to_jump_bias.png` / `.svg` |
+| Fig. 7 | `04_chemotaxis_in_fixed_field.png` |
+| Fig. 8 | `05_field_mediated_feedback.png` / `.svg` |
+| Fig. 9 | `06_collective_1d_space_time.png` |
+| Fig. 10 | `07_collective_1d_snapshots.png` |
+| Fig. 11 | `D_cosine_mode_and_growth.png` / `.svg` |
+| Fig. 12 | `08_optional_growth_rate.png` |
+| Fig. 13 | `09_optional_2d_patterns.png` |
+| Fig. 14 | `E_signal_range_and_superposition.png` / `.svg` |
+
 
 ## 文件布局
 
@@ -21,12 +41,18 @@ chemotaxis/
 │   ├── 06_collective_1d_space_time.png
 │   ├── 07_collective_1d_snapshots.png
 │   ├── 08_optional_growth_rate.png
-│   └── 09_optional_2d_patterns.png
+│   ├── 09_optional_2d_patterns.png
+│   ├── A_walk_probability_bookkeeping.png / .svg
+│   ├── B_diffusion_boundary_flux.png / .svg
+│   ├── C_gradient_to_jump_bias.png / .svg
+│   ├── D_cosine_mode_and_growth.png / .svg
+│   └── E_signal_range_and_superposition.png / .svg
 └── code/
     ├── common.py
     ├── random_walk.py
     ├── fixed_field.py
     ├── feedback_diagram.py
+    ├── teaching_diagrams.py
     ├── collective_1d.py
     ├── collective_2d.py
     └── make_all_figures.py
@@ -53,11 +79,12 @@ python code/make_all_figures.py
 python code/random_walk.py
 python code/fixed_field.py
 python code/feedback_diagram.py
+python code/teaching_diagrams.py
 python code/collective_1d.py
 python code/collective_2d.py
 ```
 
-运行后图像会输出到 `figures/`。计算依赖 NumPy 与 Matplotlib，不需要 SciPy，也不需要网络连接。脚本随机种子固定，输出结果可复现。
+运行后图像会输出到 `figures/`。示意图使用英文标注，正文配中文图注。SVG 中的文字已转为路径，查看时不需要安装原字体。计算依赖 NumPy 与 Matplotlib，不需要 SciPy，也不需要网络连接。脚本随机种子固定，输出结果可复现。
 
 ## 参数比较
 

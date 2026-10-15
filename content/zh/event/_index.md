@@ -1,13 +1,5 @@
 ---
-title: Recent & Upcoming Talks
-cms_exclude: true
-#url: talk
-
-# View
+title: 学术报告
 view: card
-
-# Optional cover image (relative to `assets/media/` folder).
-image:
-  caption: ''
-  filename: ''
+translationKey: talks
 ---

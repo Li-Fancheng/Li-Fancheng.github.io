@@ -29,7 +29,21 @@
 
 ## 1. 实验起点：分裂间隔有波动，size 却保持稳定 {#1-cell-size-homeostasis-and-the-failure-of-a-timer}
 
-单细胞追踪不仅记录每次分裂的时间，也能记录 birth size、division size 以及两次分裂之间的生长轨迹。birth size 偏离稳态均值时，后续几代细胞的平均 birth size 会逐渐向稳态均值靠近。同时，birth size 较大的细胞往往具有较短的分裂间隔，较小的细胞则往往需要更长时间才分裂。[Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的实验为比较不同分裂规则提供了依据：不同的分裂规则决定了 birth size 如何影响分裂间隔。例如，timer 规定细胞经过固定时间后分裂，与 birth size 无关；sizer 则规定细胞达到固定的 division size 后分裂，因此在相同的指数生长率下，birth size 较小的细胞需要更长时间。要解释分裂时间的差异，就需要同时考虑 birth size 和分裂规则。
+单细胞追踪不仅记录每次分裂的时间，也能记录 birth size、division size 以及两次分裂之间的生长轨迹。要理解这些测量，可以先考虑三种可能的理想化分裂规则：
+
+- **Timer（定时分裂）：** 细胞出生后等待固定时间再分裂，分裂条件与 birth size 无关。
+- **Adder（定增量分裂）：** 细胞从出生起增加固定的 size 后分裂。
+- **Sizer（定 size 分裂）：** 细胞达到固定的 division size 后分裂。
+
+这三种规则分别把分裂条件归于“经过多久”“增加多少”和“长到多大”。它们是比较细胞分裂行为的理想化模型；实际的分子调控可能更复杂。这里先不计算各规则的定量预测，而是关注一个贯穿全文的问题：**出生时偏大或偏小，会怎样改变下一次分裂的时间，又会给子细胞留下怎样的 size？**
+
+birth size 偏离稳态均值时，后续几代细胞的平均 birth size 会逐渐向稳态均值靠近。同时，birth size 较大的细胞往往具有较短的分裂间隔，较小的细胞则往往需要更长时间才分裂。[Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的实验展示了如何用这些观测区分不同的分裂规则。
+
+![单细胞显微成像及 birth size 与分裂行为的关系，用于检验 timer 和 sizer 的预测。](figures/taheri_araghi_2015_f1_highres.png)
+
+*Fig. 1. 实验中的 size control。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 1。D 图显示，出生越大的细胞，分裂间隔时间越短，分裂时的 size 却越大。前一种趋势与 size 无关的 timer 不符，后一种趋势与固定阈值的 sizer 不符。A–C 图展示显微成像结果和培养条件。Adder 的实验检验将在第 3.1 节进一步介绍。
+
+接下来先写出细胞生长与对称分裂的共同关系，再检验最简单的 timer 为什么无法纠正 size 偏差，最后比较三种规则如何影响 size 的代际继承。
 
 <div id="11-exponential-growth-between-divisions"></div>
 
@@ -84,11 +98,11 @@ $$
 
 ![定时分裂下的 cell size 不断游走，而恢复性反馈能限制 size 波动。](figures/01_timer_and_homeostasis.svg)
 
-*Fig. 1. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
+*Fig. 2. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
 
-### 1.3 Timer、adder 与 sizer：三种分裂规则 {#13-timer-adder-and-sizer}
+### 1.3 Timer、adder 与 sizer：size 继承的定量比较 {#13-timer-adder-and-sizer}
 
-size feedback 可以用三种理想化规则描述。其中 adder 指“增加固定 size 后分裂”，sizer 指“达到固定 size 后分裂”：
+现在回到本节开头介绍的三种规则。在相同的指数生长率和对称分裂条件下，可以比较它们如何把母细胞的 birth size 偏差传给子细胞：
 
 | 规则 | 分裂条件 | 无噪声时，平衡附近的 birth size 如何变化 |
 |---|---|---|
@@ -97,10 +111,6 @@ size feedback 可以用三种理想化规则描述。其中 adder 指“增加�
 | 定 size 分裂（sizer） | 达到固定 division size $v_*$ | $v_{n+1}=v_*/2$：不再继承 size 偏差，斜率为 $0$ |
 
 上表中的斜率表示，母细胞的 birth size 偏差有多少会传给子细胞：平衡的 timer 完整保留偏差，adder 保留一半，sizer 则消除偏差。因此，这些斜率描述了 size memory 在代际间的保留程度。
-
-![单细胞显微成像及 birth size 与分裂行为的关系，用于检验 timer 和 sizer 的预测。](figures/taheri_araghi_2015_f1_highres.png)
-
-*Fig. 2. 实验中的 size control。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 1。D 图显示，出生越大的细胞，分裂间隔时间越短，分裂时的 size 却越大。这两种趋势分别与 size 无关的 timer 和固定阈值的 sizer 不符。A–C 图展示显微成像结果和培养条件。
 
 这些实验与模型说明，分裂间隔时间不能随意脱离 birth size 来指定。接下来暂时把 size feedback 放在一边，用独立分裂时间模型建立一个预测基准：为什么从单细胞平均时间出发，会低估这个模型中的群体繁殖速度？
 
@@ -1998,7 +2008,7 @@ AR(1) 频谱也可以直接从自协方差函数求出。结合式（F.6），�
 
 ### 参考文献 {#references}
 
-- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原文 Fig. 1–3 对应本笔记的 Fig. 2、5、13。
+- Taheri-Araghi, S., et al. (2015). *Cell-size control and homeostasis in bacteria*. **Current Biology, 25**(3), 385–391. [doi:10.1016/j.cub.2014.12.009](https://doi.org/10.1016/j.cub.2014.12.009)。原文 Fig. 1–3 对应本笔记的 Fig. 1、5、13。
 - Ho 等，*Annual Review of Biophysics*（2018）：cell size 调控、lineage 相关性与波动。
 - Godin 等，*Nature Methods*（2010）：单细胞生长测量。
 - Hashimoto, M., et al. (2016). *Noise-driven growth rate gain in clonal cellular populations*. **PNAS, 113**(12), 3251–3256. [doi:10.1073/pnas.1519412113](https://doi.org/10.1073/pnas.1519412113)。原文 Fig. 3 对应本笔记的 Fig. 4。
