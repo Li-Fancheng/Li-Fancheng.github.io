@@ -536,7 +536,7 @@ $$
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
-### 3.3 从单代快慢到多代累计时间：逐项相消 {#33-telescoping-the-theoretical-core}
+### 3.3 从单代快慢到多代累计时间 {#33-telescoping-the-theoretical-core}
 
 把式（3.4）从 $0$ 到 $n-1$ 相加，得到
 
