@@ -3,7 +3,7 @@
 
 > 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-> **核心问题：** 单细胞的分裂时间波动能否转化为群体长期增长的差异？
+> **核心问题：** 单细胞的分裂波动能否转化为群体长期增长的差异？
 
 <!-- Legacy heading anchors below preserve links to relocated sections. -->
 
@@ -289,7 +289,7 @@ $$
 +\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.7}
 $$
 
-弱噪声展开的推导见[附录 B](#appendix-b)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见 Fig. 4。要注意，式（2.4）的比较基准是平均分裂间隔时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞的 size growth rate 为 $\lambda$ 的群体**。
+弱噪声展开的推导见[附录 B](#appendix-b)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见 Fig. 4。式（2.4）比较的是平均分裂间隔相同的两个群体：一个具有独立的分裂时间波动，另一个具有固定的分裂间隔。这个比较尚未考虑 cell size 的增长与继承，因此不能直接说明，在固定 size growth rate 的条件下，分裂时间波动是否仍能提高群体增长率。
 
 <div id="a2-experimental-doubling-time-comparison"></div>
 
