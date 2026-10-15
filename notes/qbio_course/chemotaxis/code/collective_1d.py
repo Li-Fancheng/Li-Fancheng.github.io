@@ -105,7 +105,7 @@ def make_collective_figures():
     fig.tight_layout(h_pad=1.2)
     finish(fig, '07_collective_1d_snapshots')
 
-    # Figure 08: fast-chemical linear growth rate (article Fig. 12).
+    # Figure 08: fast-chemical linear growth rate (article Fig. 13).
     q = np.linspace(.00001, 2.4, 550)
     fig, ax = plt.subplots(figsize=(8.7, 4.3))
     p = PARAMS

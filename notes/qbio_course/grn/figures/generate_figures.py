@@ -37,7 +37,9 @@ plt.rcParams.update({
 
 
 def save(fig, name):
-    fig.savefig(OUT / f"{name}.svg", bbox_inches="tight", metadata={"Date": None})
+    svg = OUT / f"{name}.svg"
+    fig.savefig(svg, bbox_inches="tight", metadata={"Date": None})
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
     fig.savefig(OUT / f"{name}.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
 
@@ -100,32 +102,39 @@ def regulation():
     save(fig, "01_regulation_and_hill")
 
 
+def activation_parameters():
+    basal, alpha = .02, 2.5
+    roots = np.sort(np.roots([1, -(basal+alpha), 1, -basal])).real
+    return basal, alpha, roots
+
+
 def self_activation():
-    fig, axes = plt.subplots(1, 2, figsize=(11.8, 4.4), layout="constrained")
-    ax, time = axes
+    basal, alpha, (low, threshold, high) = activation_parameters()
+    drift = lambda x: basal+alpha*x*x/(1+x*x)-x
+    fig, (ax, time) = plt.subplots(1, 2, figsize=(11.8, 4.4), layout="constrained")
     title(ax, "A  |  Production meets removal")
     x = np.linspace(0, 2.75, 600)
-    ax.plot(x, 2.5*x*x/(1+x*x), color=BLUE, label=r"Production $F(x)$")
+    ax.plot(x, basal+alpha*x*x/(1+x*x), color=BLUE, label=r"Production $F(x)$")
     ax.plot(x, x, color=MUTED, label="Removal $x$")
-    for root, stable in [(0, True), (.5, False), (2, True)]:
+    for root, stable in [(low, True), (threshold, False), (high, True)]:
         fixed(ax, root, root, stable)
     ax.set(xlim=(0, 2.75), ylim=(-.43, 2.8), xlabel="Expression $x$", ylabel="Rate")
     ax.legend(loc="upper left")
-    ax.text(.54, .25, "Threshold", fontsize=11)
-    # Phase line: right of the high state the drift points back to it.
+    ax.text(.54, .25, r"Threshold $x_U$", fontsize=11)
+    ax.text(2.7, .14, r"$b=0.02,\ \alpha=2.5,\ n=2$", ha="right", fontsize=11)
     ax.plot([0, 2.65], [-.25, -.25], color=MUTED, lw=.7)
-    for l, r, right in [(0, .5, False), (.5, 2, True), (2, 2.65, False)]:
-        a, b = l+.08, r-.08
+    for l, r, right in [(low, threshold, False), (threshold, high, True), (high, 2.65, False)]:
+        a, b = l+.05, r-.05
         arrow(ax, (a if right else b, -.25), (b if right else a, -.25))
     title(time, "B  |  Same parameters, different histories")
     ts = np.linspace(0, 16, 400)
-    for x0 in [.08, .3, .48, .52, .9, 2.6]:
-        sol = solve_ivp(lambda t, v: 2.5*v*v/(1+v*v)-v, (0, 16), [x0],
+    for x0 in [.08, .3, .44, .49, .9, 2.6]:
+        sol = solve_ivp(lambda t, v: drift(v), (0, 16), [x0],
                         t_eval=ts, rtol=1e-8, atol=1e-10)
-        time.plot(ts, sol.y[0], color=BLUE if x0 < .5 else ORANGE, alpha=.85)
-    time.axhline(.5, color=MUTED, ls="--", lw=1.3, label="Unstable threshold")
-    time.text(15.5, 2.12, "High attractor", ha="right", color=ORANGE)
-    time.text(15.5, .12, "Low attractor", ha="right", color=BLUE)
+        time.plot(ts, sol.y[0], color=BLUE if x0 < threshold else ORANGE, alpha=.85)
+    time.axhline(threshold, color=MUTED, ls="--", lw=1.3, label="Unstable threshold")
+    time.text(15.5, 2.15, "High attractor", ha="right", color=ORANGE)
+    time.text(15.5, .13, "Low attractor", ha="right", color=BLUE)
     time.set(xlim=(0, 16), ylim=(-.08, 2.75), xlabel="Time $t$", ylabel="$x(t)$")
     time.legend(loc="upper right")
     time.grid(alpha=.12)
@@ -134,28 +143,37 @@ def self_activation():
 
 def hysteresis():
     fig, (ax, phase) = plt.subplots(1, 2, figsize=(11.8, 4.6), layout="constrained")
-    title(ax, "A  |  Quasistatic hysteresis")
-    zc, hc = 1/np.sqrt(3), 2/(3*np.sqrt(3))
-    ax.axvspan(-hc, hc, color=GREEN, alpha=.08)
-    for l, r, stable in [(-1.4, -zc, True), (-zc, zc, False), (zc, 1.4, True)]:
-        z = np.linspace(l, r, 400)
-        ax.plot(z**3-z, z, color=INK, ls="-" if stable else "--",
-                label="Stable" if l < -1 else "Unstable" if not stable else None)
-    for h, lo, hi, color in [(hc, -zc, 2*zc, ORANGE), (-hc, -2*zc, zc, BLUE)]:
-        ax.axvline(h, color=MUTED, ls=":", lw=1)
-        arrow(ax, (h, lo if color == ORANGE else hi),
-              (h, hi if color == ORANGE else lo), color)
-    arrow(ax, (-.15, -1.08), (.2, -.91), ORANGE)
-    arrow(ax, (.15, 1.08), (-.2, .91), BLUE)
-    ax.text(0, 0, "Two stable states", ha="center", rotation=-24, fontsize=11,
-            bbox={"facecolor": "white", "edgecolor": "none", "alpha": .8})
-    ax.set(xlim=(-.85, .85), ylim=(-1.4, 1.4), xlabel="Signal $h$", ylabel="Order parameter $z^*$")
+    title(ax, "A  |  Same self-activation model: hysteresis")
+    basal = .02
+    zc = 1/np.sqrt(3)
+    fold_b = lambda x: x*(1-x*x)/2
+    fold_a = lambda x: (1+x*x)**2/(2*x)
+    xup = brentq(lambda x: fold_b(x)-basal, 1e-10, zc)
+    xdown = brentq(lambda x: fold_b(x)-basal, zc, 1)
+    aup, adown = fold_a(xup), fold_a(xdown)
+    alpha_of = lambda x: (x-basal)*(1+x*x)/(x*x)
+    ax.axvspan(adown, aup, color=GREEN, alpha=.08)
+    for l, r, stable, label in [(basal+1e-8, xup, True, "Stable"),
+                                (xup, xdown, False, "Unstable"),
+                                (xdown, 15, True, None)]:
+        xs = np.geomspace(l, r, 700)
+        ax.plot(alpha_of(xs), xs, color=INK, ls="-" if stable else "--", label=label)
+    high_at_up = np.sort(np.roots([1, -(basal+aup), 1, -basal])).real[-1]
+    low_at_down = np.sort(np.roots([1, -(basal+adown), 1, -basal])).real[0]
+    for alpha, start, end, color in [(aup, xup, high_at_up, ORANGE),
+                                     (adown, xdown, low_at_down, BLUE)]:
+        ax.axvline(alpha, color=MUTED, ls=":", lw=1)
+        arrow(ax, (alpha, start), (alpha, end), color)
+    for xs, color in [(np.array([.024, .029]), ORANGE), (np.array([8., 5.]), BLUE)]:
+        arrow(ax, (alpha_of(xs[0]), xs[0]), (alpha_of(xs[1]), xs[1]), color)
+    ax.text(7, .25, "History-dependent state", ha="center", fontsize=11)
+    ax.set(xlim=(1.5, 14), ylim=(.017, 16), yscale="log",
+           xlabel=r"Activation strength $\alpha$", ylabel=r"Expression $x^*$ (log scale)")
+    ax.text(.70, .60, r"$b=0.02,\ n=2$", transform=ax.transAxes, ha="right", va="top")
     ax.legend(loc="upper left")
     title(phase, "B  |  Self-activation: parameter regions")
     bc = 1/(3*np.sqrt(3))
     bs = np.linspace(.0001, bc-1e-8, 700)
-    fold_b = lambda x: x*(1-x*x)/2
-    fold_a = lambda x: (1+x*x)**2/(2*x)
     xs_low = np.array([brentq(lambda x: fold_b(x)-b, 1e-10, zc) for b in bs])
     xs_high = np.array([brentq(lambda x: fold_b(x)-b, zc, 1) for b in bs])
     lower, upper = fold_a(xs_high), fold_a(xs_low)
@@ -344,47 +362,52 @@ def expression_noise():
 
 
 def landscape():
+    basal, alpha, (low, threshold, high) = activation_parameters()
+    drift = lambda x: basal+alpha*x*x/(1+x*x)-x
+    slope = lambda x: 2*alpha*x/(1+x*x)**2-1
+    potential = lambda x: x*x/2-basal*x-alpha*(x-np.arctan(x))
+    barrier = potential(threshold)-potential(high)
+    prefactor = 2*np.pi/np.sqrt(slope(threshold)*-slope(high))
     fig, axes = plt.subplots(1, 3, figsize=(13.5, 4.4), layout="constrained")
     ax = axes[0]
-    title(ax, "A  |  Wells, barrier and stationary density")
-    z = np.linspace(-1.65, 1.65, 700)
-    u = z**4/4-z*z/2
-    density = np.exp(-u/.1)
-    density /= np.trapezoid(density, z)
-    ax.plot(z, u, color=INK, label="$U(z)$")
-    ax.fill_between(z, -.38, -.38+.25*density, color=BLUE, alpha=.17)
-    ax.text(-1.57, -.34, r"Shaded: $\rho_*(z)$ (rescaled)", fontsize=9.5, color=BLUE)
-    fixed(ax, [-1, 1], [-.25, -.25])
-    fixed(ax, 0, 0, False)
-    ax.annotate("", xy=(-1, 0), xytext=(-1, -.25),
+    title(ax, "A  |  Same model, two escape barriers")
+    x = np.linspace(0, 3, 700)
+    ax.plot(x, potential(x), color=INK, label="$U(x)$")
+    for root, stable in [(low, True), (threshold, False), (high, True)]:
+        fixed(ax, root, potential(root), stable)
+    ax.axhline(potential(threshold), color=MUTED, ls=":", lw=1)
+    ax.annotate("", xy=(high, potential(threshold)), xytext=(high, potential(high)),
                 arrowprops={"arrowstyle": "<->", "color": ORANGE, "lw": 1.7})
-    ax.text(-.9, -.1, r"$\Delta U=1/4$", color=ORANGE, fontsize=11)
-    ax.set(xlim=(-1.65, 1.65), ylim=(-.4, .65), xlabel="Order parameter $z$", ylabel="Potential $U$")
-    ax.text(.5, .95, "$U=z^4/4-z^2/2$", transform=ax.transAxes, ha="center", va="top")
+    ax.text(1.88, -.12, r"$\Delta U_H\simeq0.297$", color=ORANGE, fontsize=11, ha="right")
+    ax.annotate(r"$\Delta U_L\simeq0.0247$", (threshold, potential(threshold)),
+                xytext=(.7, .14), fontsize=10,
+                arrowprops={"arrowstyle": "->", "color": MUTED})
+    ax.set(xlim=(-.08, 3), ylim=(-.34, .3), xlabel="Expression $x$", ylabel="Potential $U$")
+    ax.text(.96, .95, r"$b=0.02,\ \alpha=2.5$", transform=ax.transAxes, ha="right", va="top", fontsize=11)
     ax = axes[1]
-    title(ax, "B  |  Noise-driven transitions")
-    dt, duration, diffusion = .005, 400, .1
+    title(ax, "B  |  Switching with a reflecting boundary")
+    dt, duration, diffusion = .005, 700, .1
     rng = np.random.default_rng(74)
     ts = np.arange(0, duration+dt/2, dt)
-    zs = np.empty(len(ts))
-    zs[0] = -1
+    xs = np.empty(len(ts))
+    xs[0] = high
     noise = rng.normal(0, np.sqrt(2*diffusion*dt), len(ts)-1)
     for i in range(len(ts)-1):
-        zs[i+1] = zs[i] + (zs[i]-zs[i]**3)*dt + noise[i]
-    ax.plot(ts[::8], zs[::8], color=BLUE, lw=.8)
-    ax.axhline(0, color=MUTED, ls="--", lw=1)
-    ax.axhline(1, color=ORANGE, ls=":", lw=1)
-    ax.axhline(-1, color=ORANGE, ls=":", lw=1)
-    ax.text(.97, .96, "$D=0.1$", transform=ax.transAxes, ha="right", va="top")
-    ax.set(xlim=(0, duration), ylim=(-1.9, 1.9), xlabel="Time $t$", ylabel="$z(t)$")
+        # Reflected Euler approximation on the nonnegative concentration axis.
+        xs[i+1] = abs(xs[i]+drift(xs[i])*dt+noise[i])
+    ax.plot(ts[::8], xs[::8], color=BLUE, lw=.8)
+    ax.axhline(threshold, color=MUTED, ls="--", lw=1)
+    ax.axhline(high, color=ORANGE, ls=":", lw=1)
+    ax.text(.97, .96, r"$D=0.1,\ x\geq0$", transform=ax.transAxes, ha="right", va="top")
+    ax.set(xlim=(0, duration), ylim=(0, 3.6), xlabel="Time $t$", ylabel="$x(t)$")
     ax = axes[2]
-    title(ax, "C  |  Memory lifetime is exponential")
-    inverse_d = np.linspace(10, 50, 250)
-    tau = 2*np.pi/np.sqrt(2)*np.exp(.25*inverse_d)
+    title(ax, "C  |  High-state lifetime: weak-noise limit")
+    inverse_d = np.linspace(40, 160, 250)
+    tau = prefactor*np.exp(barrier*inverse_d)
     ax.semilogy(inverse_d, tau, color=PURPLE)
-    ax.text(.06, .94, r"$\tau_K=\frac{2\pi}{\sqrt{2}}e^{1/(4D)}$",
-            transform=ax.transAxes, va="top", fontsize=15)
-    ax.set(xlim=(10, 50), xlabel="Inverse noise strength $1/D$", ylabel="Kramers escape time")
+    ax.text(.06, .94, r"$\log\tau_K=\log C+\Delta U_H/D$",
+            transform=ax.transAxes, va="top", fontsize=12)
+    ax.set(xlim=(40, 160), xlabel="Inverse noise strength $1/D$", ylabel="Kramers escape time")
     ax.grid(alpha=.12, which="both")
     save(fig, "07_landscape_and_switching")
 
