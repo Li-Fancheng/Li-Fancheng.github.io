@@ -299,7 +299,7 @@ $$
 
 *Fig. 4. 实验中的平均分裂间隔时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原文 Fig. 3。B 图比较平均分裂间隔时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与分裂间隔时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示分裂间隔时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
 
-**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示 cell size 的指数增长率。把该图与式（2.9）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持 size homeostasis、且所有细胞共有恒定 size growth rate 的群体违反了质量守恒。
+**符号说明。** 原文用 $\lambda=\ln2/\langle\tau\rangle_g$ 表示由平均分裂间隔计算的基准增长率；本笔记则用 $\lambda$ 表示 cell size 的指数增长率。阅读原图时，需要区分这两种含义。
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
