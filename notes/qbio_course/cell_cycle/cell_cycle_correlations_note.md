@@ -596,7 +596,54 @@ $$
 \mathbb E\left[\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right].\tag{3.7}
 $$
 
-如果 $s$ 在所选增长率附近时，两端 size 比值的期望取对数后为 $o(n)$，那么每代的指数率就是 $-s\ln2/\lambda$。繁殖产生 $2^n$ 条路径；当 $\ln2-s\ln2/\lambda=0$ 时，路径数的指数增长与时间权重的指数衰减达到平衡。在第 4 节及[附录 C](#appendix-c)明确的 branching process 条件下，这给出 **$\Lambda=\lambda$**。
+式（3.7）右侧包含两部分：随代数 $n$ 指数衰减的因子，以及只涉及起点和终点 size 的期望。为了分辨它们对长期增长的贡献，先取对数，再除以 $n$：
+
+$$
+\frac1n\ln\mathbb E[e^{-sT_n}]
+=-\frac{s\ln2}{\lambda}
++\frac1n\ln\mathbb E\!\left[
+\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right].
+$$
+
+假设在 $s=\lambda$ 附近，最后一项随 $n\to\infty$ 趋于零，也就是
+
+$$
+\ln\mathbb E\!\left[
+\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right]=o(n).
+$$
+
+这里 $o(n)$ 表示该量除以 $n$ 后趋于零。在这个条件下，端点 size 的随机性不会改变关于代数 $n$ 的指数率，因此
+
+$$
+\lim_{n\to\infty}\frac1n\ln\mathbb E[e^{-sT_n}]
+=-\frac{s\ln2}{\lambda}.
+$$
+
+接下来把一条 lineage 的时间权重与整个 branching structure联系起来。每次分裂产生两个子细胞，所以第 $n$ 代共有 $2^n$ 条从初始细胞出发的祖先路径。记第 $u$ 条路径到达第 $n$ 代出生时的累计时间为 $T_{n,u}$，并将所有路径的时间权重之和的期望记为 $Z_n(s)$。各条路径按相同规则产生，因此利用期望的线性性质，有
+
+$$
+Z_n(s)\equiv\mathbb E\!\left[
+\sum_{u=1}^{2^n}e^{-sT_{n,u}}\right]
+=2^n\mathbb E[e^{-sT_n}].
+$$
+
+这些路径可以共享祖先；上述求和并不要求路径之间相互独立。再次取对数并除以 $n$，得到
+
+$$
+\begin{aligned}
+\lim_{n\to\infty}\frac1n\ln Z_n(s)
+&=\ln2+\lim_{n\to\infty}\frac1n\ln\mathbb E[e^{-sT_n}]\\
+&=\ln2-\frac{s\ln2}{\lambda}.
+\end{aligned}
+$$
+
+右侧的 $\ln2$ 来自每代翻倍的路径数，$-s\ln2/\lambda$ 来自沿路径累积的时间权重。在第 4 节及[附录 C](#appendix-c)给出的 branching process 条件下，群体增长率 $\Lambda$ 是使这一总权重的每代指数率为零的 $s$。因此令
+
+$$
+\ln2-\frac{\Lambda\ln2}{\lambda}=0,
+$$
+
+便得到 **$\Lambda=\lambda$**。端点条件 $o(n)$ 是否成立，以及这个加权路径条件能否确定群体增长率，是这里分别需要检查的两件事。
 
 一个清楚的充分条件是：cell size 始终为正且服从平稳分布，并且在 $s=\lambda$ 附近，正阶矩 $\mathbb E[v^{2s/\lambda}]$ 和负阶矩 $\mathbb E[v^{-2s/\lambda}]$ 都有限。Cauchy–Schwarz 不等式给出该期望与 $n$ 无关的上界，Jensen 不等式则给出下界 $1$。size 有上界、又与零保持一定距离，是最简单的例子。这些是额外的充分条件，不能仅从 adder 的 size 方差有限推出；各层条件的区别见[附录 G](#appendix-g)。
 
