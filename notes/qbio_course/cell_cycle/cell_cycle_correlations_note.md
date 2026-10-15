@@ -574,9 +574,21 @@ $$
 
 <div id="66-exact-consequence-for-population-growth"></div>
 
-### 3.4 群体增长的精确结论及其条件 {#34-the-exact-growth-consequence-and-its-conditions}
+<div id="34-the-exact-growth-consequence-and-its-conditions"></div>
 
-群体增长会对异常快速的**整段 lineage 历史**赋予更大权重，所以仅有方差上界，还不足以控制这些历史的指数权重。从精确恒等式出发，
+进一步考察群体增长时，仅有上述方差上界还不够：增长计算会对累计时间较短的 lineage 历史赋予更大权重，还需要控制相应的指数权重。继续使用上面的逐项相消恒等式（3.5）。对任意 $s>0$（单位为时间的倒数），将等式两边乘以 $-s$ 后取指数，得到
+
+$$
+\begin{aligned}
+e^{-sT_n}
+&=\exp\!\left[-\frac{ns\ln2}{\lambda}
+-\frac{s}{\lambda}(\ln v_n-\ln v_0)\right]\\
+&=e^{-ns\ln2/\lambda}
+\left(\frac{v_n}{v_0}\right)^{-s/\lambda}.
+\end{aligned}
+$$
+
+再对不同 lineage 的随机分裂历史取期望，得到
 
 $$
 \mathbb E[e^{-sT_n}]
@@ -592,7 +604,9 @@ $$
 
 <div id="67-a-counterintuitive-prediction-size-is-positively-correlated-time-is-negatively-correlated"></div>
 
-### 3.5 size 呈正相关，分裂间隔时间却呈负相关 {#35-positive-size-memory-negative-timing-memory}
+<div id="35-positive-size-memory-negative-timing-memory"></div>
+
+### 3.4 size 呈正相关，分裂间隔时间却呈负相关 {#34-positive-size-memory-negative-timing-memory}
 
 由第 3.1 节可知，birth size 的偏差具有正协方差 $C_x(k)=\sigma_x^2 2^{-|k|}$。分裂间隔却取决于相邻两代 size 的差值。当相对 size 波动很小时，
 
@@ -1445,7 +1459,7 @@ $$
 
 #### E.2 一般线性反馈下的分裂间隔时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
 
-第 3.5 节已计算 $r=1/2$ 的 adder。这里保留一般反馈系数 $0<r<1$，并沿用小波动近似
+第 3.4 节已计算 $r=1/2$ 的 adder。这里保留一般反馈系数 $0<r<1$，并沿用小波动近似
 
 $$
 \delta\tau_n\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
