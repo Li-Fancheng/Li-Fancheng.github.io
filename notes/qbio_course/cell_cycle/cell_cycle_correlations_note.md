@@ -145,7 +145,26 @@ $$
 \frac{M(t-\tau)}{M(t)}\longrightarrow e^{-\Lambda\tau}.
 $$
 
-也就是说，首次分裂发生在 $\tau$ 的细胞，其后代比立即分裂的情形少了 $\tau$ 的繁殖时间，对应相对权重 $e^{-\Lambda\tau}$。将式（2.1）两边除以 $M(t)$，在长期极限下，尚未分裂的初始细胞的贡献 $\mathbb P(\tau>t)/M(t)$ 趋于零。在允许交换极限与积分的条件下，得到确定候选增长率的 **Euler–Lotka 方程（欧拉–洛特卡方程）**：
+也就是说，首次分裂推迟 $\tau$，其后代就少了 $\tau$ 的繁殖时间，对应相对权重 $e^{-\Lambda\tau}$。下面将这个比值代入更新方程。先将式（2.1）两边除以 $M(t)$，得到
+
+$$
+1=\frac{\mathbb P(\tau>t)}{M(t)}
++2\int_0^t p(\tau)\frac{M(t-\tau)}{M(t)}\,d\tau.
+$$
+
+在所假设的指数增长形式下，$\Lambda>0$，因而 $M(t)\to\infty$；第一项的分子不超过 $1$，所以该项趋于零。积分项中的比值则对每个固定的 $\tau$ 趋于 $e^{-\Lambda\tau}$。此外，模型中没有死亡，$M(t)$ 随时间不减，因此当 $0\le\tau\le t$ 时，
+
+$$
+0\le p(\tau)\frac{M(t-\tau)}{M(t)}\le p(\tau).
+$$
+
+由于 $p(\tau)$ 的积分为 $1$，将被积函数在 $\tau>t$ 时定义为零后，可以用支配收敛定理取极限，得到
+
+$$
+1=2\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau.
+$$
+
+右侧的积分就是对分裂间隔分布 $p$ 取期望。因此，候选增长率满足 **Euler–Lotka 方程（欧拉–洛特卡方程）**：
 
 $$
 \boxed{2\mathbb E_p[e^{-\Lambda\tau}]=1.}\tag{2.2}
