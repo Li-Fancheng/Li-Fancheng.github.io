@@ -530,7 +530,7 @@ $$
 \ln\!\left(1+\frac{\Delta+\eta_n}{v_n}\right).
 $$
 
-这说明，在 added size 相同的条件下，birth size 越小，需要的生长时间越长。即使每代的 added size 噪声 $\eta_n$ 独立，分裂间隔仍会受到继承的 $v_n$ 影响；分裂时间之间的 correlation 就需要结合这种继承关系来计算。
+这说明，在 added size 相同的条件下，birth size 越小，需要的生长时间越长，因为生长的 size 固定，但是生长速率和本身的 cell size 有关。即使每代的 added size 噪声 $\eta_n$ 独立，分裂间隔仍会受到继承的 $v_n$ 影响；分裂时间之间的 correlation 就需要结合这种继承关系来计算。
 
 式（3.4）本身只需要 size 为正、所有细胞共有恒定的 $\lambda$，以及对称分裂，并不依赖 adder 的具体规则。它还给下一节提供了一个直接入口：$\tau_n$ 中包含相邻两代 log size 的差值，而下一代的分裂间隔中又会出现同一个 $\ln v_{n+1}$，但符号相反。因此，要判断某一代的时间领先能否持续，接下来应把多代分裂间隔加起来，检查这些 size 项如何相消。
 
