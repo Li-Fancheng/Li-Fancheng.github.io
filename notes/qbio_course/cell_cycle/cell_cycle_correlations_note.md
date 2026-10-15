@@ -139,10 +139,20 @@ $$
 M(t)=\mathbb P(\tau>t)+2\int_0^t p(\tau)M(t-\tau)\,d\tau.\tag{2.1}
 $$
 
-为求出群体的长期增长率，采用指数增长作为试探解，假设长时间下 $M(t)$ 的主导项为 $Ae^{\Lambda t}$，并将其代入式（2.1）以确定候选增长率 $\Lambda$。这一假设在什么条件下成立的严格讨论，见[附录 A](#appendix-a)。在该假设下，对固定的 $\tau$，有
+为求出群体的长期增长率，采用指数增长作为试探解，假设长时间下 $M(t)$ 的主导项为 $Ae^{\Lambda t}$，并将其代入式（2.1）以确定候选增长率 $\Lambda$。这一假设在什么条件下成立的严格讨论，见[附录 A](#appendix-a)。具体地，将这一假设写成
 
 $$
-\frac{M(t-\tau)}{M(t)}\longrightarrow e^{-\Lambda\tau}.
+M(t)=Ae^{\Lambda t}[1+\varepsilon(t)],
+\qquad A>0,\quad\Lambda>0,\quad\varepsilon(t)\to0.
+$$
+
+对任意固定的 $\tau$，当 $t\to\infty$ 时，$t-\tau$ 也趋于无穷，因此
+
+$$
+\frac{M(t-\tau)}{M(t)}
+=e^{-\Lambda\tau}
+\frac{1+\varepsilon(t-\tau)}{1+\varepsilon(t)}
+\longrightarrow e^{-\Lambda\tau}.
 $$
 
 也就是说，首次分裂推迟 $\tau$，其后代就少了 $\tau$ 的繁殖时间，对应相对权重 $e^{-\Lambda\tau}$。下面将这个比值代入更新方程。先将式（2.1）两边除以 $M(t)$，得到
@@ -152,16 +162,59 @@ $$
 +2\int_0^t p(\tau)\frac{M(t-\tau)}{M(t)}\,d\tau.
 $$
 
-在所假设的指数增长形式下，$\Lambda>0$，因而 $M(t)\to\infty$；第一项的分子不超过 $1$，所以该项趋于零。积分项中的比值则对每个固定的 $\tau$ 趋于 $e^{-\Lambda\tau}$。此外，模型中没有死亡，$M(t)$ 随时间不减，因此当 $0\le\tau\le t$ 时，
+先处理第一项。由于 $M(t)\to\infty$，有
 
 $$
-0\le p(\tau)\frac{M(t-\tau)}{M(t)}\le p(\tau).
+0\le\frac{\mathbb P(\tau>t)}{M(t)}
+\le\frac1{M(t)}\longrightarrow0.
 $$
 
-由于 $p(\tau)$ 的积分为 $1$，将被积函数在 $\tau>t$ 时定义为零后，可以用支配收敛定理取极限，得到
+再处理积分项。这里不能只把比值的极限直接放进积分：积分上限 $t$ 也在变化。为把所有积分写在同一个区间 $[0,\infty)$ 上，定义
 
 $$
-1=2\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau.
+f_t(\tau)=
+\begin{cases}
+p(\tau)\dfrac{M(t-\tau)}{M(t)},&0\le\tau\le t,\\
+0,&\tau>t.
+\end{cases}
+$$
+
+于是，原积分可以准确地改写为
+
+$$
+\int_0^t p(\tau)\frac{M(t-\tau)}{M(t)}\,d\tau
+=\int_0^\infty f_t(\tau)\,d\tau.
+$$
+
+对每个固定的 $\tau$，只要 $t$ 足够大，就有 $\tau\le t$，故
+
+$$
+f_t(\tau)\longrightarrow p(\tau)e^{-\Lambda\tau}.
+$$
+
+还需要一个不随 $t$ 改变的可积上界。模型中没有死亡，细胞数只增不减，所以 $M(t-\tau)\le M(t)$。结合 $f_t$ 在 $\tau>t$ 时为零的定义，对所有 $\tau\ge0$ 都有
+
+$$
+0\le f_t(\tau)\le p(\tau),
+\qquad \int_0^\infty p(\tau)\,d\tau=1<\infty.
+$$
+
+支配收敛定理说明：当被积函数逐点收敛，且其绝对值始终由同一个可积函数控制时，可以交换极限与积分。这里的控制函数就是概率密度 $p(\tau)$，因此
+
+$$
+\begin{aligned}
+\lim_{t\to\infty}
+\int_0^t p(\tau)\frac{M(t-\tau)}{M(t)}\,d\tau
+&=\lim_{t\to\infty}\int_0^\infty f_t(\tau)\,d\tau\\
+&=\int_0^\infty\lim_{t\to\infty}f_t(\tau)\,d\tau\\
+&=\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau.
+\end{aligned}
+$$
+
+将两项的极限代回除以 $M(t)$ 后的更新方程，得到
+
+$$
+1=0+2\int_0^\infty p(\tau)e^{-\Lambda\tau}\,d\tau.
 $$
 
 右侧的积分就是对分裂间隔分布 $p$ 取期望。因此，候选增长率满足 **Euler–Lotka 方程（欧拉–洛特卡方程）**：
