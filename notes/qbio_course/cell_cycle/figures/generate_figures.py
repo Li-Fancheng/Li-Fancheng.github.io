@@ -85,31 +85,40 @@ save(fig, "02_correlations_and_growth")
 
 
 # 3. A geometric diagram of the noise-free adder, with lengths encoding size.
-fig, ax = plt.subplots(figsize=(10.5, 4.4), layout="constrained")
-ax.set_xlim(0, 10.5)
-ax.set_ylim(-.1, 3.5)
-ax.axis("off")
-ax.set_title("The adder: equal added size brings daughters closer to the mean", pad=12)
+with plt.rc_context({
+    "font.family": "DejaVu Sans",
+    "font.size": 14,
+    "font.weight": "medium",
+    "mathtext.fontset": "dejavusans",
+    "axes.titlesize": 16,
+    "axes.titleweight": "bold",
+}):
+    fig, ax = plt.subplots(figsize=(10.5, 4.8), layout="constrained")
+    ax.set_xlim(-.35, 9.0)
+    ax.set_ylim(-.4, 3.5)
+    ax.axis("off")
+    ax.set_title("Adder control halves birth size deviations", pad=12)
 
-def cell(x, y, size, color, label):
-    ax.add_patch(FancyBboxPatch((x, y), size*.8, .38,
-                 boxstyle="round,pad=0,rounding_size=0.19", ec=color, fc=color, alpha=.8))
-    ax.text(x+size*.4, y-.13, label, ha="center", va="top", fontsize=10)
+    def cell(x, y, size, color, label):
+        ax.add_patch(FancyBboxPatch((x, y), size*.8, .38,
+                     boxstyle="round,pad=0,rounding_size=0.19", ec=color, fc=color, alpha=.8))
+        ax.text(x+size*.4, y-.13, label, ha="center", va="top", fontsize=14)
 
-for y, v, tag in [(2.5, .7, "Small birth"), (1.05, 1.3, "Large birth")]:
-    ax.text(.0, y+.6, tag, color=BLUE, weight="bold")
-    cell(.2, y, v, BLUE, rf"Birth: ${v:.2f}\,\Delta$")
-    ax.annotate("", (3.2, y+.19), (1.5, y+.19), arrowprops=dict(arrowstyle="->", color="#555555"))
-    ax.text(2.35, y+.42, r"$+\Delta$", ha="center", color=ORANGE, weight="bold")
-    cell(3.3, y, v+1, ORANGE, rf"Division: ${v+1:.2f}\,\Delta$")
-    ax.annotate("", (7.1, y+.19), (5.5, y+.19), arrowprops=dict(arrowstyle="->", color="#555555"))
-    ax.text(6.3, y+.42, "Split equally", ha="center", fontsize=10)
-    daughter = (v+1)/2
-    cell(7.3, y+.25, daughter, GREEN, "")
-    cell(7.3, y-.25, daughter, GREEN, rf"Each: ${daughter:.2f}\,\Delta$")
-ax.text(5.3, -.05, r"Mean birth size $=\Delta$     •     Deviation is halved: $x_{n+1}=x_n/2$",
-        ha="center", fontsize=11)
-save(fig, "03_adder_size_control")
+    for y, v, tag in [(2.5, .7, "Small birth"), (1.05, 1.3, "Large birth")]:
+        ax.text(.0, y+.6, tag, color=BLUE, weight="bold")
+        cell(.2, y, v, BLUE, rf"Birth: ${v:.2f}\,\Delta$")
+        ax.annotate("", (3.2, y+.19), (1.5, y+.19), arrowprops=dict(arrowstyle="->", color="#555555", lw=1.8))
+        ax.text(2.35, y+.42, r"$+\Delta$", ha="center", color=ORANGE, weight="bold", fontsize=17)
+        cell(3.3, y, v+1, ORANGE, rf"Division: ${v+1:.2f}\,\Delta$")
+        ax.annotate("", (7.1, y+.19), (5.5, y+.19), arrowprops=dict(arrowstyle="->", color="#555555", lw=1.8))
+        ax.text(6.3, y+.42, "Split equally", ha="center", fontsize=14)
+        daughter = (v+1)/2
+        cell(7.3, y+.25, daughter, GREEN, "")
+        cell(7.3, y-.25, daughter, GREEN, rf"Each: ${daughter:.2f}\,\Delta$")
+    ax.text(4.3, -.22, r"Mean birth size $=\Delta$     •     Deviation is halved: $x_{n+1}=x_n/2$",
+            ha="center", fontsize=14)
+    save(fig, "03_adder_size_control")
+
 
 
 # 4. Linearized adder time correlations and exact AR(1)-difference variance.
