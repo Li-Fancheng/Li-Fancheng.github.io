@@ -131,7 +131,7 @@ $$
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
-### 2.1 Euler–Lotka 方程与抽样偏倚 {#21-eulerlotka-and-sampling-bias}
+### 2.1 Euler–Lotka 方程{#21-eulerlotka-and-sampling-bias}
 
 考虑一个没有死亡的 binary branching model：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个分裂间隔时间，到时间后产生两个遵循相同规则的子细胞。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
 
