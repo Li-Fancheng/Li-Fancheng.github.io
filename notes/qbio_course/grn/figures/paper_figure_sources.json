@@ -1,0 +1,42 @@
+[
+  {
+    "file": "figures/gardner_2000_fig04.png",
+    "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F35002131/MediaObjects/41586_2000_Article_BF35002131_Fig4_HTML.gif",
+    "article_doi": "10.1038/35002131",
+    "figure": "4",
+    "retrieved_on": "2026-10-15",
+    "modification": "none",
+    "sha256": "f1414cd58935dd5d5ac00f04b7f472f94df2acb57a78752cd0da42e04b889152",
+    "rights": "Original publisher/author rights retained."
+  },
+  {
+    "file": "figures/elowitz_2000_fig02.jpg",
+    "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F35002125/MediaObjects/41586_2000_Article_BF35002125_Fig2_HTML.jpg",
+    "article_doi": "10.1038/35002125",
+    "figure": "2",
+    "retrieved_on": "2026-10-15",
+    "modification": "none",
+    "sha256": "c29c6c69b97bbe68fcc2c5eb3cf4dc6657d5a4e651b78d4b45887834718b00fc",
+    "rights": "Original publisher/author rights retained."
+  },
+  {
+    "file": "figures/raj_2006_fig02.png",
+    "image_url": "https://journals.plos.org/plosbiology/article/figure/image?download=&id=10.1371%2Fjournal.pbio.0040309.g002&size=large",
+    "article_doi": "10.1371/journal.pbio.0040309",
+    "figure": "2",
+    "retrieved_on": "2026-10-15",
+    "modification": "none",
+    "sha256": "8a8210f0f554ea8bd8479c27c4412bb81631c496a9ae866bd6aa45d9d2e0cd1b",
+    "rights": "© 2006 Raj et al.; Creative Commons Attribution License, as stated in the article."
+  },
+  {
+    "file": "figures/raj_2006_fig03.png",
+    "image_url": "https://journals.plos.org/plosbiology/article/figure/image?download=&id=10.1371%2Fjournal.pbio.0040309.g003&size=large",
+    "article_doi": "10.1371/journal.pbio.0040309",
+    "figure": "3",
+    "retrieved_on": "2026-10-15",
+    "modification": "none",
+    "sha256": "77c2b6edc6659a7c4d580b103769a5e4d28500717b34999ded6cb0a7d62e26a1",
+    "rights": "© 2006 Raj et al.; Creative Commons Attribution License, as stated in the article."
+  }
+]
