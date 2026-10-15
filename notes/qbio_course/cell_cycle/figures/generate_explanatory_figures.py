@@ -171,40 +171,49 @@ def discounted_branching():
 
 
 def telescoping_identity():
-    fig, ax = plt.subplots(figsize=(12, 4.5), layout="constrained")
-    ax.set(xlim=(0, 12.2), ylim=(0, 4.9))
-    ax.axis("off")
-    ax.set_title("Adjacent cycles share a size term with opposite signs", pad=14)
-    left_positions = [.4, 4.3, 8.2]
-    for j, left in enumerate(left_positions):
-        center = left+1.8
-        ax.text(center, 4.35, f"Cycle {j}", ha="center", weight="bold")
-        ax.text(center, 3.79, rf"$\lambda\tau_{j}-\ln2$", ha="center", fontsize=15)
-        ax.text(center, 3.50, "=", ha="center", va="center", fontsize=14)
-        ax.add_patch(FancyBboxPatch((left, 2.32), 3.6, 1.03,
-                     boxstyle="round,pad=.05,rounding_size=.13",
-                     facecolor="#f7f9fb", edgecolor="#cdd6df", lw=1.2))
-    terms = [(1.3, r"$-\ln v_0$", ORANGE, False),
-             (3.1, r"$+\ln v_1$", BLUE, True),
-             (5.2, r"$-\ln v_1$", BLUE, True),
-             (7.0, r"$+\ln v_2$", PURPLE, True),
-             (9.1, r"$-\ln v_2$", PURPLE, True),
-             (10.9, r"$+\ln v_3$", GREEN, False)]
-    for x, label, color, cancels in terms:
-        ax.text(x, 2.87, label, ha="center", va="center", color=color, fontsize=16)
-        if cancels:
-            ax.plot([x-.55, x+.55], [2.72, 3.02], color=color, alpha=.60, lw=1.7)
-    for start, end, color in ((3.1, 5.2, BLUE), (7., 9.1, PURPLE)):
-        curve = PlotPath([(start, 2.45), (start, 1.63), (end, 1.63), (end, 2.45)],
-                         [PlotPath.MOVETO, PlotPath.CURVE4, PlotPath.CURVE4, PlotPath.CURVE4])
-        ax.add_patch(FancyArrowPatch(path=curve, arrowstyle="-", color=color, lw=1.8))
-        ax.text((start+end)/2, 1.69, "cancel", ha="center", va="top", fontsize=11, color=color)
-    ax.text(6.1, 1.06, "Only the endpoint sizes remain — for any number of cycles",
-            ha="center", weight="bold", fontsize=12)
-    ax.text(6.1, .41,
-            r"$T_n=\dfrac{n\ln2}{\lambda}+\dfrac{\ln v_n-\ln v_0}{\lambda}$",
-            ha="center", va="center", fontsize=17)
-    save(fig, "09_telescoping_identity")
+    with plt.rc_context({
+        "font.family": "DejaVu Sans",
+        "font.size": 14,
+        "font.weight": "medium",
+        "mathtext.fontset": "dejavusans",
+        "axes.titlesize": 16,
+        "axes.titleweight": "bold",
+    }):
+        fig, ax = plt.subplots(figsize=(12, 5.1), layout="constrained")
+        ax.set(xlim=(0, 12.2), ylim=(0, 4.9))
+        ax.axis("off")
+        ax.set_title("Adjacent cycles share a size term with opposite signs", pad=14)
+        left_positions = [.4, 4.3, 8.2]
+        for j, left in enumerate(left_positions):
+            center = left+1.8
+            ax.text(center, 4.35, f"Cycle {j}", ha="center", weight="bold")
+            ax.text(center, 3.79, rf"$\lambda\tau_{j}-\ln2$", ha="center", fontsize=19)
+            ax.text(center, 3.50, "=", ha="center", va="center", fontsize=18)
+            ax.add_patch(FancyBboxPatch((left, 2.32), 3.6, 1.03,
+                         boxstyle="round,pad=.05,rounding_size=.13",
+                         facecolor="#f7f9fb", edgecolor="#cdd6df", lw=1.2))
+        terms = [(1.3, r"$-\ln v_0$", ORANGE, False),
+                 (3.1, r"$+\ln v_1$", BLUE, True),
+                 (5.2, r"$-\ln v_1$", BLUE, True),
+                 (7.0, r"$+\ln v_2$", PURPLE, True),
+                 (9.1, r"$-\ln v_2$", PURPLE, True),
+                 (10.9, r"$+\ln v_3$", GREEN, False)]
+        for x, label, color, cancels in terms:
+            ax.text(x, 2.87, label, ha="center", va="center", color=color, fontsize=22)
+            if cancels:
+                ax.plot([x-.55, x+.55], [2.72, 3.02], color=color, alpha=.45, lw=2.0)
+        for start, end, color in ((3.1, 5.2, BLUE), (7., 9.1, PURPLE)):
+            curve = PlotPath([(start, 2.45), (start, 1.63), (end, 1.63), (end, 2.45)],
+                             [PlotPath.MOVETO, PlotPath.CURVE4, PlotPath.CURVE4, PlotPath.CURVE4])
+            ax.add_patch(FancyArrowPatch(path=curve, arrowstyle="-", color=color, lw=2.2))
+            ax.text((start+end)/2, 1.69, "cancel", ha="center", va="top", fontsize=13, color=color)
+        ax.text(6.1, 1.06, "Summing cycles leaves only the endpoint sizes",
+                ha="center", weight="bold", fontsize=14)
+        ax.text(6.1, .41,
+                r"$T_n=\dfrac{n\ln2}{\lambda}+\dfrac{\ln v_n-\ln v_0}{\lambda}$",
+                ha="center", va="center", fontsize=23)
+        save(fig, "09_telescoping_identity")
+
 
 
 def histories_not_histograms():
