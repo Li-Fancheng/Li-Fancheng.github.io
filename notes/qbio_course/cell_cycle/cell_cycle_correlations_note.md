@@ -331,9 +331,7 @@ $$
 \lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.9}
 $$
 
-**在同一时刻，把所有存活细胞的体积取平均，这个平均值是否随时间持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零。
-
-为什么这意味着两个增长率相同？由 $V_{\mathrm{tot}}(t)=N(t)\overline v_{\mathrm{snap}}(t)$，取对数并除以 $t$，有
+**在同一时刻，把所有存活细胞的体积取平均，这个平均值是否随时间持续增大或减小。** 如果 $\overline v_{\mathrm{snap}}(t)$ 趋于某个有限的正数，那么 $\ln\overline v_{\mathrm{snap}}(t)$ 也趋于常数，除以 $t$ 后趋于零。它也可以一直波动；只要始终处于两个固定的正数之间，上述极限仍为零。由 $V_{\mathrm{tot}}(t)=N(t)\overline v_{\mathrm{snap}}(t)$，取对数并除以 $t$，有
 
 $$
 \frac{\ln V_{\mathrm{tot}}(t)}t
@@ -341,7 +339,7 @@ $$
 +\frac{\ln\overline v_{\mathrm{snap}}(t)}t.
 $$
 
-总体积满足 $V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}$，所以左侧趋于 $\lambda$。如果右侧最后一项趋于零，就有
+总体积满足 $V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}$，左侧趋于 $\lambda$。如果右侧最后一项趋于零，就有
 
 $$
 \lim_{t\to\infty}\frac{\ln N(t)}t
@@ -349,13 +347,33 @@ $$
 =\lambda.
 $$
 
-按群体增长率 $\Lambda$ 的定义，这就得到 $\Lambda=\lambda$：细胞数量与总体积具有相同的长期指数增长率。
+按群体增长率 $\Lambda$ 的定义，得到 $\Lambda=\lambda$：细胞数量与总体积具有相同的长期指数增长率。
 
-这个群体平均体积，需要与沿 chronological lineage 记录的 birth size 区分。前者统计某一时刻所有存活细胞的当前体积，留下更多后代的 lineage 在其中占比更大；后者沿一条 lineage 逐代记录出生时的 size。因此，即使沿 lineage 测得的 birth size 分布保持稳定，也还需要检查群体平均体积是否满足式（2.9）的条件。
+群体平均体积统计的是某一时刻所有存活细胞的当前体积，后代较多的 lineage 在其中占比更大。沿 chronological lineage 的测量则是在每次分裂时随机选择一个子细胞，逐代记录它的 birth size。因此，这两种测量得到的统计结果不能直接等同。即使沿 lineage 测得的 birth size 分布保持稳定，也还需要检查群体平均体积是否满足式（2.9）的条件。
 
-这个关系说明，在固定 $\lambda$ 的条件下，若数量增长指数 $\Lambda>\lambda$，群体瞬时 mean size 就必须以指数速度减小。因而，独立 timer 相对于相同平均分裂间隔时间基准的增长增量，不能直接解释为维持 size homeostasis 的细胞可以获得的繁殖收益，也不能据此推断 size control 具有增长代价。
+这个关系说明，在固定 $\lambda$ 的条件下，若数量增长指数 $\Lambda>\lambda$，群体瞬时 mean size 就必须以指数速度减小。因此，第 2.2 节中“分裂间隔有波动时，群体增长率高于 $\ln2/\mu$”的结论，不能直接推广为“分裂时间波动也能使 size 保持稳定的群体增长得更快”。后者还需要考虑细胞如何生长，以及分裂规则如何影响子细胞的 birth size。
 
-作为模型一致性检查，若 chronological lineage 是平稳的，且 $\mathbb E|\ln v|<\infty$，对式（1.2）取期望可得 $\mu=\ln2/\lambda$。将这个均值代入有噪声的独立模型会预测 $\Lambda>\lambda$，与满足群体瞬时 size 条件的式（2.9）不相容。第 1 节已说明原因：独立 timer 本身不能维持 size homeostasis。要从单细胞测量预测真实群体，还需要描述分裂时间如何响应继承的 size，以及这种响应如何影响整段 lineage。
+还可以把这个问题与沿 lineage 测得的平均分裂间隔联系起来。设 birth size 沿 chronological lineage 的分布具有 stationarity，且 $\mathbb E|\ln v_n|<\infty$，那么相邻两代的平均 log size 相同。对式（1.2）取期望，得到
+
+$$
+0=\mathbb E[\ln v_{n+1}]-\mathbb E[\ln v_n]
+=\lambda\mathbb E[\tau_n]-\ln2
+=\lambda\mu-\ln2,
+$$
+
+因此 $\mu=\ln2/\lambda$。这一步只用到了 size 的 stationarity、生长规律和对称分裂，并没有假设各代分裂间隔相互独立。
+
+如果再把这个均值代入第 2.2 节的独立模型，只要分裂间隔有非零波动，就会得到
+
+$$
+\Lambda>\frac{\ln2}{\mu}=\lambda.
+$$
+
+但若群体平均体积也满足式（2.9）的条件，体积守恒又要求 $\Lambda=\lambda$。两种预测之所以不同，是因为我们额外加入了“各代分裂间隔独立”的假设。第 1 节已经表明：在固定 $\lambda$ 和对称分裂下，具有独立分裂时间波动的 timer 会使 log size 发生 random walk，无法同时维持稳定的 size distribution。
+
+那么，size control 如何改变各代分裂间隔之间的关系？在 birth size 相同、$\lambda$ 固定的条件下，母细胞提前分裂会使子细胞的 birth size 更小。如果子细胞需要增加一定的 size 后才分裂，较小的 birth size 就会使它需要更长的生长时间。于是，母细胞较短的分裂间隔可能由子细胞较长的分裂间隔补偿。**size inheritance 与分裂规则由此把不同代的分裂间隔联系起来，产生代际 correlation（相关性）。**
+
+这也说明，只知道分裂间隔的均值和分布还不够：还需要知道一次较短的分裂间隔之后，更可能接着较短还是较长的分裂间隔。下一节用 adder 模型计算这种 correlation 如何产生，以及它如何改变多代累计时间的波动。
 
 ---
 
