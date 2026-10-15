@@ -475,7 +475,25 @@ $$
 \end{aligned}
 $$
 
-当噪声方差非零时，两代的标准差都为 $\sigma_x$，将协方差除以 $\sigma_x^2$ 就得到自相关系数。由于减去常数 $\Delta$ 不改变方差和相关系数，最终有
+这里用 $\operatorname{Corr}(X,Y)$ 表示两个随机变量的 Pearson 相关系数，定义为
+
+$$
+\operatorname{Corr}(X,Y)
+=\frac{\operatorname{Cov}(X,Y)}
+{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}.
+$$
+
+当方差有限且非零时，该系数取值在 $[-1,1]$ 之间，正负分别表示正相关和负相关。比较同一过程相隔 $k$ 代的取值时，称为滞后 $k$ 的自相关系数。
+
+在这里，平稳状态下 $x_n$ 与 $x_{n+k}$ 的标准差都为 $\sigma_x$，因此当噪声方差非零时，
+
+$$
+\operatorname{Corr}(x_n,x_{n+k})
+=\frac{\operatorname{Cov}(x_n,x_{n+k})}{\sigma_x^2}
+=2^{-k}.
+$$
+
+由于减去常数 $\Delta$ 不改变方差和相关系数，最终有
 
 $$
 \operatorname{Var}(v)=\frac{\sigma_\eta^2}{3},\qquad
@@ -488,20 +506,35 @@ $$
 
 ### 3.2 分裂间隔时间如何记录 size 变化 {#32-from-growth-to-generation-time}
 
-指数生长和对称分裂要求
+上一节说明了 birth size 的偏差如何传给后代，以及这些偏差在不同代之间的相关性。但群体增长取决于细胞何时分裂，因此还需要把 size 的变化转化为分裂间隔时间。这里先利用生长和分配关系，建立两者之间的联系。
+
+第 $n$ 代细胞出生时的 size 为 $v_n$，经过 $\tau_n$ 时间的指数生长后，division size 为 $v_n^{\mathrm d}=v_ne^{\lambda\tau_n}$。对称分裂使子细胞继承其中一半，所以 $v_{n+1}=v_n^{\mathrm d}/2$。合起来得到
 
 $$
 v_ne^{\lambda\tau_n}=v_n^{\mathrm d}=2v_{n+1}.
 $$
 
-取对数，得到 $\lambda\tau_n=\ln2+\ln v_{n+1}-\ln v_n$，即
+两边除以 $v_n$ 并取对数，得到 $\lambda\tau_n=\ln2+\ln v_{n+1}-\ln v_n$，即
 
 $$
 \boxed{\tau_n=\frac{\ln2}{\lambda}
 +\frac{\ln v_{n+1}-\ln v_n}{\lambda}.}\tag{3.4}
 $$
 
-分裂间隔时间中包含相邻两代 log size 的**差值**。只要 size 为正、所有细胞共有恒定的 $\lambda$，且分裂对称，这就是精确恒等式。推导没有用到 adder 假设、stationarity 或弱噪声展开。
+第一项 $\ln2/\lambda$ 是细胞在给定生长率下将体积增加到两倍所需的时间。如果母细胞与子细胞的 birth size 相同，即 $v_{n+1}=v_n$，母细胞就恰好在体积翻倍时分裂，分裂间隔等于这一基准时间。
+
+第二项表示实际分裂间隔相对这一基准的偏离。若 $v_{n+1}>v_n$，母细胞必须长到初始 size 的两倍以上，才能在分裂后留下更大的子细胞，因此 $\tau_n>\ln2/\lambda$；若 $v_{n+1}<v_n$，则母细胞在体积尚未翻倍时就分裂，$\tau_n<\ln2/\lambda$。因此，分裂间隔的快慢可以通过母、子细胞 birth size 的比值来表示。
+
+对于前面的 adder，将式（3.1）代入，也可以写成
+
+$$
+\tau_n=\frac1\lambda
+\ln\!\left(1+\frac{\Delta+\eta_n}{v_n}\right).
+$$
+
+这说明，在 added size 相同的条件下，birth size 越小，需要的生长时间越长。即使每代的 added size 噪声 $\eta_n$ 独立，分裂间隔仍会受到继承的 $v_n$ 影响；分裂时间之间的 correlation 就需要结合这种继承关系来计算。
+
+式（3.4）本身只需要 size 为正、所有细胞共有恒定的 $\lambda$，以及对称分裂，并不依赖 adder 的具体规则。它还给下一节提供了一个直接入口：$\tau_n$ 中包含相邻两代 log size 的差值，而下一代的分裂间隔中又会出现同一个 $\ln v_{n+1}$，但符号相反。因此，要判断某一代的时间领先能否持续，接下来应把多代分裂间隔加起来，检查这些 size 项如何相消。
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
