@@ -40,59 +40,72 @@ def cell(ax, x, y, color):
 
 
 def renewal_and_sampling():
-    fig, (ax, density) = plt.subplots(1, 2, figsize=(12, 5),
-                            gridspec_kw={"width_ratios": [1.25, 1]},
-                            layout="constrained")
-    ax.set(xlim=(0, 9.6), ylim=(-.5, 6.5))
-    ax.axis("off")
-    ax.set_title("A  |  Two possible histories", loc="left", pad=14)
+    with plt.rc_context({
+        "font.family": "DejaVu Sans",
+        "font.size": 14,
+        "font.weight": "medium",
+        "mathtext.fontset": "dejavusans",
+        "axes.titlesize": 16,
+        "axes.titleweight": "bold",
+        "axes.labelsize": 14,
+        "axes.labelweight": "medium",
+        "xtick.labelsize": 12,
+        "ytick.labelsize": 12,
+    }):
+        fig, (ax, density) = plt.subplots(1, 2, figsize=(12, 5),
+                                gridspec_kw={"width_ratios": [1.25, 1]},
+                                layout="constrained")
+        ax.set(xlim=(0, 9.6), ylim=(-.5, 6.5))
+        ax.axis("off")
+        ax.set_title("A  |  Two possible histories", loc="left", pad=14)
 
-    ax.text(.35, 5.8, "Not yet divided", weight="bold", color=BLUE)
-    for x in (.7, 8.6):
-        cell(ax, x, 5.0, BLUE)
-    arrow(ax, (1.1, 5.0), (8.2, 5.0), BLUE)
-    ax.text(4.65, 5.35, r"Probability $S(t)$", ha="center")
-    ax.text(8.6, 4.55, "1 cell", ha="center", color=BLUE)
-    ax.text(.7, 3.9, "OR", color=MUTED, fontsize=10, weight="bold")
+        ax.text(.35, 5.8, "Not yet divided", weight="bold", color=BLUE)
+        for x in (.7, 8.6):
+            cell(ax, x, 5.0, BLUE)
+        arrow(ax, (1.1, 5.0), (8.2, 5.0), BLUE)
+        ax.text(4.65, 5.35, r"Probability $S(t)$", ha="center")
+        ax.text(8.6, 4.55, "1 cell", ha="center", color=BLUE)
+        ax.text(.7, 3.9, "OR", color=MUTED, fontsize=12, weight="bold")
 
-    ax.text(.35, 3.25, r"First division at $\tau$", weight="bold", color=GREEN)
-    cell(ax, .7, 1.85, BLUE)
-    arrow(ax, (1.1, 1.85), (3.1, 1.85), BLUE)
-    ax.text(2.1, 2.15, r"$p(\tau)\,d\tau$", ha="center")
-    ax.plot([3.2, 3.7, 3.2], [2.0, 1.85, 1.7], color=GREEN, lw=2)
-    for y in (2.55, 1.05):
-        arrow(ax, (3.7, 1.85), (4.7, y), GREEN)
-        ax.add_patch(FancyBboxPatch((4.85, y-.34), 3.75, .68,
-                     boxstyle="round,pad=.06,rounding_size=.14",
-                     facecolor="#e9f4f1", edgecolor=GREEN, lw=1.4))
-        ax.text(6.72, y, r"Descendants: $M(t-\tau)$",
-                ha="center", va="center", fontsize=11, color=GREEN)
-    ax.text(6.7, .28, "Two daughter subtrees", ha="center", color=GREEN)
+        ax.text(.35, 3.25, r"First division at $\tau$", weight="bold", color=GREEN)
+        cell(ax, .7, 1.85, BLUE)
+        arrow(ax, (1.1, 1.85), (3.1, 1.85), BLUE)
+        ax.text(2.1, 2.15, r"$p(\tau)\,d\tau$", ha="center")
+        ax.plot([3.2, 3.7, 3.2], [2.0, 1.85, 1.7], color=GREEN, lw=2)
+        for y in (2.55, 1.05):
+            arrow(ax, (3.7, 1.85), (4.7, y), GREEN)
+            ax.add_patch(FancyBboxPatch((4.85, y-.34), 3.75, .68,
+                         boxstyle="round,pad=.06,rounding_size=.14",
+                         facecolor="#e9f4f1", edgecolor=GREEN, lw=1.4))
+            ax.text(6.72, y, r"Descendants: $M(t-\tau)$",
+                    ha="center", va="center", fontsize=13, color=GREEN)
+        ax.text(6.7, .28, "Two daughter subtrees", ha="center", color=GREEN)
 
-    arrow(ax, (.5, -.13), (9.1, -.13))
-    for x, label in ((.7, "0"), (3.7, r"$\tau$"), (8.6, "$t$")):
-        ax.plot([x, x], [-.2, -.06], color=MUTED, lw=1)
-        ax.text(x, -.42, label, ha="center")
+        arrow(ax, (.5, -.13), (9.1, -.13))
+        for x, label in ((.7, "0"), (3.7, r"$\tau$"), (8.6, "$t$")):
+            ax.plot([x, x], [-.2, -.06], color=MUTED, lw=1)
+            ax.text(x, -.42, label, ha="center")
 
-    # Gamma(shape=4, rate=4): mean 1; Euler-Lotka has an explicit root.
-    time = np.linspace(0, 2.7, 650)
-    growth = 4 * (2**.25 - 1)
-    p = 4**4 / 6 * time**3 * np.exp(-4*time)
-    q = 2 * np.exp(-growth*time) * p
-    density.fill_between(time, p, color=BLUE, alpha=.10)
-    density.fill_between(time, q, color=ORANGE, alpha=.10)
-    density.plot(time, p, color=BLUE, label=r"Chronological $p(\tau)$")
-    density.plot(time, q, color=ORANGE, label=r"Growth-weighted $q(\tau)$")
-    density.axvline(1, color=BLUE, ls=":", lw=1.4)
-    density.axvline(4/(4+growth), color=ORANGE, ls=":", lw=1.4)
-    density.set_title("B  |  Short lifetimes get more weight", loc="left", pad=14)
-    density.set(xlim=(0, 2.7), ylim=(0, 1.55),
-                xlabel=r"Lifetime $\tau$ (mean of $p$ = 1)", ylabel="Probability density")
-    density.text(.95, .95, r"$q/p=2e^{-\Lambda\tau}$",
-                 transform=density.transAxes, ha="right", va="top", fontsize=13)
-    density.legend(loc="upper right", bbox_to_anchor=(1, .83), fontsize=10)
-    density.grid(alpha=.14)
-    save(fig, "06_renewal_and_sampling")
+        # Gamma(shape=4, rate=4): mean 1; Euler-Lotka has an explicit root.
+        time = np.linspace(0, 2.7, 650)
+        growth = 4 * (2**.25 - 1)
+        p = 4**4 / 6 * time**3 * np.exp(-4*time)
+        q = 2 * np.exp(-growth*time) * p
+        density.fill_between(time, p, color=BLUE, alpha=.10)
+        density.fill_between(time, q, color=ORANGE, alpha=.10)
+        density.plot(time, p, color=BLUE, label=r"Chronological $p(\tau)$")
+        density.plot(time, q, color=ORANGE, label=r"Growth-weighted $q(\tau)$")
+        density.axvline(1, color=BLUE, ls=":", lw=1.4)
+        density.axvline(4/(4+growth), color=ORANGE, ls=":", lw=1.4)
+        density.set_title("B  |  Short lifetimes get more weight", loc="left", pad=14)
+        density.set(xlim=(0, 2.7), ylim=(0, 1.55),
+                    xlabel=r"Lifetime $\tau$ (mean of $p$ = 1)", ylabel="Probability density")
+        density.text(.95, .95, r"$q/p=2e^{-\Lambda\tau}$",
+                     transform=density.transAxes, ha="right", va="top", fontsize=16)
+        density.legend(loc="upper right", bbox_to_anchor=(1, .83), fontsize=12)
+        density.grid(alpha=.14)
+        save(fig, "06_renewal_and_sampling")
+
 
 
 def accumulated_time_covariances():
