@@ -645,7 +645,26 @@ $$
 
 便得到 **$\Lambda=\lambda$**。端点条件 $o(n)$ 是否成立，以及这个加权路径条件能否确定群体增长率，是这里分别需要检查的两件事。
 
-一个清楚的充分条件是：cell size 始终为正且服从平稳分布，并且在 $s=\lambda$ 附近，正阶矩 $\mathbb E[v^{2s/\lambda}]$ 和负阶矩 $\mathbb E[v^{-2s/\lambda}]$ 都有限。Cauchy–Schwarz 不等式给出该期望与 $n$ 无关的上界，Jensen 不等式则给出下界 $1$。size 有上界、又与零保持一定距离，是最简单的例子。这些是额外的充分条件，不能仅从 adder 的 size 方差有限推出；各层条件的区别见[附录 G](#appendix-g)。
+下面给出保证端点项为 $o(n)$ 的一组充分条件。这里考察的是**沿 chronological lineage 逐代记录的 birth size 序列 $v_0,v_1,\ldots$**：要求每代的 birth size 都为正，并且从一个具有 stationarity 的状态出发，使 $v_0$ 与任意 $v_n$ 具有相同的概率分布。这允许每条 lineage 的 birth size 逐代波动，也允许不同代之间存在 correlation；保持不变的是分布。
+
+仅有这一分布不变的条件还不够，还需要控制极大或接近零的 birth size 对期望的贡献。用 $v$ 表示服从上述共同 birth size 分布的随机变量，进一步要求在 $s=\lambda$ 附近，$\mathbb E[v^{2s/\lambda}]$ 和 $\mathbb E[v^{-2s/\lambda}]$ 都有限。此时，Cauchy–Schwarz 不等式给出
+
+$$
+\mathbb E\!\left[\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right]
+\le\sqrt{\mathbb E[v_n^{-2s/\lambda}]\,\mathbb E[v_0^{2s/\lambda}]}
+=\sqrt{\mathbb E[v^{-2s/\lambda}]\,\mathbb E[v^{2s/\lambda}]}
+\equiv C_s\lt\infty.
+$$
+
+由于两端的 log size 均值相同，Jensen 不等式还给出该期望的下界为 $1$（推导见[附录 G](#appendix-g)）。上下界都不随代数 $n$ 改变，因此
+
+$$
+0\le\frac1n\ln\mathbb E\!\left[
+\left(\frac{v_n}{v_0}\right)^{-s/\lambda}\right]
+\le\frac{\ln C_s}{n}\longrightarrow0.
+$$
+
+这就验证了所需的 $o(n)$ 条件。一个直观的例子是 birth size 始终处于固定区间 $0\lt v_{\min}\le v_n\le v_{\max}\lt\infty$，既不会无限增大，也不会无限接近零。上述条件是充分条件，不能仅由 adder 的 birth size 方差有限推出。
 
 这个 lineage 解释与第 2.3 节对实际群体总体积的论证相互补充。两者都能给出精确的增长约束，但各自需要额外条件。Sizer 或其他维持 size homeostasis 的规则，也可以满足同样的逐项相消关系。真正属于 adder 的特定结果，是斜率 $1/2$、方差 $\sigma_\eta^2/3$ 和 birth size 的自相关函数（ACF）$2^{-k}$，而不是恒等式（3.5）本身。
 
