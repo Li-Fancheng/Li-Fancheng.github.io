@@ -242,7 +242,7 @@ $p$ 与 $q$ 描述的都是一个细胞从出生到分裂所需时间的分布�
 
 <div id="22-jensens-inequality-and-the-population-growth-advantage"></div>
 
-### 2.2 Jensen 不等式与比较基准 {#22-jensens-inequality-and-the-reference-population}
+### 2.2 Jensen 不等式与 KL 散度 {#22-jensens-inequality-and-the-reference-population}
 
 如果所有细胞的分裂间隔时间都固定为 $\mu$，群体增长率就是 $\ln2/\mu$。若分裂间隔时间有波动，但**沿 chronological lineage 测得的均值仍为同一个** $\mu<\infty$，利用凸性可得
 
@@ -257,14 +257,39 @@ $$
 \boxed{\Lambda\ge\frac{\ln2}{\mu}.}\tag{2.4}
 $$
 
-只要独立的分裂间隔时间分布不是集中在一个值上，这个不等式就是严格的。在平均时间不变的条件下，早分裂的细胞对后续群体的贡献更大，而晚分裂造成的损失无法完全抵消这一收益。对于弱噪声，若 $\Lambda\sigma_\tau\ll1$，且关于波动幅度的展开是正则的，高阶累积量在二阶近似中可以忽略，则有
+只要独立的分裂间隔时间分布不是集中在一个值上，这个不等式就是严格的。在平均时间不变的条件下，早分裂的细胞对后续群体的贡献更大，而晚分裂造成的损失无法完全抵消这一收益。
+
+这个增长增量还可以用前面定义的 $p$ 与 $q$ 之间的差异来表示。Kullback–Leibler 散度（KL 散度，也称相对熵）衡量两个概率分布的差异。将式（2.3）的 $q(\tau)=2e^{-\Lambda\tau}p(\tau)$ 代入其定义，得到
+
+$$
+\begin{aligned}
+D_{\mathrm{KL}}(p\|q)
+&=\int_0^\infty p(\tau)\ln\frac{p(\tau)}{q(\tau)}\,d\tau\\
+&=\int_0^\infty p(\tau)\ln\frac{p(\tau)}{2e^{-\Lambda\tau}p(\tau)}\,d\tau\\
+&=\int_0^\infty p(\tau)(\Lambda\tau-\ln2)\,d\tau\\
+&=\Lambda\mu-\ln2.
+\end{aligned}
+\tag{2.5}
+$$
+
+这里用到了 $\int_0^\infty p(\tau)\,d\tau=1$ 和 $\int_0^\infty\tau p(\tau)\,d\tau=\mu$。KL 散度非负，所以 $\Lambda\mu-\ln2\ge0$，再次得到式（2.4）。进一步整理可得
+
+$$
+\boxed{\Lambda-\frac{\ln2}{\mu}
+=\frac{D_{\mathrm{KL}}(p\|q)}{\mu}.}
+\tag{2.6}
+$$
+
+因此，在这个独立模型中，两种抽样方式得到的分裂间隔分布之间的 KL 散度，除以平均分裂间隔 $\mu$，就精确给出了群体增长率超过 $\ln2/\mu$ 的部分。相关分裂间隔需要改用多代时间的联合分布，其推广见[附录 H](#appendix-h)。
+
+对于弱噪声，若 $\Lambda\sigma_\tau\ll1$，且关于波动幅度的展开是正则的，高阶累积量在二阶近似中可以忽略，则有
 
 $$
 \Lambda\simeq\frac{\ln2}{\mu}
-+\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.5}
++\frac{(\ln2)^2}{2\mu^3}\sigma_\tau^2.\tag{2.7}
 $$
 
-逐步展开见[附录 B](#appendix-b)，信息论解释见[附录 H](#appendix-h)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见 Fig. 4。要注意，式（2.4）的比较基准是平均分裂间隔时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞的 size growth rate 为 $\lambda$ 的群体**。
+弱噪声展开的推导见[附录 B](#appendix-b)。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)对平均分裂间隔时间与群体倍增时间的实验比较见 Fig. 4。要注意，式（2.4）的比较基准是平均分裂间隔时间为 $\mu$ 的独立分裂模型，**不能直接把它等同于单细胞的 size growth rate 为 $\lambda$ 的群体**。
 
 <div id="a2-experimental-doubling-time-comparison"></div>
 
@@ -274,7 +299,7 @@ $$
 
 *Fig. 4. 实验中的平均分裂间隔时间与群体倍增时间。* 引自 [Hashimoto 等，*PNAS*（2016）](https://doi.org/10.1073/pnas.1519412113)的原文 Fig. 3。B 图比较平均分裂间隔时间与群体倍增时间；二者的比值大于一，表示群体倍增更快。C 图展示增长增益与分裂间隔时间变异的关系，E 图比较 Euler–Lotka 预测和测量结果。A、D 图分别展示分裂间隔时间分布和模型。原图未经修改；来源：[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4812751/#fig03)。
 
-**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示 cell size 的指数增长率。把该图与式（2.7）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持 size homeostasis、且所有细胞共有恒定 size growth rate 的群体违反了质量守恒。
+**符号与适用范围。** 这篇论文在定义增益时采用 $\lambda=\ln2/\langle\tau\rangle_g$，而本笔记的 $\lambda$ 表示 cell size 的指数增长率。把该图与式（2.9）比较时，必须区分这两种定义。这张图支持的是倍增时间的实验比较，不能据此声称：一个维持 size homeostasis、且所有细胞共有恒定 size growth rate 的群体违反了质量守恒。
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
@@ -289,7 +314,7 @@ $$
 两次分裂之间，$\dot V_{\mathrm{tot}}=\lambda V_{\mathrm{tot}}$。分裂瞬间，两个子细胞的体积之和等于母细胞体积，因此总体积没有跳变。只要没有死亡、生物量损失，也不会在有限时间内发生无限次分裂（即分裂过程非爆炸），就有
 
 $$
-\boxed{V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.}\tag{2.6}
+\boxed{V_{\mathrm{tot}}(t)=V_{\mathrm{tot}}(0)e^{\lambda t}.}\tag{2.8}
 $$
 
 分裂增加了细胞数量，却只是重新分配已有体积。把某一时刻群体中所有细胞的 mean size 记作 $\overline v_{\mathrm{snap}}(t)=V_{\mathrm{tot}}(t)/N(t)$，则严格有
@@ -303,14 +328,14 @@ $$
 
 $$
 \boxed{\Lambda=\lambda\quad\text{若}\quad
-\lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.7}
+\lim_{t\to\infty}\frac{\ln\overline v_{\mathrm{snap}}(t)}t=0.}\tag{2.9}
 $$
 
 如果这个群体瞬时平均值收敛到有限的正数，上述条件就成立；有界的周期变化也足够。仅仅知道**沿 chronological lineage 的 birth size**服从平稳分布，并不能保证这一条件，因为群体瞬时抽样对细胞的加权方式不同。
 
 这个关系说明，在固定 $\lambda$ 的条件下，若数量增长指数 $\Lambda>\lambda$，群体瞬时 mean size 就必须以指数速度减小。因而，独立 timer 相对于相同平均分裂间隔时间基准的增长增量，不能直接解释为维持 size homeostasis 的细胞可以获得的繁殖收益，也不能据此推断 size control 具有增长代价。
 
-作为模型一致性检查，若 chronological lineage 是平稳的，且 $\mathbb E|\ln v|<\infty$，对式（1.2）取期望可得 $\mu=\ln2/\lambda$。将这个均值代入有噪声的独立模型会预测 $\Lambda>\lambda$，与满足群体瞬时 size 条件的式（2.7）不相容。第 1 节已说明原因：独立 timer 本身不能维持 size homeostasis。要从单细胞测量预测真实群体，还需要描述分裂时间如何响应继承的 size，以及这种响应如何影响整段 lineage。
+作为模型一致性检查，若 chronological lineage 是平稳的，且 $\mathbb E|\ln v|<\infty$，对式（1.2）取期望可得 $\mu=\ln2/\lambda$。将这个均值代入有噪声的独立模型会预测 $\Lambda>\lambda$，与满足群体瞬时 size 条件的式（2.9）不相容。第 1 节已说明原因：独立 timer 本身不能维持 size homeostasis。要从单细胞测量预测真实群体，还需要描述分裂时间如何响应继承的 size，以及这种响应如何影响整段 lineage。
 
 ---
 
@@ -494,7 +519,7 @@ $$
 
 $D_\tau$ 表示长期累计时间的方差除以分裂间隔数 $n$ 后得到的极限，单位为时间的平方。因为它是非负量的极限，所以 $D_\tau\ge0$。单代方差描述局部噪声；协方差总和则描述后续分裂间隔会放大还是补偿当前波动。独立时间满足 $D_\tau=\sigma_\tau^2$；持续的正相关通常会增大这个量，负相关则可能将它抵消。协方差绝对可和保证了求和表达式成立；即使级数不收敛，直接通过方差极限定义 $D_\tau$ 仍可能有意义。
 
-如果渐近累积量具有正则的弱噪声展开，独立模型的结果（2.5）可推广为
+如果渐近累积量具有正则的弱噪声展开，独立模型的结果（2.7）可推广为
 
 $$
 \boxed{\Lambda\simeq\frac{\ln2}{\mu}
@@ -661,7 +686,7 @@ $$
 
 ### 附录 B. 独立与相关情形下的弱噪声计算 {#appendix-b}
 
-下面两种展开使用同一个思路：对 chronological lineage 历史权重的对数进行展开。式（2.5）对应独立情形，式（4.4）则是长历史下的推广。
+下面两种展开使用同一个思路：对 chronological lineage 历史权重的对数进行展开。式（2.7）对应独立情形，式（4.4）则是长历史下的推广。
 
 <div id="23-a-weak-noise-estimate"></div>
 
@@ -1627,21 +1652,9 @@ $$
 
 <div id="appendix-a-kl-divergence-for-lifetime-and-trajectory-distributions"></div>
 
-### 附录 H. 分裂间隔时间分布与轨迹分布的 KL 散度 {#appendix-h}
+### 附录 H. 相关分裂间隔的轨迹分布与 KL 散度 {#appendix-h}
 
-第 2.1 节引入的加权密度 $q$，可以用信息论表示相对于平均分裂间隔时间基准的增长增量。对于独立的分裂间隔时间，若 $\bar\tau=\mathbb E_p[\tau]\lt\infty$，$p$ 与 $q$ 之间的 Kullback–Leibler 散度（KL 散度，也称相对熵）为
-
-$$
-\begin{aligned}
-D_{\mathrm{KL}}(p\|q)
-&=\int_0^\infty p(\tau)\ln\frac{p(\tau)}{q(\tau)}\,d\tau\\
-&=\int_0^\infty p(\tau)(\Lambda\tau-\ln2)\,d\tau\\
-&=\Lambda\bar\tau-\ln2.
-\end{aligned}
-\tag{H.1}
-$$
-
-KL 散度非负，因此回到式（2.4）的 Jensen 下界；$D_{\mathrm{KL}}(p\|q)/\bar\tau$ 则精确给出 $\Lambda$ 比 $\ln2/\bar\tau$ 大多少。同一种分布偏倚，既可以从抽样角度理解，也可以用 KL 散度表示。
+第 2.2 节已用单代分布的 KL 散度表示独立模型的增长增量。本附录将这一关系推广到具有相关性的多代分裂历史。
 
 对于相关分裂间隔时间，第 4.1 节说明增长率取决于完整的分裂历史。因此，KL 恒等式需要使用分裂间隔时间的联合分布。令 $\boldsymbol\tau=(\tau_0,\ldots,\tau_{n-1})$，用 $p_n(\boldsymbol\tau)$ 表示 chronological lineage 的联合概率分布，并记 $T_n=\sum_{j=0}^{n-1}\tau_j$。定义加权轨迹分布
 
@@ -1650,7 +1663,7 @@ q_n(\boldsymbol\tau)
 =\frac{2^n e^{-\Lambda T_n}p_n(\boldsymbol\tau)}{Z_n(\Lambda)},
 \quad
 Z_n(\Lambda)=2^n\mathbb E_p[e^{-\Lambda T_n}].
-\tag{H.2}
+\tag{H.1}
 $$
 
 这个定义已经保证归一化。若分裂间隔时间独立，则 $Z_n(\Lambda)=1$，且 $q_n(\boldsymbol\tau)=\prod_{j=0}^{n-1}q(\tau_j)$，得到第 2.1 节中的单代加权。对于一般联合分布，KL 散度为
@@ -1662,7 +1675,7 @@ D_{\mathrm{KL}}(p_n\|q_n)
 \ln\frac{p_n}{q_n}\right]\\
 &=\Lambda\mathbb E_p[T_n]-n\ln2+\ln Z_n(\Lambda).
 \end{aligned}
-\tag{H.3}
+\tag{H.2}
 $$
 
 若 $\mathbb E[T_n]=n\bar\tau$，且 $\lim_{n\to\infty}\ln Z_n(\Lambda)/n=0$，除以 $n$ 后得到
@@ -1670,10 +1683,10 @@ $$
 $$
 \lim_{n\to\infty}\frac1nD_{\mathrm{KL}}(p_n\|q_n)
 =\Lambda\bar\tau-\ln2.
-\tag{H.4}
+\tag{H.3}
 $$
 
-非负的 KL 散度*率*把式（H.1）推广到相关历史，并得到第 4.1 节的广义 Jensen 下界。这里“率”指长轨迹的 KL 散度除以分裂间隔数后的极限。对于相关过程，$q_n$ 是按指数权重重新加权的轨迹系综；要把它等同于某种具体回溯抽样得到的分布，还可能需要处理边界效应和额外假设。
+非负的 KL 散度*率*把式（2.5）推广到相关历史，并得到第 4.1 节的广义 Jensen 下界。这里“率”指长轨迹的 KL 散度除以分裂间隔数后的极限。对于相关过程，$q_n$ 是按指数权重重新加权的轨迹系综；要把它等同于某种具体回溯抽样得到的分布，还可能需要处理边界效应和额外假设。
 
 在维持 size homeostasis、$\lambda$ 恒定的模型中，在保证 $\Lambda\bar\tau=\ln2$ 的同一组条件下，KL 散度除以分裂间隔数后的极限为零，但有限长度路径的两个分布仍不必完全相同。
 
