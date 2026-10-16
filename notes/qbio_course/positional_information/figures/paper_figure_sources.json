@@ -21,5 +21,16 @@
     "sha256": "21d74dfd5e4127979f1f092ef03ec4ef956f6a56157b2872b23fc9769461e18d",
     "rights": "© 2018 Lucas et al. CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "file": "figures/petkova_2019_fig01.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c805/6526179/844390631c30/nihms-1520020-f0002.jpg",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6526179/",
+    "article_doi": "10.1016/j.cell.2019.01.007",
+    "figure": "1",
+    "retrieved_on": "2026-10-16",
+    "modification": "none",
+    "sha256": "cc215cc22df841a0ffe435d158da90a63123ed5891c36abdf58a9b91f3bb50ab",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
   }
 ]

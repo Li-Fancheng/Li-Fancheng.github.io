@@ -10,11 +10,11 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Ellipse
+from matplotlib.patches import Ellipse, Rectangle
 import numpy as np
 from numpy.polynomial.hermite import hermgauss
 from scipy.integrate import simpson
-from scipy.special import logsumexp
+from scipy.special import logsumexp, ndtr
 
 
 OUT = Path(__file__).resolve().parent
@@ -42,6 +42,52 @@ def save(fig, name):
 
 def title(ax, text):
     ax.set_title(text, loc="left", pad=13)
+
+
+def french_flag():
+    """Two fixed thresholds, then independent Gaussian input-reading noise."""
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.1), layout="constrained")
+    z = np.linspace(0, 1, 700)
+    c = np.exp(-z/.4)
+    high, low = np.exp(-np.array([1/3, 2/3])/.4)
+    colors = ["#2767a0", "#a8b2bc", "#d45150"]
+    ax = axes[0]
+    title(ax, "A  |  One input, two thresholds")
+    ax.plot(z, c, color=INK, label=r"$c/c_0=e^{-z/0.4}$")
+    for value, boundary, label in [(high, 1/3, r"$c_H$"), (low, 2/3, r"$c_L$")]:
+        ax.axhline(value, color=MUTED, ls=":", lw=1.2)
+        ax.plot([boundary, boundary], [0, value], color=MUTED, ls="--", lw=1.1)
+        ax.text(.87, value+.025, label)
+    ax.set(xlabel=r"Relative position $z=x/L$", ylabel=r"Concentration $c/c_0$",
+           xlim=(0, 1), ylim=(0, 1.08))
+    ax.legend(loc="upper right", fontsize=10)
+    ax = axes[1]
+    title(ax, "B  |  A coarse fate decision")
+    for j, (face, name) in enumerate(zip([colors[0], "white", colors[2]], ["Blue", "White", "Red"])):
+        ax.add_patch(Rectangle((j/3, .38), 1/3, .26, facecolor=face,
+                               edgecolor=INK, lw=1))
+        ax.text((j+.5)/3, .51, name, ha="center", va="center",
+                color=INK if j==1 else "white", fontsize=13)
+    ax.text(.5, .87, "Noiseless threshold readout", ha="center")
+    ax.text(.5, .16, "Same fate within each domain;\nposition inside it remains unresolved.", ha="center", fontsize=11)
+    ax.set(xlabel=r"Relative position $z=x/L$", xlim=(0, 1), ylim=(0, 1), yticks=[])
+    ax.spines["left"].set_visible(False)
+    ax = axes[2]
+    title(ax, "C  |  Noise blurs the decisions")
+    sigma = .045
+    blue = ndtr((c-high)/sigma)
+    red = ndtr((low-c)/sigma)
+    white = 1-blue-red
+    assert np.all(white >= -1e-12)
+    for p, color, name in zip([blue, white, red], colors, ["Blue", "White", "Red"]):
+        ax.plot(z, p, color=color, label=name)
+    ax.text(.04, .51, r"$\sigma_c/c_0=0.045$", transform=ax.transAxes)
+    ax.set(xlabel=r"Relative position $z=x/L$", ylabel="Fate probability over repeated reads",
+           xlim=(0, 1), ylim=(0, 1.04))
+    ax.legend(loc="center right", fontsize=10)
+    for ax in (axes[0], axes[2]):
+        ax.grid(alpha=.12)
+    save(fig, "00_french_flag")
 
 
 def gradient():
@@ -76,6 +122,75 @@ def gradient():
     for ax in axes:
         ax.grid(alpha=.12)
     save(fig, "01_gradient_and_counting")
+
+
+def reading_noise():
+    """A local linear teaching example, not measured gene-expression data."""
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.1), layout="constrained")
+    g = np.linspace(35, 175, 900)
+    for ax, sigma, heading in zip(axes, [5, 20],
+                                  ["A  |  Small reading noise", "B  |  Large reading noise"]):
+        title(ax, heading)
+        for mean, color, label in [(100, BLUE, "$x=0.40L$"),
+                                    (110, ORANGE, "$x=0.41L$")]:
+            density = np.exp(-.5*((g-mean)/sigma)**2)/(np.sqrt(2*np.pi)*sigma)
+            ax.plot(g, density, color=color, label=label)
+            ax.fill_between(g, density, color=color, alpha=.12)
+            ax.axvline(mean, color=color, ls=":", lw=1)
+        ax.text(.05, .82, rf"$\sigma_g={sigma}$", transform=ax.transAxes, fontsize=13)
+        ax.set(xlabel="One expression reading $g$ (arbitrary units)",
+               ylabel="Probability density of repeated readings", xlim=(35, 175), ylim=(0, .088))
+        ax.legend(loc="upper right")
+        ax.grid(alpha=.12)
+    save(fig, "07_reading_noise")
+
+
+def information_budget():
+    """Four equiprobable positions, readout of half with symmetric errors."""
+    def entropy(p):
+        p = np.asarray(p, dtype=float)
+        return -np.sum(p[p > 0]*np.log2(p[p > 0]))
+    prior = np.full(4, .25)
+    channel = np.array([[.9, .1], [.9, .1], [.1, .9], [.1, .9]])
+    joint = prior[:, None]*channel
+    output = joint.sum(axis=0)
+    posterior = joint/output
+    remaining = sum(output[j]*entropy(posterior[:, j]) for j in range(2))
+    gained = entropy(prior)-remaining
+    assert np.allclose(posterior[:, 0], [.45, .45, .05, .05])
+    assert np.isclose(gained, .5310044064107188)
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.2), layout="constrained")
+    ax = axes[0]
+    title(ax, "A  |  Update after an ON reading")
+    ax.bar(np.arange(4)-.18, prior, width=.36, color=BLUE, label="Before reading")
+    ax.bar(np.arange(4)+.18, posterior[:, 0], width=.36, color=GREEN, label="After ON")
+    ax.set(xticks=np.arange(4), xticklabels=["A", "B", "C", "D"],
+           xlabel="Candidate position", ylabel="Probability", ylim=(0, .62))
+    ax.legend(loc="upper right", fontsize=10)
+    ax = axes[1]
+    title(ax, "B  |  Count uncertainty in bits")
+    ax.bar(0, 2, color="#b6c0c9", width=.62)
+    ax.bar(1, remaining, color="#b6c0c9", width=.62, label="Remaining uncertainty")
+    ax.bar(1, gained, bottom=remaining, color=GREEN, width=.62, label="Information gained")
+    ax.text(0, 1, "$H(X)=2$", ha="center", va="center")
+    ax.text(1, remaining/2, f"$H(X|G)$\n$={remaining:.3f}$", ha="center", va="center")
+    ax.text(1, remaining+gained/2, f"$I={gained:.3f}$", ha="center", va="center", color="white", fontsize=11)
+    ax.set(xticks=[0, 1], xticklabels=["Before", "After"], ylabel="Bits", ylim=(0, 2.8))
+    ax.legend(loc="upper center", fontsize=9.5)
+    ax = axes[2]
+    title(ax, "C  |  Error rate and information")
+    error = np.linspace(0, .5, 400)
+    binary_entropy = np.array([entropy([p, 1-p]) for p in error])
+    ax.plot(error, 1-binary_entropy, color=BLUE)
+    ax.scatter([.1], [gained], color=GREEN, zorder=3)
+    ax.annotate("10% error:\n0.531 bits", xy=(.1, gained), xytext=(.21, .68),
+                fontsize=11, arrowprops=dict(arrowstyle="->", color=MUTED))
+    ax.text(.48, .94, "At most 1 bit:\nonly the half is encoded", ha="right", va="top", fontsize=10)
+    ax.set(xlabel=r"Symmetric readout error $\epsilon$", ylabel="$I(X;G)$ (bits)",
+           xlim=(0, .5), ylim=(0, 1.06))
+    for ax in axes:
+        ax.grid(axis="y", alpha=.12)
+    save(fig, "08_information_budget")
 
 
 def correlated_noise():
@@ -263,7 +378,7 @@ def mean_and_worst():
 
 
 if __name__ == "__main__":
-    for draw in [gradient, correlated_noise, ambiguity, optimal_gradient,
+    for draw in [french_flag, gradient, reading_noise, correlated_noise, ambiguity, information_budget, optimal_gradient,
                  diffusion_tradeoff, mean_and_worst]:
         draw()
         print(draw.__name__)
