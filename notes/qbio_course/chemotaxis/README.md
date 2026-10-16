@@ -2,30 +2,30 @@
 
 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-正文见[趋化笔记](lecture_notes.md)。正文围绕“随机运动抹平起伏，细胞为何仍能自发聚集”分为四部分：随机游动与扩散、化学感知与净迁移、自分泌信号与反扩散反馈、集体失稳及其实验检验。化学作用范围、有限尺寸阈值、早期尺度与长期图案的区别均放入正文。技术附录 A 连接 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率，附录 C 收纳路径计数、连续极限、有偏跳跃和响应核的计算。
+正文见[趋化笔记](lecture_notes.md)。正文采用两条并行主线：数学上，从一维离散随机游走、主方程与连续极限，逐步建立扩散、漂移–扩散、趋化通量和 Keller–Segel 模型；物理上，追踪扩散平滑、外场积累、自分泌反馈与聚集失稳。四部分依次讨论离散到连续的扩散、有偏游走与化学感知、共享场的闭合与反馈，以及失稳尺度和实验检验。技术附录 A 连接连续时间 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率，附录 C 推导化学响应核。
 
-文中 18 张图片按阅读顺序统一编号为 Fig. 1–18（正文 1–16，附录 17–18）：4 张论文实验图，以及 14 张由代码生成的模型示意图、理论曲线和模拟图。图片文件名保留生成脚本中的标识，文中图号可按下表查找：
+文中 18 张图片按阅读顺序统一编号为 Fig. 1–18（均在正文中）：4 张论文实验图，以及 14 张由代码生成的模型示意图、理论曲线和模拟图。图片文件名保留生成脚本中的标识，文中图号可按下表查找：
 
 | 文中图号 | 图片文件（位于 `figures/`） |
 |---|---|
 | Fig. 1 | `00_ecoli_run_tumble_taute2015.png` |
 | Fig. 2 | `01_random_walk_trajectories.png` |
-| Fig. 3 | `B_diffusion_boundary_flux.png` / `.svg` |
-| Fig. 4 | `02_random_walk_to_diffusion.png` |
-| Fig. 5 | `paper_grognot2021_fig1.png` |
-| Fig. 6 | `03_biased_random_walk.png` |
-| Fig. 7 | `04_chemotaxis_in_fixed_field.png` |
-| Fig. 8 | `paper_laganenka2016_fig1.jpg` |
-| Fig. 9 | `paper_laganenka2016_fig2.jpg` |
-| Fig. 10 | `05_field_mediated_feedback.png` / `.svg` |
-| Fig. 11 | `E_signal_range_and_superposition.png` / `.svg` |
-| Fig. 12 | `D_cosine_mode_and_growth.png` / `.svg` |
-| Fig. 13 | `08_optional_growth_rate.png` |
-| Fig. 14 | `06_collective_1d_space_time.png` |
-| Fig. 15 | `07_collective_1d_snapshots.png` |
-| Fig. 16 | `09_optional_2d_patterns.png` |
-| Fig. 17 | `A_walk_probability_bookkeeping.png` / `.svg` |
-| Fig. 18 | `C_gradient_to_jump_bias.png` / `.svg` |
+| Fig. 3 | `A_walk_probability_bookkeeping.png` / `.svg` |
+| Fig. 4 | `B_diffusion_boundary_flux.png` / `.svg` |
+| Fig. 5 | `02_random_walk_to_diffusion.png` |
+| Fig. 6 | `paper_grognot2021_fig1.png` |
+| Fig. 7 | `03_biased_random_walk.png` |
+| Fig. 8 | `C_gradient_to_jump_bias.png` / `.svg` |
+| Fig. 9 | `04_chemotaxis_in_fixed_field.png` |
+| Fig. 10 | `paper_laganenka2016_fig1.jpg` |
+| Fig. 11 | `paper_laganenka2016_fig2.jpg` |
+| Fig. 12 | `05_field_mediated_feedback.png` / `.svg` |
+| Fig. 13 | `E_signal_range_and_superposition.png` / `.svg` |
+| Fig. 14 | `D_cosine_mode_and_growth.png` / `.svg` |
+| Fig. 15 | `08_optional_growth_rate.png` |
+| Fig. 16 | `06_collective_1d_space_time.png` |
+| Fig. 17 | `07_collective_1d_snapshots.png` |
+| Fig. 18 | `09_optional_2d_patterns.png` |
 
 
 ## 文件布局
@@ -111,4 +111,4 @@ python code/collective_2d.py
 
 ## 内容与引用
 
-正文末尾给出了 Keller–Segel、Berg–Brown 和 Budrene–Berg 的经典论文 DOI。Fig. 1 摘自 Taute 等（2015），原文 Fig. 4a，DOI: https://doi.org/10.1038/ncomms9776，按 CC BY 4.0（https://creativecommons.org/licenses/by/4.0/）转载，仅裁出面板，未改动数据。来源 PDF：https://ir.amolf.nl/pub/6550/16036OA.pdf，第 5 页。另有 Fig. 5 引自 Grognot 与 Taute（2021），原文 Fig. 1，DOI: https://doi.org/10.1038/s42003-021-02190-2；Fig. 8、9 引自 Laganenka 等（2016），原文 Fig. 1、2，DOI: https://doi.org/10.1038/ncomms12984。这三张图片取自出版社提供的完整图片，未经修改，均按 CC BY 4.0 转载。其余 14 张图由本目录代码生成；生成脚本不会覆盖论文图。
+正文末尾给出了 Keller–Segel、Berg–Brown 和 Budrene–Berg 的经典论文 DOI。Fig. 1 摘自 Taute 等（2015），原文 Fig. 4a，DOI: https://doi.org/10.1038/ncomms9776，按 CC BY 4.0（https://creativecommons.org/licenses/by/4.0/）转载，仅裁出面板，未改动数据。来源 PDF：https://ir.amolf.nl/pub/6550/16036OA.pdf，第 5 页。另有 Fig. 6 引自 Grognot 与 Taute（2021），原文 Fig. 1，DOI: https://doi.org/10.1038/s42003-021-02190-2；Fig. 10、11 引自 Laganenka 等（2016），原文 Fig. 1、2，DOI: https://doi.org/10.1038/ncomms12984。这三张图片取自出版社提供的完整图片，未经修改，均按 CC BY 4.0 转载。其余 14 张图由本目录代码生成；生成脚本不会覆盖论文图。

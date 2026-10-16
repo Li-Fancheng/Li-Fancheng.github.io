@@ -1,4 +1,4 @@
-"""Asset 09 (article Fig. 16): minimal Keller--Segel on a 2D torus.
+"""Asset 09 (article Fig. 18): minimal Keller--Segel on a 2D torus.
 
 A finite-volume update of cell transport uses conservative face fluxes
 and upwinding for chemotactic drift. The chemical field evolves via a
