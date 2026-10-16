@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Ellipse, Rectangle
+from matplotlib.patches import Circle, Ellipse, Rectangle
 import numpy as np
 from numpy.polynomial.hermite import hermgauss
 from scipy.integrate import simpson
@@ -124,11 +124,66 @@ def gradient():
     save(fig, "01_gradient_and_counting")
 
 
+def molecular_readout():
+    """One-site binding cartoon and reproducible two-state reaction histories.
+
+    A free site binds at rate k_on*c; an occupied site releases at k_off.
+    Only these two reactions are simulated, not transcription or hb regulation.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(11.6, 4.8), layout="constrained")
+    ax = axes[0]
+    title(ax, "A  |  A DNA site senses local Bcd")
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.axis("off")
+    ax.text(.5, .93, "More local Bcd means a shorter wait to bind", ha="center", fontsize=11)
+    for center, occupied in [(.23, False), (.77, True)]:
+        for y in [.56, .59]:
+            ax.plot([center-.17, center+.17], [y, y], color=MUTED, lw=1.6)
+        for x in np.linspace(center-.17, center+.17, 15):
+            ax.plot([x, x], [.56, .59], color=MUTED, lw=.7)
+        ax.add_patch(Rectangle((center-.045, .535), .09, .08,
+                               edgecolor=BLUE, facecolor="#e6eef5", lw=1.5, zorder=3))
+        if occupied:
+            ax.add_patch(Circle((center, .655), .062, color=BLUE, zorder=4))
+            ax.text(center, .655, "Bcd", ha="center", va="center", color="white", fontsize=10, zorder=5)
+        ax.text(center, .43, "Occupied (1)" if occupied else "Empty (0)", ha="center")
+        ax.text(center, .35, "Same DNA binding site", ha="center", fontsize=10, color=MUTED)
+    for x, y in [(.13, .77), (.32, .82), (.38, .70)]:
+        ax.add_patch(Circle((x, y), .018, color=BLUE, alpha=.7))
+    ax.annotate("", xy=(.60, .64), xytext=(.40, .64),
+                arrowprops=dict(arrowstyle="->", color=BLUE, lw=1.6))
+    ax.text(.5, .69, "bind", ha="center", fontsize=10, color=BLUE)
+    ax.annotate("", xy=(.40, .51), xytext=(.60, .51),
+                arrowprops=dict(arrowstyle="->", color=ORANGE, lw=1.6))
+    ax.text(.5, .45, "release", ha="center", fontsize=10, color=ORANGE)
+    ax.text(.5, .15, "Binding states influence transcription\nand thus RNA production", ha="center", va="center", fontsize=12)
+    ax = axes[1]
+    title(ax, "B  |  Concentration changes the history")
+    rng = np.random.default_rng(734)
+    duration, off_rate = 120., .5
+    for on_rate, offset, color, label in [(.125, 0., BLUE, "Low c: longer empty intervals"),
+                                          (.5, 2.3, ORANGE, "High c: shorter empty intervals")]:
+        times, states = [0.], [0]
+        while times[-1] < duration:
+            rate = on_rate if states[-1] == 0 else off_rate
+            next_time = times[-1]+rng.exponential(1/rate)
+            times.append(min(next_time, duration))
+            states.append(1-states[-1] if next_time < duration else states[-1])
+        ax.step(times, np.array(states)+offset, where="post", color=color, lw=1.8)
+        ax.text(0, offset+1.28, label, color=color, fontsize=11)
+        ax.axhline(offset, color=MUTED, alpha=.2, lw=.8)
+    ax.set(xlim=(0, duration), ylim=(-.3, 4.1), xlabel="Time (s)",
+           ylabel="Site occupancy (0 = empty, 1 = bound)",
+           yticks=[0, 1, 2.3, 3.3], yticklabels=["0", "1", "0", "1"])
+    ax.grid(axis="x", alpha=.12)
+    save(fig, "09_molecular_readout")
+
+
 def reading_noise():
     """A local linear teaching example, not measured gene-expression data."""
-    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.1), layout="constrained")
+    fig, axes = plt.subplots(2, 2, figsize=(10.8, 8.2), layout="constrained")
     g = np.linspace(35, 175, 900)
-    for ax, sigma, heading in zip(axes, [5, 20],
+    for ax, sigma, heading in zip(axes[0], [5, 20],
                                   ["A  |  Small reading noise", "B  |  Large reading noise"]):
         title(ax, heading)
         for mean, color, label in [(100, BLUE, "$x=0.40L$"),
@@ -141,6 +196,27 @@ def reading_noise():
         ax.set(xlabel="One expression reading $g$ (arbitrary units)",
                ylabel="Probability density of repeated readings", xlim=(35, 175), ylim=(0, .088))
         ax.legend(loc="upper right")
+        ax.grid(alpha=.12)
+    z = np.linspace(.37, .43, 400)
+    for ax, slope, heading in zip(axes[1], [1000, 250],
+                                  ["C  |  Steep spatial response", "D  |  Shallow spatial response"]):
+        title(ax, heading)
+        sigma_g, z0, mean = 5, .4, 100
+        sigma_z = sigma_g/slope
+        left, right = z0-sigma_z, z0+sigma_z
+        ax.axhspan(mean-sigma_g, mean+sigma_g, color=ORANGE, alpha=.18)
+        ax.fill_betweenx([65, mean-sigma_g], left, right, color=GREEN, alpha=.13)
+        ax.plot(z, mean+slope*(z-z0), color=BLUE)
+        for edge, value in [(left, mean-sigma_g), (right, mean+sigma_g)]:
+            ax.plot([edge, edge], [65, value], color=GREEN, ls="--", lw=1.3)
+            ax.scatter([edge], [value], color=GREEN, s=24, zorder=4)
+        ax.scatter([z0], [mean], color=INK, s=24, zorder=4)
+        ax.annotate("", xy=(right, 76), xytext=(left, 76),
+                    arrowprops=dict(arrowstyle="<->", color=GREEN, lw=1.4))
+        ax.text(z0, 69, rf"Half-width: $\sigma_x/L={sigma_z:g}$", ha="center", color=GREEN, fontsize=11)
+        ax.text(.05, .89, r"Same reading noise: $\sigma_g=5$", transform=ax.transAxes, fontsize=11)
+        ax.set(xlabel=r"Relative position $x/L$", ylabel=r"Mean expression $\mu(x)$ (arbitrary units)",
+               xlim=(.37, .43), ylim=(65, 135), xticks=[.37, .39, .4, .41, .43])
         ax.grid(alpha=.12)
     save(fig, "07_reading_noise")
 
@@ -378,7 +454,7 @@ def mean_and_worst():
 
 
 if __name__ == "__main__":
-    for draw in [french_flag, gradient, reading_noise, correlated_noise, ambiguity, information_budget, optimal_gradient,
+    for draw in [french_flag, gradient, molecular_readout, reading_noise, correlated_noise, ambiguity, information_budget, optimal_gradient,
                  diffusion_tradeoff, mean_and_worst]:
         draw()
         print(draw.__name__)
