@@ -1,0 +1,25 @@
+[
+  {
+    "file": "figures/gregor_2007_fig02.jpg",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e45a/2253670/debe17ed3b0a/nihms27371f2.jpg",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2253670/",
+    "article_doi": "10.1016/j.cell.2007.05.025",
+    "figure": "2",
+    "retrieved_on": "2026-10-16",
+    "modification": "none",
+    "sha256": "3f72b702881455ed07f304cf85791a149baa16425eeb49e01e53133a989154df",
+    "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/lucas_2018_fig01.png",
+    "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?size=large&id=10.1371/journal.pgen.1007676.g001",
+    "article_url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1007676",
+    "article_doi": "10.1371/journal.pgen.1007676",
+    "figure": "1",
+    "retrieved_on": "2026-10-16",
+    "modification": "none",
+    "sha256": "21d74dfd5e4127979f1f092ef03ec4ef956f6a56157b2872b23fc9769461e18d",
+    "rights": "© 2018 Lucas et al. CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+]

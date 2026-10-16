@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="cell-cycle-page mx-auto flex max-w-screen-xl">
   {{ partial "components/toc.html" . }}
-  <article class="cell-cycle-article prose prose-slate dark:prose-invert w-full min-w-0 px-6 py-8 md:px-12">
+  <article class="cell-cycle-article{{ with .Params.article_class }} {{ . }}{{ end }} prose prose-slate dark:prose-invert w-full min-w-0 px-6 py-8 md:px-12">
     <header>
       <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
       <h1>{{ .Title }}</h1>

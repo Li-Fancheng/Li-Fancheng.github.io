@@ -15,3 +15,12 @@
 .cell-cycle-mobile-toc { margin-block: 2rem; padding: 1rem; border: 1px solid #94a3b855; border-radius: .5rem; }
 .cell-cycle-mobile-toc nav { max-height: 22rem; overflow-y: auto; }
 @media (min-width: 1280px) { .cell-cycle-mobile-toc { display: none; } }
+
+/* Reserve a separate column for this note's equation numbers when scrolling. */
+.positional-information-note .katex-display > .katex:has(> .katex-html > .tag) {
+  width: max-content;
+  min-width: 100%;
+}
+.positional-information-note .katex-display > .katex:has(> .katex-html > .tag) > .katex-html {
+  padding-right: 4em;
+}
