@@ -2,7 +2,7 @@
 title: "基因表达如何编码空间位置"
 subtitle: "从 Bicoid 梯度和 French flag model 到位置解码与网络优化"
 date: 2026-10-17
-summary: "从 Bicoid 梯度出发，讨论基因表达中的位置信息、多基因联合读取与调控网络优化。"
+summary: "从 Bicoid 梯度出发，介绍基因表达中的位置信息与位置解码，讨论噪声对定位精度的限制，以及多基因联合读取和调控网络优化的作用。"
 layout: cell-cycle
 article_class: positional-information-note
 math: true
