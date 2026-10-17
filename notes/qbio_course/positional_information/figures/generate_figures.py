@@ -6,6 +6,7 @@ any directory; SVG and PNG outputs are written beside it.
 """
 
 from pathlib import Path
+from textwrap import fill
 
 import matplotlib
 matplotlib.use("Agg")
@@ -22,8 +23,9 @@ BLUE, ORANGE, GREEN, PURPLE = "#2767a0", "#d47725", "#238579", "#8057a5"
 INK, MUTED = "#243747", "#637181"
 plt.rcParams.update({
     "font.family": "STIXGeneral", "mathtext.fontset": "stix",
-    "font.size": 12, "axes.titlesize": 14, "axes.titleweight": "bold",
-    "axes.labelsize": 12, "legend.fontsize": 10.5,
+    "font.size": 15, "axes.titlesize": 17, "axes.titleweight": "bold",
+    "axes.labelsize": 15, "legend.fontsize": 13,
+    "xtick.labelsize": 14, "ytick.labelsize": 14,
     "axes.spines.top": False, "axes.spines.right": False,
     "text.color": INK, "axes.labelcolor": INK,
     "figure.facecolor": "white", "savefig.facecolor": "white",
@@ -41,12 +43,12 @@ def save(fig, name):
 
 
 def title(ax, text):
-    ax.set_title(text, loc="left", pad=13)
+    ax.set_title(fill(text, width=34, break_long_words=False), loc="left", pad=16)
 
 
 def french_flag():
     """Two fixed thresholds, then independent Gaussian input-reading noise."""
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.1), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.9), layout="constrained")
     z = np.linspace(0, 1, 700)
     c = np.exp(-z/.4)
     high, low = np.exp(-np.array([1/3, 2/3])/.4)
@@ -60,16 +62,16 @@ def french_flag():
         ax.text(.87, value+.025, label)
     ax.set(xlabel=r"Relative position $z=x/L$", ylabel=r"Concentration $c/c_0$",
            xlim=(0, 1), ylim=(0, 1.08))
-    ax.legend(loc="upper right", fontsize=10)
+    ax.legend(loc="upper right", fontsize=13)
     ax = axes[1]
     title(ax, "B  |  A coarse fate decision")
     for j, (face, name) in enumerate(zip([colors[0], "white", colors[2]], ["Blue", "White", "Red"])):
         ax.add_patch(Rectangle((j/3, .38), 1/3, .26, facecolor=face,
                                edgecolor=INK, lw=1))
         ax.text((j+.5)/3, .51, name, ha="center", va="center",
-                color=INK if j==1 else "white", fontsize=13)
+                color=INK if j==1 else "white", fontsize=16)
     ax.text(.5, .87, "Noiseless threshold readout", ha="center")
-    ax.text(.5, .16, "Same fate within each domain;\nposition inside it remains unresolved.", ha="center", fontsize=11)
+    ax.text(.5, .16, "Same fate within each domain;\nposition inside it remains unresolved.", ha="center", fontsize=14)
     ax.set(xlabel=r"Relative position $z=x/L$", xlim=(0, 1), ylim=(0, 1), yticks=[])
     ax.spines["left"].set_visible(False)
     ax = axes[2]
@@ -84,14 +86,14 @@ def french_flag():
     ax.text(.04, .51, r"$\sigma_c/c_0=0.045$", transform=ax.transAxes)
     ax.set(xlabel=r"Relative position $z=x/L$", ylabel="Fate probability over repeated reads",
            xlim=(0, 1), ylim=(0, 1.04))
-    ax.legend(loc="center right", fontsize=10)
+    ax.legend(loc="center right", fontsize=13)
     for ax in (axes[0], axes[2]):
         ax.grid(alpha=.12)
     save(fig, "00_french_flag")
 
 
 def gradient():
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.2), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 5.0), layout="constrained")
     x, ell = np.linspace(0, 1, 500), .2
     c = np.exp(-x / ell)
     ax = axes[0]
@@ -110,7 +112,7 @@ def gradient():
     ax.semilogy(x, c, color=BLUE, label="Semi-infinite approximation")
     ax.semilogy(x, finite, color=GREEN, ls="--", label="Finite interval, zero flux at $L$")
     ax.set(xlabel="$x/L$", ylabel=r"$c/(R\tau/\lambda)$", xlim=(0, 1))
-    ax.legend(loc="upper right", fontsize=9)
+    ax.legend(loc="upper right", fontsize=12)
     ax = axes[2]
     title(ax, "C  |  Poisson counting limit")
     for m0, color in [(400, ORANGE), (1600, BLUE), (6400, GREEN)]:
@@ -135,7 +137,7 @@ def molecular_readout():
     title(ax, "A  |  A DNA site senses local Bcd")
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.axis("off")
-    ax.text(.5, .93, "More local Bcd means a shorter wait to bind", ha="center", fontsize=11)
+    ax.text(.5, .93, "More local Bcd means\na shorter wait to bind", ha="center", fontsize=14)
     for center, occupied in [(.23, False), (.77, True)]:
         for y in [.56, .59]:
             ax.plot([center-.17, center+.17], [y, y], color=MUTED, lw=1.6)
@@ -145,18 +147,18 @@ def molecular_readout():
                                edgecolor=BLUE, facecolor="#e6eef5", lw=1.5, zorder=3))
         if occupied:
             ax.add_patch(Circle((center, .655), .062, color=BLUE, zorder=4))
-            ax.text(center, .655, "Bcd", ha="center", va="center", color="white", fontsize=10, zorder=5)
+            ax.text(center, .655, "Bcd", ha="center", va="center", color="white", fontsize=13, zorder=5)
         ax.text(center, .43, "Occupied (1)" if occupied else "Empty (0)", ha="center")
-        ax.text(center, .35, "Same DNA binding site", ha="center", fontsize=10, color=MUTED)
+        ax.text(center, .32, "Same DNA\nbinding site", ha="center", va="top", fontsize=13, color=MUTED)
     for x, y in [(.13, .77), (.32, .82), (.38, .70)]:
         ax.add_patch(Circle((x, y), .018, color=BLUE, alpha=.7))
     ax.annotate("", xy=(.60, .64), xytext=(.40, .64),
                 arrowprops=dict(arrowstyle="->", color=BLUE, lw=1.6))
-    ax.text(.5, .69, "bind", ha="center", fontsize=10, color=BLUE)
+    ax.text(.5, .69, "bind", ha="center", fontsize=13, color=BLUE)
     ax.annotate("", xy=(.40, .51), xytext=(.60, .51),
                 arrowprops=dict(arrowstyle="->", color=ORANGE, lw=1.6))
-    ax.text(.5, .45, "release", ha="center", fontsize=10, color=ORANGE)
-    ax.text(.5, .15, "Binding states influence transcription\nand thus RNA production", ha="center", va="center", fontsize=12)
+    ax.text(.5, .45, "release", ha="center", fontsize=13, color=ORANGE)
+    ax.text(.5, .15, "Binding states influence transcription\nand thus RNA production", ha="center", va="center", fontsize=15)
     ax = axes[1]
     title(ax, "B  |  Concentration changes the history")
     rng = np.random.default_rng(734)
@@ -170,7 +172,7 @@ def molecular_readout():
             times.append(min(next_time, duration))
             states.append(1-states[-1] if next_time < duration else states[-1])
         ax.step(times, np.array(states)+offset, where="post", color=color, lw=1.8)
-        ax.text(0, offset+1.28, label, color=color, fontsize=11)
+        ax.text(0, offset+1.28, label, color=color, fontsize=14)
         ax.axhline(offset, color=MUTED, alpha=.2, lw=.8)
     ax.set(xlim=(0, duration), ylim=(-.3, 4.1), xlabel="Time (s)",
            ylabel="Site occupancy (0 = empty, 1 = bound)",
@@ -192,9 +194,9 @@ def reading_noise():
             ax.plot(g, density, color=color, label=label)
             ax.fill_between(g, density, color=color, alpha=.12)
             ax.axvline(mean, color=color, ls=":", lw=1)
-        ax.text(.05, .82, rf"$\sigma_g={sigma}$", transform=ax.transAxes, fontsize=13)
-        ax.set(xlabel="One expression reading $g$ (arbitrary units)",
-               ylabel="Probability density of repeated readings", xlim=(35, 175), ylim=(0, .088))
+        ax.text(.05, .82, rf"$\sigma_g={sigma}$", transform=ax.transAxes, fontsize=16)
+        ax.set(xlabel="One expression reading $g$\n(arbitrary units)",
+               ylabel="Probability density\nof repeated readings", xlim=(35, 175), ylim=(0, .088))
         ax.legend(loc="upper right")
         ax.grid(alpha=.12)
     z = np.linspace(.37, .43, 400)
@@ -213,9 +215,9 @@ def reading_noise():
         ax.scatter([z0], [mean], color=INK, s=24, zorder=4)
         ax.annotate("", xy=(right, 76), xytext=(left, 76),
                     arrowprops=dict(arrowstyle="<->", color=GREEN, lw=1.4))
-        ax.text(z0, 69, rf"Half-width: $\sigma_x/L={sigma_z:g}$", ha="center", color=GREEN, fontsize=11)
-        ax.text(.05, .89, r"Same reading noise: $\sigma_g=5$", transform=ax.transAxes, fontsize=11)
-        ax.set(xlabel=r"Relative position $x/L$", ylabel=r"Mean expression $\mu(x)$ (arbitrary units)",
+        ax.text(z0, 69, rf"Half-width: $\sigma_x/L={sigma_z:g}$", ha="center", color=GREEN, fontsize=14)
+        ax.text(.05, .89, r"Same reading noise: $\sigma_g=5$", transform=ax.transAxes, fontsize=14)
+        ax.set(xlabel=r"Relative position $x/L$", ylabel="Mean expression $\\mu(x)$\n(arbitrary units)",
                xlim=(.37, .43), ylim=(65, 135), xticks=[.37, .39, .4, .41, .43])
         ax.grid(alpha=.12)
     save(fig, "07_reading_noise")
@@ -235,14 +237,14 @@ def information_budget():
     gained = entropy(prior)-remaining
     assert np.allclose(posterior[:, 0], [.45, .45, .05, .05])
     assert np.isclose(gained, .5310044064107188)
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.2), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 5.0), layout="constrained")
     ax = axes[0]
     title(ax, "A  |  Update after an ON reading")
     ax.bar(np.arange(4)-.18, prior, width=.36, color=BLUE, label="Before reading")
     ax.bar(np.arange(4)+.18, posterior[:, 0], width=.36, color=GREEN, label="After ON")
     ax.set(xticks=np.arange(4), xticklabels=["A", "B", "C", "D"],
            xlabel="Candidate position", ylabel="Probability", ylim=(0, .62))
-    ax.legend(loc="upper right", fontsize=10)
+    ax.legend(loc="upper right", fontsize=13)
     ax = axes[1]
     title(ax, "B  |  Count uncertainty in bits")
     ax.bar(0, 2, color="#b6c0c9", width=.62)
@@ -250,9 +252,9 @@ def information_budget():
     ax.bar(1, gained, bottom=remaining, color=GREEN, width=.62, label="Information gained")
     ax.text(0, 1, "$H(X)=2$", ha="center", va="center")
     ax.text(1, remaining/2, f"$H(X|G)$\n$={remaining:.3f}$", ha="center", va="center")
-    ax.text(1, remaining+gained/2, f"$I={gained:.3f}$", ha="center", va="center", color="white", fontsize=11)
+    ax.text(1, remaining+gained/2, f"$I={gained:.3f}$", ha="center", va="center", color="white", fontsize=14)
     ax.set(xticks=[0, 1], xticklabels=["Before", "After"], ylabel="Bits", ylim=(0, 2.8))
-    ax.legend(loc="upper center", fontsize=9.5)
+    ax.legend(loc="upper center", fontsize=12.5)
     ax = axes[2]
     title(ax, "C  |  Error rate and information")
     error = np.linspace(0, .5, 400)
@@ -260,8 +262,8 @@ def information_budget():
     ax.plot(error, 1-binary_entropy, color=BLUE)
     ax.scatter([.1], [gained], color=GREEN, zorder=3)
     ax.annotate("10% error:\n0.531 bits", xy=(.1, gained), xytext=(.21, .68),
-                fontsize=11, arrowprops=dict(arrowstyle="->", color=MUTED))
-    ax.text(.48, .94, "At most 1 bit:\nonly the half is encoded", ha="right", va="top", fontsize=10)
+                fontsize=14, arrowprops=dict(arrowstyle="->", color=MUTED))
+    ax.text(.48, .94, "At most 1 bit:\nonly the half is encoded", ha="right", va="top", fontsize=13)
     ax.set(xlabel=r"Symmetric readout error $\epsilon$", ylabel="$I(X;G)$ (bits)",
            xlim=(0, .5), ylim=(0, 1.06))
     for ax in axes:
@@ -270,7 +272,7 @@ def information_budget():
 
 
 def correlated_noise():
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.1), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.9), layout="constrained")
     for ax, tangent, heading in zip(axes[:2], [(1, 1), (1, -1)],
                                     ["A  |  Equal slopes", "B  |  Opposite slopes"]):
         title(ax, heading)
@@ -326,7 +328,7 @@ def ambiguity():
     x = (np.arange(n)+.5)/n
     hump = np.exp(-.5*((x-.5)/.19)**2)
     mean = np.column_stack([hump, x])
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.1), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.9), layout="constrained")
     ax = axes[0]
     title(ax, "A  |  A second gene labels the branch")
     ax.plot(x, hump, color=BLUE, label=r"$\mu_1(x)$: symmetric peak")
@@ -334,7 +336,7 @@ def ambiguity():
     ax.axvline(.3, ls=":", color=MUTED, lw=1)
     ax.axvline(.7, ls=":", color=MUTED, lw=1)
     ax.set(xlabel="$x/L$", ylabel="Mean expression", xlim=(0, 1), ylim=(0, 1.05))
-    ax.legend(loc="upper left", fontsize=9)
+    ax.legend(loc="upper left", fontsize=12)
     maps = [decoding_map(mean[:, :1]), decoding_map(mean)]
     for ax, matrix, heading in zip(axes[1:], maps,
                                   ["B  |  One gene: two branches", "C  |  Two genes: a single ridge"]):
@@ -361,14 +363,14 @@ def optimal_gradient():
     steep = (np.tanh(7*(x-.5))+np.tanh(3.5))/(2*np.tanh(3.5))
     slope = 7/(2*np.tanh(3.5)*np.cosh(7*(x-.5))**2)
     sigma = .025
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.2), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 5.0), layout="constrained")
     ax = axes[0]
     title(ax, "A  |  Same expression range")
     for mean, color, label in [(x, BLUE, "Linear"), (steep, ORANGE, "Steep sigmoid")]:
         info = scalar_information(mean, sigma, x)
         ax.plot(x, mean, color=color, label=f"{label}: {info:.2f} bits")
     ax.set(xlabel="$x/L$", ylabel=r"$\mu(x)$", xlim=(0, 1), ylim=(0, 1.05))
-    ax.legend(loc="upper left", fontsize=9)
+    ax.legend(loc="upper left", fontsize=12)
     ax = axes[1]
     title(ax, "B  |  Where precision is spent")
     ax.semilogy(x, np.full_like(x, sigma), color=BLUE, label="Linear")
@@ -383,7 +385,7 @@ def optimal_gradient():
     ax.semilogx(noise, exact, color=BLUE, label="Numerical mutual information")
     ax.semilogx(noise, approximation, color=MUTED, ls="--", label="Small-noise formula")
     ax.set(xlabel=r"Expression noise $\sigma_g$", ylabel="Information (bits)")
-    ax.legend(fontsize=9)
+    ax.legend(fontsize=12)
     for ax in axes:
         ax.grid(alpha=.12)
     save(fig, "04_optimal_gradient")
@@ -403,7 +405,7 @@ def diffusion_tradeoff():
     amplitude = 1/(1+d*eigenvalues[mode])
     relative_j = amplitude**2/variance
     best = d[np.argmax(relative_j)]
-    fig, axes = plt.subplots(1, 3, figsize=(13.6, 4.2), layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13.6, 5.0), layout="constrained")
     title(axes[0], "A  |  Signal and local noise")
     axes[0].loglog(d, amplitude, color=BLUE, label="Mean mode amplitude")
     axes[0].loglog(d, np.sqrt(variance), color=ORANGE, label="Local noise SD")
@@ -420,7 +422,7 @@ def diffusion_tradeoff():
         amp = .35/(1+dv*eigenvalues[mode])
         axes[2].plot(x, 1+amp*np.cos(2*np.pi*mode*x), color=color, label=rf"$D/(\gamma a^2)={dv:.2g}$")
     axes[2].set(xlabel="Position / system length", ylabel="Mean expression", xlim=(0, 1), ylim=(.58, 1.42))
-    axes[2].legend(fontsize=9)
+    axes[2].legend(fontsize=12)
     for ax in axes:
         ax.grid(alpha=.12)
     save(fig, "05_diffusion_tradeoff")
@@ -434,7 +436,7 @@ def mean_and_worst():
     defective[(x >= .45) & (x < .55)] = .06
     geometric = lambda s: np.exp(np.mean(np.log(s)))
     assert np.isclose(geometric(uniform), geometric(defective), rtol=1e-12)
-    fig, axes = plt.subplots(1, 2, figsize=(11.7, 4.2), layout="constrained")
+    fig, axes = plt.subplots(1, 2, figsize=(11.7, 4.9), layout="constrained")
     title(axes[0], "A  |  Equal geometric mean error")
     axes[0].plot(x, 100*uniform, color=BLUE, label="Uniform precision")
     axes[0].plot(x, 100*defective, color=ORANGE, label="A local defect")
@@ -447,7 +449,7 @@ def mean_and_worst():
         axes[1].bar(np.arange(3)+offset, 100*np.array(vals), width=.34, color=color, label=label)
     axes[1].set(xticks=np.arange(3), xticklabels=categories, ylabel="Error (% of interval)", ylim=(0, 7))
     axes[1].legend()
-    axes[1].tick_params(axis="x", labelsize=10)
+    axes[1].tick_params(axis="x", labelsize=13)
     for ax in axes:
         ax.grid(axis="y", alpha=.12)
     save(fig, "06_average_and_defects")

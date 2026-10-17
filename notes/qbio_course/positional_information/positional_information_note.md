@@ -39,13 +39,13 @@ Bicoid 是转录因子，能参与激活 *hunchback*（*hb*）等基因。先把
 
 ![French flag 教学模型：一个浓度梯度经过两个阈值产生蓝白红三种状态，输入噪声使边界附近的选择出现不确定性。](figures/00_french_flag.svg)
 
-*Fig. 2. 一个梯度怎样划分出三种命运。* 教学模型，非胚胎数据。A：一条由左向右降低的浓度曲线，以及两个读取阈值。B：同一条规则把不同位置分成蓝、白、红三个区域。C：读数有波动后，边界附近可能作出不同选择；纵轴是同一位置重复读取时选中各颜色的概率。计算参数见[附录 G](#notation)。
+*Fig. 2. 一个梯度怎样划分出三种命运。* 教学模型，非胚胎数据。A：一条由左向右降低的浓度曲线，以及两个读取阈值。B：同一条规则把不同位置分成蓝、白、红三个区域。C：读数有波动后，边界附近可能作出不同选择；纵轴是同一位置重复读取时选中各颜色的概率。
 
 如果一个靠近蓝白边界的核，第一次读到的浓度略高、第二次略低，它会不会改变选择？如果整个胚胎的 Bicoid 都增加了一点，边界会不会移动？这些问题把理想的 French flag model 变成了一个需要定量回答的生物学问题。
 
 French flag model 的原始问题还关心比例：胚胎更长，或一部分被移除后，是否仍能形成比例正确的图案？两个固定阈值本身不保证这一点，第 1.3 节再区分它与读数精度。
 
-下面先用一条浓度曲线解释边界的位置，再看读数波动怎样变成位置误差；一个基因的读数不够时，再加入其他基因。第 4 节以后才把这些直观问题整理成位置后验、bits 和信息优化。符号随用随解释，完整[符号表与取样约定](#notation)放在附录。
+下面先用一条浓度曲线解释边界的位置，再看读数波动怎样变成位置误差；一个基因的读数不够时，再加入其他基因。第 4 节以后才把这些直观问题整理成位置后验、bits 和信息优化。符号随用随解释。
 
 ---
 
@@ -597,7 +597,7 @@ I(X;\mathbf G)=
 \tag{4.7}
 $$
 
-读这个式子时，先看对数里的比值：当前表达在位置 $x$ 上出现的可能性，相对于混合所有位置后出现的可能性，提高了多少？这个比值对某些位置和读数可以小于 1，对应负的对数；互信息再按位置与读数的联合概率平均，结果非负。这与前面先求后验熵、再做平均的计算等价；离散形式的推导见[附录 H](#information-theory-appendix)。
+读这个式子时，先看对数里的比值：当前表达在位置 $x$ 上出现的可能性，相对于混合所有位置后出现的可能性，提高了多少？这个比值对某些位置和读数可以小于 1，对应负的对数；互信息再按位置与读数的联合概率平均，结果非负。这与前面先求后验熵、再做平均的计算等价；离散形式的推导见[附录 G](#information-theory-appendix)。
 
 连续变量对应的是**微分熵** $h$，也有 $I(X;\mathbf G)=h(X)-h(X\mid\mathbf G)$。但微分熵本身会随坐标单位改变，甚至可以为负；互信息中的两个单位变化相互抵消，结果仍以 bits 表示。不能把连续情形的 $h(X)$ 直接当成一个与长度单位无关的“可选位置数”。
 
@@ -1414,36 +1414,15 @@ $$
 
 这组问题已经保留了统计物理上的主要竞争：有限分子数限制读出，扩散改变空间信号与涨落，调控网络分配表达范围和分子资源，而全局后验决定这些局部变化能否组成一个可靠的位置编码。
 
-## 附录 G 记号与教学模型参数 {#notation}
+## 附录 G 信息论的推导与几个容易混淆的量 {#information-theory-appendix}
 
-### G.1 空间区间与记号
-
-用 $L$ 表示整个胚胎的前后轴长度，$x$ 表示绝对位置，$z=x/L$ 表示相对位置。统计分析可以只覆盖子区间 $\Omega=[x_a,x_b]$，其长度为 $W=x_b-x_a$；若讨论整个轴，才有 $W=L$。除特别说明外，位置在所分析的区间内均匀取样，即 $P_X(x)=1/W$。
-
-| 记号 | 含义 |
-|---|---|
-| $c(x,t)$、$\mathbf c(x,t)$ | 单个或多个母源形态发生素输入 |
-| $\mathbf G$、$\mathbf g$ | 随机表达向量及其一次观测值 |
-| $\boldsymbol\mu(x)$ | 固定位置的平均表达 |
-| $\Sigma(x)$ | 同一位置的表达噪声协方差 |
-| $\sigma_x(x)$ | 局部位置不确定性的标准差，使用时需注明估计条件 |
-| $\mathcal J(x)$ | 单次表达观测对位置的 Fisher information |
-| $I(X;\mathbf G)$ | 在指定位置先验下，表达携带的互信息，单位为 bits |
-| $\theta$、$\mathcal C$ | 可调网络参数及其物理可行集合 |
-
-### G.2 French flag 教学模型
-
-图 2 取 $z=x/L$、$c/c_0=e^{-z/0.4}$，选择 $c_H=c_0e^{-1/(3\times0.4)}$、$c_L=c_0e^{-2/(3\times0.4)}$，使无噪声边界位于 $z=1/3,2/3$。有噪声时读取 $c+\eta$，$\eta\sim\mathcal N(0,(0.045c_0)^2)$，按同样阈值决定颜色。改变胚胎长度后是否保持比例，需要另行规定 $\lambda$ 与 $L$ 的关系，不能由一次三等分图案推出。
-
-## 附录 H 信息论的推导与几个容易混淆的量 {#information-theory-appendix}
-
-### H.1 从联合分布推出互信息
+### G.1 从联合分布推出互信息
 
 先取离散变量 $X,G$。联合分布为 $p(x,g)=p_X(x)p(g\mid x)$，边缘分布为 $p_G(g)=\sum_xp(x,g)$。联合熵满足链式法则：
 
 $$
 H(X,G)=H(X)+H(G\mid X)=H(G)+H(X\mid G).
-\tag{H.1}
+\tag{G.1}
 $$
 
 将 $p(x\mid g)=p(x,g)/p_G(g)$ 代入条件熵，展开正文式（4.4），得到
@@ -1457,19 +1436,19 @@ I(X;G)
 &=\sum_{x,g}p_X(x)p(g\mid x)
 \log_2\frac{p(g\mid x)}{p_G(g)}.
 \end{aligned}
-\tag{H.2}
+\tag{G.2}
 $$
 
 这个形式说明 $I(X;G)=I(G;X)$，但这种对称性不说明两个变量间的因果方向。连续情形将求和换成积分，得到正文式（4.7）。
 
-### H.2 KL divergence 与平均后验更新
+### G.2 KL divergence 与平均后验更新
 
 对同一组结果上的分布 $p,q$，定义
 
 $$
 D_{\mathrm{KL}}(p\Vert q)
 =\sum_zp(z)\log_2\frac{p(z)}{q(z)}.
-\tag{H.3}
+\tag{G.3}
 $$
 
 这里要求 $q$ 在 $p>0$ 的地方也非零，否则散度可为无穷。由对数函数的凹性，$\sum_zp(z)\ln[q(z)/p(z)]\le\ln\sum_{z:p(z)>0}q(z)\le0$，故 $D_{\mathrm{KL}}\ge0$，且它一般不对称。
@@ -1483,14 +1462,14 @@ I(X;G)
 &=\sum_gp_G(g)
 D_{\mathrm{KL}}\big(p(x\mid g)\Vert p_X(x)\big).
 \end{aligned}
-\tag{H.4}
+\tag{G.4}
 $$
 
 因此互信息非负；它为零，当且仅当 $X,G$ 独立。这也表明，平均信息衡量的是后验相对于先验改变了多少。
 
 对一次读数，$H(X)-H(X\mid G=g)$ 与后验相对先验的 KL divergence 并不相同。举例：先验为 $(0.9,0.1)$，设某读数 $g$ 在两种位置出现的概率为 $(1/9,1)$，则它以概率 0.2 出现，出现后的位置后验为 $(0.5,0.5)$。这次读取让位置熵从约 0.469 增至 1 bit；另一种读数则确定在第一处。对两种读数平均，$H(X\mid G)=0.2$、$I\simeq0.269$ bits，仍然非负。
 
-### H.3 Fisher 信息为什么只描述局部
+### G.3 Fisher 信息为什么只描述局部
 
 Fisher 信息比较的是很接近的两个位置所对应的观测分布。在满足正则条件、使用自然对数定义 $\mathcal J$ 时，对两个相邻位置作小位移展开：
 
@@ -1498,41 +1477,41 @@ $$
 D_{\mathrm{KL}}\big(P(\mathbf g\mid x)\Vert
 P(\mathbf g\mid x+\delta x)\big)
 =\frac{\mathcal J(x)}{2\ln2}\,\delta x^2+o(\delta x^2).
-\tag{H.5}
+\tag{G.5}
 $$
 
 一次项由概率归一化消失，二次项是 Fisher 信息；$1/\ln2$ 将自然对数换成 bits。因此它给出通道分布对局部位移的敏感程度。互信息则比较各位置通道分布与总体混合分布，并对整个位置先验平均；远处相同的表达分布仍会造成歧义。
 
-### H.4 离散熵与微分熵的单位问题
+### G.4 离散熵与微分熵的单位问题
 
 若把连续位置按宽度 $\Delta x$ 分箱，细分极限下 $p_i\simeq p_X(x_i)\Delta x$，因此
 
 $$
 H(X_{\Delta x})\simeq h(X)-\log_2\Delta x.
-\tag{H.6}
+\tag{G.6}
 $$
 
 位置箱越细，离散熵越大。条件熵有相同的 $-\log_2\Delta x$ 项，两者相减时抵消，互信息可在适当条件下趋于有限极限。把坐标数值缩放为 $X'=aX$，微分熵改变 $\log_2|a|$，互信息仍不变。
 
 若实际变量是有限个核的离散标签，就直接使用离散分布，仍有 $I\le\log_2N$。连续近似不能在噪声远小于核间距时替代这个有限标签问题，见附录 C.3。
 
-### H.5 条件互信息、增加读数与下游处理
+### G.5 条件互信息、增加读数与下游处理
 
 条件互信息是额外读数带来的平均增益：
 
 $$
 I(X;G_2\mid G_1)
 =H(X\mid G_1)-H(X\mid G_1,G_2)\ge0.
-\tag{H.7}
+\tag{G.7}
 $$
 
-它可以写成对 $G_1$ 平均的条件联合分布与条件独立分布之间的 KL divergence，因此非负；将式（H.7）代入即可得到正文的多基因链式法则。
+它可以写成对 $G_1$ 平均的条件联合分布与条件独立分布之间的 KL divergence，因此非负；将式（G.7）代入即可得到正文的多基因链式法则。
 
 若下游 $Y$ 只由当前 $\mathbf G$ 与独立内部噪声产生，即 $X\to\mathbf G\to Y$，那么 $I(X;Y\mid\mathbf G)=0$。对 $I(X;\mathbf G,Y)$ 用两个顺序展开，得到
 
 $$
 I(X;\mathbf G)=I(X;Y)+I(X;\mathbf G\mid Y)\ge I(X;Y).
-\tag{H.8}
+\tag{G.8}
 $$
 
 这就是正文第 8.3 节的数据处理不等式。若下游另外接触输入历史、邻域或其他信号，应将它们纳入输入变量，再讨论信息的保留和损失。
@@ -1562,7 +1541,7 @@ $$
 5. Gregor, T., Tank, D. W., Wieschaus, E. F. & Bialek, W. (2007). [Probing the limits to positional information](https://pmc.ncbi.nlm.nih.gov/articles/PMC2253670/). *Cell* **130**, 153–164. Bicoid 浓度的活胚胎测量与位置读取精度；Fig. 3 的原图来源。
 
 6. Porcher, A. & Dostatni, N. (2010). [The Bicoid Morphogen System](https://doi.org/10.1016/j.cub.2010.01.026). *Current Biology* **20**, R249–R254. 系统背景综述。
-7. Lucas, T., Tran, H., Perez Romero, C. A., et al. (2018). [3 minutes to precisely measure morphogen concentration](https://doi.org/10.1371/journal.pgen.1007676). *PLoS Genetics* **14**, e1007676. 早期 *hb* 转录响应及其时间尺度；Fig. 1 的原图来源。
+7. Lucas, T., Tran, G., Perez Romero, C. A., et al. (2018). [3 minutes to precisely measure morphogen concentration](https://doi.org/10.1371/journal.pgen.1007676). *PLoS Genetics* **14**, e1007676. 早期 *hb* 转录响应及其时间尺度；Fig. 1 的原图来源。
 8. Durrieu, L., Kirrmaier, D., Schneidt, T., et al. (2018). [Bicoid gradient formation mechanism and dynamics revealed by protein lifetime analysis](https://doi.org/10.15252/msb.20188355). *Molecular Systems Biology* **14**, e8355. 以蛋白质年龄作为梯度形成机制的额外检验。
 
 9. Wolpert, L. (1969). [Positional information and the spatial pattern of cellular differentiation](https://doi.org/10.1016/S0022-5193(69)80016-0). *Journal of Theoretical Biology* **25**, 1–47. 位置指定、解释与 French flag 问题的经典论述。
