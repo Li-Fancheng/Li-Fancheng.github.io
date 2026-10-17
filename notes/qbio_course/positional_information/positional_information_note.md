@@ -1157,6 +1157,8 @@ $$
 
 ## 附录 A Fisher information 与有效位置估计 {#appendix-a}
 
+本附录补充第 3.2 节的计算依据：一般定义与估计界见 A.5，局部高斯读数达到该界的线性读出见 A.2，协方差随位置变化时的修正见 A.3。均值变化的贡献记为 $\mathcal J_\mu$，完整 Fisher 信息记为 $\mathcal J$。
+
 ### A.1 Poisson 计数的精确 Fisher information
 
 设固定采样体积中的计数 $N$ 服从 Poisson 分布，均值 $m(x)=m_0e^{-x/\lambda}$：
@@ -1187,7 +1189,7 @@ $$
 
 ### A.2 固定协方差时的最优局部线性读出
 
-令 $\mathbf v=\boldsymbol\mu'(x_0)$，局部模型为
+用 $\mathbf G$ 表示 $K$ 种蛋白的随机读数向量，$\boldsymbol\mu(x)$ 表示其平均值，$\Sigma$ 表示给定位置下的噪声协方差矩阵，假设它在局部近似不变且正定。令 $\mathbf v=\boldsymbol\mu'(x_0)$，即各蛋白空间斜率组成的向量。局部模型为
 
 $$
 \mathbf G-\boldsymbol\mu(x_0)
@@ -1207,6 +1209,17 @@ $$
 $$
 
 这个结果具体说明了局部界怎样达到：不同基因按斜率和完整协方差加权。它要求已知展开位置附近的分支，不能作为全局歧义的解决办法。
+
+若各蛋白的噪声独立，$\Sigma=\operatorname{diag}(\sigma_1^2,\ldots,\sigma_K^2)$，于是
+
+$$
+\mathcal J_\mu=\mathbf v^{\mathsf T}\Sigma^{-1}\mathbf v
+=\sum_{\alpha=1}^K\frac{[\mu_\alpha'(x_0)]^2}{\sigma_\alpha^2},
+\qquad
+w_{*,\alpha}=\frac{\mu_\alpha'(x_0)/\sigma_\alpha^2}{\mathcal J_\mu}.
+$$
+
+前一式就是正文式（3.2）；后一式给出了实现这一局部精度的权重。斜率较大、噪声较小的读数权重较大；斜率为负的基因使用负权重，将相反的表达变化转换成一致的位置变化。
 
 ### A.3 高斯协方差变化时的附加项
 
@@ -1263,6 +1276,8 @@ $$
 \tag{A.5}
 $$
 
+式（A.5）是正文第 3.2 节单基因积分定义的向量形式。其中 $\partial_x$ 对候选位置求导，求导时保持观测读数不变；期望则按给定位置 $x$ 下的读数分布计算。
+
 在适当的正则条件下，对无偏位置估计量，Cramér–Rao 不等式给出
 
 $$
@@ -1298,6 +1313,15 @@ $$
 $$
 
 式（A.8）中的 $\mathcal J_\mu=\boldsymbol\mu'^{\mathsf T}\Sigma^{-1}\boldsymbol\mu'$ 是正文单基因表达式的多基因推广。若协方差固定，它等于完整 Fisher information；协方差随位置改变时，还需要式（A.7）的第二项。
+
+对单个高斯读数，令 $\Sigma=\sigma_g^2(x)$，式（A.7）化为
+
+$$
+\mathcal J(x)=\frac{[\mu'(x)]^2}{\sigma_g^2(x)}
++2\left[\frac{\sigma_g'(x)}{\sigma_g(x)}\right]^2.
+$$
+
+这里 $\sigma_g'=\mathrm d\sigma_g/\mathrm dx$。第一项对应均值移动，第二项对应分布宽度的变化。只有宽度局部不变时，第一项才是完整结果；这正是正文式（3.1）采用的条件。
 
 ### A.6 单基因局部误差传播 {#local-error-derivation}
 
