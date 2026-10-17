@@ -32,5 +32,29 @@
     "modification": "none",
     "sha256": "cc215cc22df841a0ffe435d158da90a63123ed5891c36abdf58a9b91f3bb50ab",
     "rights": "Original publisher/author rights retained; retrieval from PMC does not change licensing."
+  },
+  {
+    "file": "figures/durrieu_2018_fig01.png",
+    "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.15252%2Fmsb.20188355/MediaObjects/44320_2018_BFMSB188355_Fig1_HTML.png",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6121778/",
+    "article_doi": "10.15252/msb.20188355",
+    "figure": "1",
+    "retrieved_on": "2026-10-17",
+    "modification": "none",
+    "sha256": "edc1e0660203ad5ecdbefe7b30bc8d0036d5b3606fa90096ca77adae9a82a082",
+    "rights": "© 2018 The Authors. CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "file": "figures/durrieu_2018_fig03.png",
+    "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.15252%2Fmsb.20188355/MediaObjects/44320_2018_BFMSB188355_Fig3_HTML.png",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6121778/",
+    "article_doi": "10.15252/msb.20188355",
+    "figure": "3",
+    "retrieved_on": "2026-10-17",
+    "modification": "none",
+    "sha256": "11447126e7780fa6426ccd1eaa82c3d0a467557833cfd4720434c643ca76cbcf",
+    "rights": "© 2018 The Authors. CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   }
 ]
