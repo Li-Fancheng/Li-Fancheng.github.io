@@ -56,5 +56,69 @@
     "sha256": "11447126e7780fa6426ccd1eaa82c3d0a467557833cfd4720434c643ca76cbcf",
     "rights": "© 2018 The Authors. CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "file": "figures/dubuis_2013_fig04.png",
+    "retrieved_on": "2026-10-17",
+    "sha256": "02127460c53cb5e4d0a4d07b1fed98c41b6bdb7c23a4a79d1014e465a817e25f",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3799327/",
+    "article_doi": "10.1073/pnas.1315642110",
+    "source_pdf_url": "https://tglab.princeton.edu/wp-content/uploads/2013/09/dubuis+al_13b.pdf",
+    "source_pdf_sha256": "75bb0abd185b7d324897e9f37d75eec8b38f9dc4529161dc6a400f0b7212c40b",
+    "source_pdf_page": 5,
+    "figure": "4",
+    "modification": "Full figure artwork extracted from the author-hosted PDF using pdftoppm at 300 dpi; no panel, label, or data changes. Original caption is described and cited in the note.",
+    "extraction_pixels": {
+      "dpi": 300,
+      "x": 1233,
+      "y": 204,
+      "width": 1055,
+      "height": 1021
+    },
+    "rights": "Original publisher/author rights retained; the author-hosted PDF is freely available. No Creative Commons license asserted."
+  },
+  {
+    "file": "figures/dubuis_2013_fig05.png",
+    "retrieved_on": "2026-10-17",
+    "sha256": "ad85a738dde505f8fabb355146a13cc35c3aaeba492ca384f69d397ef3184824",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3799327/",
+    "article_doi": "10.1073/pnas.1315642110",
+    "source_pdf_url": "https://tglab.princeton.edu/wp-content/uploads/2013/09/dubuis+al_13b.pdf",
+    "source_pdf_sha256": "75bb0abd185b7d324897e9f37d75eec8b38f9dc4529161dc6a400f0b7212c40b",
+    "source_pdf_page": 6,
+    "figure": "5",
+    "modification": "Full figure artwork extracted from the author-hosted PDF using pdftoppm at 300 dpi; no panel, label, or data changes. Original caption is described and cited in the note.",
+    "extraction_pixels": {
+      "dpi": 300,
+      "x": 162,
+      "y": 2341,
+      "width": 1355,
+      "height": 696
+    },
+    "rights": "Original publisher/author rights retained; the author-hosted PDF is freely available. No Creative Commons license asserted."
+  },
+  {
+    "file": "figures/sokolowski_2025_fig02.jpg",
+    "retrieved_on": "2026-10-17",
+    "sha256": "ae4667494d749419371e0bad98bcb0261d8061ff61851c7e443438214b6c4d84",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11725783/",
+    "article_doi": "10.1073/pnas.2402925121",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8c5e/11725783/f9d35cca8f8f/pnas.2402925121fig02.jpg",
+    "figure": "2",
+    "modification": "none",
+    "rights": "© 2025 the Author(s). Published by PNAS. CC BY-NC-ND 4.0. Figure reproduced unchanged.",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "file": "figures/sokolowski_2025_fig04.jpg",
+    "retrieved_on": "2026-10-17",
+    "sha256": "3f7b2f4ec520cd9bbf74291d4b1ab35bc2afc51bad45bd11603c8539940df87c",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11725783/",
+    "article_doi": "10.1073/pnas.2402925121",
+    "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8c5e/11725783/89add6a91d86/pnas.2402925121fig04.jpg",
+    "figure": "4",
+    "modification": "none",
+    "rights": "© 2025 the Author(s). Published by PNAS. CC BY-NC-ND 4.0. Figure reproduced unchanged.",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
   }
 ]
