@@ -81,7 +81,7 @@ sections:
           label: Course notes · Fall 2026
           title: Introduction to Quantitative Biology
           text: Notes on cell cycles, population growth, gene regulation, and chemotaxis. The detailed notes are in Chinese.
-        - page: /notes/qbio_course/cell_cycle
+        - page: /notes/qbio_course/single_cell_to_population_growth
           language: zh
           label: Biological dynamics · 中文
           title: Cell Cycles & Population Growth

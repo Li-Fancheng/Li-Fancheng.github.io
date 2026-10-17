@@ -1,6 +1,6 @@
 """Generate five explanatory PNG/SVG figures with NumPy and Matplotlib.
 
-Run from any directory: python notes/qbio_course/cell_cycle/figures/generate_explanatory_figures.py
+Run from any directory: python notes/qbio_course/single_cell_to_population_growth/figures/generate_explanatory_figures.py
 These are diagrams and analytic model calculations, not experimental data.
 """
 

@@ -1,5 +1,5 @@
 {{- /* The current note is maintained in Chinese; old English URLs redirect to it. */ -}}
-{{- $path := "notes/qbio_course/cell_cycle/cell_cycle_correlations_note.md" -}}
+{{- $path := "notes/qbio_course/single_cell_to_population_growth/cell_cycle_correlations_note.md" -}}
 {{- if not (fileExists $path) -}}
   {{- errorf "Missing cell-cycle note source: %s" $path -}}
 {{- end -}}
@@ -8,7 +8,7 @@
 {{- $source = replaceRE `^# [^\n]+\n## [^\n]+\n` "" $source -}}
 {{- range findRE `figures/[a-zA-Z0-9_.-]+\.(png|jpg|svg)` $source -}}
   {{- $figure := . -}}
-  {{- with resources.Get (printf "notes/qbio_course/cell_cycle/%s" $figure) -}}
+  {{- with resources.Get (printf "notes/qbio_course/single_cell_to_population_growth/%s" $figure) -}}
     {{- $source = replace $source $figure .RelPermalink -}}
   {{- else -}}
     {{- errorf "Missing cell-cycle figure: %s" . -}}

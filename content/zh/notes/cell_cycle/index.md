@@ -1,7 +1,7 @@
 ---
 title: "Cell-cycle note redirect"
 layout: redirect
-redirect: /notes/qbio_course/cell_cycle
+redirect: /notes/qbio_course/single_cell_to_population_growth
 outputs:
   - HTML
 build:

@@ -43,5 +43,5 @@ sections:
       text: |-
         At the Center for Interdisciplinary Studies, Westlake University, I continue to explore the dynamics and organization of biological systems. My notes for Introduction to Quantitative Biology cover cell cycles, population growth, gene regulatory networks, and chemotaxis, with an emphasis on assumptions and worked derivations.
 
-        [Quantitative biology course notes](/en/notes/qbio_course/) · [Cell cycles and population growth (in Chinese)](/notes/qbio_course/cell_cycle/) · [All notes](/en/notes/).
+        [Quantitative biology course notes](/en/notes/qbio_course/) · [Cell cycles and population growth (in Chinese)](/notes/qbio_course/single_cell_to_population_growth/) · [All notes](/en/notes/).
 ---

@@ -1,4 +1,4 @@
-"""Generate PNG/SVG model figures: python notes/qbio_course/cell_cycle/figures/generate_figures.py.
+"""Generate PNG/SVG model figures: python notes/qbio_course/single_cell_to_population_growth/figures/generate_figures.py.
 
 Requires Matplotlib, NumPy, and SciPy; typography is defined in figure_style.py.
 """
