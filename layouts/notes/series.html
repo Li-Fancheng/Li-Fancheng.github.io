@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="mx-auto max-w-screen-xl">
+  <article class="cell-cycle-article{{ with .Params.article_class }} {{ . }}{{ end }} prose prose-slate dark:prose-invert min-w-0 px-6 py-8 md:px-12">
+    <header>
+      <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{- $content := replaceRE `(<table(?:\s[^>]*)?>)` `<div class="cell-cycle-table">$1` .Content -}}
+    {{- $content = replace $content "</table>" "</table></div>" -}}
+    {{ $content | safeHTML }}
+  </article>
+</div>
+
+{{- /* A theory series follows reading order rather than publication date. */ -}}
+{{ $view := .Params.view | default "article-grid" }}
+<div class="flex flex-col items-center">
+  {{ partial "functions/render_view" (dict "fragment" "start" "page" . "item" . "view" $view) }}
+  {{ range $index, $item := .Pages.ByWeight }}
+    {{ partial "functions/render_view" (dict "page" . "item" . "view" $view "index" $index) }}
+  {{ end }}
+  {{ partial "functions/render_view" (dict "fragment" "end" "page" . "item" . "view" $view) }}
+</div>
+{{ end }}

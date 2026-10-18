@@ -1,0 +1,35 @@
+{{- /* One manifest drives source links, reading order, and legacy fragments. */ -}}
+{{- $topic := index site.Data.qbio_series . -}}
+{{- if not $topic -}}
+  {{- errorf "Unknown qbio topic: %s" . -}}
+{{- end -}}
+{{- $sources := dict -}}
+{{- $anchors := dict -}}
+{{- $parts := slice -}}
+{{- range $topic.parts -}}
+  {{- $sourcePath := printf "notes/qbio_course/%s" .source -}}
+  {{- $pagePath := printf "%s%s/" $topic.root .slug -}}
+  {{- $page := site.GetPage $pagePath -}}
+  {{- if not $page -}}
+    {{- errorf "Missing qbio series page: %s" $pagePath -}}
+  {{- end -}}
+  {{- $url := $page.RelPermalink -}}
+  {{- $sources = merge $sources (dict $sourcePath $url) -}}
+  {{- $part := merge . (dict "url" $url "pagePath" $pagePath) -}}
+  {{- $parts = $parts | append $part -}}
+  {{- $source := readFile $sourcePath -}}
+  {{- $ids := slice -}}
+  {{- range findRE `\{#[^}]+\}` $source -}}
+    {{- $ids = $ids | append (strings.TrimSuffix "}" (strings.TrimPrefix "{#" .)) -}}
+  {{- end -}}
+  {{- range findRE `\bid="[^"]+"` $source -}}
+    {{- $ids = $ids | append (replaceRE `^id="|"$` "" .) -}}
+  {{- end -}}
+  {{- range $ids -}}
+    {{- if isset $anchors . -}}
+      {{- errorf "Duplicate qbio anchor %s in %s" . $topic.root -}}
+    {{- end -}}
+    {{- $anchors = merge $anchors (dict . (printf "%s#%s" $url .)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "parts" $parts "sources" $sources "anchors" $anchors) -}}

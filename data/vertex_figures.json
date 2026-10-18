@@ -1,0 +1,238 @@
+{
+  "foundations/figures/barton2017_fig01": {
+    "width": 500,
+    "kind": "paper"
+  },
+  "foundations/figures/tong2022_fig01": {
+    "width": 760,
+    "kind": "paper"
+  },
+  "foundations/figures/wang2020_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "linear_response/figures/tong2022_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "linear_response/figures/tong2022_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/bi2015_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/bi2015_fig04": {
+    "width": 680,
+    "kind": "paper"
+  },
+  "rigidity/figures/damavandi2022_fig04": {
+    "width": 620,
+    "kind": "paper"
+  },
+  "rearrangements/figures/barton2017_fig05": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rearrangements/figures/bi2015_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rearrangements/figures/bi2015_fig05": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/bi2016_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/bi2016_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/fielding2023_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/fielding2023_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/wang2020_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/rozman2020_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/rozman2020_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/wang2020_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/rozman2020_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/walck2015_fig01": {
+    "width": 740,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/lardennois2019_fig01": {
+    "width": 740,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/lardennois2019_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "foundations/figures/model": {
+    "width": 820,
+    "kind": "model"
+  },
+  "foundations/figures/force_balance": {
+    "width": 780,
+    "kind": "model"
+  },
+  "foundations/figures/topology": {
+    "width": 760,
+    "kind": "model"
+  },
+  "linear_response/figures/response": {
+    "width": 800,
+    "kind": "model"
+  },
+  "linear_response/figures/affine_hexagon": {
+    "width": 820,
+    "kind": "model"
+  },
+  "linear_response/figures/mode_coupling": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rigidity/figures/incompatibility": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rigidity/figures/polygon_bounds": {
+    "width": 800,
+    "kind": "model"
+  },
+  "rigidity/figures/taut_springs": {
+    "width": 800,
+    "kind": "model"
+  },
+  "rearrangements/figures/t1": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rearrangements/figures/event_strain": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rearrangements/figures/barrier_statistics": {
+    "width": 800,
+    "kind": "model"
+  },
+  "rheology_activity/figures/rheology": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rheology_activity/figures/protocols": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rheology_activity/figures/active_msd": {
+    "width": 820,
+    "kind": "model"
+  },
+  "geometry_3d/figures/dimensions": {
+    "width": 820,
+    "kind": "model"
+  },
+  "geometry_3d/figures/shape_tensor": {
+    "width": 820,
+    "kind": "model"
+  },
+  "geometry_3d/figures/curvature_thickness": {
+    "width": 800,
+    "kind": "model"
+  },
+  "morphogenesis/figures/inference": {
+    "width": 820,
+    "kind": "model"
+  },
+  "morphogenesis/figures/identifiability": {
+    "width": 800,
+    "kind": "model"
+  },
+  "morphogenesis/figures/plastic_lock": {
+    "width": 820,
+    "kind": "model"
+  },
+  "foundations/figures/kim2021_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/petridou2021_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/petridou2021_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/mongera2018_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/kim2021_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/kim2021_fig05": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/mongera2018_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/mongera2018_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/petridou2021_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/rustarazo2026_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/autorino2026_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "foundations/figures/contact_adhesion": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rigidity/figures/contact_rigidity": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rheology_activity/figures/activity_bias": {
+    "width": 820,
+    "kind": "model"
+  },
+  "geometry_3d/figures/porosity_feedback": {
+    "width": 820,
+    "kind": "model"
+  }
+}

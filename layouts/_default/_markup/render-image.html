@@ -30,6 +30,34 @@
   {{ end }}
 {{ end }}
 
+{{/* Review figures use the same explicit sizing and original-image links. */}}
+{{ if strings.HasPrefix $destination "/notes/celegans/" }}
+  {{ $key := strings.TrimPrefix "/notes/celegans/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.celegans_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
+  {{ else }}
+    {{ errorf "Missing display width for C. elegans figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
+{{/* Vertex lectures use the same per-figure sizing and original-image links. */}}
+{{ if strings.HasPrefix $destination "/notes/vertex_model/" }}
+  {{ $key := strings.TrimPrefix "/notes/vertex_model/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.vertex_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+  {{ else }}
+    {{ errorf "Missing display width for vertex figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
 {{/* Workaround Hugo v0.81 error on Windows when `resources.Get (path.Join "media" <URL>)` */}}
 {{- $img := "" -}}
 {{- if not $is_remote -}}

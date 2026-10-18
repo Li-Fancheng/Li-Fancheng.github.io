@@ -1,0 +1,218 @@
+小回路可以逐个求固定点、看轨迹；当许多基因连在一起时，首先面对的常常是一张调控图或一批表达数据。知道谁影响谁，能否判断扰动会被消除还是传播，短暂输入会被过滤还是留下响应？
+
+下面先用布尔网络把问题压缩到扰动是否改变状态，再用前馈回路追踪输入的持续时间，最后回到连续的多基因表达空间。几种描述保留的信息不同，需要结合具体观测判断哪些预测还站得住。
+
+
+## 网络结构怎样约束细胞响应 {#advanced-topics}
+
+### 布尔粗粒化与扰动传播 {#network-response}
+
+若网络包含很多基因，逐个指定产生率和分子寿命会需要大量参数。可以先将表达粗分为高、低两态，研究一个基因的状态改变后，会有多少下游基因跟着改变。这就是下面布尔模型所问的问题。
+
+这种简化保留连线与组合逻辑，舍去浓度幅度、连续反应时间和分子噪声，并规定所有基因按同一个离散时钟更新。因此，它的扰动传播阈值要在这套规则下理解，不能直接当作前两篇连续模型中的记忆寿命或振荡阈值。
+
+如果表达确实常停在分得很开的高低区域，把中间的快速过渡压成一次翻转，可以先保留大部分状态选择的信息。可是一旦问题变成“蛋白质还要积累多久才过阈值”，这段被省掉的中间过程就恰好决定答案。因此，选择布尔描述也取决于观察的问题：它便于问差异能传多远，连续表达模型则继续保留幅度与等待时间。
+
+<div id="boolean-states"></div>
+
+**BN.1 布尔状态与表达差异**
+
+布尔模型令每个基因只有两种状态 $\sigma_i(t)\in\{0,1\}$，并以同步离散时间更新：
+
+$$
+\boxed{
+\sigma_i(t+1)=F_i\bigl(\sigma_{j_1}(t),\ldots,\sigma_{j_K}(t)\bigr).
+}
+\tag{BN.1}
+$$
+
+这样的网络共有 $2^N$ 个可能状态。只要更新规则固定，轨道经过足够多步后必然重复某个状态；之后它会沿同样的路径循环，形成固定点或周期吸引子。这个有限状态空间让我们能够暂时略去浓度的连续变化，集中研究一个基因的表达翻转怎样影响其下游。
+
+<div id="derrida-map"></div>
+
+**BN.2 从局部改变概率到传播阈值**
+
+考虑一个简单随机布尔网络系综：
+
+- 每个节点随机选择 $K$ 个输入；
+- 每个节点真值表中的每个输出独立地以概率 $p$ 取 1，以概率 $1-p$ 取 0；
+- 用退火近似（annealed approximation）忽略长期演化中固定连线、固定真值表造成的相关性（可理解为每步对相关随机结构重新抽样）。
+
+取两个彼此接近的初始状态 $\boldsymbol\sigma$ 和 $\boldsymbol\sigma'$，用归一化的汉明距离（Hamming distance，即两个状态中不同分量所占的比例）
+
+$$
+d_t=\frac1N\sum_{i=1}^N
+\mathbf 1\bigl[\sigma_i(t)\ne\sigma_i'(t)\bigr]
+\tag{BN.2}
+$$
+
+描述两种状态的差异。
+
+先从一个节点看扰动怎样穿过它。若两个网络副本当前有比例 $d_t$ 的节点不同，那么随机抽到一条相同输入的概率为 $1-d_t$，$K$ 条输入全都相同的概率为 $(1-d_t)^K$。因此，节点至少收到一处不同输入的机会为 $1-(1-d_t)^K$。
+
+收到不同输入后，节点的输出还可能碰巧相同。对独立随机真值表，两个表项分别为 $1,0$ 或 $0,1$ 的总概率是 $p(1-p)+(1-p)p=2p(1-p)$。将“接收到差异”与“把差异传到输出”两部分相乘，就得到
+
+$$
+\boxed{
+d_{t+1}=2p(1-p)\left[1-(1-d_t)^K\right].
+}
+\tag{BN.3}
+$$
+
+这就是退火近似下的扰动传播映射 [Derrida 和 Pomeau（1986）](https://doi.org/10.1209/0295-5075/1/2/001)。
+
+当 $d_t\ll1$ 时，输入差异还很稀疏，可将 $1-(1-d_t)^K$ 展开为 $Kd_t+O(d_t^2)$，于是
+
+$$
+\boxed{
+d_{t+1}=\Lambda d_t+O(d_t^2),
+\qquad \Lambda=2Kp(1-p).
+}
+\tag{BN.4}
+$$
+
+$\Lambda$ 是一次更新中每份微小差异平均留下的放大倍数。$\Lambda\lt 1$ 时，差异一轮轮缩小；$\Lambda\gt 1$ 时，差异平均增长；$\Lambda=1$ 则是线性传播的临界位置。特别在 $p=1/2$ 时，$\Lambda=K/2$，临界入度为 $K_c=2$。
+
+从生物调控的角度看，一次转录因子水平变化既要沿连线到达下游，也要发生在下游对它敏感的状态下，才会继续影响其他基因。退火模型将这两层过程分别汇总进输入数与输出改变概率，因此能够用少量统计参数描述扰动的早期传播。
+
+![随机布尔网络的 Derrida 映射、小扰动的迭代演化及输出偏置与入度构成的退火近似相图。](figures/08_boolean_phase_diagram.svg)
+
+*Fig. 12. 退火近似下的扰动传播。* A：$p=1/2$ 时 $K=1,2,3$ 的 Derrida 映射。B：从 $d_0=0.05$ 出发的迭代。C：相边界 $K_c=1/[2p(1-p)]$，连续曲线展示不同输出偏置对应的临界入度。
+
+增益 $\Lambda$ 中的两个因子各有含义：$K$ 越大，一个节点接收到扰动的机会越多；$2p(1-p)$ 则表示收到不同输入后，输出实际发生改变的机会。当 $p$ 接近 $0$ 或 $1$，真值表大多给出同一输出，许多输入变化会被忽略，因而需要更多连线才能维持扰动传播。
+
+取临界参数 $p=1/2,K=2$，式（BN.3）恰好成为 $d_{t+1}=d_t-d_t^2/2$：线性项既不放大也不缩小扰动，二次项仍使它缓慢减小。对较晚时刻作连续近似，可得 $d_t\sim2/t$。这解释了 Fig. 12B 中临界曲线为何长时间保留差异，而 $K=1$ 的差异很快消退。
+
+<div id="logical-sensitivity"></div>
+
+**BN.3 连线经过什么逻辑门？**
+
+对于一个具体布尔规则 $F_i$，可以定义其对第 $j$ 个输入的敏感性：
+
+$$
+s_{ij}=\Pr_{\boldsymbol\sigma}
+\bigl[F_i(\boldsymbol\sigma)\ne F_i(\boldsymbol\sigma^{(j)})\bigr],
+\tag{BN.5}
+$$
+
+其中 $\boldsymbol\sigma^{(j)}$ 表示只翻转第 $j$ 个输入的组合，概率是对指定的输入分布取平均。把各输入的贡献相加，得到节点的总敏感性 $s_i=\sum_{j\in\mathrm{inputs}(i)}s_{ij}$，即一次随机输入翻转改变输出的各项概率之和。
+
+对独立随机真值表，每个 $s_{ij}$ 的系综平均为 $2p(1-p)$，故 $\langle s_i\rangle=2Kp(1-p)$；式（BN.4）正是这一具体选择的结果。
+
+以两个输入独立且等概率取 $0,1$ 为例，AND 门只有在另一个输入为 $1$ 时，翻转当前输入才会改变输出，所以两个输入各贡献 $1/2$，总敏感性为 $1$。XOR 门则在任一输入翻转时都会改变输出，总敏感性为 $2$。它们都有两条输入边，但传播扰动的能力相差一倍。
+
+AND 门还展示了渠化（canalization）：一个输入为 $0$ 时，输出已被确定，另一个输入的变化被屏蔽。在转录调控中，需要两个激活因子共同作用的启动子就能具有类似的组合逻辑。分析具体网络时，可以先测量各输入在不同背景下改变输出的概率，再研究这些敏感性如何沿连线传播。因此，边数相同的网络，也可能因为输入逻辑和细胞所处状态不同，具有不同的扰动传播能力。
+
+前馈专题中的 CRP–AraC 调控提供了一个具体的组合逻辑例子：在需要两个因子共同激活的启动子上，一条激活路径到达以后，另一条路径是否已经建立，决定了输出是否显著变化。同一条调控边可以在某些表达背景下很有效，在另一些背景下被共同作用条件屏蔽。因此，测量调控作用时，其他输入所处的状态也进入了传播问题。
+
+---
+
+### 无需反馈的持续信号检测 {#feed-forward-topic}
+
+前面的状态记忆和振荡都依赖闭合反馈。输入还可以通过一条直接路径和一条较慢的间接路径共同作用于输出，从而比较“信号是否出现”与“信号已经持续多久”。
+
+<div id="feed-forward-delay"></div>
+
+**FT.1 一致前馈回路与等待时间**
+
+无反馈的前馈模体（feed-forward motif）也能对信号持续时间作出选择性响应。模体指网络中反复出现的小型连接结构；这里考虑的是一致前馈回路，即两条输入到输出的路径具有相同的调控符号。
+
+考虑输入 $u$ 一方面直接激活输出 $Z$，另一方面激活中间变量 $Y$，而 $Y$ 也激活 $Z$。设输出采用近似 与门（AND）规则，即需要 $u$ 和 $Y$ 都足够高，$Z$ 才显著表达。
+
+为简化，令输入由 0 突然变成 1，并令
+
+$$
+\dot y=\beta_y u-\gamma_y y,
+\qquad y(0)=0.
+\tag{FT.1}
+$$
+
+在持续输入 $u=1$ 下，中间变量按 $y(t)=y_\infty(1-e^{-\gamma_y t})$ 积累，其中 $y_\infty=\beta_y/\gamma_y$。刚开始时，直接支路已经感受到输入，但间接支路还没有积累足够的 $Y$；两条路径之间的这段等待，决定了输出对短脉冲是否敏感。
+
+若输出需要 $y\gt y_c$，其中 $0\lt y_c\lt y_\infty$，则启动时间为
+
+$$
+\boxed{
+t_{\rm on}=\frac1{\gamma_y}
+\ln\!\left(\frac{y_\infty}{y_\infty-y_c}\right).
+}
+\tag{FT.2}
+$$
+
+如果输入脉冲长度 $T\lt t_{\rm on}$，中间变量来不及上升到阈值，输出就几乎不启动；反之，持续输入可以启动输出。由于输出同时依赖输入的直接通路，一旦 $u$ 关闭，输出产生率可以迅速停止。
+
+这种机制可以滤掉短脉冲，称为**持续信号检测（persistence detection）** [Alon（2007）](https://doi.org/10.1038/nrg2102)。式（FT.2）表明，等待时间随阈值在 $y_\infty$ 中所占的比例增加而延长：若需要中间变量接近饱和才启动，细胞就会等待更久；若低水平的中间变量已足够，输出更容易响应短暂输入。
+
+![一致前馈回路的直接和间接激活路径，以及短脉冲被过滤、长脉冲超过阈值后开启输出产生的时间曲线。](figures/09_feedforward_filter.svg)
+
+*Fig. 13. 短脉冲过滤与延迟开启。* 取 $\beta_y=\gamma_y=1,y_c=0.6$，启动时间 $t_{\rm on}\simeq0.916$。输入脉冲长度分别为 $T=0.5,2.5$；橙色表示输出产生的 AND 门控，已有输出蛋白随后按自身的降解动力学消失。
+
+**阿拉伯糖利用系统中的前馈调控。** 在阿拉伯糖存在时，大肠杆菌的 cAMP–CRP 一方面直接促进 araBAD、araFGH 等输出启动子的活性，另一方面促进 AraC 的合成；输出需要 CRP 与 AraC 共同作用。[Mangan 等（2003）](https://doi.org/10.1016/j.jmb.2003.09.049)在保持阿拉伯糖存在的条件下改变 cAMP，观察到输入开启时输出存在延迟，而输入关闭时响应较快。这对应 Fig. 13 中两条路径的分工：直接路径迅速传递信号，间接路径等待调控因子积累；AND 组合使输出的开启由较慢的路径控制，关闭则由直接路径迅速触发。
+
+在这个模型中，短输入结束时 $Y$ 尚未达到阈值，下游酶就不会显著产生；长输入则能开启产生。它也依赖输入历史，但这种历史依赖体现为开启前的等待。输入一旦消失，AND 条件就不再满足，输出产生率关闭；正文的双稳态开关则可能在输入撤去后继续维持高产生率。
+
+<div id="output-protein"></div>
+
+**FT.2 输出蛋白如何读出产生率**
+
+Fig. 13 中的橙线表示产生条件满足与否。若输出蛋白满足 $\dot z=r_z g(t)-\gamma_z z$，其中 $g(t)$ 是 AND 门控，那么门控开启后，$z$ 还需逐渐积累；门控关闭后，已有蛋白质按 $e^{-\gamma_z t}$ 衰减。中间变量 $Y$ 决定输出何时开始产生，输出自身的寿命决定这段产生记录能保留多久。
+
+---
+
+### 从势阱走向多基因状态空间 {#landscape-and-flow}
+
+在多基因系统中，状态同时沿多个表达方向变化，漂移成为向量场 $\mathbf f(\mathbf x)$。若它可以写成某个标量函数的负梯度 $\mathbf f=-\nabla U$，整条轨迹就可以理解成在同一幅地形上运动。
+
+那么沿确定性轨迹有 $dU/dt=-|\nabla U|^2\le0$，状态会持续“下坡”，直到落入谷底。这个图像直观地表达了稳定状态与恢复作用。一个持续绕行的非平凡周期轨道则需要额外的运动成分：轨迹绕一圈回到起点时，$U$ 也应回到原值，与沿途持续下降的性质相冲突。
+
+Repressilator 的振荡提示了这部分动力学——状态空间中沿环运动的趋势。带噪声时，系统可以在保持平稳概率分布的同时，仍有持续的概率环流。因此，描述多基因网络时，既要知道细胞常停留在哪些区域，也要知道它们怎样在这些区域之间运动。Waddington 景观将细胞命运画成谷地；大偏差准势进一步量化离开谷地的罕见跃迁代价，而完整的漂移场保留了运动方向和环流信息。
+
+到天然的大网络里，问题会变得更具体：哪些调控因子使一个细胞类型能够维持，暂时改变哪一项又会让后代走向另一种状态？这关系到如何从表达差异中识别真正参与命运选择的变量，也关系到能否预测干预后的结果。两个基因的开关给了一个可以算清的起点，但实际细胞的状态还可能包含蛋白质、染色质和未被当前读数捕捉的慢变量。
+
+[Weinreb 等（2020）](https://doi.org/10.1126/science.aaw3381)在造血分化中结合谱系条码与转录组，发现了仅凭当前 RNA 状态未能充分捕捉的命运偏向。它提醒我们，表达空间里相近的两个点，未必有完全相同的后续变化。[Dixit 等（2016）](https://doi.org/10.1016/j.cell.2016.11.038)发展的 Perturb-seq 则将 CRISPR 扰动与单细胞 RNA 读出结合，让研究者可以比较改变不同调控因子以后，整组表达怎样响应。追踪与干预分别补上了快照里缺少的历史和因果线索。
+
+一条统计相关边可能来自直接调控，也可能由共同输入或细胞类型混合产生；一次扰动后某种细胞变少，既可能是状态转走了，也可能是增殖速度不同。即便观察到明确的表达响应，还要分辨它发生在调控链的哪一步。要把这些数据变成能预测切换的动力学模型，需要同时约束时间尺度、隐藏状态和细胞数量变化。仅拟合静态的表达分布，还不足以确定细胞下一步会怎样走。
+
+---
+
+
+从网络结构走到细胞行为，中间始终需要补上调控逻辑、反应时间和状态依赖。大网络研究的困难也集中在这里：表达相似的细胞未必具有相同的未来，观测到的相关边也未必是实际的调控边。扰动与后代追踪之所以有用，正是因为它们能给静态图景增加这些缺失的约束。
+
+<details class="qbio-derivations">
+<summary>AND 与 XOR 的扰动敏感性</summary>
+
+
+<div id="5-两条输入边是否总有相同的传播能力"></div>
+
+**5. 两条输入边是否总有相同的传播能力？**
+
+令两个输入独立、等概率为 $0,1$，比较 AND 与 XOR 的总敏感性。
+
+**结果：** AND 为 $1$，XOR 为 $2$。在 AND 门中，另一个输入为零就会屏蔽当前输入的变化，体现了渠化逻辑。
+
+
+</details>
+
+
+### 进一步阅读 {#further-reading}
+
+状态记忆可以从 Gardner 等的合成开关开始；时间结构可对照 Elowitz–Leibler 的三基因抑制环与 Hirata、Monk 的 Hes1 实验和延迟模型。表达噪声方面，Elowitz 等的双报告实验与 Raj 等的单分子计数分别连接了噪声相关性和转录爆发。Süel 等的 ComK 研究则把随机触发、正反馈放大和负反馈退出联系到同一个暂时性细胞程序。各研究的来源列于下方。
+
+### 参考文献 {#references}
+
+下列文献对应本文讨论的具体机制。
+
+- **Thomas 反馈回路原则**：R. Thomas, “The role of feedback circuits: Positive feedback circuits are a necessary condition for positive real eigenvalues of the Jacobian matrix,” *Berichte der Bunsengesellschaft für physikalische Chemie* **98**, 1148–1151 (1994). [DOI: 10.1002/bbpc.19940980916](https://doi.org/10.1002/bbpc.19940980916)。另见 C. Soulé, “Mathematical approaches to differentiation and gene regulation,” *Comptes Rendus Biologies* **329**, 13–20 (2006), [DOI: 10.1016/j.crvi.2005.10.002](https://doi.org/10.1016/j.crvi.2005.10.002)。
+- **回路、状态与吸引子的理论综述**：D. Thieffry, “Dynamical roles of biological regulatory circuits,” *Briefings in Bioinformatics* **8**, 220–225 (2007). [期刊页面](https://academic.oup.com/bib/article/8/4/220/221430)。
+- **双稳态合成开关**：T. S. Gardner, C. R. Cantor and J. J. Collins, “Construction of a genetic toggle switch in *Escherichia coli*,” *Nature* **403**, 339–342 (2000). [DOI: 10.1038/35002131](https://doi.org/10.1038/35002131)。
+- **三基因振荡器**：M. B. Elowitz and S. Leibler, “A synthetic oscillatory network of transcriptional regulators,” *Nature* **403**, 335–338 (2000). [DOI: 10.1038/35002125](https://doi.org/10.1038/35002125)。
+- **单细胞表达噪声**：M. B. Elowitz, A. J. Levine, E. D. Siggia and P. S. Swain, “Stochastic gene expression in a single cell,” *Science* **297**, 1183–1186 (2002). [DOI: 10.1126/science.1070919](https://doi.org/10.1126/science.1070919)。
+- **随机布尔网络的退火近似**：B. Derrida and Y. Pomeau, “Random networks of automata: A simple annealed approximation,” *Europhysics Letters* **1**, 45–49 (1986). [DOI: 10.1209/0295-5075/1/2/001](https://doi.org/10.1209/0295-5075/1/2/001)。
+- **网络模体与信号处理**：U. Alon, “Network motifs: theory and experimental approaches,” *Nature Reviews Genetics* **8**, 450–461 (2007). [DOI: 10.1038/nrg2102](https://doi.org/10.1038/nrg2102)。另见 U. Alon, *An Introduction to Systems Biology: Design Principles of Biological Circuits*，讨论生物回路的设计原理。
+- **Hes1 负反馈振荡实验**：H. Hirata et al., “Oscillatory Expression of the bHLH Factor Hes1 Regulated by a Negative Feedback Loop,” *Science* **298**, 840–843 (2002). [DOI: 10.1126/science.1074560](https://doi.org/10.1126/science.1074560)。
+- **表达延迟与振荡周期**：N. A. M. Monk, “Oscillatory Expression of Hes1, p53, and NF-κB Driven by Transcriptional Time Delays,” *Current Biology* **13**, 1409–1413 (2003). [DOI: 10.1016/S0960-9822(03)00494-9](https://doi.org/10.1016/S0960-9822(03)00494-9)。
+- **哺乳动物细胞中的转录爆发**：A. Raj, C. S. Peskin, D. Tranchina, D. Y. Vargas and S. Tyagi, “Stochastic mRNA Synthesis in Mammalian Cells,” *PLoS Biology* **4**, e309 (2006). [DOI: 10.1371/journal.pbio.0040309](https://doi.org/10.1371/journal.pbio.0040309)。
+- **ComK 感受态与兴奋性**：G. M. Süel, J. Garcia-Ojalvo, L. M. Liberman and M. B. Elowitz, “An excitable gene regulatory circuit induces transient cellular differentiation,” *Nature* **440**, 545–550 (2006). [DOI: 10.1038/nature04588](https://doi.org/10.1038/nature04588)。
+- **阿拉伯糖系统的前馈延迟**：S. Mangan, A. Zaslaver and U. Alon, “The Coherent Feedforward Loop Serves as a Sign-sensitive Delay Element in Transcription Networks,” *Journal of Molecular Biology* **334**, 197–204 (2003). [DOI: 10.1016/j.jmb.2003.09.049](https://doi.org/10.1016/j.jmb.2003.09.049)。
+- **表达状态与后代命运**：C. Weinreb et al., “Lineage tracing on transcriptional landscapes links state to fate during differentiation,” *Science* **367**, eaaw3381 (2020). [DOI: 10.1126/science.aaw3381](https://doi.org/10.1126/science.aaw3381)。
+- **扰动与单细胞网络读出**：A. Dixit et al., “Perturb-Seq: Dissecting Molecular Circuits with Scalable Single-Cell RNA Profiling of Pooled Genetic Screens,” *Cell* **167**, 1853–1866.e17 (2016). [DOI: 10.1016/j.cell.2016.11.038](https://doi.org/10.1016/j.cell.2016.11.038)。

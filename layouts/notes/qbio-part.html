@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{- $series := partialCached "functions/qbio-topic.html" .Params.qbio_topic .Params.qbio_topic site.Language.Lang -}}
+{{- $current := 0 -}}
+{{- range $index, $part := $series.parts -}}
+  {{- if eq $part.slug $.Params.qbio_part -}}{{- $current = $index -}}{{- end -}}
+{{- end -}}
+{{- $part := index $series.parts $current -}}
+<div class="cell-cycle-page mx-auto flex max-w-screen-xl">
+  {{ partial "components/toc.html" . }}
+  <article class="cell-cycle-article qbio-part-article{{ with .Params.article_class }} {{ . }}{{ end }} prose prose-slate dark:prose-invert w-full min-w-0 px-6 py-8 md:px-12">
+    <header>
+      <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="cell-cycle-subtitle">{{ . }}</p>{{ end }}
+      <p class="cell-cycle-meta">第 {{ add $current 1 }} / {{ len $series.parts }} 篇 · {{ $part.kind }} · {{ .ReadingTime }} {{ i18n "minute_read" }}</p>
+    </header>
+    <details class="cell-cycle-mobile-toc">
+      <summary>{{ i18n "table_of_contents" }}</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{- $content := replaceRE `(<table(?:\s[^>]*)?>)` `<div class="cell-cycle-table">$1` .Content -}}
+    {{- $content = replace $content "</table>" "</table></div>" -}}
+    {{ $content | safeHTML }}
+    <nav class="qbio-part-navigation" aria-label="系列阅读导航">
+      {{ if gt $current 0 }}
+        {{- $previous := index $series.parts (sub $current 1) -}}
+        <a rel="prev" href="{{ $previous.url }}"><span>← 上一篇</span>{{ $previous.title }}</a>
+      {{ else }}
+        <a href="{{ .Parent.RelPermalink }}"><span>主题目录</span>{{ .Parent.Title }}</a>
+      {{ end }}
+      {{ if lt (add $current 1) (len $series.parts) }}
+        {{- $next := index $series.parts (add $current 1) -}}
+        <a rel="next" href="{{ $next.url }}"><span>下一篇 →</span>{{ $next.title }}</a>
+      {{ else }}
+        <a href="{{ .Parent.RelPermalink }}"><span>返回主题目录 ↑</span>{{ .Parent.Title }}</a>
+      {{ end }}
+    </nav>
+  </article>
+</div>
+{{ partial "components/qbio-anchor-links.html" $series }}
+{{ end }}

@@ -1,0 +1,829 @@
+{
+  "checked_on": "2026-10-18",
+  "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
+  "reused_figures": [
+    {
+      "file": "figures/review2026_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4bf4/13072950/29085f0a7c7c/cells-15-00645-g003.jpg",
+      "article_doi": "10.3390/cells15070645",
+      "figure_id": "cells-15-00645-f003",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13072950/#cells-15-00645-f003",
+      "author": "Labouesse et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "sha256": "0bf4f320a15340271e14d97b11d96d1bbc0903bea95e2743a209675d5822b354",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "overview",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/harrell2011_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f55b/3022094/e6b9b53558dc/nihms240924f2.jpg",
+      "article_doi": "10.1016/j.ydbio.2010.09.012",
+      "figure_id": "F2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3022094/#F2",
+      "author": "Harrell & Goldstein",
+      "year": 2011,
+      "license": "Original author/publisher rights retained",
+      "sha256": "408cb12be8d51eb822ab31f5af55c6e217e4f08c0e156f7526bd11b36609b964",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "overview",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/goldstein2020_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0f61/7017025/33a16b8ec70d/265f3.jpg",
+      "article_doi": "10.1534/genetics.119.300240",
+      "figure_id": "fig3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7017025/#fig3",
+      "author": "Goldstein & Nance",
+      "year": 2020,
+      "license": "Original author/publisher rights retained",
+      "sha256": "35bfbada8c0ba25b984ef8a11f71d35d5206fc2ef1adbd8b894c6ba2742f7343",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/rohjohnson2012_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ef45/3298882/ed4c78373640/nihms360669f1.jpg",
+      "article_doi": "10.1126/science.1217869",
+      "figure_id": "F1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3298882/#F1",
+      "author": "Roh-Johnson et al.",
+      "year": 2012,
+      "license": "Original author/publisher rights retained",
+      "sha256": "98ac483525ecac7c99ecd810316a6ceb3706561a29f6472339db732b47371ed6",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/slabodnick2023_fig1.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1010319.g001&size=large",
+      "article_doi": "10.1371/journal.pgen.1010319",
+      "figure_id": "Fig 1",
+      "source": "https://doi.org/10.1371/journal.pgen.1010319.g001",
+      "author": "Slabodnick et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "sha256": "d15350bd7ac91e1dcef2bdf256b1e69482736d01c9257da113f31591132a70a8",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 3
+        }
+      ]
+    },
+    {
+      "file": "figures/slabodnick2023_fig4.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1010319.g004&size=large",
+      "article_doi": "10.1371/journal.pgen.1010319",
+      "figure_id": "Fig 4",
+      "source": "https://doi.org/10.1371/journal.pgen.1010319.g004",
+      "author": "Slabodnick et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "sha256": "fedb651d885f709a599304a5384154b7adffc72b6abdea222b6e724728db1a7b",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 4
+        }
+      ]
+    },
+    {
+      "file": "figures/slabodnick2023_fig6.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1010319.g006&size=large",
+      "article_doi": "10.1371/journal.pgen.1010319",
+      "figure_id": "Fig 6",
+      "source": "https://doi.org/10.1371/journal.pgen.1010319.g006",
+      "author": "Slabodnick et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "sha256": "3f274837da7785b5156d9f79c88ac08464a648740f8cf07aa92fd2a555138262",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/chihara2012_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a554/3383229/958ae2d22d70/DEV079863F2.jpg",
+      "article_doi": "10.1242/dev.079863",
+      "figure_id": "F2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3383229/#F2",
+      "author": "Chihara & Nance",
+      "year": 2012,
+      "license": "Original author/publisher rights retained",
+      "sha256": "16d748fb8e569a028c2566b1849c9b4951419f337c3cb733039b29510164a1d2",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 6
+        }
+      ]
+    },
+    {
+      "file": "figures/intercalation2015_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0c01/4631769/cde037772886/develop-142-127597-g1.jpg",
+      "article_doi": "10.1242/dev.127597",
+      "figure_id": "DEV127597F1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4631769/#DEV127597F1",
+      "author": "Walck-Shannon et al.",
+      "year": 2015,
+      "license": "Original author/publisher rights retained",
+      "sha256": "ab75a7956f36c9d1c4f96eb0034c488ce2ac24bfa69123731ca5771e2f0a2e6e",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/walck2016_fig2.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1006415.g002&size=large",
+      "article_doi": "10.1371/journal.pgen.1006415",
+      "figure_id": "Fig 2",
+      "source": "https://doi.org/10.1371/journal.pgen.1006415.g002",
+      "author": "Walck-Shannon et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "sha256": "041f48032a77c3b7949d2060280247c61cae9a8f27a2426da07ebb1a99bd12c9",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/walck2016_fig4.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1006415.g004&size=large",
+      "article_doi": "10.1371/journal.pgen.1006415",
+      "figure_id": "Fig 4",
+      "source": "https://doi.org/10.1371/journal.pgen.1006415.g004",
+      "author": "Walck-Shannon et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "sha256": "af3884ec301954cc7090ab40ada94a6622dfc5baad569a8e127c9d5bbd8e3f62",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 3
+        }
+      ]
+    },
+    {
+      "file": "figures/review2026_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4bf4/13072950/41e5e634304e/cells-15-00645-g001.jpg",
+      "article_doi": "10.3390/cells15070645",
+      "figure_id": "cells-15-00645-f001",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13072950/#cells-15-00645-f001",
+      "author": "Labouesse et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "sha256": "9aca4df8ba8f6fc0625006933a732b9e3f049eb300e5120142db057d4b2ba9d1",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 4
+        }
+      ]
+    },
+    {
+      "file": "figures/bernadskaya2012_fig2.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1002863.g002&size=large",
+      "article_doi": "10.1371/journal.pgen.1002863",
+      "figure_id": "Fig 2",
+      "source": "https://doi.org/10.1371/journal.pgen.1002863.g002",
+      "author": "Bernadskaya et al.",
+      "year": 2012,
+      "license": "CC BY 4.0",
+      "sha256": "aed2c5c5d0d418032e74b1672a212783499637e49051607795e3d865bd3e83bd",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/serre2023_fig2.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1010507.g002&size=large",
+      "article_doi": "10.1371/journal.pgen.1010507",
+      "figure_id": "Fig 2",
+      "source": "https://doi.org/10.1371/journal.pgen.1010507.g002",
+      "author": "Serre et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "sha256": "b82537c9f8051181f3d84a0431e94a2651d512eb15103dd63d241d44a3818c38",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 6
+        }
+      ]
+    },
+    {
+      "file": "figures/review2026_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4bf4/13072950/def564c2bb74/cells-15-00645-g002.jpg",
+      "article_doi": "10.3390/cells15070645",
+      "figure_id": "cells-15-00645-f002",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13072950/#cells-15-00645-f002",
+      "author": "Labouesse et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "sha256": "886a6800f40855793afb4d65a190acf5b557a45ba700e2071b194a236f4407ec",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 7
+        }
+      ]
+    },
+    {
+      "file": "figures/vuong_brender_2017_fig1.jpg",
+      "authors": "Thanh Thi Kim Vuong-Brender, Martine Ben Amar, Julien Pontabry, Michel Labouesse",
+      "year": 2017,
+      "figure": "Figure 1",
+      "source": "https://doi.org/10.7554/eLife.23866.003",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modifications": "None; original panels and labels retained.",
+      "source_metadata": "https://api.elifesciences.org/articles/23866/versions/3",
+      "article_doi": "10.7554/eLife.23866",
+      "sha256": "1ef8fde0e3596822ff78e6e5967e0817c1a29c9fed67f80ef0dc29f3b80823b3",
+      "retrieved_on": "2026-10-18",
+      "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig1-v3.tif/full/full/0/default.jpg",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/vuong_brender_2017_fig2.jpg",
+      "authors": "Thanh Thi Kim Vuong-Brender, Martine Ben Amar, Julien Pontabry, Michel Labouesse",
+      "year": 2017,
+      "figure": "Figure 2",
+      "source": "https://doi.org/10.7554/eLife.23866.004",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "modifications": "None; original panels and labels retained.",
+      "source_metadata": "https://api.elifesciences.org/articles/23866/versions/3",
+      "article_doi": "10.7554/eLife.23866",
+      "sha256": "e718189c86474ad64bfdefbfc39a82af6de3f4bc1b52fc60317f9466cd77fb44",
+      "retrieved_on": "2026-10-18",
+      "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig2-v3.tif/full/full/0/default.jpg",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/vuong_brender_2017_fig3.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig3-v3.tif/full/full/0/default.jpg",
+      "article_doi": "10.7554/eLife.23866",
+      "figure_id": "Figure 3",
+      "source": "https://doi.org/10.7554/eLife.23866.011",
+      "author": "Vuong-Brender et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "sha256": "d3d3c66886717cf82a461ca9371614abb4ee5c7efdad275d9ec113d69d12dd45",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 3
+        }
+      ]
+    },
+    {
+      "file": "figures/vuong_brender_2017_fig7.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig7-v3.tif/full/full/0/default.jpg",
+      "article_doi": "10.7554/eLife.23866",
+      "figure_id": "Figure 7",
+      "source": "https://doi.org/10.7554/eLife.23866.016",
+      "author": "Vuong-Brender et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "sha256": "299d53c2ff1a8776ea6c73368ac575146e2ac0bacab62327c6481e89dc653b61",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 4
+        }
+      ]
+    },
+    {
+      "file": "figures/vuong_brender_2017_fig8.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig8-v3.tif/full/full/0/default.jpg",
+      "article_doi": "10.7554/eLife.23866",
+      "figure_id": "Figure 8",
+      "source": "https://doi.org/10.7554/eLife.23866.017",
+      "author": "Vuong-Brender et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "sha256": "a4bbec32f16a8674f37059cf523d6297e2d4ea8e85dce795241b4e774dbbeddb",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/hmp2018_fig2.png",
+      "image_url": "https://journals.plos.org/plosone/article/figure/image?download=&id=10.1371%2Fjournal.pone.0193279.g002&size=large",
+      "article_doi": "10.1371/journal.pone.0193279",
+      "figure_id": "Fig 2",
+      "source": "https://doi.org/10.1371/journal.pone.0193279.g002",
+      "author": "Vuong-Brender et al.",
+      "year": 2018,
+      "license": "CC BY 4.0",
+      "sha256": "a080a9be45b2a5257434c626625bf4dba56b1f4d3d6e00a87825901090caa88b",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 6
+        }
+      ]
+    },
+    {
+      "file": "figures/ecm2017_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/cae9/5769628/8fea0c0139a3/develop-144-150383-g1.jpg",
+      "article_doi": "10.1242/dev.150383",
+      "figure_id": "DEV150383F1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5769628/#DEV150383F1",
+      "author": "Vuong-Brender, Suman & Labouesse",
+      "year": 2017,
+      "license": "CC BY 3.0",
+      "sha256": "03bd518ab7a4618117113fb4b3d34ee2b7f49afa1f6d443f0686a9eb839d6b0c",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 7
+        }
+      ]
+    },
+    {
+      "file": "figures/ecm2017_fig7.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/cae9/5769628/f26c7717824e/develop-144-150383-g7.jpg",
+      "article_doi": "10.1242/dev.150383",
+      "figure_id": "DEV150383F7",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5769628/#DEV150383F7",
+      "author": "Vuong-Brender, Suman & Labouesse",
+      "year": 2017,
+      "license": "CC BY 3.0",
+      "sha256": "6109063f0a44f8015f6c0b825261ff335f63f85d19bfc132eb33a3a60f08acf7",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 8
+        }
+      ]
+    },
+    {
+      "file": "figures/review2026_fig5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4bf4/13072950/1a71e000f860/cells-15-00645-g005.jpg",
+      "article_doi": "10.3390/cells15070645",
+      "figure_id": "cells-15-00645-f005",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13072950/#cells-15-00645-f005",
+      "author": "Labouesse et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "sha256": "e12d1a32e93fac85c0ffe0505652b06719bb5113694cd14bdba1e6141dba952b",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/lock2019_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/17d6/8086821/7bd96972597c/nihms-1692904-f0002.jpg",
+      "article_doi": "10.1038/s41586-019-1509-4",
+      "figure_id": "F2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8086821/#F2",
+      "author": "Lardennois et al.",
+      "year": 2019,
+      "license": "Original author/publisher rights retained; figure numbering follows accepted manuscript",
+      "sha256": "7a43e5d0cee44aad571f6ee3c745d59587bf64c6dfde535bdebd196477ca60fc",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/lock2019_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/17d6/8086821/dd3f6ce6bdf5/nihms-1692904-f0004.jpg",
+      "article_doi": "10.1038/s41586-019-1509-4",
+      "figure_id": "F4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8086821/#F4",
+      "author": "Lardennois et al.",
+      "year": 2019,
+      "license": "Original author/publisher rights retained; figure numbering follows accepted manuscript",
+      "sha256": "640e41d33194d840e0e496a3371489a9c118842ba0561b9f06e608ce162b8b05",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 3
+        }
+      ]
+    },
+    {
+      "file": "figures/fang2021_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/863f/8245039/9ad650cd96f7/abg3264-f4.jpg",
+      "article_doi": "10.1126/sciadv.abg3264",
+      "figure_id": "F4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8245039/#F4",
+      "author": "Fang et al.",
+      "year": 2021,
+      "license": "CC BY-NC 4.0",
+      "sha256": "550a67859037b7e53d5f2f804ace5eff5d2845075fe32f988a4d9258168c6f93",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 4
+        }
+      ]
+    },
+    {
+      "file": "figures/yang2025_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c161/12549353/588a44d921d0/gr2.jpg",
+      "article_doi": "10.1016/j.devcel.2025.06.012",
+      "figure_id": "fig2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#fig2",
+      "author": "Yang et al.",
+      "year": 2025,
+      "license": "CC BY-NC 4.0",
+      "sha256": "664965cddc66b25ef088081c54dcc6907837cfb1fb6cced0ef8be1b5c81bd3c2",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/yang2025_fig5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c161/12549353/b58f246b1b0e/gr5.jpg",
+      "article_doi": "10.1016/j.devcel.2025.06.012",
+      "figure_id": "fig5",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#fig5",
+      "author": "Yang et al.",
+      "year": 2025,
+      "license": "CC BY-NC 4.0",
+      "sha256": "5b7ea9c4bc17e78ad3922a64103540ffcbfa0b338de3db72d16c94029f154b6b",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 6
+        }
+      ]
+    },
+    {
+      "file": "figures/dai2024_fig3.jpg",
+      "author": "Dai & Ben Amar",
+      "year": 2024,
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "Fig. 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11189629/#fig3",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c8a5/11189629/b83939c3a818/elife-90505-fig3.jpg",
+      "license": "CC BY 4.0",
+      "modification": "None",
+      "sha256": "2683926fb033284410f4d791e1a7ae914f4377bd8039d2bcb8c1b84c4fe61e61",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/fick2013_fig3.jpg",
+      "author": "Fickentscher, Struntz & Weiss",
+      "year": 2013,
+      "article_doi": "10.1016/j.bpj.2013.09.005",
+      "figure_id": "fig3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3797578/#fig3",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/fac3/3797578/3cfd1e7a9906/gr3.jpg",
+      "license": "Original author/publisher rights retained",
+      "sha256": "87fb68962f18b791994a5dba6c3589980847654e47c110813f4ea10da7ebc02e",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 7
+        }
+      ]
+    },
+    {
+      "file": "figures/mori2008_fig3.jpg",
+      "author": "Mori, Jilkine & Edelstein-Keshet",
+      "year": 2008,
+      "article_doi": "10.1529/biophysj.107.120824",
+      "figure_id": "fig3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2292363/#fig3",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2cb6/2292363/08cab2b4c2be/BIO.120824.gs.f3.jpg",
+      "license": "Original author/publisher rights retained",
+      "sha256": "9925d28411cec4fc9151c139c9945b86a32d1d875256d16ed342b70d72a99a64",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 8
+        }
+      ]
+    },
+    {
+      "file": "figures/fang2021_fig1.jpg",
+      "author": "Fang et al.",
+      "year": 2021,
+      "article_doi": "10.1126/sciadv.abg3264",
+      "figure_id": "F1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8245039/#F1",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/863f/8245039/895621a49204/abg3264-f1.jpg",
+      "license": "CC BY-NC 4.0",
+      "sha256": "8a04a3cbcd71a23e053f37c68963322e3ff7f60e83de42da127089a974a49222",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 10
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "file": "figures/fang2021_fig3.jpg",
+      "author": "Fang et al.",
+      "year": 2021,
+      "article_doi": "10.1126/sciadv.abg3264",
+      "figure_id": "F3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8245039/#F3",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/863f/8245039/2e8341282fb3/abg3264-f3.jpg",
+      "license": "CC BY-NC 4.0",
+      "sha256": "d123de635c26eab76969f55dea9a8360966f88f2219ed02a963dbc21a7f0aa27",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 11
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "file": "figures/dai2024_fig6.jpg",
+      "author": "Dai & Ben Amar",
+      "year": 2024,
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "fig6",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11189629/#fig6",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c8a5/11189629/a892ae2e6c62/elife-90505-fig6.jpg",
+      "license": "CC BY 4.0",
+      "sha256": "9244094fe142dad2f1ffdae255534b5c19786a3b7654706e03b31f632175eb9a",
+      "retrieved_on": "2026-10-18",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 3
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "original_figures": {
+    "generators": [
+      "figures/generate_figures.py",
+      "figures/generate_model_figures.py"
+    ],
+    "displayed_files": [
+      "figures/07_quantitative_geometry.svg",
+      "figures/13_rod_model.svg",
+      "figures/14_identifiability_model.svg",
+      "figures/11_plasticity_model.svg",
+      "figures/12_frap_model.svg",
+      "figures/08_clutch_model.svg",
+      "figures/10_anisotropy_model.svg",
+      "figures/09_closure_model.svg"
+    ],
+    "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
+    "locations": {
+      "figures/07_quantitative_geometry.svg": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 2
+        }
+      ],
+      "figures/13_rod_model.svg": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 4
+        }
+      ],
+      "figures/14_identifiability_model.svg": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 5
+        }
+      ],
+      "figures/11_plasticity_model.svg": [
+        {
+          "note": "late_elongation",
+          "figure": 7
+        }
+      ],
+      "figures/12_frap_model.svg": [
+        {
+          "note": "late_elongation",
+          "figure": 8
+        }
+      ],
+      "figures/08_clutch_model.svg": [
+        {
+          "note": "gastrulation",
+          "figure": 8
+        }
+      ],
+      "figures/10_anisotropy_model.svg": [
+        {
+          "note": "early_elongation",
+          "figure": 9
+        }
+      ],
+      "figures/09_closure_model.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 9
+        }
+      ]
+    }
+  },
+  "external_movies": [
+    {
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3022094/",
+      "items": "Supplementary Movies 1–2",
+      "usage": "Link to original article; no local redistribution."
+    },
+    {
+      "source": "https://worms.biology.wisc.edu/galleries/wormbook/",
+      "items": "Movies 1–9",
+      "usage": "Link to author gallery; original credits and acquisition conditions retained in note.",
+      "important_conditions": "Movie 4 uses an eff-1 background to suppress fusion. Movie 8 is hmr-1(RNAi)."
+    },
+    {
+      "source": "https://doi.org/10.7554/eLife.23866.007",
+      "items": "Video 1",
+      "usage": "Remote HTML5 embed from the publisher media service, with source link and CC BY 4.0 attribution. No local video redistribution.",
+      "stream_url": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/672/626a302e3b0f99d57a9b3a50c24ae0475f59fc50/elife-23866-media1.mp4"
+    },
+    {
+      "source": "https://www.nature.com/articles/s41586-019-1509-4",
+      "items": "Supplementary Video 1",
+      "usage": "Link to original publisher page; no local redistribution."
+    },
+    {
+      "source": "https://wormatlas.cropsci.illinois.edu/embryo/introduction/mainframe.htm",
+      "items": "EmbryoIntroVID 6",
+      "usage": "Link to original atlas; no local redistribution."
+    },
+    {
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#app2",
+      "items": "Yang et al. (2025), supplemental movies",
+      "usage": "Link to original article supplemental materials; no local video redistribution."
+    }
+  ],
+  "literature_metadata": "literature_sources.json"
+}

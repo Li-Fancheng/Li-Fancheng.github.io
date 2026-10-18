@@ -1,0 +1,103 @@
+{
+  "single_cell_to_population_growth": {
+    "root": "/notes/qbio_course/single_cell_to_population_growth/",
+    "directory": "single_cell_to_population_growth",
+    "parts": [
+      {
+        "slug": "population_growth",
+        "title": "分裂越不整齐，群体就长得越快吗？",
+        "summary": "从大小稳态与分裂时间波动的实验出发，建立独立分裂模型，再用生物量守恒检验“噪声促进增长”的预测。",
+        "kind": "正文与补充推导",
+        "source": "single_cell_to_population_growth/01_population_growth.md"
+      },
+      {
+        "slug": "adder",
+        "title": "提前分裂的优势怎样被后代补回来",
+        "summary": "沿着 adder 的大小继承关系，追踪一次大小偏差怎样改变后续分裂时间，并检验累计时间的抵消及其适用条件。",
+        "kind": "正文与补充推导",
+        "source": "single_cell_to_population_growth/02_adder.md"
+      },
+      {
+        "slug": "lineage_correlations",
+        "title": "怎样从谱系历史预测群体增长",
+        "summary": "从相关 Euler–Lotka 关系到可解的两状态模型，区分单代直方图、长期时间波动与持续的生理差异。",
+        "kind": "正文与补充推导",
+        "source": "single_cell_to_population_growth/03_lineage_correlations.md"
+      }
+    ]
+  },
+  "positional_information": {
+    "root": "/notes/qbio_course/positional_information/",
+    "directory": "positional_information",
+    "parts": [
+      {
+        "slug": "gradient",
+        "title": "从浓度梯度到可靠的表达边界",
+        "summary": "沿着 Bicoid 的产生、扩散、基因调控与分子读取，解释空间边界怎样形成，又为何会波动。",
+        "kind": "正文与补充推导",
+        "source": "positional_information/01_gradient.md"
+      },
+      {
+        "slug": "joint_decoding",
+        "title": "多个基因怎样共同确定位置",
+        "summary": "把联合表达看作位置读数，连接噪声几何、Fisher 信息、位置后验与全局互信息。",
+        "kind": "正文与补充推导",
+        "source": "positional_information/02_joint_decoding.md"
+      },
+      {
+        "slug": "network_optimization",
+        "title": "怎样的调控网络能产生可靠的位置图案",
+        "summary": "从信息最大化的表达曲线出发，加入反应动力学、分子资源与下游读取，比较模型预测和发育实验。",
+        "kind": "正文与补充推导",
+        "source": "positional_information/03_network_optimization.md"
+      }
+    ]
+  },
+  "grn_theory": {
+    "root": "/notes/qbio_course/grn_theory/",
+    "directory": "grn",
+    "parts": [
+      {
+        "slug": "feedback",
+        "title": "反馈怎样维持表达状态，又怎样产生振荡",
+        "summary": "从合成基因开关与分子收支出发，比较自激活、互抑制和抑制环，解释持续更新的分子怎样维持稳定或周期性的表达。",
+        "kind": "正文与补充推导",
+        "source": "grn/01_feedback.md"
+      },
+      {
+        "slug": "memory_lifetime",
+        "title": "一次刺激能留下多久的表达记忆",
+        "summary": "把刺激的幅度和持续时间接到状态切换，再引入分子反应噪声，计算记忆寿命并回到单细胞观测。",
+        "kind": "正文与补充推导",
+        "source": "grn/02_memory_lifetime.md"
+      },
+      {
+        "slug": "network_topics",
+        "title": "从小回路到多基因状态：结构能告诉我们什么",
+        "summary": "沿着扰动传播、前馈信号过滤和多维状态空间，讨论网络结构的预测能力及其与单细胞研究的联系。",
+        "kind": "正文与补充推导",
+        "source": "grn/03_network_topics.md"
+      }
+    ]
+  },
+  "chemotaxis": {
+    "root": "/notes/qbio_course/chemotaxis/",
+    "directory": "chemotaxis",
+    "parts": [
+      {
+        "slug": "chemotactic_transport",
+        "title": "随机游动的细菌怎样获得迁移方向",
+        "summary": "从直游、转向和单细胞轨迹出发，连接随机游走、扩散、趋化通量与给定化学场中的积累。",
+        "kind": "正文与补充推导",
+        "source": "chemotaxis/01_chemotactic_transport.md"
+      },
+      {
+        "slug": "collective_patterns",
+        "title": "细菌怎样靠自己产生的信号聚集",
+        "summary": "从信号干预实验建立 Keller–Segel 反馈，计算聚集阈值与结构尺度，再用背景浓度实验检查感知假设。",
+        "kind": "正文与补充推导",
+        "source": "chemotaxis/02_collective_patterns.md"
+      }
+    ]
+  }
+}

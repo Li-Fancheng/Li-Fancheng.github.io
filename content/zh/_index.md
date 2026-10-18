@@ -81,6 +81,14 @@ sections:
           label: 课程笔记 · 2026 秋季
           title: 定量生物学导论
           text: 单细胞生长与群体增长、基因调控网络，以及从随机游走到集体聚集的趋化模型。
+        - page: /notes/vertex_model
+          label: 组织力学 · 理论专题
+          title: Vertex Model：从细胞几何到组织力学
+          text: 7 篇笔记，从能量与几何约束出发，推导组织刚性、细胞重排与流变，并讨论形态发生中的适用边界。
+        - page: /notes/celegans
+          label: 线虫专题 · 发育与力学
+          title: 线虫胚胎形态发生
+          text: 从细胞内移、表皮重排与腹侧闭合，到表皮和肌肉共同驱动的身体伸长。
         - page: /notes/ising_course
           label: 统计物理 · 数值计算
           title: Ising 模型的数值模拟

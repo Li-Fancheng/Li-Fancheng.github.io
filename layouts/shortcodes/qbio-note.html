@@ -2,16 +2,29 @@
 {{- $path := printf "notes/qbio_course/%s" (.Get 0) -}}
 {{- $directory := path.Dir $path -}}
 {{- $source := readFile $path -}}
+{{- $series := dict "sources" dict -}}
+{{- with .Page.Params.qbio_topic -}}
+  {{- $series = partialCached "functions/qbio-topic.html" . . site.Language.Lang -}}
+{{- end -}}
 {{- /* The page header displays these two title lines. */ -}}
 {{- $source = replaceRE `^# [^\n]+\n## [^\n]+\n` "" $source -}}
 {{- range findRE `\]\([^\s)]+` $source -}}
   {{- $destination := strings.TrimPrefix "](" . -}}
   {{- if not (or (strings.HasPrefix $destination "#") (strings.HasPrefix $destination "/") (strings.Contains $destination "://")) -}}
-    {{- $resourcePath := path.Join $directory (strings.TrimPrefix "./" $destination) -}}
-    {{- with resources.Get $resourcePath -}}
-      {{- $source = replace $source (printf "](%s" $destination) (printf "](%s" .RelPermalink) -}}
+    {{- $segments := split $destination "#" -}}
+    {{- $resourcePath := path.Join $directory (strings.TrimPrefix "./" (index $segments 0)) -}}
+    {{- $fragment := "" -}}
+    {{- if gt (len $segments) 1 -}}
+      {{- $fragment = printf "#%s" (index $segments 1) -}}
+    {{- end -}}
+    {{- with index $series.sources $resourcePath -}}
+      {{- $source = replace $source (printf "](%s" $destination) (printf "](%s%s" . $fragment) -}}
     {{- else -}}
-      {{- errorf "Missing qbio note resource: %s (referenced by %s)" $destination $path -}}
+      {{- with resources.Get $resourcePath -}}
+        {{- $source = replace $source (printf "](%s" $destination) (printf "](%s%s" .RelPermalink $fragment) -}}
+      {{- else -}}
+        {{- errorf "Missing qbio note resource: %s (referenced by %s)" $destination $path -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

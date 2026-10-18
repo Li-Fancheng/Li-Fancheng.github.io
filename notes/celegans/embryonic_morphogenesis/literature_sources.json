@@ -1,0 +1,289 @@
+[
+  {
+    "doi": "10.3390/cells15070645",
+    "group": "发育框架与谱系",
+    "authors": "Labouesse M, Ferraro T, Llense F, Heier J, Tesone Z, Hardin J.",
+    "title": "Cellular Processes and Forces Shaping the Embryo: Lessons from C. elegans",
+    "year": "2026",
+    "journal": "Cells",
+    "pmcid": "PMC13072950"
+  },
+  {
+    "doi": "10.1016/0012-1606(83)90201-4",
+    "group": "发育框架与谱系",
+    "authors": "Sulston JE, Schierenberg E, White JG, Thomson JN.",
+    "title": "The embryonic cell lineage of the nematode Caenorhabditis elegans",
+    "year": "1983",
+    "journal": "Dev Biol",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1534/genetics.119.300240",
+    "group": "发育框架与谱系",
+    "authors": "Goldstein B, Nance J.",
+    "title": "Caenorhabditis elegans Gastrulation: A Model for Understanding How Cells Polarize, Change Shape, and Journey Toward the Center of an Embryo",
+    "year": "2020",
+    "journal": "Genetics",
+    "pmcid": "PMC7017025"
+  },
+  {
+    "doi": "10.1016/j.ydbio.2010.09.012",
+    "group": "Gastrulation 与力传递",
+    "authors": "Harrell JR, Goldstein B.",
+    "title": "Internalization of multiple cells during C. elegans gastrulation depends on common cytoskeletal mechanisms but different cell polarity and cell fate regulators",
+    "year": "2011",
+    "journal": "Dev Biol",
+    "pmcid": "PMC3022094"
+  },
+  {
+    "doi": "10.1126/science.1217869",
+    "group": "Gastrulation 与力传递",
+    "authors": "Roh-Johnson M, Shemer G, Higgins CD, McClellan JH, Werts AD, Tulu US, Gao L, Betzig E, Kiehart DP, Goldstein B.",
+    "title": "Triggering a cell shape change by exploiting preexisting actomyosin contractions",
+    "year": "2012",
+    "journal": "Science",
+    "pmcid": "PMC3298882"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1010319",
+    "group": "Gastrulation 与力传递",
+    "authors": "Slabodnick MM, Tintori SC, Prakash M, Zhang P, Higgins CD, Chen AH, Cupp TD, Wong T, Bowie E, Jug F, Goldstein B.",
+    "title": "Zyxin contributes to coupling between cell junctions and contractile actomyosin networks during apical constriction",
+    "year": "2023",
+    "journal": "PLoS Genet",
+    "pmcid": "PMC10081768"
+  },
+  {
+    "doi": "10.1242/dev.079863",
+    "group": "Gastrulation 与力传递",
+    "authors": "Chihara D, Nance J.",
+    "title": "An E-cadherin-mediated hitchhiking mechanism for C. elegans germ cell internalization during gastrulation",
+    "year": "2012",
+    "journal": "Development",
+    "pmcid": "PMC3383229"
+  },
+  {
+    "doi": "10.1242/dev.127597",
+    "group": "插入与腹侧形态发生",
+    "authors": "Walck-Shannon E, Reiner D, Hardin J.",
+    "title": "Polarized Rac-dependent protrusions drive epithelial intercalation in the embryonic epidermis of C. elegans",
+    "year": "2015",
+    "journal": "Development",
+    "pmcid": "PMC4631769"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1006415",
+    "group": "插入与腹侧形态发生",
+    "authors": "Walck-Shannon E, Lucas B, Chin-Sang I, Reiner D, Kumfer K, Cochran H, Bothfeld W, Hardin J.",
+    "title": "CDC-42 Orients Cell Migration during Epithelial Intercalation in the Caenorhabditis elegans Epidermis",
+    "year": "2016",
+    "journal": "PLoS Genet",
+    "pmcid": "PMC5127194"
+  },
+  {
+    "doi": "10.1242/jcs.261509",
+    "group": "插入与腹侧形态发生",
+    "authors": "Zhu Y, Tesone Z, Tan M, Hardin J.",
+    "title": "TIAM-1 regulates polarized protrusions during dorsal intercalation in the Caenorhabditis elegans embryo through both its GEF and N-terminal domains",
+    "year": "2024",
+    "journal": "J Cell Sci",
+    "pmcid": "PMC10949065"
+  },
+  {
+    "doi": "10.1242/dev.124.15.2889",
+    "group": "插入与腹侧形态发生",
+    "authors": "Williams-Masson EM, Malik AN, Hardin J.",
+    "title": "An actin-mediated two-step mechanism is required for ventral enclosure of the C. elegans hypodermis",
+    "year": "1997",
+    "journal": "Development",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1016/S0960-9822(00)80015-9",
+    "group": "插入与腹侧形态发生",
+    "authors": "Raich WB, Agbunag C, Hardin J.",
+    "title": "Rapid epithelial-sheet sealing in the Caenorhabditis elegans embryo requires cadherin-dependent filopodial priming",
+    "year": "1999",
+    "journal": "Curr Biol",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1371/journal.pgen.1002863",
+    "group": "插入与腹侧形态发生",
+    "authors": "Bernadskaya YY, Wallace A, Nguyen J, Mohler WA, Soto MC.",
+    "title": "UNC-40/DCC, SAX-3/Robo, and VAB-1/Eph polarize F-actin during embryonic morphogenesis by regulating the WAVE/SCAR actin nucleation complex",
+    "year": "2012",
+    "journal": "PLoS Genet",
+    "pmcid": "PMC3410845"
+  },
+  {
+    "doi": "10.1371/journal.pgen.1010507",
+    "group": "插入与腹侧形态发生",
+    "authors": "Serre JM, Slabodnick MM, Goldstein B, Hardin J.",
+    "title": "SRGP-1/srGAP and AFD-1/afadin stabilize HMP-1/⍺-catenin at rosettes to seal internalization sites following gastrulation in C. elegans",
+    "year": "2023",
+    "journal": "PLoS Genet",
+    "pmcid": "PMC10016700"
+  },
+  {
+    "doi": "10.1016/j.devcel.2017.03.024",
+    "group": "插入与腹侧形态发生",
+    "authors": "Shah PK, Tanner MR, Kovacevic I, Rankin A, Marshall TE, Noblett N, Tran NN, Roenspies T, Hung J, Chen Z, Slatculescu C, Perkins TJ, Bao Z, Colavita A.",
+    "title": "PCP and SAX-3/Robo Pathways Cooperate to Regulate Convergent Extension-Based Nerve Cord Assembly in C. elegans",
+    "year": "2017",
+    "journal": "Dev Cell",
+    "pmcid": "PMC5469364"
+  },
+  {
+    "doi": "10.1242/dev.201493",
+    "group": "插入与腹侧形态发生",
+    "authors": "Xu Y, Cheng Y, Chen AT, Bao Z.",
+    "title": "A compound PCP scheme underlies sequential rosettes-based cell intercalation",
+    "year": "2023",
+    "journal": "Development",
+    "pmcid": "PMC10263146"
+  },
+  {
+    "doi": "10.1016/0012-1606(86)90358-1",
+    "group": "早期伸长与承载网络",
+    "authors": "Priess JR, Hirsh DI.",
+    "title": "Caenorhabditis elegans morphogenesis: the role of the cytoskeleton in elongation of the embryo",
+    "year": "1986",
+    "journal": "Dev Biol",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1242/dev.039412",
+    "group": "早期伸长与承载网络",
+    "authors": "Gally C, Wissler F, Zahreddine H, Quintin S, Landmann F, Labouesse M.",
+    "title": "Myosin II regulation during C. elegans embryonic elongation: LET-502/ROCK, MRCK-1 and PAK-1, three kinases with different roles",
+    "year": "2009",
+    "journal": "Development",
+    "pmcid": null
+  },
+  {
+    "doi": "10.7554/eLife.23866",
+    "group": "早期伸长与承载网络",
+    "authors": "Vuong-Brender TT, Ben Amar M, Pontabry J, Labouesse M.",
+    "title": "The interplay of stiffness and force anisotropies drives embryo elongation",
+    "year": "2017",
+    "journal": "eLife",
+    "pmcid": "PMC5371431"
+  },
+  {
+    "doi": "10.1371/journal.pone.0193279",
+    "group": "早期伸长与承载网络",
+    "authors": "Vuong-Brender TTK, Boutillon A, Rodriguez D, Lavilley V, Labouesse M.",
+    "title": "HMP-1/α-catenin promotes junctional mechanical integrity during morphogenesis",
+    "year": "2018",
+    "journal": "PLoS One",
+    "pmcid": "PMC5821396"
+  },
+  {
+    "doi": "10.1242/dev.150383",
+    "group": "早期伸长与承载网络",
+    "authors": "Vuong-Brender TTK, Suman SK, Labouesse M.",
+    "title": "The apical ECM preserves embryonic integrity and distributes mechanical stress during morphogenesis",
+    "year": "2017",
+    "journal": "Development",
+    "pmcid": "PMC5769628"
+  },
+  {
+    "doi": "10.1038/nature09765",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Zhang H, Landmann F, Zahreddine H, Rodriguez D, Koch M, Labouesse M.",
+    "title": "A tension-induced mechanotransduction pathway promotes epithelial morphogenesis",
+    "year": "2011",
+    "journal": "Nature",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1038/s41586-019-1509-4",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Lardennois A, Pásti G, Ferraro T, Llense F, Mahou P, Pontabry J, Rodriguez D, Kim S, Ono S, Beaurepaire E, Gally C, Labouesse M.",
+    "title": "An actin-based viscoplastic lock ensures progressive body-axis elongation",
+    "year": "2019",
+    "journal": "Nature",
+    "pmcid": "PMC8086821"
+  },
+  {
+    "doi": "10.1038/s41586-019-1562-z",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Lardennois A, Pásti G, Ferraro T, Llense F, Mahou P, Pontabry J, Rodriguez D, Kim S, Ono S, Beaurepaire E, Gally C, Labouesse M.",
+    "title": "Publisher Correction: An actin-based viscoplastic lock ensures progressive body-axis elongation",
+    "year": "2019",
+    "journal": "Nature",
+    "pmcid": null
+  },
+  {
+    "doi": "10.1126/sciadv.abg3264",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Fang C, Wei X, Shao X, Lin Y.",
+    "title": "Force-mediated cellular anisotropy and plasticity dictate the elongation dynamics of embryos",
+    "year": "2021",
+    "journal": "Sci Adv",
+    "pmcid": "PMC8245039"
+  },
+  {
+    "doi": "10.1016/j.devcel.2025.06.012",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Yang X, Ferraro T, Molnar K, Pontabry J, Malanda SR, Maghelli N, Royer L, Grill SW, Myers G, Grigolon S, Labouesse M.",
+    "title": "Repeated extrinsic and anisotropic mechanical inputs promote C. elegans polarized adherens junction elongation",
+    "year": "2025",
+    "journal": "Dev Cell",
+    "pmcid": "PMC12549353"
+  },
+  {
+    "doi": "10.1242/dev.204242",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Llense F, Ferraro T, Yang X, Song H, Labouesse M.",
+    "title": "Muscle and intestine innexins with muscle DEG/ENaC channels promote muscle coordination and embryo elongation in C. elegans",
+    "year": "2025",
+    "journal": "Development",
+    "pmcid": null
+  },
+  {
+    "doi": "10.7554/eLife.90505",
+    "group": "肌肉输入与材料重塑",
+    "authors": "Dai A, Ben Amar M.",
+    "title": "Cyclic muscle contractions reinforce the actomyosin motors and mediate the full elongation of C. elegans embryo",
+    "year": "2024",
+    "journal": "eLife",
+    "pmcid": "PMC11189629"
+  },
+  {
+    "doi": "10.1016/j.bpj.2013.09.005",
+    "authors": "Fickentscher R, Struntz P, Weiss M",
+    "year": "2013",
+    "title": "Mechanical Cues in the Early Embryogenesis of Caenorhabditis elegans",
+    "journal": "Biophys J"
+  },
+  {
+    "doi": "10.48550/arXiv.2105.05795",
+    "authors": "Miao J, Guan G, Tang C",
+    "year": "2021; v2 2022",
+    "title": "Spontaneous mechanical and energetic state transitions during Caenorhabditis elegans gastrulation",
+    "journal": "arXiv preprint"
+  },
+  {
+    "doi": "10.1529/biophysj.107.120824",
+    "authors": "Mori Y, Jilkine A, Edelstein-Keshet L",
+    "year": "2008",
+    "title": "Wave-pinning and cell polarity from a bistable reaction-diffusion system",
+    "journal": "Biophys J"
+  },
+  {
+    "doi": "10.1098/rsta.2009.0088",
+    "authors": "Ciarletta P, Ben Amar M, Labouesse M",
+    "year": "2009",
+    "title": "Continuum model of epithelial morphogenesis during Caenorhabditis elegans embryonic elongation",
+    "journal": "Philos Trans A Math Phys Eng Sci"
+  },
+  {
+    "doi": "10.1103/PhysRevLett.121.268102",
+    "authors": "Ben Amar M, Qiuyang-Qu P, Vuong-Brender TTK, Labouesse M",
+    "year": "2018",
+    "title": "Assessing the Contribution of Active and Passive Stresses in C. elegans Elongation",
+    "journal": "Phys Rev Lett"
+  }
+]

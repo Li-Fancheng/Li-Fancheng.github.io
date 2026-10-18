@@ -2,7 +2,7 @@
 
 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-正文见[趋化笔记](lecture_notes.md)。从单细胞的随机游动开始，先计算细胞团怎样散开，再加入化学梯度和细胞分泌，建立 Keller–Segel 模型，判断微小密度起伏何时增长。最后回到实验，比较均匀背景信号对聚集的影响。技术附录 A 连接连续时间 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率，附录 C 推导化学响应核。
+阅读顺序见[趋化笔记目录](lecture_notes.md)，正文分为两篇。第一篇从单细胞的随机游动走到给定化学梯度中的定向迁移；第二篇让细胞产生信号，建立 Keller–Segel 反馈，计算聚集阈值与结构尺度，再用均匀背景信号的实验检验模型。技术附录随对应正文放在篇末：附录 A 连接连续时间 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率，附录 C 推导化学响应核。
 
 文中 18 张图片按阅读顺序统一编号为 Fig. 1–18（均在正文中）：4 张论文实验图，以及 14 张由代码生成的模型示意图、理论曲线和模拟图。图片文件名保留生成脚本中的标识，文中图号可按下表查找：
 
@@ -32,7 +32,9 @@
 
 ```text
 chemotaxis/
-├── lecture_notes.md                 # 笔记正文，图片为相对路径
+├── lecture_notes.md                 # 主题目录与阅读顺序
+├── 01_chemotactic_transport.md       # 随机运动到定向迁移，含附录 A
+├── 02_collective_patterns.md        # 信号反馈与聚集，含附录 B–C
 ├── README.md                        # 本说明
 ├── requirements.txt                 # NumPy 和 Matplotlib
 ├── figures/
@@ -68,7 +70,7 @@ chemotaxis/
 
 ## 阅读笔记
 
-打开 `lecture_notes.md`（VS Code 的 Markdown 预览、Typora、Obsidian 或支持数学公式的 Markdown 阅读器均可）。请保持 `figures/` 与正文的相对路径不变。
+打开 `lecture_notes.md`，从目录进入各篇正文（VS Code 的 Markdown 预览、Typora、Obsidian 或支持数学公式的 Markdown 阅读器均可）。请保持 `figures/` 与各篇正文的相对路径不变。
 
 笔记使用标准 Markdown 加 `$...$`、`$$...$$` LaTeX 数学语法。图片保存在本地；正文中的实验视频链接需要访问网络。
 

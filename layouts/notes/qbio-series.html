@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{- $series := partialCached "functions/qbio-topic.html" .Params.qbio_topic .Params.qbio_topic site.Language.Lang -}}
+<div class="cell-cycle-page qbio-series-page mx-auto max-w-screen-xl">
+  <article class="cell-cycle-article prose prose-slate dark:prose-invert w-full min-w-0 px-6 py-8 md:px-12">
+    <header>
+      <a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="cell-cycle-subtitle">{{ . }}</p>{{ end }}
+      <p class="cell-cycle-meta">{{ len $series.parts }} 篇笔记 · 按下列顺序阅读</p>
+    </header>
+    {{ .Content }}
+    <nav class="qbio-series-directory" aria-label="{{ .Title }}阅读目录">
+      <ol>
+        {{ range $index, $part := $series.parts }}
+          {{- $page := site.GetPage $part.pagePath -}}
+          <li>
+            <span class="qbio-part-number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+            <div>
+              <a class="qbio-part-title" href="{{ $part.url }}">{{ $part.title }}</a>
+              <p>{{ $part.summary }}</p>
+              <span class="cell-cycle-meta">{{ $part.kind }} · {{ $page.ReadingTime }} {{ i18n "minute_read" }}</span>
+            </div>
+          </li>
+        {{ end }}
+      </ol>
+    </nav>
+  </article>
+</div>
+{{ partial "components/qbio-anchor-links.html" $series }}
+{{ end }}

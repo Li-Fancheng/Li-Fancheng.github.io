@@ -1,0 +1,260 @@
+{
+  "embryonic_morphogenesis/figures/review2026_fig3": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 789,
+    "intrinsic_height": 513
+  },
+  "embryonic_morphogenesis/figures/harrell2011_fig2": {
+    "width": 760,
+    "kind": "paper",
+    "intrinsic_width": 800,
+    "intrinsic_height": 964
+  },
+  "embryonic_morphogenesis/figures/goldstein2020_fig3": {
+    "width": 560,
+    "kind": "paper",
+    "intrinsic_width": 677,
+    "intrinsic_height": 965
+  },
+  "embryonic_morphogenesis/figures/rohjohnson2012_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1016,
+    "intrinsic_height": 1050
+  },
+  "embryonic_morphogenesis/figures/slabodnick2023_fig1": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 2000,
+    "intrinsic_height": 1247
+  },
+  "embryonic_morphogenesis/figures/slabodnick2023_fig4": {
+    "width": 720,
+    "kind": "paper",
+    "intrinsic_width": 1879,
+    "intrinsic_height": 2400
+  },
+  "embryonic_morphogenesis/figures/slabodnick2023_fig6": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 1913,
+    "intrinsic_height": 2400
+  },
+  "embryonic_morphogenesis/figures/chihara2012_fig2": {
+    "width": 780,
+    "kind": "paper",
+    "intrinsic_width": 612,
+    "intrinsic_height": 415
+  },
+  "embryonic_morphogenesis/figures/intercalation2015_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 709,
+    "intrinsic_height": 754
+  },
+  "embryonic_morphogenesis/figures/walck2016_fig2": {
+    "width": 680,
+    "kind": "paper",
+    "intrinsic_width": 2747,
+    "intrinsic_height": 3056
+  },
+  "embryonic_morphogenesis/figures/walck2016_fig4": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 3719,
+    "intrinsic_height": 4224
+  },
+  "embryonic_morphogenesis/figures/review2026_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 755,
+    "intrinsic_height": 728
+  },
+  "embryonic_morphogenesis/figures/bernadskaya2012_fig2": {
+    "width": 780,
+    "kind": "paper",
+    "intrinsic_width": 2058,
+    "intrinsic_height": 2402
+  },
+  "embryonic_morphogenesis/figures/serre2023_fig2": {
+    "width": 780,
+    "kind": "paper",
+    "intrinsic_width": 2100,
+    "intrinsic_height": 1808
+  },
+  "embryonic_morphogenesis/figures/review2026_fig2": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 787,
+    "intrinsic_height": 415
+  },
+  "embryonic_morphogenesis/figures/vuong_brender_2017_fig1": {
+    "width": 740,
+    "kind": "paper",
+    "intrinsic_width": 2273,
+    "intrinsic_height": 2450
+  },
+  "embryonic_morphogenesis/figures/vuong_brender_2017_fig2": {
+    "width": 850,
+    "kind": "paper",
+    "intrinsic_width": 2130,
+    "intrinsic_height": 866
+  },
+  "embryonic_morphogenesis/figures/vuong_brender_2017_fig3": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2699,
+    "intrinsic_height": 2070
+  },
+  "embryonic_morphogenesis/figures/vuong_brender_2017_fig7": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2703,
+    "intrinsic_height": 1873
+  },
+  "embryonic_morphogenesis/figures/vuong_brender_2017_fig8": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2504,
+    "intrinsic_height": 2266
+  },
+  "embryonic_morphogenesis/figures/hmp2018_fig2": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2105,
+    "intrinsic_height": 2444
+  },
+  "embryonic_morphogenesis/figures/ecm2017_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 741,
+    "intrinsic_height": 861
+  },
+  "embryonic_morphogenesis/figures/ecm2017_fig7": {
+    "width": 740,
+    "kind": "paper",
+    "intrinsic_width": 648,
+    "intrinsic_height": 810
+  },
+  "embryonic_morphogenesis/figures/review2026_fig5": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 763,
+    "intrinsic_height": 955
+  },
+  "embryonic_morphogenesis/figures/lock2019_fig2": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 1506,
+    "intrinsic_height": 1800
+  },
+  "embryonic_morphogenesis/figures/lock2019_fig4": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1598,
+    "intrinsic_height": 1800
+  },
+  "embryonic_morphogenesis/figures/fang2021_fig4": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 700,
+    "intrinsic_height": 478
+  },
+  "embryonic_morphogenesis/figures/yang2025_fig2": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 740,
+    "intrinsic_height": 504
+  },
+  "embryonic_morphogenesis/figures/yang2025_fig5": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 741,
+    "intrinsic_height": 511
+  },
+  "embryonic_morphogenesis/figures/dai2024_fig3": {
+    "width": 760,
+    "kind": "paper",
+    "intrinsic_width": 735,
+    "intrinsic_height": 294
+  },
+  "embryonic_morphogenesis/figures/07_quantitative_geometry": {
+    "width": 820,
+    "kind": "model",
+    "intrinsic_width": 982,
+    "intrinsic_height": 368
+  },
+  "embryonic_morphogenesis/figures/fick2013_fig3": {
+    "width": 740,
+    "kind": "paper",
+    "intrinsic_width": 506,
+    "intrinsic_height": 370
+  },
+  "embryonic_morphogenesis/figures/mori2008_fig3": {
+    "width": 740,
+    "kind": "paper",
+    "intrinsic_width": 415,
+    "intrinsic_height": 369
+  },
+  "embryonic_morphogenesis/figures/fang2021_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 700,
+    "intrinsic_height": 729
+  },
+  "embryonic_morphogenesis/figures/fang2021_fig3": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 700,
+    "intrinsic_height": 290
+  },
+  "embryonic_morphogenesis/figures/dai2024_fig6": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 696,
+    "intrinsic_height": 611
+  },
+  "embryonic_morphogenesis/figures/08_clutch_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 867,
+    "intrinsic_height": 341
+  },
+  "embryonic_morphogenesis/figures/09_closure_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 867,
+    "intrinsic_height": 341
+  },
+  "embryonic_morphogenesis/figures/10_anisotropy_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 895,
+    "intrinsic_height": 370
+  },
+  "embryonic_morphogenesis/figures/11_plasticity_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 1025,
+    "intrinsic_height": 341
+  },
+  "embryonic_morphogenesis/figures/12_frap_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 867,
+    "intrinsic_height": 341
+  },
+  "embryonic_morphogenesis/figures/13_rod_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 989,
+    "intrinsic_height": 334
+  },
+  "embryonic_morphogenesis/figures/14_identifiability_model": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 867,
+    "intrinsic_height": 341
+  }
+}

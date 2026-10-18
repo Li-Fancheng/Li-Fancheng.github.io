@@ -1,0 +1,4 @@
+<script id="qbio-legacy-anchors" type="application/json">{{ .anchors | jsonify | safeJS }}</script>
+{{- with resources.Get "js/qbio-series.js" | minify | fingerprint -}}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end -}}
