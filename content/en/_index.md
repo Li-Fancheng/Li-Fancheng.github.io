@@ -32,7 +32,7 @@ sections:
         I am interested in building theoretical models of real systems, drawing on statistical physics, biology, and machine learning. My current interests are exploratory and span three connected directions:
 
         - **Statistical physics and complex systems.** Stochastic dynamics, nonequilibrium processes, and how microscopic interactions shape collective behavior.
-        - **Biological dynamics.** Cell-size regulation, cell-cycle correlations, and the physical principles underlying biological organization.
+        - **Biological dynamics.** Cell-size regulation, cell-division statistics, population growth, and the physical principles underlying biological organization.
         - **AI for Science & Science for AI.** Using deep learning to study RNA structures and using ideas from physics to understand and improve neural networks.
 
         My earlier work at Wuhan University included computational condensed matter physics and RNA structure prediction. I hope to bring methods from different disciplines together to answer concrete scientific questions.
@@ -80,12 +80,12 @@ sections:
         - page: /notes/qbio_course
           label: Course notes · Fall 2026
           title: Introduction to Quantitative Biology
-          text: Notes on cell cycles, population growth, gene regulation, and chemotaxis. The detailed notes are in Chinese.
+          text: Notes on single-cell growth and division, population growth, gene regulation, and chemotaxis. The detailed notes are in Chinese.
         - page: /notes/qbio_course/single_cell_to_population_growth
           language: zh
           label: Biological dynamics · 中文
-          title: Cell Cycles & Population Growth
-          text: Notes in Chinese on cell-size regulation, cell-cycle correlations, and population growth, with worked derivations.
+          title: From Single-Cell Variation to Population Growth
+          text: Notes in Chinese on cell-size regulation, division-time fluctuations, and correlations across generations, with worked derivations.
         - page: /notes
           language: zh
           label: Reading collection · 中文

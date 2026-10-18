@@ -1,5 +1,5 @@
 ---
-title: "Cell-cycle note redirect"
+title: "Single-cell growth and population growth note redirect"
 aliases:
   - /notes/qbio_course/cell_cycle/
 layout: redirect

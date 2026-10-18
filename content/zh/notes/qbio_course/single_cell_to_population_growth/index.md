@@ -1,6 +1,6 @@
 ---
 title: "从单细胞分裂差异到群体增长"
-subtitle: "size inheritance、细胞周期调控与 lineage 相关性"
+subtitle: "细胞大小稳态、分裂时间波动与代际相关性"
 date: 2026-10-15
 summary: "从细胞大小稳态与分裂间隔的实验现象出发，比较独立分裂模型与 size inheritance，推导 lineage 相关性、时间噪声抵消及群体增长的关系。"
 translationKey: cell-cycle-correlations
@@ -10,7 +10,9 @@ layout: cell-cycle
 math: true
 toc: true
 tags:
-  - 细胞周期
+  - 细胞生长
+  - 细胞分裂
+  - 群体增长
   - 随机动力学
   - 统计物理
 ---
