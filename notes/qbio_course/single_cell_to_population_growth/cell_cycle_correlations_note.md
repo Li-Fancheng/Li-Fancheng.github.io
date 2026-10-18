@@ -17,7 +17,7 @@
 
 在相同环境中，即使基因型相同，细胞也不会同时分裂：有些分裂间隔短，有些分裂间隔长。同时，cell size 虽然波动，却能够维持稳定的分布。单细胞追踪使这两类现象可以一起测量，也带来了一个预测问题：**知道单细胞分裂间隔时间的分布，是否足以推算群体的繁殖速度？**
 
-最直接的估计是把沿 lineage 测得的平均分裂间隔时间当作群体倍增时间。但群体中各条 lineage 的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均分裂间隔时间；相关实验结果见正文第 2.2 节的[Fig. 4](#experimental-doubling-time-comparison)。这一观测说明，单细胞的平均分裂间隔不一定等于群体倍增时间，要联系这两个量，需要考虑不同 lineage 对群体增长的贡献。
+最直接的估计是把沿 lineage 测得的平均分裂间隔时间当作群体倍增时间。但群体中各条 lineage 的后代数量并不相同，早分裂的祖先通常留下更多后代。[Hashimoto 等（2016）](https://doi.org/10.1073/pnas.1519412113)观察到，群体倍增时间可以短于平均分裂间隔时间；相关实验结果见正文第 2.1 节的[Fig. 4](#experimental-doubling-time-comparison)。这一观测说明，单细胞的平均分裂间隔不一定等于群体倍增时间，要联系这两个量，需要考虑不同 lineage 对群体增长的贡献。
 
 另一个关键问题是：**一次提前分裂，能否变成持续许多代的时间领先？** 分裂得早，可能源于更快的生物量积累，也可能只是细胞在较小的时候就分裂。在后一种情况下，子细胞的 birth size 也会较小。如果细胞的分裂条件和 size 相关，那么 birth size 就会影响它下一次分裂所需的时间：较小的子细胞需要更长时间才能满足这些分裂条件。这样，母细胞提前分裂带来的时间领先，可能被子细胞较长的分裂间隔部分抵消。
 
@@ -57,7 +57,7 @@ birth size 偏离稳态均值时，后续几代细胞的平均 birth size 会逐
 
 <div id="11-exponential-growth-between-divisions"></div>
 
-### 1.1 指数生长与对称分裂 {#11-exponential-growth-and-symmetric-division}
+### 1.1 指数生长、随机分裂与 size 稳定性 {#11-exponential-growth-and-symmetric-division}
 
 在某些细菌培养条件下，可以近似认为所有细胞都以相同的恒定速率 $\lambda>0$ 生长：
 
@@ -76,7 +76,7 @@ $$
 
 <div id="12-the-timer-becomes-a-random-walk-in-log-size"></div>
 
-### 1.2 i.i.d. 分裂时间模型 {#12-a-timer-is-a-random-walk-in-log-size}
+<div id="12-a-timer-is-a-random-walk-in-log-size"></div>
 
 考虑与 size 无关的定时分裂模型（timer），假设每个细胞的分裂时间都是独立同分布（i.i.d.）的正随机变量，均值为 $\mu$，方差为 $\sigma_\tau^2$。令 $y_n=\ln v_n$，对式（1.1）取对数并迭代，得到
 
@@ -110,7 +110,7 @@ $$
 
 *Fig. 2. 随机游走与恢复性反馈下的 log size 动力学。* A：无漂移 timer（橙色）与偏差保留系数 $r=1/2$ 的线性 log size 反馈模型（蓝色）的模拟轨迹，两种模型使用相同的随机噪声。B：从固定 initial size 出发，log size 方差随代数的变化，以单步噪声方差归一化；timer 的方差为 $n$，反馈模型的方差为 $(1-r^{2n})/(1-r^2)$。
 
-### 1.3 Timer、adder 与 sizer：size 继承的定量比较 {#13-timer-adder-and-sizer}
+### 1.2 Timer、adder 与 sizer 的 size 继承 {#13-timer-adder-and-sizer}
 
 现在回到本节开头介绍的三种规则。在相同的指数生长率和对称分裂条件下，可以比较它们如何把母细胞的 birth size 偏差传给子细胞：
 
@@ -151,7 +151,7 @@ $$
 
 <div id="21-from-the-renewal-equation-to-the-population-growth-rate"></div>
 
-### 2.1 Euler–Lotka 方程 {#21-eulerlotka-and-sampling-bias}
+### 2.1 Euler–Lotka 方程与群体抽样偏差 {#21-eulerlotka-and-sampling-bias}
 
 考虑一个没有死亡的 binary branching model：每个新生细胞独立地从密度 $p(\tau)$ 中抽取一个分裂间隔时间，到时间后产生两个遵循相同规则的子细胞。设 $M(t)$ 为一个新生细胞在时刻 $t$ 的存活后代数的期望。按它首次分裂的时间分类，可以写出
 
@@ -262,7 +262,7 @@ $p$ 与 $q$ 描述的都是一个细胞从出生到分裂所需时间的分布�
 
 <div id="22-jensens-inequality-and-the-population-growth-advantage"></div>
 
-### 2.2 Jensen 不等式与 KL 散度 {#22-jensens-inequality-and-the-reference-population}
+<div id="22-jensens-inequality-and-the-reference-population"></div>
 
 如果所有细胞的分裂间隔时间都固定为 $\mu$，群体增长率就是 $\ln2/\mu$。若分裂间隔时间有波动，但**沿 chronological lineage 测得的均值仍为同一个** $\mu<\infty$，利用凸性可得
 
@@ -323,7 +323,7 @@ $$
 
 <div id="24-the-apparent-paradox-volume-conservation"></div>
 
-### 2.3 数量增长与生物量增长：比较时固定了什么 {#23-the-conservation-constraint}
+### 2.2 数量增长与生物量增长的约束 {#23-the-conservation-constraint}
 
 式（2.4）固定的是平均分裂间隔时间 $\mu$，并未固定 cell size 或生物量积累速度。为了区分提前分裂与更快生长，现在回到所有细胞都以同一个恒定速率 $\lambda$ 增长的情形。记 $v_i(t)$ 为细胞 $i$ 在时刻 $t$ 的体积，群体总体积为
 
@@ -371,7 +371,7 @@ $$
 
 群体平均体积统计的是某一时刻所有存活细胞的当前体积，后代较多的 lineage 在其中占比更大。沿 chronological lineage 的测量则是在每次分裂时随机选择一个子细胞，逐代记录它的 birth size。因此，这两种测量得到的统计结果不能直接等同。即使沿 lineage 测得的 birth size 分布保持稳定，也还需要检查群体平均体积是否满足式（2.9）的条件。
 
-这个关系说明，在固定 $\lambda$ 的条件下，若数量增长指数 $\Lambda>\lambda$，群体瞬时 mean size 就必须以指数速度减小。因此，第 2.2 节中“分裂间隔有波动时，群体增长率高于 $\ln2/\mu$”的结论，不能直接推广为“分裂时间波动也能使 size 保持稳定的群体增长得更快”。后者还需要考虑细胞如何生长，以及分裂规则如何影响子细胞的 birth size。
+这个关系说明，在固定 $\lambda$ 的条件下，若数量增长指数 $\Lambda>\lambda$，群体瞬时 mean size 就必须以指数速度减小。因此，第 2.1 节中“分裂间隔有波动时，群体增长率高于 $\ln2/\mu$”的结论，不能直接推广为“分裂时间波动也能使 size 保持稳定的群体增长得更快”。后者还需要考虑细胞如何生长，以及分裂规则如何影响子细胞的 birth size。
 
 还可以把这个问题与沿 lineage 测得的平均分裂间隔联系起来。设 birth size 沿 chronological lineage 的分布具有 stationarity，且 $\mathbb E|\ln v_n|<\infty$，那么相邻两代的平均 log size 相同。对式（1.2）取期望，得到
 
@@ -383,7 +383,7 @@ $$
 
 因此 $\mu=\ln2/\lambda$。这一步只用到了 size 的 stationarity、生长规律和对称分裂，并没有假设各代分裂间隔相互独立。
 
-如果再把这个均值代入第 2.2 节的独立模型，只要分裂间隔有非零波动，就会得到
+如果再把这个均值代入第 2.1 节的独立模型，只要分裂间隔有非零波动，就会得到
 
 $$
 \Lambda>\frac{\ln2}{\mu}=\lambda.
@@ -405,7 +405,7 @@ $$
 
 <div id="61-definition-of-the-adder"></div>
 
-### 3.1 随机映射与 mean size 的恢复 {#31-the-stochastic-map-and-recovery-of-mean-size}
+### 3.1 Adder 中的 size 恢复与代际继承 {#31-the-stochastic-map-and-recovery-of-mean-size}
 
 Adder 的分裂条件为
 
@@ -524,7 +524,7 @@ $$
 
 <div id="64-connecting-the-adder-to-generation-times"></div>
 
-### 3.2 分裂间隔时间如何记录 size 变化 {#32-from-growth-to-generation-time}
+### 3.2 从 size 变化到多代累计时间的抵消 {#32-from-growth-to-generation-time}
 
 上一节说明了 birth size 的偏差如何传给后代，以及这些偏差在不同代之间的相关性。但群体增长取决于细胞何时分裂，因此还需要把 size 的变化转化为分裂间隔时间。这里先利用生长和分配关系，建立两者之间的联系。
 
@@ -552,11 +552,11 @@ $$
 
 这说明，在 added size 相同的条件下，birth size 越小，需要的生长时间越长，因为生长的 size 固定，但是生长速率和本身的 cell size 有关。即使每代的 added size 噪声 $\eta_n$ 独立，分裂间隔仍会受到继承的 $v_n$ 影响；分裂时间之间的 correlation 就需要结合这种继承关系来计算。
 
-式（3.4）本身只需要 size 为正、所有细胞共有恒定的 $\lambda$，以及对称分裂，并不依赖 adder 的具体规则。它还给下一节提供了一个直接入口：$\tau_n$ 中包含相邻两代 log size 的差值，而下一代的分裂间隔中又会出现同一个 $\ln v_{n+1}$，但符号相反。因此，要判断某一代的时间领先能否持续，接下来应把多代分裂间隔加起来，检查这些 size 项如何相消。
+式（3.4）本身只需要 size 为正、所有细胞共有恒定的 $\lambda$，以及对称分裂，并不依赖 adder 的具体规则。它还给下面的计算提供了一个直接入口：$\tau_n$ 中包含相邻两代 log size 的差值，而下一代的分裂间隔中又会出现同一个 $\ln v_{n+1}$，但符号相反。因此，要判断某一代的时间领先能否持续，接下来应把多代分裂间隔加起来，检查这些 size 项如何相消。
 
 <div id="65-the-telescoping-identity-the-central-result-of-the-lecture"></div>
 
-### 3.3 从单代快慢到多代累计时间 {#33-telescoping-the-theoretical-core}
+<div id="33-telescoping-the-theoretical-core"></div>
 
 把式（3.4）从 $0$ 到 $n-1$ 相加，得到
 
@@ -686,13 +686,13 @@ $$
 
 这就验证了所需的 $o(n)$ 条件。一个直观的例子是 birth size 始终处于固定区间 $0\lt v_{\min}\le v_n\le v_{\max}\lt\infty$，既不会无限增大，也不会无限接近零。上述条件是充分条件，不能仅由 adder 的 birth size 方差有限推出。
 
-这个 lineage 解释与第 2.3 节对实际群体总体积的论证相互补充。两者都能给出精确的增长约束，但各自需要额外条件。Sizer 或其他维持 size homeostasis 的规则，也可以满足同样的逐项相消关系。真正属于 adder 的特定结果，是斜率 $1/2$、方差 $\sigma_\eta^2/3$ 和 birth size 的自相关函数（ACF）$2^{-k}$，而不是恒等式（3.5）本身。
+这个 lineage 解释与第 2.2 节对实际群体总体积的论证相互补充。两者都能给出精确的增长约束，但各自需要额外条件。Sizer 或其他维持 size homeostasis 的规则，也可以满足同样的逐项相消关系。真正属于 adder 的特定结果，是斜率 $1/2$、方差 $\sigma_\eta^2/3$ 和 birth size 的自相关函数（ACF）$2^{-k}$，而不是恒等式（3.5）本身。
 
 <div id="67-a-counterintuitive-prediction-size-is-positively-correlated-time-is-negatively-correlated"></div>
 
 <div id="35-positive-size-memory-negative-timing-memory"></div>
 
-### 3.4 size 呈正相关，分裂间隔时间却呈负相关 {#34-positive-size-memory-negative-timing-memory}
+### 3.3 size 正相关与分裂时间负相关 {#34-positive-size-memory-negative-timing-memory}
 
 由第 3.1 节可知，birth size 的偏差具有正协方差 $C_x(k)=\sigma_x^2 2^{-|k|}$。分裂间隔却取决于相邻两代 size 的差值。当相对 size 波动很小时，
 
@@ -755,7 +755,7 @@ Adder 表明，一张单代分裂间隔时间直方图并不告诉我们，较�
 
 <div id="3-correlated-division-times-a-generalized-eulerlotka-relation"></div>
 
-### 4.1 有时间相关性时的 Euler–Lotka 关系 {#41-correlated-eulerlotka}
+### 4.1 将整段 lineage 历史纳入增长方程 {#41-correlated-eulerlotka}
 
 设 $T_n$ 是沿 chronological lineage 到达第 $n$ 代出生时的累计时间。二叉繁殖产生 $2^n$ 条路径。即使这些路径共享祖先，按出生时间加权后，权重之和的期望仍为 $2^n\mathbb E_{\mathrm{chron}}[e^{-sT_n}]$。定义
 
@@ -777,7 +777,7 @@ $$
 
 <div id="43-an-important-qualification"></div>
 
-### 4.2 跨分裂间隔协方差的总和 {#42-the-integrated-covariance}
+### 4.2 累计协方差与零频噪声 {#42-the-integrated-covariance}
 
 对于方差有限的平稳分裂间隔时间过程，定义 $C_\tau(k)=\operatorname{Cov}(\tau_j,\tau_{j+k})$。将所有成对协方差相加，得到
 
@@ -807,7 +807,7 @@ $$
 
 <div id="7-from-temporal-correlations-to-power-spectra"></div>
 
-### 4.3 从零频分量看同一个机制 {#43-zero-frequency-is-the-same-mechanism}
+<div id="43-zero-frequency-is-the-same-mechanism"></div>
 
 对减去均值后的分裂间隔时间波动，采用如下双边功率谱密度（power spectral density，PSD）约定：
 
@@ -838,7 +838,7 @@ $$
 
 ## 5. 回到生物问题：哪些单细胞差异能够影响长期增长？ {#5-synthesis-and-outlook}
 
-### 5.1 单代分裂差异与长期繁殖差异
+<div id="51-单代分裂差异与长期繁殖差异"></div>
 
 沿 lineage 测得的平均分裂间隔时间，通常不足以预测群体倍增时间。独立模型中的早分裂祖先留下更多后代，Euler–Lotka 方程给出了相应的统计加权。但在固定 size growth rate 的细胞中，提前分裂还会改变子细胞的 birth size；后续分裂间隔如何响应这种变化，决定了单代时间差异是否会累积。
 
@@ -846,13 +846,13 @@ Adder 展示了具体机制：size feedback 纠正继承的偏差，并在小波
 
 要进一步得到精确的群体增长率，还需要群体瞬时 mean size 的稳态条件，或者次指数的端点权重与有效的相关 branching growth relation。在相应条件下有 $\Lambda=\lambda$。这是固定生长率与 size 稳定性的共同约束；本文没有建立 size control 与繁殖速度之间的代价关系。对于更一般的相关时间模型，$D_\tau$ 或 $S_\tau(0)$ 只在有效的二阶弱噪声展开中决定增长修正，不能单凭其为零就推出任意噪声下的精确结论。
 
-### 5.2 从单代分布到 lineage 历史
+<div id="52-从单代分布到-lineage-历史"></div>
 
 单代分裂间隔时间分布描述的是快慢各出现多少次，却没有说明它们如何沿 lineage 排列。[附录 D](#appendix-d)的两状态模型把这种区别展示得很清楚：短分裂间隔与长分裂间隔严格交替时，每两代的总时间固定；若同一种状态倾向于延续，就会出现连续多代较快或较慢的历史。单代分布可以完全相同，整段历史的时间权重和群体增长率却不同。因此，从单细胞到群体的推理必须保留分裂间隔之间的联系。
 
 size control 进一步限制了哪些时间历史能够出现。在本文的生长与分配条件下，一条 lineage 若持续积累分裂时间的领先或落后，其 birth size 就必须相应地持续变小或变大。size homeostasis 约束了这种长期积累，而不仅是 size distribution 的宽度。Adder 使这个约束的实现机制具体可算；逐项相消关系则适用于相同生长与分配条件下的其他 size control 规则。核心区别在于：单代分布给出局部波动，size inheritance 与反馈决定这些波动能否形成长期的 lineage 差异。
 
-### 5.3 从分裂时序延伸到生长能力的波动
+<div id="53-从分裂时序延伸到生长能力的波动"></div>
 
 正文固定 $\lambda$，考察的是生物量积累规律给定时，分裂调控如何重新安排时间。下一步的生物问题是：**如果细胞之间的生物量积累速度本身不同，而且这种差异能够传给子代，群体增长会如何改变？** 当生长率在不同代之间变化时，分裂间隔时间与 log size 变化之间不再有统一的比例系数，累计时间也不能按本文的方式逐项相消。生长率差异及其代际相关性由此进入增长问题，超出了固定 $\lambda$ 模型的结论。[Lin 和 Amir（2020）](https://doi.org/10.1103/PhysRevE.101.012401)讨论了这类效应；生长率波动与随机不对称分配如何改变本文的关系，见[附录 G](#appendix-g)。
 
@@ -861,7 +861,7 @@ size control 进一步限制了哪些时间历史能够出现。在本文的生�
 
 <div id="optional-technical-appendices"></div>
 
-## 技术 {#technical-appendices}
+## 技术附录 {#technical-appendices}
 
 附录整理完整推导、可解模型和结论的适用条件。公式编号使用附录字母，图号接续正文。
 
@@ -871,7 +871,9 @@ size control 进一步限制了哪些时间历史能够出现。在本文的生�
 
 这里补充第 2 节所用的更新过程计算。首先得到的是群体数量期望的增长指数；要把它等同于典型实现中的增长指数，还需要 age-dependent branching process 通常采用的非爆炸、超临界等条件。
 
-#### A.1 用拉普拉斯变换推导 {#a1-laplace-transform-derivation}
+<div id="a1-laplace-transform-derivation"></div>
+
+**A.1 用拉普拉斯变换推导**
 
 对式（2.1）做拉普拉斯变换，可以求出群体增长率。
 
@@ -910,7 +912,9 @@ $$
 
 <div id="a3-the-renewal-amplitude-and-lattice-exception"></div>
 
-#### A.2 更新方程的渐近振幅与格点分布例外 {#a2-the-renewal-amplitude-and-lattice-exception}
+<div id="a2-the-renewal-amplitude-and-lattice-exception"></div>
+
+**A.2 更新方程的渐近振幅与格点分布例外**
 
 第 2.1 节通过 $1-2\widehat p(s)=0$ 的正根 $\Lambda$ 得到群体增长指数。它右侧没有其他极点，因为
 
@@ -956,7 +960,7 @@ M(t)=2^{\lfloor t/\tau_0\rfloor},
 \tag{A.3}
 $$
 
-对数增长率仍趋于 $\Lambda$，但 $e^{-\Lambda t}M(t)$ 会周期性变化，而不会收敛到常数。因此，第 2.2 节所用的无噪声增长指数仍然有效；要使定义 $A$ 的更强极限成立，则需要非格点条件。
+对数增长率仍趋于 $\Lambda$，但 $e^{-\Lambda t}M(t)$ 会周期性变化，而不会收敛到常数。因此，第 2.1 节所用的无噪声增长指数仍然有效；要使定义 $A$ 的更强极限成立，则需要非格点条件。
 
 
 ### 附录 B. 独立与相关情形下的弱噪声计算 {#appendix-b}
@@ -965,7 +969,9 @@ $$
 
 <div id="23-a-weak-noise-estimate"></div>
 
-#### B.1 独立分裂间隔时间的展开 {#b1-independent-lifetime-expansion}
+<div id="b1-independent-lifetime-expansion"></div>
+
+**B.1 独立分裂间隔时间的展开**
 
 不等式只能说明，相对于平均分裂间隔时间相同的定时基准，branching model with i.i.d. interdivision times 的增长率更大，不能给出增量有多大。为估计增长率的增量，先把 chronological lineage 分裂间隔时间分布的均值和方差写出来：
 
@@ -1025,7 +1031,9 @@ $$
 
 在独立模型中，最低阶修正由分裂间隔时间方差决定。下面的相关情形则会把单代方差替换为累计时间的长期方差率。
 
-#### B.2 如何计算协方差的贡献 {#b2-covariance-bookkeeping}
+<div id="b2-covariance-bookkeeping"></div>
+
+**B.2 如何计算协方差的贡献**
 
 假设 $\tau_n$ 构成平稳过程，记
 
@@ -1073,7 +1081,9 @@ $D_\tau$ 的单位是时间平方/分裂间隔。它描述的是*累计分裂时
 
 <div id="42-cumulant-expansion-of-the-correlated-eulerlotka-equation"></div>
 
-#### B.3 渐近累积量 {#b3-asymptotic-cumulants}
+<div id="b3-asymptotic-cumulants"></div>
+
+**B.3 渐近累积量**
 
 一种足以支持上述计算的设定，是考虑 $\tau_j=\mu+\epsilon u_j$ 这一族正分裂间隔时间过程，保持相关尺度不变，并要求按分裂间隔数归一化的累积量生成函数在 $s=\ln2/\mu$ 附近能对 $\epsilon$ 作一致展开。相应的累积量率必须存在，满足 $K_m=O(\epsilon^m)$，且该邻域内的高阶余项可控。对大 $n$ 极限求导，或把累积量级数与极限交换，都需要这种正则性；仅有协方差可和并不够。即使每个分裂间隔时间的方差很小，若噪声减小时相关时间反而发散，近似也可能失效。
 
@@ -1131,7 +1141,9 @@ $$
 
 <div id="31-from-one-lifetime-to-an-entire-lineage"></div>
 
-#### C.1 从一个分裂间隔时间到整段 lineage {#c1-from-one-lifetime-to-an-entire-lineage}
+<div id="c1-from-one-lifetime-to-an-entire-lineage"></div>
+
+**C.1 从一个分裂间隔时间到整段 lineage**
 
 考虑一条 chronological lineage，其分裂时间之间存在相关性：
 
@@ -1218,7 +1230,9 @@ $$
 
 <div id="32-independent-times-reappear-as-a-special-case"></div>
 
-#### C.2 独立时间是一个特例 {#c2-independent-times-reappear-as-a-special-case}
+<div id="c2-independent-times-reappear-as-a-special-case"></div>
+
+**C.2 独立时间是一个特例**
 
 若 $\tau_0,\ldots,\tau_{n-1}$ 相互独立，
 
@@ -1244,7 +1258,9 @@ $$
 
 <div id="33-the-mean-time-inequality-still-holds"></div>
 
-#### C.3 平均时间给出的不等式仍成立 {#c3-the-mean-time-inequality-still-holds}
+<div id="c3-the-mean-time-inequality-still-holds"></div>
+
+**C.3 平均时间给出的不等式仍成立**
 
 对于均值为 $\mu=\mathbb E[\tau_n]$ 的平稳分裂间隔时间过程，把 Jensen 不等式用于*整个时间之和*，得到
 
@@ -1279,7 +1295,9 @@ $$
 
 <div id="51-definition"></div>
 
-#### D.1 模型定义 {#d1-definition}
+<div id="d1-definition"></div>
+
+**D.1 模型定义**
 
 分裂间隔时间只有两个可能值：
 
@@ -1320,7 +1338,9 @@ $$
 
 <div id="52-exact-autocorrelation"></div>
 
-#### D.2 精确自相关 {#d2-exact-autocorrelation}
+<div id="d2-exact-autocorrelation"></div>
+
+**D.2 精确自相关**
 
 令 $s$ 状态对应 $z_n=-1$，$\ell$ 状态对应 $z_n=+1$，则
 
@@ -1376,7 +1396,9 @@ $$
 
 <div id="53-exact-population-growth-via-a-transfer-matrix"></div>
 
-#### D.3 用转移矩阵求精确群体增长率 {#d3-exact-population-growth-via-a-transfer-matrix}
+<div id="d3-exact-population-growth-via-a-transfer-matrix"></div>
+
+**D.3 用转移矩阵求精确群体增长率**
 
 状态路径 $i_0,i_1,\ldots,i_n$ 的联合概率包含各步转移概率的乘积，按出生时间加权的因子则包含
 
@@ -1450,7 +1472,9 @@ $$
 
 <div id="54-two-analytically-transparent-limits"></div>
 
-#### D.4 两个容易解析的极限 {#d4-two-analytically-transparent-limits}
+<div id="d4-two-analytically-transparent-limits"></div>
+
+**D.4 两个容易解析的极限**
 
 **情形 1：$p=1/2$，各代独立。** 此时
 
@@ -1487,7 +1511,9 @@ $$
 
 <div id="55-numerical-example-same-marginal-distribution-different-growth"></div>
 
-#### D.5 数值例子：边缘分布相同，增长率不同 {#d5-numerical-example-same-marginal-distribution-different-growth}
+<div id="d5-numerical-example-same-marginal-distribution-different-growth"></div>
+
+**D.5 数值例子：边缘分布相同，增长率不同**
 
 取
 
@@ -1525,7 +1551,9 @@ $$
 <div id="e1-exact-stationary-variance"></div>
 <div id="63-exact-birth-size-autocorrelation"></div>
 
-#### E.1 size 恢复与实验比较 {#e2-exact-birth-size-autocorrelation}
+<div id="e2-exact-birth-size-autocorrelation"></div>
+
+**E.1 size 恢复与实验比较**
 
 第 3.1 节已推导 adder 的稳态方差和 birth size 自相关。这里将其与恢复实验联系起来。模型预测
 
@@ -1543,9 +1571,11 @@ $$
 
 *Fig. 13. birth size 向稳态值恢复的实验观察。* 引自 [Taheri-Araghi 等（2015）](https://doi.org/10.1016/j.cub.2014.12.009)的原文 Fig. 3。A 图给出固定增量下的收敛预测，B、C 图分别与大肠杆菌和枯草芽孢杆菌的实验比较，展示式（E.1）的恢复系数。条件均值的恢复与稳态自相关函数（3.3）彼此相关，但它们是不同的测量量。
 
-#### E.2 一般线性反馈下的分裂间隔时间协方差 {#e3-generation-time-covariances-in-the-small-fluctuation-limit}
+<div id="e3-generation-time-covariances-in-the-small-fluctuation-limit"></div>
 
-第 3.4 节已计算 $r=1/2$ 的 adder。这里保留一般反馈系数 $0<r<1$，并沿用小波动近似
+**E.2 一般线性反馈下的分裂间隔时间协方差**
+
+第 3.3 节已计算 $r=1/2$ 的 adder。这里保留一般反馈系数 $0<r<1$，并沿用小波动近似
 
 $$
 \delta\tau_n\simeq\frac{x_{n+1}-x_n}{\lambda\Delta}.
@@ -1596,7 +1626,9 @@ $$
 
 <div id="68-an-explicit-check-of-the-cancellation"></div>
 
-#### E.3 显式验证抵消关系 {#e4-an-explicit-check-of-the-cancellation}
+<div id="e4-an-explicit-check-of-the-cancellation"></div>
+
+**E.3 显式验证抵消关系**
 
 利用式（E.3）–（E.4），
 
@@ -1623,7 +1655,7 @@ $$
 
 ### 附录 F. 频谱表示与零频噪声抵消 {#appendix-f}
 
-本附录补充正文第 4.3 节的频域推导：先建立协方差与功率谱的关系，再计算线性反馈模型的 size 频谱，最后说明 size 的差分如何消除分裂间隔时间的零频噪声。频率以分裂间隔数为基准。
+本附录补充正文第 4.2 节的频域推导：先建立协方差与功率谱的关系，再计算线性反馈模型的 size 频谱，最后说明 size 的差分如何消除分裂间隔时间的零频噪声。频率以分裂间隔数为基准。
 
 <div id="f1-local-linear-feedback-laws"></div>
 
@@ -1640,7 +1672,9 @@ $$
 
 <div id="f2-autocovariance-and-the-wienerkhinchin-relation"></div>
 
-#### F.1 自协方差与 Wiener–Khinchin 关系 {#f1-autocovariance-and-the-wienerkhinchin-relation}
+<div id="f1-autocovariance-and-the-wienerkhinchin-relation"></div>
+
+**F.1 自协方差与 Wiener–Khinchin 关系**
 
 对平稳离散时间过程 $y_n$，定义
 
@@ -1694,7 +1728,9 @@ $$
 
 <div id="f3-spectrum-of-the-ar1-size-control-model"></div>
 
-#### F.2 AR(1) size control 模型的频谱 {#f2-spectrum-of-the-ar1-size-control-model}
+<div id="f2-spectrum-of-the-ar1-size-control-model"></div>
+
+**F.2 AR(1) size control 模型的频谱**
 
 迭代式（F.1），在平稳状态下得到
 
@@ -1733,7 +1769,9 @@ $$
 
 <div id="f4-spectrum-of-generation-time-feedback-filters-out-zero-frequency"></div>
 
-#### F.3 分裂间隔时间的频谱：差分滤掉零频噪声 {#f3-spectrum-of-generation-time-feedback-filters-out-zero-frequency}
+<div id="f3-spectrum-of-generation-time-feedback-filters-out-zero-frequency"></div>
+
+**F.3 分裂间隔时间的频谱：差分滤掉零频噪声**
 
 由式（E.2），
 
@@ -1768,9 +1806,11 @@ $$
 
 ### 附录 G. 精确抵消的适用范围与充分的渐近条件 {#appendix-g}
 
-#### G.1 恒等式、矩条件与增长结论是三个层次 {#g1-identity-moments-and-growth-are-different-levels-of-assertion}
+<div id="g1-identity-moments-and-growth-are-different-levels-of-assertion"></div>
 
-只要 size 为正、细胞共有恒定的指数增长率、分裂对称，恒等式（3.5）就对每个有限的 $n$ 成立。即使 size 过程不平稳，它也成立：size homeostasis 的作用是限制端点项，而不是让求和能够逐项相消。在平稳过程中，$\mathbb E|\ln v|$ 有限可确定平均时间；$\operatorname{Var}(\ln v)$ 有限可保证 $\operatorname{Var}(T_n)$ 有界，并给出 $D_\tau=0$。混合性进一步给出第 3.3 节的方差极限。但这些矩条件都不能单独控制式（3.7）的指数倾斜，也就是按指数因子对概率重新加权。
+**G.1 恒等式、矩条件与增长结论是三个层次**
+
+只要 size 为正、细胞共有恒定的指数增长率、分裂对称，恒等式（3.5）就对每个有限的 $n$ 成立。即使 size 过程不平稳，它也成立：size homeostasis 的作用是限制端点项，而不是让求和能够逐项相消。在平稳过程中，$\mathbb E|\ln v|$ 有限可确定平均时间；$\operatorname{Var}(\ln v)$ 有限可保证 $\operatorname{Var}(T_n)$ 有界，并给出 $D_\tau=0$。混合性进一步给出第 3.2 节的方差极限。但这些矩条件都不能单独控制式（3.7）的指数倾斜，也就是按指数因子对概率重新加权。
 
 对平稳的正 size 过程，令 $q=s/\lambda>0$。控制该指数加权的一个实用充分条件是
 
@@ -1783,7 +1823,9 @@ $$
 
 如果 adder 的 added size 有上界，且与零保持一定距离，就能构造一个满足全部这些矩条件的简单平稳过程。只要求增量为正、增量方差有限，并不自动保证负阶矩有限，也不保证群体瞬时 mean size 的条件成立。另一条守恒证明使用 $t^{-1}\ln\overline v_{\mathrm{snap}}(t)\to0$，直接适用于一次实际群体演化。不能把 chronological lineage 的 stationarity 和群体瞬时 size 的稳态条件当成同一件事。
 
-#### G.2 在给定生长与分配条件下的普适性 {#g2-universality-within-the-stated-kinematics}
+<div id="g2-universality-within-the-stated-kinematics"></div>
+
+**G.2 在给定生长与分配条件下的普适性**
 
 式（3.4）只用到了
 
@@ -1836,7 +1878,7 @@ $$
 
 ### 附录 H. 相关分裂间隔的轨迹分布与 KL 散度 {#appendix-h}
 
-第 2.2 节已用单代分布的 KL 散度表示独立模型的增长增量。本附录将这一关系推广到具有相关性的多代分裂历史。
+第 2.1 节已用单代分布的 KL 散度表示独立模型的增长增量。本附录将这一关系推广到具有相关性的多代分裂历史。
 
 对于相关分裂间隔时间，第 4.1 节说明增长率取决于完整的分裂历史。因此，KL 恒等式需要使用分裂间隔时间的联合分布。令 $\boldsymbol\tau=(\tau_0,\ldots,\tau_{n-1})$，用 $p_n(\boldsymbol\tau)$ 表示 chronological lineage 的联合概率分布，并记 $T_n=\sum_{j=0}^{n-1}\tau_j$。定义加权轨迹分布
 
@@ -1879,31 +1921,41 @@ $$
 
 ## 补充推导与阅读 {#problems-further-reading}
 
-### 1. 如何消除 size memory？ {#problem-1-what-does-it-take-to-remove-size-memory}
+<div id="problem-1-what-does-it-take-to-remove-size-memory"></div>
+
+**1. 如何消除 size memory？**
 
 对于 $x_{n+1}=rx_n+\xi_n$，size memory 可以用条件期望 $\mathbb E[x_{n+k}\mid x_n]$、稳态方差和自相关函数描述。反馈系数 $r$ 决定偏差如何衰减；$r\lt 0$ 时，偏差还会交替变号。
 
 **结果：** $\mathbb E[x_{n+k}\mid x_n]=r^kx_n$，$\operatorname{Var}(x)=\sigma_\xi^2/(1-r^2)$，$\rho(k)=r^{|k|}$。对于方差有限且非零的独立噪声，要有有限稳态方差，需满足 $|r|\lt 1$。负的 $r$ 会使相关性的符号交替。
 
-### 2. 直方图不变，相关性如何改变？ {#problem-2-correlation-without-changing-a-histogram}
+<div id="problem-2-correlation-without-changing-a-histogram"></div>
+
+**2. 直方图不变，相关性如何改变？**
 
 两状态马尔可夫模型在任意 $0\lt p\lt 1$ 时，都具有相同的边缘分布 $\tfrac12\delta_{\tau_s}+\tfrac12\delta_{\tau_\ell}$，但式（D.3）中的相关性随 $p$ 改变。因此，式（4.4）的增长率修正也随 $p$ 改变，并在 $p\to1^-$ 时失去近似的有效性。
 
 **结果：** 转移矩阵对称，因此平稳概率为 $1/2,1/2$。相关性按 $(2p-1)^k$ 衰减，所以 $D_\tau=\delta^2p/(1-p)$。当 $p\to1^-$ 时，相关时间发散，弱噪声或截断累积量展开不再一致有效，应改用精确矩阵条件。
 
-### 3. 每代时间有噪声，长期噪声还能为零吗？ {#problem-3-can-noisy-lifetimes-have-zero-long-run-noise}
+<div id="problem-3-can-noisy-lifetimes-have-zero-long-run-noise"></div>
+
+**3. 每代时间有噪声，长期噪声还能为零吗？**
 
 对于具有混合性、且 $\operatorname{Var}(\ln v)$ 有限的平稳 size 过程，式（3.5）保证 $n\to\infty$ 时 $\operatorname{Var}(T_n)$ 仍然有界，而不要求每个 $\tau_n$ 都是确定性的。
 
 **结果：** $T_n-n\ln2/\lambda=(\ln v_n-\ln v_0)/\lambda$。如果两端逐渐失去相关性，其方差趋于 $2\operatorname{Var}(\ln v)/\lambda^2$。每个分裂间隔时间仍有噪声，但跨分裂间隔协方差的总和抵消了方差的累积。
 
-### 4. 自相关函数与功率谱密度 {#problem-4-acf-versus-psd}
+<div id="problem-4-acf-versus-psd"></div>
+
+**4. 自相关函数与功率谱密度**
 
 AR(1) 频谱也可以直接从自协方差函数求出。结合式（F.6），可以看出分裂间隔时间频谱在 $\omega=0$ 处为零的原因。
 
 **结果：** 对几何级数求和，$\sum_{k=-\infty}^{\infty}r^{|k|}e^{-i\omega k}=(1-r^2)/(1+r^2-2r\cos\omega)$，再乘以 $\sigma_x^2=\sigma_\xi^2/(1-r^2)$。差分使每个傅里叶分量乘以 $e^{i\omega}-1$，该因子在零频处为零。
 
-### 5. 频谱的哪一部分影响增长？ {#problem-5-which-part-of-a-spectrum-matters-for-growth}
+<div id="problem-5-which-part-of-a-spectrum-matters-for-growth"></div>
+
+**5. 频谱的哪一部分影响增长？**
 
 两个随机 lineage 过程即使具有相同的 $\bar\tau$ 和 $\operatorname{Var}(\tau)$，也可能因相关函数不同而具有不同的增长率。非零频率谱峰的高度，不能单独确定群体增长率；在二阶弱噪声近似下，增长修正由 $S_\tau(0)$ 决定。
 
