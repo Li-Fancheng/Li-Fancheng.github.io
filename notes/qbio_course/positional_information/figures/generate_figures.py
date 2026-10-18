@@ -6,6 +6,7 @@ any directory; SVG and PNG outputs are written beside it.
 """
 
 from pathlib import Path
+import sys
 from textwrap import fill
 
 import matplotlib
@@ -21,24 +22,14 @@ from scipy.special import logsumexp, ndtr
 OUT = Path(__file__).resolve().parent
 BLUE, ORANGE, GREEN, PURPLE = "#2767a0", "#d47725", "#238579", "#8057a5"
 INK, MUTED = "#243747", "#637181"
-plt.rcParams.update({
-    "font.family": "STIXGeneral", "mathtext.fontset": "stix",
-    "font.size": 15, "axes.titlesize": 17, "axes.titleweight": "bold",
-    "axes.labelsize": 15, "legend.fontsize": 13,
-    "xtick.labelsize": 14, "ytick.labelsize": 14,
-    "axes.spines.top": False, "axes.spines.right": False,
-    "text.color": INK, "axes.labelcolor": INK,
-    "figure.facecolor": "white", "savefig.facecolor": "white",
-    "legend.frameon": False, "lines.linewidth": 2.2,
-    "svg.fonttype": "path", "svg.hashsalt": "positional-information",
-})
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from plot_style import configure_style, save_figure
+
+configure_style(line_width=2.2, text_color=INK)
 
 
 def save(fig, name):
-    target = OUT / f"{name}.svg"
-    fig.savefig(target, bbox_inches="tight", metadata={"Date": None})
-    target.write_text("\n".join(s.rstrip() for s in target.read_text().splitlines()) + "\n")
-    fig.savefig(OUT / f"{name}.png", dpi=180, bbox_inches="tight")
+    save_figure(fig, OUT, name)
     plt.close(fig)
 
 
@@ -149,7 +140,7 @@ def molecular_readout():
             ax.add_patch(Circle((center, .655), .062, color=BLUE, zorder=4))
             ax.text(center, .655, "Bcd", ha="center", va="center", color="white", fontsize=13, zorder=5)
         ax.text(center, .43, "Occupied (1)" if occupied else "Empty (0)", ha="center")
-        ax.text(center, .32, "Same DNA\nbinding site", ha="center", va="top", fontsize=13, color=MUTED)
+        ax.text(center, .30, "Same DNA\nbinding site", ha="center", va="center", fontsize=13, color=MUTED)
     for x, y in [(.13, .77), (.32, .82), (.38, .70)]:
         ax.add_patch(Circle((x, y), .018, color=BLUE, alpha=.7))
     ax.annotate("", xy=(.60, .64), xytext=(.40, .64),
@@ -158,7 +149,7 @@ def molecular_readout():
     ax.annotate("", xy=(.40, .51), xytext=(.60, .51),
                 arrowprops=dict(arrowstyle="->", color=ORANGE, lw=1.6))
     ax.text(.5, .45, "release", ha="center", fontsize=13, color=ORANGE)
-    ax.text(.5, .15, "Binding states influence transcription\nand thus RNA production", ha="center", va="center", fontsize=15)
+    ax.text(.5, .06, "Binding states influence transcription\nand thus RNA production", ha="center", va="center", fontsize=15)
     ax = axes[1]
     title(ax, "B  |  Concentration changes the history")
     rng = np.random.default_rng(734)

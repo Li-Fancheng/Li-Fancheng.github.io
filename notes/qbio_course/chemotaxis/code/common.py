@@ -4,6 +4,7 @@ Only NumPy and Matplotlib are required. Figures deliberately use English
 labels to avoid cross-platform issues with CJK fonts in scientific plots.
 """
 from pathlib import Path
+import sys
 import matplotlib
 matplotlib.use('Agg')  # work on machines without a graphical display
 import matplotlib.pyplot as plt
@@ -14,27 +15,16 @@ FIG_DIR = ROOT / 'figures'
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from plot_style import configure_style, save_figure
+
+
 def plot_style():
-    plt.rcParams.update({
-        'font.family': 'DejaVu Sans',
-        'font.size': 11,
-        'axes.labelsize': 11,
-        'axes.titlesize': 12,
-        'axes.titleweight': 'semibold',
-        'figure.titlesize': 14,
-        'axes.spines.top': False,
-        'axes.spines.right': False,
-        'axes.grid': False,
-        'savefig.facecolor': 'white',
-        'figure.facecolor': 'white',
-        'svg.fonttype': 'none',
-    })
+    configure_style()
 
 
-def finish(fig, name, dpi=190, svg=False):
-    fig.savefig(FIG_DIR / f'{name}.png', dpi=dpi, bbox_inches='tight', pad_inches=.16)
-    if svg:
-        fig.savefig(FIG_DIR / f'{name}.svg', bbox_inches='tight', pad_inches=.16)
+def finish(fig, name):
+    save_figure(fig, FIG_DIR, name)
     plt.close(fig)
 
 

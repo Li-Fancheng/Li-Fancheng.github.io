@@ -19,7 +19,6 @@ GRAY = '#738294'
 def setup():
     plot_style()
     plt.rcParams.update({
-        'font.family': 'DejaVu Sans',
         'font.size': 12,
         'axes.unicode_minus': False,
         'axes.titleweight': 'normal',
@@ -51,7 +50,7 @@ def node(ax, xy, label, color=BLUE, radius=.22):
 def make_walk_bookkeeping():
     fig, axes = plt.subplots(1, 2, figsize=(11.8, 4.6))
     ax = axes[0]
-    diagram_axes(ax, (-3.15, 2.65), (-.85, 3.5))
+    diagram_axes(ax, (-3.9, 2.65), (-.85, 3.5))
     levels = [(2.6, [0], ['1']), (1.35, [-1, 1], [r'$1/2$', r'$1/2$']),
               (.1, [-2, 0, 2], [r'$1/4$', r'$1/2$', r'$1/4$'])]
     for (y, xs, _), (yn, xn, _) in zip(levels[:-1], levels[1:]):
@@ -59,7 +58,7 @@ def make_walk_bookkeeping():
             for dest in (x-1, x+1):
                 arrow(ax, (x, y-.22), (dest, yn+.22), GRAY, 1.5)
     for n, (y, xs, labels) in enumerate(levels):
-        ax.text(-3.0, y, f'Step {n}', va='center', fontsize=11)
+        ax.text(-2.75, y, f'Step {n}', ha='right', va='center', fontsize=11)
         for x, label in zip(xs, labels):
             node(ax, (x, y), label, GREEN if n == 2 and x == 0 else BLUE,
                  radius=.29)
@@ -79,7 +78,7 @@ def make_walk_bookkeeping():
     ax.text(0, -.55, 'Add the two incoming contributions', ha='center', fontsize=12)
     ax.set_title('Incoming probabilities', pad=14)
     fig.subplots_adjust(left=.03, right=.98, bottom=.09, top=.84, wspace=.18)
-    finish(fig, 'A_walk_probability_bookkeeping', svg=True)
+    finish(fig, 'A_walk_probability_bookkeeping')
 
 
 def make_flux_balance():
@@ -105,7 +104,7 @@ def make_flux_balance():
             ha='center', fontweight='normal', fontsize=14)
     ax.set_title('Random migration produces a net flux', pad=16)
     fig.subplots_adjust(left=.02, right=.98, bottom=.08, top=.86)
-    finish(fig, 'B_diffusion_boundary_flux', svg=True)
+    finish(fig, 'B_diffusion_boundary_flux')
 
 
 def make_gradient_bias():
@@ -132,7 +131,7 @@ def make_gradient_bias():
         ax.set_title('Equal concentrations' if pleft == pright
                      else 'Higher concentration on the right', pad=14)
     fig.subplots_adjust(left=.03, right=.98, bottom=.08, top=.84, wspace=.14)
-    finish(fig, 'C_gradient_to_jump_bias', svg=True)
+    finish(fig, 'C_gradient_to_jump_bias')
 
 
 def make_mode_growth():
@@ -149,7 +148,7 @@ def make_mode_growth():
                 arrowprops={'arrowstyle':'<->', 'color':ORANGE, 'linewidth':1.5})
     ax.text(11.0, 1.115, '$A(t)$', color=ORANGE, fontsize=13)
     ax.text(18.5, 1.005, r'$\rho_0$', va='bottom', color=GRAY)
-    ax.set(xlim=(-.8, 20.8), ylim=(.86, 1.22), xlabel='Position x',
+    ax.set(xlim=(-.8, 20.8), ylim=(.86, 1.22), xlabel='Position $x$',
            ylabel='Cell density', xticks=[0, 10, 20])
     ax.set_title('Space: wavelength versus amplitude', pad=15)
 
@@ -162,13 +161,13 @@ def make_mode_growth():
                  else 'Strong feedback')
         ax.plot(times, .01*np.exp(sigma*times), color=color, linewidth=2.5,
                 label=label+rf' ($\chi={chi:.2f}$)')
-    ax.set(xlabel='Time t', ylabel='Amplitude A(t)',
+    ax.set(xlabel='Time $t$', ylabel='Amplitude $A(t)$',
            xlim=(0, 12), ylim=(0, .051))
     ax.set_title('Decay or growth of a density mode', pad=15)
     ax.legend(frameon=False, loc='upper left', fontsize=11)
     ax.text(.05, .38, r'$A(t)=A(0)e^{\sigma_+t}$', transform=ax.transAxes, fontsize=14)
     fig.subplots_adjust(left=.075, right=.98, bottom=.17, top=.83, wspace=.32)
-    finish(fig, 'D_cosine_mode_and_growth', svg=True)
+    finish(fig, 'D_cosine_mode_and_growth')
 
 
 def make_signal_kernel():
@@ -185,8 +184,8 @@ def make_signal_kernel():
                 xytext=(1.65, .27), fontsize=12,
                 arrowprops={'arrowstyle':'->', 'color':GRAY})
     ax.text(0, .405, 'Unit point source', ha='center', fontsize=11)
-    ax.set(xlim=(-5, 5), ylim=(0, .47), xlabel='Position relative to source x',
-           ylabel='Steady signal G(x)',
+    ax.set(xlim=(-5, 5), ylim=(0, .47), xlabel='Position relative to source $x$',
+           ylabel='Steady signal $G(x)$',
            xticks=[-ell, 0, ell], xticklabels=[r'$-\ell_c$', '0', r'$\ell_c$'])
     ax.set_title('One source: signal decays with distance', pad=15)
 
@@ -201,12 +200,12 @@ def make_signal_kernel():
     # Follow the slope of the total signal toward each local maximum.
     arrow(ax, (-3.8, .52), (-2.1, .52), BLUE, 1.8)
     arrow(ax, (3.8, .52), (1.8, .52), ORANGE, 1.8)
-    ax.set(xlim=(-5, 5), ylim=(0, .60), xlabel='Position x',
+    ax.set(xlim=(-5, 5), ylim=(0, .60), xlabel='Position $x$',
            ylabel='Total signal concentration')
     ax.legend(frameon=False, loc='upper center', fontsize=10)
     ax.set_title('Multiple sources: add their contributions', pad=15)
     fig.subplots_adjust(left=.075, right=.98, bottom=.17, top=.83, wspace=.32)
-    finish(fig, 'E_signal_range_and_superposition', svg=True)
+    finish(fig, 'E_signal_range_and_superposition')
 
 
 def make_teaching_diagrams():

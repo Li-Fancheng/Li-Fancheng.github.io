@@ -39,16 +39,16 @@ def make_fixed_field_figure():
                                     gridspec_kw={'height_ratios':[.9, 1.5]})
     ax1.fill_between(x, 0, c, color='tab:green', alpha=.18)
     ax1.plot(x, c, color='tab:green', lw=2.2)
-    ax1.set(ylabel='Chemical c(x)', title='Chemotaxis toward a fixed attractant peak')
+    ax1.set(ylabel='Chemical $c(x)$', title='Chemotaxis toward a fixed attractant peak')
     ax1.annotate('Field imposed externally', xy=(10., 1.), xytext=(13., .75),
                  arrowprops={'arrowstyle':'->', 'lw':1.1}, fontsize=10)
     for tm, rr in zip(times, snapshots):
-        ax2.plot(x, rr, lw=2, label=f't = {tm:g}')
+        ax2.plot(x, rr, lw=2, label=rf'$t={tm:g}$')
     stationary = np.exp(chi/D*(c-c.max()))
     stationary /= stationary.mean()
     ax2.plot(x, stationary, '--', color='black', alpha=.7, lw=1.5,
              label=r'Zero-flux shape $\propto e^{\chi c/D}$')
-    ax2.set(xlabel='Position x', ylabel='Cell density $\\rho(x,t)$')
+    ax2.set(xlabel='Position $x$', ylabel='Cell density $\\rho(x,t)$')
     ax2.legend(frameon=False, ncol=3)
     ax2.set_xlim(x[0], x[-1])
     fig.tight_layout(h_pad=1.2)

@@ -34,7 +34,7 @@ def make_feedback_figure():
             color='#a34133', ha='center', va='center', fontsize=11,
             bbox={'fc':'white','ec':'none', 'pad':1.0})
     ax.set_title('Cells change the field they follow', pad=12)
-    finish(fig, '05_field_mediated_feedback', svg=True)
+    finish(fig, '05_field_mediated_feedback')
 
 
 if __name__ == '__main__':

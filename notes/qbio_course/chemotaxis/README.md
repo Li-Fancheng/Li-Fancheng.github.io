@@ -92,7 +92,9 @@ python code/collective_1d.py
 python code/collective_2d.py
 ```
 
-运行后图像会输出到 `figures/`。示意图使用英文标注，正文配中文图注。SVG 中的文字已转为路径，查看时不需要安装原字体。计算依赖 NumPy 与 Matplotlib，不需要 SciPy，也不需要网络连接。脚本随机种子固定，输出结果可复现。
+运行后图像会输出到 `figures/`，每张自制图同时生成 SVG 和 300 dpi PNG；网页使用 SVG。示意图采用 Arial 文字（缺少时使用可用的无衬线字体）与 Computer Modern 数学字体，正文配中文图注。SVG 中的字形已转为路径，读者不需要安装原字体。计算依赖 NumPy 与 Matplotlib，不需要 SciPy，也不需要网络连接。脚本随机种子固定，输出结果可复现。
+
+四篇笔记共用上级目录的 `plot_style.py`；各图在网页上的展示宽度记录于仓库的 `data/qbio_figures.json`。单幅示意图适当收窄，多面板或细节较多的图片保留较大宽度，小屏幕上均限制在正文范围内。
 
 ## 参数比较
 

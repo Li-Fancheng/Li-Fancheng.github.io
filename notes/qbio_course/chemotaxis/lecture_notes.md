@@ -67,7 +67,7 @@ $$
 
 <div id="fig-2"></div>
 
-![Fig. 2：无偏随机游走的个体轨迹](figures/01_random_walk_trajectories.png)
+![Fig. 2：无偏随机游走的个体轨迹](figures/01_random_walk_trajectories.svg)
 
 *Fig. 2. 均匀化学环境中的模型细胞轨迹。* 将每条轨迹看成一个模型细胞在均匀化学环境中的位置记录：规则相同，实际路径却不同。
 
@@ -216,7 +216,7 @@ $$
 
 <div id="fig-5"></div>
 
-![Fig. 5：随机游走的均方位移与扩散分布](figures/02_random_walk_to_diffusion.png)
+![Fig. 5：随机游走的均方位移与扩散分布](figures/02_random_walk_to_diffusion.svg)
 
 *Fig. 5. 均方位移与位置分布。* 左：模拟均方位移与 $2Dt$ 比较；右：许多模型细胞在同一时刻的位置直方图，与连续扩散方程的高斯分布比较。对集中在原点的初值，高斯分布为 $p(x,t)=(4\pi Dt)^{-1/2}\exp[-x^2/(4Dt)]$；它描述长时间、大尺度下的光滑分布。
 
@@ -284,7 +284,7 @@ $v$ 是漂移速度，描述细胞团中心的移动。单个细胞仍可能向�
 
 <div id="fig-7"></div>
 
-![Fig. 7：无偏与有偏随机游走](figures/03_biased_random_walk.png)
+![Fig. 7：无偏与有偏随机游走](figures/03_biased_random_walk.svg)
 
 *Fig. 7. 方向偏置与细胞团漂移。* 用位置分布对比无梯度对照与向右存在有效运动偏置的模型。仅将向右概率从 $0.50$ 改为 $0.58$，分布中心便向右移动。右图画出理论平均位移，左图显示模拟分布；有漂移的细胞团依然会展宽，正如定向趋化与随机迁移可以同时存在。
 
@@ -425,7 +425,7 @@ $$
 
 <div id="fig-9"></div>
 
-![Fig. 9：固定化学场中的趋化积累](figures/04_chemotaxis_in_fixed_field.png)
+![Fig. 9：固定化学场中的趋化积累](figures/04_chemotaxis_in_fixed_field.svg)
 
 *Fig. 9. 固定吸引物峰下的细胞积累。* 上：外界给定的浓度 $c(x)$。下：细胞向峰附近积累。黑色虚线为零通量稳态，$t=25$ 的分布仍在演化。
 
@@ -503,7 +503,7 @@ $$
 
 <div id="fig-12"></div>
 
-![Fig. 12：细胞与化学场形成的反馈回路](figures/05_field_mediated_feedback.png)
+![Fig. 12：细胞与化学场形成的反馈回路](figures/05_field_mediated_feedback.svg)
 
 *Fig. 12. 细胞与吸引物的反馈回路。* 多一点细胞 $\to$ 多一点吸引物 $\to$ 更多细胞移入该处 $\to$ 密度增加。另附[矢量图版本](figures/05_field_mediated_feedback.svg)。
 
@@ -682,7 +682,7 @@ $$
 
 <div id="fig-15"></div>
 
-![Fig. 15：两组参数下的小扰动增长率](figures/08_optional_growth_rate.png)
+![Fig. 15：两组参数下的小扰动增长率](figures/08_optional_growth_rate.svg)
 
 *Fig. 15. 准稳态近似中的模态增长率。* 曲线由式（4.1）计算；竖虚线为周期区间的最小非零波数，允许波数为其正整数倍。近似与精确增长率的比较见[附录 B](#appendix-b)。
 
@@ -710,13 +710,13 @@ $$
 
 <div id="fig-16"></div>
 
-![Fig. 16：弱反馈与强反馈下的一维时空密度图](figures/06_collective_1d_space_time.png)
+![Fig. 16：弱反馈与强反馈下的一维时空密度图](figures/06_collective_1d_space_time.svg)
 
 *Fig. 16. 弱、强反馈下的细胞密度演化。* 横轴是空间，纵轴是时间，颜色表示 $\rho/\rho_0$。左图：微小起伏逐渐衰减；右图：起伏被反馈放大，形成局部聚集。两个色条采用各自的刻度，比较时要读数值，不能只比较颜色。
 
 <div id="fig-17"></div>
 
-![Fig. 17：细胞密度与化学物质分布随时间的关系](figures/07_collective_1d_snapshots.png)
+![Fig. 17：细胞密度与化学物质分布随时间的关系](figures/07_collective_1d_snapshots.svg)
 
 *Fig. 17. 密度起伏与化学场的空间关联。* 上：密度起伏的增长；下：在选定时刻的细胞密度与吸引物浓度峰相关。这里展示的是有限时间演化过程，未声称找到了唯一稳定的最终图案。
 
@@ -760,7 +760,7 @@ $$
 
 <div id="fig-18"></div>
 
-![Fig. 18：二维模拟中的短时聚集结构](figures/09_optional_2d_patterns.png)
+![Fig. 18：二维模拟中的短时聚集结构](figures/09_optional_2d_patterns.svg)
 
 *Fig. 18. 二维模型的早期聚集。* 周期区间内，接近均匀的初态形成局部高密度区域。长期峰值会受数值网格及模型中缺失的饱和机制影响。
 

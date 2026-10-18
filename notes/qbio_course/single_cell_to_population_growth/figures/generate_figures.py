@@ -86,10 +86,8 @@ save(fig, "02_correlations_and_growth")
 
 # 3. A geometric diagram of the noise-free adder, with lengths encoding size.
 with plt.rc_context({
-    "font.family": "DejaVu Sans",
     "font.size": 14,
-    "font.weight": "medium",
-    "mathtext.fontset": "dejavusans",
+    "font.weight": "normal",
     "axes.titlesize": 16,
     "axes.titleweight": "bold",
 }):

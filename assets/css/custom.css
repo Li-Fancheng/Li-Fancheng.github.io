@@ -8,8 +8,10 @@
 .cell-cycle-table { max-width: 100%; overflow-x: auto; margin-block: 2rem; }
 .cell-cycle-article .cell-cycle-table table { display: table; width: max-content; max-width: 100%; margin: 0 auto; }
 .cell-cycle-article figure { max-width: 100%; margin-inline: auto; }
+.cell-cycle-article figure.qbio-figure { width: min(100%, var(--note-figure-width)); }
+.cell-cycle-article .qbio-figure-link { display: block; cursor: zoom-in; }
 .cell-cycle-article figure > div { display: flex; justify-content: center; }
-.cell-cycle-article figure > div > div { max-width: 100%; }
+.cell-cycle-article figure > div > div { width: 100%; max-width: 100%; }
 .cell-cycle-article figure img { display: block; width: 100%; max-width: 100%; height: auto; margin-inline: auto; background: white; border-radius: .5rem; }
 .cell-cycle-article figure + p:has(> em:first-child) { font-size: .9rem; line-height: 1.6; }
 .cell-cycle-mobile-toc { margin-block: 2rem; padding: 1rem; border: 1px solid #94a3b855; border-radius: .5rem; }

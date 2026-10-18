@@ -8,6 +8,7 @@ trajectories use fixed seeds. All rates and times are dimensionless.
 """
 
 from pathlib import Path
+import sys
 
 import matplotlib
 
@@ -24,23 +25,14 @@ from scipy.stats import poisson
 OUT = Path(__file__).resolve().parent
 BLUE, ORANGE, GREEN, PURPLE = "#2767a0", "#d47725", "#238579", "#8057a5"
 INK, MUTED = "#243747", "#637181"
-plt.rcParams.update({
-    "font.family": "STIXGeneral", "mathtext.fontset": "stix",
-    "font.size": 12, "axes.titlesize": 14, "axes.titleweight": "bold",
-    "axes.labelsize": 12, "legend.fontsize": 10.5,
-    "axes.spines.top": False, "axes.spines.right": False,
-    "text.color": INK, "axes.labelcolor": INK,
-    "figure.facecolor": "white", "savefig.facecolor": "white",
-    "legend.frameon": False, "lines.linewidth": 2.3,
-    "svg.fonttype": "path", "svg.hashsalt": "grn-theory",
-})
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from plot_style import configure_style, save_figure
+
+configure_style(line_width=2.3, text_color=INK)
 
 
 def save(fig, name):
-    svg = OUT / f"{name}.svg"
-    fig.savefig(svg, bbox_inches="tight", metadata={"Date": None})
-    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
-    fig.savefig(OUT / f"{name}.png", dpi=200, bbox_inches="tight")
+    save_figure(fig, OUT, name)
     plt.close(fig)
 
 
@@ -77,7 +69,7 @@ def regulation():
     node(ax, (1.35, 1.05), "$Y$", ORANGE)
     arrow(ax, (.2, 1.18), (1.12, 1.18), BLUE, inhibit=True)
     arrow(ax, (1.12, .92), (.2, .92), ORANGE, inhibit=True)
-    ax.text(2.0, 1.05, "Toggle\n(−) × (−) = (+)", va="center", fontsize=11)
+    ax.text(2.0, 1.05, "Toggle\n" + r"$(-)\times(-)=(+)$", va="center", fontsize=11)
     pts = [(0, -.25), (1.35, -.25), (.68, .35)]
     for p, lab, c in zip(pts, ["$X_1$", "$X_2$", "$X_3$"], [BLUE, ORANGE, GREEN]):
         node(ax, p, lab, c, radius=.19)
@@ -85,7 +77,7 @@ def regulation():
         p, q = np.array(pts[i]), np.array(pts[(i+1) % 3])
         d = (q-p) / np.linalg.norm(q-p)
         arrow(ax, p+.25*d, q-.25*d, MUTED, inhibit=True)
-    ax.text(2.0, -.02, "Repression ring\n(−)³ = (−)", va="center", fontsize=11)
+    ax.text(2.0, -.02, "Repression ring\n" + r"$(-)^3=(-)$", va="center", fontsize=11)
     x = np.linspace(0, 3, 500)
     for ax, positive, heading in zip(axes[1:], [True, False],
                                      ["B  |  Activation", "C  |  Repression"]):
@@ -260,7 +252,7 @@ def oscillator():
         ax.set(xlim=(0, 45), ylim=(.5, 3.1), xlabel="Time $t$", ylabel="Expression")
         ax.text(.98, .96, rf"$n=3,\ \alpha={alpha}$", transform=ax.transAxes,
                 ha="right", va="top")
-        ax.legend(loc="upper right", bbox_to_anchor=(1, .86), ncol=3)
+        ax.legend(loc="lower left", ncol=3)
         ax.grid(alpha=.12)
     ax = axes[1, 0]
     title(ax, "C  |  Trajectories projected onto $(x_1,x_2)$")

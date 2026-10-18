@@ -80,10 +80,10 @@ def make_collective_figures():
                        extent=[0, PARAMS['L'], t[0], t[-1]],
                        cmap='viridis', interpolation='nearest')
         gamma = chi*PARAMS['alpha']*PARAMS['rho0']/(PARAMS['D']*PARAMS['kappa'])
-        ax.set(xlabel='Position x', title=rf'$\chi = {chi:.2f}$, $\Gamma={gamma:.1f}$')
+        ax.set(xlabel='Position $x$', title=rf'$\chi = {chi:.2f}$, $\Gamma={gamma:.1f}$')
         cb = fig.colorbar(im, ax=ax, fraction=.046, pad=.035)
         cb.set_label(r'$\rho / \rho_0$')
-    axes[0].set_ylabel('Time t')
+    axes[0].set_ylabel('Time $t$')
     fig.suptitle('Collective feedback: spreading versus self-amplifying clusters',
                  fontsize=14, fontweight='semibold')
     finish(fig, '06_collective_1d_space_time')
@@ -91,15 +91,15 @@ def make_collective_figures():
     # Figure 07: show actual density and chemical, not just a heatmap.
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9.4, 6.2), sharex=True)
     for idx, mark, lab in [(0, ':', 'Initial'),
-                            (int(.45*(len(t)-1)), '--', f't = {t[int(.45*(len(t)-1))]:g}'),
-                            (-1, '-', f't = {t[-1]:g}')]:
+                            (int(.45*(len(t)-1)), '--', rf'$t={t[int(.45*(len(t)-1))]:g}$'),
+                            (-1, '-', rf'$t={t[-1]:g}$')]:
         ax1.plot(x, dens_hi[idx], mark, lw=2, label=lab)
     ax1.set(ylabel=r'Cell density $\rho$',
             title='Feedback makes an initially small fluctuation grow')
     ax1.legend(frameon=False, ncol=3)
     ax2.plot(x, dens_hi[-1], label=r'Cells $\rho(x)$', lw=2)
     ax2.plot(x, chem_hi[-1], label='Attractant $c(x)$', lw=2, ls='--')
-    ax2.set(xlabel='Position x', ylabel='Field value',
+    ax2.set(xlabel='Position $x$', ylabel='Field value',
             title='Cells and attractant become spatially correlated')
     ax2.legend(frameon=False)
     fig.tight_layout(h_pad=1.2)
@@ -118,7 +118,7 @@ def make_collective_figures():
     q_min = 2*np.pi/p['L']
     ax.axvline(q_min, color='gray', lw=1, ls=':',
                label=r'First periodic mode $2\pi/L$')
-    ax.set(xlabel='Wave number q', ylabel=r'Approximate growth rate $\sigma(q)$',
+    ax.set(xlabel='Wave number $q$', ylabel=r'Approximate growth rate $\sigma(q)$',
            title='Linear growth rates in the fast-chemical approximation', xlim=(0, 2.4))
     ax.legend(frameon=False, loc='lower left')
     fig.tight_layout()

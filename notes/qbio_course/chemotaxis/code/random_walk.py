@@ -23,7 +23,7 @@ def make_random_walk_figures():
     for k in range(16):
         ax.plot(t, x[k], lw=1.05, alpha=.72)
     ax.axhline(0, color='black', lw=.8, alpha=.25)
-    ax.set(xlabel='Time (steps)', ylabel='Position x / a',
+    ax.set(xlabel='Time (steps)', ylabel='Position $x/a$',
            title='Unbiased random walk: individual trajectories', xlim=(0, n_steps))
     ax.text(.02, .96, '$p_+=p_-=1/2$', transform=ax.transAxes, va='top',
             bbox={'boxstyle':'round,pad=.4', 'fc':'white', 'ec':'0.84'})
@@ -35,7 +35,7 @@ def make_random_walk_figures():
                                     gridspec_kw={'width_ratios':[1, 1.04]})
     ax1.plot(t, msd, label='Simulation', lw=2)
     ax1.plot(t, 2*D*t, '--', color='black', label='$2Dt$', lw=1.6)
-    ax1.set(xlabel='Time t', ylabel=r'$\langle x^2(t)\rangle$',
+    ax1.set(xlabel='Time $t$', ylabel=r'$\langle x^2(t)\rangle$',
             title='Mean squared displacement')
     ax1.legend(frameon=False)
     end = x[:, -1].astype(float)
@@ -45,8 +45,8 @@ def make_random_walk_figures():
     gx = np.linspace(-80, 80, 400)
     ax2.plot(gx, normal_pdf(gx, 0, 2*D*n_steps*tau), 'k--', lw=1.8,
              label='Diffusion Gaussian')
-    ax2.set(xlabel='Position x', ylabel='Probability density',
-            title=f'Distribution at t = {n_steps}')
+    ax2.set(xlabel='Position $x$', ylabel='Probability density',
+            title=rf'Distribution at $t={n_steps}$')
     ax2.legend(frameon=False)
     fig.tight_layout(w_pad=2)
     finish(fig, '02_random_walk_to_diffusion')
@@ -66,13 +66,13 @@ def make_random_walk_figures():
     ax1.hist(xb, bins=edges, density=True, alpha=.45, label='$p_+=0.58$')
     ax1.axvline(v*n_steps, color='black', ls='--', lw=1.2,
                 label=r'$\langle x\rangle=vt$')
-    ax1.set(xlabel='Position x', ylabel='Probability density',
+    ax1.set(xlabel='Position $x$', ylabel='Probability density',
             title='Same randomness, different bias')
     ax1.legend(frameon=False)
     tpoints = np.arange(n_steps+1)
     ax2.plot(tpoints, np.zeros_like(tpoints), lw=2, label='Unbiased mean')
     ax2.plot(tpoints, v*tpoints, lw=2, label='Biased mean: $vt$')
-    ax2.set(xlabel='Time t', ylabel=r'Mean displacement $\langle x\rangle$',
+    ax2.set(xlabel='Time $t$', ylabel=r'Mean displacement $\langle x\rangle$',
             title='Drift emerges from unequal jump probabilities')
     ax2.legend(frameon=False)
     fig.tight_layout(w_pad=2)

@@ -8,3 +8,5 @@
 - [趋化：从随机游走到集体模式形成](chemotaxis/lecture_notes.md)
 
 各主题目录包含相应笔记与图片；趋化的复现命令见其 README。网站阅读入口为 `/notes/qbio_course/`。
+
+自制图共用 [plot_style.py](plot_style.py)：文字使用 Arial（缺少时回退到可用的无衬线字体），公式使用 Computer Modern，导出保留字形轮廓的 SVG 与 300 dpi PNG。网页优先使用 SVG，图片可点击查看原图。自制图与论文图的展示宽度逐张记录于仓库的 `data/qbio_figures.json`，按信息密度调整；论文原图文件保持不变。

@@ -69,12 +69,12 @@ def make_2d_figure():
         arr = saved[tm]
         im = ax.imshow(arr, origin='lower', cmap='viridis',
                        extent=(0, L, 0, L), interpolation='nearest')
-        ax.set(title=f't = {tm:g}', xlabel='x', ylabel='y', aspect='equal')
+        ax.set(title=rf'$t={tm:g}$', xlabel='$x$', ylabel='$y$', aspect='equal')
         cb = fig.colorbar(im, ax=ax, fraction=.046, pad=.03)
         cb.set_label(r'$\rho(x,y)$')
     fig.suptitle('Two-dimensional chemotaxis: early density aggregation',
                  fontsize=14, fontweight='semibold')
-    finish(fig, '09_optional_2d_patterns', dpi=180)
+    finish(fig, '09_optional_2d_patterns')
 
 
 if __name__ == '__main__':

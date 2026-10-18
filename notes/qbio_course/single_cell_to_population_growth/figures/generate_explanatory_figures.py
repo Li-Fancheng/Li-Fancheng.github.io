@@ -41,14 +41,12 @@ def cell(ax, x, y, color):
 
 def renewal_and_sampling():
     with plt.rc_context({
-        "font.family": "DejaVu Sans",
         "font.size": 14,
-        "font.weight": "medium",
-        "mathtext.fontset": "dejavusans",
+        "font.weight": "normal",
         "axes.titlesize": 16,
         "axes.titleweight": "bold",
         "axes.labelsize": 14,
-        "axes.labelweight": "medium",
+        "axes.labelweight": "normal",
         "xtick.labelsize": 12,
         "ytick.labelsize": 12,
     }):
@@ -172,10 +170,8 @@ def discounted_branching():
 
 def telescoping_identity():
     with plt.rc_context({
-        "font.family": "DejaVu Sans",
         "font.size": 14,
-        "font.weight": "medium",
-        "mathtext.fontset": "dejavusans",
+        "font.weight": "normal",
         "axes.titlesize": 16,
         "axes.titleweight": "bold",
     }):
