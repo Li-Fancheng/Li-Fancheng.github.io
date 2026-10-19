@@ -1,0 +1,30 @@
+{
+  "ridge_leave_one_out_max_error": 1.7763568394002505e-15,
+  "GP_evidence_derivative_error": 1.2989387343509406e-11,
+  "NTK_initialization_covariance_error": 8.881784197001252e-16,
+  "posterior_rank_one_error": 4.440892098500626e-14,
+  "deep_linear_Gram_balance_derivative": 7.105427357601002e-15,
+  "OU_component_covariance_error": 0.0,
+  "OU_mean_loss_minus_half_trace_diffusion": 0.0,
+  "grokking_projection_Pythagoras_error": 0.0,
+  "grokking_full_grid_cross_entropy": {
+    "original": 2.217334296360878,
+    "group_average": 1.8288853030441616
+  },
+  "noisy_teacher_classification": {
+    "theory": 0.3159187291091205,
+    "Monte_Carlo": 0.31647,
+    "samples": 600000
+  },
+  "compute_training_pass_optimum": {
+    "T": 9.358822251523533,
+    "relative_marginal_error": 9.675876960707509e-08
+  },
+  "joint_time_data_model_risk": {
+    "coefficient_ODE_max_error": 4.75264272381537e-12,
+    "analytic_risk": 0.0844369549354894,
+    "Monte_Carlo_risk": 0.08448161481521688,
+    "samples": 60000
+  },
+  "status": "passed"
+}

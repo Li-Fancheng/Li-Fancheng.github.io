@@ -11,6 +11,11 @@
 {{- if not $target -}}
   {{- errorf "Missing note redirect target: %s" .Params.redirect -}}
 {{- end -}}
+{{- $fragment := "" -}}
+{{- with .Params.redirect_anchor -}}
+  {{- $fragment = printf "#%s" . -}}
+{{- end -}}
+{{- $destination := printf "%s%s" $target.RelPermalink $fragment -}}
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 <head>
@@ -18,8 +23,8 @@
   <title>{{ $target.Title }}</title>
   <link rel="canonical" href="{{ $target.Permalink }}">
   <meta name="robots" content="noindex">
-  <meta http-equiv="refresh" content="0; url={{ $target.RelPermalink }}">
-  <script>window.location.replace({{ $target.RelPermalink | jsonify | safeJS }} + window.location.search + window.location.hash);</script>
+  <meta http-equiv="refresh" content="0; url={{ $destination }}">
+  <script>window.location.replace({{ $target.RelPermalink | jsonify | safeJS }} + window.location.search + {{ if $fragment }}{{ $fragment | jsonify | safeJS }}{{ else }}window.location.hash{{ end }});</script>
 </head>
-<body><a href="{{ $target.RelPermalink }}">{{ $target.Title }}</a></body>
+<body><a href="{{ $destination }}">{{ $target.Title }}</a></body>
 </html>

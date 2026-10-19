@@ -6,8 +6,7 @@
       "id": "advani2017",
       "notes": [
         1,
-        2,
-        17
+        12
       ],
       "authors": "Advani, Saxe (2017)",
       "title": "High-dimensional dynamics of generalization error in neural networks",
@@ -16,7 +15,7 @@
     {
       "id": "hastie2019",
       "notes": [
-        2
+        1
       ],
       "authors": "Hastie, Montanari, Rosset, Tibshirani",
       "title": "Surprises in High-Dimensional Ridgeless Least Squares Interpolation",
@@ -25,9 +24,9 @@
     {
       "id": "mei_rf",
       "notes": [
+        1,
         2,
-        3,
-        19
+        12
       ],
       "authors": "Mei, Montanari",
       "title": "The generalization error of random features regression: Precise asymptotics and double descent curve",
@@ -36,7 +35,7 @@
     {
       "id": "rahimi2007",
       "notes": [
-        3
+        2
       ],
       "authors": "Rahimi, Recht (2007)",
       "title": "Random Features for Large-Scale Kernel Machines",
@@ -45,7 +44,7 @@
     {
       "id": "gardner1988",
       "notes": [
-        4
+        6
       ],
       "authors": "Gardner (1988)",
       "title": "The space of interactions in neural network models",
@@ -54,7 +53,7 @@
     {
       "id": "biehl1995",
       "notes": [
-        4
+        6
       ],
       "authors": "Biehl, Riegler, Stechert (1995)",
       "title": "Learning from noisy data: An exactly solvable model",
@@ -63,7 +62,7 @@
     {
       "id": "lee_gp",
       "notes": [
-        5
+        3
       ],
       "authors": "Lee et al.",
       "title": "Deep Neural Networks as Gaussian Processes",
@@ -72,7 +71,7 @@
     {
       "id": "schoenholz",
       "notes": [
-        5
+        3
       ],
       "authors": "Schoenholz et al.",
       "title": "Deep Information Propagation",
@@ -81,7 +80,7 @@
     {
       "id": "jacot2018",
       "notes": [
-        6
+        3
       ],
       "authors": "Jacot, Gabriel, Hongler (2018)",
       "title": "Neural Tangent Kernel: Convergence and Generalization in Neural Networks",
@@ -90,8 +89,8 @@
     {
       "id": "bordelon2020",
       "notes": [
-        7,
-        18
+        2,
+        12
       ],
       "authors": "Bordelon, Canatar, Pehlevan (2020)",
       "title": "Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks",
@@ -100,7 +99,7 @@
     {
       "id": "mei_mf",
       "notes": [
-        8
+        4
       ],
       "authors": "Mei, Montanari, Nguyen",
       "title": "A Mean Field View of the Landscape of Two-Layers Neural Networks",
@@ -109,7 +108,7 @@
     {
       "id": "chizat_bach",
       "notes": [
-        8
+        4
       ],
       "authors": "Chizat, Bach",
       "title": "On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport",
@@ -118,7 +117,7 @@
     {
       "id": "saxe",
       "notes": [
-        9
+        5
       ],
       "authors": "Saxe, McClelland, Ganguli",
       "title": "Exact solutions to the nonlinear dynamics of learning in deep linear neural networks",
@@ -127,7 +126,7 @@
     {
       "id": "soudry",
       "notes": [
-        10
+        5
       ],
       "authors": "Soudry et al.",
       "title": "The Implicit Bias of Gradient Descent on Separable Data",
@@ -136,7 +135,7 @@
     {
       "id": "gunasekar",
       "notes": [
-        10
+        5
       ],
       "authors": "Gunasekar et al.",
       "title": "Implicit Regularization in Matrix Factorization",
@@ -145,7 +144,7 @@
     {
       "id": "saad_solla",
       "notes": [
-        11
+        6
       ],
       "authors": "Saad, Solla (1995)",
       "title": "On-line learning in soft committee machines",
@@ -154,7 +153,7 @@
     {
       "id": "cagnetta",
       "notes": [
-        12
+        7
       ],
       "authors": "Cagnetta, Petrini, Tomasini, Favero, Wyart",
       "title": "How Deep Neural Networks Learn Compositional Data: The Random Hierarchy Model",
@@ -163,7 +162,7 @@
     {
       "id": "power",
       "notes": [
-        13
+        8
       ],
       "authors": "Power et al.",
       "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
@@ -172,7 +171,7 @@
     {
       "id": "levi",
       "notes": [
-        13
+        8
       ],
       "authors": "Levi, Beck, Bar-Sinai",
       "title": "Grokking in Linear Estimators -- A Solvable Model that Groks without Understanding",
@@ -181,7 +180,7 @@
     {
       "id": "liu",
       "notes": [
-        13
+        8
       ],
       "authors": "Liu et al.",
       "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
@@ -190,7 +189,7 @@
     {
       "id": "mandt",
       "notes": [
-        14
+        9
       ],
       "authors": "Mandt, Hoffman, Blei",
       "title": "Stochastic Gradient Descent as Approximate Bayesian Inference",
@@ -199,7 +198,7 @@
     {
       "id": "hopfield",
       "notes": [
-        15
+        10
       ],
       "authors": "Hopfield (1982)",
       "title": "Neural networks and physical systems with emergent collective computational abilities",
@@ -208,7 +207,7 @@
     {
       "id": "amit",
       "notes": [
-        15
+        10
       ],
       "authors": "Amit, Gutfreund, Sompolinsky (1985)",
       "title": "Storing Infinite Numbers of Patterns in a Spin-Glass Model of Neural Networks",
@@ -217,7 +216,7 @@
     {
       "id": "scs",
       "notes": [
-        16
+        11
       ],
       "authors": "Sompolinsky, Crisanti, Sommers (1988)",
       "title": "Chaos in Random Neural Networks",
@@ -226,9 +225,7 @@
     {
       "id": "bahri",
       "notes": [
-        17,
-        18,
-        19
+        12
       ],
       "authors": "Bahri et al.",
       "title": "Explaining Neural Scaling Laws",
@@ -237,7 +234,7 @@
     {
       "id": "kaplan",
       "notes": [
-        20
+        12
       ],
       "authors": "Kaplan et al. (2020)",
       "title": "Scaling Laws for Neural Language Models",
@@ -246,7 +243,7 @@
     {
       "id": "hoffmann",
       "notes": [
-        20
+        12
       ],
       "authors": "Hoffmann et al. (2022)",
       "title": "Training Compute-Optimal Large Language Models",
@@ -255,7 +252,7 @@
     {
       "id": "chizat_lazy",
       "notes": [
-        8
+        4
       ],
       "authors": "Chizat, Oyallon, Bach",
       "title": "On Lazy Training in Differentiable Programming",
@@ -264,7 +261,7 @@
     {
       "id": "woodworth_rich",
       "notes": [
-        10
+        5
       ],
       "authors": "Woodworth et al.",
       "title": "Kernel and Rich Regimes in Overparametrized Models",

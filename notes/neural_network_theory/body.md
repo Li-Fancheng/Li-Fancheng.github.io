@@ -1,74 +1,76 @@
-这里整理我学习神经网络理论时的文献综述、模型推导和数值记录。整套笔记按五卷、20 篇组织，从线性谱动力学进入高维泛化、无限宽理论、特征学习、集体动力学与标度规律。
+这里整理我学习神经网络理论时的文献综述、模型推导和数值记录。整套笔记按五卷、12 篇组织，从线性谱动力学进入高维泛化、无限宽理论、特征学习、集体动力学与标度规律。
 
 我关心的是：神经网络中的哪些现象能够在简单、可解析的模型中得到理解，这些解释依赖什么假设，又在什么地方失效。各篇围绕具体问题连接相关文献，保留关键推导、物理解释、数值结果和仍未厘清的问题。
 
+## 这些笔记反复追问的几件事
+
+一条训练曲线同时投影了数据、目标和算法。数据决定哪些方向被观测，目标决定哪些方向值得恢复，参数化与优化器决定恢复的路径，测试分布则决定剩余误差的代价。前几篇将这些因素拆开，后面再逐步允许它们相互反馈。
+
+从这个角度看，线性回归、核模型、平均场和集体动力学并不是彼此孤立的专题。它们在回答同一组问题：什么是可见信息，什么是可用表示，什么限制学习速度，又应该用什么观测量判断成功。每种模型选择保留一部分结构，并有意略去另一部分；理解这种选择本身，也是读文献的一部分。
+
+各篇的前言说明问题如何进入理论，正文保留中间计算与条件，延伸讨论将局部结果接到相邻模型，结尾再回到得到的认识与尚未解决的部分。相关计算在需要时重新写出，使单篇也能连贯阅读；它们同时链接到完整讨论，方便沿不同主线往返。
+
+这里的数值记录用于核查模型和推导，也保留失败设置与有限证据。可解模型给出机制的可能性，真实训练提供指定协议下的现象，结构诊断提供进一步区分解释的依据。三者共同组织这些笔记，但各自承担的结论范围始终明确。
+
 ## 五卷目录 {#contents}
 
-### I · 泛化理论与高维可解模型
+### I · 泛化与高维模型
 
 | Note | 核心问题 | 理论层次 |
 | --- | --- | --- |
-| [01 · 线性回归的完整动力学](/notes/neural_network_theory/linear_regression/) | 模态怎样学习？为什么早停可能改善泛化？ | 有限维精确解 |
-| [02 · Double Descent](/notes/neural_network_theory/double_descent/) | 插值附近为什么放大噪声？ | Gaussian 精确期望与高维谱 |
-| [03 · Random Features](/notes/neural_network_theory/random_features/) | 固定非线性特征能解释多少现象？ | 有限特征求解与核极限 |
-| [04 · Teacher–Student](/notes/neural_network_theory/teacher_student/) | 参数恢复怎样联系泛化与样本数？ | Hebbian 渐近解与 RS 容量分析 |
+| [01 · 线性学习与高维泛化](/notes/neural_network_theory/linear_learning/) | 给定数据的学习动力学怎样连接随机设计下的高维泛化？ | 有限设计精确求解；Gaussian 随机设计的精确期望与高维渐近 |
+| [02 · 随机特征与核学习](/notes/neural_network_theory/kernel_methods/) | 有限特征、核谱与采样怎样共同决定学习曲线？ | 有限特征精确求解；序列风险可解；随机设计近似需附加条件 |
 
-### II · 无限宽网络、核理论与特征学习
+### II · 无限宽与特征学习
 
 | Note | 核心问题 | 理论层次 |
 | --- | --- | --- |
-| [05 · Gaussian Process](/notes/neural_network_theory/gaussian_process/) | 随机网络怎样定义函数先验？ | 固定深度与有限输入的宽度极限 |
-| [06 · Neural Tangent Kernel](/notes/neural_network_theory/ntk/) | 非线性函数为什么出现线性训练？ | 精确核恒等式与条件性冻结极限 |
-| [07 · Kernel Learning Curves](/notes/neural_network_theory/kernel_learning_curves/) | 核谱和目标对齐怎样决定误差？ | 可解序列代理与随机设计自洽描述 |
-| [08 · Lazy Training 与 Mean Field](/notes/neural_network_theory/lazy_and_mean_field/) | 哪种无限宽极限保留特征移动？ | 粒子到分布的极限理论 |
+| [03 · 无限宽网络：GP 与 NTK](/notes/neural_network_theory/wide_networks/) | 随机函数先验与切线训练保留了网络的哪些对象？ | 有限输入集上的 GP 极限；精确时变核恒等式与条件性冻结动力学 |
+| [04 · Lazy Training 与 Mean Field](/notes/neural_network_theory/lazy_and_mean_field/) | 哪种极限允许特征分布发生有限移动？ | 相应参数化下的平均场极限 |
 
-### III · 深度、优化动力学与表征形成
+### III · 深度与表征形成
 
 | Note | 核心问题 | 理论层次 |
 | --- | --- | --- |
-| [09 · 深度线性网络](/notes/neural_network_theory/deep_linear/) | 相同函数类为何有平台与快慢学习？ | 对齐、平衡分支精确解 |
-| [10 · Implicit Bias](/notes/neural_network_theory/implicit_bias/) | 插值解和分类方向由什么选择？ | 线性模型定理与参数化机制 |
-| [11 · 非线性特征涌现](/notes/neural_network_theory/nonlinear_teacher_student/) | 隐藏单元怎样向不同教师专门化？ | Gaussian 新样本在线闭合 |
-| [12 · 层级组合学习](/notes/neural_network_theory/hierarchical_learning/) | 最终监督怎样传到潜在层级？ | 受限模型精确推导与研究型假设 |
+| [05 · 深度参数化与隐式偏置](/notes/neural_network_theory/deep_optimization/) | 参数分解怎样同时改变启动时间与长期解选择？ | 对齐平衡分支精确可解；分类方向与因子偏置均保留相应条件 |
+| [06 · Teacher–Student：恢复与专门化](/notes/neural_network_theory/teacher_student_theory/) | 从恢复一个方向到隐藏单元分工，需要哪些序参量？ | Hebbian 高维基线；RS 容量方法；独立新样本 Gaussian 委员会机闭合 |
+| [07 · 层级组合学习](/notes/neural_network_theory/hierarchical_learning/) | 最终监督何时能显露可复用的组合结构？ | 明确的机制模型与研究型推导 |
 
-### IV · 记忆、Grokking 与集体动力学
-
-| Note | 核心问题 | 理论层次 |
-| --- | --- | --- |
-| [13 · Grokking 与延迟泛化](/notes/neural_network_theory/grokking/) | 为什么训练拟合远早于测试改善？ | 线性精确机制与实际模加法训练 |
-| [14 · SGD 的统计物理](/notes/neural_network_theory/sgd/) | 随机梯度什么时候能用温度描述？ | 局部 OU 精确解与扩散近似 |
-| [15 · Hopfield 记忆](/notes/neural_network_theory/hopfield/) | 模式如何成为吸引子？容量从哪来？ | 能量下降、低负载与自洽近似 |
-| [16 · 随机循环网络](/notes/neural_network_theory/random_rnn/) | 非对称随机反馈怎样产生混沌？ | 动力学平均场与有限网络检验 |
-
-### V · Scaling Laws 与损失曲线
+### IV · 记忆与集体动力学
 
 | Note | 核心问题 | 理论层次 |
 | --- | --- | --- |
-| [17 · Time Scaling](/notes/neural_network_theory/time_scaling/) | 指数模态怎样叠加成损失幂律？ | 固定谱精确解与连续谱渐近 |
-| [18 · Data Scaling](/notes/neural_network_theory/data_scaling/) | 数据指数怎样来自目标谱与噪声？ | 高斯序列代理的偏差–方差推导 |
-| [19 · Model Scaling](/notes/neural_network_theory/model_scaling/) | 模型增大怎样扩展可表示模态？ | 嵌套正交特征的可解模型 |
-| [20 · Compute-Optimal Scaling](/notes/neural_network_theory/compute_scaling/) | 固定计算量怎样配置模型与数据？ | 给定损失和成本后的精确优化 |
+| [08 · Grokking 与延迟泛化](/notes/neural_network_theory/grokking/) | 训练拟合与测试改善为何具有不同时间尺度？ | 线性机制精确；非线性实验与有效解释 |
+| [09 · SGD 的统计物理](/notes/neural_network_theory/sgd/) | 随机梯度什么时候可以用平衡与温度描述？ | 局部线性噪声模型精确；SGD 扩散为近似 |
+| [10 · Hopfield 记忆](/notes/neural_network_theory/hopfield/) | 模式怎样成为能够从线索抵达的吸引子？ | 低负载平均场；广延负载需自洽修正 |
+| [11 · 随机循环网络](/notes/neural_network_theory/random_rnn/) | 非对称反馈怎样形成相关活动与混沌？ | 非对称稠密随机耦合的无限规模极限 |
+
+### V · Scaling Laws
+
+| Note | 核心问题 | 理论层次 |
+| --- | --- | --- |
+| [12 · Scaling Laws：谱动力学与计算最优](/notes/neural_network_theory/scaling_laws/) | 时间、数据、模型与计算怎样共同限制学习分辨率？ | 固定谱与序列模型可解；经验标度依赖观测和成本假设 |
+
+Scaling Laws 沿 [时间标度](/notes/neural_network_theory/scaling_laws/#time-scaling) → [数据标度](/notes/neural_network_theory/scaling_laws/#data-scaling) → [模型标度](/notes/neural_network_theory/scaling_laws/#model-scaling) → [计算最优](/notes/neural_network_theory/scaling_laws/#compute-scaling) 展开，从同一个谱风险分解讨论四种资源限制。
 
 ## 几条贯穿的理论主线
 
-**谱与标度主线：** 01 → 02 → 03 → 06 → 07 → 17 → 18 → 19 → 20。先区分训练与测试，再把优化时间、数据规模、表示容量和计算预算分别定义。
+**谱与泛化：** 01 → 02 → 03 → 12。从固定设计与随机矩阵进入核谱，最后比较时间、数据、容量与预算如何限制可恢复方向。
 
-**动力学与特征主线：** 01 → 09 → 10 → 04 → 11 → 08 → 12 → 13。从深度参数化进入重叠动力学，最后比较慢松弛与结构化表示的形成。
+**路径与表征：** 01 → 05 → 03 → 04 → 06 → 07 → 08。从参数化几何和切线参照进入分布移动、单元专门化与层级信号，再辨认延迟泛化中的不同机制。
 
-**统计物理主线：** 04 → 14 → 15 → 16，再回到 08 与 11。关注序参量、概率流、自洽相关函数与极限条件。
-
-其中 **01、09、06、07、18、13** 连接了谱动力学、深度参数化、核学习曲线与延迟泛化，也是这套笔记中相互联系最紧密的几个主题。
+**集体动力学：** 06 → 09 → 10 → 11，再回到 04。将重叠、概率流、检索序与自洽时间相关放在各自适用的物理模型中比较。
 
 ## 统一记号与容易混淆的量 {#notation}
 
 | 记号 | 约定 |
 | --- | --- |
-| $D$ | 训练样本数；Note 20 中的数据量须另按 token 或独立样本定义 |
+| $D$ | 训练样本数；Note 12 中的数据量须另按 token 或独立样本定义 |
 | $d$ | 输入维数；不等于模型参数数 |
 | $N$ | 隐藏宽度、随机特征数或表示秩，具体含义在每篇说明 |
 | $X,H=X^\top X/D$ | 设计矩阵与经验二阶矩 |
 | $\Sigma=\mathbb E[xx^\top]$ | 独立测试输入的二阶矩 |
-| $\sigma_\varepsilon^2$ 或 $\sigma^2$ | 标签或序列观测噪声方差；Note 09 的 $\sigma_i$ 是信号奇异值 |
+| $\sigma_\varepsilon^2$ 或 $\sigma^2$ | 标签或序列观测噪声方差；Note 05 的 $\sigma_i$ 是信号奇异值 |
 | $\eta_i,\psi_i,a_i$ | 总体核本征值、本征函数、目标 $L^2$ 系数 |
 | $K_t=J_tJ_t^\top/D$ | 已吸收样本归一化的训练 NTK |
 | $\lambda$ | 采用平均平方损失时的 ridge 参数；未平均损失使用 $\Lambda=D\lambda$ |
@@ -83,27 +85,13 @@
 
 同一篇可能同时出现这四层中的几层，正文会逐步标明边界。一个漂亮的 toy model 不被用来宣称已经解决完整神经网络。
 
-## 数值图与复现实验 {#reproduce}
+## 数值结果与图表 {#reproduce}
 
-全系列配有 **25 张数值图，涵盖模型计算、模加法训练和函数结构分析**，记录了本文模型的计算结果，提供 SVG 与 PNG。模加法实验还记录了四个未达到完整泛化的探索对照，避免只展示一个成功配置。
+全系列配有 **25 张数值图，涵盖模型计算、模加法训练和函数结构分析**。各图注明模型参数、观测量和适用条件。模加法实验还保留了四个未达到完整泛化的探索对照，以便比较成功配置与失败配置之间的差异。
 
-下载：[完整正文、图和复现包](reproducibility.zip) · [20 篇数值脚本](experiments.py) · [补充推导的数值核对](extended_checks.py) · [补充计算结果](extended_diagnostics.json) · [模加法训练脚本](modular_grokking.py) · [依赖列表](requirements.txt) · [篇目配置](series.json) · [文献来源表](sources.json)。
+这些数值结果用于核对理论预测与观察机制。若要估计统计规律，还需要比较更多随机初始化、样本规模与误差条，并将超参数选择与测试集评价分开。
 
-解压后在包根目录运行：
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python experiments.py --all
-python experiments.py --note 9
-python extended_checks.py
-python modular_grokking.py
-```
-
-每篇实验写入对应目录的 `figures/`，保存 `experiment.svg`、`experiment.png` 和 `diagnostics.json`。模加法输出训练历史、超参数、权重与固定划分；全部随机实验使用显式种子。浮点库、硬件与依赖版本可能造成细小差异，尤其不能把同一随机种子当成跨平台逐位一致的保证。
-
-图表脚本使用 NumPy、SciPy 与 Matplotlib，模加法无需 PyTorch 或 GPU。这里的轻量实验用来核对理论预测与观察机制；若估计统计规律，应增加种子、样本规模与误差条，并把超参数选择从测试集评价中分离。
+[数值记录与补充材料](reproducibility.zip) · [文献来源表](sources.json)
 
 ## 从这些模型到真实网络
 

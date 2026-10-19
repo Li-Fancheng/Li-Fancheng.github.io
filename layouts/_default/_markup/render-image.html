@@ -66,6 +66,8 @@
     {{ $note_policy = . }}
     {{ $note_figure = true }}
     {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
   {{ else }}
     {{ errorf "Missing display width for neural theory figure: %s" $key }}
   {{ end }}

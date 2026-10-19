@@ -2,12 +2,13 @@
 """Reproduce the 20 numerical figures in these notes. Not a benchmark for large neural networks.
 
 Run from anywhere: python experiments.py --note 9; python experiments.py --all
-Keep this file beside series.json. Each experiment uses a local, fixed RNG seed.
-Figures and numerical diagnostics are written beside the corresponding body.md.
+Keep this file beside experiments.json. Each experiment uses a local, fixed RNG seed.
+Experiment IDs stay fixed when public notes are consolidated.
 """
 import argparse
 import json
 import os
+import shutil
 from pathlib import Path
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/neural-theory-matplotlib")
@@ -22,7 +23,7 @@ from scipy.linalg import solve_continuous_lyapunov
 from scipy.special import erf, expit, gammainc, gamma
 
 ROOT = Path(__file__).resolve().parent
-SERIES = json.loads((ROOT / "series.json").read_text())
+EXPERIMENTS = json.loads((ROOT / "experiments.json").read_text())
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
     "axes.spines.top": False, "axes.spines.right": False,
     "axes.prop_cycle": plt.cycler(color=["#2563eb", "#e87924", "#059669", "#9333ea"]),
@@ -34,7 +35,8 @@ def canvas():
 
 
 def finish(n, fig, stats):
-    out = ROOT / SERIES[n-1]["slug"] / "figures"
+    experiment = EXPERIMENTS[n-1]
+    out = ROOT / experiment["slug"] / "figures"
     out.mkdir(parents=True, exist_ok=True)
     for ax in fig.axes:
         if ax.get_legend_handles_labels()[0]:
@@ -44,7 +46,13 @@ def finish(n, fig, stats):
     fig.savefig(out / "experiment.png", dpi=220)
     plt.close(fig)
     (out / "diagnostics.json").write_text(json.dumps(stats, indent=2, allow_nan=False)+"\n")
-    print(f"Note {n:02}: {SERIES[n-1]['slug']} — {stats}", flush=True)
+    if "figure" in experiment:
+        public = ROOT / experiment["figure"]
+        public.parent.mkdir(parents=True, exist_ok=True)
+        for extension in ("svg", "png"):
+            shutil.copyfile(out / f"experiment.{extension}", public.with_suffix(f".{extension}"))
+        shutil.copyfile(out / "diagnostics.json", public.with_suffix(".json"))
+    print(f"Experiment {n:02}: {experiment['slug']} — {stats}", flush=True)
 
 
 def note01():

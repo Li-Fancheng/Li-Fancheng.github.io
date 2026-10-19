@@ -9,6 +9,7 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/neural-theory-matplotlib")
 os.environ.setdefault("XDG_CACHE_HOME", "/tmp/neural-theory-cache")
 from pathlib import Path
 import json
+import shutil
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -33,6 +34,15 @@ def save(fig,slug,name):
     fig.savefig(dest/(name+".svg"),metadata={"Date":None})
     fig.savefig(dest/(name+".png"),dpi=220)
     plt.close(fig)
+    merged_owner = {
+        ("time_scaling", "critical_spectrum"): "scaling_laws",
+        ("implicit_bias", "initialization_bias"): "deep_optimization",
+    }.get((slug, name))
+    if merged_owner:
+        public = ROOT/merged_owner/"figures"
+        public.mkdir(parents=True,exist_ok=True)
+        for extension in ("svg","png"):
+            shutil.copyfile(dest/(name+"."+extension), public/(name+"."+extension))
 
 
 # Scalar early stopping: numerical optimum of the full risk.

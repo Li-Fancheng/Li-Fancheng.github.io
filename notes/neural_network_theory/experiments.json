@@ -1,0 +1,216 @@
+[
+  {
+    "number": 1,
+    "volume": "I · 泛化与高维模型",
+    "slug": "linear_regression",
+    "title": "线性回归的完整动力学：从梯度下降到泛化",
+    "subtitle": "协方差本征模、早停与谱滤波",
+    "level": "有限维精确可解",
+    "summary": "从经验损失的梯度流逐模求解，区分训练误差、参数误差与测试风险，推导早停和 ridge 的不同滤波器。",
+    "note_number": 1,
+    "figure": "linear_learning/figures/linear_regression"
+  },
+  {
+    "number": 2,
+    "volume": "I · 泛化与高维模型",
+    "slug": "double_descent",
+    "title": "Double Descent：为什么更多参数有时改善泛化",
+    "subtitle": "插值阈值、Wishart 逆矩与 Marchenko–Pastur 谱",
+    "level": "Gaussian 模型精确期望与高维渐近",
+    "summary": "推导最小范数回归两侧的风险公式，用小特征值解释噪声放大，并区分模型增大与任务改变。",
+    "note_number": 1,
+    "figure": "linear_learning/figures/double_descent"
+  },
+  {
+    "number": 3,
+    "volume": "I · 泛化与高维模型",
+    "slug": "random_features",
+    "title": "Random Features：非线性网络的可解替身",
+    "subtitle": "固定隐藏层、随机核与三个规模极限",
+    "level": "有限特征精确求解；核极限渐近",
+    "summary": "从随机 Fourier 特征构造核近似，求解输出层训练，解释特征数、数据量、输入维数的竞争。",
+    "note_number": 2,
+    "figure": "kernel_methods/figures/random_features"
+  },
+  {
+    "number": 4,
+    "volume": "I · 泛化与高维模型",
+    "slug": "teacher_student",
+    "title": "Teacher–Student 模型：恢复、样本复杂度与相变",
+    "subtitle": "从方向重叠到版本空间",
+    "level": "Hebbian 基线渐近可解；副本为方法框架",
+    "summary": "推导感知机的角度泛化误差与 Hebbian 学习曲线，建立序参量、版本空间和相变的准确含义。",
+    "note_number": 6,
+    "figure": "teacher_student_theory/figures/teacher_student"
+  },
+  {
+    "number": 5,
+    "volume": "II · 无限宽与特征学习",
+    "slug": "gaussian_process",
+    "title": "无限宽随机网络为什么是 Gaussian Process",
+    "subtitle": "函数先验、协方差递推与深度传播",
+    "level": "固定有限输入集上的无限宽极限",
+    "summary": "从条件中心极限定理得到 NNGP，计算 ReLU 协方差核，并分析相关性固定点及极限顺序。",
+    "note_number": 3,
+    "figure": "wide_networks/figures/gaussian_process"
+  },
+  {
+    "number": 6,
+    "volume": "II · 无限宽与特征学习",
+    "slug": "ntk",
+    "title": "NTK：非线性网络怎样产生线性训练动力学",
+    "subtitle": "切线特征、冻结核与训练集外预测",
+    "level": "固定核动力学精确；冻结核为条件性极限",
+    "summary": "由参数梯度流推导时变 NTK，再求解冻结核下的残差、测试预测和 RKHS 插值，并给出失效诊断。",
+    "note_number": 3,
+    "figure": "wide_networks/figures/ntk"
+  },
+  {
+    "number": 7,
+    "volume": "II · 无限宽与特征学习",
+    "slug": "kernel_learning_curves",
+    "title": "Kernel Learning Curves：数据谱怎样决定泛化",
+    "subtitle": "Mercer 模态、等效正则化与目标对齐",
+    "level": "总体代理精确；随机设计学习曲线需附加假设",
+    "summary": "区分经验核和总体核，在高斯序列模型中推导偏差与方差，并介绍随机设计的自洽近似。",
+    "note_number": 2,
+    "figure": "kernel_methods/figures/kernel_learning_curves"
+  },
+  {
+    "number": 8,
+    "volume": "II · 无限宽与特征学习",
+    "slug": "lazy_and_mean_field",
+    "title": "从 Lazy Training 到 Feature Learning",
+    "subtitle": "粒子系统、分布梯度流与不同的无限宽极限",
+    "level": "相应参数化下的平均场极限",
+    "summary": "比较 NTK 和平均场参数化，逐步推导连续性方程、能量耗散和时变核，说明平均场并非有限维闭合。",
+    "note_number": 4
+  },
+  {
+    "number": 9,
+    "volume": "III · 深度与优化动力学",
+    "slug": "deep_linear",
+    "title": "深度线性网络：线性函数的非线性学习动力学",
+    "subtitle": "平衡不变量、Logistic 解与平台时间",
+    "level": "对齐和平衡条件下精确可解",
+    "summary": "从两层梯度流得到守恒量与有效权重的 Logistic 解，再推广至深层模态学习和初始化时间尺度。",
+    "note_number": 5,
+    "figure": "deep_optimization/figures/deep_linear"
+  },
+  {
+    "number": 10,
+    "volume": "III · 深度与优化动力学",
+    "slug": "implicit_bias",
+    "title": "Implicit Bias：梯度下降为什么选择某些解",
+    "subtitle": "最小范数、最大间隔与矩阵分解的边界",
+    "level": "线性模型定理；因子化结论依赖条件",
+    "summary": "比较平方损失与 logistic 损失的解选择，利用 KKT 条件解释最大间隔方向，并谨慎讨论低秩偏置。",
+    "note_number": 5,
+    "figure": "deep_optimization/figures/implicit_bias"
+  },
+  {
+    "number": 11,
+    "volume": "III · 深度与优化动力学",
+    "slug": "nonlinear_teacher_student",
+    "title": "非线性 Teacher–Student 网络中的特征涌现",
+    "subtitle": "Overlap 闭合、专门化与对称平台",
+    "level": "Gaussian 新样本在线极限下闭合",
+    "summary": "推导委员会机的 Q、R 动力学及有限学习率项，用高斯积分计算误差，分析专门化和对称破缺。",
+    "note_number": 6,
+    "figure": "teacher_student_theory/figures/nonlinear_teacher_student"
+  },
+  {
+    "number": 12,
+    "volume": "III · 深度与优化动力学",
+    "slug": "hierarchical_learning",
+    "title": "层级组合学习：最终监督怎样塑造隐藏特征",
+    "subtitle": "可辨识性、链式梯度与层级形成时间",
+    "level": "明确的机制模型与研究型推导",
+    "summary": "用可计算的层级奇偶任务展示边缘相关缺失和链式学习瓶颈，建立层级表征的测量与可检验预测。",
+    "note_number": 7
+  },
+  {
+    "number": 13,
+    "volume": "IV · 记忆与集体动力学",
+    "slug": "grokking",
+    "title": "Grokking：为什么泛化会在记忆之后很久出现",
+    "subtitle": "慢模态、准确率阈值与结构化表示",
+    "level": "线性机制精确；非线性实验与有效解释",
+    "summary": "求解固定谱下的延迟泛化，比较连续风险与准确率，配套模加法网络实验及 Fourier 表征诊断。",
+    "note_number": 8
+  },
+  {
+    "number": 14,
+    "volume": "IV · 记忆与集体动力学",
+    "slug": "sgd",
+    "title": "SGD 的统计物理：随机梯度产生什么动力学",
+    "subtitle": "OU 过程、Lyapunov 方程与非平衡概率流",
+    "level": "局部线性噪声模型精确；SGD 扩散为近似",
+    "summary": "从小批量梯度协方差推导局部 SDE，求解驻态协方差与离散修正，检验温度比喻何时成立。",
+    "note_number": 9
+  },
+  {
+    "number": 15,
+    "volume": "IV · 记忆与集体动力学",
+    "slug": "hopfield",
+    "title": "Hopfield 模型：记忆为什么可以是吸引子",
+    "subtitle": "能量下降、检索重叠与串扰",
+    "level": "低负载平均场；广延负载需自洽修正",
+    "summary": "从 Hebbian 耦合证明异步更新的能量下降，推导单模式检索方程，并解释容量与自旋玻璃的条件。",
+    "note_number": 10
+  },
+  {
+    "number": 16,
+    "volume": "IV · 记忆与集体动力学",
+    "slug": "random_rnn",
+    "title": "随机循环网络：从平均场到混沌转变",
+    "subtitle": "稳定性圆谱、时间相关与动力学平均场",
+    "level": "非对称稠密随机耦合的无限规模极限",
+    "summary": "推导零态失稳和 DMFT 相关函数方程，区分方差自洽、相关衰减与正 Lyapunov 指数。",
+    "note_number": 11
+  },
+  {
+    "number": 17,
+    "volume": "V · Scaling Laws",
+    "slug": "time_scaling",
+    "title": "训练损失为什么呈现幂律衰减",
+    "subtitle": "松弛速率谱的 Laplace 变换",
+    "level": "固定谱模型精确；连续谱为渐近",
+    "summary": "从指数模态叠加推导时间幂律、截断窗口与零模平台，并区分速率密度与损失加权谱。",
+    "note_number": 12,
+    "figure": "scaling_laws/figures/time_scaling"
+  },
+  {
+    "number": 18,
+    "volume": "V · Scaling Laws",
+    "slug": "data_scaling",
+    "title": "Data Scaling：数据幂律的谱起源",
+    "subtitle": "核谱、目标尾部、噪声与有效维数",
+    "level": "高斯序列代理的可解标度",
+    "summary": "逐项估计谱偏差与方差，推导最优正则化和数据指数，说明平滑度、噪声及采样假设的作用。",
+    "note_number": 12,
+    "figure": "scaling_laws/figures/data_scaling"
+  },
+  {
+    "number": 19,
+    "volume": "V · Scaling Laws",
+    "slug": "model_scaling",
+    "title": "Model Scaling：模型规模限制哪些可学习模态",
+    "subtitle": "谱截断、估计误差与容量饱和",
+    "level": "嵌套正交特征模型可解",
+    "summary": "计算有限秩模型的误差尾部和样本方差，推导最优秩与数据依赖，并比较随机特征和可学习表示。",
+    "note_number": 12,
+    "figure": "scaling_laws/figures/model_scaling"
+  },
+  {
+    "number": 20,
+    "volume": "V · Scaling Laws",
+    "slug": "compute_scaling",
+    "title": "Compute-Optimal Scaling：模型和数据怎样共同增长",
+    "subtitle": "约束优化、拟合不确定性与训练预算",
+    "level": "给定损失模型下精确优化",
+    "summary": "在 C=kND 约束下推导最优规模、常数和计算指数，比较 Kaplan 与 Chinchilla，并检验成本模型的边界。",
+    "note_number": 12,
+    "figure": "scaling_laws/figures/compute_scaling"
+  }
+]

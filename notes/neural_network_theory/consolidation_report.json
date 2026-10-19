@@ -1,0 +1,321 @@
+{
+  "date": "2026-10-19",
+  "original_article_count": 20,
+  "previous_article_count": 17,
+  "current_article_count": 12,
+  "active_notes": [
+    {
+      "number": 1,
+      "slug": "linear_learning",
+      "characters": 19089,
+      "Chinese_characters": 7497,
+      "display_equations": 53
+    },
+    {
+      "number": 2,
+      "slug": "kernel_methods",
+      "characters": 16073,
+      "Chinese_characters": 7079,
+      "display_equations": 40
+    },
+    {
+      "number": 3,
+      "slug": "wide_networks",
+      "characters": 17479,
+      "Chinese_characters": 7392,
+      "display_equations": 42
+    },
+    {
+      "number": 4,
+      "slug": "lazy_and_mean_field",
+      "characters": 11311,
+      "Chinese_characters": 4975,
+      "display_equations": 27
+    },
+    {
+      "number": 5,
+      "slug": "deep_optimization",
+      "characters": 14617,
+      "Chinese_characters": 6278,
+      "display_equations": 34
+    },
+    {
+      "number": 6,
+      "slug": "teacher_student_theory",
+      "characters": 15060,
+      "Chinese_characters": 6413,
+      "display_equations": 36
+    },
+    {
+      "number": 7,
+      "slug": "hierarchical_learning",
+      "characters": 10623,
+      "Chinese_characters": 5946,
+      "display_equations": 17
+    },
+    {
+      "number": 8,
+      "slug": "grokking",
+      "characters": 14094,
+      "Chinese_characters": 7256,
+      "display_equations": 24
+    },
+    {
+      "number": 9,
+      "slug": "sgd",
+      "characters": 10121,
+      "Chinese_characters": 4649,
+      "display_equations": 19
+    },
+    {
+      "number": 10,
+      "slug": "hopfield",
+      "characters": 12145,
+      "Chinese_characters": 5659,
+      "display_equations": 26
+    },
+    {
+      "number": 11,
+      "slug": "random_rnn",
+      "characters": 11192,
+      "Chinese_characters": 5127,
+      "display_equations": 25
+    },
+    {
+      "number": 12,
+      "slug": "scaling_laws",
+      "characters": 26655,
+      "Chinese_characters": 12343,
+      "display_equations": 58
+    }
+  ],
+  "merges": [
+    {
+      "new_slug": "linear_learning",
+      "new_note_number": 1,
+      "source_slugs": [
+        "linear_regression",
+        "double_descent"
+      ],
+      "source_note_numbers": [
+        1,
+        2
+      ],
+      "characters_before": 27332,
+      "characters_after": 19089,
+      "figures_preserved": 2,
+      "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+    },
+    {
+      "new_slug": "kernel_methods",
+      "new_note_number": 2,
+      "source_slugs": [
+        "random_features",
+        "kernel_learning_curves"
+      ],
+      "source_note_numbers": [
+        3,
+        7
+      ],
+      "characters_before": 23853,
+      "characters_after": 16073,
+      "figures_preserved": 2,
+      "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+    },
+    {
+      "new_slug": "wide_networks",
+      "new_note_number": 3,
+      "source_slugs": [
+        "gaussian_process",
+        "ntk"
+      ],
+      "source_note_numbers": [
+        5,
+        6
+      ],
+      "characters_before": 25969,
+      "characters_after": 17479,
+      "figures_preserved": 2,
+      "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+    },
+    {
+      "new_slug": "deep_optimization",
+      "new_note_number": 5,
+      "source_slugs": [
+        "deep_linear",
+        "implicit_bias"
+      ],
+      "source_note_numbers": [
+        9,
+        10
+      ],
+      "characters_before": 26879,
+      "characters_after": 14617,
+      "figures_preserved": 3,
+      "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+    },
+    {
+      "new_slug": "teacher_student_theory",
+      "new_note_number": 6,
+      "source_slugs": [
+        "teacher_student",
+        "nonlinear_teacher_student"
+      ],
+      "source_note_numbers": [
+        4,
+        11
+      ],
+      "characters_before": 23748,
+      "characters_after": 15060,
+      "figures_preserved": 2,
+      "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+    }
+  ],
+  "history": [
+    {
+      "from": 20,
+      "to": 17,
+      "merges": [
+        {
+          "new_slug": "scaling_laws",
+          "new_note_number": 17,
+          "source_notes": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "source_slugs": [
+            "time_scaling",
+            "data_scaling",
+            "model_scaling",
+            "compute_scaling"
+          ],
+          "characters_before": 44112,
+          "characters_after": 26651,
+          "figures_preserved": 5,
+          "sections": [
+            "joint-risk",
+            "time-scaling",
+            "data-scaling",
+            "model-scaling",
+            "compute-scaling",
+            "interpretation",
+            "summary"
+          ],
+          "editorial_change": "One connected article, with shared definitions, complete core derivations, fewer repeated introductions and comparisons, and a unified conclusion."
+        }
+      ]
+    },
+    {
+      "from": 17,
+      "to": 12,
+      "merges": [
+        {
+          "new_slug": "linear_learning",
+          "new_note_number": 1,
+          "source_slugs": [
+            "linear_regression",
+            "double_descent"
+          ],
+          "source_note_numbers": [
+            1,
+            2
+          ],
+          "characters_before": 27332,
+          "characters_after": 19089,
+          "figures_preserved": 2,
+          "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+        },
+        {
+          "new_slug": "kernel_methods",
+          "new_note_number": 2,
+          "source_slugs": [
+            "random_features",
+            "kernel_learning_curves"
+          ],
+          "source_note_numbers": [
+            3,
+            7
+          ],
+          "characters_before": 23853,
+          "characters_after": 16073,
+          "figures_preserved": 2,
+          "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+        },
+        {
+          "new_slug": "wide_networks",
+          "new_note_number": 3,
+          "source_slugs": [
+            "gaussian_process",
+            "ntk"
+          ],
+          "source_note_numbers": [
+            5,
+            6
+          ],
+          "characters_before": 25969,
+          "characters_after": 17479,
+          "figures_preserved": 2,
+          "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+        },
+        {
+          "new_slug": "deep_optimization",
+          "new_note_number": 5,
+          "source_slugs": [
+            "deep_linear",
+            "implicit_bias"
+          ],
+          "source_note_numbers": [
+            9,
+            10
+          ],
+          "characters_before": 26879,
+          "characters_after": 14617,
+          "figures_preserved": 3,
+          "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+        },
+        {
+          "new_slug": "teacher_student_theory",
+          "new_note_number": 6,
+          "source_slugs": [
+            "teacher_student",
+            "nonlinear_teacher_student"
+          ],
+          "source_note_numbers": [
+            4,
+            11
+          ],
+          "characters_before": 23748,
+          "characters_after": 15060,
+          "figures_preserved": 2,
+          "editorial_change": "One connected argument with a new preface, integrated definitions and core derivations, contextual transitions and a joint conclusion."
+        }
+      ]
+    }
+  ],
+  "legacy_redirects": {
+    "time_scaling": "scaling_laws/#time-scaling",
+    "kernel_learning_curves": "kernel_methods/#learning-curves",
+    "double_descent": "linear_learning/#interpolation",
+    "gaussian_process": "wide_networks/#gaussian-process",
+    "nonlinear_teacher_student": "teacher_student_theory/#committee",
+    "linear_regression": "linear_learning/#regression",
+    "ntk": "wide_networks/#ntk",
+    "data_scaling": "scaling_laws/#data-scaling",
+    "deep_linear": "deep_optimization/#deep-linear",
+    "teacher_student": "teacher_student_theory/#perceptron",
+    "compute_scaling": "scaling_laws/#compute-scaling",
+    "random_features": "kernel_methods/#random-features",
+    "implicit_bias": "deep_optimization/#implicit-bias",
+    "model_scaling": "scaling_laws/#model-scaling"
+  },
+  "unique_figures": 25,
+  "duplicate_figure_placements_removed": 1,
+  "experiment_registry": {
+    "file": "experiments.json",
+    "experiments": 20,
+    "IDs_preserved": true
+  },
+  "web_prose": "No code blocks, execution commands or exercises."
+}

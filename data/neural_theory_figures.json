@@ -1,102 +1,152 @@
 {
-  "linear_regression/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "double_descent/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "random_features/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "teacher_student/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "gaussian_process/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "ntk/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "kernel_learning_curves/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
   "lazy_and_mean_field/figures/experiment": {
     "width": 900,
-    "kind": "model"
-  },
-  "deep_linear/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "implicit_bias/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "nonlinear_teacher_student/figures/experiment": {
-    "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "hierarchical_learning/figures/experiment": {
     "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "grokking/figures/experiment": {
     "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "sgd/figures/experiment": {
     "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "hopfield/figures/experiment": {
     "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "random_rnn/figures/experiment": {
     "width": 900,
-    "kind": "model"
-  },
-  "time_scaling/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "data_scaling/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "model_scaling/figures/experiment": {
-    "width": 900,
-    "kind": "model"
-  },
-  "compute_scaling/figures/experiment": {
-    "width": 900,
-    "kind": "model"
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "grokking/figures/modular_arithmetic": {
     "width": 900,
-    "kind": "numerical-training"
-  },
-  "implicit_bias/figures/initialization_bias": {
-    "width": 900,
-    "kind": "numerical-analysis"
+    "kind": "numerical-training",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "hopfield/figures/retrieval_capacity": {
     "width": 900,
-    "kind": "numerical-analysis"
-  },
-  "time_scaling/figures/critical_spectrum": {
-    "width": 900,
-    "kind": "numerical-analysis"
+    "kind": "numerical-analysis",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   },
   "grokking/figures/logit_symmetry": {
     "width": 900,
-    "kind": "numerical-analysis"
+    "kind": "numerical-analysis",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "scaling_laws/figures/time_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "scaling_laws/figures/data_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "scaling_laws/figures/model_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "scaling_laws/figures/compute_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "scaling_laws/figures/critical_spectrum": {
+    "width": 900,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "linear_learning/figures/linear_regression": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "linear_learning/figures/double_descent": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "kernel_methods/figures/random_features": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "kernel_methods/figures/kernel_learning_curves": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "wide_networks/figures/gaussian_process": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "wide_networks/figures/ntk": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "deep_optimization/figures/deep_linear": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "deep_optimization/figures/implicit_bias": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "teacher_student_theory/figures/teacher_student": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "teacher_student_theory/figures/nonlinear_teacher_student": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
+  },
+  "deep_optimization/figures/initialization_bias": {
+    "width": 900,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 979,
+    "intrinsic_height": 355
   }
 }

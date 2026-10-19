@@ -1,18 +1,18 @@
 {
   "verified_on": "2026-10-19",
   "hugo_version": "0.136.5 extended",
-  "series_pages": 21,
+  "series_pages": 13,
   "model_figures": 23,
   "training_figures": 1,
-  "source_to_html_equations_preserved": 1764,
-  "browser_equations_including_directory": 1780,
+  "source_to_html_equations_preserved": 2537,
+  "browser_equations_including_directory": 2537,
   "katex_errors": 0,
   "browser_viewport_widths": [
     390,
     1440
   ],
   "pages_with_horizontal_overflow": 0,
-  "internal_references_checked": 467,
+  "internal_references_checked": 497,
   "broken_references": 0,
   "numerical_checks": [
     "deep-linear closed form vs ODE: max error < 1e-7",
@@ -28,10 +28,11 @@
     "matplotlib": "3.11.2"
   },
   "scope": "Local Hugo build and single-seed numerical experiments. No claim of universal grokking or independent mathematical peer review.",
-  "notes": 20,
+  "notes": 12,
   "editorial_revision": {
     "exercise_sections_removed": 20,
-    "positioning": "Personal study notes and literature review"
+    "positioning": "Personal study notes and literature review",
+    "web_code_removed": true
   },
   "structure_figures": 1,
   "extended_numerical_checks": {
@@ -94,11 +95,113 @@
       "relative_projection_error": 0.5642910739363056
     }
   },
-  "content_expansion": {
+  "equation_scope": "12 active notes plus the series directory",
+  "figure_placements": 25,
+  "unique_figures": 25,
+  "previous_content_expansion": {
     "notes_expanded": 20,
     "source_characters_before": 65288,
     "source_characters_after": 117872,
     "new_derivation_subsections": 109,
     "figures_total": 25
-  }
+  },
+  "review_numerical_checks": {
+    "ridge_leave_one_out_max_error": 1.7763568394002505e-15,
+    "GP_evidence_derivative_error": 1.2989387343509406e-11,
+    "NTK_initialization_covariance_error": 8.881784197001252e-16,
+    "posterior_rank_one_error": 4.440892098500626e-14,
+    "deep_linear_Gram_balance_derivative": 7.105427357601002e-15,
+    "OU_component_covariance_error": 0.0,
+    "OU_mean_loss_minus_half_trace_diffusion": 0.0,
+    "grokking_projection_Pythagoras_error": 0.0,
+    "grokking_full_grid_cross_entropy": {
+      "original": 2.217334296360878,
+      "group_average": 1.8288853030441616
+    },
+    "noisy_teacher_classification": {
+      "theory": 0.3159187291091205,
+      "Monte_Carlo": 0.31647,
+      "samples": 600000
+    },
+    "compute_training_pass_optimum": {
+      "T": 9.358822251523533,
+      "relative_marginal_error": 9.675876960707509e-08
+    },
+    "joint_time_data_model_risk": {
+      "coefficient_ODE_max_error": 4.75264272381537e-12,
+      "analytic_risk": 0.0844369549354894,
+      "Monte_Carlo_risk": 0.08448161481521688,
+      "samples": 60000
+    },
+    "status": "passed"
+  },
+  "web_prose_checks": {
+    "pages_checked": 13,
+    "rendered_code_elements": 0,
+    "execution_commands": 0,
+    "script_implementation_details": 0,
+    "original_example_paragraph_removed": true
+  },
+  "historical_content_expansion": {
+    "notes_expanded": 20,
+    "characters_before": 117872,
+    "characters_after": 241175,
+    "Chinese_characters_before": 45665,
+    "Chinese_characters_after": 111074,
+    "minimum_length_ratio": 1.9719,
+    "maximum_length_ratio": 2.3869,
+    "minimum_Chinese_prose_ratio": 2.2298,
+    "maximum_Chinese_prose_ratio": 2.6525,
+    "per_note_report": "expansion_report.json",
+    "structure": "Personal study review with contextual prefaces, derivations, related-model comparisons and conclusions. Web prose excludes exercises, code blocks, execution commands and script implementation details."
+  },
+  "legacy_redirect_pages": 14,
+  "content_structure": {
+    "active_notes": 12,
+    "original_notes": 20,
+    "numerical_experiments": 20,
+    "current_structure_report": "consolidation_report.json",
+    "historical_expansion_report": "expansion_report.json",
+    "current_merge_source_notes": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        4,
+        11
+      ]
+    ]
+  },
+  "legacy_redirects_checked": {
+    "time_scaling": "scaling_laws/#time-scaling",
+    "kernel_learning_curves": "kernel_methods/#learning-curves",
+    "double_descent": "linear_learning/#interpolation",
+    "gaussian_process": "wide_networks/#gaussian-process",
+    "nonlinear_teacher_student": "teacher_student_theory/#committee",
+    "linear_regression": "linear_learning/#regression",
+    "ntk": "wide_networks/#ntk",
+    "data_scaling": "scaling_laws/#data-scaling",
+    "deep_linear": "deep_optimization/#deep-linear",
+    "teacher_student": "teacher_student_theory/#perceptron",
+    "compute_scaling": "scaling_laws/#compute-scaling",
+    "random_features": "kernel_methods/#random-features",
+    "implicit_bias": "deep_optimization/#implicit-bias",
+    "model_scaling": "scaling_laws/#model-scaling"
+  },
+  "existing_redirect_regression": "cell_cycle continues to redirect to qbio_course/single_cell_to_population_growth",
+  "image_dimensions_reserved": 25,
+  "image_loading_anchor_shift_pixels": 0
 }

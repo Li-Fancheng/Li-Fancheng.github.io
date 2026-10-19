@@ -78,9 +78,9 @@ sections:
       text: 整理课程学习与文献阅读中的模型、推导和问题，记录对统计物理、生物系统与机器学习的理解。
       items:
         - page: /notes/neural_network_theory
-          label: 神经网络理论 · 五卷 20 篇
+          label: 神经网络理论 · 五卷 12 篇
           title: 神经网络理论与可解模型
-          text: 从谱动力学与高维泛化出发，推导 NTK、深度线性网络、特征学习、Grokking 与 Scaling Laws，附数值图和复现代码。
+          text: 从谱动力学与高维泛化出发，推导 NTK、深度线性网络、特征学习、Grokking 与 Scaling Laws，附完整推导和数值图。
         - page: /notes/qbio_course
           label: 课程笔记 · 2026 秋季
           title: 定量生物学导论
