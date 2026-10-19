@@ -62,6 +62,19 @@ $$
 
 这些系统与 Vertex Model 的联系不在于共享某个形状阈值，而在于都需要明确自由度、约束、驱动和时间窗口。下面按证据链展开。
 
+#### 论文视频 · 斑马鱼正常发育：先看清胚盘铺展的空间过程
+
+<figure class="vertex-video" id="video-rustarazo-epiboly" style="--vertex-video-width: 760px">
+<video controls preload="metadata" playsinline width="4048" height="2304" aria-label="斑马鱼正常发育：先看清胚盘铺展的空间过程" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM7_ESM.mp4">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM7_ESM.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Rustarazo-Calvo 等（2026），Supplementary Video 5。野生型胚胎约 30%–60% epiboly 的光片成像；膜为洋红，细胞外液体为绿色，采样间隔 15 min，标尺 100 μm。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41567-026-03276-6#MOESM7" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM7_ESM.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 左栏是发育时间推进的三维投影；中、右栏分别旋转展示起点和终点的构型。后两栏的转动是观察视角变化，不是胚胎真的按那个方向旋转。视频很短，建议减速后反复拖动比较。
+
+**怎样读物理：** 先用它建立组织位置与空间尺度，再进入下面的局部材料测量。大尺度铺展、局部细胞换邻居和接触长度涨落是三个层次，不能从全胚形状直接读出后两者。
+
 ### 2.2 尾部材料梯度：测出“前方能支撑”与“后方能重塑”
 
 [Mongera 等（2018）](https://doi.org/10.1038/s41586-018-0479-2)的关键是把材料测量放到空间位置上。磁性液滴受驱动后再卸载，液滴的恢复和残余形变用于估计研究窗口内的屈服响应；细胞外间隙成像则提供结构信息。它们比单纯观察细胞移动快慢更接近本构测量。
@@ -133,6 +146,19 @@ $$
 $$
 
 一个分子干预改变的通常是这条路径，而非单一偏导数。“增强黏附后组织更硬还是更软”因此需要补全条件：是否允许新接触？是否改变孔隙与接触寿命？是否保持主动性？这个问题回接 [Note 01 的界面能记账](/notes/vertex_model/foundations/#adhesion-interfaces)，也解释为什么不能直接把实验黏附量等同于经典汇合模型的 $p_0$。
+
+#### 论文视频 · 斑马鱼四种材料条件：盯住同一条细胞接触
+
+<figure class="vertex-video" id="video-rustarazo-contacts" style="--vertex-video-width: 760px">
+<video controls preload="metadata" playsinline width="2024" height="1152" aria-label="斑马鱼四种材料条件：盯住同一条细胞接触" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM4_ESM.mp4">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM4_ESM.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Rustarazo-Calvo 等（2026），Supplementary Video 2。α-catenin-citrine 膜标记为洋红，细胞外液体为青色；采样间隔 10 s，标尺 50 μm。四栏对应原文的不同 α–φ 材料条件。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41567-026-03276-6#MOESM4" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-026-03276-6/MediaObjects/41567_2026_3276_MOESM4_ESM.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 先读四格条件：左列为两种固体样状态，右列为两种流体样状态。再选择一对细胞，看共享接触怎样伸缩，以及周围液体空间是否持续重组。比较联合光遗传与渗透干预后，图中看起来同样“拥挤”的组织是否仍有不同动态。
+
+**怎样读物理：** 这里将“密度与界面作用可以分开改变”变成可见的接触动力学比较。固体样、流体样标签来自原文的整体实验判定，不能只靠几秒视频中谁移动得多重新分类；镜头内的整体漂移也应与相对重排分开。
 
 ### 2.6 从力学再走回信号：模型必须允许双向反馈
 

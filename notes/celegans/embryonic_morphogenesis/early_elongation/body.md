@@ -4,6 +4,16 @@
 
 ## 1 Early elongation 主动应力与各向异性材料
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-early-elongation">
+<video controls loop preload="metadata" playsinline width="390" height="217" aria-label="从短粗胚胎到细长身体" aria-describedby="stage-motion-early-elongation-caption" poster="https://app.box.com/representation/file_version_2376582787103/thumb_1024.jpg?shared_name=72fh2l6x9ss84qxuss6qx1n3pnlfdtw3">
+<source src="https://uwmadison.box.com/index.php?rm=box_download_shared_file&amp;shared_name=72fh2l6x9ss84qxuss6qx1n3pnlfdtw3&amp;file_id=f_2149903324703" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-early-elongation-caption"><strong>动态影像｜从短粗胚胎到细长身体</strong><br>
+野生型胚胎的侧面 DIC 影像，前端在左，原始采样间隔为 60 s。前半段适合观察身体变细、轴向变长；影片还延续到后期，出现弯曲后，应沿身体轮廓追踪长度。<br>
+<span class="celegans-video-credit">来源：Hardin Lab，WormBook Movie 9；影像 E. Cox，Pettitt 等（2003）。<a href="https://worms.biology.wisc.edu/galleries/wormbook/">原始页面与说明</a> · <a href="https://uwmadison.box.com/s/72fh2l6x9ss84qxuss6qx1n3pnlfdtw3">原片</a>。</span></figcaption>
+</figure>
+
 ### 1.1 伸长阶段的组织分工
 
 表皮闭合后，胚胎经历从豆形、comma、1.5-fold 到 2-fold 的早期伸长。与前面的插入和包裹相比，这时最显著的变化来自已有细胞的协调形变：身体沿前后轴变长，同时周向尺寸缩小。细胞分裂与体积增长不是这一长度增加的主要来源。

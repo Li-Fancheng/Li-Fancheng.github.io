@@ -14,6 +14,8 @@ math: true
 
 全系列包含 **34 张论文原图与 25 张自制教学图**。论文图附原文图号、来源链接和读图说明；自制图用于拆解几何、推导响应或复现明确给出的简化计算。图片可以点击查看原尺寸。
 
+另配 **8 段论文原始视频**：7 段显微成像或成像叠加分析，1 段明确标注的模型动画。视频放在相应推导与实验旁边，附“先看哪里”和“怎样读物理”的说明。
+
 | 部分 | Note | 要回答的问题 |
 | --- | --- | --- |
 | I · 模型建立 | [01 · 几何、能量与力学平衡](/notes/vertex_model/foundations/) | 为什么用多边形铺砌？面积、周长与黏附怎样进入受力？ |
@@ -37,6 +39,21 @@ math: true
 | 怎样判断材料变化真的解释了发育过程？ | [07 · 斑马鱼机制检验](/notes/vertex_model/morphogenesis/#zebrafish) | MPZ–PSM 材料梯度、胚盘铺展，以及独立调节密度和界面作用 |
 
 论文线索从 Mongera（2018）、Petridou（2019、2021）与 Kim（2021），延伸到 Rustarazo-Calvo 和 Autorino 的两项 2026 年正式研究。每篇正文区分原论文的测量、模型结论、教学推导与进一步可检验的预测。
+
+## 论文视频：把静态图还原成过程 {#paper-videos}
+
+视频可在正文中点击播放，并使用播放器的全屏、进度条和速度菜单查看细节。延时成像的真实时间以画面时间戳和原图例为准；几秒的播放可能对应数十分钟发育。每段都保留原文及原始视频链接。
+
+| 过程 | 观看重点 | 正文位置 |
+| --- | --- | --- |
+| 线虫表皮皮层切割 | 切口两侧的回缩与后续响应 | [01 · 激光切割](/notes/vertex_model/foundations/#video-vuong-laser) |
+| 果蝇胚带交界收缩 | 两个端点是否同步，顶点相对轮廓怎样滑移 | [04 · 顶点滑移](/notes/vertex_model/rearrangements/#video-vanderleest-sliding) |
+| 斑马鱼胚盘刚性图谱 | 黑色接触图与红色最大刚性簇的区别 | [03 · 成像与网络分析](/notes/vertex_model/rigidity/#video-autorino-rigidity) |
+| 斑马鱼 A-PSM 细胞起伏 | 局部活动与长期接触更新是否相同 | [05 · 主动起伏](/notes/vertex_model/rheology_activity/#video-mongera-jiggling) |
+| 主动泡沫形变后的慢过程 | 后续重排如何继续发生；这是模型动画 | [05 · 主动松弛](/notes/vertex_model/rheology_activity/#video-kim-active-relaxation) |
+| 斑马鱼间隙与信号响应 | Smad2 核定位、间隙开闭与响应范围 | [06 · 孔隙与运输](/notes/vertex_model/geometry_3d/#video-autorino-nodal) |
+| 斑马鱼胚盘铺展 | 发育动态与固定构型的三维旋转展示 | [07 · 全胚空间过程](/notes/vertex_model/morphogenesis/#video-rustarazo-epiboly) |
+| 斑马鱼不同材料条件 | 同一条接触与周围液体空间如何重组 | [07 · 接触动力学](/notes/vertex_model/morphogenesis/#video-rustarazo-contacts) |
 
 ## 阅读时始终区分的三个量
 

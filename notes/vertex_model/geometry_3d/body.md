@@ -204,6 +204,19 @@ $$
 
 *图 7 · 力学与信号之间有具体的几何中介。* 引自 [Autorino 等（2026），Fig. 3](https://www.nature.com/articles/s41556-026-01954-4/figures/3)，原图未修改。a–d 比较接触与液体空间；e–i 将孔隙变化纳入运输和 Nodal–Lefty 动力学；j–o 检查形态素空间分布。p 总结反馈。原图的多个临界值来自特定界面几何模型，不能视作任意三维组织的常数。
 
+#### 论文视频 · 斑马鱼边缘区：细胞外间隙与 Nodal 信号响应
+
+<figure class="vertex-video" id="video-autorino-nodal" style="--vertex-video-width: 760px">
+<video controls preload="metadata" playsinline width="4048" height="2304" aria-label="斑马鱼边缘区：细胞外间隙与 Nodal 信号响应" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM5_ESM.mp4">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM5_ESM.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Autorino 等（2026），Supplementary Movie 2。Smad2–GFP 与 dextran-647 成像；比较野生型及信号、Wnt 和光遗传干预条件，标尺 25 μm。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41556-026-01954-4#MOESM5" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM5_ESM.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 先看各栏的条件标签。洋红箭头标出 Smad2 阳性的细胞核；空心白箭头指开放间隙，实心白箭头指闭合间隙，虚线表示信号作用范围。按画面时间比较这些变化的先后，并留意干预及救援条件。
+
+**怎样读物理：** Smad2 的核定位是信号响应的读出，并不是 Nodal 分子的直接运动轨迹。这段适合观察孔隙与响应范围如何共同变化；扩散系数及反馈机制仍要结合原文的形态素测量、模型和干预来判断。
+
 ### 6.2 先写守恒，再决定“浓度”除以哪个体积
 
 令 $\phi$ 为细胞体积分数，$\epsilon=1-\phi$ 为细胞外孔隙率。注意这里的 $\phi$ 指细胞；有些论文图中的同名字母指细胞外空间，阅读时必须先换约定。令 $c$ 是每单位细胞外液体体积中的形态素量，则每单位组织总体积的量是 $n=\epsilon c$。两种浓度的变化含义不同。

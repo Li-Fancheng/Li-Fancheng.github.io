@@ -249,6 +249,19 @@ $$
 
 因此初速反映的是力与耗散的比值。不同组织回缩更快，可能因为原先张力更大，也可能因为有效摩擦更小。后续位移与松弛时间还受到周围网络的刚度影响。用同一模型同时解释初速、最终回缩幅度与细胞形状，比只拟合其中一个量更有约束力。
 
+#### 论文视频 · 线虫表皮：切断皮层以后，边缘怎样回缩
+
+<figure class="vertex-video" id="video-vuong-laser" style="--vertex-video-width: 460px">
+<video controls preload="metadata" playsinline width="308" height="240" aria-label="线虫表皮：切断皮层以后，边缘怎样回缩" src="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/672/626a302e3b0f99d57a9b3a50c24ae0475f59fc50/elife-23866-media1.mp4" poster="https://iiif.elifesciences.org/lax/23866%2Felife-23866-media1.jpg/full/full/0/default.jpg">
+<a href="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/672/626a302e3b0f99d57a9b3a50c24ae0475f59fc50/elife-23866-media1.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Vuong-Brender 等（2017），Video 1。ABD::mCHERRY 标记表皮 actin；黄线表示切割区域，0 s 是切割后的第一帧。视频未修改，权利与许可见原文。<a href="https://doi.org/10.7554/eLife.23866.007" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/672/626a302e3b0f99d57a9b3a50c24ae0475f59fc50/elife-23866-media1.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 先记住黄色切口的位置，再观察其两侧 actin 标记轮廓怎样分离，以及后续位移是否继续增长。时间零点已经在切割之后，不要把第一帧当作未受扰动的平衡构型。
+
+**怎样读物理：** 这一实验切的是表皮皮层，并非理想模型中的一条零厚度交界。它直观展示撤去局部承力结构后的响应；回缩速度仍需结合有效耗散解释，不能直接当作绝对张力。
+
 ![多边形自由度、目标周长能量与正多边形几何界限。](figures/model.svg)
 
 *图 6 · 自由度与几何代价。* 左：多边形与共享顶点；中：$r=1$、$p_0=3.8$、$a=1$ 时周长项的精确抛物线；右：单位面积正 $n$ 边形的周长 $p_n=\sqrt{4n\tan(\pi/n)}$。右图描述单个多边形的下界，不是组织相图。
@@ -363,6 +376,7 @@ $$
 
 ## 主要文献
 
+- [Vuong-Brender et al. (2017), The interplay of stiffness and force anisotropies drives embryo elongation](https://doi.org/10.7554/eLife.23866)。
 - [Kim et al. (2021), Embryonic tissues as active foams](https://doi.org/10.1038/s41567-021-01215-1)。
 - [Rustarazo-Calvo et al. (2026), Adhesion-driven rigidity transition decoupled from density-driven jamming triggers epithelial organization in embryonic tissues](https://doi.org/10.1038/s41567-026-03276-6)。
 - [Farhadifar et al. (2007), The influence of cell mechanics, cell-cell interactions, and proliferation on epithelial packing](https://doi.org/10.1016/j.cub.2007.11.049)：能量模型与上皮排列的实验联系。

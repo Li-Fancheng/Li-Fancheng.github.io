@@ -4,6 +4,16 @@ Actin-based viscoplastic lock、纤维切断与重新束化，以及近年关于
 
 ## 1 Late elongation 周期驱动如何形成持续伸长
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-late-elongation" style="--stage-video-width: 20rem;">
+<video controls loop preload="metadata" playsinline width="200" height="276" aria-label="肌肉抽动中的表皮变形与继续伸长" aria-describedby="stage-motion-late-elongation-caption">
+<source src="https://ars.els-cdn.com/content/image/1-s2.0-S1534580725003673-mmc6.mp4" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-late-elongation-caption"><strong>动态影像｜肌肉抽动中的表皮变形与继续伸长</strong><br>
+光片成像中的 DLG-1::RFP 标记表皮连接。观察肌肉抽动时连接的反复伸展与回缩，再比较较长时间内细胞群长度的变化；单次脉动和长期伸长叠加在同一段影像中。<br>
+<span class="celegans-video-credit">来源：Yang 等（2025），Video S4，Developmental Cell，CC BY-NC 4.0。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#mmc6">原始页面与说明</a>。</span></figcaption>
+</figure>
+
 ### 1.1 肌肉与表皮通过什么结构相连
 
 肌肉活动开始后，身体的形态发生从主要依赖表皮内源活动，转向更明显的跨组织机械耦合。体壁肌肉沿前后方向排列成四个区域，收缩可以局部牵动表皮，并引起身体弯曲和在卵壳内的转动。

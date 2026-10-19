@@ -97,13 +97,17 @@ sections:
     design:
       columns: 2
   - block: markdown
-    id: contact
+    id: thoughts
     content:
-      title: Get in Touch
+      title: Thoughts
       text: |-
-        I welcome conversations about statistical physics, biological modeling, and AI for science, as well as corrections to these notes.
+        A place for ideas from research and reading, open questions, and reflections beyond the notes.
 
-        [Email me](mailto:lifancheng@westlake.edu.cn) · [GitHub](https://github.com/Li-Fancheng) · [Background](/en/experience/)
+        **2026.10.18 · [Reflections on Cell Fate and Biological Theory](/thoughts/biological-theory/)**
+
+        How concrete constraints turn broad modeling frameworks into testable explanations. Written in Chinese.
+
+        [Explore thoughts](/en/thoughts/) →
     design:
       columns: '1'
 ---

@@ -17,6 +17,6 @@ main:
   - name: Notes
     url: /en/notes/
     weight: 30
-  - name: Contact
-    url: /en/contact/
+  - name: Thoughts
+    url: /en/thoughts/
     weight: 40

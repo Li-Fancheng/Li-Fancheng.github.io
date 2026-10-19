@@ -38,6 +38,19 @@ T2 是一个细胞面积趋近于零后被移除，改变细胞数；rosette 则
 
 这也意味着 T1 可以移动或重新配对五、七边形等拓扑缺陷，却不是任意创造全局净电荷。若同时发生细胞消失、组织开孔或边界接触变化，就要重新做相应计数。
 
+#### 论文视频 · 果蝇胚带：交界收缩与顶点滑移
+
+<figure class="vertex-video" id="video-vanderleest-sliding" style="--vertex-video-width: 640px">
+<video controls preload="metadata" playsinline width="640" height="480" aria-label="果蝇胚带：交界收缩与顶点滑移" src="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/817/bb95403d5365e97a3e061b4b5a2440424568ee8f/elife-34586-video2.mp4" poster="https://iiif.elifesciences.org/lax/34586%2Felife-34586-video2.jpg/full/full/0/default.jpg">
+<a href="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/817/bb95403d5365e97a3e061b4b5a2440424568ee8f/elife-34586-video2.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Vanderleest 等（2018），Video 2。Gap43:mCherry 标记细胞膜；前方在左、腹侧在下。原图例覆盖约 118.8 s 的真实过程，标尺 3 μm。视频未修改，权利与许可见原文。<a href="https://doi.org/10.7554/eLife.34586.007" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://static-movie-usa.glencoesoftware.com/mp4/10.7554/817/bb95403d5365e97a3e061b4b5a2440424568ee8f/elife-34586-video2.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 选定一条正在缩短的交界，分别追踪它的两个端点，再看相邻轮廓怎样重新分配。不要只追踪整片组织向画面边缘漂移；应比较顶点相对于同一细胞轮廓的位置。
+
+**怎样读物理：** 端点可以不同步移动，一条交界也不必像对称拉链一样从两端等速收缩。这是 T1 收缩阶段的活体例子；确认完整邻居交换，还需核对旧接触消失后新接触是否建立并保持。
+
 ## 2. 给定一条收缩路径，怎样定义势垒
 
 选旧边长度 $\ell$ 为反应坐标，在固定旧拓扑下，约束这条边为 $\ell$ 并松弛其他顶点，定义
@@ -236,6 +249,7 @@ $$
 
 ## 主要文献
 
+- [Vanderleest et al. (2018), Vertex sliding drives intercalation by radial coupling of adhesion and actomyosin networks during Drosophila germband extension](https://doi.org/10.7554/eLife.34586)。
 - [Bi et al. (2015), A density-independent rigidity transition in biological tissues](https://doi.org/10.1038/nphys3471)：局部重排势垒及四细胞模型。
 - [Merkel et al. (2017), Triangles bridge the scales: Quantifying cellular contributions to tissue deformation](https://doi.org/10.1103/PhysRevE.95.032401)：从细胞变化到组织形变的运动学分解。
 - [Barton et al. (2017), Active Vertex Model for cell-resolution description of epithelial tissue mechanics](https://doi.org/10.1371/journal.pcbi.1005569)：主动驱动与拓扑操作的模型实现。

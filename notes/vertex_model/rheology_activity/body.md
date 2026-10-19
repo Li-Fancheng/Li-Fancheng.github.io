@@ -236,6 +236,19 @@ $$
 
 但一个被动液滴形状只能说明组织正在施加何种力，不能单独确定组织是固体还是流体。流体在持续驱动下也能维持非球形液滴；有屈服的组织又可能在卸载后留下残余形变。必须进一步施加已知扰动，并记录时间和恢复过程。
 
+#### 论文视频 · 斑马鱼 A-PSM：看见细胞起伏，并不等于看见组织流动
+
+<figure class="vertex-video" id="video-mongera-jiggling" style="--vertex-video-width: 420px">
+<video controls preload="metadata" playsinline width="244" height="242" aria-label="斑马鱼 A-PSM：看见细胞起伏，并不等于看见组织流动" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0479-2/MediaObjects/41586_2018_479_MOESM4_ESM.mov">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0479-2/MediaObjects/41586_2018_479_MOESM4_ESM.mov">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频</strong>｜Mongera 等（2018），Supplementary Video 1。Tg(actb2:MA-Citrine) 膜标记；A-PSM 局部共聚焦延时成像，真实过程约 30 min，原始文件为 MOV。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41586-018-0479-2#MOESM4" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-018-0479-2/MediaObjects/41586_2018_479_MOESM4_ESM.mov" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 先固定几只细胞的身份，慢放观察边界起伏，再检查邻居排列是否随之长期改变。这段播放只有约 4 s，时间尺度应读原图例和画面标记，而不是按播放器秒数理解。
+
+**怎样读物理：** 原视频来自 A-PSM，不能误标成更易重塑的 MPZ。它说明具有支撑作用的组织也能持续发生局部主动起伏；判定流体化还需接触更新、相对运动和受控材料响应。
+
 ### 7.2 主动涨落的相关函数不等于材料响应函数
 
 令未扰动主动组织的应力为 $\sigma_0(t)$。在匹配发育时刻和空间区域的重复实验中，施加小阶跃应变 $\gamma_0$，可以定义平均增量响应
@@ -265,6 +278,19 @@ $$
 *图 9 · 快速机械响应之后，还存在主动维持的慢过程。* 引自 [Kim 等（2021），Fig. 4](https://pmc.ncbi.nlm.nih.gov/articles/PMC8336761/#F4)，原图未修改。a、b 将应力与邻居交换率配对；d、e 改变界面作用与涨落强度。原文的加载和拟合定义决定这里的松弛时间，不能未经小应变极限检验就把整条曲线命名为线性 $G(t)$。a 中的晚期水平还需和主动应力背景比较。
 
 这比“活性像温度”更具体：模型指定涨落作用在接触张力上，给出了作用变量、记忆时间以及重排路径。若只把最终扩散系数调到一致，却给不出相同应力松弛和干预响应，便没有验证同一种机制。
+
+#### 论文视频 · 主动泡沫模型：形变以后，重排怎样继续发生
+
+<figure class="vertex-video" id="video-kim-active-relaxation" style="--vertex-video-width: 680px">
+<video controls preload="metadata" playsinline width="720" height="606" aria-label="主动泡沫模型：形变以后，重排怎样继续发生" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-021-01215-1/MediaObjects/41567_2021_1215_MOESM7_ESM.mp4">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-021-01215-1/MediaObjects/41567_2021_1215_MOESM7_ESM.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>模型动画</strong>｜Kim 等（2021），Supplementary Video 5。论文数值模拟；给定阶跃形变后保留主动张力涨落，红色标出发生拓扑变化的细胞。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41567-021-01215-1#MOESM7" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-021-01215-1/MediaObjects/41567_2021_1215_MOESM7_ESM.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 分别跟踪非汇合与汇合构型：先看施加形变后快速发生的结构变化，再看较晚是否还出现新的重排。红色表示事件标记，不是张力大小或细胞类型。
+
+**怎样读物理：** 这段是模型动画，不能当作斑马鱼显微成像。它将上图中的“慢松弛”还原为具体接触变化；仅凭动画中的运动也不能读出应力，仍需和 Fig. 4 的应力曲线配对。
 
 ![斑马鱼 MPZ 的磁性液滴驱动、应力松弛和局部诱导及背景邻居交换。](figures/kim2021_fig05.jpg)
 

@@ -103,13 +103,17 @@ sections:
     design:
       columns: 2
   - block: markdown
-    id: contact
+    id: thoughts
     content:
-      title: 联系我
+      title: 一些想法
       text: |-
-        欢迎交流统计物理、生物建模与 AI for Science 相关的问题，也欢迎指出笔记中的疏漏。
+        这里记录研究与阅读中尚未成形的想法、值得追问的问题，以及笔记之外的零散思考。
 
-        [电子邮箱](mailto:lifancheng@westlake.edu.cn) · [GitHub](https://github.com/Li-Fancheng) · [个人经历](/experience/)
+        **2026.10.18 · [关于细胞命运与生物理论研究的困惑](/thoughts/biological-theory/)**
+
+        宽泛的框架需要具体的约束，才能对细胞行为作出可检验的判断。
+
+        [浏览一些想法](/thoughts/) →
     design:
       columns: '1'
 ---

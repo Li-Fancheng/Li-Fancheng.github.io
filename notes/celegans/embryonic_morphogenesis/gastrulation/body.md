@@ -4,6 +4,16 @@
 
 ## 1 Gastrulation 细胞身份如何转化为定向内移
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-gastrulation">
+<video controls loop preload="metadata" playsinline width="756" height="720" aria-label="Ea/Ep 顶面缩小与细胞内移" aria-describedby="stage-motion-gastrulation-caption">
+<source src="https://nigms.nih.gov/sites/nigms/files/image-and-video-gallery/Four_timepoints_in_gastrulation.mp4" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-gastrulation-caption"><strong>动态影像｜Ea/Ep 顶面缩小与细胞内移</strong><br>
+绿色为 myosin，红色为细胞膜，蓝色伪彩标出内移细胞。留意顶面轮廓怎样缩小、邻居怎样覆盖原来的位置；蓝色标注用于定位细胞，不是另一种分子信号。<br>
+<span class="celegans-video-credit">来源：Bob Goldstein，UNC Chapel Hill；NIGMS 影片 3334，相关研究 Roh-Johnson 等（2012）。<a href="https://nigms.nih.gov/image-gallery/3334">原始页面与说明</a>。</span></figcaption>
+</figure>
+
 ### 1.1 Ea 和 Ep 的内移及其三维几何
 
 约在 26–28 细胞阶段，两个内胚层前体 Ea、Ep 开始从腹侧表面进入内部。它们暴露在胚胎外侧的顶面逐渐缩小，周围细胞重新覆盖这一位置；细胞本体则留在内侧，继续建立肠道谱系。随后还有生殖系、肌肉、咽和部分神经系统前体细胞内移。[Harrell 与 Goldstein，2011](https://doi.org/10.1016/j.ydbio.2010.09.012)

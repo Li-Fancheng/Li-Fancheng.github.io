@@ -15,6 +15,9 @@
 .cell-cycle-article figure { max-width: 100%; margin-inline: auto; }
 .cell-cycle-article figure.qbio-figure { width: min(100%, var(--note-figure-width)); }
 .cell-cycle-article .qbio-figure-link { display: block; cursor: zoom-in; }
+.vertex-model-note .vertex-video { width: min(100%, var(--vertex-video-width, 720px)); margin-block: 2rem; }
+.vertex-model-note .vertex-video video { display: block; width: 100%; height: auto; max-height: 34rem; object-fit: contain; background: #0f172a; border-radius: .5rem; }
+.vertex-model-note .vertex-video figcaption { margin-top: .8rem; font-size: .9rem; line-height: 1.65; }
 .cell-cycle-article figure > div { display: flex; justify-content: center; }
 .cell-cycle-article figure > div > div { width: 100%; max-width: 100%; }
 .cell-cycle-article figure img { display: block; width: 100%; max-width: 100%; height: auto; margin-inline: auto; background: white; border-radius: .5rem; }
@@ -24,6 +27,9 @@
 .celegans-note .celegans-video { width: min(100%, 38rem); margin-block: 2rem; }
 .celegans-note .celegans-video video { display: block; width: 100%; height: auto; background: #111827; border-radius: .5rem; }
 .celegans-note .celegans-video figcaption { margin-top: .75rem; font-size: .9rem; line-height: 1.6; }
+.celegans-note .celegans-stage-video { width: min(100%, var(--stage-video-width, 38rem)); scroll-margin-top: 6rem; }
+.celegans-note .celegans-stage-video video { max-height: 34rem; object-fit: contain; }
+.celegans-note .celegans-video-credit { font-size: .85em; }
 @media (min-width: 1280px) { .cell-cycle-mobile-toc { display: none; } }
 
 /* Reserve a separate column for this note's equation numbers when scrolling. */

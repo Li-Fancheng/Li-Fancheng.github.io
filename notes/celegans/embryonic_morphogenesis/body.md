@@ -76,17 +76,19 @@ Ea/Ep 的皮层先流动、边界后跟随，将传力耦合定位为一个可�
 
 ## 4 显微影像与动态资源
 
-静态论文图保留了实验条件与定量比较，影片则补充运动顺序、暂时接触、回缩和周期变形。下面按过程列出正文涉及的主要动态资源。
+各阶段开头已放入可直接播放的显微影片，背侧插入、腹侧包裹和更早的腹侧裂隙封闭分别展示。影片经过时间压缩；注明的帧间隔是实际采样间隔，播放进度条显示的是影片时长。静态论文图则保留实验条件与定量比较。
 
 | 过程 | 资源 | 适合比较的动态变化 |
 | --- | --- | --- |
 | 连续发育与孵化 | [WormAtlas：Embryo Introduction](https://wormatlas.cropsci.illinois.edu/embryo/introduction/mainframe.htm) | 外轮廓、首次运动、卵壳内卷曲与离壳；页面的图例给出分期和素材来源 |
 | 多轮细胞内移 | [Harrell 与 Goldstein（2011），补充影片](https://pmc.ncbi.nlm.nih.gov/articles/PMC3022094/#SD1) | 不同谱系细胞进入内部的顺序与位置，结合细胞谱系与内移位置 |
-| 背侧插入 | [Hardin Lab：WormBook Movie Gallery，Movies 1–4](https://worms.biology.wisc.edu/galleries/wormbook/) | DIC、连接或 actin 标记下的相互穿插；Movie 4 使用 eff-1 背景抑制融合 |
+| 腹侧裂隙封闭 | [Hardin Lab，WormBook Movie 1](https://worms.biology.wisc.edu/galleries/wormbook/) | 神经母细胞向中线靠近，裂隙由后向前封闭；第二篇的相应段落可直接播放 |
+| 背侧插入 | [Hardin Lab：WormBook Movie Gallery，Movies 2–4](https://worms.biology.wisc.edu/galleries/wormbook/) | DIC、连接或 actin 标记下的相互穿插；Movie 4 使用 eff-1 背景抑制融合 |
 | 腹侧包裹 | [同一图像与影片库，Movies 5–8](https://worms.biology.wisc.edu/galleries/wormbook/) | Leading cells 相遇、posterior pocket 封闭与连接缺陷；Movie 8 为 hmr-1(RNAi) |
+| 身体伸长 | [Hardin Lab，WormBook Movie 9](https://worms.biology.wisc.edu/galleries/wormbook/) | 侧面 DIC 影像显示身体逐渐变细、变长，早期伸长篇开头可直接播放 |
 | 表皮皮层切割 | [Vuong-Brender 等（2017），Video 1](https://doi.org/10.7554/eLife.23866.007) | 切口的建立与开口释放；早期伸长篇已嵌入原始影片 |
 | 肌肉驱动与形变保持 | [Lardennois 等（2019），Supplementary Information](https://www.nature.com/articles/s41586-019-1509-4#Sec13) | 正常伸长与先伸长后回缩的区别，结合不同肌肉和骨架干预 |
-| 周期输入与连接重塑 | [Yang 等（2025），补充素材](https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#app2) | 肌肉活动、身体旋转和表皮连接形变的时间关系 |
+| 周期输入与连接重塑 | [Yang 等（2025），补充素材](https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#app2) | 肌肉活动、身体旋转和表皮连接形变的时间关系；S4 与 S1 分别嵌入后期伸长篇和三维体形篇开头 |
 | 谱系与三维位置 | [WormGUIDES 4D Developmental Atlas](https://wormguides.org/wormguides-atlas/) | 通过细胞名称和三维位置在不同影像之间定位同一细胞 |
 
 论文图片保留原始面板，可以点击查看原尺寸。各图的温度、视角、时间零点、尺度和遗传背景沿用原图定义，具体条件见相邻图注。完整出处见[素材记录](media_sources.json)与[文献记录](literature_sources.json)，各篇末尾另列本篇引用的论文。

@@ -4,6 +4,16 @@
 
 ## 1 三维体形 运动与卵壳约束
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-three-dimensional-motion" style="--stage-video-width: 20rem;">
+<video controls loop preload="metadata" playsinline width="212" height="338" aria-label="卵壳内的三维弯曲与旋转" aria-describedby="stage-motion-three-dimensional-motion-caption">
+<source src="https://ars.els-cdn.com/content/image/1-s2.0-S1534580725003673-mmc3.mp4" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-three-dimensional-motion-caption"><strong>动态影像｜卵壳内的三维弯曲与旋转</strong><br>
+DLG-1::RFP 显示表皮连接，影片追踪胚胎在卵壳内的旋转。留意同一身体区域怎样进入和离开视野：二维投影中的缩短，可能来自弯曲和转动，不能直接当作材料回缩。<br>
+<span class="celegans-video-credit">来源：Yang 等（2025），Video S1，Developmental Cell，CC BY-NC 4.0。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#mmc3">原始页面与说明</a>。</span></figcaption>
+</figure>
+
 ### 1.1 用身体中心线追踪卷曲中的伸长
 
 超过早期伸长后，身体在卵壳内弯曲并卷成较复杂的形态。二维图像中的长轴或外接框不再等于身体长度；身体仍在变长时，头尾端点甚至可以彼此接近。
@@ -260,5 +270,7 @@ $$
 1. Dai A, Ben Amar M (2024). [Cyclic muscle contractions reinforce the actomyosin motors and mediate the full elongation of C. elegans embryo](https://doi.org/10.7554/eLife.90505). *eLife*.
 
 2. Lardennois A, Pásti G, Ferraro T, et al. (2019). [An actin-based viscoplastic lock ensures progressive body-axis elongation](https://doi.org/10.1038/s41586-019-1509-4). *Nature*.
+
+3. Yang X, Ferraro T, Molnar K, et al. (2025). [Repeated extrinsic and anisotropic mechanical inputs promote C. elegans polarized adherens junction elongation](https://doi.org/10.1016/j.devcel.2025.06.012). *Dev Cell*.
 
 ← [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) · [系列总览](/notes/celegans/embryonic_morphogenesis/)

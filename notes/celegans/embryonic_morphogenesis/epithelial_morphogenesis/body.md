@@ -4,6 +4,16 @@
 
 ## 1 Dorsal intercalation 从突起极化到组织重排
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-dorsal-intercalation">
+<video controls loop preload="metadata" playsinline width="482" height="282" aria-label="背侧表皮从两列到交错排列" aria-describedby="stage-motion-dorsal-intercalation-caption" poster="https://app.box.com/representation/file_version_2376581905945/thumb_1024.jpg?shared_name=haqk54pdl7e9ut5qo26n7f9mem02yzsj">
+<source src="https://uwmadison.box.com/index.php?rm=box_download_shared_file&amp;shared_name=haqk54pdl7e9ut5qo26n7f9mem02yzsj&amp;file_id=f_2149902455545" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-dorsal-intercalation-caption"><strong>动态影像｜背侧表皮从两列到交错排列</strong><br>
+野生型胚胎的背侧 DIC 影像，前端在左，原始采样间隔为 30 s。细胞先形成楔形，随后左右交错，逐渐排成横跨中线的一列。可以先追踪尖端，再比较细胞主体何时跟上。<br>
+<span class="celegans-video-credit">来源：Hardin Lab，WormBook Movie 2；影像 E. Williams-Masson。<a href="https://worms.biology.wisc.edu/galleries/wormbook/">原始页面与说明</a> · <a href="https://uwmadison.box.com/s/haqk54pdl7e9ut5qo26n7f9mem02yzsj">原片</a>。</span></figcaption>
+</figure>
+
 ### 1.1 两列细胞如何形成跨中线的一列
 
 背侧表皮在终末分裂后最初排成左右两列。随着细胞向内侧形成楔形并相互穿插，原来的两列逐渐转化为跨越背侧中线的一列。细胞主体与细胞核的移动、前缘突起和原有接触的重塑并不完全同步，因此只追踪细胞核会丢失一部分关键的形态信息。
@@ -102,6 +112,16 @@ $\mathbf b$ 表示这小群细胞整体移动了多远，$\mathbf F$ 表示相�
 
 ## 2 Ventral morphogenesis 裂隙 表皮与多组织闭合
 
+<figure class="celegans-video celegans-stage-video" id="stage-motion-ventral-enclosure">
+<video controls loop preload="metadata" playsinline width="474" height="318" aria-label="腹侧表皮向中线推进并封闭开口" aria-describedby="stage-motion-ventral-enclosure-caption" poster="https://app.box.com/representation/file_version_2376584649555/thumb_1024.jpg?shared_name=gkwn64id9h6k4161ymkb42y0hkst5ny0">
+<source src="https://uwmadison.box.com/index.php?rm=box_download_shared_file&amp;shared_name=gkwn64id9h6k4161ymkb42y0hkst5ny0&amp;file_id=f_2149905153555" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-ventral-enclosure-caption"><strong>动态影像｜腹侧表皮向中线推进并封闭开口</strong><br>
+野生型胚胎的腹侧 DIC 影像，前端在左，原始采样间隔为 2 min。先看两侧前缘如何接近，再看初次接触以后，后方剩余开口怎样继续封闭。<br>
+<span class="celegans-video-credit">来源：Hardin Lab，WormBook Movie 5；影像 Mathias Koeppen。<a href="https://worms.biology.wisc.edu/galleries/wormbook/">原始页面与说明</a> · <a href="https://uwmadison.box.com/s/gkwn64id9h6k4161ymkb42y0hkst5ny0">原片</a>。</span></figcaption>
+</figure>
+
 ### 2.1 从背侧重排转向腹侧覆盖
 
 腹侧包裹让表皮从两侧扩展，最终覆盖内部组织。与背侧插入相比，它需要组织起朝向开口的推进，并在相遇后建立新连接。
@@ -145,6 +165,16 @@ Enclosure 的终点缺口可以来自前缘无法接近、相遇后没有稳定�
 新生腹侧连接随后还要承受伸长造成的牵拉。随着长度、方向和分子组成继续变化，它逐渐加入整个表皮的承载网络。封闭因而不是连接组装的终点，而是新界面开始承受发育负载的时刻。
 
 ### 2.4 Ventral cleft closure 与表皮 enclosure 的区别
+
+<figure class="celegans-video celegans-stage-video" id="stage-motion-ventral-cleft">
+<video controls loop preload="metadata" playsinline width="634" height="466" aria-label="原肠胚末期的腹侧裂隙封闭" aria-describedby="stage-motion-ventral-cleft-caption" poster="https://app.box.com/representation/file_version_2376583917336/thumb_1024.jpg?shared_name=9frk4u9zvgnq9j5rjkdluzm6zoejwhhk">
+<source src="https://uwmadison.box.com/index.php?rm=box_download_shared_file&amp;shared_name=9frk4u9zvgnq9j5rjkdluzm6zoejwhhk&amp;file_id=f_2149904320536" type="video/mp4">
+浏览器暂不支持内嵌播放，请打开下方原始视频。
+</video>
+<figcaption id="stage-motion-ventral-cleft-caption"><strong>动态影像｜原肠胚末期的腹侧裂隙封闭</strong><br>
+腹侧 DIC 影像，前端在左，原始采样间隔为 60 s。腹外侧神经母细胞向中线靠近，裂隙由后向前消失；这是表皮包裹之前的事件。<br>
+<span class="celegans-video-credit">来源：Hardin Lab，WormBook Movie 1；影像 H. N. Cinar 与 D. Patel。<a href="https://worms.biology.wisc.edu/galleries/wormbook/">原始页面与说明</a> · <a href="https://uwmadison.box.com/s/9frk4u9zvgnq9j5rjkdluzm6zoejwhhk">原片</a>。</span></figcaption>
+</figure>
 
 Ventral cleft 是 gastrulation 末期的腹侧裂隙，其封闭主要涉及神经母细胞的运动与接触重组；ventral enclosure 则是更晚的表皮包裹。Serre 等所讨论的 20 °C 发育序列中，裂隙消失约早于表皮包裹运动一小时。二者前后关联，但不能因为都发生在腹侧就当作同一个事件。
 

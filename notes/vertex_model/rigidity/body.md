@@ -210,6 +210,19 @@ $$
 
 网络“连通”只要求细胞间存在路径；网络“刚性贯通”还要求大范围相对位移受到足够独立的约束。即使整片组织是一个连通分量，也可能由多个刚块通过柔软铰链连接。因此研究中的最大刚性簇（giant rigid cluster，GRC）不是普通的最大连通分量。
 
+#### 论文视频 · 斑马鱼胚盘：从接触图追踪刚性簇
+
+<figure class="vertex-video" id="video-autorino-rigidity" style="--vertex-video-width: 700px">
+<video controls preload="metadata" playsinline width="992" height="822" aria-label="斑马鱼胚盘：从接触图追踪刚性簇" src="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM4_ESM.mp4">
+<a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM4_ESM.mp4">直接打开原始视频</a>。
+</video>
+<figcaption><strong>显微视频与网络分析</strong>｜Autorino 等（2026），Supplementary Movie 1。膜、细胞核与细胞外液体成像，叠加接触图和最大刚性簇；标尺 50 μm。视频未修改，权利与许可见原文。<a href="https://www.nature.com/articles/s41556-026-01954-4#MOESM4" target="_blank" rel="noopener">原文与完整视频说明</a> · <a href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-026-01954-4/MediaObjects/41556_2026_1954_MOESM4_ESM.mp4" target="_blank" rel="noopener">直接打开原始视频</a>。</figcaption>
+</figure>
+
+**先看哪里：** 先看细胞成像，再对照黑色接触网络和红色最大刚性簇如何分布；注意靠近命运指定区和上覆细胞的差别。暂停在两个相邻时刻，比较哪些接触仍在、哪些细胞进入同一个刚性簇。
+
+**怎样读物理：** 黑线和红线是由图像构建的分析叠加层，红色并不是显微镜直接测到的力或模量。视频帮助理解“接触存在”与“属于同一个刚性簇”的区别；它展示的是 2026 年研究中的空间图谱，不是前面 Petridou 实验的同一段影片。
+
 ### 5.2 一个可以逐行复算的铰链例子
 
 把五个二维点组成两只共享一个顶点的三角形。每条边是零预应力、只惩罚长度变化的中心力弹簧，体系边界自由。共有 $D=10$ 个坐标、$M=6$ 条边；对一般位置，长度约束矩阵秩为 6，所以零模有 4 个：两个整体平移、一个整体转动，加一个两只三角形之间的相对转动。
