@@ -11,9 +11,6 @@ main:
   - name: Talks
     url: /en/event/
     weight: 22
-  - name: Projects
-    url: /en/projects/
-    weight: 25
   - name: Notes
     url: /en/notes/
     weight: 30

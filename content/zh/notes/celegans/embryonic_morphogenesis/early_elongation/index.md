@@ -3,7 +3,7 @@ title: "03 早期伸长与各向异性力学"
 subtitle: "主动应力 纤维材料 连接与顶端 ECM"
 date: 2026-10-18
 weight: 3
-summary: "结合方向性切割、分子张力传感和 ECM 实验，推导周向收缩、有限变形、纤维强化与层间传力模型。"
+summary: "从身体为什么变细变长出发，解释激光切割、分子拉力测量，以及不同方向上的软硬差别。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

@@ -1,0 +1,36 @@
+{
+  "verified_on": "2026-10-19",
+  "hugo_version": "0.136.5 extended",
+  "series_pages": 21,
+  "model_figures": 20,
+  "training_figures": 1,
+  "source_to_html_equations_preserved": 869,
+  "browser_equations_including_directory": 885,
+  "katex_errors": 0,
+  "browser_viewport_widths": [
+    390,
+    1440
+  ],
+  "pages_with_horizontal_overflow": 0,
+  "internal_references_checked": 348,
+  "broken_references": 0,
+  "numerical_checks": [
+    "deep-linear closed form vs ODE: max error < 1e-7",
+    "OU covariance relative error < 0.03",
+    "data-scaling fitted exponent within 0.02 of -0.5",
+    "saved modular weights independently reproduce final CE and 100% train/test accuracy",
+    "modular split disjoint and covers all 361 examples"
+  ],
+  "runtime": {
+    "python": "3.14.6",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "scope": "Local Hugo build and single-seed numerical experiments. No claim of universal grokking or independent mathematical peer review.",
+  "notes": 20,
+  "editorial_revision": {
+    "exercise_sections_removed": 20,
+    "positioning": "Personal study notes and literature review"
+  }
+}

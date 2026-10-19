@@ -1,0 +1,25 @@
+{
+  "modulus": 19,
+  "width": 128,
+  "fraction": 0.7,
+  "steps": 40000,
+  "lr": 0.003,
+  "decay": 1.0,
+  "seed": 7,
+  "output": null,
+  "activation": "square",
+  "train_examples": 252,
+  "test_examples": 109,
+  "first_train_99": 100,
+  "first_test_99": 14600,
+  "sustained_test_99_from": 38200,
+  "final": [
+    40000,
+    1.1761632021392272e-06,
+    0.016641796628700876,
+    1.0,
+    1.0,
+    946.9817479357442,
+    0.1290875219841266
+  ]
+}

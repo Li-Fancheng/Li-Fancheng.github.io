@@ -256,5 +256,47 @@
     "kind": "model",
     "intrinsic_width": 867,
     "intrinsic_height": 341
+  },
+  "embryonic_morphogenesis/figures/15_gastrulation_mechanics": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/16_epithelial_models": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/17_elongation_materials": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/18_late_model_comparison": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/19_rod_inference": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/kuang2022_fig1": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 2250,
+    "intrinsic_height": 1016
+  },
+  "embryonic_morphogenesis/figures/staddon2022_fig1": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 4300,
+    "intrinsic_height": 2577
   }
 }

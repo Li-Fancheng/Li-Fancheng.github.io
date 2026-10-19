@@ -2,7 +2,7 @@
 
 西湖大学 2026 年秋季《定量生物学导论》课程学习笔记。
 
-阅读顺序见[趋化笔记目录](lecture_notes.md)，正文分为两篇。第一篇从单细胞的随机游动走到给定化学梯度中的定向迁移；第二篇让细胞产生信号，建立 Keller–Segel 反馈，计算聚集阈值与结构尺度，再用均匀背景信号的实验检验模型。技术附录随对应正文放在篇末：附录 A 连接连续时间 Master equation、Fokker–Planck 与 Langevin 描述，附录 B 给出完整两场增长率，附录 C 推导化学响应核。
+阅读顺序见[趋化笔记目录](lecture_notes.md)，正文分为三篇。第一篇从单细胞的随机游动走到给定化学梯度中的定向迁移；第二篇追问细菌怎样感受浓度，连接受体、适应记忆、Berg–Purcell 极限与 Mattingly 等（2026）的单细胞信息测量；第三篇让细胞产生信号，建立 Keller–Segel 反馈，计算聚集阈值与结构尺度，再用均匀背景信号的实验检验模型。技术附录随对应正文放在篇末。
 
 文中 18 张图片按阅读顺序统一编号为 Fig. 1–18（均在正文中）：4 张论文实验图，以及 14 张由代码生成的模型示意图、理论曲线和模拟图。图片文件名保留生成脚本中的标识，文中图号可按下表查找：
 
@@ -34,7 +34,9 @@
 chemotaxis/
 ├── lecture_notes.md                 # 主题目录与阅读顺序
 ├── 01_chemotactic_transport.md       # 随机运动到定向迁移，含附录 A
-├── 02_collective_patterns.md        # 信号反馈与聚集，含附录 B–C
+├── 02_chemosensing.md              # 时间比较、适应记忆与感知极限
+├── 03_collective_patterns.md        # 信号反馈与聚集，含附录 B–C
+├── chemosensing_sources.json       # 新论文、原图来源、许可和校验值
 ├── README.md                        # 本说明
 ├── requirements.txt                 # NumPy 和 Matplotlib
 ├── figures/
@@ -90,13 +92,14 @@ python code/random_walk.py
 python code/fixed_field.py
 python code/feedback_diagram.py
 python code/teaching_diagrams.py
+python code/chemosensing.py
 python code/collective_1d.py
 python code/collective_2d.py
 ```
 
 运行后图像会输出到 `figures/`，每张自制图同时生成 SVG 和 300 dpi PNG；网页使用 SVG。示意图采用 Arial 文字（缺少时使用可用的无衬线字体）与 Computer Modern 数学字体，正文配中文图注。SVG 中的字形已转为路径，读者不需要安装原字体。计算依赖 NumPy 与 Matplotlib，不需要 SciPy，也不需要网络连接。脚本随机种子固定，输出结果可复现。
 
-四篇笔记共用上级目录的 `plot_style.py`；各图在网页上的展示宽度记录于仓库的 `data/qbio_figures.json`。单幅示意图适当收窄，多面板或细节较多的图片保留较大宽度，小屏幕上均限制在正文范围内。
+四个主题共用上级目录的 `plot_style.py`；各图在网页上的展示宽度记录于仓库的 `data/qbio_figures.json`。单幅示意图适当收窄，多面板或细节较多的图片保留较大宽度，小屏幕上均限制在正文范围内。
 
 ## 参数比较
 
@@ -115,4 +118,4 @@ python code/collective_2d.py
 
 ## 内容与引用
 
-正文末尾给出了 Keller–Segel、Berg–Brown 和 Budrene–Berg 的经典论文 DOI。Fig. 1 摘自 Taute 等（2015），原文 Fig. 4a，DOI: https://doi.org/10.1038/ncomms9776，按 CC BY 4.0（https://creativecommons.org/licenses/by/4.0/）转载，仅裁出面板，未改动数据。来源 PDF：https://ir.amolf.nl/pub/6550/16036OA.pdf，第 5 页。另有 Fig. 6 引自 Grognot 与 Taute（2021），原文 Fig. 1，DOI: https://doi.org/10.1038/s42003-021-02190-2；Fig. 10、11 引自 Laganenka 等（2016），原文 Fig. 1、2，DOI: https://doi.org/10.1038/ncomms12984。这三张图片取自出版社提供的完整图片，未经修改，均按 CC BY 4.0 转载。其余 14 张图由本目录代码生成；生成脚本不会覆盖论文图。
+正文末尾给出了 Keller–Segel、Berg–Brown 和 Budrene–Berg 的经典论文 DOI。Fig. 1 摘自 Taute 等（2015），原文 Fig. 4a，DOI: https://doi.org/10.1038/ncomms9776，按 CC BY 4.0（https://creativecommons.org/licenses/by/4.0/）转载，仅裁出面板，未改动数据。来源 PDF：https://ir.amolf.nl/pub/6550/16036OA.pdf，第 5 页。另有 Fig. 6 引自 Grognot 与 Taute（2021），原文 Fig. 1，DOI: https://doi.org/10.1038/s42003-021-02190-2；Fig. 10、11 引自 Laganenka 等（2016），原文 Fig. 1、2，DOI: https://doi.org/10.1038/ncomms12984。这三张图片取自出版社提供的完整图片，未经修改，均按 CC BY 4.0 转载。感知一篇另原样转载 Mattingly 等（2026）的 Fig. 3，按 CC BY-NC-ND 4.0 使用，图片来源、许可及校验值见 `chemosensing_sources.json`。15 张自制图由本目录代码生成；生成脚本不会覆盖论文原图。

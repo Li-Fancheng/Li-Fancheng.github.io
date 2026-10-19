@@ -42,6 +42,7 @@
 }
 
 /* Short articles share a compact topic directory and a clear reading order. */
+.qbio-part-article .katex-display > .katex { position: relative; }
 .qbio-part-article .katex-display > .katex:has(> .katex-html > .tag) { width: max-content; min-width: 100%; }
 .qbio-part-article .katex-display > .katex:has(> .katex-html > .tag) > .katex-html { padding-right: 4em; }
 .qbio-part-article [id] { scroll-margin-top: 6rem; }

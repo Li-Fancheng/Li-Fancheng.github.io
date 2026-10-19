@@ -10,9 +10,6 @@ main:
   - name: 学术报告
     url: /event/
     weight: 12
-  - name: 项目
-    url: /projects/
-    weight: 20
   - name: 笔记
     url: /notes/
     weight: 30

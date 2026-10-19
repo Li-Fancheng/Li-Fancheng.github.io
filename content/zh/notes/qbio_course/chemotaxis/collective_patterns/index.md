@@ -7,10 +7,10 @@ summary: "从信号干预实验建立 Keller–Segel 反馈，计算聚集阈值
 layout: "qbio-part"
 qbio_topic: "chemotaxis"
 qbio_part: "collective_patterns"
-weight: 2
+weight: 3
 math: true
 toc: true
 tags: ["趋化", "随机过程", "模式形成"]
 ---
 
-{{% qbio-note "chemotaxis/02_collective_patterns.md" %}}
+{{% qbio-note "chemotaxis/03_collective_patterns.md" %}}

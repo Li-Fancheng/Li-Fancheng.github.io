@@ -285,5 +285,132 @@
     "year": "2018",
     "title": "Assessing the Contribution of Active and Passive Stresses in C. elegans Elongation",
     "journal": "Phys Rev Lett"
+  },
+  {
+    "doi": "10.1895/wormbook.1.177.1",
+    "group": "线虫与实验方法",
+    "authors": "Corsi Ann K.",
+    "title": "A Transparent window into biology: A primer on Caenorhabditis elegans",
+    "year": "2015",
+    "journal": "WormBook",
+    "source": "https://doi.org/10.1895/wormbook.1.177.1"
+  },
+  {
+    "doi": "10.1126/science.8303295",
+    "group": "线虫与实验方法",
+    "authors": "Chalfie Martin, Tu Yuan, Euskirchen Ghia, Ward William W., Prasher Douglas C.",
+    "title": "Green Fluorescent Protein as a Marker for Gene Expression",
+    "year": "1994",
+    "journal": "Science",
+    "source": "https://doi.org/10.1126/science.8303295"
+  },
+  {
+    "doi": "10.1038/35888",
+    "group": "线虫与实验方法",
+    "authors": "Fire Andrew, Xu SiQun, Montgomery Mary K., Kostas Steven A., Driver Samuel E., Mello Craig C.",
+    "title": "Potent and specific genetic interference by double-stranded RNA in Caenorhabditis elegans",
+    "year": "1998",
+    "journal": "Nature",
+    "source": "https://doi.org/10.1038/35888"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1009755",
+    "title": "Computable early Caenorhabditis elegans embryo with a phase field model",
+    "authors": "Xiangyu Kuang, Guoye Guan, Ming-Kin Wong, Lu-Yan Chan, Zhongying Zhao, Chao Tang, Lei Zhang",
+    "year": "2022",
+    "journal": "PLOS Computational Biology",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1371/journal.pcbi.1009755"
+  },
+  {
+    "doi": "10.1083/jcb.202302102",
+    "title": "Architecture of the cortical actomyosin network driving apical constriction in C. elegans",
+    "authors": "Pu Zhang, Taylor N. Medwig-Kinney, Bob Goldstein",
+    "year": "2023",
+    "journal": "Journal of Cell Biology",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1083/jcb.202302102"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1009981",
+    "title": "Pulsatile contractions and pattern formation in excitable actomyosin cortex",
+    "authors": "Michael F. Staddon, Edwin M. Munro, Shiladitya Banerjee",
+    "year": "2022",
+    "journal": "PLOS Computational Biology",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1371/journal.pcbi.1009981"
+  },
+  {
+    "doi": "10.1126/science.1163595",
+    "title": "Traction Dynamics of Filopodia on Compliant Substrates",
+    "authors": "Clarence E. Chan, David J. Odde",
+    "year": "2008",
+    "journal": "Science",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1126/science.1163595"
+  },
+  {
+    "doi": "10.1016/j.cub.2007.11.049",
+    "title": "The Influence of Cell Mechanics, Cell-Cell Interactions, and Proliferation on Epithelial Packing",
+    "authors": "Reza Farhadifar, Jens-Christian Röper, Benoit Aigouy, Suzanne Eaton, Frank Jülicher",
+    "year": "2007",
+    "journal": "Current Biology",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1016/j.cub.2007.11.049"
+  },
+  {
+    "doi": "10.1137/10079118X",
+    "title": "Asymptotic and Bifurcation Analysis of Wave-Pinning in a Reaction-Diffusion Model for Cell Polarization",
+    "authors": "Yoichiro Mori, Alexandra Jilkine, Leah Edelstein-Keshet",
+    "year": "2011",
+    "journal": "SIAM Journal on Applied Mathematics",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1137/10079118X"
+  },
+  {
+    "doi": "10.1038/s41540-023-00265-w",
+    "title": "MorphoSim: an efficient and scalable phase-field framework for accurately simulating multicellular morphologies",
+    "authors": "Xiangyu Kuang, Guoye Guan, Chao Tang, Lei Zhang",
+    "year": "2023",
+    "journal": "npj Systems Biology and Applications",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1038/s41540-023-00265-w"
+  },
+  {
+    "doi": "10.1038/nmat3517",
+    "title": "The cytoplasm of living cells behaves as a poroelastic material",
+    "authors": "Emad Moeendarbary, Léo Valon, Marco Fritzsche, Andrew R. Harris, Dale A. Moulding, Adrian J. Thrasher, Eleanor Stride, L. Mahadevan, Guillaume T. Charras",
+    "year": "2013",
+    "journal": "Nature Materials",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1038/nmat3517"
+  },
+  {
+    "doi": "10.64898/2026.03.30.715391",
+    "title": "Integrated quantitative imaging and biomechanical modeling of early gastrulation in C. elegans",
+    "authors": "Wim Thiels, Michiel Vanslambrouck, Casper Van Bavel, Keyu Xiao, Jef Vangheel, Bart Smeets, Rob Jelier",
+    "year": "2026",
+    "journal": "bioRxiv preprint",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.64898/2026.03.30.715391"
+  },
+  {
+    "doi": "10.1093/bioinformatics/btp358",
+    "title": "Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood",
+    "authors": "A Raue, C Kreutz, T Maiwald, J Bachmann, M Schilling, U Klingmüller, J Timmer",
+    "year": "2009",
+    "journal": "Bioinformatics",
+    "group": "模型与理论比较",
+    "pmcid": null,
+    "source": "https://doi.org/10.1093/bioinformatics/btp358"
   }
 ]

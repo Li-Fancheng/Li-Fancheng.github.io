@@ -1,0 +1,86 @@
+{
+  "linear_regression/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "double_descent/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "random_features/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "teacher_student/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "gaussian_process/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "ntk/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "kernel_learning_curves/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "lazy_and_mean_field/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "deep_linear/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "implicit_bias/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "nonlinear_teacher_student/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "hierarchical_learning/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "grokking/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "sgd/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "hopfield/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "random_rnn/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "time_scaling/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "data_scaling/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "model_scaling/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "compute_scaling/figures/experiment": {
+    "width": 900,
+    "kind": "model"
+  },
+  "grokking/figures/modular_arithmetic": {
+    "width": 900,
+    "kind": "numerical-training"
+  }
+}

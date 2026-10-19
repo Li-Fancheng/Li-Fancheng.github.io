@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-18",
+  "checked_on": "2026-10-19",
   "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
   "reused_figures": [
     {
@@ -722,12 +722,55 @@
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/kuang2022_fig1.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=10.1371/journal.pcbi.1009755.g001",
+      "article_doi": "10.1371/journal.pcbi.1009755",
+      "figure_id": "journal.pcbi.1009755.g001",
+      "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009755#pcbi-1009755-g001",
+      "author": "Kuang et al.",
+      "year": 2022,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "dfaf4133ee8e4c7fac4d8310b77367a33754fb341e6763232e1dd82c8ea30a07",
+      "retrieved_on": "2026-10-19",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 8
+        }
+      ]
+    },
+    {
+      "file": "figures/staddon2022_fig1.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=10.1371/journal.pcbi.1009981.g001",
+      "article_doi": "10.1371/journal.pcbi.1009981",
+      "figure_id": "journal.pcbi.1009981.g001",
+      "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009981#pcbi-1009981-g001",
+      "author": "Staddon et al.",
+      "year": 2022,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "409f011a3aeeb3cffc043c92a43aad273142b1e4e08d6c26176e6783b5d159c9",
+      "retrieved_on": "2026-10-19",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 10
+        }
+      ]
     }
   ],
   "original_figures": {
     "generators": [
       "figures/generate_figures.py",
-      "figures/generate_model_figures.py"
+      "figures/generate_model_figures.py",
+      "figures/generate_extended_models.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -737,7 +780,12 @@
       "figures/12_frap_model.svg",
       "figures/08_clutch_model.svg",
       "figures/10_anisotropy_model.svg",
-      "figures/09_closure_model.svg"
+      "figures/09_closure_model.svg",
+      "figures/15_gastrulation_mechanics.svg",
+      "figures/16_epithelial_models.svg",
+      "figures/17_elongation_materials.svg",
+      "figures/18_late_model_comparison.svg",
+      "figures/19_rod_inference.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -774,7 +822,7 @@
       "figures/08_clutch_model.svg": [
         {
           "note": "gastrulation",
-          "figure": 8
+          "figure": 9
         }
       ],
       "figures/10_anisotropy_model.svg": [
@@ -787,6 +835,36 @@
         {
           "note": "epithelial_morphogenesis",
           "figure": 9
+        }
+      ],
+      "figures/15_gastrulation_mechanics.svg": [
+        {
+          "note": "gastrulation",
+          "figure": 11
+        }
+      ],
+      "figures/16_epithelial_models.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 10
+        }
+      ],
+      "figures/17_elongation_materials.svg": [
+        {
+          "note": "early_elongation",
+          "figure": 12
+        }
+      ],
+      "figures/18_late_model_comparison.svg": [
+        {
+          "note": "late_elongation",
+          "figure": 9
+        }
+      ],
+      "figures/19_rod_inference.svg": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 6
         }
       ]
     }

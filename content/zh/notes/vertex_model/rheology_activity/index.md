@@ -1,9 +1,9 @@
 ---
 title: "05 · 组织流变与主动动力学"
-subtitle: "局部重排怎样产生应力松弛与持续流动"
+subtitle: "为什么短时间像弹簧，等久了又能流动"
 date: 2026-10-18
 weight: 5
-summary: "从线性流变走向主动松弛，用斑马鱼液滴实验区分应力、涨落、响应与重排的方向选择。"
+summary: "用 MDCK 绕障碍物流动检验 Maxwell 模型，比较果蝇的脉冲收缩与斑马鱼的液滴测量。"
 layout: cell-cycle
 article_class: vertex-model-note
 math: true

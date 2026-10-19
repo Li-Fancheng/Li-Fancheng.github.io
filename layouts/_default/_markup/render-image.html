@@ -58,6 +58,19 @@
   {{ end }}
 {{ end }}
 
+{{/* Neural theory plots keep explicit sizing and links to the original SVG. */}}
+{{ if strings.HasPrefix $destination "/notes/neural_network_theory/" }}
+  {{ $key := strings.TrimPrefix "/notes/neural_network_theory/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.neural_theory_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+  {{ else }}
+    {{ errorf "Missing display width for neural theory figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
 {{/* Workaround Hugo v0.81 error on Windows when `resources.Get (path.Join "media" <URL>)` */}}
 {{- $img := "" -}}
 {{- if not $is_remote -}}

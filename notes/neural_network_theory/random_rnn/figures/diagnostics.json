@@ -1,0 +1,10 @@
+{
+  "0.8": {
+    "late_variance": 5.030690548392504e-33,
+    "Euler_tangent_exponent": -0.20647473824875356
+  },
+  "1.8": {
+    "late_variance": 1.3738153358397622,
+    "Euler_tangent_exponent": 0.06544675417584071
+  }
+}

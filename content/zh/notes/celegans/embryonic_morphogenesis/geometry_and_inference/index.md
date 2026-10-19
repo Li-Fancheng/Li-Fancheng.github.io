@@ -3,7 +3,7 @@ title: "05 三维体形与模型辨识"
 subtitle: "中心线 杆力学 卵壳约束与参数估计"
 date: 2026-10-18
 weight: 5
-summary: "从弧长、弯曲和扭转走向主动杆与接触模型，并用参数简并解释哪些实验能区分相似的形态轨迹。"
+summary: "用中心线追踪弯曲身体的真实长度，讨论三维运动、卵壳限制，以及实验能否分别确定力和刚度。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

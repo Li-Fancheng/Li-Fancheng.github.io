@@ -3,7 +3,7 @@ title: "02 表皮重排与腹侧闭合"
 subtitle: "Dorsal intercalation Ventral enclosure 与极性模型"
 date: 2026-10-18
 weight: 2
-summary: "连接突起形成、CDC-42 定向、rosette 和新生连接，讨论极性波前、顶点模型与闭合前沿的驱动和阻力。"
+summary: "观察表皮细胞怎样伸出前缘、左右穿插并在腹侧接合，再讨论这些运动怎样写进模型。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

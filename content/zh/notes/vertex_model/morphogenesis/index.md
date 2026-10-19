@@ -1,9 +1,9 @@
 ---
 title: "07 · 形态发生、实验检验与开放问题"
-subtitle: "从复现组织形状走向识别可检验的力学机制"
+subtitle: "从果蝇、斑马鱼和培养上皮的实验，判断模型解释了哪一步"
 date: 2026-10-18
 weight: 7
-summary: "以斑马鱼材料梯度、胚盘刚性与独立黏附干预为主线，比较果蝇、上皮壳层和线虫的可检验机制。"
+summary: "以果蝇胚带、蛹翅、腹沟和卵室，以及斑马鱼胚盘和尾部为主，比较培养上皮、壳层模型和线虫。"
 layout: cell-cycle
 article_class: vertex-model-note
 math: true

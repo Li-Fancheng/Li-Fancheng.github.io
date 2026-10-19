@@ -61,5 +61,7 @@
   "chemotaxis/figures/E_signal_range_and_superposition": {"width": 720, "kind": "model"},
   "chemotaxis/figures/paper_grognot2021_fig1": {"width": 780, "kind": "paper"},
   "chemotaxis/figures/paper_laganenka2016_fig1": {"width": 500, "kind": "paper"},
-  "chemotaxis/figures/paper_laganenka2016_fig2": {"width": 760, "kind": "paper"}
+  "chemotaxis/figures/paper_laganenka2016_fig2": {"width": 760, "kind": "paper"},
+  "chemotaxis/figures/sensing_01_temporal_filter": {"width": 560, "kind": "model"},
+  "chemotaxis/figures/mattingly_2026_fig3": {"width": 860, "kind": "paper"}
 }

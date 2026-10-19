@@ -1,9 +1,9 @@
 ---
 title: "06 · 各向异性、曲面与三维组织"
-subtitle: "方向、曲率和细胞厚度怎样改变最小模型"
+subtitle: "细胞朝哪个方向长、有多高、怎样弯，什么时候必须考虑"
 date: 2026-10-18
 weight: 6
-summary: "从各向异性、曲率与厚度走向三维组织，并推导斑马鱼细胞外几何如何反馈到形态素运输。"
+summary: "从果蝇蛹翅、腹沟和卵室理解方向、面外运动与基底驱动，再看三维组织和斑马鱼信号运输。"
 layout: cell-cycle
 article_class: vertex-model-note
 math: true

@@ -234,5 +234,45 @@
   "geometry_3d/figures/porosity_feedback": {
     "width": 820,
     "kind": "model"
+  },
+  "linear_response/figures/etournay2015_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/etournay2015_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "morphogenesis/figures/etournay2015_fig02": {
+    "width": 760,
+    "kind": "paper"
+  },
+  "rearrangements/figures/rauzi2010_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/martin2009_fig04": {
+    "width": 600,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/martin2009_fig01": {
+    "width": 600,
+    "kind": "paper"
+  },
+  "geometry_3d/figures/he2010_fig05": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/park2015_fig02": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "rigidity/figures/park2015_fig04": {
+    "width": 700,
+    "kind": "paper"
+  },
+  "rheology_activity/figures/tlili2020_fig01": {
+    "width": 820,
+    "kind": "paper"
   }
 }

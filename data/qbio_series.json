@@ -92,11 +92,18 @@
         "source": "chemotaxis/01_chemotactic_transport.md"
       },
       {
+        "slug": "chemosensing",
+        "title": "细菌怎样感受浓度：时间比较、适应与感知极限",
+        "summary": "从受体、适应记忆和 Berg–Purcell 极限出发，结合 Mattingly 等（2026）的单细胞信息测量，追问趋化精度受哪一步限制。",
+        "kind": "正文与补充推导",
+        "source": "chemotaxis/02_chemosensing.md"
+      },
+      {
         "slug": "collective_patterns",
         "title": "细菌怎样靠自己产生的信号聚集",
         "summary": "从信号干预实验建立 Keller–Segel 反馈，计算聚集阈值与结构尺度，再用背景浓度实验检查感知假设。",
         "kind": "正文与补充推导",
-        "source": "chemotaxis/02_collective_patterns.md"
+        "source": "chemotaxis/03_collective_patterns.md"
       }
     ]
   }
