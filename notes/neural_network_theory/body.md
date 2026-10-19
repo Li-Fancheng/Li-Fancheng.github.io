@@ -11,7 +11,7 @@
 | [01 · 线性回归的完整动力学](/notes/neural_network_theory/linear_regression/) | 模态怎样学习？为什么早停可能改善泛化？ | 有限维精确解 |
 | [02 · Double Descent](/notes/neural_network_theory/double_descent/) | 插值附近为什么放大噪声？ | Gaussian 精确期望与高维谱 |
 | [03 · Random Features](/notes/neural_network_theory/random_features/) | 固定非线性特征能解释多少现象？ | 有限特征求解与核极限 |
-| [04 · Teacher–Student](/notes/neural_network_theory/teacher_student/) | 参数恢复怎样联系泛化与样本数？ | Hebbian 渐近解与序参量框架 |
+| [04 · Teacher–Student](/notes/neural_network_theory/teacher_student/) | 参数恢复怎样联系泛化与样本数？ | Hebbian 渐近解与 RS 容量分析 |
 
 ### II · 无限宽网络、核理论与特征学习
 
@@ -85,9 +85,9 @@
 
 ## 数值图与复现实验 {#reproduce}
 
-全系列配有 **20 张模型数值图，另加 1 张实际模加法训练图**，记录了本文模型的计算结果，提供 SVG 与 PNG。模加法实验还记录了四个未达到完整泛化的探索对照，避免只展示一个成功配置。
+全系列配有 **25 张数值图，涵盖模型计算、模加法训练和函数结构分析**，记录了本文模型的计算结果，提供 SVG 与 PNG。模加法实验还记录了四个未达到完整泛化的探索对照，避免只展示一个成功配置。
 
-下载：[完整正文、图和复现包](reproducibility.zip) · [20 篇数值脚本](experiments.py) · [模加法训练脚本](modular_grokking.py) · [依赖列表](requirements.txt) · [篇目配置](series.json) · [文献来源表](sources.json)。
+下载：[完整正文、图和复现包](reproducibility.zip) · [20 篇数值脚本](experiments.py) · [补充推导的数值核对](extended_checks.py) · [补充计算结果](extended_diagnostics.json) · [模加法训练脚本](modular_grokking.py) · [依赖列表](requirements.txt) · [篇目配置](series.json) · [文献来源表](sources.json)。
 
 解压后在包根目录运行：
 
@@ -97,6 +97,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python experiments.py --all
 python experiments.py --note 9
+python extended_checks.py
 python modular_grokking.py
 ```
 

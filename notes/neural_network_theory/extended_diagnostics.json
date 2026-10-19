@@ -1,0 +1,60 @@
+{
+  "single_mode_stopping": {
+    "analytic": 66.33469854435972,
+    "numerical": 66.33469787531128
+  },
+  "unbalanced_deep_linear_max_error": 3.8571185134728125e-10,
+  "MP_resolvent_max_error": 2.1329871202624417e-10,
+  "diagonal_model_max_flow_error": 7.18902888346013e-10,
+  "OU_current": {
+    "covariance": [
+      [
+        1.0,
+        0.32
+      ],
+      [
+        0.32,
+        0.5
+      ]
+    ],
+    "HS_minus_A": [
+      [
+        0.0,
+        -0.48000000000000004
+      ],
+      [
+        0.48,
+        0.0
+      ]
+    ],
+    "production": 0.847058823529412
+  },
+  "Hopfield_RS_branch": {
+    "alpha_max": 0.13790556649492372,
+    "field_ratio": 1.5112183289902408,
+    "overlap_at_endpoint": 0.9674170895460843
+  },
+  "critical_MP_time_slopes": [
+    -1.4999940448691982,
+    -0.4999980149707833,
+    0.5028419787996928
+  ],
+  "critical_variance_constant": {
+    "analytic": 0.6609892125852945,
+    "last_quadrature": 0.6594089855524886
+  },
+  "data_scaling_constant": {
+    "analytic": 0.36742346141747667,
+    "sqrt_D_times_risk": [
+      0.3659812121371243,
+      0.3669126687390565,
+      0.3670889156328556,
+      0.3667705359883763
+    ],
+    "modes": 1000000
+  },
+  "modular_logit_symmetry": {
+    "projected_energy_fraction": 0.6815755838758107,
+    "relative_projection_error": 0.5642910739363056
+  }
+}

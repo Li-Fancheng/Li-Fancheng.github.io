@@ -82,5 +82,21 @@
   "grokking/figures/modular_arithmetic": {
     "width": 900,
     "kind": "numerical-training"
+  },
+  "implicit_bias/figures/initialization_bias": {
+    "width": 900,
+    "kind": "numerical-analysis"
+  },
+  "hopfield/figures/retrieval_capacity": {
+    "width": 900,
+    "kind": "numerical-analysis"
+  },
+  "time_scaling/figures/critical_spectrum": {
+    "width": 900,
+    "kind": "numerical-analysis"
+  },
+  "grokking/figures/logit_symmetry": {
+    "width": 900,
+    "kind": "numerical-analysis"
   }
 }

@@ -8,7 +8,7 @@ layout: cell-cycle
 article_class: neural-theory-note
 math: true
 toc: true
-reading_time: 7
+reading_time: 14
 tags:
   - 神经网络理论
   - 统计物理
