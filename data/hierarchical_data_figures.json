@@ -1,0 +1,50 @@
+{
+  "figures/grammar": {
+    "width": 1000,
+    "kind": "original-analytic",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 812
+  },
+  "figures/correlations": {
+    "width": 1000,
+    "kind": "original-analytic",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 812
+  },
+  "figures/rare_rules": {
+    "width": 1000,
+    "kind": "original-analytic",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 812
+  },
+  "figures/denoising": {
+    "width": 1000,
+    "kind": "original-analytic",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 812
+  },
+  "figures/parsing": {
+    "width": 1000,
+    "kind": "original-explanatory",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 686
+  },
+  "figures/geometry_alignment": {
+    "width": 1000,
+    "kind": "original-explanatory",
+    "intrinsic_width": 2017,
+    "intrinsic_height": 794
+  },
+  "figures/novelty": {
+    "width": 1000,
+    "kind": "original-explanatory",
+    "intrinsic_width": 2180,
+    "intrinsic_height": 794
+  },
+  "figures/hierarchy_spectrum": {
+    "width": 1000,
+    "kind": "original-explanatory",
+    "intrinsic_width": 2099,
+    "intrinsic_height": 812
+  }
+}

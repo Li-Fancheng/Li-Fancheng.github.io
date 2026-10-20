@@ -1,0 +1,13 @@
+{
+  "tail_a": 0.6,
+  "skills": 100000,
+  "predicted_data_exponent": 0.37499999999999994,
+  "example_D": 10000.0,
+  "finite_sum": 0.02722867344144804,
+  "infinite_tail_integral_approx": 0.02794771275351658,
+  "finite_table_last_risk": {
+    "100": 0.0,
+    "1000": 2.246822879528169e-35,
+    "100000": 0.001375503163892363
+  }
+}

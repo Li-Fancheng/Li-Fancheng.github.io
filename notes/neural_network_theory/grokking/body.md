@@ -310,7 +310,7 @@ Logistic 曲线还有两个值得区分的时刻：输出增长率 $\dot p=2p(\s
 
 若多个对齐模态共享很小的初始乘积，$t_{i,1/2}\simeq[\log(\sigma_i/p_{i0})]/(2\sigma_i)$。强模态较早出现，是因为它既提供较大的驱动力，也有较短的增长时间。目标本身的奇异谱与输入协方差谱在一般数据上并不相同，不能把这个顺序直接命名为低频到高频。
 
-有限时间窗口还会掩盖最终渐近行为。[Note 12 · 时间标度](/notes/neural_network_theory/scaling_laws/#time-scaling) 的截断与极限顺序讨论，有助于判断“长平台”究竟是永久停滞还是尚未到达慢尺度：
+有限时间窗口还会掩盖最终渐近行为。[Scaling Laws · 时间标度](/notes/scaling_laws/spectral_learning/#time-scaling) 的截断与极限顺序讨论，有助于判断“长平台”究竟是永久停滞还是尚未到达慢尺度：
 
 ### 有限窗口、谱隙与极限顺序
 

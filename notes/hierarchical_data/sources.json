@@ -1,0 +1,139 @@
+{
+  "reviewed_on": "2026-10-20",
+  "scope": "Five substantial reviews connecting hierarchical generative data, statistical learning, parsing, generation and multilingual representation geometry.",
+  "references": [
+    {
+      "question": "层级生成与可学习性的早期形式化",
+      "title": "Deep Learning and Hierarchal Generative Models",
+      "url": "https://arxiv.org/abs/1612.09057",
+      "publication": "2016",
+      "role": "区分层级信息和受限低阶统计所能实现的分类"
+    },
+    {
+      "question": "逐层学习算法",
+      "title": "A Provably Correct Algorithm for Deep Learning that Actually Works",
+      "url": "https://arxiv.org/abs/1803.09522",
+      "publication": "2018",
+      "role": "局部梯度更新、聚类与层级恢复的算法路线"
+    },
+    {
+      "question": "随机语法与监督分类",
+      "title": "How Deep Neural Networks Learn Compositional Data: The Random Hierarchy Model",
+      "url": "https://arxiv.org/abs/2307.02129",
+      "publication": "PRX 2024",
+      "role": "随机层级模型、同义不变性和样本阈值"
+    },
+    {
+      "question": "稀疏性与空间稳定性",
+      "title": "How Deep Networks Learn Sparse and Hierarchical Data",
+      "url": "https://arxiv.org/abs/2404.10727",
+      "publication": "ICML 2024",
+      "role": "空白位置、离散形变与权重共享"
+    },
+    {
+      "question": "语言关联与有效上下文",
+      "title": "Towards a Theory of How the Structure of Language Is Acquired by Deep Neural Networks",
+      "url": "https://arxiv.org/abs/2406.00048",
+      "publication": "NeurIPS 2024",
+      "role": "共同祖先、关联平台与有限样本分辨率"
+    },
+    {
+      "question": "推断与卷积架构",
+      "title": "U-Nets as Belief Propagation",
+      "url": "https://arxiv.org/abs/2404.18444",
+      "publication": "2024 年初稿",
+      "role": "层级生成模型中的推断近似、分类与去噪"
+    },
+    {
+      "question": "Transformer 的层级计算",
+      "title": "How Transformers Learn Structured Data",
+      "url": "https://proceedings.mlr.press/v267/garnier-brun25a.html",
+      "publication": "ICML 2025",
+      "role": "用层级过滤检验不同关联尺度的恢复"
+    },
+    {
+      "question": "最优去噪中的重建转变",
+      "title": "A Phase Transition in Diffusion Models Reveals the Hierarchical Nature of Data",
+      "url": "https://arxiv.org/abs/2402.16991",
+      "publication": "PNAS 2025",
+      "role": "前向—后向实验与不同层次的重合率"
+    },
+    {
+      "question": "用协同变化探测隐结构",
+      "title": "Probing the Latent Hierarchical Structure of Data via Diffusion Models",
+      "url": "https://arxiv.org/abs/2410.13770",
+      "publication": "ICLR 2025",
+      "role": "动力学关联、易感性和临界长度"
+    },
+    {
+      "question": "长尾规则与学习曲线",
+      "title": "Learning Curves Theory for Hierarchically Compositional Data with Power-Law Distributed Features",
+      "url": "https://proceedings.mlr.press/v267/cagnetta25a.html",
+      "publication": "ICML 2025",
+      "role": "规则稀有性、层级前因子与任务依赖"
+    },
+    {
+      "question": "架构与语言标度",
+      "title": "Scaling Laws and Representation Learning in Simple Hierarchical Languages",
+      "url": "https://arxiv.org/abs/2505.07070",
+      "publication": "PRE 2025",
+      "role": "局部性、共享与高层规则的统计效率"
+    },
+    {
+      "question": "有限数据下的生成学习",
+      "title": "How Compositional Generalization and Creativity Improve as Diffusion Models Are Trained",
+      "url": "https://arxiv.org/abs/2502.12089",
+      "publication": "ICML 2025",
+      "role": "从局部合法到全局连贯的逐尺度生成"
+    },
+    {
+      "question": "可变树与解析歧义",
+      "title": "Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics",
+      "url": "https://arxiv.org/abs/2602.06065",
+      "publication": "2026 年预印本",
+      "role": "不固定组合边界时的统计学习"
+    },
+    {
+      "question": "隐变量预测的效率",
+      "title": "Learn from Your Own Latents and Not from Tokens",
+      "url": "https://arxiv.org/abs/2605.27734",
+      "publication": "2026 年预印本",
+      "role": "将预测目标提升到隐层次及其适用条件"
+    },
+    {
+      "question": "跨语言共享表示",
+      "title": "A theory of platonic representations in language models",
+      "url": "https://arxiv.org/abs/2610.07168",
+      "publication": "2026 年 10 月预印本",
+      "role": "共享高层语法、相似性与对齐、逐层仿射残差"
+    },
+    {
+      "question": "表示收敛假说",
+      "title": "Position: The Platonic Representation Hypothesis",
+      "url": "https://proceedings.mlr.press/v235/huh24a.html",
+      "publication": "ICML 2024",
+      "role": "跨模型与跨模态表示收敛的经验假说"
+    },
+    {
+      "question": "表示相似性的统计校准",
+      "title": "Revisiting the Platonic Representation Hypothesis: An Aristotelian View",
+      "url": "https://arxiv.org/abs/2602.14486",
+      "publication": "ICML 2026",
+      "role": "置换空模型、维度与选层效应、局部关系"
+    },
+    {
+      "question": "概念层次与共现谱",
+      "title": "Hierarchical Concept Geometry in Language Models Emerges from Word Co-occurrence",
+      "url": "https://arxiv.org/abs/2605.23821",
+      "publication": "2026",
+      "role": "概念分类树中的由粗到细谱结构"
+    },
+    {
+      "question": "连续统计对称性与几何",
+      "title": "Symmetry in language statistics shapes the geometry of model representations",
+      "url": "https://arxiv.org/abs/2602.15029",
+      "publication": "2026",
+      "role": "共现对称性、Fourier 模式与连续几何"
+    }
+  ]
+}

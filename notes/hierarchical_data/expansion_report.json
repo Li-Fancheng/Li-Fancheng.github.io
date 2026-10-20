@@ -1,0 +1,62 @@
+{
+  "updated_on": "2026-10-20",
+  "previous_review_chinese_characters": 12631,
+  "previous_source_sha256": "d7f6b57e7472dbe7fb881347b63de5ac2b71e39ce49438fcc26d83eb448c5f0b",
+  "current_article_chinese_characters": 25968,
+  "expansion_ratio": 2.055894228485472,
+  "article_count": 5,
+  "chapters": [
+    {
+      "number": 1,
+      "slug": "generative_learning",
+      "title": "01 · 层次生成与表征学习",
+      "subtitle": "从随机语法到同义不变性与样本复杂度",
+      "summary": "从可复用部件与随机规则出发，推导同义表示、有限样本阈值及稀疏数据中的空间稳定性。",
+      "chinese_characters": 5963,
+      "display_equations": 26,
+      "reading_time": 33
+    },
+    {
+      "number": 2,
+      "slug": "language_statistics",
+      "title": "02 · 语言统计与学习曲线",
+      "subtitle": "长程关联、有效上下文与稀有规则",
+      "summary": "从共同祖先解释长程关联，连接有限样本的有效上下文、架构差异与长尾学习曲线。",
+      "chinese_characters": 4317,
+      "display_equations": 23,
+      "reading_time": 26
+    },
+    {
+      "number": 3,
+      "slug": "inference_generation",
+      "title": "03 · 层级推断与扩散生成",
+      "subtitle": "信念传播、重建转变与组合泛化",
+      "summary": "逐步推导树上后验、联合生成、重建转变与相关变化，区分已知规则推断和有限数据学习。",
+      "chinese_characters": 4869,
+      "display_equations": 23,
+      "reading_time": 28
+    },
+    {
+      "number": 4,
+      "slug": "parsing_latents",
+      "title": "04 · 语法解析与隐变量学习",
+      "subtitle": "可变边界、歧义、预测目标与粗粒化",
+      "summary": "从未知组合边界进入语法歧义与动态规划，再比较表面预测、隐变量预测及结构可辨识性。",
+      "chinese_characters": 4929,
+      "display_equations": 7,
+      "reading_time": 23
+    },
+    {
+      "number": 5,
+      "slug": "shared_representations",
+      "title": "05 · 跨语言表示与共享几何",
+      "subtitle": "共享层次、表示相似性与坐标对齐",
+      "summary": "结合多语言层级模型，解释中间层共享几何、跨语言对齐和逐层新信息，并联系概念谱结构。",
+      "chinese_characters": 5890,
+      "display_equations": 12,
+      "reading_time": 28
+    }
+  ],
+  "original_figures": 8,
+  "new_primary_source": "https://arxiv.org/abs/2610.07168"
+}

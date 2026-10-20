@@ -1,6 +1,6 @@
 > **IV · 记忆与集体动力学 · Note 11**
 >
-> ← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Note 12](/notes/neural_network_theory/scaling_laws/) →
+> ← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →
 
 **可解性层次：** 非对称稠密随机耦合的无限规模极限。
 
@@ -264,7 +264,7 @@ $$
 
 有限状态空间与严格能量下降保证这种零温异步动力学最终进入不再翻转的固定点。这个证明使用了对称耦合、无自耦合与单点更新；并行同步更新可以产生二周期，非对称耦合也未必存在同样的能量函数。
 
-长时间曲线也可以来自大量线性速率的叠加。下面 [Note 12 · 时间标度](/notes/neural_network_theory/scaling_laws/#time-scaling) 的有限模态计算提供一个非混沌的慢动力学基线：
+长时间曲线也可以来自大量线性速率的叠加。下面 [Scaling Laws · 时间标度](/notes/scaling_laws/spectral_learning/#time-scaling) 的有限模态计算提供一个非混沌的慢动力学基线：
 
 ### 有限模态的精确表达
 
@@ -352,4 +352,4 @@ DMFT 的力量来自把大量单元压缩成一个有色驱动的有效过程，
 
 ---
 
-← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Note 12](/notes/neural_network_theory/scaling_laws/) →
+← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →

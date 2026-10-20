@@ -1,0 +1,11 @@
+{
+  "kind": "asymptotic formulas and self-consistent clock illustration, not full DMFT",
+  "clock_beta": 0.5,
+  "last_local_slopes": {
+    "0.0": 0.5000000000000563,
+    "0.01": 0.6642524404046692,
+    "1.0": 0.6665538228659913
+  },
+  "compute_assumptions": "R=t^-chi+N^-nu, C=N*t, nu=alpha*beta; hard-task branch is the relevant projected-model case",
+  "alpha": 2
+}

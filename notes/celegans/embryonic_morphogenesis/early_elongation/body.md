@@ -546,6 +546,6 @@ $$
 
 8. Ben Amar M, Qiuyang-Qu P, Vuong-Brender TTK, Labouesse M (2018). [Assessing the Contribution of Active and Passive Stresses in C. elegans Elongation](https://doi.org/10.1103/PhysRevLett.121.268102). *Phys Rev Lett*.
 
-← [02 表皮重排与腹侧闭合](/notes/celegans/embryonic_morphogenesis/epithelial_morphogenesis/) · 9. Emad Moeendarbary, Léo Valon, Marco Fritzsche, Andrew R. Harris, Dale A. Moulding, Adrian J. Thrasher, Eleanor Stride, L. Mahadevan, Guillaume T. Charras (2013). [The cytoplasm of living cells behaves as a poroelastic material](https://doi.org/10.1038/nmat3517). *Nature Materials*.
+9. Emad Moeendarbary, Léo Valon, Marco Fritzsche, Andrew R. Harris, Dale A. Moulding, Adrian J. Thrasher, Eleanor Stride, L. Mahadevan, Guillaume T. Charras (2013). [The cytoplasm of living cells behaves as a poroelastic material](https://doi.org/10.1038/nmat3517). *Nature Materials*.
 
-[系列总览](/notes/celegans/embryonic_morphogenesis/) · [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) →
+← [02 表皮重排与腹侧闭合](/notes/celegans/embryonic_morphogenesis/epithelial_morphogenesis/) · [系列总览](/notes/celegans/embryonic_morphogenesis/) · [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) →

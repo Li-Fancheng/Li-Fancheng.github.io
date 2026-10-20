@@ -274,5 +274,85 @@
   "rheology_activity/figures/tlili2020_fig01": {
     "width": 820,
     "kind": "paper"
+  },
+  "active_packing/figures/buttinoni2013_fig01": {
+    "width": 405,
+    "kind": "paper"
+  },
+  "active_packing/figures/digregorio2018_fig01": {
+    "width": 720,
+    "kind": "paper"
+  },
+  "active_packing/figures/decamp2015_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "active_packing/figures/keber2014_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "active_packing/figures/saw2017_fig01": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "active_packing/figures/saw2017_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "active_packing/figures/motility_instability": {
+    "width": 820,
+    "kind": "model"
+  },
+  "active_packing/figures/order_correlations": {
+    "width": 820,
+    "kind": "model"
+  },
+  "active_packing/figures/graph_topology": {
+    "width": 820,
+    "kind": "model"
+  },
+  "active_packing/figures/nematic_charges": {
+    "width": 820,
+    "kind": "model"
+  },
+  "fluctuations/figures/curran2017_fig04": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "fluctuations/figures/curran2017_fig05": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "fluctuations/figures/curran2017_fig06": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "fluctuations/figures/yamamoto2022_fig01": {
+    "width": 720,
+    "kind": "paper"
+  },
+  "fluctuations/figures/yamamoto2022_fig03": {
+    "width": 660,
+    "kind": "paper"
+  },
+  "fluctuations/figures/mongera2018_fig03": {
+    "width": 820,
+    "kind": "paper"
+  },
+  "fluctuations/figures/correlation_scales": {
+    "width": 820,
+    "kind": "model"
+  },
+  "fluctuations/figures/spectrum_response": {
+    "width": 820,
+    "kind": "model"
+  },
+  "fluctuations/figures/correlated_forces": {
+    "width": 820,
+    "kind": "model"
+  },
+  "fluctuations/figures/density_windows": {
+    "width": 820,
+    "kind": "model"
   }
 }

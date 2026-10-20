@@ -1,0 +1,8 @@
+{
+  "joint-risk": "/notes/scaling_laws/spectral_learning/",
+  "time-scaling": "/notes/scaling_laws/spectral_learning/",
+  "data-scaling": "/notes/scaling_laws/spectral_learning/",
+  "model-scaling": "/notes/scaling_laws/spectral_learning/",
+  "compute-scaling": "/notes/scaling_laws/compute_allocation/",
+  "interpretation": "/notes/scaling_laws/compute_allocation/"
+}

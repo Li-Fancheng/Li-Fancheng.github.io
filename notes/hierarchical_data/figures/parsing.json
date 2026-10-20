@@ -1,0 +1,17 @@
+{
+  "observed": "abcde",
+  "partitions": [
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      2
+    ]
+  ],
+  "posterior_root": [
+    0.5,
+    0.5
+  ]
+}

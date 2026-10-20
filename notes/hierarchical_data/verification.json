@@ -1,0 +1,335 @@
+{
+  "checked_on": "2026-10-20",
+  "full_site_build": "passed",
+  "pages": [
+    {
+      "slug": "directory",
+      "chinese_characters": 1344,
+      "source_sha256": "2d4f4ebbdb81b79d2969ff20f8bc72eda250109c890aa9b9b1ba7748a4397af4",
+      "math": 2,
+      "display_math": 0,
+      "internal_references": 10,
+      "figures": 0,
+      "code_blocks": 0
+    },
+    {
+      "slug": "generative_learning",
+      "chinese_characters": 5963,
+      "source_sha256": "cfa50c08ea21b73bcc43acc9b52ae59b8f3e2d81d3035e75cf25b14acc113d36",
+      "math": 157,
+      "display_math": 26,
+      "internal_references": 36,
+      "figures": 1,
+      "code_blocks": 0
+    },
+    {
+      "slug": "language_statistics",
+      "chinese_characters": 4317,
+      "source_sha256": "dd7e38112f58f03295eec059e9d6475e0b50cf1195dfb34e3480a05d28c1a869",
+      "math": 96,
+      "display_math": 23,
+      "internal_references": 29,
+      "figures": 2,
+      "code_blocks": 0
+    },
+    {
+      "slug": "inference_generation",
+      "chinese_characters": 4869,
+      "source_sha256": "fb886a5b8e2bf169f01d275dfadec7968309c1a9b0e239e47a08d4638d021b21",
+      "math": 114,
+      "display_math": 23,
+      "internal_references": 28,
+      "figures": 1,
+      "code_blocks": 0
+    },
+    {
+      "slug": "parsing_latents",
+      "chinese_characters": 4929,
+      "source_sha256": "ad4b3b472b8839988776926ec76bdd9a599d7a8769bca1d15ab1ce4b2d9dcb8b",
+      "math": 70,
+      "display_math": 7,
+      "internal_references": 28,
+      "figures": 1,
+      "code_blocks": 0
+    },
+    {
+      "slug": "shared_representations",
+      "chinese_characters": 5890,
+      "source_sha256": "d515efefefd814de0847fed1325ab01bef92179fd582bd2ccf2e452013997707",
+      "math": 85,
+      "display_math": 12,
+      "internal_references": 45,
+      "figures": 3,
+      "code_blocks": 0
+    }
+  ],
+  "math_total": 524,
+  "figure_placements": 8,
+  "internal_references": 176,
+  "legacy_anchors": 15,
+  "primary_references": 19,
+  "browser": {
+    "viewports": [
+      {
+        "slug": "directory",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 2,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [],
+        "toc": 4
+      },
+      {
+        "slug": "generative_learning",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 157,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/grammar.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 8
+      },
+      {
+        "slug": "language_statistics",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 96,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/correlations.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/rare_rules.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5
+      },
+      {
+        "slug": "inference_generation",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 114,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/denoising.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5
+      },
+      {
+        "slug": "parsing_latents",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 70,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/parsing.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5,
+        "readingTime": "2026.10.20 · 23 分钟阅读时长"
+      },
+      {
+        "slug": "shared_representations",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "math": 85,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/novelty.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/hierarchy_spectrum.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 9
+      },
+      {
+        "slug": "directory",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 2,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [],
+        "toc": 4
+      },
+      {
+        "slug": "generative_learning",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 157,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/grammar.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 8
+      },
+      {
+        "slug": "language_statistics",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 96,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/correlations.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/rare_rules.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5
+      },
+      {
+        "slug": "inference_generation",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 114,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/denoising.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5
+      },
+      {
+        "slug": "parsing_latents",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 70,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/parsing.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 5,
+        "readingTime": "2026.10.20 · 23 分钟阅读时长"
+      },
+      {
+        "slug": "shared_representations",
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 85,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/novelty.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/hierarchical_data/figures/hierarchy_spectrum.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "toc": 9
+      }
+    ],
+    "redirects": [
+      "architectures",
+      "belief-propagation",
+      "coarse-graining",
+      "correlated-changes",
+      "diffusion",
+      "generation",
+      "language",
+      "latent-prediction",
+      "parsing",
+      "rare-rules",
+      "rhm",
+      "sample-complexity",
+      "sparsity",
+      "structure",
+      "synonyms"
+    ],
+    "same_page_hash_change": true,
+    "directory_to_article_link": true,
+    "mobile_toc": true
+  },
+  "katex_errors": 0,
+  "calculation_checks": {
+    "hierarchical_models": {
+      "correlation_threshold_max_relative_error": 0.0,
+      "F_uniform_fixed_point_error": 0.0,
+      "F_correct_fixed_point_error": 0.0,
+      "F_separator_error": 5.551115123125783e-17,
+      "F_derivative_at_correct": 0.48484848484848486,
+      "F_derivative_formula_error": 0.0,
+      "unstable_derivative": 1.4422476586888662,
+      "mean_field_nu": 1.8927961115215053,
+      "BP_root_vs_enumeration_max_error": 5.551115123125783e-17,
+      "BP_leaf_vs_enumeration_max_error": 1.1102230246251565e-16
+    },
+    "representation_models": {
+      "rotation_accuracy_quadrature_max_error": 3.3333333333440684e-05,
+      "novelty_fit_sentences": 6000,
+      "novelty_test_pairs": 600,
+      "novelty_mKNN_raw": 0.21850000000000003,
+      "novelty_mKNN_residual": 0.8706666666666668,
+      "novelty_II_raw": 0.8602277777777778,
+      "novelty_II_residual": 0.006205555555555555,
+      "semantic_product_max_error": 0.0,
+      "hierarchical_kernel_diagonalization_error": 8.881784197001252e-16,
+      "hierarchical_kernel_min_eigenvalue": 0.1999999999999999,
+      "worked_BP_joint_error": 1.3877787807814457e-17
+    }
+  }
+}

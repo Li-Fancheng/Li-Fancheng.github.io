@@ -502,8 +502,8 @@ $$
 
 10. Mori Y, Jilkine A, Edelstein-Keshet L (2008). [Wave-pinning and cell polarity from a bistable reaction-diffusion system](https://doi.org/10.1529/biophysj.107.120824). *Biophys J*.
 
-← [01 细胞内移与力传递](/notes/celegans/embryonic_morphogenesis/gastrulation/) · 11. Reza Farhadifar, Jens-Christian Röper, Benoit Aigouy, Suzanne Eaton, Frank Jülicher (2007). [The Influence of Cell Mechanics, Cell-Cell Interactions, and Proliferation on Epithelial Packing](https://doi.org/10.1016/j.cub.2007.11.049). *Current Biology*.
+11. Reza Farhadifar, Jens-Christian Röper, Benoit Aigouy, Suzanne Eaton, Frank Jülicher (2007). [The Influence of Cell Mechanics, Cell-Cell Interactions, and Proliferation on Epithelial Packing](https://doi.org/10.1016/j.cub.2007.11.049). *Current Biology*.
 
 12. Yoichiro Mori, Alexandra Jilkine, Leah Edelstein-Keshet (2011). [Asymptotic and Bifurcation Analysis of Wave-Pinning in a Reaction-Diffusion Model for Cell Polarization](https://doi.org/10.1137/10079118X). *SIAM Journal on Applied Mathematics*.
 
-[系列总览](/notes/celegans/embryonic_morphogenesis/) · [03 早期伸长与各向异性力学](/notes/celegans/embryonic_morphogenesis/early_elongation/) →
+← [01 细胞内移与力传递](/notes/celegans/embryonic_morphogenesis/gastrulation/) · [系列总览](/notes/celegans/embryonic_morphogenesis/) · [03 早期伸长与各向异性力学](/notes/celegans/embryonic_morphogenesis/early_elongation/) →

@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "original_article_count": 20,
   "previous_article_count": 17,
-  "current_article_count": 12,
+  "current_article_count": 11,
   "active_notes": [
     {
       "number": 1,
@@ -56,7 +56,7 @@
     {
       "number": 8,
       "slug": "grokking",
-      "characters": 14094,
+      "characters": 14095,
       "Chinese_characters": 7256,
       "display_equations": 24
     },
@@ -77,16 +77,9 @@
     {
       "number": 11,
       "slug": "random_rnn",
-      "characters": 11192,
-      "Chinese_characters": 5127,
+      "characters": 11165,
+      "Chinese_characters": 5131,
       "display_equations": 25
-    },
-    {
-      "number": 12,
-      "slug": "scaling_laws",
-      "characters": 26655,
-      "Chinese_characters": 12343,
-      "display_equations": 58
     }
   ],
   "merges": [
@@ -295,27 +288,37 @@
     }
   ],
   "legacy_redirects": {
-    "time_scaling": "scaling_laws/#time-scaling",
+    "time_scaling": "/notes/scaling_laws/spectral_learning/#time-scaling",
     "kernel_learning_curves": "kernel_methods/#learning-curves",
     "double_descent": "linear_learning/#interpolation",
     "gaussian_process": "wide_networks/#gaussian-process",
     "nonlinear_teacher_student": "teacher_student_theory/#committee",
     "linear_regression": "linear_learning/#regression",
     "ntk": "wide_networks/#ntk",
-    "data_scaling": "scaling_laws/#data-scaling",
+    "data_scaling": "/notes/scaling_laws/spectral_learning/#data-scaling",
     "deep_linear": "deep_optimization/#deep-linear",
     "teacher_student": "teacher_student_theory/#perceptron",
-    "compute_scaling": "scaling_laws/#compute-scaling",
+    "compute_scaling": "/notes/scaling_laws/compute_allocation/#compute-scaling",
     "random_features": "kernel_methods/#random-features",
     "implicit_bias": "deep_optimization/#implicit-bias",
-    "model_scaling": "scaling_laws/#model-scaling"
+    "model_scaling": "/notes/scaling_laws/spectral_learning/#model-scaling",
+    "scaling_laws": "/notes/scaling_laws/"
   },
-  "unique_figures": 25,
+  "unique_figures": 20,
   "duplicate_figure_placements_removed": 1,
   "experiment_registry": {
     "file": "experiments.json",
     "experiments": 20,
     "IDs_preserved": true
   },
-  "web_prose": "No code blocks, execution commands or exercises."
+  "web_prose": "No code blocks, execution commands or exercises.",
+  "standalone_topics": {
+    "scaling_laws": {
+      "url": "/notes/scaling_laws/",
+      "notes": 6,
+      "former_note": 12,
+      "preserved_figures": 5,
+      "new_figures": 5
+    }
+  }
 }

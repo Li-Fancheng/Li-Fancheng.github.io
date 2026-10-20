@@ -441,4 +441,4 @@ $$
 - [Williams-Masson et al. (1997), An actin-mediated two-step mechanism is required for ventral enclosure of the C. elegans hypodermis](https://pubmed.ncbi.nlm.nih.gov/9247332/)。
 - [Lardennois et al. (2019), An actin-based viscoplastic lock ensures progressive body-axis elongation](https://doi.org/10.1038/s41586-019-1509-4)。
 
-[← 各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/) · [返回专题目录](/notes/vertex_model/)
+[← 各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/) · [主动软物质的堆积与拓扑 →](/notes/vertex_model/active_packing/) · [返回专题目录](/notes/vertex_model/)

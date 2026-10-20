@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-19",
+  "checked_on": "2026-10-20",
   "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
   "reused_figures": [
     {
@@ -204,6 +204,10 @@
         {
           "note": "epithelial_morphogenesis",
           "figure": 2
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 15
         }
       ]
     },
@@ -267,6 +271,10 @@
         {
           "note": "epithelial_morphogenesis",
           "figure": 5
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 16
         }
       ]
     },
@@ -559,6 +567,10 @@
         {
           "note": "late_elongation",
           "figure": 4
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 18
         }
       ]
     },
@@ -764,13 +776,204 @@
           "figure": 10
         }
       ]
+    },
+    {
+      "file": "figures/giammona2021_fig1.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?download&size=large&id=10.1371/journal.pcbi.1007994.g001",
+      "article_doi": "10.1371/journal.pcbi.1007994",
+      "figure_id": "Fig. 1",
+      "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007994#pcbi-1007994-g001",
+      "author": "Giammona and Campàs",
+      "year": 2021,
+      "license": "CC BY 4.0",
+      "sha256": "6a7b99fac476fb560125910de3c79babe9be37359ed29f7a0f0a3f2e28d13b7e",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/bi2016_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/20c1/5619672/7d4fe60f68d5/nihms854380f1.jpg",
+      "article_doi": "10.1103/PhysRevX.6.021011",
+      "figure_id": "Fig. 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5619672/",
+      "author": "Bi et al.",
+      "year": 2016,
+      "license": "CC BY 3.0",
+      "sha256": "e6c64f3a39ad08016f2a0ee9665b382344c8e48bceddc7b62d2f66a6f57fced0",
+      "retrieved_on": "2026-10-18",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 4
+        }
+      ]
+    },
+    {
+      "file": "figures/scutoid2018_fig1.png",
+      "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-018-05376-1/MediaObjects/41467_2018_5376_Fig1_HTML.png",
+      "article_doi": "10.1038/s41467-018-05376-1",
+      "figure_id": "Fig. 1",
+      "source": "https://www.nature.com/articles/s41467-018-05376-1#Fig1",
+      "author": "Gómez-Gálvez et al.",
+      "year": 2018,
+      "license": "CC BY 4.0",
+      "sha256": "728746e6727da5874328658e23d9cdafcb427a65480c5c7119f1744735bc3535",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/defects2025_fig1.png",
+      "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-025-57783-w/MediaObjects/41467_2025_57783_Fig1_HTML.png",
+      "article_doi": "10.1038/s41467-025-57783-w",
+      "figure_id": "Fig. 1",
+      "source": "https://www.nature.com/articles/s41467-025-57783-w#Fig1",
+      "author": "Zhao et al.",
+      "year": 2025,
+      "license": "CC BY-NC-ND 4.0",
+      "sha256": "bfb7e05f2f83d98e1642ccf3695c3d5e1eb1a5d1d3919479568922f36c34ad49",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 8
+        }
+      ]
+    },
+    {
+      "file": "figures/yamamoto2017_fig5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/36df/5769634/e9aacad8e719/develop-144-154609-g5.jpg",
+      "article_doi": "10.1242/dev.154609",
+      "figure_id": "Fig. 5",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5769634/#DEV154609F5",
+      "author": "Yamamoto & Kimura",
+      "year": 2017,
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "sha256": "c098483f0ef0d778c5548b720942a59bb6cb7ea41d3f4c4bf386bd66a14dd140",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 10
+        }
+      ]
+    },
+    {
+      "file": "figures/pimpale2020_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5b36/7394549/45d1a7bd6594/elife-54930-fig3.jpg",
+      "article_doi": "10.7554/eLife.54930",
+      "figure_id": "Fig. 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394549/#fig3",
+      "author": "Pimpale et al.",
+      "year": 2020,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "3a0d008646947f4f715422184fa07c086c7220998515d02a8561e46ba9df9132",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 13
+        }
+      ]
+    },
+    {
+      "file": "figures/pimpale2020_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5b36/7394549/50ea9d36c6cc/elife-54930-fig4.jpg",
+      "article_doi": "10.7554/eLife.54930",
+      "figure_id": "Fig. 4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394549/#fig4",
+      "author": "Pimpale et al.",
+      "year": 2020,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "3383967438514afd460864e1546857b0f1b189e10dc6646b83bccad865072829",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 14
+        }
+      ]
+    },
+    {
+      "file": "figures/koyama2023_fig4.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1011306.g004",
+      "article_doi": "10.1371/journal.pcbi.1011306",
+      "figure_id": "Fig. 4",
+      "source": "https://doi.org/10.1371/journal.pcbi.1011306.g004",
+      "author": "Koyama et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "c111b0456c0ef3b273a763b448fe045298c7dd870deebb0356ca6874c12c625d",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 19
+        }
+      ]
+    },
+    {
+      "file": "figures/yamamoto2026_fig5.jpg",
+      "image_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1534580726001607-gr5.jpg",
+      "article_doi": "10.1016/j.devcel.2026.04.013",
+      "figure_id": "Fig. 5",
+      "source": "https://doi.org/10.1016/j.devcel.2026.04.013",
+      "author": "Yamamoto et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "52ef6ae140d43339aea822bc1c765781a6dee03d548d392a9c6d3d1eb6cc5a78",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 11
+        }
+      ]
     }
   ],
   "original_figures": {
     "generators": [
       "figures/generate_figures.py",
       "figures/generate_model_figures.py",
-      "figures/generate_extended_models.py"
+      "figures/generate_extended_models.py",
+      "figures/generate_active_packing_figures.py",
+      "figures/generate_worm_mechanics_figures.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -785,7 +988,14 @@
       "figures/16_epithelial_models.svg",
       "figures/17_elongation_materials.svg",
       "figures/18_late_model_comparison.svg",
-      "figures/19_rod_inference.svg"
+      "figures/19_rod_inference.svg",
+      "figures/20_packing_rigidity.svg",
+      "figures/21_active_cage.svg",
+      "figures/22_t1_topology.svg",
+      "figures/23_nematic_defects.svg",
+      "figures/24_force_network_topology.svg",
+      "figures/25_worm_ingression.svg",
+      "figures/26_worm_material_memory.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -865,6 +1075,48 @@
         {
           "note": "geometry_and_inference",
           "figure": 6
+        }
+      ],
+      "figures/20_packing_rigidity.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 2
+        }
+      ],
+      "figures/21_active_cage.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 3
+        }
+      ],
+      "figures/22_t1_topology.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 6
+        }
+      ],
+      "figures/23_nematic_defects.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 7
+        }
+      ],
+      "figures/24_force_network_topology.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 9
+        }
+      ],
+      "figures/25_worm_ingression.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 12
+        }
+      ],
+      "figures/26_worm_material_memory.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 17
         }
       ]
     }
@@ -1018,6 +1270,42 @@
       "usage": "Remote HTML5 video embed; no local video copy or re-encoding. Source credits and acquisition conditions retained.",
       "duration_seconds": 14.08,
       "playback_checked_on": "2026-10-19"
+    }
+  ],
+  "embedded_model_movies": [
+    {
+      "id": "active-defect-motion",
+      "note": "active_matter_packing_topology",
+      "title": "取向图案中的集体运动",
+      "src": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-025-57783-w/MediaObjects/41467_2025_57783_MOESM4_ESM.mp4",
+      "source": "https://www.nature.com/articles/s41467-025-57783-w",
+      "credit": "Zhao et al. (2025), Supplementary Video 2, Nature Communications",
+      "license": "CC BY-NC-ND 4.0",
+      "usage": "Remote HTML5 video embed; no local copy or re-encoding.",
+      "description": "Cultured neural progenitor cells under patterned orientation constraints; a comparison system for active nematic theory, not C. elegans.",
+      "checked_on": "2026-10-20",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "width": 560,
+      "height": 560,
+      "duration_seconds": 21.35,
+      "playback_checked_on": "2026-10-20"
+    },
+    {
+      "id": "worm-chiral-cortex",
+      "note": "active_matter_packing_topology",
+      "title": "AB 细胞分裂时的手性皮层流",
+      "src": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5b36/7394549/35a054ebf3fe/elife-54930-video2-pmcvs_normal.mp4",
+      "source": "https://elifesciences.org/articles/54930#video2",
+      "credit": "Pimpale et al. (2020), Video 2, eLife",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "description": "NMY-2::GFP cortex during AB cytokinesis; opposite flow directions in the dividing halves.",
+      "usage": "Remote HTML5 video embed; no local video copy or re-encoding.",
+      "checked_on": "2026-10-20",
+      "width": 270,
+      "height": 178,
+      "duration_seconds": 5.066667,
+      "playback_checked_on": "2026-10-20"
     }
   ]
 }

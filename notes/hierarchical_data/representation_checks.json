@@ -1,0 +1,13 @@
+{
+  "rotation_accuracy_quadrature_max_error": 3.3333333333440684e-05,
+  "novelty_fit_sentences": 6000,
+  "novelty_test_pairs": 600,
+  "novelty_mKNN_raw": 0.21850000000000003,
+  "novelty_mKNN_residual": 0.8706666666666668,
+  "novelty_II_raw": 0.8602277777777778,
+  "novelty_II_residual": 0.006205555555555555,
+  "semantic_product_max_error": 0.0,
+  "hierarchical_kernel_diagonalization_error": 8.881784197001252e-16,
+  "hierarchical_kernel_min_eigenvalue": 0.1999999999999999,
+  "worked_BP_joint_error": 1.3877787807814457e-17
+}

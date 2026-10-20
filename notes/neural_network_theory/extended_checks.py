@@ -35,7 +35,7 @@ def save(fig,slug,name):
     fig.savefig(dest/(name+".png"),dpi=220)
     plt.close(fig)
     merged_owner = {
-        ("time_scaling", "critical_spectrum"): "scaling_laws",
+        ("time_scaling", "critical_spectrum"): "../scaling_laws",
         ("implicit_bias", "initialization_bias"): "deep_optimization",
     }.get((slug, name))
     if merged_owner:

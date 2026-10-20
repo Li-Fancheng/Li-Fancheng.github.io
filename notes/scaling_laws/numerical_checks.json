@@ -1,0 +1,69 @@
+{
+  "statistical_geometry": {
+    "interpolation_slopes": [
+      -1.9999227162836473,
+      -3.999728902167699
+    ],
+    "noisy_slope": -0.5000000000000001,
+    "dimension": 4,
+    "local_approximation_order": 2,
+    "integration_points": 200003
+  },
+  "discrete_skills": {
+    "tail_a": 0.6,
+    "skills": 100000,
+    "predicted_data_exponent": 0.37499999999999994,
+    "example_D": 10000.0,
+    "finite_sum": 0.02722867344144804,
+    "infinite_tail_integral_approx": 0.02794771275351658,
+    "finite_table_last_risk": {
+      "100": 0.0,
+      "1000": 2.246822879528169e-35,
+      "100000": 0.001375503163892363
+    }
+  },
+  "feature_learning": {
+    "kind": "asymptotic formulas and self-consistent clock illustration, not full DMFT",
+    "clock_beta": 0.5,
+    "last_local_slopes": {
+      "0.0": 0.5000000000000563,
+      "0.01": 0.6642524404046692,
+      "1.0": 0.6665538228659913
+    },
+    "compute_assumptions": "R=t^-chi+N^-nu, C=N*t, nu=alpha*beta; hard-task branch is the relevant projected-model case",
+    "alpha": 2
+  },
+  "random_graphs": {
+    "seed": 20261020,
+    "kind": "independent graph statistics, no transformer training",
+    "graphs": {
+      "ER": {
+        "nodes": 1600,
+        "edges": 9579,
+        "mean_degree": 11.97375,
+        "max_degree": 25,
+        "entropy_rate_nats": 2.526041884991172,
+        "known_support_dimensions": 17558
+      },
+      "BA": {
+        "nodes": 1600,
+        "edges": 9579,
+        "mean_degree": 11.97375,
+        "max_degree": 191,
+        "entropy_rate_nats": 2.779852394729377,
+        "known_support_dimensions": 17558
+      }
+    }
+  },
+  "fitting_floor": {
+    "true_floor": 1.5,
+    "amplitude": 3.0,
+    "true_exponent": 0.4,
+    "floor_offsets": [
+      -0.02,
+      0,
+      0.02
+    ],
+    "kind": "analytic example, not language model data"
+  }
+}

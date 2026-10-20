@@ -1,0 +1,22 @@
+{
+  "seed": 20261020,
+  "kind": "independent graph statistics, no transformer training",
+  "graphs": {
+    "ER": {
+      "nodes": 1600,
+      "edges": 9579,
+      "mean_degree": 11.97375,
+      "max_degree": 25,
+      "entropy_rate_nats": 2.526041884991172,
+      "known_support_dimensions": 17558
+    },
+    "BA": {
+      "nodes": 1600,
+      "edges": 9579,
+      "mean_degree": 11.97375,
+      "max_degree": 191,
+      "entropy_rate_nats": 2.779852394729377,
+      "known_support_dimensions": 17558
+    }
+  }
+}

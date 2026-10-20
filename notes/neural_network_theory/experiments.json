@@ -177,8 +177,9 @@
     "subtitle": "松弛速率谱的 Laplace 变换",
     "level": "固定谱模型精确；连续谱为渐近",
     "summary": "从指数模态叠加推导时间幂律、截断窗口与零模平台，并区分速率密度与损失加权谱。",
-    "note_number": 12,
-    "figure": "scaling_laws/figures/time_scaling"
+    "figure": "../scaling_laws/figures/time_scaling",
+    "topic": "scaling_laws",
+    "note_slug": "spectral_learning"
   },
   {
     "number": 18,
@@ -188,8 +189,9 @@
     "subtitle": "核谱、目标尾部、噪声与有效维数",
     "level": "高斯序列代理的可解标度",
     "summary": "逐项估计谱偏差与方差，推导最优正则化和数据指数，说明平滑度、噪声及采样假设的作用。",
-    "note_number": 12,
-    "figure": "scaling_laws/figures/data_scaling"
+    "figure": "../scaling_laws/figures/data_scaling",
+    "topic": "scaling_laws",
+    "note_slug": "spectral_learning"
   },
   {
     "number": 19,
@@ -199,8 +201,9 @@
     "subtitle": "谱截断、估计误差与容量饱和",
     "level": "嵌套正交特征模型可解",
     "summary": "计算有限秩模型的误差尾部和样本方差，推导最优秩与数据依赖，并比较随机特征和可学习表示。",
-    "note_number": 12,
-    "figure": "scaling_laws/figures/model_scaling"
+    "figure": "../scaling_laws/figures/model_scaling",
+    "topic": "scaling_laws",
+    "note_slug": "spectral_learning"
   },
   {
     "number": 20,
@@ -210,7 +213,8 @@
     "subtitle": "约束优化、拟合不确定性与训练预算",
     "level": "给定损失模型下精确优化",
     "summary": "在 C=kND 约束下推导最优规模、常数和计算指数，比较 Kaplan 与 Chinchilla，并检验成本模型的边界。",
-    "note_number": 12,
-    "figure": "scaling_laws/figures/compute_scaling"
+    "figure": "../scaling_laws/figures/compute_scaling",
+    "topic": "scaling_laws",
+    "note_slug": "compute_allocation"
   }
 ]

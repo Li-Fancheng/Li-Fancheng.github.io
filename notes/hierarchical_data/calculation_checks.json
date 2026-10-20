@@ -1,0 +1,12 @@
+{
+  "correlation_threshold_max_relative_error": 0.0,
+  "F_uniform_fixed_point_error": 0.0,
+  "F_correct_fixed_point_error": 0.0,
+  "F_separator_error": 5.551115123125783e-17,
+  "F_derivative_at_correct": 0.48484848484848486,
+  "F_derivative_formula_error": 0.0,
+  "unstable_derivative": 1.4422476586888662,
+  "mean_field_nu": 1.8927961115215053,
+  "BP_root_vs_enumeration_max_error": 5.551115123125783e-17,
+  "BP_leaf_vs_enumeration_max_error": 1.1102230246251565e-16
+}

@@ -1,0 +1,33 @@
+{
+  "adaptive_metric_max_error": 1.7763568394002505e-15,
+  "multinomial_cross_entropy": {
+    "support": 4,
+    "predicted_constant": 1.5,
+    "smoothing": 0.5,
+    "trials": 60000,
+    "results": [
+      {
+        "D": 1000,
+        "D_times_mean_KL": 1.4960789113920507,
+        "standard_error": 0.00499970791945195
+      },
+      {
+        "D": 10000,
+        "D_times_mean_KL": 1.5003706921195592,
+        "standard_error": 0.005002331712209086
+      },
+      {
+        "D": 100000,
+        "D_times_mean_KL": 1.4960175379059126,
+        "standard_error": 0.004993402997508729
+      }
+    ]
+  },
+  "Poisson_integral_relative_errors": [
+    1.1988202308555048e-12,
+    3.9527419674193084e-12
+  ],
+  "noisy_resolution_log_optimum_error": 9.086060792640183e-10,
+  "compute_log_optimum_error": 9.349406404624006e-08,
+  "status": "passed"
+}

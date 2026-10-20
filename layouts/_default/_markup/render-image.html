@@ -73,6 +73,36 @@
   {{ end }}
 {{ end }}
 
+{{/* Hierarchical-data review figures also reserve their complete layout size. */}}
+{{ if strings.HasPrefix $destination "/notes/hierarchical_data/" }}
+  {{ $key := strings.TrimPrefix "/notes/hierarchical_data/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.hierarchical_data_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
+  {{ else }}
+    {{ errorf "Missing display width for hierarchical-data figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
+{{/* Scaling-law figures use the shared explicit-size policy. */}}
+{{ if strings.HasPrefix $destination "/notes/scaling_laws/" }}
+  {{ $key := strings.TrimPrefix "/notes/scaling_laws/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.scaling_laws_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
+  {{ else }}
+    {{ errorf "Missing display width for scaling-law figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
 {{/* Workaround Hugo v0.81 error on Windows when `resources.Get (path.Join "media" <URL>)` */}}
 {{- $img := "" -}}
 {{- if not $is_remote -}}

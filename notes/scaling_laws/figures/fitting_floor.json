@@ -1,0 +1,11 @@
+{
+  "true_floor": 1.5,
+  "amplitude": 3.0,
+  "true_exponent": 0.4,
+  "floor_offsets": [
+    -0.02,
+    0,
+    0.02
+  ],
+  "kind": "analytic example, not language model data"
+}

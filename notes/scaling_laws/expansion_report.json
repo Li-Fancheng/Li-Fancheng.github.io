@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-20",
+  "previous_url": "/notes/neural_network_theory/scaling_laws/",
+  "current_url": "/notes/scaling_laws/",
+  "organization": "Six mechanism-based notes, separate from the core neural-network series",
+  "previous_chinese_characters": 12343,
+  "current_note_chinese_characters": 27678,
+  "ratio": 2.2424,
+  "notes": [
+    {
+      "number": 1,
+      "slug": "statistical_geometry",
+      "title": "01 · 统计估计与几何分辨率",
+      "subtitle": "从有限采样的波动到不断细化的函数结构",
+      "summary": "从均值估计、宽度波动与几何插值出发，比较四种标度区域，推导噪声下的最优复杂度及数据与特征的对偶条件。",
+      "chinese_characters": 3807,
+      "display_equations": 17,
+      "reading_time": 22
+    },
+    {
+      "number": 2,
+      "slug": "spectral_learning",
+      "title": "02 · 谱与学习分辨率",
+      "subtitle": "训练速率、目标尾部与有效模态的统一计算",
+      "summary": "由统一谱风险完整推导时间、数据和容量标度，保留目标对齐、噪声、正则化、谱截止与有限窗口。",
+      "chinese_characters": 8199,
+      "display_equations": 39,
+      "reading_time": 47
+    },
+    {
+      "number": 3,
+      "slug": "discrete_structure",
+      "title": "03 · 离散技能与长尾结构",
+      "subtitle": "随机覆盖、局部能力形成与组合共享",
+      "summary": "从技能尾部推导容量和数据指数，用 Poisson 计数替代硬阈值，再讨论训练时间、共享部件和数据选择。",
+      "chinese_characters": 3062,
+      "display_equations": 13,
+      "reading_time": 17
+    },
+    {
+      "number": 4,
+      "slug": "feature_learning",
+      "title": "04 · 特征学习与动态加速",
+      "subtitle": "初始核下的任务难度与自洽学习时钟",
+      "summary": "由两层参数化推导时变学习度量，解释困难任务的指数改善、有限模型瓶颈、SGD 暂态与计算配置。",
+      "chinese_characters": 3613,
+      "display_equations": 17,
+      "reading_time": 21
+    },
+    {
+      "number": 5,
+      "slug": "graph_language",
+      "title": "05 · 随机图与语言标度",
+      "subtitle": "从 ER 和 BA 游走到可控的序列学习",
+      "summary": "详述随机图、平稳访问、熵率与计数基线，连接 2026 年随机图到语言的研究，区分输入幂律与神经训练标度。",
+      "chinese_characters": 3487,
+      "display_equations": 12,
+      "reading_time": 19
+    },
+    {
+      "number": 6,
+      "slug": "compute_allocation",
+      "title": "06 · 计算配置与经验外推",
+      "subtitle": "风险曲面、损失底与预算约束下的选择",
+      "summary": "推导计算最优配置，比较可加与耦合风险，讨论数据回用、灵活拟合、平台误差、参数计数与训练协议。",
+      "chinese_characters": 5510,
+      "display_equations": 22,
+      "reading_time": 30
+    }
+  ],
+  "figures": 10,
+  "preserved_figures": 5,
+  "new_figures": 5,
+  "primary_papers": 13,
+  "web_prose": "Personal study review. No code, execution commands, exercise sections or teaching framing."
+}

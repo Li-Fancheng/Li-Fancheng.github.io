@@ -1,8 +1,8 @@
 # 神经网络理论与可解模型
 
-个人学习笔记与文献综述，五卷 12 篇，网站入口 `/notes/neural_network_theory/`。
+个人学习笔记与文献综述，四卷 11 篇，网站入口 `/notes/neural_network_theory/`。
 
-正文与附件位于本目录，Hugo 页面元信息在 `content/zh/notes/neural_network_theory/`，沿用 `shared-note` 和 `cell-cycle` / `series` 布局。`series.json` 记录 12 篇网页文章与顺序，`experiments.json` 独立记录 20 个基础数值实验；总目录 `body.md` 说明理论主线、统一记号及可解性层次。正文是完整推导笔记，包含模型假设、数值说明、适用边界和原始文献。
+正文与附件位于本目录，Hugo 页面元信息在 `content/zh/notes/neural_network_theory/`，沿用 `shared-note` 和 `cell-cycle` / `series` 布局。`series.json` 记录 11 篇网页文章与顺序，`experiments.json` 独立记录 20 个基础数值实验；总目录 `body.md` 说明理论主线、统一记号及可解性层次。正文是完整推导笔记，包含模型假设、数值说明、适用边界和原始文献。
 
 ## 复现
 
@@ -14,7 +14,7 @@ python3 -m venv /tmp/neural-theory-venv
 /tmp/neural-theory-venv/bin/python notes/neural_network_theory/extended_checks.py
 ```
 
-数值实验沿用原编号：`--note 1` 到 `--note 20` 可单独重画。17–20 是合并后 Scaling Laws 一篇中的四组实验，不再代表四篇网页。25 张模型、训练与函数分析图均提供 SVG、220 dpi PNG，源参数见脚本和图注，数值诊断见各篇 `figures/diagnostics.json`。不含论文原图，不需要图像生成工具、GPU 或下载数据集。
+数值实验沿用原编号：`--note 1` 到 `--note 20` 可单独重画。17–20 现归属独立的相邻 `scaling_laws/` 专题，并不代表四篇网页。原 25 张模型、训练与函数分析图均提供 SVG、220 dpi PNG，源参数见脚本和图注，数值诊断见各篇 `figures/diagnostics.json`。不含论文原图，不需要图像生成工具、GPU 或下载数据集。
 
 模加法默认平方激活、模数 19、隐藏宽度 128、训练占比 0.7、AdamW 学习率 0.003、解耦衰减 1、40000 步、种子 7。训练/测试划分和权重保存在 NPZ；完整 CSV 每 100 步记录交叉熵、准确率、范数和初步 Fourier 诊断。`modular_controls.json` 保留另外四次探索的结果；成功示例经过设置选择，不是无调参基准，也不声称所有随机种子都能 Grok。
 
@@ -45,7 +45,7 @@ python3 -m venv /tmp/neural-theory-venv
 
 ## 完整综述扩写
 
-本轮以用户提出“每篇继续扩到 2–3 倍”前的版本为基线，逐篇补入背景、模型选择的来由、跨模型推导、解释与结语。`expansion_report.json` 保留合并前的历史扩写统计；当前 12 篇结构与长度见 `consolidation_report.json`。这里的长度统计不是单词数或学习时间；页面阅读时长仍按中文文字和展示公式估计。
+本轮以用户提出“每篇继续扩到 2–3 倍”前的版本为基线，逐篇补入背景、模型选择的来由、跨模型推导、解释与结语。`expansion_report.json` 保留合并前的历史扩写统计；当前 11 篇结构与长度见 `consolidation_report.json`。这里的长度统计不是单词数或学习时间；页面阅读时长仍按中文文字和展示公式估计。
 
 新增的独立计算见 `review_checks.py` 与 `review_diagnostics.json`：固定惩罚的留一 ridge、GP 边缘似然导数、NTK 初始化协方差、Bayesian 秩一更新、深度线性 Gram 守恒、OU 概率流示例、模加法群投影与凸交叉熵、局部场噪声教师，以及额外训练轮数的计算最优条件。它们不更新任何网络权重。
 
@@ -65,7 +65,7 @@ python notes/neural_network_theory/review_checks.py
 
 原 17–20 篇合为 `scaling_laws/body.md`，这一轮将网页系列从 20 篇收拢为 17 篇。新文以联合谱风险开篇，依次讨论时间、数据、模型、计算、经验外推与指数之间的联系；删去重复前言、尾部推导和跨篇复述，保留关键推导与五张图。旧四个网页入口使用不进入目录的重定向，分别落到新文的对应章节。
 
-旧 `time_scaling`、`data_scaling`、`model_scaling`、`compute_scaling` 文件夹只保存原实验输出。基础实验将结果同步到 `scaling_laws/figures/`，补充计算同样同步临界谱图。实验编号与网页篇目分别维护，合并不改变数值设置。
+旧 `time_scaling`、`data_scaling`、`model_scaling`、`compute_scaling` 文件夹只保存原实验输出。基础实验目前将结果同步到相邻 `../scaling_laws/figures/`，补充计算同样同步临界谱图。实验编号与网页篇目分别维护，合并不改变数值设置。
 
 统一谱风险的新增计算以系数 ODE 和独立带噪观测分别核对，结果记录在 `review_diagnostics.json` 的 `joint_time_data_model_risk` 中。
 
@@ -78,3 +78,11 @@ python notes/neural_network_theory/review_checks.py
 历史扩写长度保留在 `expansion_report.json`，每轮合并和当前正文统计见 `consolidation_report.json`。不会为维持旧篇目或长度重复插入内容。
 
 所有 25 张网页图声明展示宽度与固有宽高，SVG 读取前即预留空间，减少长文目录和旧地址跳转后的布局位移。
+
+## 2026-10-20 Scaling Laws 独立专题
+
+当前网页为四卷十一篇。原第十二篇迁入 `/notes/scaling_laws/`，按统计估计、谱、离散技能、特征学习、随机图和计算配置扩展成六篇。原五张 Scaling 图迁入独立专题，主系列现展示二十张图；历史数值输出仍保留。
+
+基础实验 17–20 在 experiments.json 使用 topic/note_slug 标记归属，公开镜像指向相邻目录；其余实验的 note_number 保持不变。extended_checks.py 同步更新临界谱图路径。上文二十篇、十七篇和十二篇的说明为历史合并记录。
+
+补充包现在包含 neural_network_theory/ 与 scaling_laws/ 两个相邻目录，使跨专题导出路径在解压后仍成立。旧网页与节锚点的跳转和当前页面校验见 verification.json。

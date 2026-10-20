@@ -1,7 +1,7 @@
 ---
 title: "数据标度（旧入口）"
 layout: redirect
-redirect: /notes/neural_network_theory/scaling_laws
+redirect: /notes/scaling_laws/spectral_learning
 redirect_anchor: data-scaling
 outputs: [HTML]
 build:

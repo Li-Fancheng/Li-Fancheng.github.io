@@ -256,6 +256,8 @@ $$
 
 在固定方差 $s_f^2$ 下，快速驱动力来不及维持同一方向，位移较小；持续驱动能把软模式推得更远。但如果固定的是积分噪声强度 $s_f^2\tau_p$，而不是瞬时方差，改变 $\tau_p$ 时的比较就不同。讨论“持续性增强使组织更容易流动”之前，必须先说明究竟保持了什么驱动量不变。
 
+[Note 09](/notes/vertex_model/fluctuations/#fluctuations-and-response)将这一计算写成驱动频谱与机械响应的乘积，并比较自发涨落与受控响应；其后用 [果蝇交界实验](/notes/vertex_model/fluctuations/#fly-notum-fluctuations)和完整网络的重排，检验单模态近似的边界。
+
 ### 5.2 从运动轨迹辨认慢动力学
 
 ![主动 Voronoi 模型中的均方位移、中间散射函数与动态异质性。](figures/bi2016_fig01.jpg)

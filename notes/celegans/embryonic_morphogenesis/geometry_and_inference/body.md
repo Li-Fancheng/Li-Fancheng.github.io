@@ -374,6 +374,6 @@ $$
 
 3. Yang X, Ferraro T, Molnar K, et al. (2025). [Repeated extrinsic and anisotropic mechanical inputs promote C. elegans polarized adherens junction elongation](https://doi.org/10.1016/j.devcel.2025.06.012). *Dev Cell*.
 
-← [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) · 4. A Raue, C Kreutz, T Maiwald, J Bachmann, M Schilling, U Klingmüller, J Timmer (2009). [Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood](https://doi.org/10.1093/bioinformatics/btp358). *Bioinformatics*.
+4. A Raue, C Kreutz, T Maiwald, J Bachmann, M Schilling, U Klingmüller, J Timmer (2009). [Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood](https://doi.org/10.1093/bioinformatics/btp358). *Bioinformatics*.
 
-[系列总览](/notes/celegans/embryonic_morphogenesis/)
+← [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) · [系列总览](/notes/celegans/embryonic_morphogenesis/) · [06 Active matter 软物质堆积与拓扑](/notes/celegans/embryonic_morphogenesis/active_matter_packing_topology/) →

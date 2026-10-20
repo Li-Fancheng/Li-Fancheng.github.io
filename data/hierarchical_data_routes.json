@@ -1,0 +1,17 @@
+{
+  "structure": "/notes/hierarchical_data/generative_learning/",
+  "rhm": "/notes/hierarchical_data/generative_learning/",
+  "synonyms": "/notes/hierarchical_data/generative_learning/",
+  "sample-complexity": "/notes/hierarchical_data/generative_learning/",
+  "sparsity": "/notes/hierarchical_data/generative_learning/",
+  "language": "/notes/hierarchical_data/language_statistics/",
+  "architectures": "/notes/hierarchical_data/language_statistics/",
+  "rare-rules": "/notes/hierarchical_data/language_statistics/",
+  "belief-propagation": "/notes/hierarchical_data/inference_generation/",
+  "diffusion": "/notes/hierarchical_data/inference_generation/",
+  "correlated-changes": "/notes/hierarchical_data/inference_generation/",
+  "generation": "/notes/hierarchical_data/inference_generation/",
+  "parsing": "/notes/hierarchical_data/parsing_latents/",
+  "latent-prediction": "/notes/hierarchical_data/parsing_latents/",
+  "coarse-graining": "/notes/hierarchical_data/parsing_latents/"
+}

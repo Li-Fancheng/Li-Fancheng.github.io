@@ -1,0 +1,62 @@
+{
+  "figures/compute_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/critical_spectrum": {
+    "width": 900,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/data_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/discrete_skills": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/feature_learning": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/fitting_floor": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2160,
+    "intrinsic_height": 820
+  },
+  "figures/model_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/random_graphs": {
+    "width": 1000,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/statistical_geometry": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/time_scaling": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  }
+}

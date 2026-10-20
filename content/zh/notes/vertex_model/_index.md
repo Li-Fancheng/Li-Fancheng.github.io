@@ -21,6 +21,8 @@ math: true
 | III · 从固体到流动 | [05 · 组织流变与主动动力学](/notes/vertex_model/rheology_activity/) | 为什么短时间能撑住拉力，等久了却会流动？细胞活动起什么作用？ |
 | IV · 几何推广 | [06 · 各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/) | 细胞的朝向、高度和弯曲，什么时候不能省略？ |
 | V · 生物应用与边界 | [07 · 形态发生、实验检验与开放问题](/notes/vertex_model/morphogenesis/) | 斑马鱼、果蝇和线虫的实验，怎样检验这些解释？ |
+| VI · 主动软物质 | [08 · 主动软物质的堆积与拓扑](/notes/vertex_model/active_packing/) | 自困、堵塞和排列有序怎样区分？接触网络与向列缺陷分别限制什么？ |
+| VI · 主动软物质 | [09 · 涨落、相关与组织重塑](/notes/vertex_model/fluctuations/) | 涨落有多强、持续多久、怎样协同，为什么会改变重排与流动？ |
 
 ## 生物案例：果蝇和斑马鱼为主，培养上皮与线虫作比较
 
@@ -31,12 +33,14 @@ MDCK 和人支气管上皮的培养实验补充了可控几何、单层流变与
 | 生物过程 | 主要想弄明白什么 | 对应笔记 |
 | --- | --- | --- |
 | 果蝇翅上皮的排列与切割 | 一张稳定细胞图怎样与受力联系起来，外部连接起什么作用？ | [01 · 排列与切割](/notes/vertex_model/foundations/#fly-wing-packing)；[02 · 蛹翅回缩](/notes/vertex_model/linear_response/#fly-wing-ablation) |
+| 果蝇背板的交界起伏与排列 | 平均张力、单条交界的涨落与交换速率怎样区分？ | [09 · 背板实验](/notes/vertex_model/fluctuations/#fly-notum-fluctuations) |
 | 果蝇胚带延长 | 哪些接触先收缩，多细胞交汇怎样解开，方向从哪里来？ | [04 · 交界重塑](/notes/vertex_model/rearrangements/#fly-junction-remodelling)；[07 · 果蝇案例](/notes/vertex_model/morphogenesis/#drosophila) |
 | 果蝇腹沟形成 | 为什么一阵阵收缩能累积，顶面缩小怎样走向内陷？ | [05 · 脉冲与稳定](/notes/vertex_model/rheology_activity/#fly-pulsed-constriction)；[06 · 面外运动](/notes/vertex_model/geometry_3d/#fly-ventral-furrow) |
 | 果蝇卵室延长 | 收缩发生在基底侧时，为什么必须考虑曲面和基质？ | [06 · 基底驱动](/notes/vertex_model/geometry_3d/#fly-egg-chamber) |
 | 斑马鱼胚盘铺展与尾部延长 | 怎样测量材料变化，接触更新与身体形状有什么关系？ | [03 · 刚性簇](/notes/vertex_model/rigidity/)；[05 · 液滴测量](/notes/vertex_model/rheology_activity/)；[07 · 发育比较](/notes/vertex_model/morphogenesis/#zebrafish) |
 | 斑马鱼细胞外间隙与信号 | 接触重组怎样改变分子经过的通道与信号响应？ | [06 · 孔隙与运输](/notes/vertex_model/geometry_3d/#porosity-transport) |
 | MDCK 培养上皮绕障碍物 | 细胞自身变形与换邻居，怎样检验 Maxwell 黏弹性？ | [05 · 单层流动实验](/notes/vertex_model/rheology_activity/#mdck-maxwell) |
+| MDCK 培养上皮的细胞挤出 | 细胞长轴的缺陷、局部应力与挤出事件怎样联系？ | [08 · 取向与挤出](/notes/vertex_model/active_packing/#epithelial-defects) |
 | 人支气管上皮培养 | 实测形状、集体运动和运动停滞怎样比较？ | [03 · 形状与停滞](/notes/vertex_model/rigidity/#airway-jamming) |
 | 线虫表皮形态发生 | 突出、自由边缘和骨架更新为什么需要不同模型？ | [07 · 线虫比较](/notes/vertex_model/morphogenesis/#worm-comparison) |
 
@@ -56,6 +60,8 @@ MDCK 和人支气管上皮的培养实验补充了可控几何、单层流变与
 | 斑马鱼间隙与信号响应 | Smad2 核定位、间隙开闭与响应范围 | [06 · 孔隙与运输](/notes/vertex_model/geometry_3d/#video-autorino-nodal) |
 | 斑马鱼胚盘铺展 | 发育动态与固定构型的三维旋转展示 | [07 · 全胚空间过程](/notes/vertex_model/morphogenesis/#video-rustarazo-epiboly) |
 | 斑马鱼不同材料条件 | 同一条接触与周围液体空间如何重组 | [07 · 接触动力学](/notes/vertex_model/morphogenesis/#video-rustarazo-contacts) |
+| MDCK 上皮缺陷与挤出 | 区分速度、长轴方向与缺陷跟踪，比较事件发生的先后 | [08 · 缺陷与细胞挤出](/notes/vertex_model/active_packing/#video-saw-extrusion) |
+| 果蝇背板局部换邻居 | 交界的长短变化何时转为真实的接触更新 | [09 · 局部交界动态](/notes/vertex_model/fluctuations/#video-curran-neighbour-exchange) |
 
 ## 刚性、流动性与细胞形状
 

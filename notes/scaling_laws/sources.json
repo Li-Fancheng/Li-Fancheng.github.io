@@ -1,0 +1,156 @@
+{
+  "verified_on": "2026-10-20",
+  "policy": "Primary sources. Independent mathematical examples, numerical models and figure provenance are stated beside their use. Model-specific asymptotics are not universal claims.",
+  "sources": [
+    {
+      "id": "bahri2021",
+      "authors": "Bahri, Dyer, Kaplan, Lee, Sharma",
+      "title": "Explaining Neural Scaling Laws",
+      "initial_year": 2021,
+      "url": "https://arxiv.org/abs/2102.06701",
+      "notes": [
+        "statistical_geometry"
+      ],
+      "publication": "PNAS 2024; doi:10.1073/pnas.2311878121",
+      "additional_urls": [
+        "https://doi.org/10.1073/pnas.2311878121"
+      ]
+    },
+    {
+      "id": "bordelon2020",
+      "authors": "Bordelon, Canatar, Pehlevan",
+      "title": "Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks",
+      "initial_year": 2020,
+      "url": "https://proceedings.mlr.press/v119/bordelon20a.html",
+      "notes": [
+        "spectral_learning"
+      ],
+      "publication": "ICML 2020"
+    },
+    {
+      "id": "mei2019",
+      "authors": "Mei, Montanari",
+      "title": "The generalization error of random features regression: Precise asymptotics and double descent curve",
+      "initial_year": 2019,
+      "url": "https://arxiv.org/abs/1908.05355",
+      "notes": [
+        "spectral_learning"
+      ],
+      "publication": "Primary manuscript"
+    },
+    {
+      "id": "maloney2022",
+      "authors": "Maloney, Roberts, Sully",
+      "title": "A Solvable Model of Neural Scaling Laws",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2210.16859",
+      "notes": [
+        "spectral_learning"
+      ],
+      "publication": "Primary manuscript"
+    },
+    {
+      "id": "michaud2023",
+      "authors": "Michaud, Liu, Girit, Tegmark",
+      "title": "The Quantization Model of Neural Scaling",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2303.13506",
+      "notes": [
+        "discrete_structure"
+      ],
+      "publication": "NeurIPS 2023; revised 2024"
+    },
+    {
+      "id": "sorscher2022",
+      "authors": "Sorscher, Geirhos, Shekhar, Ganguli, Morcos",
+      "title": "Beyond neural scaling laws: beating power law scaling via data pruning",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2206.14486",
+      "notes": [
+        "discrete_structure"
+      ],
+      "publication": "NeurIPS 2022"
+    },
+    {
+      "id": "bordelon2025",
+      "authors": "Bordelon, Atanasov, Pehlevan",
+      "title": "How Feature Learning Can Improve Neural Scaling Laws",
+      "initial_year": 2024,
+      "url": "https://arxiv.org/abs/2409.17858",
+      "notes": [
+        "feature_learning"
+      ],
+      "publication": "ICLR 2025 spotlight; v2 2025-04-04"
+    },
+    {
+      "id": "barkeshli2026",
+      "authors": "Barkeshli, Alfarano, Gromov",
+      "title": "On the origin of neural scaling laws: from random graphs to natural language",
+      "initial_year": 2026,
+      "url": "https://arxiv.org/abs/2601.10684",
+      "notes": [
+        "graph_language",
+        "compute_allocation"
+      ],
+      "publication": "ICML 2026 spotlight; arXiv 2026-01-15",
+      "additional_urls": [
+        "https://arxiv.org/html/2601.10684"
+      ]
+    },
+    {
+      "id": "barabasi1999",
+      "authors": "Barabasi, Albert",
+      "title": "Emergence of scaling in random networks",
+      "initial_year": 1999,
+      "url": "https://arxiv.org/abs/cond-mat/9910332",
+      "notes": [
+        "graph_language"
+      ],
+      "publication": "Science 286, 509 (1999)"
+    },
+    {
+      "id": "kaplan2020",
+      "authors": "Kaplan et al.",
+      "title": "Scaling Laws for Neural Language Models",
+      "initial_year": 2020,
+      "url": "https://arxiv.org/abs/2001.08361",
+      "notes": [
+        "compute_allocation"
+      ],
+      "publication": "Primary manuscript"
+    },
+    {
+      "id": "hoffmann2022",
+      "authors": "Hoffmann et al.",
+      "title": "Training Compute-Optimal Large Language Models",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2203.15556",
+      "notes": [
+        "compute_allocation"
+      ],
+      "publication": "Primary manuscript"
+    },
+    {
+      "id": "muennighoff2023",
+      "authors": "Muennighoff et al.",
+      "title": "Scaling Data-Constrained Language Models",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2305.16264",
+      "notes": [
+        "compute_allocation"
+      ],
+      "publication": "NeurIPS 2023"
+    },
+    {
+      "id": "porian2024",
+      "authors": "Porian, Wortsman, Jitsev, Schmidt, Carmon",
+      "title": "Resolving Discrepancies in Compute-Optimal Scaling of Language Models",
+      "initial_year": 2024,
+      "url": "https://arxiv.org/abs/2406.19146",
+      "notes": [
+        "compute_allocation"
+      ],
+      "publication": "NeurIPS 2024; later arXiv revisions exist"
+    }
+  ]
+}

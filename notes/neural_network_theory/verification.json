@@ -1,18 +1,18 @@
 {
-  "verified_on": "2026-10-19",
+  "verified_on": "2026-10-20",
   "hugo_version": "0.136.5 extended",
-  "series_pages": 13,
-  "model_figures": 23,
+  "series_pages": 12,
+  "model_figures": 18,
   "training_figures": 1,
-  "source_to_html_equations_preserved": 2537,
-  "browser_equations_including_directory": 2537,
+  "source_to_html_equations_preserved": 2150,
+  "browser_equations_including_directory": 2150,
   "katex_errors": 0,
   "browser_viewport_widths": [
     390,
     1440
   ],
   "pages_with_horizontal_overflow": 0,
-  "internal_references_checked": 497,
+  "internal_references_checked": 434,
   "broken_references": 0,
   "numerical_checks": [
     "deep-linear closed form vs ODE: max error < 1e-7",
@@ -28,7 +28,7 @@
     "matplotlib": "3.11.2"
   },
   "scope": "Local Hugo build and single-seed numerical experiments. No claim of universal grokking or independent mathematical peer review.",
-  "notes": 12,
+  "notes": 11,
   "editorial_revision": {
     "exercise_sections_removed": 20,
     "positioning": "Personal study notes and literature review",
@@ -95,9 +95,9 @@
       "relative_projection_error": 0.5642910739363056
     }
   },
-  "equation_scope": "12 active notes plus the series directory",
-  "figure_placements": 25,
-  "unique_figures": 25,
+  "equation_scope": "11 active notes plus series directory; core source and all TeX revalidated. The 2026-10-20 browser regression revisits affected pages; full unchanged-note browser coverage is from the preceding validation.",
+  "figure_placements": 20,
+  "unique_figures": 20,
   "previous_content_expansion": {
     "notes_expanded": 20,
     "source_characters_before": 65288,
@@ -136,7 +136,7 @@
     "status": "passed"
   },
   "web_prose_checks": {
-    "pages_checked": 13,
+    "pages_checked": 12,
     "rendered_code_elements": 0,
     "execution_commands": 0,
     "script_implementation_details": 0,
@@ -155,9 +155,9 @@
     "per_note_report": "expansion_report.json",
     "structure": "Personal study review with contextual prefaces, derivations, related-model comparisons and conclusions. Web prose excludes exercises, code blocks, execution commands and script implementation details."
   },
-  "legacy_redirect_pages": 14,
+  "legacy_redirect_pages": 15,
   "content_structure": {
-    "active_notes": 12,
+    "active_notes": 11,
     "original_notes": 20,
     "numerical_experiments": 20,
     "current_structure_report": "consolidation_report.json",
@@ -183,25 +183,60 @@
         4,
         11
       ]
-    ]
+    ],
+    "standalone_scaling_topic": "/notes/scaling_laws/"
   },
   "legacy_redirects_checked": {
-    "time_scaling": "scaling_laws/#time-scaling",
-    "kernel_learning_curves": "kernel_methods/#learning-curves",
-    "double_descent": "linear_learning/#interpolation",
-    "gaussian_process": "wide_networks/#gaussian-process",
-    "nonlinear_teacher_student": "teacher_student_theory/#committee",
-    "linear_regression": "linear_learning/#regression",
-    "ntk": "wide_networks/#ntk",
-    "data_scaling": "scaling_laws/#data-scaling",
-    "deep_linear": "deep_optimization/#deep-linear",
-    "teacher_student": "teacher_student_theory/#perceptron",
-    "compute_scaling": "scaling_laws/#compute-scaling",
-    "random_features": "kernel_methods/#random-features",
-    "implicit_bias": "deep_optimization/#implicit-bias",
-    "model_scaling": "scaling_laws/#model-scaling"
+    "time_scaling": "/notes/scaling_laws/spectral_learning/#time-scaling",
+    "kernel_learning_curves": "/notes/neural_network_theory/kernel_methods/#learning-curves",
+    "scaling_laws": "/notes/scaling_laws/",
+    "double_descent": "/notes/neural_network_theory/linear_learning/#interpolation",
+    "gaussian_process": "/notes/neural_network_theory/wide_networks/#gaussian-process",
+    "nonlinear_teacher_student": "/notes/neural_network_theory/teacher_student_theory/#committee",
+    "linear_regression": "/notes/neural_network_theory/linear_learning/#regression",
+    "ntk": "/notes/neural_network_theory/wide_networks/#ntk",
+    "data_scaling": "/notes/scaling_laws/spectral_learning/#data-scaling",
+    "deep_linear": "/notes/neural_network_theory/deep_optimization/#deep-linear",
+    "teacher_student": "/notes/neural_network_theory/teacher_student_theory/#perceptron",
+    "compute_scaling": "/notes/scaling_laws/compute_allocation/#compute-scaling",
+    "random_features": "/notes/neural_network_theory/kernel_methods/#random-features",
+    "implicit_bias": "/notes/neural_network_theory/deep_optimization/#implicit-bias",
+    "model_scaling": "/notes/scaling_laws/spectral_learning/#model-scaling"
   },
   "existing_redirect_regression": "cell_cycle continues to redirect to qbio_course/single_cell_to_population_growth",
-  "image_dimensions_reserved": 25,
-  "image_loading_anchor_shift_pixels": 0
+  "image_dimensions_reserved": 20,
+  "image_loading_anchor_shift_pixels": 0,
+  "standalone_scaling_migration": {
+    "preserved_spectral_equations": 280,
+    "preserved_compute_equations": 95,
+    "preserved_figures_byte_identical": 5,
+    "historical_experiment_mappings": 4,
+    "python_sources_compile": 4
+  },
+  "browser_regression_2026_10_20": [
+    {
+      "path": "/notes/neural_network_theory/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 2
+    },
+    {
+      "path": "/notes/neural_network_theory/random_rnn/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 3
+    },
+    {
+      "path": "/notes/neural_network_theory/grokking/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 1
+    }
+  ]
 }

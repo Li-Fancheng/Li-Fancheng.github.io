@@ -1,0 +1,16 @@
+{{- /* Preserve links to sections of the former single review. */ -}}
+<script>
+(() => {
+  const routes = {{ site.Data.scaling_laws_routes | jsonify | safeJS }};
+  const forward = () => {
+    let anchor;
+    try { anchor = decodeURIComponent(window.location.hash.slice(1)); }
+    catch { return; }
+    if (routes[anchor]) {
+      window.location.replace(routes[anchor] + window.location.search + '#' + encodeURIComponent(anchor));
+    }
+  };
+  window.addEventListener('hashchange', forward);
+  forward();
+})();
+</script>

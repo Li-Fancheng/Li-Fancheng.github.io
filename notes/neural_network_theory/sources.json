@@ -1,16 +1,18 @@
 {
-  "verified_on": "2026-10-19",
+  "verified_on": "2026-10-20",
   "policy": "Original sources; independent derivations and simulations. Check model assumptions in each note.",
   "sources": [
     {
       "id": "advani2017",
       "notes": [
-        1,
-        12
+        1
       ],
       "authors": "Advani, Saxe (2017)",
       "title": "High-dimensional dynamics of generalization error in neural networks",
-      "url": "https://arxiv.org/abs/1710.03667"
+      "url": "https://arxiv.org/abs/1710.03667",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "hastie2019",
@@ -25,12 +27,14 @@
       "id": "mei_rf",
       "notes": [
         1,
-        2,
-        12
+        2
       ],
       "authors": "Mei, Montanari",
       "title": "The generalization error of random features regression: Precise asymptotics and double descent curve",
-      "url": "https://arxiv.org/abs/1908.05355"
+      "url": "https://arxiv.org/abs/1908.05355",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "rahimi2007",
@@ -89,12 +93,14 @@
     {
       "id": "bordelon2020",
       "notes": [
-        2,
-        12
+        2
       ],
       "authors": "Bordelon, Canatar, Pehlevan (2020)",
       "title": "Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks",
-      "url": "https://proceedings.mlr.press/v119/bordelon20a.html"
+      "url": "https://proceedings.mlr.press/v119/bordelon20a.html",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "mei_mf",
@@ -224,30 +230,33 @@
     },
     {
       "id": "bahri",
-      "notes": [
-        12
-      ],
+      "notes": [],
       "authors": "Bahri et al.",
       "title": "Explaining Neural Scaling Laws",
-      "url": "https://arxiv.org/abs/2102.06701"
+      "url": "https://arxiv.org/abs/2102.06701",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "kaplan",
-      "notes": [
-        12
-      ],
+      "notes": [],
       "authors": "Kaplan et al. (2020)",
       "title": "Scaling Laws for Neural Language Models",
-      "url": "https://arxiv.org/abs/2001.08361"
+      "url": "https://arxiv.org/abs/2001.08361",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "hoffmann",
-      "notes": [
-        12
-      ],
+      "notes": [],
       "authors": "Hoffmann et al. (2022)",
       "title": "Training Compute-Optimal Large Language Models",
-      "url": "https://arxiv.org/abs/2203.15556"
+      "url": "https://arxiv.org/abs/2203.15556",
+      "topics": [
+        "scaling_laws"
+      ]
     },
     {
       "id": "chizat_lazy",

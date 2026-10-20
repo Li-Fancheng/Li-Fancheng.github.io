@@ -298,5 +298,101 @@
     "kind": "paper",
     "intrinsic_width": 4300,
     "intrinsic_height": 2577
+  },
+  "embryonic_morphogenesis/figures/giammona2021_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 3000,
+    "intrinsic_height": 2174
+  },
+  "embryonic_morphogenesis/figures/bi2016_fig1": {
+    "width": 750,
+    "kind": "paper",
+    "intrinsic_width": 750,
+    "intrinsic_height": 458
+  },
+  "embryonic_morphogenesis/figures/scutoid2018_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1461,
+    "intrinsic_height": 1394
+  },
+  "embryonic_morphogenesis/figures/defects2025_fig1": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2020,
+    "intrinsic_height": 1166
+  },
+  "embryonic_morphogenesis/figures/20_packing_rigidity": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 852,
+    "intrinsic_height": 326
+  },
+  "embryonic_morphogenesis/figures/21_active_cage": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 884,
+    "intrinsic_height": 352
+  },
+  "embryonic_morphogenesis/figures/22_t1_topology": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 805,
+    "intrinsic_height": 373
+  },
+  "embryonic_morphogenesis/figures/23_nematic_defects": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 774,
+    "intrinsic_height": 391
+  },
+  "embryonic_morphogenesis/figures/24_force_network_topology": {
+    "width": 850,
+    "kind": "model",
+    "intrinsic_width": 909,
+    "intrinsic_height": 334
+  },
+  "embryonic_morphogenesis/figures/yamamoto2017_fig5": {
+    "width": 758,
+    "kind": "paper",
+    "intrinsic_width": 758,
+    "intrinsic_height": 439
+  },
+  "embryonic_morphogenesis/figures/pimpale2020_fig3": {
+    "width": 793,
+    "kind": "paper",
+    "intrinsic_width": 793,
+    "intrinsic_height": 1245
+  },
+  "embryonic_morphogenesis/figures/pimpale2020_fig4": {
+    "width": 752,
+    "kind": "paper",
+    "intrinsic_width": 752,
+    "intrinsic_height": 845
+  },
+  "embryonic_morphogenesis/figures/koyama2023_fig4": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1934,
+    "intrinsic_height": 1483
+  },
+  "embryonic_morphogenesis/figures/yamamoto2026_fig5": {
+    "width": 659,
+    "kind": "paper",
+    "intrinsic_width": 659,
+    "intrinsic_height": 617
+  },
+  "embryonic_morphogenesis/figures/25_worm_ingression": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 1371,
+    "intrinsic_height": 435
+  },
+  "embryonic_morphogenesis/figures/26_worm_material_memory": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 1371,
+    "intrinsic_height": 439
   }
 }

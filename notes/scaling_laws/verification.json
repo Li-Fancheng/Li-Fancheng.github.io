@@ -1,0 +1,236 @@
+{
+  "verified_on": "2026-10-20",
+  "hugo_version": "0.136.5 extended",
+  "notes": 6,
+  "article_and_directory_pages": 7,
+  "source_to_html_equations_preserved": 729,
+  "katex_errors": 0,
+  "browser_viewports": [
+    390,
+    1440
+  ],
+  "browser_cases": 14,
+  "pages_with_horizontal_overflow": 0,
+  "internal_references_checked": 187,
+  "broken_references": 0,
+  "unique_figures": 10,
+  "image_dimensions_reserved": 10,
+  "rendered_code_elements": 0,
+  "primary_sources": 13,
+  "legacy_browser_routes_checked": 12,
+  "old_section_anchors": [
+    "joint-risk",
+    "time-scaling",
+    "data-scaling",
+    "model-scaling",
+    "compute-scaling",
+    "interpretation",
+    "summary"
+  ],
+  "migration": {
+    "preserved_spectral_equations": 280,
+    "preserved_compute_equations": 95,
+    "preserved_figures_byte_identical": 5,
+    "historical_experiment_mappings": 4,
+    "python_sources_compile": 4
+  },
+  "numerical_checks": {
+    "statistical_geometry": {
+      "interpolation_slopes": [
+        -1.9999227162836473,
+        -3.999728902167699
+      ],
+      "noisy_slope": -0.5000000000000001,
+      "dimension": 4,
+      "local_approximation_order": 2,
+      "integration_points": 200003
+    },
+    "discrete_skills": {
+      "tail_a": 0.6,
+      "skills": 100000,
+      "predicted_data_exponent": 0.37499999999999994,
+      "example_D": 10000.0,
+      "finite_sum": 0.02722867344144804,
+      "infinite_tail_integral_approx": 0.02794771275351658,
+      "finite_table_last_risk": {
+        "100": 0.0,
+        "1000": 2.246822879528169e-35,
+        "100000": 0.001375503163892363
+      }
+    },
+    "feature_learning": {
+      "kind": "asymptotic formulas and self-consistent clock illustration, not full DMFT",
+      "clock_beta": 0.5,
+      "last_local_slopes": {
+        "0.0": 0.5000000000000563,
+        "0.01": 0.6642524404046692,
+        "1.0": 0.6665538228659913
+      },
+      "compute_assumptions": "R=t^-chi+N^-nu, C=N*t, nu=alpha*beta; hard-task branch is the relevant projected-model case",
+      "alpha": 2
+    },
+    "random_graphs": {
+      "seed": 20261020,
+      "kind": "independent graph statistics, no transformer training",
+      "graphs": {
+        "ER": {
+          "nodes": 1600,
+          "edges": 9579,
+          "mean_degree": 11.97375,
+          "max_degree": 25,
+          "entropy_rate_nats": 2.526041884991172,
+          "known_support_dimensions": 17558
+        },
+        "BA": {
+          "nodes": 1600,
+          "edges": 9579,
+          "mean_degree": 11.97375,
+          "max_degree": 191,
+          "entropy_rate_nats": 2.779852394729377,
+          "known_support_dimensions": 17558
+        }
+      }
+    },
+    "fitting_floor": {
+      "true_floor": 1.5,
+      "amplitude": 3.0,
+      "true_exponent": 0.4,
+      "floor_offsets": [
+        -0.02,
+        0,
+        0.02
+      ],
+      "kind": "analytic example, not language model data"
+    }
+  },
+  "independent_formula_checks": {
+    "adaptive_metric_max_error": 1.7763568394002505e-15,
+    "multinomial_cross_entropy": {
+      "support": 4,
+      "predicted_constant": 1.5,
+      "smoothing": 0.5,
+      "trials": 60000,
+      "results": [
+        {
+          "D": 1000,
+          "D_times_mean_KL": 1.4960789113920507,
+          "standard_error": 0.00499970791945195
+        },
+        {
+          "D": 10000,
+          "D_times_mean_KL": 1.5003706921195592,
+          "standard_error": 0.005002331712209086
+        },
+        {
+          "D": 100000,
+          "D_times_mean_KL": 1.4960175379059126,
+          "standard_error": 0.004993402997508729
+        }
+      ]
+    },
+    "Poisson_integral_relative_errors": [
+      1.1988202308555048e-12,
+      3.9527419674193084e-12
+    ],
+    "noisy_resolution_log_optimum_error": 9.086060792640183e-10,
+    "compute_log_optimum_error": 9.349406404624006e-08,
+    "status": "passed"
+  },
+  "core_and_hierarchy_link_regressions": [
+    {
+      "path": "/notes/neural_network_theory/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 2
+    },
+    {
+      "path": "/notes/neural_network_theory/random_rnn/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 3
+    },
+    {
+      "path": "/notes/neural_network_theory/grokking/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 1
+    },
+    {
+      "path": "/notes/hierarchical_data/",
+      "width": 390,
+      "scrollWidth": 375,
+      "errors": 0,
+      "oldNote12": false,
+      "scalingLinks": 1
+    }
+  ],
+  "scope": "Local Hugo build; exact-model calculations and finite graph statistics. No transformer training or complete DMFT numerical reproduction.",
+  "article_lengths": [
+    {
+      "number": 1,
+      "slug": "statistical_geometry",
+      "title": "01 · 统计估计与几何分辨率",
+      "subtitle": "从有限采样的波动到不断细化的函数结构",
+      "summary": "从均值估计、宽度波动与几何插值出发，比较四种标度区域，推导噪声下的最优复杂度及数据与特征的对偶条件。",
+      "chinese_characters": 3807,
+      "display_equations": 17,
+      "reading_time": 22
+    },
+    {
+      "number": 2,
+      "slug": "spectral_learning",
+      "title": "02 · 谱与学习分辨率",
+      "subtitle": "训练速率、目标尾部与有效模态的统一计算",
+      "summary": "由统一谱风险完整推导时间、数据和容量标度，保留目标对齐、噪声、正则化、谱截止与有限窗口。",
+      "chinese_characters": 8199,
+      "display_equations": 39,
+      "reading_time": 47
+    },
+    {
+      "number": 3,
+      "slug": "discrete_structure",
+      "title": "03 · 离散技能与长尾结构",
+      "subtitle": "随机覆盖、局部能力形成与组合共享",
+      "summary": "从技能尾部推导容量和数据指数，用 Poisson 计数替代硬阈值，再讨论训练时间、共享部件和数据选择。",
+      "chinese_characters": 3062,
+      "display_equations": 13,
+      "reading_time": 17
+    },
+    {
+      "number": 4,
+      "slug": "feature_learning",
+      "title": "04 · 特征学习与动态加速",
+      "subtitle": "初始核下的任务难度与自洽学习时钟",
+      "summary": "由两层参数化推导时变学习度量，解释困难任务的指数改善、有限模型瓶颈、SGD 暂态与计算配置。",
+      "chinese_characters": 3613,
+      "display_equations": 17,
+      "reading_time": 21
+    },
+    {
+      "number": 5,
+      "slug": "graph_language",
+      "title": "05 · 随机图与语言标度",
+      "subtitle": "从 ER 和 BA 游走到可控的序列学习",
+      "summary": "详述随机图、平稳访问、熵率与计数基线，连接 2026 年随机图到语言的研究，区分输入幂律与神经训练标度。",
+      "chinese_characters": 3487,
+      "display_equations": 12,
+      "reading_time": 19
+    },
+    {
+      "number": 6,
+      "slug": "compute_allocation",
+      "title": "06 · 计算配置与经验外推",
+      "subtitle": "风险曲面、损失底与预算约束下的选择",
+      "summary": "推导计算最优配置，比较可加与耦合风险，讨论数据回用、灵活拟合、平台误差、参数计数与训练协议。",
+      "chinese_characters": 5510,
+      "display_equations": 22,
+      "reading_time": 30
+    }
+  ]
+}

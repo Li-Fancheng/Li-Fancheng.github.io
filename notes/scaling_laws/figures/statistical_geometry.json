@@ -1,0 +1,10 @@
+{
+  "interpolation_slopes": [
+    -1.9999227162836473,
+    -3.999728902167699
+  ],
+  "noisy_slope": -0.5000000000000001,
+  "dimension": 4,
+  "local_approximation_order": 2,
+  "integration_points": 200003
+}
