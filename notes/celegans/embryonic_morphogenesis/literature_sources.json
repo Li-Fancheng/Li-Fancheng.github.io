@@ -665,5 +665,49 @@
     "group": "线虫中的主动软物质机制",
     "source": "https://doi.org/10.1016/S1534-5807(02)00129-6",
     "checked_on": "2026-10-20"
+  },
+  {
+    "doi": "10.1038/s41586-018-0479-2",
+    "authors": "Alessandro Mongera, Payam Rowghanian, Hannah J. Gustafson, Elijah Shelton, David A. Kealhofer, Emmet K. Carn, Friedhelm Serwane, Adam A. Lucio, James Giammona, Otger Campàs",
+    "year": "2018",
+    "title": "A fluid-to-solid jamming transition underlies vertebrate body axis elongation",
+    "journal": "Nature",
+    "pmcid": null,
+    "group": "Solid fluid transition 与组织流变",
+    "source": "https://doi.org/10.1038/s41586-018-0479-2",
+    "checked_on": "2026-10-20"
+  },
+  {
+    "doi": "10.1016/j.cell.2021.02.017",
+    "authors": "Nicoletta I. Petridou, Bernat Corominas-Murtra, Carl-Philipp Heisenberg, Edouard Hannezo",
+    "year": "2021",
+    "title": "Rigidity percolation uncovers a structural basis for embryonic tissue phase transitions",
+    "journal": "Cell",
+    "pmcid": "PMC8055543",
+    "group": "Solid fluid transition 与组织流变",
+    "source": "https://doi.org/10.1016/j.cell.2021.02.017",
+    "checked_on": "2026-10-20"
+  },
+  {
+    "doi": "10.1103/PhysRevE.108.L042602",
+    "authors": "Suzanne M. Fielding, James O. Cochran, Junxiang Huang, Dapeng Bi, M. Cristina Marchetti",
+    "year": "2023",
+    "title": "Constitutive model for the rheology of biological tissue",
+    "journal": "Physical Review E",
+    "pmcid": null,
+    "group": "Solid fluid transition 与组织流变",
+    "source": "https://doi.org/10.1103/PhysRevE.108.L042602",
+    "checked_on": "2026-10-20"
+  },
+  {
+    "doi": "10.64898/2026.05.19.726147",
+    "authors": "Saaya Koizumi, Ayama Tokuyasu, Akinori W. M. Miyamoto, Takayuki Torisawa, Hirokazu Tanimoto, Akatsuki Kimura",
+    "year": "2026",
+    "title": "Developmentally programmed changes in cytoplasmic mechanics revealed by active microrheology in C. elegans embryos",
+    "journal": "bioRxiv preprint",
+    "pmcid": "PMC13228458",
+    "group": "Solid fluid transition 与组织流变",
+    "source": "https://doi.org/10.64898/2026.05.19.726147",
+    "checked_on": "2026-10-20"
   }
 ]

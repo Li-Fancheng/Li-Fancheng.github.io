@@ -965,6 +965,69 @@
           "figure": 11
         }
       ]
+    },
+    {
+      "file": "figures/bi2016_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/20c1/5619672/265c6c3d6e2c/nihms854380f3.jpg",
+      "article_doi": "10.1103/PhysRevX.6.021011",
+      "figure_id": "Fig. 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5619672/#F3",
+      "author": "Bi et al.",
+      "year": 2016,
+      "license": "CC BY 3.0",
+      "sha256": "c28bd51eff26a1dc9fcc53015304bd0f554619e5b0fdd1703c25831cceaaef66",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 21
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "file": "figures/mongera2018_fig2.png",
+      "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-018-0479-2/MediaObjects/41586_2018_479_Fig2_HTML.png",
+      "article_doi": "10.1038/s41586-018-0479-2",
+      "figure_id": "Fig. 2",
+      "source": "https://www.nature.com/articles/s41586-018-0479-2/figures/2",
+      "author": "Mongera et al.",
+      "year": 2018,
+      "license": "Original author/publisher rights retained",
+      "sha256": "48d7efdb8cf489e19cf605a6167cf1f39a580399e922acf9bb82a484e60d07dc",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 23
+        }
+      ]
+    },
+    {
+      "file": "figures/koizumi2026_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0bee/13228458/af2584aa2ef9/nihpp-2026.05.19.726147v1-f0003.jpg",
+      "article_doi": "10.64898/2026.05.19.726147",
+      "figure_id": "Fig. 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13228458/#F3",
+      "author": "Koizumi et al.",
+      "year": 2026,
+      "license": "CC BY-NC-ND 4.0",
+      "sha256": "6e319811204f93a744826a293f3aed16230c7d20725bf4d98df0e6c6c673ae35",
+      "retrieved_on": "2026-10-20",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 24
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "publication_status": "Preprint, version 1, 20 May 2026"
     }
   ],
   "original_figures": {
@@ -973,7 +1036,8 @@
       "figures/generate_model_figures.py",
       "figures/generate_extended_models.py",
       "figures/generate_active_packing_figures.py",
-      "figures/generate_worm_mechanics_figures.py"
+      "figures/generate_worm_mechanics_figures.py",
+      "figures/generate_solid_fluid_figures.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -995,7 +1059,9 @@
       "figures/23_nematic_defects.svg",
       "figures/24_force_network_topology.svg",
       "figures/25_worm_ingression.svg",
-      "figures/26_worm_material_memory.svg"
+      "figures/26_worm_material_memory.svg",
+      "figures/27_solid_fluid_rheology.svg",
+      "figures/28_yield_and_flow.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -1117,6 +1183,18 @@
         {
           "note": "active_matter_packing_topology",
           "figure": 17
+        }
+      ],
+      "figures/27_solid_fluid_rheology.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 20
+        }
+      ],
+      "figures/28_yield_and_flow.svg": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 22
         }
       ]
     }

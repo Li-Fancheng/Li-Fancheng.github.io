@@ -12,7 +12,7 @@
 | [03 早期伸长与各向异性力学](/notes/celegans/embryonic_morphogenesis/early_elongation/) | 从身体为什么变细变长出发，解释激光切割、分子拉力测量，以及不同方向上的软硬差别。 |
 | [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) | 解释肌肉反复抽动后，骨架和连接怎样保留形变，以及荧光恢复实验能告诉我们什么。 |
 | [05 三维体形与模型辨识](/notes/celegans/embryonic_morphogenesis/geometry_and_inference/) | 用中心线追踪弯曲身体的真实长度，讨论三维运动、卵壳限制，以及实验能否分别确定力和刚度。 |
-| [06 Active matter 软物质堆积与拓扑](/notes/celegans/embryonic_morphogenesis/active_matter_packing_topology/) | 从堆积和刚性出发，深入比较线虫四细胞排列、内移、手性皮层流、背侧插入与肌肉驱动中的传力、拓扑和材料更新。 |
+| [06 Active matter 软物质堆积与拓扑](/notes/celegans/embryonic_morphogenesis/active_matter_packing_topology/) | 从堆积和刚性出发，深入比较线虫四细胞排列、内移、手性皮层流、背侧插入与肌肉驱动中的传力、拓扑和材料更新，并区分固流转变、解堵与屈服。 |
 
 
 ### 1.1 各阶段的模型路线
@@ -27,7 +27,7 @@
 | 后期伸长 | 黏弹性谱、阈值黏塑性、切断与束化、周期更新、连接反应扩散、组织间协调 | 哪些响应可恢复，哪些结构变化能在周期后保留 |
 | 三维体形 | 有限变形连续体、Cosserat 杆、受限屈曲、接触动力学、参数辨识 | 局部活动怎样产生全身弯扭，哪些观测足以确定模型 |
 
-第六篇进一步比较颗粒堆积与满铺组织，区分邻接网络、向列取向和力网络中的拓扑，并用线虫的界面张力、皮层流、定向插入和周期伸长讨论这些模型怎样与实验对应。
+第六篇以独立一节讨论 solid–fluid transition、应力松弛、蠕变与屈服，再比较颗粒堆积与满铺组织，区分邻接网络、向列取向和力网络中的拓扑，并用线虫的界面张力、皮层流、定向插入和周期伸长讨论这些模型怎样与实验对应。
 
 各篇会注明模型的使用范围。线虫中的直接研究、其他体系发展出的理论，以及用于拆解假设的简化算例，提供的证据并不相同。
 

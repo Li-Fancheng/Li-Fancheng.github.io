@@ -394,5 +394,35 @@
     "kind": "model",
     "intrinsic_width": 1371,
     "intrinsic_height": 439
+  },
+  "embryonic_morphogenesis/figures/bi2016_fig3": {
+    "width": 800,
+    "kind": "paper",
+    "intrinsic_width": 800,
+    "intrinsic_height": 221
+  },
+  "embryonic_morphogenesis/figures/mongera2018_fig2": {
+    "width": 850,
+    "kind": "paper",
+    "intrinsic_width": 1041,
+    "intrinsic_height": 1018
+  },
+  "embryonic_morphogenesis/figures/koizumi2026_fig3": {
+    "width": 657,
+    "kind": "paper",
+    "intrinsic_width": 657,
+    "intrinsic_height": 527
+  },
+  "embryonic_morphogenesis/figures/27_solid_fluid_rheology": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 1409,
+    "intrinsic_height": 459
+  },
+  "embryonic_morphogenesis/figures/28_yield_and_flow": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 1140,
+    "intrinsic_height": 459
   }
 }
