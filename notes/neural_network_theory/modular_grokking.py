@@ -51,7 +51,7 @@ def run(args):
             m[j]=.9*m[j]+.1*g; v[j]=.999*v[j]+.001*g*g
             z*=1-args.lr*args.decay
             z-=args.lr*(m[j]/(1-.9**(step+1)))/(np.sqrt(v[j]/(1-.999**(step+1)))+1e-8)
-    out=Path(args.output) if args.output else Path(__file__).resolve().parent/"grokking"/"figures"
+    out=Path(args.output) if args.output else Path(__file__).resolve().parent.parent/"grokking"/"figures"
     out.mkdir(parents=True,exist_ok=True)
     with (out/"modular_history.csv").open("w") as f:
         writer=csv.writer(f); writer.writerow(["step","train_ce","test_ce","train_accuracy","test_accuracy","norm_squared","fourier_concentration"]); writer.writerows(history)

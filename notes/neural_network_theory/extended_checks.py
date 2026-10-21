@@ -37,6 +37,7 @@ def save(fig,slug,name):
     merged_owner = {
         ("time_scaling", "critical_spectrum"): "../scaling_laws",
         ("implicit_bias", "initialization_bias"): "deep_optimization",
+        ("grokking", "logit_symmetry"): "../grokking",
     }.get((slug, name))
     if merged_owner:
         public = ROOT/merged_owner/"figures"
@@ -156,7 +157,7 @@ assert abs(normalized[-1]/expected-1)<.01
 report["data_scaling_constant"]={"analytic":float(expected),"sqrt_D_times_risk":normalized,"modes":len(indices)}
 
 # Function-space symmetry of the saved modular-addition model.
-weights=np.load(ROOT/"grokking/figures/modular_weights.npz"); p=19
+weights=np.load(ROOT.parent/"grokking/figures/modular_weights.npz"); p=19
 aa,bb=np.meshgrid(np.arange(p),np.arange(p),indexing="ij"); X=np.zeros((p*p,2*p))
 X[np.arange(p*p),aa.ravel()]=1; X[np.arange(p*p),p+bb.ravel()]=1
 F=((X@weights["W"])**2@weights["V"]).reshape(p,p,p); F-=F.mean(axis=2,keepdims=True)

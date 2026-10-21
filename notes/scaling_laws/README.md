@@ -24,4 +24,4 @@ sources.json 记录十三篇原始文献及对应正文。注意预印本首发�
 
 原 `/notes/neural_network_theory/scaling_laws/` 跳转本专题；time/data/model/compute 四个历史入口直接到对应章节。旧综合稿的六个主要节锚点由专题入口转发。原谱推导和五图全部保留，新增机制内容另行展开。
 
-下载压缩包以 neural_network_theory/ 和 scaling_laws/ 两个相邻目录保存材料，以维持跨专题计算镜像路径。两个专题下载链接提供相同的配套材料包。解压后可只阅读或运行需要的目录。
+下载压缩包以 neural_network_theory/、scaling_laws/ 和 grokking/ 三个相邻目录保存材料，以维持跨专题计算镜像路径。三个专题下载链接提供相同的配套材料包。解压后可只阅读或运行需要的目录。

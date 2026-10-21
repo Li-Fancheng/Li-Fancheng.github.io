@@ -1,0 +1,14 @@
+{
+  "cg": 0.05,
+  "cm": 5.0,
+  "gamma_g": 0.015,
+  "gamma_m": 1.0,
+  "lambda": 0.02,
+  "steady_g_m": [
+    0.989119683481703,
+    0.009891196834815475
+  ],
+  "exact_slow_time": 734.3575770294701,
+  "quasistatic_slow_time": 725.3544345532478,
+  "kind": "fixed-feature convex quadratic model"
+}

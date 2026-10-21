@@ -1,0 +1,113 @@
+{
+  "verified_on": "2026-10-21",
+  "hugo_version": "0.136.5 extended",
+  "notes": 5,
+  "article_and_directory_pages": 6,
+  "source_to_html_equations_preserved": 270,
+  "browser_equations_per_viewport": 270,
+  "katex_errors": 0,
+  "viewports": [
+    390,
+    1440
+  ],
+  "browser_cases": 12,
+  "horizontal_overflow_cases": 0,
+  "internal_references_checked": 129,
+  "broken_references": 0,
+  "figures": 8,
+  "image_dimensions_reserved": 8,
+  "rendered_code_elements": 0,
+  "primary_sources": 14,
+  "legacy_browser_routes_checked": 34,
+  "old_section_anchor_routes": 33,
+  "migration": {
+    "original_url": "/notes/neural_network_theory/grokking/",
+    "current_url": "/notes/grokking/",
+    "preserved_figures_byte_identical": 3,
+    "preserved_training_record_files_byte_identical": 4,
+    "historical_experiment_ids_preserved": 20,
+    "moved_experiment": 13,
+    "python_sources_compile": 5
+  },
+  "independent_formula_checks": {
+    "competition_ODE_max_error": 1.2192491460893962e-10,
+    "Gaussian_quadratic_risk": {
+      "theory": 40.22330976385804,
+      "Monte_Carlo": 40.253463945630045,
+      "relative_error": 0.0007496693322610604,
+      "samples": 500000
+    },
+    "Rayleigh_directional_gradient_error": 4.5891601629932666e-10,
+    "Rayleigh_radial_derivative": -3.3306690738754696e-16,
+    "constraint_nullity": 2,
+    "soft_threshold_optimality": "passed",
+    "saved_training": {
+      "train_ce": 1.17616320216915e-06,
+      "test_ce": 0.01664179662870086,
+      "full_accuracy": 1.0,
+      "weights_sha256": "944790943da16ba3369ab98d334b97cbe974dc76a488b782f43e9e6b4ce57f47"
+    },
+    "symmetry_projection": {
+      "full_risk_before": 0.005025629433948274,
+      "full_risk_after": 9.899499264776068e-07,
+      "Pythagoras_relative_error": 1.0220998418740385e-16
+    },
+    "status": "passed"
+  },
+  "numerical_model_checks": "numerical_checks.json",
+  "core_browser_regression_pages": 11,
+  "core_browser_regression_equations": 2023,
+  "scope": "Original single-seed trained state and exploratory controls preserved; new exact-model calculations and terminal function interventions. No new full training or unavailable intermediate checkpoint history.",
+  "notes_detail": [
+    {
+      "number": 1,
+      "slug": "phenomenology",
+      "title": "01 · 现象与可解基线",
+      "subtitle": "慢模态、评分阈值与经验训练度量",
+      "summary": "定义不同泛化时间，从固定模态与 Gaussian 随机设计推导延迟，比较准确率、连续风险、噪声和零空间平台。",
+      "chinese_characters": 3085,
+      "display_equations": 14,
+      "reading_time": 18
+    },
+    {
+      "number": 2,
+      "slug": "solution_competition",
+      "title": "02 · 正则化与解的竞争",
+      "subtitle": "快拟合、慢选择与参数化的长期偏好",
+      "summary": "完整求解已有特征的竞争，连接乘法平台、电路效率、范数几何、隐式偏置与自适应优化器。",
+      "chinese_characters": 3253,
+      "display_equations": 14,
+      "reading_time": 18
+    },
+    {
+      "number": 3,
+      "slug": "representation_circuits",
+      "title": "03 · 表示形成与算法电路",
+      "subtitle": "从初始核到 Fourier 算法和函数对称性",
+      "summary": "用二次任务理解特征学习，推导模加法算法、非神经特征迭代、对称投影与凸性关系，区分结构存在和实际使用。",
+      "chinese_characters": 3730,
+      "display_equations": 18,
+      "reading_time": 22
+    },
+    {
+      "number": 4,
+      "slug": "effective_theory",
+      "title": "04 · 有效理论与学习相图",
+      "subtitle": "约束、零模、结构形成时间与相变语言",
+      "summary": "从平行四边形关系建立约束矩阵和保持尺度的有效流，解释可辨识性、谱隙、代数几何及有限时间相图。",
+      "chinese_characters": 3286,
+      "display_equations": 12,
+      "reading_time": 18
+    },
+    {
+      "number": 5,
+      "slug": "experiments_diagnosis",
+      "title": "05 · 实验与机制诊断",
+      "subtitle": "真实训练、末态函数干预与延迟泛化的边界",
+      "summary": "保留模加法训练及失败对照，重算阈值时间、对称投影和频率干预，并讨论测试划分与语言预训练类比。",
+      "chinese_characters": 3650,
+      "display_equations": 2,
+      "reading_time": 16
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "selection": "Exploratory single-seed controls; final demonstration selected after these runs. Not an unbiased benchmark.",
+  "runs": [
+    {
+      "modulus": 19,
+      "width": 128,
+      "fraction": 0.4,
+      "steps": 30000,
+      "lr": 0.003,
+      "decay": 0.1,
+      "seed": 7,
+      "activation": "square",
+      "train_examples": 144,
+      "test_examples": 217,
+      "first_train_99": 100,
+      "first_test_99": null,
+      "final": [
+        30000,
+        2.0582376701655458e-08,
+        14.878206312912674,
+        1.0,
+        0.0,
+        1080.3282629933774,
+        0.13146298139423518
+      ]
+    },
+    {
+      "modulus": 19,
+      "width": 128,
+      "fraction": 0.5,
+      "steps": 60000,
+      "lr": 0.003,
+      "decay": 1.0,
+      "seed": 7,
+      "activation": "relu",
+      "train_examples": 180,
+      "test_examples": 181,
+      "first_train_99": 100,
+      "first_test_99": null,
+      "final": [
+        60000,
+        2.3369635700040425e-06,
+        3.391228426243656,
+        1.0,
+        0.24861878453038674,
+        2317.155340942906,
+        0.12408124517973877
+      ]
+    },
+    {
+      "modulus": 19,
+      "width": 128,
+      "fraction": 0.6,
+      "steps": 60000,
+      "lr": 0.003,
+      "decay": 1.0,
+      "seed": 7,
+      "activation": "square",
+      "train_examples": 216,
+      "test_examples": 145,
+      "first_train_99": 100,
+      "first_test_99": null,
+      "final": [
+        60000,
+        1.0101884303963301e-06,
+        0.1388034858159696,
+        1.0,
+        0.9448275862068966,
+        933.1475015931824,
+        0.13477792793032958
+      ]
+    },
+    {
+      "modulus": 19,
+      "width": 128,
+      "fraction": 0.6,
+      "steps": 40000,
+      "lr": 0.003,
+      "decay": 3.0,
+      "seed": 7,
+      "activation": "square",
+      "train_examples": 216,
+      "test_examples": 145,
+      "first_train_99": 100,
+      "first_test_99": null,
+      "final": [
+        40000,
+        2.9444389791664407,
+        2.9444389791664403,
+        0.041666666666666664,
+        0.06896551724137931,
+        1.65630952576572e-250,
+        3.843682419350434e-220
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-> **IV · 记忆与集体动力学 · Note 11**
+> **IV · 记忆与集体动力学 · Note 10**
 >
-> ← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →
+> ← [Note 09](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →
 
 **可解性层次：** 非对称稠密随机耦合的无限规模极限。
 
@@ -240,7 +240,7 @@ $$
 
 ## 与相邻模型的对照
 
-对称耦合允许逐次更新的能量下降，而一般非对称 RNN 没有这项保证。下面 [Note 10](/notes/neural_network_theory/hopfield/) 的证明给出明确对照：
+对称耦合允许逐次更新的能量下降，而一般非对称 RNN 没有这项保证。下面 [Note 09](/notes/neural_network_theory/hopfield/) 的证明给出明确对照：
 
 ### Hebbian 耦合与异步更新
 
@@ -352,4 +352,4 @@ DMFT 的力量来自把大量单元压缩成一个有色驱动的有效过程，
 
 ---
 
-← [Note 10](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →
+← [Note 09](/notes/neural_network_theory/hopfield/) · [系列目录](/notes/neural_network_theory/) · [Scaling Laws 专题](/notes/scaling_laws/) →

@@ -1,0 +1,18 @@
+{{- /* Forward section links from the former single note. */ -}}
+<script>
+(() => {
+  const routes = {{ site.Data.grokking_routes | jsonify | safeJS }};
+  const forward = () => {
+    let anchor;
+    try { anchor = decodeURIComponent(window.location.hash.slice(1)); }
+    catch { return; }
+    if (routes[anchor]) {
+      const target = new URL(routes[anchor], window.location.origin);
+      target.search = window.location.search;
+      window.location.replace(target.pathname + target.search + target.hash);
+    }
+  };
+  window.addEventListener('hashchange', forward);
+  forward();
+})();
+</script>

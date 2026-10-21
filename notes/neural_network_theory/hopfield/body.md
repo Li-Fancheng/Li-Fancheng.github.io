@@ -1,6 +1,6 @@
-> **IV · 记忆与集体动力学 · Note 10**
+> **IV · 记忆与集体动力学 · Note 09**
 >
-> ← [Note 09](/notes/neural_network_theory/sgd/) · [系列目录](/notes/neural_network_theory/) · [Note 11](/notes/neural_network_theory/random_rnn/) →
+> ← [Note 08](/notes/neural_network_theory/sgd/) · [系列目录](/notes/neural_network_theory/) · [Note 10](/notes/neural_network_theory/random_rnn/) →
 
 **可解性层次：** 低负载平均场；广延负载需自洽修正。
 
@@ -314,7 +314,7 @@ $$
 
 因此至少有三种不同的阈值概念：解存在的可满足性阈值，给定数据允许达到的统计恢复阈值，以及指定算法实际达到的动力学阈值。简单模型里它们可能重合，也可能分离。Teacher–student 设定的价值，正是让这些问题有独立的定义，而不是把所有陡峭曲线都称作同一种学习相变。
 
-有限温度更新可以具有平衡解释，而一般随机梯度未必如此。下面 [Note 09](/notes/neural_network_theory/sgd/) 对概率流与有效温度的讨论，有助于辨认两类随机动力学的差别：
+有限温度更新可以具有平衡解释，而一般随机梯度未必如此。下面 [Note 08](/notes/neural_network_theory/sgd/) 对概率流与有效温度的讨论，有助于辨认两类随机动力学的差别：
 
 ### 什么时候可以说“有效温度”
 
@@ -369,4 +369,4 @@ Hopfield 模型把记忆转成了动力学几何：模式不仅被写进耦合�
 
 ---
 
-← [Note 09](/notes/neural_network_theory/sgd/) · [系列目录](/notes/neural_network_theory/) · [Note 11](/notes/neural_network_theory/random_rnn/) →
+← [Note 08](/notes/neural_network_theory/sgd/) · [系列目录](/notes/neural_network_theory/) · [Note 10](/notes/neural_network_theory/random_rnn/) →

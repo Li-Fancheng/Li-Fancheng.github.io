@@ -1,0 +1,25 @@
+{
+  "competition_ODE_max_error": 1.2192491460893962e-10,
+  "Gaussian_quadratic_risk": {
+    "theory": 40.22330976385804,
+    "Monte_Carlo": 40.253463945630045,
+    "relative_error": 0.0007496693322610604,
+    "samples": 500000
+  },
+  "Rayleigh_directional_gradient_error": 4.5891601629932666e-10,
+  "Rayleigh_radial_derivative": -3.3306690738754696e-16,
+  "constraint_nullity": 2,
+  "soft_threshold_optimality": "passed",
+  "saved_training": {
+    "train_ce": 1.17616320216915e-06,
+    "test_ce": 0.01664179662870086,
+    "full_accuracy": 1.0,
+    "weights_sha256": "944790943da16ba3369ab98d334b97cbe974dc76a488b782f43e9e6b4ce57f47"
+  },
+  "symmetry_projection": {
+    "full_risk_before": 0.005025629433948274,
+    "full_risk_after": 9.899499264776068e-07,
+    "Pythagoras_relative_error": 1.0220998418740385e-16
+  },
+  "status": "passed"
+}

@@ -1,0 +1,31 @@
+{
+  "quadrature_nodes": 1600,
+  "initial_error_energy": 1,
+  "kind": "MP spectral integrals, not trained nonlinear networks",
+  "cases": {
+    "0.8": {
+      "continuous_mass": 1.0000000000001252,
+      "zero_mass": 0,
+      "lower_edge": 0.011145618000168249,
+      "last_test_risk": 0.0,
+      "critical_slopes_train_test": null
+    },
+    "1.0": {
+      "continuous_mass": 0.9999999999254605,
+      "zero_mass": 0.0,
+      "lower_edge": 0.0,
+      "last_test_risk": 0.0006307828960608544,
+      "critical_slopes_train_test": [
+        -1.4999949592126467,
+        -0.49999833476145655
+      ]
+    },
+    "1.2": {
+      "continuous_mass": 0.833333333333437,
+      "zero_mass": 0.16666666666666663,
+      "lower_edge": 0.009109769979335531,
+      "last_test_risk": 0.08333333333333331,
+      "critical_slopes_train_test": null
+    }
+  }
+}

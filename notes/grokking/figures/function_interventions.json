@@ -1,0 +1,140 @@
+{
+  "projection_energy": 0.6815755838758107,
+  "projection_Pythagoras_relative_error": 1.0220998418740385e-16,
+  "dominant_frequency": 3,
+  "models": {
+    "Original": {
+      "full_ce": 0.005025629433948274,
+      "full_accuracy": 1.0,
+      "train_ce": 1.1761632021198067e-06,
+      "test_ce": 0.016641796628700852,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 1.0961600425599647
+    },
+    "Invariant": {
+      "full_ce": 9.899499264776068e-07,
+      "full_accuracy": 1.0,
+      "train_ce": 9.899499264776068e-07,
+      "test_ce": 9.899499264776068e-07,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 16.22632652803212
+    },
+    "Residual": {
+      "full_ce": 5.027614925896105,
+      "full_accuracy": 0.008310249307479225,
+      "train_ce": 3.0920292050822495,
+      "test_ce": 9.50254705108043,
+      "train_accuracy": 0.011904761904761904,
+      "test_accuracy": 0.0,
+      "min_margin": -15.695395147744204
+    },
+    "Top pair": {
+      "full_ce": 1.73880793566638,
+      "full_accuracy": 1.0,
+      "train_ce": 1.7388079356663804,
+      "test_ce": 1.7388079356663804,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 0.09660533944111283
+    },
+    "Without pair": {
+      "full_ce": 0.04406347888096563,
+      "full_accuracy": 0.9861495844875346,
+      "train_ce": 2.1996610993973546e-05,
+      "test_ce": 0.14588415348677167,
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.9541284403669725,
+      "min_margin": -2.712679285486825
+    }
+  },
+  "residual_sweep_at_selected_scales": {
+    "-1": {
+      "full_ce": 0.00021382478761595357,
+      "full_accuracy": 1.0,
+      "train_ce": 0.0003044821090791638,
+      "test_ce": 4.231714141375805e-06,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 5.099590350831036
+    },
+    "0": {
+      "full_ce": 9.899499264776068e-07,
+      "full_accuracy": 1.0,
+      "train_ce": 9.899499264776068e-07,
+      "test_ce": 9.899499264776068e-07,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 16.22632652803212
+    },
+    "0.25": {
+      "full_ce": 1.7919238839671622e-06,
+      "full_accuracy": 1.0,
+      "train_ce": 7.676913910778295e-07,
+      "test_ce": 4.159874234500298e-06,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 12.706860900569314
+    },
+    "0.5": {
+      "full_ce": 1.2633811849491726e-05,
+      "full_accuracy": 1.0,
+      "train_ce": 7.69962685003254e-07,
+      "test_ce": 4.006216037656599e-05,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 8.836627281232865
+    },
+    "1": {
+      "full_ce": 0.005025629433948274,
+      "full_accuracy": 1.0,
+      "train_ce": 1.1761632021198067e-06,
+      "test_ce": 0.016641796628700852,
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "min_margin": 1.0961600425599656
+    },
+    "2": {
+      "full_ce": 0.941902255551654,
+      "full_accuracy": 0.8448753462603878,
+      "train_ce": 6.022901339773248e-06,
+      "test_ce": 3.1194972154404548,
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.48623853211009177,
+      "min_margin": -14.38477443478583
+    },
+    "4": {
+      "full_ce": 5.702903192446267,
+      "full_accuracy": 0.7174515235457064,
+      "train_ce": 0.0006657267377483823,
+      "test_ce": 18.88605770032284,
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.06422018348623854,
+      "min_margin": -45.61399230793664
+    }
+  },
+  "threshold_times": {
+    "0.5": {
+      "first_test": 300,
+      "sustained_test": 300
+    },
+    "0.9": {
+      "first_test": 2400,
+      "sustained_test": 6400
+    },
+    "0.95": {
+      "first_test": 7500,
+      "sustained_test": 33900
+    },
+    "0.99": {
+      "first_test": 14600,
+      "sustained_test": 38200
+    },
+    "1.0": {
+      "first_test": 15900,
+      "sustained_test": 38300
+    }
+  },
+  "protocol": "Known-task, full-grid terminal function analysis. Original logit scale; no temperature fitting, new gradients, intermediate checkpoints or hyperparameter selection."
+}

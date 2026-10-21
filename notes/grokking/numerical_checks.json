@@ -1,0 +1,284 @@
+{
+  "random_design": {
+    "quadrature_nodes": 1600,
+    "initial_error_energy": 1,
+    "kind": "MP spectral integrals, not trained nonlinear networks",
+    "cases": {
+      "0.8": {
+        "continuous_mass": 1.0000000000001252,
+        "zero_mass": 0,
+        "lower_edge": 0.011145618000168249,
+        "last_test_risk": 0.0,
+        "critical_slopes_train_test": null
+      },
+      "1.0": {
+        "continuous_mass": 0.9999999999254605,
+        "zero_mass": 0.0,
+        "lower_edge": 0.0,
+        "last_test_risk": 0.0006307828960608544,
+        "critical_slopes_train_test": [
+          -1.4999949592126467,
+          -0.49999833476145655
+        ]
+      },
+      "1.2": {
+        "continuous_mass": 0.833333333333437,
+        "zero_mass": 0.16666666666666663,
+        "lower_edge": 0.009109769979335531,
+        "last_test_risk": 0.08333333333333331,
+        "critical_slopes_train_test": null
+      }
+    }
+  },
+  "solution_competition": {
+    "cg": 0.05,
+    "cm": 5.0,
+    "gamma_g": 0.015,
+    "gamma_m": 1.0,
+    "lambda": 0.02,
+    "steady_g_m": [
+      0.989119683481703,
+      0.009891196834815475
+    ],
+    "exact_slow_time": 734.3575770294701,
+    "quasistatic_slow_time": 725.3544345532478,
+    "kind": "fixed-feature convex quadratic model"
+  },
+  "fourier_algorithm": {
+    "modulus": 19,
+    "frequency": 3,
+    "minimum_unit_scale_margin": 0.05418275829936536,
+    "verified_complete_domain_accuracy": 1.0,
+    "kind": "explicitly constructed Fourier function, not training"
+  },
+  "representation_constraints": {
+    "seed": 20261021,
+    "symbols": 12,
+    "unordered_pairs": 78,
+    "trials_per_fraction": 80,
+    "fractions": [
+      0.15,
+      0.19999999999999998,
+      0.25,
+      0.3,
+      0.35,
+      0.39999999999999997,
+      0.44999999999999996,
+      0.5,
+      0.5499999999999999,
+      0.6,
+      0.6499999999999999,
+      0.7,
+      0.75,
+      0.7999999999999999,
+      0.85,
+      0.8999999999999999,
+      0.95,
+      1.0
+    ],
+    "probability_unique_affine_shape": [
+      0.0,
+      0.0,
+      0.0125,
+      0.0875,
+      0.4375,
+      0.775,
+      0.9625,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_nullity": [
+      9.6875,
+      7.7375,
+      5.8125,
+      4.175,
+      2.8625,
+      2.2375,
+      2.0375,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "mean_structural_gap": [
+      0.0,
+      0.0,
+      0.00028870082727520783,
+      0.0015677466818843915,
+      0.012428849010717571,
+      0.03176859359989144,
+      0.057265336712901994,
+      0.09157557940003828,
+      0.11837267215759506,
+      0.145904204904565,
+      0.16299609023183542,
+      0.18905811290355395,
+      0.20496274875016426,
+      0.2294981249007543,
+      0.24881186733942745,
+      0.2729274637621416,
+      0.30622738088832324,
+      0.33599999999999997
+    ],
+    "flow_initial_energy": 0.3949679104862447,
+    "flow_final_energy": 1.807370951427879e-17,
+    "flow_norm_conserved": true,
+    "kind": "constraint matrices and normalized Rayleigh flow, no decoder training"
+  },
+  "function_interventions": {
+    "projection_energy": 0.6815755838758107,
+    "projection_Pythagoras_relative_error": 1.0220998418740385e-16,
+    "dominant_frequency": 3,
+    "models": {
+      "Original": {
+        "full_ce": 0.005025629433948274,
+        "full_accuracy": 1.0,
+        "train_ce": 1.1761632021198067e-06,
+        "test_ce": 0.016641796628700852,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 1.0961600425599647
+      },
+      "Invariant": {
+        "full_ce": 9.899499264776068e-07,
+        "full_accuracy": 1.0,
+        "train_ce": 9.899499264776068e-07,
+        "test_ce": 9.899499264776068e-07,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 16.22632652803212
+      },
+      "Residual": {
+        "full_ce": 5.027614925896105,
+        "full_accuracy": 0.008310249307479225,
+        "train_ce": 3.0920292050822495,
+        "test_ce": 9.50254705108043,
+        "train_accuracy": 0.011904761904761904,
+        "test_accuracy": 0.0,
+        "min_margin": -15.695395147744204
+      },
+      "Top pair": {
+        "full_ce": 1.73880793566638,
+        "full_accuracy": 1.0,
+        "train_ce": 1.7388079356663804,
+        "test_ce": 1.7388079356663804,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 0.09660533944111283
+      },
+      "Without pair": {
+        "full_ce": 0.04406347888096563,
+        "full_accuracy": 0.9861495844875346,
+        "train_ce": 2.1996610993973546e-05,
+        "test_ce": 0.14588415348677167,
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.9541284403669725,
+        "min_margin": -2.712679285486825
+      }
+    },
+    "residual_sweep_at_selected_scales": {
+      "-1": {
+        "full_ce": 0.00021382478761595357,
+        "full_accuracy": 1.0,
+        "train_ce": 0.0003044821090791638,
+        "test_ce": 4.231714141375805e-06,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 5.099590350831036
+      },
+      "0": {
+        "full_ce": 9.899499264776068e-07,
+        "full_accuracy": 1.0,
+        "train_ce": 9.899499264776068e-07,
+        "test_ce": 9.899499264776068e-07,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 16.22632652803212
+      },
+      "0.25": {
+        "full_ce": 1.7919238839671622e-06,
+        "full_accuracy": 1.0,
+        "train_ce": 7.676913910778295e-07,
+        "test_ce": 4.159874234500298e-06,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 12.706860900569314
+      },
+      "0.5": {
+        "full_ce": 1.2633811849491726e-05,
+        "full_accuracy": 1.0,
+        "train_ce": 7.69962685003254e-07,
+        "test_ce": 4.006216037656599e-05,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 8.836627281232865
+      },
+      "1": {
+        "full_ce": 0.005025629433948274,
+        "full_accuracy": 1.0,
+        "train_ce": 1.1761632021198067e-06,
+        "test_ce": 0.016641796628700852,
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "min_margin": 1.0961600425599656
+      },
+      "2": {
+        "full_ce": 0.941902255551654,
+        "full_accuracy": 0.8448753462603878,
+        "train_ce": 6.022901339773248e-06,
+        "test_ce": 3.1194972154404548,
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.48623853211009177,
+        "min_margin": -14.38477443478583
+      },
+      "4": {
+        "full_ce": 5.702903192446267,
+        "full_accuracy": 0.7174515235457064,
+        "train_ce": 0.0006657267377483823,
+        "test_ce": 18.88605770032284,
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.06422018348623854,
+        "min_margin": -45.61399230793664
+      }
+    },
+    "threshold_times": {
+      "0.5": {
+        "first_test": 300,
+        "sustained_test": 300
+      },
+      "0.9": {
+        "first_test": 2400,
+        "sustained_test": 6400
+      },
+      "0.95": {
+        "first_test": 7500,
+        "sustained_test": 33900
+      },
+      "0.99": {
+        "first_test": 14600,
+        "sustained_test": 38200
+      },
+      "1.0": {
+        "first_test": 15900,
+        "sustained_test": 38300
+      }
+    },
+    "protocol": "Known-task, full-grid terminal function analysis. Original logit scale; no temperature fitting, new gradients, intermediate checkpoints or hyperparameter selection."
+  }
+}

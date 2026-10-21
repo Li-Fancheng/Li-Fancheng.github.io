@@ -1,0 +1,7 @@
+{
+  "modulus": 19,
+  "frequency": 3,
+  "minimum_unit_scale_margin": 0.05418275829936536,
+  "verified_complete_domain_accuracy": 1.0,
+  "kind": "explicitly constructed Fourier function, not training"
+}

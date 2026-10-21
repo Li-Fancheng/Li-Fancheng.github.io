@@ -1,5 +1,5 @@
 {
-  "verified_on": "2026-10-20",
+  "verified_on": "2026-10-21",
   "policy": "Original sources; independent derivations and simulations. Check model assumptions in each note.",
   "sources": [
     {
@@ -167,35 +167,38 @@
     },
     {
       "id": "power",
-      "notes": [
-        8
-      ],
+      "notes": [],
       "authors": "Power et al.",
       "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
-      "url": "https://arxiv.org/abs/2201.02177"
+      "url": "https://arxiv.org/abs/2201.02177",
+      "topics": [
+        "grokking"
+      ]
     },
     {
       "id": "levi",
-      "notes": [
-        8
-      ],
+      "notes": [],
       "authors": "Levi, Beck, Bar-Sinai",
       "title": "Grokking in Linear Estimators -- A Solvable Model that Groks without Understanding",
-      "url": "https://arxiv.org/abs/2310.16441"
+      "url": "https://arxiv.org/abs/2310.16441",
+      "topics": [
+        "grokking"
+      ]
     },
     {
       "id": "liu",
-      "notes": [
-        8
-      ],
+      "notes": [],
       "authors": "Liu et al.",
       "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
-      "url": "https://arxiv.org/abs/2205.10343"
+      "url": "https://arxiv.org/abs/2205.10343",
+      "topics": [
+        "grokking"
+      ]
     },
     {
       "id": "mandt",
       "notes": [
-        9
+        8
       ],
       "authors": "Mandt, Hoffman, Blei",
       "title": "Stochastic Gradient Descent as Approximate Bayesian Inference",
@@ -204,7 +207,7 @@
     {
       "id": "hopfield",
       "notes": [
-        10
+        9
       ],
       "authors": "Hopfield (1982)",
       "title": "Neural networks and physical systems with emergent collective computational abilities",
@@ -213,7 +216,7 @@
     {
       "id": "amit",
       "notes": [
-        10
+        9
       ],
       "authors": "Amit, Gutfreund, Sompolinsky (1985)",
       "title": "Storing Infinite Numbers of Patterns in a Spin-Glass Model of Neural Networks",
@@ -222,7 +225,7 @@
     {
       "id": "scs",
       "notes": [
-        11
+        10
       ],
       "authors": "Sompolinsky, Crisanti, Sommers (1988)",
       "title": "Chaos in Random Neural Networks",

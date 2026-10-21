@@ -1,6 +1,6 @@
-> **IV · 记忆与集体动力学 · Note 09**
+> **IV · 记忆与集体动力学 · Note 08**
 >
-> ← [Note 08](/notes/neural_network_theory/grokking/) · [系列目录](/notes/neural_network_theory/) · [Note 10](/notes/neural_network_theory/hopfield/) →
+> ← [Note 07](/notes/neural_network_theory/hierarchical_learning/) · [系列目录](/notes/neural_network_theory/) · [Note 09](/notes/neural_network_theory/hopfield/) →
 
 **可解性层次：** 局部线性噪声模型精确；SGD 扩散为近似。
 
@@ -245,7 +245,7 @@ Lyapunov 方程保证流的散度为零，却不必让流本身为零。若详�
 
 ### 隐式噪声、熵与理论边界
 
-若给粒子加独立 Brownian 噪声 $\sqrt{2T}\,dB_j$，分布方程增加 $T\Delta\rho$，可以解释为风险加熵泛函的梯度流。真实小批量 SGD 的噪声通常状态依赖且在粒子间相关，不能无条件等同于这里的独立各向同性扩散；Note 09 会详细讨论。
+若给粒子加独立 Brownian 噪声 $\sqrt{2T}\,dB_j$，分布方程增加 $T\Delta\rho$，可以解释为风险加熵泛函的梯度流。真实小批量 SGD 的噪声通常状态依赖且在粒子间相关，不能无条件等同于这里的独立各向同性扩散；Note 08 会详细讨论。
 
 **相关文献。** [Mei、Montanari 与 Nguyen，A Mean Field View of the Landscape of Two-Layers Neural Networks](https://arxiv.org/abs/1804.06561)和 [Chizat 与 Bach，On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport](https://arxiv.org/abs/1805.09545)给出相关平均场理论。本文只在明确缩放下推导输运方程，不将特定全局收敛条件推广到任意深层网络。
 
@@ -310,4 +310,4 @@ SGD 的统计物理描述最可靠的起点，是明确条件梯度协方差和�
 
 ---
 
-← [Note 08](/notes/neural_network_theory/grokking/) · [系列目录](/notes/neural_network_theory/) · [Note 10](/notes/neural_network_theory/hopfield/) →
+← [Note 07](/notes/neural_network_theory/hierarchical_learning/) · [系列目录](/notes/neural_network_theory/) · [Note 09](/notes/neural_network_theory/hopfield/) →

@@ -1,5 +1,5 @@
 {
-  "accessed": "2026-10-19",
+  "accessed": "2026-10-20",
   "article": {
     "title": "E. coli chemosensing accuracy is not limited by stochastic molecule arrivals",
     "authors": [
@@ -19,9 +19,18 @@
       0.1,
       1,
       10
-    ]
+    ],
+    "supplement_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-025-03111-4/MediaObjects/41567_2025_3111_MOESM1_ESM.pdf"
   },
   "figures": [
+    {
+      "file": "figures/mattingly_2026_fig1.png",
+      "original": "Figure 1, complete and unmodified",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41567-025-03111-4/MediaObjects/41567_2025_3111_Fig1_HTML.png",
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "sha256": "3717cb40b5c699217c02cf14fc293511970c1f597fcc3e53dca69e5588798b37"
+    },
     {
       "file": "figures/mattingly_2026_fig3.png",
       "original": "Figure 3, complete and unmodified",
@@ -29,6 +38,27 @@
       "license": "CC BY-NC-ND 4.0",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "sha256": "8d13b0e01f745aac2a7cabbb6b0db79aa34339744a1082bffa49f73d490b0869"
+    }
+  ],
+  "related_articles": [
+    {
+      "title": "Escherichia coli chemotaxis is information limited",
+      "authors": [
+        "Henry H. Mattingly",
+        "Keita Kamino",
+        "Benjamin B. Machta",
+        "Thierry Emonet"
+      ],
+      "year": 2021,
+      "doi": "10.1038/s41567-021-01380-3",
+      "url": "https://www.nature.com/articles/s41567-021-01380-3",
+      "author_pdf": "https://emonet.biology.yale.edu/assets/papers/past/mattingly_emonet_2021_paper.pdf",
+      "supplement_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41567-021-01380-3/MediaObjects/41567_2021_1380_MOESM1_ESM.pdf",
+      "experimental_ligand": "alpha-methyl-aspartate (MeAsp)",
+      "background_concentrations_uM": [
+        100
+      ],
+      "role": "History-to-kinase information rate, information-performance bound, and measured information usage efficiency. No figures reproduced."
     }
   ]
 }

@@ -180,7 +180,7 @@ $$
 
 ## 6. 隐式噪声、熵与理论边界
 
-若给粒子加独立 Brownian 噪声 $\sqrt{2T}\,dB_j$，分布方程增加 $T\Delta\rho$，可以解释为风险加熵泛函的梯度流。真实小批量 SGD 的噪声通常状态依赖且在粒子间相关，不能无条件等同于这里的独立各向同性扩散；Note 09 会详细讨论。
+若给粒子加独立 Brownian 噪声 $\sqrt{2T}\,dB_j$，分布方程增加 $T\Delta\rho$，可以解释为风险加熵泛函的梯度流。真实小批量 SGD 的噪声通常状态依赖且在粒子间相关，不能无条件等同于这里的独立各向同性扩散；Note 08 会详细讨论。
 
 **相关文献。** [Mei、Montanari 与 Nguyen，A Mean Field View of the Landscape of Two-Layers Neural Networks](https://arxiv.org/abs/1804.06561)和 [Chizat 与 Bach，On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport](https://arxiv.org/abs/1805.09545)给出相关平均场理论。本文只在明确缩放下推导输运方程，不将特定全局收敛条件推广到任意深层网络。
 
@@ -303,7 +303,7 @@ $$
 
 这也说明“高维极限等于总体梯度流”并不总成立。若保持 $\eta$ 固定，高维在线极限包含随机更新的二阶效应；若随后取 $\eta\to0$、用 $t=\eta\tau$ 观察，方程中的二阶项才消失。学习率不仅重标时钟，还会改变 $Q$ 的演化轨迹与稳定性。
 
-如果向粒子动力学加入随机梯度，还需要先知道噪声在什么时间尺度下出现。下面的离散到扩散计算来自 [Note 09](/notes/neural_network_theory/sgd/)，用于对照确定性输运：
+如果向粒子动力学加入随机梯度，还需要先知道噪声在什么时间尺度下出现。下面的离散到扩散计算来自 [Note 08](/notes/neural_network_theory/sgd/)，用于对照确定性输运：
 
 ### 从离散更新到局部扩散
 

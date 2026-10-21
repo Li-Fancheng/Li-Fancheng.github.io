@@ -1,0 +1,50 @@
+{
+  "figures/fourier_algorithm": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/function_interventions": {
+    "width": 900,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 2300,
+    "intrinsic_height": 900
+  },
+  "figures/linear_delay": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/logit_symmetry": {
+    "width": 900,
+    "kind": "numerical-analysis",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/modular_arithmetic": {
+    "width": 900,
+    "kind": "numerical-training",
+    "intrinsic_width": 2244,
+    "intrinsic_height": 814
+  },
+  "figures/random_design": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/representation_constraints": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  },
+  "figures/solution_competition": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 820
+  }
+}

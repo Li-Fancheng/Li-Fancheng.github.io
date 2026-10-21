@@ -1,8 +1,8 @@
 # 神经网络理论与可解模型
 
-个人学习笔记与文献综述，四卷 11 篇，网站入口 `/notes/neural_network_theory/`。
+个人学习笔记与文献综述，四卷 10 篇，网站入口 `/notes/neural_network_theory/`。
 
-正文与附件位于本目录，Hugo 页面元信息在 `content/zh/notes/neural_network_theory/`，沿用 `shared-note` 和 `cell-cycle` / `series` 布局。`series.json` 记录 11 篇网页文章与顺序，`experiments.json` 独立记录 20 个基础数值实验；总目录 `body.md` 说明理论主线、统一记号及可解性层次。正文是完整推导笔记，包含模型假设、数值说明、适用边界和原始文献。
+正文与附件位于本目录，Hugo 页面元信息在 `content/zh/notes/neural_network_theory/`，沿用 `shared-note` 和 `cell-cycle` / `series` 布局。`series.json` 记录 10 篇网页文章与顺序，`experiments.json` 独立记录 20 个基础数值实验；总目录 `body.md` 说明理论主线、统一记号及可解性层次。正文是完整推导笔记，包含模型假设、数值说明、适用边界和原始文献。
 
 ## 复现
 
@@ -45,7 +45,7 @@ python3 -m venv /tmp/neural-theory-venv
 
 ## 完整综述扩写
 
-本轮以用户提出“每篇继续扩到 2–3 倍”前的版本为基线，逐篇补入背景、模型选择的来由、跨模型推导、解释与结语。`expansion_report.json` 保留合并前的历史扩写统计；当前 11 篇结构与长度见 `consolidation_report.json`。这里的长度统计不是单词数或学习时间；页面阅读时长仍按中文文字和展示公式估计。
+本轮以用户提出“每篇继续扩到 2–3 倍”前的版本为基线，逐篇补入背景、模型选择的来由、跨模型推导、解释与结语。`expansion_report.json` 保留合并前的历史扩写统计；当前 10 篇结构与长度见 `consolidation_report.json`。这里的长度统计不是单词数或学习时间；页面阅读时长仍按中文文字和展示公式估计。
 
 新增的独立计算见 `review_checks.py` 与 `review_diagnostics.json`：固定惩罚的留一 ridge、GP 边缘似然导数、NTK 初始化协方差、Bayesian 秩一更新、深度线性 Gram 守恒、OU 概率流示例、模加法群投影与凸交叉熵、局部场噪声教师，以及额外训练轮数的计算最优条件。它们不更新任何网络权重。
 
@@ -86,3 +86,9 @@ python notes/neural_network_theory/review_checks.py
 基础实验 17–20 在 experiments.json 使用 topic/note_slug 标记归属，公开镜像指向相邻目录；其余实验的 note_number 保持不变。extended_checks.py 同步更新临界谱图路径。上文二十篇、十七篇和十二篇的说明为历史合并记录。
 
 补充包现在包含 neural_network_theory/ 与 scaling_laws/ 两个相邻目录，使跨专题导出路径在解压后仍成立。旧网页与节锚点的跳转和当前页面校验见 verification.json。
+
+## 2026-10-21 Grokking 独立专题
+
+当前网页为四卷十篇。原第八篇迁入 `/notes/grokking/` 并扩展为五篇机制与实验笔记，保留三张旧图与全部已有训练记录，新增五张计算或函数分析图。核心系列现在展示十七张图；后续 SGD、Hopfield、RNN 编号顺延为 08、09、10。
+
+历史基础实验 13 通过 experiments.json 指向 `../grokking/figures/linear_delay`。模加法训练的默认输出和 extended_checks.py 的权重读取、对称图发布都转向相邻 grokking/；旧原始输出文件保留。补充包加入第三个相邻目录，历史网页锚点转发到新系列对应内容。

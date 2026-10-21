@@ -1,0 +1,161 @@
+{
+  "verified_on": "2026-10-21",
+  "policy": "Primary sources. Mathematical models, explicit algorithm constructions, original trained-state records and new terminal interventions have separate provenance. Conditional mechanism claims are not universal explanations.",
+  "sources": [
+    {
+      "id": "power2022",
+      "authors": "Power, Burda, Edwards, Babuschkin, Misra",
+      "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2201.02177",
+      "notes": [
+        "phenomenology"
+      ],
+      "publication": "arXiv 2022"
+    },
+    {
+      "id": "levi2023",
+      "authors": "Levi, Beck, Bar-Sinai",
+      "title": "Grokking in Linear Estimators – A Solvable Model that Groks without Understanding",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2310.16441",
+      "notes": [
+        "phenomenology"
+      ],
+      "publication": "arXiv 2023"
+    },
+    {
+      "id": "liu2022",
+      "authors": "Liu, Kitouni, Nolte, Michaud, Tegmark, Williams",
+      "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2205.10343",
+      "notes": [
+        "effective_theory"
+      ],
+      "publication": "NeurIPS 2022"
+    },
+    {
+      "id": "omnigrok",
+      "authors": "Liu, Michaud, Tegmark",
+      "title": "Omnigrok: Grokking Beyond Algorithmic Data",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2210.01117",
+      "notes": [
+        "solution_competition",
+        "experiments_diagnosis"
+      ],
+      "publication": "ICLR 2023"
+    },
+    {
+      "id": "nanda2023",
+      "authors": "Nanda, Chan, Lieberum, Smith, Steinhardt",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2301.05217",
+      "notes": [
+        "representation_circuits"
+      ],
+      "publication": "ICLR 2023"
+    },
+    {
+      "id": "varma2023",
+      "authors": "Varma, Shah, Kenton, Kramar, Kumar",
+      "title": "Explaining grokking through circuit efficiency",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2309.02390",
+      "notes": [
+        "solution_competition"
+      ],
+      "publication": "ICLR 2024"
+    },
+    {
+      "id": "kumar2023",
+      "authors": "Kumar, Bordelon, Gershman, Pehlevan",
+      "title": "Grokking as the Transition from Lazy to Rich Training Dynamics",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2310.06110",
+      "notes": [
+        "representation_circuits"
+      ],
+      "publication": "ICLR 2024"
+    },
+    {
+      "id": "lyu2023",
+      "authors": "Lyu, Jin, Li, Du, Lee, Hu",
+      "title": "Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2311.18817",
+      "notes": [
+        "solution_competition"
+      ],
+      "publication": "ICLR 2024"
+    },
+    {
+      "id": "thilak2022",
+      "authors": "Thilak, Littwin, Zhai, Saremi, Paiss, Susskind",
+      "title": "The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon",
+      "initial_year": 2022,
+      "url": "https://arxiv.org/abs/2206.04817",
+      "notes": [
+        "solution_competition"
+      ],
+      "publication": "arXiv 2022"
+    },
+    {
+      "id": "notsawo2025",
+      "authors": "Tikeng Notsawo, Dumas, Rabusseau",
+      "title": "Grokking Beyond the Euclidean Norm of Model Parameters",
+      "initial_year": 2025,
+      "url": "https://arxiv.org/abs/2506.05718",
+      "notes": [
+        "solution_competition"
+      ],
+      "publication": "ICML 2025"
+    },
+    {
+      "id": "embedding2025",
+      "authors": "AlquBoj et al.",
+      "title": "Mechanistic Insights into Grokking from the Embedding Layer",
+      "initial_year": 2025,
+      "url": "https://arxiv.org/abs/2505.15624",
+      "notes": [
+        "representation_circuits"
+      ],
+      "publication": "arXiv 2025"
+    },
+    {
+      "id": "language2026",
+      "authors": "Muckatira, Shivagunde, Deshpande, Rumshisky",
+      "title": "A Pre-Training Analogue of Grokking in Language Models: Tracing Delayed Grammatical Generalization",
+      "initial_year": 2026,
+      "url": "https://arxiv.org/abs/2606.00230",
+      "notes": [
+        "experiments_diagnosis"
+      ],
+      "publication": "arXiv 2026; exposure-based proxy split, not a classical fixed supervised split"
+    },
+    {
+      "id": "gromov2023",
+      "authors": "Gromov",
+      "title": "Grokking modular arithmetic",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2301.02679",
+      "notes": [
+        "representation_circuits"
+      ],
+      "publication": "arXiv 2023"
+    },
+    {
+      "id": "mallinar2024",
+      "authors": "Mallinar, Beaglehole, Zhu, Radhakrishnan, Pandit, Belkin",
+      "title": "Emergence in non-neural models: grokking modular arithmetic via average gradient outer product",
+      "initial_year": 2024,
+      "url": "https://arxiv.org/abs/2407.20199",
+      "notes": [
+        "representation_circuits"
+      ],
+      "publication": "ICML 2025; revised arXiv 2025"
+    }
+  ]
+}

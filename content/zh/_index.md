@@ -78,9 +78,13 @@ sections:
       text: 整理课程学习与文献阅读中的模型、推导和问题，记录对统计物理、生物系统与机器学习的理解。
       items:
         - page: /notes/neural_network_theory
-          label: 神经网络理论 · 四卷 11 篇
+          label: 神经网络理论 · 四卷 10 篇
           title: 神经网络理论与可解模型
-          text: 从谱动力学与高维泛化出发，推导 NTK、深度线性网络、特征学习、Grokking 与集体动力学，附完整推导和数值图。
+          text: 从谱动力学与高维泛化出发，推导 NTK、深度线性网络、特征学习、随机优化与集体动力学，附完整推导和数值图。
+        - page: /notes/grokking
+          label: Grokking · 五篇专题
+          title: Grokking 与延迟泛化
+          text: 从慢模态、正则化与电路竞争，到表示约束、学习相图和真实模加法诊断，详细讨论训练拟合后的泛化动力学。
         - page: /notes/scaling_laws
           label: Scaling Laws · 六篇专题
           title: Scaling Laws 机制与学习曲线

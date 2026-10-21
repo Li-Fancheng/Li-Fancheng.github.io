@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "original_article_count": 20,
   "previous_article_count": 17,
-  "current_article_count": 11,
+  "current_article_count": 10,
   "active_notes": [
     {
       "number": 1,
@@ -49,33 +49,26 @@
     {
       "number": 7,
       "slug": "hierarchical_learning",
-      "characters": 10623,
+      "characters": 10613,
       "Chinese_characters": 5946,
       "display_equations": 17
     },
     {
       "number": 8,
-      "slug": "grokking",
-      "characters": 14095,
-      "Chinese_characters": 7256,
-      "display_equations": 24
-    },
-    {
-      "number": 9,
       "slug": "sgd",
-      "characters": 10121,
+      "characters": 10147,
       "Chinese_characters": 4649,
       "display_equations": 19
     },
     {
-      "number": 10,
+      "number": 9,
       "slug": "hopfield",
       "characters": 12145,
       "Chinese_characters": 5659,
       "display_equations": 26
     },
     {
-      "number": 11,
+      "number": 10,
       "slug": "random_rnn",
       "characters": 11165,
       "Chinese_characters": 5131,
@@ -302,9 +295,10 @@
     "random_features": "kernel_methods/#random-features",
     "implicit_bias": "deep_optimization/#implicit-bias",
     "model_scaling": "/notes/scaling_laws/spectral_learning/#model-scaling",
-    "scaling_laws": "/notes/scaling_laws/"
+    "scaling_laws": "/notes/scaling_laws/",
+    "grokking": "/notes/grokking/"
   },
-  "unique_figures": 20,
+  "unique_figures": 17,
   "duplicate_figure_placements_removed": 1,
   "experiment_registry": {
     "file": "experiments.json",
@@ -318,6 +312,13 @@
       "notes": 6,
       "former_note": 12,
       "preserved_figures": 5,
+      "new_figures": 5
+    },
+    "grokking": {
+      "url": "/notes/grokking/",
+      "notes": 5,
+      "former_note": 8,
+      "preserved_figures": 3,
       "new_figures": 5
     }
   }

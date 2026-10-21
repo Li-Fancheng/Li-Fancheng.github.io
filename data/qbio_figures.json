@@ -63,5 +63,6 @@
   "chemotaxis/figures/paper_laganenka2016_fig1": {"width": 500, "kind": "paper"},
   "chemotaxis/figures/paper_laganenka2016_fig2": {"width": 760, "kind": "paper"},
   "chemotaxis/figures/sensing_01_temporal_filter": {"width": 560, "kind": "model"},
+  "chemotaxis/figures/mattingly_2026_fig1": {"width": 720, "kind": "paper"},
   "chemotaxis/figures/mattingly_2026_fig3": {"width": 860, "kind": "paper"}
 }

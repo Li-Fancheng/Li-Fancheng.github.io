@@ -103,6 +103,21 @@
   {{ end }}
 {{ end }}
 
+{{/* Grokking figures reserve their intrinsic size before loading. */}}
+{{ if strings.HasPrefix $destination "/notes/grokking/" }}
+  {{ $key := strings.TrimPrefix "/notes/grokking/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.grokking_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
+  {{ else }}
+    {{ errorf "Missing display width for grokking figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
 {{/* Workaround Hugo v0.81 error on Windows when `resources.Get (path.Join "media" <URL>)` */}}
 {{- $img := "" -}}
 {{- if not $is_remote -}}

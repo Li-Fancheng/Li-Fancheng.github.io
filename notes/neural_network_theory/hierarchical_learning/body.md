@@ -1,6 +1,6 @@
 > **III · 深度与表征形成 · Note 07**
 >
-> ← [Note 06](/notes/neural_network_theory/teacher_student_theory/) · [系列目录](/notes/neural_network_theory/) · [Note 08](/notes/neural_network_theory/grokking/) →
+> ← [Note 06](/notes/neural_network_theory/teacher_student_theory/) · [系列目录](/notes/neural_network_theory/) · [Note 08](/notes/neural_network_theory/sgd/) →
 
 **可解性层次：** 明确的机制模型与研究型推导。
 
@@ -301,4 +301,4 @@ $$
 
 ---
 
-← [Note 06](/notes/neural_network_theory/teacher_student_theory/) · [系列目录](/notes/neural_network_theory/) · [Note 08](/notes/neural_network_theory/grokking/) →
+← [Note 06](/notes/neural_network_theory/teacher_student_theory/) · [系列目录](/notes/neural_network_theory/) · [Note 08](/notes/neural_network_theory/sgd/) →

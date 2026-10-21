@@ -137,7 +137,9 @@
     "subtitle": "慢模态、准确率阈值与结构化表示",
     "level": "线性机制精确；非线性实验与有效解释",
     "summary": "求解固定谱下的延迟泛化，比较连续风险与准确率，配套模加法网络实验及 Fourier 表征诊断。",
-    "note_number": 8
+    "topic": "grokking",
+    "note_slug": "phenomenology",
+    "figure": "../grokking/figures/linear_delay"
   },
   {
     "number": 14,
@@ -147,7 +149,7 @@
     "subtitle": "OU 过程、Lyapunov 方程与非平衡概率流",
     "level": "局部线性噪声模型精确；SGD 扩散为近似",
     "summary": "从小批量梯度协方差推导局部 SDE，求解驻态协方差与离散修正，检验温度比喻何时成立。",
-    "note_number": 9
+    "note_number": 8
   },
   {
     "number": 15,
@@ -157,7 +159,7 @@
     "subtitle": "能量下降、检索重叠与串扰",
     "level": "低负载平均场；广延负载需自洽修正",
     "summary": "从 Hebbian 耦合证明异步更新的能量下降，推导单模式检索方程，并解释容量与自旋玻璃的条件。",
-    "note_number": 10
+    "note_number": 9
   },
   {
     "number": 16,
@@ -167,7 +169,7 @@
     "subtitle": "稳定性圆谱、时间相关与动力学平均场",
     "level": "非对称稠密随机耦合的无限规模极限",
     "summary": "推导零态失稳和 DMFT 相关函数方程，区分方差自洽、相关衰减与正 Lyapunov 指数。",
-    "note_number": 11
+    "note_number": 10
   },
   {
     "number": 17,
