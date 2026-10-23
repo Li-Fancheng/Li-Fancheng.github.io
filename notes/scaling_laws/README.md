@@ -25,3 +25,7 @@ sources.json 记录十三篇原始文献及对应正文。注意预印本首发�
 原 `/notes/neural_network_theory/scaling_laws/` 跳转本专题；time/data/model/compute 四个历史入口直接到对应章节。旧综合稿的六个主要节锚点由专题入口转发。原谱推导和五图全部保留，新增机制内容另行展开。
 
 下载压缩包以 neural_network_theory/、scaling_laws/ 和 grokking/ 三个相邻目录保存材料，以维持跨专题计算镜像路径。三个专题下载链接提供相同的配套材料包。解压后可只阅读或运行需要的目录。
+
+## 文字扩写记录
+
+2026-10-22 六篇正文追加直观解释、公式衔接、模型比较和具体情境讨论，中文字符由 27678 增至 36902（增加约 33.3%）。公式序列、章节锚点、图与数值结果保持不变；分篇统计见 prose_expansion_report.json，expansion_report.json 保留此前专题迁移的历史统计。

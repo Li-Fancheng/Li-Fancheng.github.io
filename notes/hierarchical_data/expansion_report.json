@@ -58,5 +58,6 @@
     }
   ],
   "original_figures": 8,
-  "new_primary_source": "https://arxiv.org/abs/2610.07168"
+  "new_primary_source": "https://arxiv.org/abs/2610.07168",
+  "subsequent_prose_expansion": "prose_expansion_report.json"
 }

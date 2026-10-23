@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-22",
+  "stage": "Explanatory prose expansion of the existing standalone series",
+  "baseline": "Complete series before this prose expansion; earlier migration retained in expansion_report.json",
+  "article_count": 5,
+  "chinese_characters_before": 25968,
+  "chinese_characters_after": 35067,
+  "added": 9099,
+  "ratio": 1.3504,
+  "notes": [
+    {
+      "slug": "generative_learning",
+      "before": 5963,
+      "after": 7694,
+      "added": 1731,
+      "ratio": 1.2903,
+      "math_expressions_preserved": 157,
+      "source_before_sha256": "cfa50c08ea21b73bcc43acc9b52ae59b8f3e2d81d3035e75cf25b14acc113d36",
+      "source_after_sha256": "f4517591df4a70899489d82c0e8e84d0679279b15f55018281002d5304b1156c"
+    },
+    {
+      "slug": "language_statistics",
+      "before": 4317,
+      "after": 5945,
+      "added": 1628,
+      "ratio": 1.3771,
+      "math_expressions_preserved": 96,
+      "source_before_sha256": "dd7e38112f58f03295eec059e9d6475e0b50cf1195dfb34e3480a05d28c1a869",
+      "source_after_sha256": "b140bf114fd771e739328f1e2b6cb3027c9d43e7c0fedcc5bca973947338eca9"
+    },
+    {
+      "slug": "inference_generation",
+      "before": 4869,
+      "after": 6664,
+      "added": 1795,
+      "ratio": 1.3687,
+      "math_expressions_preserved": 114,
+      "source_before_sha256": "fb886a5b8e2bf169f01d275dfadec7968309c1a9b0e239e47a08d4638d021b21",
+      "source_after_sha256": "cfaecf15eb3186cde6a6872c6276726d458af3299b6b1a245260b3afec393118"
+    },
+    {
+      "slug": "parsing_latents",
+      "before": 4929,
+      "after": 6730,
+      "added": 1801,
+      "ratio": 1.3654,
+      "math_expressions_preserved": 70,
+      "source_before_sha256": "ad4b3b472b8839988776926ec76bdd9a599d7a8769bca1d15ab1ce4b2d9dcb8b",
+      "source_after_sha256": "770a1cd67f5f68478f97ff9144ce1732e79083059236e075c0c109843bcfd9c3"
+    },
+    {
+      "slug": "shared_representations",
+      "before": 5890,
+      "after": 8034,
+      "added": 2144,
+      "ratio": 1.364,
+      "math_expressions_preserved": 85,
+      "source_before_sha256": "d515efefefd814de0847fed1325ab01bef92179fd582bd2ccf2e452013997707",
+      "source_after_sha256": "0a2c8ed57fe6eb52fafe647f8ff5e12e6be56d8e2d1d199a0bfea7cad45f2d44"
+    }
+  ],
+  "scope": "Intuition, derivation bridges, model interpretation, concrete contrasts, and connected discussion. Existing math, headings, anchors, figures, external references and numerical results preserved.",
+  "new_experiments": 0,
+  "new_sources": 0,
+  "wording_correction": "The parity example now states that the first two signed bits are independent and the third is their product, rather than calling all three independent.",
+  "validation": {
+    "checked_on": "2026-10-22",
+    "hugo_build": "passed",
+    "formula_sequences_unchanged": true,
+    "source_to_html_equations": 524,
+    "katex_errors": 0,
+    "all_topics_katex_expressions_checked": 3546,
+    "internal_references_checked": 176,
+    "broken_references": 0,
+    "browser_cases": 12,
+    "viewports": [
+      390,
+      1440
+    ],
+    "horizontal_overflow_cases": 0,
+    "image_placements": 8,
+    "rendered_code_elements": 0,
+    "mobile_toc_cases": 5,
+    "visual_review": "Desktop shared-representation discussion and mobile scaling discussion inspected; prose, headings and formulas legible."
+  }
+}

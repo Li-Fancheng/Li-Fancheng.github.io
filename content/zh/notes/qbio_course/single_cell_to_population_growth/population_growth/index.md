@@ -2,7 +2,7 @@
 title: "分裂越不整齐，群体就长得越快吗？"
 subtitle: "从大小稳态与分裂时间波动的实验出发，建立独立分裂模型，再用生物量守恒检验“噪声促进增长”的预测。"
 date: "2026-10-15"
-lastmod: "2026-10-18"
+lastmod: "2026-10-22"
 summary: "从大小稳态与分裂时间波动的实验出发，建立独立分裂模型，再用生物量守恒检验“噪声促进增长”的预测。"
 layout: "qbio-part"
 qbio_topic: "single_cell_to_population_growth"

@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-22",
+  "stage": "Explanatory prose expansion of the existing standalone series",
+  "baseline": "Complete series before this prose expansion; earlier migration retained in expansion_report.json",
+  "article_count": 6,
+  "chinese_characters_before": 27678,
+  "chinese_characters_after": 36902,
+  "added": 9224,
+  "ratio": 1.3333,
+  "notes": [
+    {
+      "slug": "statistical_geometry",
+      "before": 3807,
+      "after": 5412,
+      "added": 1605,
+      "ratio": 1.4216,
+      "math_expressions_preserved": 99,
+      "source_before_sha256": "c06c21530eecaaff87299d8ae3efa60f63504a72d1006d8d92899d37375ed938",
+      "source_after_sha256": "254cb5e8cce51026d8758e63547a6f638b42423f94bf9e5720ff34e3259e9392"
+    },
+    {
+      "slug": "spectral_learning",
+      "before": 8199,
+      "after": 9837,
+      "added": 1638,
+      "ratio": 1.1998,
+      "math_expressions_preserved": 280,
+      "source_before_sha256": "f3ef6232fcdd1565d190c73281a1f60da21f75b985410c6422572a1599087c6f",
+      "source_after_sha256": "8390647670a892961c7da28928a60dd2b1260dd398070537d85fa7b5f7865d27"
+    },
+    {
+      "slug": "discrete_structure",
+      "before": 3062,
+      "after": 4601,
+      "added": 1539,
+      "ratio": 1.5026,
+      "math_expressions_preserved": 81,
+      "source_before_sha256": "de20a5ea59bbd6db1b2dfacf170935c0373e19a5c4291ca953c1e65c0b7f2d5a",
+      "source_after_sha256": "54a9f5e8b8c26d18e0df1b8eab1d092641f4deba0fe74247a9f42389e6c4eeb7"
+    },
+    {
+      "slug": "feature_learning",
+      "before": 3613,
+      "after": 5214,
+      "added": 1601,
+      "ratio": 1.4431,
+      "math_expressions_preserved": 87,
+      "source_before_sha256": "a94fb65093670dc843c4bcb64469a51d4f9968bc42d9bc1ae2bcefdee442132a",
+      "source_after_sha256": "28ad3c30233463252ebcab0a130ead4f490d8d316867db6cb02fec141cec1e29"
+    },
+    {
+      "slug": "graph_language",
+      "before": 3487,
+      "after": 4827,
+      "added": 1340,
+      "ratio": 1.3843,
+      "math_expressions_preserved": 70,
+      "source_before_sha256": "5d019d36572a87601b227d1d38ac54959da1ff1537904b6f3bd3d032b930e2af",
+      "source_after_sha256": "12b966b74dec4b85729ff8f8fbbc837b3f211673c39bd0687d21b8c5e69be9b5"
+    },
+    {
+      "slug": "compute_allocation",
+      "before": 5510,
+      "after": 7011,
+      "added": 1501,
+      "ratio": 1.2724,
+      "math_expressions_preserved": 112,
+      "source_before_sha256": "613051c56678285794cb268a2072f87fb8195976b65da0c5b57e93990838f252",
+      "source_after_sha256": "fb99f4535a6b2b717191707f4020a3777c7a8bdb72756f997d15cb6c04f5a119"
+    }
+  ],
+  "scope": "Intuition, derivation bridges, model interpretation, concrete contrasts, and connected discussion. Existing math, headings, anchors, figures, external references and numerical results preserved.",
+  "new_experiments": 0,
+  "new_sources": 0,
+  "validation": {
+    "checked_on": "2026-10-22",
+    "hugo_build": "passed",
+    "formula_sequences_unchanged": true,
+    "source_to_html_equations": 729,
+    "katex_errors": 0,
+    "all_topics_katex_expressions_checked": 3546,
+    "internal_references_checked": 187,
+    "broken_references": 0,
+    "browser_cases": 14,
+    "viewports": [
+      390,
+      1440
+    ],
+    "horizontal_overflow_cases": 0,
+    "image_placements": 10,
+    "rendered_code_elements": 0,
+    "mobile_toc_cases": 6,
+    "visual_review": "Desktop shared-representation discussion and mobile scaling discussion inspected; prose, headings and formulas legible."
+  }
+}

@@ -5,9 +5,9 @@
     "title": "01 · 现象与可解基线",
     "subtitle": "慢模态、评分阈值与经验训练度量",
     "summary": "定义不同泛化时间，从固定模态与 Gaussian 随机设计推导延迟，比较准确率、连续风险、噪声和零空间平台。",
-    "chinese_characters": 3085,
+    "chinese_characters": 4883,
     "display_equations": 14,
-    "reading_time": 18
+    "reading_time": 25
   },
   {
     "number": 2,
@@ -15,9 +15,9 @@
     "title": "02 · 正则化与解的竞争",
     "subtitle": "快拟合、慢选择与参数化的长期偏好",
     "summary": "完整求解已有特征的竞争，连接乘法平台、电路效率、范数几何、隐式偏置与自适应优化器。",
-    "chinese_characters": 3253,
+    "chinese_characters": 5234,
     "display_equations": 14,
-    "reading_time": 18
+    "reading_time": 26
   },
   {
     "number": 3,
@@ -25,9 +25,9 @@
     "title": "03 · 表示形成与算法电路",
     "subtitle": "从初始核到 Fourier 算法和函数对称性",
     "summary": "用二次任务理解特征学习，推导模加法算法、非神经特征迭代、对称投影与凸性关系，区分结构存在和实际使用。",
-    "chinese_characters": 3730,
+    "chinese_characters": 5798,
     "display_equations": 18,
-    "reading_time": 22
+    "reading_time": 30
   },
   {
     "number": 4,
@@ -35,9 +35,9 @@
     "title": "04 · 有效理论与学习相图",
     "subtitle": "约束、零模、结构形成时间与相变语言",
     "summary": "从平行四边形关系建立约束矩阵和保持尺度的有效流，解释可辨识性、谱隙、代数几何及有限时间相图。",
-    "chinese_characters": 3286,
+    "chinese_characters": 5295,
     "display_equations": 12,
-    "reading_time": 18
+    "reading_time": 26
   },
   {
     "number": 5,
@@ -45,8 +45,8 @@
     "title": "05 · 实验与机制诊断",
     "subtitle": "真实训练、末态函数干预与延迟泛化的边界",
     "summary": "保留模加法训练及失败对照，重算阈值时间、对称投影和频率干预，并讨论测试划分与语言预训练类比。",
-    "chinese_characters": 3650,
+    "chinese_characters": 5930,
     "display_equations": 2,
-    "reading_time": 16
+    "reading_time": 25
   }
 ]

@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-21",
+  "stage": "Prose expansion after the five-note series migration",
+  "baseline": "The complete five-note series recorded in expansion_report.json",
+  "chinese_characters_before": 17004,
+  "chinese_characters_after": 27140,
+  "added": 10136,
+  "ratio": 1.5961,
+  "notes": [
+    {
+      "slug": "phenomenology",
+      "chinese_characters_before": 3085,
+      "chinese_characters_after": 4883,
+      "added": 1798,
+      "ratio": 1.5828,
+      "formula_expressions_preserved": 58,
+      "source_before_sha256": "70e43c9683a7e75ff297f8bcd52dbc867de6c35a20d9b4474f77f06f1ec32622",
+      "source_after_sha256": "4de6e887521c652486faeffab80eb7c4dc52f732a39ed0fe6ca718058db9990f"
+    },
+    {
+      "slug": "solution_competition",
+      "chinese_characters_before": 3253,
+      "chinese_characters_after": 5234,
+      "added": 1981,
+      "ratio": 1.609,
+      "formula_expressions_preserved": 66,
+      "source_before_sha256": "f979545e2727b56205419a0cbf193838f53957ccdfa7393c31a99489a7112acc",
+      "source_after_sha256": "aed4edf87a029fcad3ad768725e05fe1e02b65eda07ab44558206f8838ff618c"
+    },
+    {
+      "slug": "representation_circuits",
+      "chinese_characters_before": 3730,
+      "chinese_characters_after": 5798,
+      "added": 2068,
+      "ratio": 1.5544,
+      "formula_expressions_preserved": 55,
+      "source_before_sha256": "17a66c121e8ad478e8f0cff206ef3093530d60ee816000bbc536024c7c7d36e7",
+      "source_after_sha256": "b701c1e2972b0540b245a794512e7a5ac2bdfd5898d7c5f8ef73c409f5728948"
+    },
+    {
+      "slug": "effective_theory",
+      "chinese_characters_before": 3286,
+      "chinese_characters_after": 5295,
+      "added": 2009,
+      "ratio": 1.6114,
+      "formula_expressions_preserved": 60,
+      "source_before_sha256": "70c7cb4a2f0e3bd87deb55961e03ef4fb042ed42bc4867783b284958c51c28cd",
+      "source_after_sha256": "182f60eabdbae9552c54f46440d2da154818a469723ab72c91f78fcd01bb32f8"
+    },
+    {
+      "slug": "experiments_diagnosis",
+      "chinese_characters_before": 3650,
+      "chinese_characters_after": 5930,
+      "added": 2280,
+      "ratio": 1.6247,
+      "formula_expressions_preserved": 31,
+      "source_before_sha256": "a5a08749d4c085d9d5f33fd82c4049926e93009ad33cdc560435037b3599c44f",
+      "source_after_sha256": "122e13b2148850bcbd9b101615f156cbdd20d7e0500741d247962036b109b261"
+    }
+  ],
+  "scope": "Connected explanatory prose, intuition, model interpretation, comparisons, and discussion of experimental evidence. Existing math, headings, figures, links, and numerical claims preserved.",
+  "existing_formula_expressions_preserved": 270,
+  "new_experiments": 0,
+  "new_sources": 0,
+  "validation": {
+    "hugo_build": "passed",
+    "source_to_html_equations": 270,
+    "formula_sequences_match_previous_version": true,
+    "all_topics_katex_expressions_checked": 3546,
+    "katex_errors": 0,
+    "internal_references_checked": 129,
+    "broken_references": 0,
+    "browser_cases": 12,
+    "viewports": [
+      390,
+      1440
+    ],
+    "horizontal_overflow_cases": 0,
+    "image_placements": 8,
+    "mobile_toc_cases": 5,
+    "rendered_code_elements": 0,
+    "visual_review": "Desktop mathematical discussion and mobile experimental discussion reviewed; paragraphs, table and formulas legible."
+  }
+}

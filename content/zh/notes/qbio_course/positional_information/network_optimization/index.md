@@ -2,7 +2,7 @@
 title: "怎样的调控网络能产生可靠的位置图案"
 subtitle: "从信息最大化的表达曲线出发，加入反应动力学、分子资源与下游读取，比较模型预测和发育实验。"
 date: "2026-10-17"
-lastmod: "2026-10-18"
+lastmod: "2026-10-22"
 summary: "从信息最大化的表达曲线出发，加入反应动力学、分子资源与下游读取，比较模型预测和发育实验。"
 layout: "qbio-part"
 qbio_topic: "positional_information"

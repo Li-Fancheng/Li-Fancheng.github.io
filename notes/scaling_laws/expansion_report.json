@@ -72,5 +72,6 @@
   "preserved_figures": 5,
   "new_figures": 5,
   "primary_papers": 13,
-  "web_prose": "Personal study review. No code, execution commands, exercise sections or teaching framing."
+  "web_prose": "Personal study review. No code, execution commands, exercise sections or teaching framing.",
+  "subsequent_prose_expansion": "prose_expansion_report.json"
 }

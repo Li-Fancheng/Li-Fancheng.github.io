@@ -8,7 +8,7 @@ layout: cell-cycle
 article_class: neural-theory-note
 math: true
 toc: true
-reading_time: 23
+reading_time: 30
 tags:
   - 层次结构数据
   - 神经网络理论

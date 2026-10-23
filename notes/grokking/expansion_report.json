@@ -70,5 +70,6 @@
     "historical_experiment_ids_preserved": 20,
     "moved_experiment": 13,
     "python_sources_compile": 5
-  }
+  },
+  "subsequent_prose_expansion": "prose_expansion_report.json"
 }
