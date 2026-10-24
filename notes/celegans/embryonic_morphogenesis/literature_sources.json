@@ -709,5 +709,192 @@
     "group": "Solid fluid transition 与组织流变",
     "source": "https://doi.org/10.64898/2026.05.19.726147",
     "checked_on": "2026-10-20"
+  },
+  {
+    "doi": "10.1006/dbio.1998.9048",
+    "authors": "Williams-Masson EM, Heid PJ, Lavin CA, Hardin J.",
+    "year": "1998",
+    "title": "The cellular mechanism of epithelial rearrangement during morphogenesis of the Caenorhabditis elegans dorsal hypodermis",
+    "journal": "Developmental Biology",
+    "pmcid": null,
+    "group": "表皮重排与闭合",
+    "source": "https://doi.org/10.1006/dbio.1998.9048",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1126/science.347575",
+    "authors": "Bell GI.",
+    "year": "1978",
+    "title": "Models for the specific adhesion of cells to cells",
+    "journal": "Science",
+    "pmcid": null,
+    "group": "界面黏附与受力解离",
+    "source": "https://doi.org/10.1126/science.347575",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1038/nature09376",
+    "title": "Anisotropies in cortical tension reveal the physical basis of polarizing cortical flows",
+    "authors": "Mirjam Mayer, Martin Depken, Justin S. Bois, Frank Jülicher, Stephan W. Grill",
+    "year": "2010",
+    "journal": "Nature",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1038/nature09376",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1083/jcb.201603070",
+    "title": "Plastin increases cortical connectivity to facilitate robust polarization and timely cytokinesis",
+    "authors": "Wei Yung Ding, Hui Ting Ong, Yusuke Hara, Jantana Wongsantichon, Yusuke Toyama, Robert C. Robinson, François Nédélec, Ronen Zaidel-Bar",
+    "year": "2017",
+    "journal": "Journal of Cell Biology",
+    "pmcid": "PMC5412556",
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1083/jcb.201603070",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1005811",
+    "title": "Filament turnover tunes both force generation and dissipation to control long-range flows in a model actomyosin cortex",
+    "authors": "William M. McFadden, Patrick M. McCall, Margaret L. Gardel, Edwin M. Munro",
+    "year": "2017",
+    "journal": "PLoS Computational Biology",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1371/journal.pcbi.1005811",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1091/mbc.E17-06-0392",
+    "title": "Cross-linkers both drive and brake cytoskeletal remodeling and furrowing in cytokinesis",
+    "authors": "Carlos Patino Descovich, Daniel B. Cortes, Sean Ryan, Jazmine Nash, Li Zhang, Paul S. Maddox, Francois Nedelec, Amy Shaub Maddox",
+    "year": "2018",
+    "journal": "Molecular Biology of the Cell",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1091/mbc.E17-06-0392",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.64898/2026.05.24.727551",
+    "title": "Rapid actin filament turnover maintains cortical connectivity while allowing for cell cortex deformation and flow",
+    "authors": "Rachel S. Kadzik, Ondrej Maxian, Isaiah Thomas, David R. Kovar, Edwin M. Munro",
+    "year": "2026",
+    "journal": "bioRxiv preprint",
+    "pmcid": "PMC13232293",
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.64898/2026.05.24.727551",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.7554/eLife.19595",
+    "title": "Controlling contractile instabilities in the actomyosin cortex",
+    "authors": "Masatoshi Nishikawa, Sundar Ram Naganathan, Frank Jülicher, Stephan W Grill",
+    "year": "2017",
+    "journal": "eLife",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.7554/eLife.19595",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1083/jcb.201806161",
+    "title": "Excitable RhoA dynamics drive pulsed contractions in the early C. elegans embryo",
+    "authors": "Jonathan B. Michaux, François B. Robin, William M. McFadden, Edwin M. Munro",
+    "year": "2018",
+    "journal": "Journal of Cell Biology",
+    "pmcid": "PMC6279378",
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1083/jcb.201806161",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.7554/eLife.17807",
+    "title": "Cortical flow aligns actin filaments to form a furrow",
+    "authors": "Anne-Cecile Reymann, Fabio Staniscia, Anna Erzberger, Guillaume Salbreux, Stephan W Grill",
+    "year": "2016",
+    "journal": "eLife",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.7554/eLife.17807",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.7554/eLife.04165",
+    "title": "Active torque generation by the actomyosin cell cortex drives left–right symmetry breaking",
+    "authors": "Sundar Ram Naganathan, Sebastian Fürthauer, Masatoshi Nishikawa, Frank Jülicher, Stephan W Grill",
+    "year": "2014",
+    "journal": "eLife",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.7554/eLife.04165",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1371/journal.pcbi.1014792",
+    "title": "Nematic structures contribute to robust zygotic polarization in C. elegans",
+    "authors": "Michiel Vanslambrouck, Jef Vangheel, Ella Linxia Müller, Bart Smeets, Pierre Gönczy, Rob Jelier",
+    "year": "2026",
+    "journal": "PLOS Computational Biology",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1371/journal.pcbi.1014792",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.7554/eLife.37677",
+    "title": "Morphogenetic degeneracies in the actomyosin cortex",
+    "authors": "Sundar Ram Naganathan, Sebastian Fürthauer, Josana Rodriguez, Bruno Thomas Fievet, Frank Jülicher, Julie Ahringer, Carlo Vittorio Cannistraci, Stephan W Grill",
+    "year": "2018",
+    "journal": "eLife",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.7554/eLife.37677",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1073/pnas.1101853108",
+    "title": "Hydrodynamic property of the cytoplasm is sufficient to mediate cytoplasmic streaming in the Caenorhabiditis elegans embryo",
+    "authors": "Ritsuya Niwayama, Kyosuke Shinohara, Akatsuki Kimura",
+    "year": "2011",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "pmcid": "PMC3141991",
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1073/pnas.1101853108",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1126/science.1208619",
+    "title": "Polarization of PAR Proteins by Advective Triggering of a Pattern-Forming System",
+    "authors": "Nathan W. Goehring, Philipp Khuc Trong, Justin S. Bois, Debanjan Chowdhury, Ernesto M. Nicola, Anthony A. Hyman, Stephan W. Grill",
+    "year": "2011",
+    "journal": "Science",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1126/science.1208619",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1083/jcb.202209111",
+    "title": "Design principles for selective polarization of PAR proteins by cortical flows",
+    "authors": "Rukshala Illukkumbura, Nisha Hirani, Joana Borrego-Pinto, Tom Bland, KangBo Ng, Lars Hubatsch, Jessica McQuade, Robert G. Endres, Nathan W. Goehring",
+    "year": "2023",
+    "journal": "Journal of Cell Biology",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1083/jcb.202209111",
+    "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1038/nmeth.2928",
+    "title": "Single-molecule analysis of cell surface dynamics in Caenorhabditis elegans embryos",
+    "authors": "François B Robin, William M McFadden, Baixue Yao, Edwin M Munro",
+    "year": "2014",
+    "journal": "Nature Methods",
+    "pmcid": null,
+    "group": "亚细胞骨架与流动",
+    "source": "https://doi.org/10.1038/nmeth.2928",
+    "checked_on": "2026-10-24"
   }
 ]

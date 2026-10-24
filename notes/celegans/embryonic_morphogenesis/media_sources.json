@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-20",
+  "checked_on": "2026-10-24",
   "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
   "reused_figures": [
     {
@@ -101,6 +101,10 @@
         {
           "note": "gastrulation",
           "figure": 3
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 17
         }
       ]
     },
@@ -202,12 +206,12 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 2
-        },
-        {
           "note": "active_matter_packing_topology",
           "figure": 15
+        },
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 2
         }
       ]
     },
@@ -269,12 +273,12 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 5
-        },
-        {
           "note": "active_matter_packing_topology",
           "figure": 16
+        },
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 5
         }
       ]
     },
@@ -1024,10 +1028,350 @@
         {
           "note": "active_matter_packing_topology",
           "figure": 24
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 19
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "publication_status": "Preprint, version 1, 20 May 2026"
+    },
+    {
+      "file": "figures/walck2016_fig3.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?size=large&id=10.1371/journal.pgen.1006415.g003",
+      "article_doi": "10.1371/journal.pgen.1006415",
+      "figure_id": "Fig 3",
+      "source": "https://doi.org/10.1371/journal.pgen.1006415.g003",
+      "author": "Walck-Shannon et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "1802ac7d9191e36df30a01d7a22aa2dfe194c586032ef89d87843ac7439d6c34",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 9
+        }
+      ]
+    },
+    {
+      "file": "figures/serre2023_fig3.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?size=large&id=10.1371/journal.pgen.1010507.g003",
+      "article_doi": "10.1371/journal.pgen.1010507",
+      "figure_id": "Fig 3",
+      "source": "https://doi.org/10.1371/journal.pgen.1010507.g003",
+      "author": "Serre et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "3b1622ffac133fad175f9195ed37b54c48f6849dabaf312853db251b254059eb",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 12
+        }
+      ]
+    },
+    {
+      "file": "figures/serre2023_fig7.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?size=large&id=10.1371/journal.pgen.1010507.g007",
+      "article_doi": "10.1371/journal.pgen.1010507",
+      "figure_id": "Fig 7",
+      "source": "https://doi.org/10.1371/journal.pgen.1010507.g007",
+      "author": "Serre et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "8afd1a4a18e8842f64527c107cce124dc8c841d4a23bb50edf8536e71c29bbb2",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 13
+        }
+      ]
+    },
+    {
+      "file": "figures/vanslambrouck2026_fig1.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1014792.g001",
+      "article_doi": "10.1371/journal.pcbi.1014792",
+      "figure_id": "Fig. 1",
+      "source": "https://doi.org/10.1371/journal.pcbi.1014792.g001",
+      "author": "Vanslambrouck et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "f63d2768e628d3c477ac066491b6952c99953f30827fae1cd8460de1724371d8",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 1
+        }
+      ]
+    },
+    {
+      "file": "figures/vanslambrouck2026_fig4.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1014792.g004",
+      "article_doi": "10.1371/journal.pcbi.1014792",
+      "figure_id": "Fig. 4",
+      "source": "https://doi.org/10.1371/journal.pcbi.1014792.g004",
+      "author": "Vanslambrouck et al.",
+      "year": 2026,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "328295826958551491033af3ebdd2ac0dd66691b7f5fcd91b9a109bd5a82c29e",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 16
+        }
+      ]
+    },
+    {
+      "file": "figures/ding2017_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5cdd/5412556/083ca8f4a7a7/JCB_201603070_Fig4.jpg",
+      "article_doi": "10.1083/jcb.201603070",
+      "figure_id": "Fig. 4",
+      "source": "https://doi.org/10.1083/jcb.201603070",
+      "author": "Ding et al.",
+      "year": 2017,
+      "license": "CC BY-NC-SA 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "47fc70b8c734a7e4755e0a8ca6eac406d451716c6856c6bacbd2a083dafd5365",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 2
+        }
+      ]
+    },
+    {
+      "file": "figures/ding2017_fig7.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5cdd/5412556/2b920eb321fe/JCB_201603070_Fig7.jpg",
+      "article_doi": "10.1083/jcb.201603070",
+      "figure_id": "Fig. 7",
+      "source": "https://doi.org/10.1083/jcb.201603070",
+      "author": "Ding et al.",
+      "year": 2017,
+      "license": "CC BY-NC-SA 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "b1749b91c590cac466fe89aaea384a7fd6c7592566d7dd6b8cdbd136a3935d4e",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 3
+        }
+      ]
+    },
+    {
+      "file": "figures/kadzik2026_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/63ca/13232293/758d773d189c/nihpp-2026.05.24.727551v1-f0003.jpg",
+      "article_doi": "10.64898/2026.05.24.727551",
+      "figure_id": "Fig. 3",
+      "source": "https://doi.org/10.64898/2026.05.24.727551",
+      "author": "Kadzik et al.",
+      "year": 2026,
+      "license": "CC BY-NC-ND 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "sha256": "530e5783d71692839c807cb92b86d341f4c45ea5e142b1abf31fa82a8c696c27",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 5
+        }
+      ]
+    },
+    {
+      "file": "figures/nishikawa2017_fig1.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/19595%2Felife-19595-fig1-v5.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.19595",
+      "figure_id": "Fig. 1",
+      "source": "https://doi.org/10.7554/eLife.19595",
+      "author": "Nishikawa et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "72acc7696949abcecb0f1f5f88207dcd34c3c87f5882c26494d0bef3dbdae6ac",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 6
+        }
+      ]
+    },
+    {
+      "file": "figures/nishikawa2017_fig2.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/19595%2Felife-19595-fig2-v5.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.19595",
+      "figure_id": "Fig. 2",
+      "source": "https://doi.org/10.7554/eLife.19595",
+      "author": "Nishikawa et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "0b118f1d68ebfb6d41af98f9ef69c466faa298e734f41c8bc4bef2f2846b7efd",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 11
+        }
+      ]
+    },
+    {
+      "file": "figures/michaux2018_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6fa8/6279378/ebd7513cc58c/JCB_201806161_Fig2.jpg",
+      "article_doi": "10.1083/jcb.201806161",
+      "figure_id": "Fig. 2",
+      "source": "https://doi.org/10.1083/jcb.201806161",
+      "author": "Michaux et al.",
+      "year": 2018,
+      "license": "CC BY-NC-SA 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "f936e97476839a9aba1f563d8fb8fa3435eff836db2c1aa7d2eb38bd886fdbf5",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 7
+        }
+      ]
+    },
+    {
+      "file": "figures/michaux2018_fig8.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6fa8/6279378/f60abdc52af4/JCB_201806161_Fig8.jpg",
+      "article_doi": "10.1083/jcb.201806161",
+      "figure_id": "Fig. 8",
+      "source": "https://doi.org/10.1083/jcb.201806161",
+      "author": "Michaux et al.",
+      "year": 2018,
+      "license": "CC BY-NC-SA 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "32852cb308bbf72d19e87003cf8a0c7b5b34fce0684abeb02045afc7b9db1ccb",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 9
+        }
+      ]
+    },
+    {
+      "file": "figures/reymann2016_fig2.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/17807%2Felife-17807-fig2-v3.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.17807",
+      "figure_id": "Fig. 2",
+      "source": "https://doi.org/10.7554/eLife.17807",
+      "author": "Reymann et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "1a3feb95223d95d2fde1a95695412ea9fb450ccceecc5cd1abd8778519f707c1",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 12
+        }
+      ]
+    },
+    {
+      "file": "figures/reymann2016_fig4.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/17807%2Felife-17807-fig4-v3.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.17807",
+      "figure_id": "Fig. 4",
+      "source": "https://doi.org/10.7554/eLife.17807",
+      "author": "Reymann et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "8b8094412be6ce60fd52e2e2531b7bd4c6990140dff77fd2df7e0cd898d4ec49",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 14
+        }
+      ]
+    },
+    {
+      "file": "figures/naganathan2014_fig2.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/04165%2Felife-04165-fig2-v1.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.04165",
+      "figure_id": "Fig. 2",
+      "source": "https://doi.org/10.7554/eLife.04165",
+      "author": "Naganathan et al.",
+      "year": 2014,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "76226a2b2c47449eb3b3a6cd596e0195ab0fd1ac3fb06be08dae27ffa8ba7ab1",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 15
+        }
+      ]
+    },
+    {
+      "file": "figures/naganathan2018_fig6.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/37677%2Felife-37677-fig6-v3.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.37677",
+      "figure_id": "Fig. 6",
+      "source": "https://doi.org/10.7554/eLife.37677",
+      "author": "Naganathan et al.",
+      "year": 2018,
+      "license": "CC BY 4.0",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "5d8161c9b267e53f1d20efebf19ffa453d4c99bac09f7c7a3d3e8e468416e10c",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 20
+        }
+      ]
     }
   ],
   "original_figures": {
@@ -1037,7 +1381,9 @@
       "figures/generate_extended_models.py",
       "figures/generate_active_packing_figures.py",
       "figures/generate_worm_mechanics_figures.py",
-      "figures/generate_solid_fluid_figures.py"
+      "figures/generate_solid_fluid_figures.py",
+      "figures/generate_epithelial_spatial_models.py",
+      "figures/generate_subcellular_models.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -1061,7 +1407,15 @@
       "figures/25_worm_ingression.svg",
       "figures/26_worm_material_memory.svg",
       "figures/27_solid_fluid_rheology.svg",
-      "figures/28_yield_and_flow.svg"
+      "figures/28_yield_and_flow.svg",
+      "figures/29_basal_apical_fields.svg",
+      "figures/30_four_cell_rearrangement.svg",
+      "figures/31_enclosure_and_adhesion.svg",
+      "figures/32_cortical_flow_screening.svg",
+      "figures/33_transport_and_exchange.svg",
+      "figures/34_excitable_cortex_strip.svg",
+      "figures/35_flow_alignment_geometry.svg",
+      "figures/36_cytoplasmic_return_flow.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -1110,7 +1464,7 @@
       "figures/09_closure_model.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 9
+          "figure": 14
         }
       ],
       "figures/15_gastrulation_mechanics.svg": [
@@ -1122,7 +1476,7 @@
       "figures/16_epithelial_models.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 10
+          "figure": 16
         }
       ],
       "figures/17_elongation_materials.svg": [
@@ -1196,8 +1550,60 @@
           "note": "active_matter_packing_topology",
           "figure": 22
         }
+      ],
+      "figures/30_four_cell_rearrangement.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 10
+        }
+      ],
+      "figures/29_basal_apical_fields.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 11
+        }
+      ],
+      "figures/31_enclosure_and_adhesion.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 15
+        }
+      ],
+      "figures/32_cortical_flow_screening.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 4
+        }
+      ],
+      "figures/33_transport_and_exchange.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 8
+        }
+      ],
+      "figures/34_excitable_cortex_strip.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 10
+        }
+      ],
+      "figures/35_flow_alignment_geometry.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 13
+        }
+      ],
+      "figures/36_cytoplasmic_return_flow.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 18
+        }
       ]
-    }
+    },
+    "parameter_files": [
+      "figures/epithelial_spatial_model_parameters.json",
+      "figures/subcellular_model_parameters.json"
+    ]
   },
   "external_movies": [
     {
@@ -1384,6 +1790,40 @@
       "height": 178,
       "duration_seconds": 5.066667,
       "playback_checked_on": "2026-10-20"
+    },
+    {
+      "id": "subcellular-cortex",
+      "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/670/799678248bca5712c1df75982fd90081006feb41/elife-17807-media1.mp4",
+      "source": "https://elifesciences.org/articles/17807#video1",
+      "credit": "Reymann et al. (2016), Video 1, eLife",
+      "title": "皮层actin与myosin在极化和分裂中的动态",
+      "description": "Medial Lifeact, cortical NMY-2, and cortical Lifeact in the one-cell embryo.",
+      "note": "subcellular_cortex_and_flows",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "usage": "Remote HTML5 video embed; no local video copy or re-encoding.",
+      "checked_on": "2026-10-24",
+      "width": 1174,
+      "height": 252,
+      "duration_seconds": 42.066667,
+      "playback_checked_on": "2026-10-24"
+    },
+    {
+      "id": "subcellular-rho",
+      "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/716/bf6e47269b7ece8c56c5f935e9a0546369beae89/elife-19595-media1.mp4",
+      "source": "https://elifesciences.org/articles/19595#video1",
+      "credit": "Nishikawa et al. (2017), Video 1, eLife",
+      "title": "Rho活性与myosin的皮层脉冲",
+      "description": "AHPH::GFP and NMY-2::tagRFP-T in the unperturbed cortical plane.",
+      "note": "subcellular_cortex_and_flows",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "usage": "Remote HTML5 video embed; no local video copy or re-encoding.",
+      "checked_on": "2026-10-24",
+      "width": 450,
+      "height": 250,
+      "duration_seconds": 3.533333,
+      "playback_checked_on": "2026-10-24"
     }
   ]
 }

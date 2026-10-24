@@ -424,5 +424,149 @@
     "kind": "model",
     "intrinsic_width": 1140,
     "intrinsic_height": 459
+  },
+  "embryonic_morphogenesis/figures/walck2016_fig3": {
+    "width": 850,
+    "kind": "paper",
+    "intrinsic_width": 1836,
+    "intrinsic_height": 2242
+  },
+  "embryonic_morphogenesis/figures/serre2023_fig3": {
+    "width": 850,
+    "kind": "paper",
+    "intrinsic_width": 1471,
+    "intrinsic_height": 2100
+  },
+  "embryonic_morphogenesis/figures/serre2023_fig7": {
+    "width": 850,
+    "kind": "paper",
+    "intrinsic_width": 2100,
+    "intrinsic_height": 1144
+  },
+  "embryonic_morphogenesis/figures/29_basal_apical_fields": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1323,
+    "intrinsic_height": 692
+  },
+  "embryonic_morphogenesis/figures/30_four_cell_rearrangement": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1323,
+    "intrinsic_height": 681
+  },
+  "embryonic_morphogenesis/figures/31_enclosure_and_adhesion": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1322,
+    "intrinsic_height": 613
+  },
+  "embryonic_morphogenesis/figures/vanslambrouck2026_fig1": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 4457,
+    "intrinsic_height": 2927
+  },
+  "embryonic_morphogenesis/figures/ding2017_fig4": {
+    "width": 698,
+    "kind": "paper",
+    "intrinsic_width": 698,
+    "intrinsic_height": 556
+  },
+  "embryonic_morphogenesis/figures/ding2017_fig7": {
+    "width": 750,
+    "kind": "paper",
+    "intrinsic_width": 750,
+    "intrinsic_height": 1337
+  },
+  "embryonic_morphogenesis/figures/32_cortical_flow_screening": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1132,
+    "intrinsic_height": 435
+  },
+  "embryonic_morphogenesis/figures/kadzik2026_fig3": {
+    "width": 724,
+    "kind": "paper",
+    "intrinsic_width": 724,
+    "intrinsic_height": 646
+  },
+  "embryonic_morphogenesis/figures/nishikawa2017_fig1": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 1539
+  },
+  "embryonic_morphogenesis/figures/michaux2018_fig2": {
+    "width": 787,
+    "kind": "paper",
+    "intrinsic_width": 787,
+    "intrinsic_height": 597
+  },
+  "embryonic_morphogenesis/figures/33_transport_and_exchange": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1161,
+    "intrinsic_height": 683
+  },
+  "embryonic_morphogenesis/figures/michaux2018_fig8": {
+    "width": 761,
+    "kind": "paper",
+    "intrinsic_width": 761,
+    "intrinsic_height": 936
+  },
+  "embryonic_morphogenesis/figures/34_excitable_cortex_strip": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1162,
+    "intrinsic_height": 702
+  },
+  "embryonic_morphogenesis/figures/nishikawa2017_fig2": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 2101
+  },
+  "embryonic_morphogenesis/figures/reymann2016_fig2": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 1511
+  },
+  "embryonic_morphogenesis/figures/35_flow_alignment_geometry": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1336,
+    "intrinsic_height": 434
+  },
+  "embryonic_morphogenesis/figures/reymann2016_fig4": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 1341
+  },
+  "embryonic_morphogenesis/figures/naganathan2014_fig2": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 800
+  },
+  "embryonic_morphogenesis/figures/vanslambrouck2026_fig4": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 3700,
+    "intrinsic_height": 3499
+  },
+  "embryonic_morphogenesis/figures/36_cytoplasmic_return_flow": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1261,
+    "intrinsic_height": 432
+  },
+  "embryonic_morphogenesis/figures/naganathan2018_fig6": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 1824
   }
 }

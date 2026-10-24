@@ -1108,4 +1108,4 @@ $$
 
 43. Saaya Koizumi, Ayama Tokuyasu, Akinori W. M. Miyamoto, Takayuki Torisawa, Hirokazu Tanimoto, Akatsuki Kimura (2026). [Developmentally programmed changes in cytoplasmic mechanics revealed by active microrheology in C. elegans embryos](https://doi.org/10.64898/2026.05.19.726147). *bioRxiv preprint*.
 
-← [05 三维体形与模型辨识](/notes/celegans/embryonic_morphogenesis/geometry_and_inference/) · [系列总览](/notes/celegans/embryonic_morphogenesis/)
+← [05 三维体形与模型辨识](/notes/celegans/embryonic_morphogenesis/geometry_and_inference/) · [系列总览](/notes/celegans/embryonic_morphogenesis/) · [07 亚细胞骨架与流动](/notes/celegans/embryonic_morphogenesis/subcellular_cortex_and_flows/) →

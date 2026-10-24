@@ -1,18 +1,19 @@
 线虫胚胎的形态发生涉及几类相互衔接的运动：肠道前体进入内部，表皮细胞重排并包裹胚胎，随后身体变细、伸长，在卵壳内弯曲和卷起。这些过程背后的共同问题是：细胞产生的力怎样传到邻居和周围组织，又怎样留下稳定的形态变化。
 
-胚胎较透明，细胞谱系又高度可重复，使研究者能够连续追踪同名细胞，比较正常发育与基因干预后的差异。前五篇沿着发育过程，结合显微影像、遗传实验和力学模型讨论这些机制。[Corsi、Wightman 与 Chalfie，2015](https://www.ncbi.nlm.nih.gov/books/NBK299460/) 第六篇从 active matter 和软物质出发，横向比较堆积、刚性与拓扑。
+胚胎较透明，细胞谱系又高度可重复，使研究者能够连续追踪同名细胞，比较正常发育与基因干预后的差异。前五篇沿着发育过程，结合显微影像、遗传实验和力学模型讨论这些机制。[Corsi、Wightman 与 Chalfie，2015](https://www.ncbi.nlm.nih.gov/books/NBK299460/) 第六篇从 active matter 和软物质出发，横向比较堆积、刚性与拓扑；第七篇往细胞内部展开，讨论 actin–myosin 网络、皮层流与胞质流。
 
 
-## 1 六篇笔记
+## 1 七篇笔记
 
 | Note | 实验与模型 |
 | --- | --- |
 | [01 细胞内移与力传递](/notes/celegans/embryonic_morphogenesis/gastrulation/) | 观察肠道前体怎样从表面进入内部，解释收缩网络、细胞连接和周围拥挤各起什么作用。 |
-| [02 表皮重排与腹侧闭合](/notes/celegans/embryonic_morphogenesis/epithelial_morphogenesis/) | 观察表皮细胞怎样伸出前缘、左右穿插并在腹侧接合，再讨论这些运动怎样写进模型。 |
+| [02 表皮重排与腹侧闭合](/notes/celegans/embryonic_morphogenesis/epithelial_morphogenesis/) | 结合细胞轮廓与扰动实验，比较极性、四细胞 T1、双层相场和前缘黏附模型，追踪穿插、封口与再开裂的形态序列。 |
 | [03 早期伸长与各向异性力学](/notes/celegans/embryonic_morphogenesis/early_elongation/) | 从身体为什么变细变长出发，解释激光切割、分子拉力测量，以及不同方向上的软硬差别。 |
 | [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) | 解释肌肉反复抽动后，骨架和连接怎样保留形变，以及荧光恢复实验能告诉我们什么。 |
 | [05 三维体形与模型辨识](/notes/celegans/embryonic_morphogenesis/geometry_and_inference/) | 用中心线追踪弯曲身体的真实长度，讨论三维运动、卵壳限制，以及实验能否分别确定力和刚度。 |
 | [06 Active matter 软物质堆积与拓扑](/notes/celegans/embryonic_morphogenesis/active_matter_packing_topology/) | 从堆积和刚性出发，深入比较线虫四细胞排列、内移、手性皮层流、背侧插入与肌肉驱动中的传力、拓扑和材料更新，并区分固流转变、解堵与屈服。 |
+| [07 亚细胞骨架与流动](/notes/celegans/embryonic_morphogenesis/subcellular_cortex_and_flows/) | 从丝与马达到主动凝胶，比较周转、Rho 脉冲、纤维排列、手性流、连接传力和胞质回流，解释何时需要超出细胞尺度。 |
 
 
 ### 1.1 各阶段的模型路线

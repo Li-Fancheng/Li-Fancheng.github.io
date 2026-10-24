@@ -1,0 +1,55 @@
+{
+  "two_layers": {
+    "h": 0.05,
+    "dt": 0.01,
+    "epsilon": 0.14,
+    "Gamma": 0.08,
+    "KA": 12.0,
+    "repulsion": 2.0,
+    "v_basal": 0.3,
+    "initial_area": 1.1028514746859273,
+    "max_relative_area_error": 0.020216531414587013,
+    "final_centroid_lag": {
+      "0.1": 3.040691233265469,
+      "0.8": 0.18107080735551845
+    }
+  },
+  "four_cell_patch": {
+    "KA": 1,
+    "KP": 0.5,
+    "A0": 1,
+    "P0": 3.8,
+    "initial_barrier": 0.04643484442887691,
+    "high_tension_barrier": 0.0,
+    "outer_box": [
+      -1,
+      1,
+      -1,
+      1
+    ]
+  },
+  "enclosure": {
+    "dt": 0.001,
+    "ds": 0.02499999999999991,
+    "smoothing": 0.025,
+    "outward_force": 0.12,
+    "adhesion_force": 0.32,
+    "adhesion_range": 0.06,
+    "contact_threshold": 0.035,
+    "koff": 0.05,
+    "results": {
+      "3.0": {
+        "final_leading_half_gap": 0.0,
+        "final_max_half_gap": 0.0,
+        "final_leading_adhesion": 0.9836065519456945,
+        "half_gap_at_drive_stop": 0.0
+      },
+      "0.03": {
+        "final_leading_half_gap": 0.3471754977299026,
+        "final_max_half_gap": 0.35300579703077073,
+        "final_leading_adhesion": 0.08185673591991893,
+        "half_gap_at_drive_stop": 0.0
+      }
+    }
+  }
+}

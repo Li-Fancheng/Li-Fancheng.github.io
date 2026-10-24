@@ -1,9 +1,10 @@
 ---
 title: "02 表皮重排与腹侧闭合"
-subtitle: "Dorsal intercalation Ventral enclosure 与极性模型"
+subtitle: "从膜极性与三维穿插到新连接承载"
 date: 2026-10-18
+lastmod: 2026-10-24
 weight: 2
-summary: "观察表皮细胞怎样伸出前缘、左右穿插并在腹侧接合，再讨论这些运动怎样写进模型。"
+summary: "结合正常与扰动实验，推导极性、四细胞T1、双层相场、rosette传力及闭合与黏附模型，用空间形态序列比较穿插、封口和再开裂。"
 layout: cell-cycle
 article_class: celegans-note
 math: true
