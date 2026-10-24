@@ -13,7 +13,7 @@
 | [04 肌肉驱动与形态记忆](/notes/celegans/embryonic_morphogenesis/late_elongation/) | 解释肌肉反复抽动后，骨架和连接怎样保留形变，以及荧光恢复实验能告诉我们什么。 |
 | [05 三维体形与模型辨识](/notes/celegans/embryonic_morphogenesis/geometry_and_inference/) | 用中心线追踪弯曲身体的真实长度，讨论三维运动、卵壳限制，以及实验能否分别确定力和刚度。 |
 | [06 Active matter 软物质堆积与拓扑](/notes/celegans/embryonic_morphogenesis/active_matter_packing_topology/) | 从堆积和刚性出发，深入比较线虫四细胞排列、内移、手性皮层流、背侧插入与肌肉驱动中的传力、拓扑和材料更新，并区分固流转变、解堵与屈服。 |
-| [07 亚细胞骨架与流动](/notes/celegans/embryonic_morphogenesis/subcellular_cortex_and_flows/) | 从丝与马达到主动凝胶，比较周转、Rho 脉冲、纤维排列、手性流、连接传力和胞质回流，解释何时需要超出细胞尺度。 |
+| [07 亚细胞骨架与流动](/notes/celegans/embryonic_morphogenesis/subcellular_cortex_and_flows/) | 从丝与马达到皮层流，沿内移、包裹、全身伸长与弯扭，讨论网络方向、跨组织传力、材料更新和形态保持。 |
 
 
 ### 1.1 各阶段的模型路线

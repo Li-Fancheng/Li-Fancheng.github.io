@@ -104,7 +104,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 17
+          "figure": 19
         }
       ]
     },
@@ -279,6 +279,10 @@
         {
           "note": "epithelial_morphogenesis",
           "figure": 5
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 22
         }
       ]
     },
@@ -342,6 +346,10 @@
         {
           "note": "early_elongation",
           "figure": 1
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 23
         }
       ]
     },
@@ -468,6 +476,10 @@
         {
           "note": "early_elongation",
           "figure": 7
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 26
         }
       ]
     },
@@ -510,6 +522,10 @@
         {
           "note": "late_elongation",
           "figure": 1
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 25
         }
       ]
     },
@@ -596,6 +612,10 @@
         {
           "note": "late_elongation",
           "figure": 5
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 27
         }
       ]
     },
@@ -1031,7 +1051,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 19
+          "figure": 18
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
@@ -1201,7 +1221,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 5
+          "figure": 4
         }
       ]
     },
@@ -1369,7 +1389,70 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 20
+          "figure": 31
+        }
+      ]
+    },
+    {
+      "file": "figures/zhang2023_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bde4/10289891/0e870bbb4472/JCB_202302102_Fig1.jpg",
+      "article_doi": "10.1083/jcb.202302102",
+      "figure_id": "Fig. 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10289891/#fig1",
+      "author": "Zhang et al.",
+      "year": 2023,
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "a5a623e3b2a784ee2591ff6b6266d5cd9acef0caf5ed7b1e4776277a98ea5e14",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 21
+        }
+      ]
+    },
+    {
+      "file": "figures/dai2023_fig3.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:90505%2Felife-90505-fig3-v1.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "Fig. 3",
+      "source": "https://elifesciences.org/articles/90505#fig3",
+      "author": "Dai and Ben Amar",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "f1a2529ed458cbba2279ced736b4a967472b876ed4e51b0b576bbe8520d393c5",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 29
+        }
+      ]
+    },
+    {
+      "file": "figures/dai2023_fig7.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:90505%2Felife-90505-fig7-v1.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "Fig. 7",
+      "source": "https://elifesciences.org/articles/90505#fig7",
+      "author": "Dai and Ben Amar",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "b98210913452f0b152d5c777f2b0add0ccead49aafeb1c78c9aaa4688807d666",
+      "retrieved_on": "2026-10-24",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 30
         }
       ]
     }
@@ -1383,7 +1466,8 @@
       "figures/generate_worm_mechanics_figures.py",
       "figures/generate_solid_fluid_figures.py",
       "figures/generate_epithelial_spatial_models.py",
-      "figures/generate_subcellular_models.py"
+      "figures/generate_subcellular_models.py",
+      "figures/generate_morphogenesis_network_models.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -1415,7 +1499,10 @@
       "figures/33_transport_and_exchange.svg",
       "figures/34_excitable_cortex_strip.svg",
       "figures/35_flow_alignment_geometry.svg",
-      "figures/36_cytoplasmic_return_flow.svg"
+      "figures/36_cytoplasmic_return_flow.svg",
+      "figures/37_network_to_tissue.svg",
+      "figures/38_closed_volume_elongation.svg",
+      "figures/39_cyclic_network_shape.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -1572,7 +1659,7 @@
       "figures/32_cortical_flow_screening.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 4
+          "figure": 5
         }
       ],
       "figures/33_transport_and_exchange.svg": [
@@ -1596,13 +1683,32 @@
       "figures/36_cytoplasmic_return_flow.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 18
+          "figure": 17
+        }
+      ],
+      "figures/37_network_to_tissue.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 20
+        }
+      ],
+      "figures/38_closed_volume_elongation.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 24
+        }
+      ],
+      "figures/39_cyclic_network_shape.svg": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 28
         }
       ]
     },
     "parameter_files": [
       "figures/epithelial_spatial_model_parameters.json",
-      "figures/subcellular_model_parameters.json"
+      "figures/subcellular_model_parameters.json",
+      "figures/morphogenesis_network_parameters.json"
     ]
   },
   "external_movies": [
@@ -1823,6 +1929,22 @@
       "width": 450,
       "height": 250,
       "duration_seconds": 3.533333,
+      "playback_checked_on": "2026-10-24"
+    },
+    {
+      "id": "subcellular-whole-embryo-motion",
+      "note": "subcellular_cortex_and_flows",
+      "title": "网络与整条胚胎的弯曲和转动",
+      "src": "https://ars.els-cdn.com/content/image/1-s2.0-S1534580725003673-mmc3.mp4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#mmc3",
+      "credit": "Yang 等（2025），Video S1，Developmental Cell，CC BY-NC 4.0",
+      "description": "DLG-1::RFP 显示表皮连接，影片追踪胚胎在卵壳内的旋转。留意同一身体区域怎样进入和离开视野：二维投影中的缩短，可能来自弯曲和转动，不能直接当作材料回缩。",
+      "width": 212,
+      "height": 338,
+      "placement": "Beginning of the developmental stage section",
+      "usage": "Remote HTML5 video embed; no local video copy or re-encoding. Source credits and acquisition conditions retained.",
+      "duration_seconds": 14.08,
+      "checked_on": "2026-10-24",
       "playback_checked_on": "2026-10-24"
     }
   ]

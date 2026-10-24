@@ -1,0 +1,131 @@
+{
+  "tissue_patch": {
+    "nodes": 165,
+    "active_preferred_shortening": 0.08,
+    "basal_anchor": 0.002,
+    "boundary_anchor": 0.5,
+    "display_magnification": 3,
+    "cases": {
+      "1.0": {
+        "relative_force_residual": 1.0242584552621618e-15,
+        "mean_inward_displacement": 0.02233184520489139,
+        "far_field_mean_displacement": 0.009524587560825186
+      },
+      "0.03": {
+        "relative_force_residual": 7.11472481406413e-16,
+        "mean_inward_displacement": 0.03904969684774599,
+        "far_field_mean_displacement": 0.002333295792695045
+      }
+    }
+  },
+  "closed_shell": {
+    "L0": 3.0,
+    "R0": 0.8,
+    "zeta": 1.0,
+    "energy": "0.5(Cz+Ctheta/4)e^2+(tau_z-tau_theta/2)e",
+    "cases": {
+      "Hoop activity": {
+        "Cz": 0.4,
+        "Ctheta": 2.0,
+        "tau_theta": 1.2,
+        "tau_z": 0,
+        "equilibrium_log_strain": 0.6666666666666666,
+        "snapshots": [
+          {
+            "t": 0,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          },
+          {
+            "t": 0.5,
+            "lambda": 1.273260880565625,
+            "radius_ratio": 0.8862195002396958
+          },
+          {
+            "t": 2,
+            "lambda": 1.744498999019417,
+            "radius_ratio": 0.7571198589531242
+          },
+          {
+            "t": 6,
+            "lambda": 1.941878129411274,
+            "radius_ratio": 0.7176108802512217
+          }
+        ]
+      },
+      "Hoop + axial activity": {
+        "Cz": 0.4,
+        "Ctheta": 2.0,
+        "tau_theta": 1.2,
+        "tau_z": 0.6,
+        "equilibrium_log_strain": 0.0,
+        "snapshots": [
+          {
+            "t": 0,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          },
+          {
+            "t": 0.5,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          },
+          {
+            "t": 2,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          },
+          {
+            "t": 6,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          }
+        ]
+      },
+      "Greater axial resistance": {
+        "Cz": 2.0,
+        "Ctheta": 2.0,
+        "tau_theta": 1.2,
+        "tau_z": 0,
+        "equilibrium_log_strain": 0.24,
+        "snapshots": [
+          {
+            "t": 0,
+            "lambda": 1.0,
+            "radius_ratio": 1.0
+          },
+          {
+            "t": 0.5,
+            "lambda": 1.1867741747048075,
+            "radius_ratio": 0.9179435116761612
+          },
+          {
+            "t": 2,
+            "lambda": 1.2691950653515096,
+            "radius_ratio": 0.8876378494588153
+          },
+          {
+            "t": 6,
+            "lambda": 1.2712490569906725,
+            "radius_ratio": 0.8869204692744805
+          }
+        ]
+      }
+    },
+    "note": "Uniform cylindrical mode only; illustrative, not a heterogeneous embryo simulation."
+  },
+  "cyclic_shape": {
+    "dt": 0.001,
+    "period": 4.0,
+    "E": 2.0,
+    "drag": 0.4,
+    "yield": 0.3,
+    "plastic_mobility": 0.12,
+    "load_amplitude": 0.9,
+    "load_stops": 16,
+    "final_elastic_strain": 3.95399045147536e-11,
+    "final_total_strain": 0.4037799026204352,
+    "final_reference_strain": 0.40377990258119895,
+    "note": "Load is a generalized elongation-mode load, not direct longitudinal muscle stress."
+  }
+}

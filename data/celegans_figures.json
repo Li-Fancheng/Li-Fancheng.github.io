@@ -568,5 +568,41 @@
     "kind": "paper",
     "intrinsic_width": 1800,
     "intrinsic_height": 1824
+  },
+  "embryonic_morphogenesis/figures/37_network_to_tissue": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1307,
+    "intrinsic_height": 418
+  },
+  "embryonic_morphogenesis/figures/zhang2023_fig1": {
+    "width": 763,
+    "kind": "paper",
+    "intrinsic_width": 763,
+    "intrinsic_height": 379
+  },
+  "embryonic_morphogenesis/figures/38_closed_volume_elongation": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1307,
+    "intrinsic_height": 707
+  },
+  "embryonic_morphogenesis/figures/39_cyclic_network_shape": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 1307,
+    "intrinsic_height": 722
+  },
+  "embryonic_morphogenesis/figures/dai2023_fig3": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 721
+  },
+  "embryonic_morphogenesis/figures/dai2023_fig7": {
+    "width": 900,
+    "kind": "paper",
+    "intrinsic_width": 1800,
+    "intrinsic_height": 2049
   }
 }

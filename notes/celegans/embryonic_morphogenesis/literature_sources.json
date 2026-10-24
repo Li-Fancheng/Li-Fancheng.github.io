@@ -896,5 +896,17 @@
     "group": "亚细胞骨架与流动",
     "source": "https://doi.org/10.1038/nmeth.2928",
     "checked_on": "2026-10-24"
+  },
+  {
+    "doi": "10.1242/dev.126615",
+    "title": "Non-centrosomal epidermal microtubules act in parallel to LET-502/ROCK to promote C. elegans elongation",
+    "authors": "Sophie Quintin, Shaohe Wang, Julien Pontabry, Ambre Bender, François Robin, Vincent Hyenne, Frédéric Landmann, Christelle Gally, Karen Oegema, Michel Labouesse",
+    "year": "2016",
+    "journal": "Development",
+    "pmcid": "PMC6514414",
+    "group": "形态发生中的骨架与跨组织传力",
+    "source": "https://doi.org/10.1242/dev.126615",
+    "checked_on": "2026-10-24",
+    "correction_doi": "10.1242/dev.167262"
   }
 ]
