@@ -1,24 +1,24 @@
 {
-  "checked_on": "2026-10-22",
+  "checked_on": "2026-10-24",
   "full_site_build": "passed",
   "pages": [
     {
       "slug": "directory",
-      "chinese_characters": 1363,
-      "source_sha256": "71974abb1344491df87e4cbb4cdda1738d27862d404a6a40d94e3d13c22ebaa3",
+      "chinese_characters": 1474,
+      "source_sha256": "6dd17924f2745e63299b2b4a5388e9fbb2e19ee8a20afb6eb6a0491dc5446aca",
       "math": 2,
       "display_math": 0,
-      "internal_references": 10,
+      "internal_references": 11,
       "figures": 0,
       "code_blocks": 0
     },
     {
       "slug": "generative_learning",
-      "chinese_characters": 7694,
-      "source_sha256": "f4517591df4a70899489d82c0e8e84d0679279b15f55018281002d5304b1156c",
-      "math": 157,
-      "display_math": 26,
-      "internal_references": 36,
+      "chinese_characters": 10245,
+      "source_sha256": "bcda99a62f3d79ed410ffabbda662a02e3c1f1669bc36616d0beadfff84b6061",
+      "math": 203,
+      "display_math": 34,
+      "internal_references": 44,
       "figures": 1,
       "code_blocks": 0
     },
@@ -34,21 +34,21 @@
     },
     {
       "slug": "inference_generation",
-      "chinese_characters": 6664,
-      "source_sha256": "cfaecf15eb3186cde6a6872c6276726d458af3299b6b1a245260b3afec393118",
+      "chinese_characters": 6797,
+      "source_sha256": "d6d3b4fd71eac7dbf5f0e71c0bbbfeff203af6d357bb8067c0148d93f5c225b0",
       "math": 114,
       "display_math": 23,
-      "internal_references": 28,
+      "internal_references": 29,
       "figures": 1,
       "code_blocks": 0
     },
     {
       "slug": "parsing_latents",
-      "chinese_characters": 6730,
-      "source_sha256": "770a1cd67f5f68478f97ff9144ce1732e79083059236e075c0c109843bcfd9c3",
+      "chinese_characters": 7133,
+      "source_sha256": "652a9d563cf56cfc03c56eb52a500bcb9f840f5f6dd01061a315588f2cfea2c5",
       "math": 70,
       "display_math": 7,
-      "internal_references": 28,
+      "internal_references": 30,
       "figures": 1,
       "code_blocks": 0
     },
@@ -63,11 +63,11 @@
       "code_blocks": 0
     }
   ],
-  "math_total": 524,
+  "math_total": 570,
   "figure_placements": 8,
-  "internal_references": 176,
+  "internal_references": 188,
   "legacy_anchors": 15,
-  "primary_references": 19,
+  "primary_references": 20,
   "browser": {
     "viewports": [
       {
@@ -76,20 +76,17 @@
         "math": 2,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 1381,
         "images": [],
-        "path": "/notes/hierarchical_data/",
-        "topic": "hierarchical_data",
         "slug": "",
+        "path": "/notes/hierarchical_data/",
         "status": 200
       },
       {
         "width": 1440,
         "scrollWidth": 1425,
-        "math": 157,
+        "math": 203,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 7727,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/grammar.svg",
@@ -97,9 +94,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/generative_learning/",
-        "topic": "hierarchical_data",
         "slug": "generative_learning",
+        "path": "/notes/hierarchical_data/generative_learning/",
         "status": 200
       },
       {
@@ -108,7 +104,6 @@
         "math": 96,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 5959,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/correlations.svg",
@@ -121,9 +116,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/language_statistics/",
-        "topic": "hierarchical_data",
         "slug": "language_statistics",
+        "path": "/notes/hierarchical_data/language_statistics/",
         "status": 200
       },
       {
@@ -132,7 +126,6 @@
         "math": 114,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 6703,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/denoising.svg",
@@ -140,9 +133,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/inference_generation/",
-        "topic": "hierarchical_data",
         "slug": "inference_generation",
+        "path": "/notes/hierarchical_data/inference_generation/",
         "status": 200
       },
       {
@@ -151,7 +143,6 @@
         "math": 70,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 6767,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/parsing.svg",
@@ -159,9 +150,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/parsing_latents/",
-        "topic": "hierarchical_data",
         "slug": "parsing_latents",
+        "path": "/notes/hierarchical_data/parsing_latents/",
         "status": 200
       },
       {
@@ -170,7 +160,6 @@
         "math": 85,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 8044,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
@@ -188,9 +177,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/shared_representations/",
-        "topic": "hierarchical_data",
         "slug": "shared_representations",
+        "path": "/notes/hierarchical_data/shared_representations/",
         "status": 200
       },
       {
@@ -199,20 +187,17 @@
         "math": 2,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 1381,
         "images": [],
-        "path": "/notes/hierarchical_data/",
-        "topic": "hierarchical_data",
         "slug": "",
+        "path": "/notes/hierarchical_data/",
         "status": 200
       },
       {
         "width": 390,
         "scrollWidth": 375,
-        "math": 157,
+        "math": 203,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 7729,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/grammar.svg",
@@ -220,9 +205,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/generative_learning/",
-        "topic": "hierarchical_data",
         "slug": "generative_learning",
+        "path": "/notes/hierarchical_data/generative_learning/",
         "status": 200,
         "mobileTocOpened": true
       },
@@ -232,7 +216,6 @@
         "math": 96,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 5961,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/correlations.svg",
@@ -245,9 +228,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/language_statistics/",
-        "topic": "hierarchical_data",
         "slug": "language_statistics",
+        "path": "/notes/hierarchical_data/language_statistics/",
         "status": 200,
         "mobileTocOpened": true
       },
@@ -257,7 +239,6 @@
         "math": 114,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 6705,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/denoising.svg",
@@ -265,9 +246,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/inference_generation/",
-        "topic": "hierarchical_data",
         "slug": "inference_generation",
+        "path": "/notes/hierarchical_data/inference_generation/",
         "status": 200,
         "mobileTocOpened": true
       },
@@ -277,7 +257,6 @@
         "math": 70,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 6769,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/parsing.svg",
@@ -285,9 +264,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/parsing_latents/",
-        "topic": "hierarchical_data",
         "slug": "parsing_latents",
+        "path": "/notes/hierarchical_data/parsing_latents/",
         "status": 200,
         "mobileTocOpened": true
       },
@@ -297,7 +275,6 @@
         "math": 85,
         "mathErrors": 0,
         "code": 0,
-        "chinese": 8046,
         "images": [
           {
             "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
@@ -315,9 +292,8 @@
             "reserved": true
           }
         ],
-        "path": "/notes/hierarchical_data/shared_representations/",
-        "topic": "hierarchical_data",
         "slug": "shared_representations",
+        "path": "/notes/hierarchical_data/shared_representations/",
         "status": 200,
         "mobileTocOpened": true
       }
@@ -342,7 +318,8 @@
     "same_page_hash_change": true,
     "directory_to_article_link": true,
     "mobile_toc": true,
-    "legacy_route_checks_date": "2026-10-20"
+    "legacy_route_checks_date": "2026-10-20",
+    "current_article_checks_date": "2026-10-24"
   },
   "katex_errors": 0,
   "calculation_checks": {
@@ -397,6 +374,46 @@
       "rendered_code_elements": 0,
       "mobile_toc_cases": 5,
       "visual_review": "Desktop shared-representation discussion and mobile scaling discussion inspected; prose, headings and formulas legible."
+    }
+  },
+  "literature_update": {
+    "report": "literature_update_20261024.json",
+    "primary_url": "https://proceedings.mlr.press/v336/ren26a.html",
+    "formula_checks": {
+      "ideal_orthogonal_ridge_max_error": 1.1657341758564144e-15,
+      "normalized_conditional_vector_max_error": 4.440892098500626e-16,
+      "reference_position_A_posterior": [
+        1.0,
+        0.0
+      ],
+      "other_position_A_posterior": [
+        0.0,
+        1.0
+      ],
+      "RBF_same_patch_kernel_lower_bound": 0.9999906250439452,
+      "RBF_distinct_patch_kernel_upper_bound": 1.9287498479639042e-22,
+      "geometric_sum_cases": 12,
+      "new_neural_training": false
+    },
+    "validation": {
+      "checked_on": "2026-10-24",
+      "hugo_build": "passed",
+      "source_to_html_equations": 570,
+      "all_topics_katex_expressions_checked": 3592,
+      "katex_errors": 0,
+      "internal_references_checked": 188,
+      "broken_references": 0,
+      "primary_sources": 20,
+      "browser_cases": 12,
+      "viewports": [
+        390,
+        1440
+      ],
+      "horizontal_overflow_cases": 0,
+      "mobile_toc_cases": 5,
+      "image_placements": 8,
+      "rendered_code_elements": 0,
+      "visual_review": "New theory section reviewed on desktop and mobile; regularized-regression display scrolls within its formula container at narrow width."
     }
   }
 }

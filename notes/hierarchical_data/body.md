@@ -6,7 +6,7 @@
 
 | Note | 主要问题 | 关键计算 |
 | --- | --- | --- |
-| [01 · 层次生成与表征学习](/notes/hierarchical_data/generative_learning/) | 不同表面实现怎样被认成同一个部件？ | 小语法逐例展开、标签条件统计、梯度与样本阈值 |
+| [01 · 层次生成与表征学习](/notes/hierarchical_data/generative_learning/) | 不同表面实现怎样被认成同一个部件？ | 小语法、标签统计、样本阈值与可证明逐层训练 |
 | [02 · 语言统计与学习曲线](/notes/hierarchical_data/language_statistics/) | 更远的上下文何时真正有用？ | 关联平台、条件熵分解、有限样本分辨率与长尾积分 |
 | [03 · 层级推断与扩散生成](/notes/hierarchical_data/inference_generation/) | 加噪以后哪些层次仍能恢复？ | 树上后验、联合采样、均场固定点与动力学关联 |
 | [04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) | 组合边界未知时怎样学习？ | 多重解析、区间动态规划、隐变量预测与可辨识性 |
@@ -15,6 +15,8 @@
 ## 几条贯穿的联系 {#connections}
 
 **规则与统计信号。** 生成树提供可复用的对象，但不保证它们能从有限数据辨认。第一篇建立同义关系，第二篇追踪信号怎样随距离衰减，第四篇再讨论边界和目标也未知时的困难。
+
+**统计阈值与训练保证。** [可证明的逐层串联](/notes/hierarchical_data/generative_learning/#shallow-to-deep-chaining)将局部标签信号、可复用表示和误差控制接成深层学习保证，重点补充 [Ren、Dandi、Krzakala、Lee 的 COLT 2026 工作](https://proceedings.mlr.press/v336/ren26a.html)。这条监督学习路线与第四篇的隐变量预测使用不同目标和恢复条件，需要分别比较。
 
 **推断与学习。** 第三篇先假设字典已知，计算真正的后验；其他各篇讨论如何从数据接近这个参照。最优后验仍有歧义，与模型没有学会正确后验，是两种不同限制。
 
@@ -35,6 +37,7 @@
 | 层级生成与可学习性的早期形式化 | [Deep Learning and Hierarchal Generative Models](https://arxiv.org/abs/1612.09057)，2016 | 区分层级信息和受限低阶统计所能实现的分类 |
 | 逐层学习算法 | [A Provably Correct Algorithm for Deep Learning that Actually Works](https://arxiv.org/abs/1803.09522)，2018 | 局部梯度更新、聚类与层级恢复的算法路线 |
 | 随机语法与监督分类 | [How Deep Neural Networks Learn Compositional Data: The Random Hierarchy Model](https://arxiv.org/abs/2307.02129)，PRX 2024 | 随机层级模型、同义不变性和样本阈值 |
+| RHM 的可证明深层学习 | [Provable Learning of Random Hierarchy Models and Hierarchical Shallow-to-Deep Chaining](https://proceedings.mlr.press/v336/ren26a.html)，COLT 2026 | 根标签监督、RBF 随机特征、逐层梯度训练与误差串联 |
 | 稀疏性与空间稳定性 | [How Deep Networks Learn Sparse and Hierarchical Data](https://arxiv.org/abs/2404.10727)，ICML 2024 | 空白位置、离散形变与权重共享 |
 | 语言关联与有效上下文 | [Towards a Theory of How the Structure of Language Is Acquired by Deep Neural Networks](https://arxiv.org/abs/2406.00048)，NeurIPS 2024 | 共同祖先、关联平台与有限样本分辨率 |
 | 推断与卷积架构 | [U-Nets as Belief Propagation](https://arxiv.org/abs/2404.18444)，2024 年初稿 | 层级生成模型中的推断近似、分类与去噪 |

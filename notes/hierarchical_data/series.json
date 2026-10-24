@@ -4,10 +4,10 @@
     "slug": "generative_learning",
     "title": "01 · 层次生成与表征学习",
     "subtitle": "从随机语法到同义不变性与样本复杂度",
-    "summary": "从可复用部件与随机规则出发，推导同义表示、有限样本阈值及稀疏数据中的空间稳定性。",
-    "chinese_characters": 7694,
-    "display_equations": 26,
-    "reading_time": 40
+    "summary": "从可复用部件与随机规则出发，展开同义表示、样本复杂度、可证明逐层训练与稀疏数据中的空间稳定性。",
+    "chinese_characters": 10245,
+    "display_equations": 34,
+    "reading_time": 53
   },
   {
     "number": 2,
@@ -25,19 +25,19 @@
     "title": "03 · 层级推断与扩散生成",
     "subtitle": "信念传播、重建转变与组合泛化",
     "summary": "逐步推导树上后验、联合生成、重建转变与相关变化，区分已知规则推断和有限数据学习。",
-    "chinese_characters": 6664,
+    "chinese_characters": 6797,
     "display_equations": 23,
-    "reading_time": 35
+    "reading_time": 36
   },
   {
     "number": 4,
     "slug": "parsing_latents",
     "title": "04 · 语法解析与隐变量学习",
     "subtitle": "可变边界、歧义、预测目标与粗粒化",
-    "summary": "从未知组合边界进入语法歧义与动态规划，再比较表面预测、隐变量预测及结构可辨识性。",
-    "chinese_characters": 6730,
+    "summary": "从未知组合边界进入歧义与动态规划，对照根标签串联与隐变量预测，讨论粗粒化和结构可辨识性。",
+    "chinese_characters": 7133,
     "display_equations": 7,
-    "reading_time": 30
+    "reading_time": 31
   },
   {
     "number": 5,

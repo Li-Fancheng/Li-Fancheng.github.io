@@ -1,0 +1,72 @@
+{
+  "updated_on": "2026-10-24",
+  "paper": "Provable Learning of Random Hierarchy Models and Hierarchical Shallow-to-Deep Chaining",
+  "primary_url": "https://proceedings.mlr.press/v336/ren26a.html",
+  "publication": "COLT 2026, PMLR 336:5556–5597",
+  "paper_pdf_sha256": "303180221135dd124a5262bab92b34fdc1c32c652bd169c5c2107f3b6af0cd2c",
+  "checked_results": [
+    "Sections 2.3 and 4; Assumption 6; Theorem 7; Lemma 11; Proposition 19"
+  ],
+  "updated_articles": [
+    {
+      "slug": "generative_learning",
+      "chinese_characters_before": 7694,
+      "chinese_characters_after": 10245,
+      "math_before": 157,
+      "math_after": 203
+    },
+    {
+      "slug": "inference_generation",
+      "chinese_characters_before": 6664,
+      "chinese_characters_after": 6797,
+      "math_before": 114,
+      "math_after": 114
+    },
+    {
+      "slug": "parsing_latents",
+      "chinese_characters_before": 6730,
+      "chinese_characters_after": 7133,
+      "math_before": 70,
+      "math_after": 70
+    }
+  ],
+  "root_directory_and_bibliography_updated": true,
+  "primary_references": 20,
+  "formula_checks": {
+    "ideal_orthogonal_ridge_max_error": 1.1657341758564144e-15,
+    "normalized_conditional_vector_max_error": 4.440892098500626e-16,
+    "reference_position_A_posterior": [
+      1.0,
+      0.0
+    ],
+    "other_position_A_posterior": [
+      0.0,
+      1.0
+    ],
+    "RBF_same_patch_kernel_lower_bound": 0.9999906250439452,
+    "RBF_distinct_patch_kernel_upper_bound": 1.9287498479639042e-22,
+    "geometric_sum_cases": 12,
+    "new_neural_training": false
+  },
+  "scope": "New literature integration and exact illustrative formula checks; no new training and no claim of a universal shallow lower bound or ordinary end-to-end SGD guarantee.",
+  "validation": {
+    "checked_on": "2026-10-24",
+    "hugo_build": "passed",
+    "source_to_html_equations": 570,
+    "all_topics_katex_expressions_checked": 3592,
+    "katex_errors": 0,
+    "internal_references_checked": 188,
+    "broken_references": 0,
+    "primary_sources": 20,
+    "browser_cases": 12,
+    "viewports": [
+      390,
+      1440
+    ],
+    "horizontal_overflow_cases": 0,
+    "mobile_toc_cases": 5,
+    "image_placements": 8,
+    "rendered_code_elements": 0,
+    "visual_review": "New theory section reviewed on desktop and mobile; regularized-regression display scrolls within its formula container at narrow width."
+  }
+}

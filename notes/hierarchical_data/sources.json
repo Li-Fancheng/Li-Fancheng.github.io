@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-20",
+  "reviewed_on": "2026-10-24",
   "scope": "Five substantial reviews connecting hierarchical generative data, statistical learning, parsing, generation and multilingual representation geometry.",
   "references": [
     {
@@ -22,6 +22,41 @@
       "url": "https://arxiv.org/abs/2307.02129",
       "publication": "PRX 2024",
       "role": "随机层级模型、同义不变性和样本阈值"
+    },
+    {
+      "question": "RHM 的可证明深层学习",
+      "title": "Provable Learning of Random Hierarchy Models and Hierarchical Shallow-to-Deep Chaining",
+      "authors": [
+        "Yunwei Ren",
+        "Yatin Dandi",
+        "Florent Krzakala",
+        "Jason D. Lee"
+      ],
+      "url": "https://proceedings.mlr.press/v336/ren26a.html",
+      "additional_urls": [
+        "https://raw.githubusercontent.com/mlresearch/v336/main/assets/ren26a/ren26a.pdf",
+        "https://arxiv.org/abs/2601.19756",
+        "https://arxiv.org/html/2601.19756"
+      ],
+      "publication": "COLT 2026, PMLR 336:5556–5597",
+      "role": "根标签监督下的条件概率编码、RBF 随机特征与逐层 ridge 梯度训练；证明中间簇可辨认性与误差控制，并给出近 m^L 的条件性学习保证",
+      "coverage": [
+        "generative_learning/#shallow-to-deep-chaining",
+        "parsing_latents/#latent-prediction",
+        "inference_generation/#belief-propagation"
+      ],
+      "checked_sections": [
+        "COLT version Section 2.3",
+        "Assumption 6",
+        "Theorem 7",
+        "Lemma 11",
+        "Proposition 19"
+      ],
+      "limitations": [
+        "Known fixed grouping and branching factor; non-ambiguous uniform grammar; non-degeneracy and quantitative label-signal separation.",
+        "Fresh independent input-label samples per stage; fixed RBF random features, normalized outputs, layerwise regularized least-squares training.",
+        "The deep-learning positive result does not establish a universal shallow-model lower bound or ordinary end-to-end SGD convergence."
+      ]
     },
     {
       "question": "稀疏性与空间稳定性",
@@ -70,7 +105,10 @@
       "title": "Learning Curves Theory for Hierarchically Compositional Data with Power-Law Distributed Features",
       "url": "https://proceedings.mlr.press/v267/cagnetta25a.html",
       "publication": "ICML 2025",
-      "role": "规则稀有性、层级前因子与任务依赖"
+      "role": "规则稀有性、层级前因子与任务依赖",
+      "additional_urls": [
+        "https://arxiv.org/abs/2505.07067"
+      ]
     },
     {
       "question": "架构与语言标度",
