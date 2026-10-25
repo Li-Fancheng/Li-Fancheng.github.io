@@ -1,19 +1,9 @@
 ---
-title: "线虫专题"
-date: 2026-10-18
-summary: "以秀丽隐杆线虫为模型，记录胚胎形态发生、集体细胞行为与组织力学的研究脉络。"
-view: article-grid
-translationKey: celegans-notes
+title: "线虫专题（旧入口）"
+layout: redirect
+redirect: /notes/morphogenesis/celegans
+outputs:
+  - HTML
+build:
+  list: never
 ---
-
-以**秀丽隐杆线虫（Caenorhabditis elegans）**为模型，连接可追踪的细胞身份、连续的显微影像与可检验的物理机制。
-
-从胚胎发育开始：观察细胞如何进入内部，表皮如何重排和闭合，以及肌肉与表皮如何共同把胚胎塑造成细长的身体。
-
-## 胚胎形态发生系列
-
-[**C. elegans 胚胎形态发生**](embryonic_morphogenesis/)
-
-系列分为七篇：细胞内移、表皮重排与闭合、早期伸长、肌肉驱动与形态记忆、三维体形与模型辨识，active matter、软物质堆积与拓扑，以及亚细胞骨架与流动。每篇将原始实验与相应的物理问题放在一起，逐步解释模型的变量、假设、计算和实验预测。
-
-全系列包含 98 幅论文原图与 33 幅几何及模型计算图，保留显微视频和逐篇文献索引。

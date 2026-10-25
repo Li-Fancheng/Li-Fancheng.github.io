@@ -9,4 +9,4 @@ Reading notes and worked derivations on statistical physics, biological systems,
 
 More reading notes are available in the [Chinese notes collection](/notes/).
 
-The [C. elegans collection](/notes/celegans/) includes a five-part Chinese research review on [embryonic morphogenesis](/notes/celegans/embryonic_morphogenesis/), from cell internalization and epithelial rearrangement to body-axis elongation.
+The Chinese [morphogenesis collection](/notes/morphogenesis/) brings together three topic series on [Vertex Models](/notes/vertex_model/), [C. elegans embryonic morphogenesis](/notes/celegans/embryonic_morphogenesis/), and [three-dimensional cell simulations](/notes/cell_simulation_3d/), with 25 notes connecting tissue mechanics, developmental experiments, and computational models.
