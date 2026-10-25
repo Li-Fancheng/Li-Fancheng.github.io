@@ -81,18 +81,10 @@ sections:
           label: 神经网络理论 · 四卷 10 篇
           title: 神经网络理论与可解模型
           text: 从谱动力学与高维泛化出发，推导 NTK、深度线性网络、特征学习、随机优化与集体动力学，附完整推导和数值图。
-        - page: /notes/grokking
-          label: Grokking · 五篇专题
-          title: Grokking 与延迟泛化
-          text: 从慢模态、正则化与电路竞争，到表示约束、学习相图和真实模加法诊断，详细讨论训练拟合后的泛化动力学。
-        - page: /notes/scaling_laws
-          label: Scaling Laws · 六篇专题
-          title: Scaling Laws 机制与学习曲线
-          text: 从统计估计、几何与谱分辨率，到离散技能、特征学习、ER 和 BA 随机图及计算配置，逐步展开不同标度机制。
-        - page: /notes/hierarchical_data
-          label: 层次结构数据 · 五篇专题
-          title: 层次结构数据与学习理论
-          text: 五篇详细笔记，从随机语法、语言统计与扩散推断，到可变树解析和跨语言共享表示，附直观例子、完整推导与计算图。
+        - page: /notes/learning_and_generalization
+          label: 学习与泛化 · 三个主题系列
+          title: 学习与泛化系列
+          text: 汇集 Grokking、Scaling Laws 和层次结构数据三个 topic，共 16 篇笔记，从训练动力学、学习曲线与数据结构理解学习和泛化。
         - page: /notes/qbio_course
           label: 课程笔记 · 2026 秋季
           title: 定量生物学导论
