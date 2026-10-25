@@ -2,6 +2,7 @@
 {{/* Load image from page dir falling back to media library at `assets/media/` and then to remote URI. */}}
 
 {{ $destination := .Destination }}
+{{ $is_cell_3d := strings.HasPrefix $destination "/notes/cell_simulation_3d/" }}
 {{ $is_remote := strings.HasPrefix $destination "http" }}
 {{ $caption := .Title | default "" }}
 {{ $zoom := "true" }}
@@ -55,6 +56,21 @@
     {{ $fig_class = "qbio-figure" }}
   {{ else }}
     {{ errorf "Missing display width for vertex figure: %s" $key }}
+  {{ end }}
+{{ end }}
+
+{{/* Three-dimensional cell-model notes share the explicit figure-size policy. */}}
+{{ if strings.HasPrefix $destination "/notes/cell_simulation_3d/" }}
+  {{ $key := strings.TrimPrefix "/notes/cell_simulation_3d/" $destination }}
+  {{ $key = replaceRE `\.[^.]+$` "" $key }}
+  {{ with index site.Data.cell_simulation_3d_figures $key }}
+    {{ $note_policy = . }}
+    {{ $note_figure = true }}
+    {{ $fig_class = "qbio-figure" }}
+    {{ $width = .intrinsic_width }}
+    {{ $height = .intrinsic_height }}
+  {{ else }}
+    {{ errorf "Missing display width for 3D cell figure: %s" $key }}
   {{ end }}
 {{ end }}
 
@@ -125,6 +141,9 @@
   {{- if not $img -}}
     {{- $img = resources.Get (path.Join "media" $destination) -}}
   {{- end -}}
+  {{- if and (not $img) $is_cell_3d -}}
+    {{- $img = resources.Get (strings.TrimPrefix "/" $destination) -}}
+  {{- end -}}
 {{- end -}}
 
 <figure {{ with $fig_class }}class="{{.}}"{{end}} {{ with $id }}id="figure-{{ . }}"{{ end }}
@@ -148,6 +167,15 @@
            {{- with $height }} height="{{.}}"{{end}}
            {{- with $img_class }} class="{{.}}"{{end}} />
         {{- else }}
+          {{- if $is_cell_3d -}}
+          {{- $img_lg := $img.Resize (printf "%dx webp" (math.Min 1640 $img.Width | int)) -}}
+          {{- $img_md := $img.Resize (printf "%dx webp" (math.Min 820 $img.Width | int)) -}}
+          {{- $img_sm := $img.Resize (printf "%dx webp" (math.Min 400 $img.Width | int)) -}}
+          <img alt="{{ $alt }}" srcset="{{ $img_sm.RelPermalink }} {{ $img_sm.Width }}w, {{ $img_md.RelPermalink }} {{ $img_md.Width }}w, {{ $img_lg.RelPermalink }} {{ $img_lg.Width }}w"
+               sizes="(max-width: 868px) calc(100vw - 48px), 820px"
+               src="{{ $img_sm.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+               loading="lazy" {{ if $zoom }}data-zoomable{{end}} />
+          {{- else -}}
           {{- $img_lg := $img.Fit "1200x1200 webp" -}}
           {{- $img_md := $img_lg.Fit "760x760 webp" -}}{{/* Match `.docs-article-container` max-width */}}
           {{- $img_sm := $img_md.Fit "400x400 webp" -}}
@@ -163,6 +191,7 @@
                loading="lazy"
                {{- if $zoom }} data-zoomable{{end}}
                {{- with $img_class }} class="{{.}}"{{end}} />
+          {{- end -}}
         {{- end }}
       {{- else -}}
         <img src="{{ $destination | safeURL }}" alt="{{ $alt }}" loading="lazy" {{ if $zoom }}data-zoomable{{end}}

@@ -1,0 +1,910 @@
+{
+  "checked_on": "2026-10-25",
+  "papers": [
+    {
+      "id": "osborne2017",
+      "authors": "Osborne et al.",
+      "title": "Comparing individual-based approaches to modelling the self-organization of multicellular tissues",
+      "year": 2017,
+      "doi": "10.1371/journal.pcbi.1005387",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005387",
+      "chapters": [
+        "foundations",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "13",
+      "issue": "2",
+      "page": "e1005387",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1005387"
+    },
+    {
+      "id": "nonomura2012",
+      "authors": "Nonomura",
+      "title": "Study on Multicellular Systems Using a Phase Field Model",
+      "year": 2012,
+      "doi": "10.1371/journal.pone.0033501",
+      "verified_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0033501",
+      "chapters": [
+        "foundations",
+        "phase_field"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "PLOS ONE"
+    },
+    {
+      "id": "kuang2022",
+      "authors": "Kuang et al.",
+      "title": "Computable early Caenorhabditis elegans embryo with a phase field model",
+      "year": 2022,
+      "doi": "10.1371/journal.pcbi.1009755",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009755",
+      "chapters": [
+        "phase_field",
+        "morphogenesis"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "PLOS Computational Biology"
+    },
+    {
+      "id": "kuang2023",
+      "authors": "Kuang et al.",
+      "title": "MorphoSim: an efficient and scalable phase-field framework for accurately simulating multicellular morphologies",
+      "year": 2023,
+      "doi": "10.1038/s41540-023-00265-w",
+      "verified_source": "https://www.nature.com/articles/s41540-023-00265-w",
+      "chapters": [
+        "phase_field",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "9",
+      "issue": "1",
+      "article-number": "6",
+      "journal": "npj Systems Biology and Applications",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41540-023-00265-w"
+    },
+    {
+      "id": "runser2024",
+      "authors": "Runser, Vetter and Iber",
+      "title": "SimuCell3D: three-dimensional simulation of tissue mechanics with cell polarization",
+      "year": 2024,
+      "doi": "10.1038/s43588-024-00620-9",
+      "verified_source": "https://www.nature.com/articles/s43588-024-00620-9",
+      "chapters": [
+        "surface_mesh",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "4",
+      "issue": "4",
+      "page": "299-309",
+      "journal": "Nature Computational Science",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s43588-024-00620-9"
+    },
+    {
+      "id": "gomez2018",
+      "authors": "Gómez-Gálvez et al.",
+      "title": "Scutoids are a geometrical solution to three-dimensional packing of epithelia",
+      "year": 2018,
+      "doi": "10.1038/s41467-018-05376-1",
+      "verified_source": "https://www.nature.com/articles/s41467-018-05376-1",
+      "chapters": [
+        "vertex_3d"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "9",
+      "issue": "1",
+      "article-number": "2960",
+      "journal": "Nature Communications",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41467-018-05376-1"
+    },
+    {
+      "id": "okuda2013",
+      "authors": "Okuda et al.",
+      "title": "Reversible network reconnection model for simulating large deformation in dynamic tissue morphogenesis",
+      "year": 2013,
+      "doi": "10.1007/s10237-012-0430-7",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/22941051/",
+      "chapters": [
+        "vertex_3d"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "Biomechanics and Modeling in Mechanobiology"
+    },
+    {
+      "id": "sarkar2024",
+      "authors": "Sarkar and Krajnc",
+      "title": "Graph topological transformations in space-filling cell aggregates",
+      "year": 2024,
+      "doi": "10.1371/journal.pcbi.1012089",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012089",
+      "chapters": [
+        "vertex_3d",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "20",
+      "issue": "5",
+      "page": "e1012089",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1012089"
+    },
+    {
+      "id": "graner1992",
+      "authors": "Graner and Glazier",
+      "title": "Simulation of biological cell sorting using a two-dimensional extended Potts model",
+      "year": 1992,
+      "doi": "10.1103/PhysRevLett.69.2013",
+      "verified_source": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.69.2013",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "69",
+      "issue": "13",
+      "page": "2013-2016",
+      "journal": "Physical Review Letters",
+      "metadata_source": "https://api.crossref.org/works/10.1103/PhysRevLett.69.2013"
+    },
+    {
+      "id": "newman2005",
+      "authors": "Newman",
+      "title": "Modeling Multicellular Systems Using Subcellular Elements",
+      "year": 2005,
+      "doi": "10.3934/mbe.2005.2.613",
+      "verified_source": "https://www.aimsciences.org/article/doi/10.3934/mbe.2005.2.613",
+      "chapters": [
+        "particles"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "2",
+      "issue": "3",
+      "page": "613-624",
+      "journal": "Mathematical Biosciences and Engineering",
+      "metadata_source": "https://api.crossref.org/works/10.3934/mbe.2005.2.613"
+    },
+    {
+      "id": "ghaffarizadeh2018",
+      "authors": "Ghaffarizadeh et al.",
+      "title": "PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems",
+      "year": 2018,
+      "doi": "10.1371/journal.pcbi.1005991",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005991",
+      "chapters": [
+        "particles",
+        "morphogenesis",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "14",
+      "issue": "2",
+      "page": "e1005991",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1005991"
+    },
+    {
+      "id": "maas2012",
+      "authors": "Maas et al.",
+      "title": "FEBio: finite elements for biomechanics",
+      "year": 2012,
+      "doi": "10.1115/1.4005694",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/22482660/",
+      "chapters": [
+        "continuum_fluids",
+        "validation"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "134",
+      "issue": "1",
+      "article-number": "011005",
+      "journal": "Journal of Biomechanical Engineering",
+      "metadata_source": "https://api.crossref.org/works/10.1115/1.4005694"
+    },
+    {
+      "id": "peskin2002",
+      "authors": "Peskin",
+      "title": "The immersed boundary method",
+      "year": 2002,
+      "doi": "10.1017/S0962492902000077",
+      "verified_source": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/95ECDAC5D1824285563270D6DD70DA9A/S0962492902000077a.pdf/div-class-title-the-immersed-boundary-method-div.pdf",
+      "chapters": [
+        "continuum_fluids"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "methodological review",
+      "volume": "11",
+      "page": "479-517",
+      "journal": "Acta Numerica",
+      "metadata_source": "https://api.crossref.org/works/10.1017/S0962492902000077"
+    },
+    {
+      "id": "maitre2012",
+      "authors": "Maître et al.",
+      "title": "Adhesion Functions in Cell Sorting by Mechanically Coupling the Cortices of Adhering Cells",
+      "year": 2012,
+      "doi": "10.1126/science.1225399",
+      "verified_source": "https://www.science.org/doi/10.1126/science.1225399",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "foundations"
+      ],
+      "volume": "338",
+      "issue": "6104",
+      "page": "253-256",
+      "journal": "Science",
+      "metadata_source": "https://api.crossref.org/works/10.1126/science.1225399"
+    },
+    {
+      "id": "ranft2010",
+      "authors": "Ranft et al.",
+      "title": "Fluidization of tissues by cell division and apoptosis",
+      "year": 2010,
+      "doi": "10.1073/pnas.1011086107",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3000289/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "foundations"
+      ],
+      "volume": "107",
+      "issue": "49",
+      "page": "20863-20868",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "metadata_source": "https://api.crossref.org/works/10.1073/pnas.1011086107"
+    },
+    {
+      "id": "fletcher2017",
+      "authors": "Fletcher, Cooper and Baker",
+      "title": "Mechanocellular models of epithelial morphogenesis",
+      "year": 2017,
+      "doi": "10.1098/rstb.2015.0519",
+      "verified_source": "https://www.cs.ox.ac.uk/people/fergus.cooper/site/publications/2016Fletcher_MechanocellularModels.pdf",
+      "kind": "review",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "foundations"
+      ],
+      "volume": "372",
+      "issue": "1720",
+      "page": "20150519",
+      "journal": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+      "metadata_source": "https://api.crossref.org/works/10.1098/rstb.2015.0519"
+    },
+    {
+      "id": "monfared2026",
+      "authors": "Monfared, Ardaševa and Doostmohammadi",
+      "title": "Multiphase-Field Models of Tissues",
+      "year": 2026,
+      "doi": "10.1146/annurev-conmatphys-060625-061354",
+      "verified_source": "https://www.annualreviews.org/content/journals/10.1146/annurev-conmatphys-060625-061354",
+      "kind": "review",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "phase_field"
+      ],
+      "volume": "17",
+      "issue": "1",
+      "page": "91-113",
+      "journal": "Annual Review of Condensed Matter Physics",
+      "metadata_source": "https://api.crossref.org/works/10.1146/annurev-conmatphys-060625-061354"
+    },
+    {
+      "id": "wenzel2021",
+      "authors": "Wenzel and Voigt",
+      "title": "Multiphase field models for collective cell migration",
+      "year": 2021,
+      "doi": "10.1103/PhysRevE.104.054410",
+      "verified_source": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.054410",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "phase_field"
+      ],
+      "volume": "104",
+      "issue": "5",
+      "article-number": "054410",
+      "journal": "Physical Review E",
+      "metadata_source": "https://api.crossref.org/works/10.1103/PhysRevE.104.054410"
+    },
+    {
+      "id": "monfared2023",
+      "authors": "Monfared, Ravichandran, Andrade and Doostmohammadi",
+      "title": "Mechanical basis and topological routes to cell elimination",
+      "year": 2023,
+      "doi": "10.7554/eLife.82435",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10112887/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "phase_field",
+        "morphogenesis"
+      ],
+      "volume": "12",
+      "article-number": "e82435",
+      "journal": "eLife",
+      "metadata_source": "https://api.crossref.org/works/10.7554/eLife.82435"
+    },
+    {
+      "id": "chiang2024",
+      "authors": "Chiang, Hopkins, Loewe, Marenduzzo and Marchetti",
+      "title": "Multiphase field model of cells on a substrate: From three dimensional to two dimensional",
+      "year": 2024,
+      "doi": "10.1103/PhysRevE.110.044403",
+      "verified_source": "https://arxiv.org/abs/2403.10715",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "phase_field"
+      ],
+      "volume": "110",
+      "issue": "4",
+      "article-number": "044403",
+      "journal": "Physical Review E",
+      "metadata_source": "https://api.crossref.org/works/10.1103/PhysRevE.110.044403"
+    },
+    {
+      "id": "vanliedekerke2020",
+      "authors": "Van Liedekerke et al.",
+      "title": "A quantitative high-resolution computational mechanics cell model for growing and regenerating tissues",
+      "year": 2020,
+      "doi": "10.1007/s10237-019-01204-7",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/31749071/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "online_publication_year": 2019,
+      "chapters": [
+        "surface_mesh",
+        "validation"
+      ],
+      "volume": "19",
+      "issue": "1",
+      "page": "189-220",
+      "journal": "Biomechanics and Modeling in Mechanobiology",
+      "metadata_source": "https://api.crossref.org/works/10.1007/s10237-019-01204-7"
+    },
+    {
+      "id": "okuda2015",
+      "authors": "Okuda, Inoue and Adachi",
+      "title": "Three-dimensional vertex model for simulating multicellular morphogenesis",
+      "year": 2015,
+      "doi": "10.2142/biophysico.12.0_13",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4736843/",
+      "kind": "review",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "vertex_3d",
+        "validation"
+      ],
+      "volume": "12",
+      "issue": "0",
+      "page": "13-20",
+      "journal": "Biophysics and Physicobiology",
+      "metadata_source": "https://api.crossref.org/works/10.2142/biophysico.12.0_13"
+    },
+    {
+      "id": "merkel2018",
+      "authors": "Merkel and Manning",
+      "title": "A geometrically controlled rigidity transition in a model for confluent 3D tissues",
+      "year": 2018,
+      "doi": "10.1088/1367-2630/aaaa13",
+      "verified_source": "https://doi.org/10.1088/1367-2630/aaaa13",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "vertex_3d"
+      ],
+      "volume": "20",
+      "issue": "2",
+      "page": "022002",
+      "journal": "New Journal of Physics",
+      "metadata_source": "https://api.crossref.org/works/10.1088/1367-2630/aaaa13"
+    },
+    {
+      "id": "honda2004",
+      "authors": "Honda, Tanemura and Nagai",
+      "title": "A three-dimensional vertex dynamics cell model of space-filling polyhedra simulating cell behavior in a cell aggregate",
+      "year": 2004,
+      "doi": "10.1016/j.jtbi.2003.10.001",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/14759650/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "vertex_3d"
+      ],
+      "volume": "226",
+      "issue": "4",
+      "page": "439-453",
+      "journal": "Journal of Theoretical Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1016/j.jtbi.2003.10.001"
+    },
+    {
+      "id": "glazier1993",
+      "authors": "Glazier and Graner",
+      "title": "Simulation of the differential adhesion driven rearrangement of biological cells",
+      "year": 1993,
+      "doi": "10.1103/PhysRevE.47.2128",
+      "verified_source": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.47.2128",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "volume": "47",
+      "issue": "3",
+      "page": "2128-2154",
+      "journal": "Physical Review E",
+      "metadata_source": "https://api.crossref.org/works/10.1103/PhysRevE.47.2128"
+    },
+    {
+      "id": "voss2012",
+      "authors": "Voß-Böhme",
+      "title": "Multi-Scale Modeling in Morphogenesis: A Critical Analysis of the Cellular Potts Model",
+      "year": 2012,
+      "doi": "10.1371/journal.pone.0042852",
+      "verified_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0042852",
+      "kind": "methodological analysis",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "volume": "7",
+      "issue": "9",
+      "page": "e42852",
+      "journal": "PLoS ONE",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pone.0042852"
+    },
+    {
+      "id": "durand2016",
+      "authors": "Durand and Guesnet",
+      "title": "An efficient Cellular Potts Model algorithm that forbids cell fragmentation",
+      "year": 2016,
+      "doi": "10.1016/j.cpc.2016.07.030",
+      "verified_source": "https://arxiv.org/abs/1609.03832",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "volume": "208",
+      "page": "54-63",
+      "journal": "Computer Physics Communications",
+      "metadata_source": "https://api.crossref.org/works/10.1016/j.cpc.2016.07.030"
+    },
+    {
+      "id": "niculescu2015",
+      "authors": "Niculescu, Textor and de Boer",
+      "title": "Crawling and Gliding: A Computational Model for Shape-Driven Cell Migration",
+      "year": 2015,
+      "doi": "10.1371/journal.pcbi.1004280",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004280",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "journal": "PLOS Computational Biology"
+    },
+    {
+      "id": "scianna2013",
+      "authors": "Scianna, Preziosi and Wolf",
+      "title": "A Cellular Potts model simulating cell migration on and in matrix environments",
+      "year": 2013,
+      "doi": "10.3934/mbe.2013.10.235",
+      "verified_source": "https://www.aimsciences.org/article/doi/10.3934/mbe.2013.10.235",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "volume": "10",
+      "issue": "1",
+      "page": "235-261",
+      "journal": "Mathematical Biosciences and Engineering",
+      "metadata_source": "https://api.crossref.org/works/10.3934/mbe.2013.10.235"
+    },
+    {
+      "id": "fickentscher2013",
+      "authors": "Fickentscher, Struntz and Weiss",
+      "title": "Mechanical Cues in the Early Embryogenesis of Caenorhabditis elegans",
+      "year": 2013,
+      "doi": "10.1016/j.bpj.2013.09.005",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/24138856/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "particles",
+        "morphogenesis"
+      ],
+      "volume": "105",
+      "issue": "8",
+      "page": "1805-1811",
+      "journal": "Biophysical Journal",
+      "metadata_source": "https://api.crossref.org/works/10.1016/j.bpj.2013.09.005"
+    },
+    {
+      "id": "vanliedekerke2019",
+      "authors": "Van Liedekerke et al.",
+      "title": "Quantitative cell-based model predicts mechanical stress response of growing tumor spheroids over various growth conditions and cell lines",
+      "year": 2019,
+      "doi": "10.1371/journal.pcbi.1006273",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006273",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "particles",
+        "morphogenesis"
+      ],
+      "volume": "15",
+      "issue": "3",
+      "page": "e1006273",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1006273"
+    },
+    {
+      "id": "moeendarbary2013",
+      "authors": "Moeendarbary et al.",
+      "title": "The cytoplasm of living cells behaves as a poroelastic material",
+      "year": 2013,
+      "doi": "10.1038/nmat3517",
+      "verified_source": "https://www.nature.com/articles/nmat3517",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "continuum_fluids"
+      ],
+      "volume": "12",
+      "issue": "3",
+      "page": "253-261",
+      "journal": "Nature Materials",
+      "metadata_source": "https://api.crossref.org/works/10.1038/nmat3517"
+    },
+    {
+      "id": "hannezo2014",
+      "authors": "Hannezo, Prost and Joanny",
+      "title": "Theory of epithelial sheet morphology in three dimensions",
+      "year": 2014,
+      "doi": "10.1073/pnas.1312076111",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3890844/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "111",
+      "issue": "1",
+      "page": "27-32",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "metadata_source": "https://api.crossref.org/works/10.1073/pnas.1312076111"
+    },
+    {
+      "id": "rozman2020",
+      "authors": "Rozman, Krajnc and Ziherl",
+      "title": "Collective cell mechanics of epithelial shells with organoid-like morphologies",
+      "year": 2020,
+      "doi": "10.1038/s41467-020-17535-4",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/32732886/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "11",
+      "issue": "1",
+      "article-number": "3805",
+      "journal": "Nature Communications",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41467-020-17535-4"
+    },
+    {
+      "id": "okuda2018",
+      "authors": "Okuda et al.",
+      "title": "Strain-triggered mechanical feedback in self-organizing optic-cup morphogenesis",
+      "year": 2018,
+      "doi": "10.1126/sciadv.aau1354",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6248953/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "4",
+      "issue": "11",
+      "article-number": "eaau1354",
+      "journal": "Science Advances",
+      "metadata_source": "https://api.crossref.org/works/10.1126/sciadv.aau1354"
+    },
+    {
+      "id": "dumortier2019",
+      "authors": "Dumortier et al.",
+      "title": "Hydraulic fracturing and active coarsening position the lumen of the mouse blastocyst",
+      "year": 2019,
+      "doi": "10.1126/science.aaw7709",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/31371608/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "365",
+      "issue": "6452",
+      "page": "465-468",
+      "journal": "Science",
+      "metadata_source": "https://api.crossref.org/works/10.1126/science.aaw7709"
+    },
+    {
+      "id": "yang2021",
+      "authors": "Yang et al.",
+      "title": "Cell fate coordinates mechano-osmotic forces in intestinal crypt formation",
+      "year": 2021,
+      "doi": "10.1038/s41556-021-00700-2",
+      "verified_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611267/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "23",
+      "issue": "7",
+      "page": "733-744",
+      "journal": "Nature Cell Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41556-021-00700-2"
+    },
+    {
+      "id": "wolf2013",
+      "authors": "Wolf et al.",
+      "title": "Physical limits of cell migration: control by ECM space and nuclear deformation and tuning by proteolysis and traction force",
+      "year": 2013,
+      "doi": "10.1083/jcb.201210152",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/23798731/",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "volume": "201",
+      "issue": "7",
+      "page": "1069-1084",
+      "journal": "Journal of Cell Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1083/jcb.201210152"
+    },
+    {
+      "id": "neagu2026",
+      "authors": "Neagu, Robu, Arjoca and Neagu",
+      "title": "Cell-Based Computational Models of Organoids: A Systematic Review",
+      "year": 2026,
+      "doi": "10.3390/cells15020177",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/41597250/",
+      "kind": "review",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "journal": "Cells"
+    },
+    {
+      "id": "ichbiah2023",
+      "authors": "Ichbiah, Delbary, McDougall, Dumollard and Turlier",
+      "title": "Embryo mechanics cartography: inference of 3D force atlases from fluorescence microscopy",
+      "year": 2023,
+      "doi": "10.1038/s41592-023-02084-7",
+      "verified_source": "https://www.nature.com/articles/s41592-023-02084-7",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "validation"
+      ],
+      "volume": "20",
+      "issue": "12",
+      "page": "1989-1999",
+      "journal": "Nature Methods",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41592-023-02084-7"
+    },
+    {
+      "id": "vanslambrouck2024",
+      "authors": "Vanslambrouck et al.",
+      "title": "Image-based force inference by biomechanical simulation",
+      "year": 2024,
+      "doi": "10.1371/journal.pcbi.1012629",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012629",
+      "kind": "research",
+      "checked_on": "2026-10-25",
+      "chapters": [
+        "validation"
+      ],
+      "volume": "20",
+      "issue": "12",
+      "page": "e1012629",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1012629"
+    },
+    {
+      "id": "herold2023",
+      "authors": "Herold, Behle, Rosenbauer, Ferruzzi and Schug",
+      "title": "Development of a scoring function for comparing simulated and experimental tumor spheroids",
+      "year": 2023,
+      "doi": "10.1371/journal.pcbi.1010471",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010471",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "19",
+      "issue": "3",
+      "page": "e1010471",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1010471"
+    },
+    {
+      "id": "torres2022",
+      "authors": "Torres-Sánchez, Kerr Winter and Salbreux",
+      "title": "Interacting active surfaces: A model for three-dimensional cell aggregates",
+      "year": 2022,
+      "doi": "10.1371/journal.pcbi.1010762",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010762",
+      "chapters": [
+        "continuum_fluids"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "18",
+      "issue": "12",
+      "page": "e1010762",
+      "journal": "PLOS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1010762"
+    },
+    {
+      "id": "hervasraluy2021",
+      "authors": "Hervas-Raluy, Gomez-Benito, Borau-Zamora, Cóndor and Garcia-Aznar",
+      "title": "A new 3D finite element-based approach for computing cell surface tractions assuming nonlinear conditions",
+      "year": 2021,
+      "doi": "10.1371/journal.pone.0249018",
+      "verified_source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249018",
+      "chapters": [
+        "continuum_fluids"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "16",
+      "issue": "4",
+      "page": "e0249018",
+      "journal": "PLOS ONE",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pone.0249018"
+    },
+    {
+      "id": "vanliedekerke2015",
+      "authors": "Van Liedekerke, Palm, Jagiella and Drasdo",
+      "title": "Simulating tissue mechanics with agent-based models: concepts, perspectives and some novel results",
+      "year": 2015,
+      "doi": "10.1007/s40571-015-0082-3",
+      "verified_source": "https://www.sciencedirect.com/science/article/pii/S2196438625008319",
+      "chapters": [
+        "foundations"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "review",
+      "volume": "2",
+      "issue": "4",
+      "page": "401-444",
+      "journal": "Computational Particle Mechanics",
+      "metadata_source": "https://api.crossref.org/works/10.1007/s40571-015-0082-3"
+    },
+    {
+      "id": "odenthal2013",
+      "authors": "Odenthal et al.",
+      "title": "Analysis of Initial Cell Spreading Using Mechanistic Contact Formulations for a Deformable Cell Model",
+      "year": 2013,
+      "doi": "10.1371/journal.pcbi.1003267",
+      "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003267",
+      "chapters": [
+        "surface_mesh"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "9",
+      "issue": "10",
+      "page": "e1003267",
+      "journal": "PLoS Computational Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1371/journal.pcbi.1003267"
+    },
+    {
+      "id": "madhikar2018",
+      "authors": "Madhikar, Åström, Westerholm and Karttunen",
+      "title": "CellSim3D: GPU accelerated software for simulations of cellular growth and division in three dimensions",
+      "year": 2018,
+      "doi": "10.1016/j.cpc.2018.05.024",
+      "verified_source": "https://www.sciencedirect.com/science/article/pii/S0010465518302091",
+      "chapters": [
+        "surface_mesh"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "Computer Physics Communications",
+      "volume": "232",
+      "page": "206-213"
+    },
+    {
+      "id": "sandersius2008",
+      "authors": "Sandersius and Newman",
+      "title": "Modeling cell rheology with the Subcellular Element Model",
+      "year": 2008,
+      "doi": "10.1088/1478-3975/5/1/015002",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/18403827/",
+      "chapters": [
+        "particles"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "5",
+      "issue": "1",
+      "page": "015002",
+      "journal": "Physical Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1088/1478-3975/5/1/015002"
+    },
+    {
+      "id": "sandersius2011",
+      "authors": "Sandersius, Weijer and Newman",
+      "title": "Emergent cell and tissue dynamics from subcellular modeling of active biomechanical processes",
+      "year": 2011,
+      "doi": "10.1088/1478-3975/8/4/045007",
+      "verified_source": "https://doi.org/10.1088/1478-3975/8/4/045007",
+      "chapters": [
+        "particles"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "volume": "8",
+      "issue": "4",
+      "page": "045007",
+      "journal": "Physical Biology",
+      "metadata_source": "https://api.crossref.org/works/10.1088/1478-3975/8/4/045007"
+    }
+  ],
+  "software": [
+    {
+      "name": "MorphoSim",
+      "url": "https://github.com/XiangyuKuang/MorphoSim",
+      "source": "kuang2023"
+    },
+    {
+      "name": "SimuCell3D",
+      "url": "https://git.bsse.ethz.ch/iber/Publications/2024_runser_simucell3d",
+      "source": "runser2024",
+      "verification": "Repository URL confirmed in publisher Code availability; direct fetch timed out."
+    },
+    {
+      "name": "CompuCell3D",
+      "url": "https://compucell3dreferencemanual.readthedocs.io/en/latest/global_volume_and_surface_plugins.html",
+      "source": "official documentation"
+    },
+    {
+      "name": "PhysiCell",
+      "url": "https://github.com/MathCancer/PhysiCell",
+      "source": "official repository"
+    },
+    {
+      "name": "Chaste",
+      "url": "https://chaste.github.io/",
+      "source": "official website"
+    },
+    {
+      "name": "FEBio",
+      "url": "https://febio.org/",
+      "source": "official website"
+    }
+  ]
+}

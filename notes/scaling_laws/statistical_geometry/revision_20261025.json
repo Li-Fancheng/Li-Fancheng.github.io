@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-25",
+  "slug": "statistical_geometry",
+  "scope": "Expanded intuition, teacher-student worked examples, primary-paper projection formulas, noisy resolution, four regimes, and conditional data-model duality.",
+  "preserved": [
+    "Original opening text",
+    "Original computational figure and caption",
+    "All seven existing explicit section anchors"
+  ],
+  "chinese_characters_before": 5412,
+  "chinese_characters_after": 9836,
+  "added_chinese_characters": 4424,
+  "display_equations_before": 17,
+  "display_equations_after": 38,
+  "math_expressions_before": 99,
+  "math_expressions_after": 271,
+  "source_before_sha256": "254cb5e8cce51026d8758e63547a6f638b42423f94bf9e5720ff34e3259e9392",
+  "source_after_sha256": "14600c8fe275fd286dc323df93aed5dc771552932dbd5475c24edfdc1f74db46",
+  "primary_sources": [
+    "Bahri et al., 2102.06701v2, Eqs. (1)-(4), Sections 2.2 and 3.1",
+    "Hastie et al., 1903.08560v5, Sections 3 and 5",
+    "Bordelon, Canatar, Pehlevan, ICML 2020",
+    "Maloney, Roberts, Sully, 2210.16859"
+  ],
+  "normalization": "Full squared loss; twice the half-squared loss used in the cited Bahri formulas.",
+  "independent_checks": "checks.json",
+  "validation": {
+    "hugo_build": "passed, 0.136.5 extended",
+    "static": {
+      "series_pages": 7,
+      "source_to_html_math_expressions": 901,
+      "internal_references_checked": 204,
+      "pages": [
+        {
+          "slug": "directory",
+          "source_to_html_math_expressions": 0,
+          "display_equations": 0,
+          "internal_references_checked": 11,
+          "image_placements": 0,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "statistical_geometry",
+          "source_to_html_math_expressions": 271,
+          "display_equations": 38,
+          "internal_references_checked": 39,
+          "image_placements": 1,
+          "rendered_code_elements": 0,
+          "existing_anchors_preserved": [
+            "excess-risk",
+            "variance-limited",
+            "width-fluctuations",
+            "resolution-limited",
+            "bias-variance",
+            "four-regimes",
+            "data-model-duality"
+          ],
+          "opening_preserved": true,
+          "existing_figure_preserved": true
+        },
+        {
+          "slug": "spectral_learning",
+          "source_to_html_math_expressions": 280,
+          "display_equations": 39,
+          "internal_references_checked": 49,
+          "image_placements": 4,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "discrete_structure",
+          "source_to_html_math_expressions": 81,
+          "display_equations": 13,
+          "internal_references_checked": 24,
+          "image_placements": 1,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "feature_learning",
+          "source_to_html_math_expressions": 87,
+          "display_equations": 17,
+          "internal_references_checked": 26,
+          "image_placements": 1,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "graph_language",
+          "source_to_html_math_expressions": 70,
+          "display_equations": 12,
+          "internal_references_checked": 26,
+          "image_placements": 1,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "compute_allocation",
+          "source_to_html_math_expressions": 112,
+          "display_equations": 22,
+          "internal_references_checked": 29,
+          "image_placements": 2,
+          "rendered_code_elements": 0
+        }
+      ],
+      "errors": []
+    },
+    "katex": {
+      "equations": 901,
+      "errors": []
+    },
+    "browser": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 271,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 271,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#teacher-student"
+      }
+    ],
+    "visual_review": "Desktop teacher-student section and mobile shared-feature equations inspected. New long equations split into rows; no page overflow."
+  }
+}

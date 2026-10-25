@@ -1,0 +1,29 @@
+{
+  "seed": 20261025,
+  "squared_loss_factor": 1.0,
+  "misspecified_gaussian_risk": {
+    "P": 4,
+    "S": 7,
+    "D": 60,
+    "trials": 12000,
+    "sigma_squared": 0.3,
+    "omitted_signal_energy": 0.7,
+    "theory": 0.7727272727272727,
+    "measured_mean": 0.7729593191741899,
+    "standard_error": 0.0005002485358701395,
+    "absolute_z_score": 0.4638623209832814,
+    "test_metric": "Excess squared risk, evaluated with exact test covariance I_S"
+  },
+  "noiseless_matched_parameter_error": 4.685680459230494e-16,
+  "population_projection": {
+    "fixed_teacher_residual_error": 1.1102230246251565e-16,
+    "teacher_average_trace_error": 2.220446049250313e-16
+  },
+  "full_feature_kernel": {
+    "direct_average_risk": 1.0084417383880762,
+    "kernel_residual_risk": 1.0084417383880764,
+    "risk_identity_error": 2.220446049250313e-16,
+    "training_interpolation_error": 8.881784197001252e-16
+  },
+  "status": "passed"
+}

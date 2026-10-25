@@ -7,9 +7,9 @@
 .cell-cycle-article .katex-display { overflow-x: auto; overflow-y: hidden; padding: .75rem .25rem; }
 .cell-cycle-table { max-width: 100%; overflow-x: auto; margin-block: 2rem; }
 /* Keep absolutely positioned accessible math inside the scrolling table. */
-.vertex-model-note .cell-cycle-table { position: relative; }
+:is(.vertex-model-note, .cell-simulation-3d-note) .cell-cycle-table { position: relative; }
 @media (max-width: 640px) {
-  .cell-cycle-article.vertex-model-note .cell-cycle-table table { min-width: 40rem; max-width: none; }
+  .cell-cycle-article:is(.vertex-model-note, .cell-simulation-3d-note) .cell-cycle-table table { min-width: 40rem; max-width: none; }
 }
 .cell-cycle-article .cell-cycle-table table { display: table; width: max-content; max-width: 100%; margin: 0 auto; }
 .cell-cycle-article figure { max-width: 100%; margin-inline: auto; }

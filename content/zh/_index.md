@@ -100,7 +100,11 @@ sections:
         - page: /notes/vertex_model
           label: 组织力学 · 理论专题
           title: Vertex Model：从细胞几何到组织力学
-          text: 7 篇笔记，从能量与几何约束出发，推导组织刚性、细胞重排与流变，并讨论形态发生中的适用边界。
+          text: 9 篇笔记，从能量与几何约束出发，推导组织刚性、细胞重排与流变，并讨论形态发生中的适用边界。
+        - page: /notes/cell_simulation_3d
+          label: 三维细胞模拟 · 九篇专题
+          title: 三维细胞模拟：从相场、网格到 Vertex
+          text: 结合 21 张论文图看胚胎卵裂、细胞挤出与类器官出芽，讲解相场、网格、三维 Vertex、Potts、粒子、有限元与流固耦合。
         - page: /notes/celegans
           label: 线虫专题 · 发育与力学
           title: 线虫胚胎形态发生

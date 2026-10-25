@@ -1,0 +1,528 @@
+{
+  "date": "2026-10-25",
+  "stage": "Opening expansion and editorial revision after the concluding-discussion expansion",
+  "scope": "Concrete motivation in all six prefaces; tightened repeated explanations and generic transitions in body and conclusions; topic-specific discussion headings.",
+  "article_count": 6,
+  "body_paragraph_replacements": 96,
+  "retitled_discussion_headings": 24,
+  "opening_expanded_in_all_articles": true,
+  "chinese_characters_before": 47936,
+  "chinese_characters_after": 43322,
+  "math_expression_sequences_unchanged": true,
+  "existing_references_preserved": true,
+  "existing_explicit_anchors_preserved": true,
+  "figures_unchanged": true,
+  "new_sources": 0,
+  "new_experiments": 0,
+  "notes": [
+    {
+      "slug": "statistical_geometry",
+      "chinese_characters_before": 10942,
+      "chinese_characters_after": 10533,
+      "opening_chinese_characters_before": 558,
+      "opening_chinese_characters_after": 699,
+      "math_expressions_preserved": 271,
+      "source_before_sha256": "95bc44003a2561b9946479e3c3ec18919815d66cd2ff461f4320efcf42abd727",
+      "source_after_sha256": "f46fc3a76d034bd84b96b765c7afe82833a5c065c8452f04b457644450a8445b"
+    },
+    {
+      "slug": "spectral_learning",
+      "chinese_characters_before": 10934,
+      "chinese_characters_after": 10343,
+      "opening_chinese_characters_before": 476,
+      "opening_chinese_characters_after": 598,
+      "math_expressions_preserved": 280,
+      "source_before_sha256": "fba0fc5f4383a0550a973c5e2eca16189a3956109ce9cae9dd932fa9f75ef058",
+      "source_after_sha256": "33a16bf17284c01edc096aa4e096aac85f8e813fbf00b319b6de5befcd2d250e"
+    },
+    {
+      "slug": "discrete_structure",
+      "chinese_characters_before": 5704,
+      "chinese_characters_after": 4889,
+      "opening_chinese_characters_before": 345,
+      "opening_chinese_characters_after": 532,
+      "math_expressions_preserved": 81,
+      "source_before_sha256": "b2939e37275da1d38e53f65937b6aaeb139ffa6f00a5be990d4c91a37a9dab75",
+      "source_after_sha256": "6b90856acba337c53cce20a15fc16e0ea8b92b31b7e339f5720585658b9d4a9f"
+    },
+    {
+      "slug": "feature_learning",
+      "chinese_characters_before": 6284,
+      "chinese_characters_after": 5128,
+      "opening_chinese_characters_before": 333,
+      "opening_chinese_characters_after": 503,
+      "math_expressions_preserved": 87,
+      "source_before_sha256": "b6425dd9a47db10e19b7fa72753f1f9205c8b714adeaf69391daa936ca98ed5a",
+      "source_after_sha256": "4ba6c7ea15ab61d0a24bb20419a51aa4cf8c47c46e306e58e5225857ce3bd315"
+    },
+    {
+      "slug": "graph_language",
+      "chinese_characters_before": 5911,
+      "chinese_characters_after": 5309,
+      "opening_chinese_characters_before": 345,
+      "opening_chinese_characters_after": 498,
+      "math_expressions_preserved": 70,
+      "source_before_sha256": "4a9eb05321529e01f4ecb22aee750d922efce6cddbf718e57ea4f69aede1d926",
+      "source_after_sha256": "b488d1c8be0e64a4d7a1f2dbad1aae6dcdfeb96d180474e13b1662d2c173f6ea"
+    },
+    {
+      "slug": "compute_allocation",
+      "chinese_characters_before": 8161,
+      "chinese_characters_after": 7120,
+      "opening_chinese_characters_before": 370,
+      "opening_chinese_characters_after": 536,
+      "math_expressions_preserved": 112,
+      "source_before_sha256": "e1d940a94117870837a2f44a4cacf6f27d70d7742e4b7c3899c233aec627ef2b",
+      "source_after_sha256": "66de307055ff76108b5761b731a6ef8be2620d64003dcc8e5f8b9a26f4598e68"
+    }
+  ],
+  "validation": {
+    "hugo_build": "passed; Hugo 0.136.5 extended",
+    "static": {
+      "series_pages": 7,
+      "source_to_html_math_expressions": 901,
+      "internal_references_checked": 228,
+      "pages": [
+        {
+          "slug": "directory",
+          "source_to_html_math_expressions": 0,
+          "display_equations": 0,
+          "internal_references_checked": 11,
+          "image_placements": 0,
+          "rendered_code_elements": 0
+        },
+        {
+          "slug": "statistical_geometry",
+          "source_to_html_math_expressions": 271,
+          "display_equations": 38,
+          "internal_references_checked": 43,
+          "image_placements": 1,
+          "rendered_code_elements": 0,
+          "existing_anchors_preserved": [
+            "excess-risk",
+            "variance-limited",
+            "width-fluctuations",
+            "resolution-limited",
+            "bias-variance",
+            "teacher-student",
+            "random-feature-teacher-student",
+            "four-regimes",
+            "data-model-duality",
+            "discussion-regimes",
+            "discussion-dimension",
+            "discussion-progress",
+            "discussion-tests"
+          ],
+          "opening_expanded": true,
+          "existing_figure_preserved": true,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-regimes",
+            "discussion-dimension",
+            "discussion-progress",
+            "discussion-tests"
+          ]
+        },
+        {
+          "slug": "spectral_learning",
+          "source_to_html_math_expressions": 280,
+          "display_equations": 39,
+          "internal_references_checked": 53,
+          "image_placements": 4,
+          "rendered_code_elements": 0,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-sufficient",
+            "discussion-sampling",
+            "discussion-progress",
+            "discussion-tests"
+          ]
+        },
+        {
+          "slug": "discrete_structure",
+          "source_to_html_math_expressions": 81,
+          "display_equations": 13,
+          "internal_references_checked": 28,
+          "image_placements": 1,
+          "rendered_code_elements": 0,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-skill-units",
+            "discussion-emergence",
+            "discussion-progress",
+            "discussion-tests"
+          ]
+        },
+        {
+          "slug": "feature_learning",
+          "source_to_html_math_expressions": 87,
+          "display_equations": 17,
+          "internal_references_checked": 30,
+          "image_placements": 1,
+          "rendered_code_elements": 0,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-representation",
+            "discussion-asymptotics",
+            "discussion-progress",
+            "discussion-tests"
+          ]
+        },
+        {
+          "slug": "graph_language",
+          "source_to_html_math_expressions": 70,
+          "display_equations": 12,
+          "internal_references_checked": 30,
+          "image_placements": 1,
+          "rendered_code_elements": 0,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-necessity",
+            "discussion-language-gap",
+            "discussion-progress",
+            "discussion-tests"
+          ]
+        },
+        {
+          "slug": "compute_allocation",
+          "source_to_html_math_expressions": 112,
+          "display_equations": 22,
+          "internal_references_checked": 33,
+          "image_placements": 2,
+          "rendered_code_elements": 0,
+          "formula_sequence_preserved": true,
+          "existing_explicit_anchors_preserved": true,
+          "existing_references_preserved": true,
+          "figures_preserved": true,
+          "discussion_anchors": [
+            "discussion-local-optimum",
+            "discussion-progress",
+            "discussion-inference",
+            "discussion-tests"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "katex": {
+      "equations": 901,
+      "errors": []
+    },
+    "browser": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 271,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "statistical_geometry",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 280,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "spectral_learning",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 81,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "discrete_structure",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 70,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "graph_language",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 112,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "compute_allocation",
+        "status": 200
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 271,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "statistical_geometry",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 280,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "spectral_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 81,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "discrete_structure",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 70,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "graph_language",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 112,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "compute_allocation",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 87,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "feature_learning",
+        "status": 200
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 87,
+        "mathErrors": 0,
+        "code": 0,
+        "discussionSections": 4,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "feature_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#discussion-progress"
+      }
+    ],
+    "visual_review": "Desktop feature-learning opening and mobile random-graph opening inspected. Feature-learning desktop/mobile rechecked after the final introductory wording change."
+  },
+  "current_article_metadata": [
+    {
+      "number": 1,
+      "slug": "statistical_geometry",
+      "title": "01 · 统计估计与几何分辨率",
+      "subtitle": "从有限采样的波动到不断细化的函数结构",
+      "summary": "从统计波动与几何插值出发，用 teacher–student 回归和随机特征投影逐步解释表示平台、噪声、最优复杂度与四种标度区域，连接论文公式及数据—模型对偶。",
+      "chinese_characters": 10533,
+      "display_equations": 38,
+      "reading_time": 56
+    },
+    {
+      "number": 2,
+      "slug": "spectral_learning",
+      "title": "02 · 谱与学习分辨率",
+      "subtitle": "训练速率、目标尾部与有效模态的统一计算",
+      "summary": "由统一谱风险完整推导时间、数据和容量标度，保留目标对齐、噪声、正则化、谱截止与有限窗口。",
+      "chinese_characters": 10343,
+      "display_equations": 39,
+      "reading_time": 56
+    },
+    {
+      "number": 3,
+      "slug": "discrete_structure",
+      "title": "03 · 离散技能与长尾结构",
+      "subtitle": "随机覆盖、局部能力形成与组合共享",
+      "summary": "从技能尾部推导容量和数据指数，用 Poisson 计数替代硬阈值，再讨论训练时间、共享部件和数据选择。",
+      "chinese_characters": 4889,
+      "display_equations": 13,
+      "reading_time": 25
+    },
+    {
+      "number": 4,
+      "slug": "feature_learning",
+      "title": "04 · 特征学习与动态加速",
+      "subtitle": "初始核下的任务难度与自洽学习时钟",
+      "summary": "由两层参数化推导时变学习度量，解释困难任务的指数改善、有限模型瓶颈、SGD 暂态与计算配置。",
+      "chinese_characters": 5128,
+      "display_equations": 17,
+      "reading_time": 27
+    },
+    {
+      "number": 5,
+      "slug": "graph_language",
+      "title": "05 · 随机图与语言标度",
+      "subtitle": "从 ER 和 BA 游走到可控的序列学习",
+      "summary": "详述随机图、平稳访问、熵率与计数基线，连接 2026 年随机图到语言的研究，区分输入幂律与神经训练标度。",
+      "chinese_characters": 5309,
+      "display_equations": 12,
+      "reading_time": 26
+    },
+    {
+      "number": 6,
+      "slug": "compute_allocation",
+      "title": "06 · 计算配置与经验外推",
+      "subtitle": "风险曲面、损失底与预算约束下的选择",
+      "summary": "推导计算最优配置，比较可加与耦合风险，讨论数据回用、灵活拟合、平台误差、参数计数与训练协议。",
+      "chinese_characters": 7120,
+      "display_equations": 22,
+      "reading_time": 37
+    }
+  ]
+}

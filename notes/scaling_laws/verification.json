@@ -562,5 +562,27 @@
       "mobileTocOpened": true
     }
   ],
-  "legacy_browser_checks_date": "2026-10-20"
+  "legacy_browser_checks_date": "2026-10-20",
+  "subsequent_article_revisions": [
+    {
+      "slug": "statistical_geometry",
+      "date": "2026-10-25",
+      "report": "statistical_geometry/revision_20261025.json",
+      "scope": "Current single-article revision; the preceding full-series browser record is historical."
+    }
+  ],
+  "subsequent_series_revisions": [
+    {
+      "date": "2026-10-25",
+      "stage": "Concluding discussions",
+      "report": "discussion_revision_20261025.json",
+      "scope": "Current six-article conclusions; earlier verification summaries are retained as historical stages."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Opening expansion and editorial revision",
+      "report": "editorial_revision_20261025.json",
+      "scope": "Latest text revision; previous expansion reports retain their historical source hashes."
+    }
+  ]
 }

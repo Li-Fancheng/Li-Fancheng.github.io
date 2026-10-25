@@ -1,0 +1,236 @@
+{
+  "foundations/figures/representations": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 624
+  },
+  "phase_field/figures/interface": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "surface_mesh/figures/mesh_convergence": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "vertex_3d/figures/prism": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "lattice_potts/figures/potts": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "particles/figures/particle_potential": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "continuum_fluids/figures/material_response": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "morphogenesis/figures/lumen": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "validation/figures/inference": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "foundations/figures/contact_balance": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "phase_field/figures/interface_motion": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "surface_mesh/figures/surface_shear": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "vertex_3d/figures/shape_index": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "lattice_potts/figures/potts_volume": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "particles/figures/transport_motility": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "continuum_fluids/figures/rheology_scales": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "morphogenesis/figures/buckling": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "validation/figures/curvature_noise": {
+    "width": 820,
+    "kind": "calculation",
+    "intrinsic_width": 960,
+    "intrinsic_height": 408
+  },
+  "foundations/figures/nonomura2012_fig06": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2060,
+    "intrinsic_height": 1190
+  },
+  "phase_field/figures/kuang2022_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2250,
+    "intrinsic_height": 2429
+  },
+  "phase_field/figures/morphosim2023_fig05": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 996,
+    "intrinsic_height": 1133
+  },
+  "phase_field/figures/monfared2023_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 901,
+    "intrinsic_height": 656
+  },
+  "surface_mesh/figures/runser2024_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1513,
+    "intrinsic_height": 1456
+  },
+  "surface_mesh/figures/runser2024_fig04": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1815,
+    "intrinsic_height": 1334
+  },
+  "surface_mesh/figures/vanliedekerke2020_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1498,
+    "intrinsic_height": 957
+  },
+  "vertex_3d/figures/gomez2018_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1443,
+    "intrinsic_height": 1055
+  },
+  "vertex_3d/figures/sarkar2024_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1577,
+    "intrinsic_height": 1736
+  },
+  "vertex_3d/figures/rozman2020_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1950,
+    "intrinsic_height": 1133
+  },
+  "lattice_potts/figures/cpm_score2023_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2000,
+    "intrinsic_height": 1192
+  },
+  "particles/figures/physicell2018_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2273,
+    "intrinsic_height": 3000
+  },
+  "particles/figures/vanliedekerke2019_fig09": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 3500,
+    "intrinsic_height": 2527
+  },
+  "continuum_fluids/figures/torres2022_fig07": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2046,
+    "intrinsic_height": 1357
+  },
+  "continuum_fluids/figures/fem_tractions2021_fig05": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 3806,
+    "intrinsic_height": 3434
+  },
+  "morphogenesis/figures/kuang2022_fig03": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2250,
+    "intrinsic_height": 2464
+  },
+  "morphogenesis/figures/rozman2020_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1767,
+    "intrinsic_height": 1191
+  },
+  "morphogenesis/figures/okuda2018_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1836,
+    "intrinsic_height": 2385
+  },
+  "morphogenesis/figures/yang2021_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1736,
+    "intrinsic_height": 2359
+  },
+  "validation/figures/ichbiah2023_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 1681,
+    "intrinsic_height": 1657
+  },
+  "validation/figures/fides2024_fig01": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2342,
+    "intrinsic_height": 2172
+  }
+}

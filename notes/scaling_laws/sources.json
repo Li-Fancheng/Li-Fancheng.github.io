@@ -13,8 +13,39 @@
       ],
       "publication": "PNAS 2024; doi:10.1073/pnas.2311878121",
       "additional_urls": [
-        "https://doi.org/10.1073/pnas.2311878121"
-      ]
+        "https://doi.org/10.1073/pnas.2311878121",
+        "https://arxiv.org/html/2102.06701"
+      ],
+      "statistical_geometry_usage": {
+        "verified_on": "2026-10-25",
+        "equations": [
+          "Eq. (1): shared-feature teacher and student",
+          "Eq. (2): infinite-data projection risk",
+          "Eq. (3): full-feature finite-data residual kernel variance",
+          "Eq. (4): matched scaling exponents under the paper assumptions"
+        ],
+        "normalization": "The note uses full squared error, twice the paper loss; teacher covariance is I_S/S.",
+        "other_sections": [
+          "2.2: Lipschitz bounds versus local interpolation estimates",
+          "3.1: controlled deep teacher-student experiments"
+        ]
+      }
+    },
+    {
+      "id": "hastie2019",
+      "authors": "Hastie, Montanari, Rosset, Tibshirani",
+      "title": "Surprises in High-Dimensional Ridgeless Least Squares Interpolation",
+      "initial_year": 2019,
+      "url": "https://arxiv.org/abs/1903.08560",
+      "additional_urls": [
+        "https://arxiv.org/html/1903.08560v5"
+      ],
+      "notes": [
+        "statistical_geometry"
+      ],
+      "publication": "Primary manuscript, v5 2020-12-07",
+      "verified_on": "2026-10-25",
+      "usage": "Sections 3 and 5: isotropic risk and model misspecification; the note derives finite Gaussian inverse-Wishart formulas explicitly."
     },
     {
       "id": "bordelon2020",
@@ -23,6 +54,7 @@
       "initial_year": 2020,
       "url": "https://proceedings.mlr.press/v119/bordelon20a.html",
       "notes": [
+        "statistical_geometry",
         "spectral_learning"
       ],
       "publication": "ICML 2020"
@@ -45,6 +77,7 @@
       "initial_year": 2022,
       "url": "https://arxiv.org/abs/2210.16859",
       "notes": [
+        "statistical_geometry",
         "spectral_learning"
       ],
       "publication": "Primary manuscript"
@@ -151,6 +184,100 @@
         "compute_allocation"
       ],
       "publication": "NeurIPS 2024; later arXiv revisions exist"
+    },
+    {
+      "id": "canatar2021",
+      "authors": "Canatar, Bordelon, Pehlevan",
+      "title": "Spectral Bias and Task-Model Alignment Explain Generalization in Kernel Regression and Infinitely Wide Neural Networks",
+      "initial_year": 2020,
+      "url": "https://arxiv.org/abs/2006.13198",
+      "additional_urls": [
+        "https://www.nature.com/articles/s41467-021-23103-1"
+      ],
+      "notes": [
+        "statistical_geometry",
+        "spectral_learning"
+      ],
+      "publication": "Nature Communications 12, 2914 (2021); arXiv v6 2022-02-04",
+      "verified_on": "2026-10-25",
+      "usage": "Concluding discussion: task-model alignment, spectral bias, and limits of predicting a specified task from the input spectrum alone."
+    },
+    {
+      "id": "cui2021",
+      "authors": "Cui, Loureiro, Krzakala, Zdeborová",
+      "title": "Generalization Error Rates in Kernel Regression: The Crossover from the Noiseless to Noisy Regime",
+      "initial_year": 2021,
+      "url": "https://arxiv.org/abs/2105.15004",
+      "notes": [
+        "statistical_geometry",
+        "spectral_learning"
+      ],
+      "publication": "NeurIPS 2021; J. Stat. Mech. (2022) 114004; arXiv v2 2021-12-15",
+      "verified_on": "2026-10-25",
+      "usage": "Concluding discussion: noise, regularization, sample-scale crossovers; Gaussian-design KRR, not a universal result for arbitrary networks."
+    },
+    {
+      "id": "schaeffer2023",
+      "authors": "Schaeffer, Miranda, Koyejo",
+      "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+      "initial_year": 2023,
+      "url": "https://arxiv.org/abs/2304.15004",
+      "notes": [
+        "discrete_structure"
+      ],
+      "publication": "NeurIPS 2023; arXiv v2 2023-05-22",
+      "verified_on": "2026-10-25",
+      "usage": "Concluding discussion: apparent abrupt changes can depend on the evaluation metric; this does not rule out all internal algorithmic transitions."
+    },
+    {
+      "id": "defilippis2025",
+      "authors": "Defilippis, Xu, Girardin, Troiani, Erba, Zdeborová, Loureiro, Krzakala",
+      "title": "Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime",
+      "initial_year": 2025,
+      "url": "https://arxiv.org/abs/2509.24882",
+      "additional_urls": [
+        "https://arxiv.org/html/2509.24882v3"
+      ],
+      "notes": [
+        "spectral_learning",
+        "feature_learning"
+      ],
+      "publication": "ICLR 2026; arXiv v3 2026-08-06",
+      "verified_on": "2026-10-25",
+      "usage": "Concluding discussion: learned spectra and global-optimum risk phases in quadratic/diagonal networks; finite-time GD/SGD compute scaling remains a separate problem."
+    },
+    {
+      "id": "snell2024",
+      "authors": "Snell, Lee, Xu, Kumar",
+      "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+      "initial_year": 2024,
+      "url": "https://arxiv.org/abs/2408.03314",
+      "notes": [
+        "compute_allocation"
+      ],
+      "publication": "Primary manuscript, arXiv v1 2024-08-06",
+      "verified_on": "2026-10-25",
+      "usage": "Concluding discussion: task-dependent inference-compute allocation; distinguish reasoning success and verification from pretraining cross-entropy."
     }
-  ]
+  ],
+  "concluding_discussions_review": {
+    "date": "2026-10-25",
+    "new_sources": [
+      "canatar2021",
+      "cui2021",
+      "schaeffer2023",
+      "defilippis2025",
+      "snell2024"
+    ],
+    "additional_primary_sources_checked": [
+      "michaud2023",
+      "sorscher2022",
+      "bordelon2025",
+      "barkeshli2026",
+      "kaplan2020",
+      "hoffmann2022",
+      "porian2024"
+    ],
+    "scope": "Selected developments and model boundaries, rather than an exhaustive survey. Suggested future experiments in the notes are author synthesis, not established findings."
+  }
 }

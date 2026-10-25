@@ -908,5 +908,130 @@
     "source": "https://doi.org/10.1242/dev.126615",
     "checked_on": "2026-10-24",
     "correction_doi": "10.1242/dev.167262"
+  },
+  {
+    "doi": "10.1387/ijdb.052040gb",
+    "authors": "Brodland GW",
+    "year": "2006",
+    "title": "Do lamellipodia have the mechanical capacity to drive convergent extension?",
+    "journal": "International Journal of Developmental Biology",
+    "pmcid": null,
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1016/j.celrep.2022.110666",
+    "authors": "Weng S, Huebner RJ, Wallingford JB",
+    "year": "2022",
+    "title": "Convergent extension requires adhesion-dependent biomechanical integration of cell crawling and junction contraction",
+    "journal": "Cell Reports",
+    "pmcid": "PMC9119128",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.7554/eLife.12094",
+    "authors": "Tetley RJ, Blanchard GB, Fletcher AG, Adams RJ, Sanson B",
+    "year": "2016",
+    "title": "Unipolar distributions of junctional Myosin II identify cell stripe boundaries that drive cell intercalation throughout Drosophila axis extension",
+    "journal": "eLife",
+    "pmcid": "PMC4915814",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.7554/eLife.79862",
+    "authors": "Sknepnek R, Djafer-Cherif I, Chuai M, Weijer C, Henkes S",
+    "year": "2023",
+    "title": "Generating active T1 transitions through mechanochemical feedback",
+    "journal": "eLife",
+    "pmcid": "PMC10156166",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1038/ncb3226",
+    "authors": "Collinet C, Rauzi M, Lenne PF, Lecuit T",
+    "year": "2015",
+    "title": "Local and tissue-scale forces drive oriented junction growth during tissue extension",
+    "journal": "Nature Cell Biology",
+    "pmcid": null,
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1126/science.1079552",
+    "authors": "Hutson MS, Tokutake Y, Chang MS, Bloor JW, Venakides S, Kiehart DP, Edwards GS",
+    "year": "2003",
+    "title": "Forces for morphogenesis investigated with laser microsurgery and quantitative modeling",
+    "journal": "Science",
+    "pmcid": null,
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.2976/1.3266062",
+    "authors": "Layton AT, Toyama Y, Yang GQ, Edwards GS, Kiehart DP, Venakides S",
+    "year": "2009",
+    "title": "Drosophila morphogenesis: tissue force laws and the modeling of dorsal closure",
+    "journal": "HFSP Journal",
+    "pmcid": "PMC2839815",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1016/j.bpj.2012.09.036",
+    "authors": "Wang Q, Feng JJ, Pismen LM",
+    "year": "2012",
+    "title": "A cell-level biomechanical model of Drosophila dorsal closure",
+    "journal": "Biophysical Journal",
+    "pmcid": "PMC3514517",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1073/pnas.2322732121",
+    "authors": "Tah I, Haertter D, Crawford JM, Kiehart DP, Schmidt CF, Liu AJ",
+    "year": "2025",
+    "title": "A minimal vertex model explains how the amnioserosa avoids fluidization during Drosophila dorsal closure",
+    "journal": "PNAS",
+    "pmcid": "PMC11725931",
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1016/j.ydbio.2016.02.023",
+    "authors": "Wernike D, Chen Y, Mastronardi K, Makil N, Piekny A",
+    "year": "2016",
+    "title": "Mechanical forces drive neuroblast morphogenesis and are required for epidermal closure",
+    "journal": "Developmental Biology",
+    "pmcid": null,
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1038/s41467-025-58878-0",
+    "authors": "Guan G, Li Z, Ma Y, Ye P, Cao J, Wong MK, Ho VWS, Chan LY, Yan H, Tang C, Zhao Z",
+    "year": "2025",
+    "title": "Cell lineage-resolved embryonic morphological map reveals signaling associated with cell fate and size asymmetry",
+    "journal": "Nature Communications",
+    "pmcid": null,
+    "group": "表皮重排与闭合的理论和实验"
+  },
+  {
+    "doi": "10.1016/j.ijnonlinmec.2024.104833",
+    "authors": "Wang T, Ben Amar M",
+    "year": "2024",
+    "title": "Physical forces drive C. elegans embryonic deformation",
+    "journal": "International Journal of Non-Linear Mechanics",
+    "source": "https://www.sciencedirect.com/science/article/abs/pii/S0020746224001987",
+    "group": "形态发生模型与实验反演"
+  },
+  {
+    "doi": "10.1038/s41598-019-50690-3",
+    "authors": "Kong W, Loison O, Chavadimane Shivakumar P, Chan EHY, Saadaoui M, Collinet C, Lenne PF, Clément R",
+    "year": "2019",
+    "title": "Experimental validation of force inference in epithelia from cell to tissue scale",
+    "journal": "Scientific Reports",
+    "pmcid": "PMC6787039",
+    "group": "形态发生模型与实验反演"
+  },
+  {
+    "doi": "10.1016/j.jtbi.2012.08.017",
+    "authors": "Ishihara S, Sugimura K",
+    "year": "2012",
+    "title": "Bayesian inference of force dynamics during morphogenesis",
+    "journal": "Journal of Theoretical Biology",
+    "group": "形态发生模型与实验反演"
   }
 ]

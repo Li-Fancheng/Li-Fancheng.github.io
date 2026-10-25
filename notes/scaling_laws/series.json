@@ -4,10 +4,10 @@
     "slug": "statistical_geometry",
     "title": "01 · 统计估计与几何分辨率",
     "subtitle": "从有限采样的波动到不断细化的函数结构",
-    "summary": "从均值估计、宽度波动与几何插值出发，比较四种标度区域，推导噪声下的最优复杂度及数据与特征的对偶条件。",
-    "chinese_characters": 5412,
-    "display_equations": 17,
-    "reading_time": 28
+    "summary": "从统计波动与几何插值出发，用 teacher–student 回归和随机特征投影逐步解释表示平台、噪声、最优复杂度与四种标度区域，连接论文公式及数据—模型对偶。",
+    "chinese_characters": 10533,
+    "display_equations": 38,
+    "reading_time": 56
   },
   {
     "number": 2,
@@ -15,9 +15,9 @@
     "title": "02 · 谱与学习分辨率",
     "subtitle": "训练速率、目标尾部与有效模态的统一计算",
     "summary": "由统一谱风险完整推导时间、数据和容量标度，保留目标对齐、噪声、正则化、谱截止与有限窗口。",
-    "chinese_characters": 9837,
+    "chinese_characters": 10343,
     "display_equations": 39,
-    "reading_time": 53
+    "reading_time": 56
   },
   {
     "number": 3,
@@ -25,9 +25,9 @@
     "title": "03 · 离散技能与长尾结构",
     "subtitle": "随机覆盖、局部能力形成与组合共享",
     "summary": "从技能尾部推导容量和数据指数，用 Poisson 计数替代硬阈值，再讨论训练时间、共享部件和数据选择。",
-    "chinese_characters": 4601,
+    "chinese_characters": 4889,
     "display_equations": 13,
-    "reading_time": 23
+    "reading_time": 25
   },
   {
     "number": 4,
@@ -35,7 +35,7 @@
     "title": "04 · 特征学习与动态加速",
     "subtitle": "初始核下的任务难度与自洽学习时钟",
     "summary": "由两层参数化推导时变学习度量，解释困难任务的指数改善、有限模型瓶颈、SGD 暂态与计算配置。",
-    "chinese_characters": 5214,
+    "chinese_characters": 5128,
     "display_equations": 17,
     "reading_time": 27
   },
@@ -45,9 +45,9 @@
     "title": "05 · 随机图与语言标度",
     "subtitle": "从 ER 和 BA 游走到可控的序列学习",
     "summary": "详述随机图、平稳访问、熵率与计数基线，连接 2026 年随机图到语言的研究，区分输入幂律与神经训练标度。",
-    "chinese_characters": 4827,
+    "chinese_characters": 5309,
     "display_equations": 12,
-    "reading_time": 24
+    "reading_time": 26
   },
   {
     "number": 6,
@@ -55,8 +55,8 @@
     "title": "06 · 计算配置与经验外推",
     "subtitle": "风险曲面、损失底与预算约束下的选择",
     "summary": "推导计算最优配置，比较可加与耦合风险，讨论数据回用、灵活拟合、平台误差、参数计数与训练协议。",
-    "chinese_characters": 7011,
+    "chinese_characters": 7120,
     "display_equations": 22,
-    "reading_time": 36
+    "reading_time": 37
   }
 ]

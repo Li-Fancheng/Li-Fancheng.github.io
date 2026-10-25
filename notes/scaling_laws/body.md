@@ -6,7 +6,7 @@
 
 | 笔记 | 核心问题 | 主要内容 |
 | --- | --- | --- |
-| [01 · 统计估计与分辨率](/notes/scaling_laws/statistical_geometry/) | 更多数据是在反复测量，还是在发现新结构？ | 波动受限与分辨率受限、宽度换算、插值阶数、噪声与最优复杂度 |
+| [01 · 统计估计与分辨率](/notes/scaling_laws/statistical_geometry/) | 更多数据是在反复测量，还是在发现新结构？ | 波动与分辨率、teacher–student 回归、随机特征投影、噪声与最优复杂度 |
 | [02 · 谱与学习分辨率](/notes/scaling_laws/spectral_learning/) | 目标能量与学习速率怎样共同决定曲线？ | 统一谱风险、时间松弛、数据学习、容量截止与目标对齐 |
 | [03 · 离散技能与长尾结构](/notes/scaling_laws/discrete_structure/) | 平滑损失为何能伴随局部能力转变？ | 技能尾部、随机计数、容量代价、组合共享与数据选择 |
 | [04 · 特征学习与动态加速](/notes/scaling_laws/feature_learning/) | 表示变化何时改变指数？ | 自适应度量、初始核下的任务难度、自洽时钟与有限模型瓶颈 |

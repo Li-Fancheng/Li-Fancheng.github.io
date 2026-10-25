@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-24",
+  "checked_on": "2026-10-25",
   "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
   "reused_figures": [
     {
@@ -104,7 +104,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 19
+          "figure": 16
         }
       ]
     },
@@ -206,12 +206,12 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "active_matter_packing_topology",
-          "figure": 15
-        },
-        {
           "note": "epithelial_morphogenesis",
           "figure": 2
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 5
         }
       ]
     },
@@ -253,7 +253,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 4
+          "figure": 5
         }
       ]
     },
@@ -273,16 +273,16 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "active_matter_packing_topology",
-          "figure": 16
+          "note": "epithelial_morphogenesis",
+          "figure": 6
         },
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 5
+          "note": "active_matter_packing_topology",
+          "figure": 6
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 22
+          "figure": 18
         }
       ]
     },
@@ -303,7 +303,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 6
+          "figure": 7
         }
       ]
     },
@@ -324,7 +324,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 7
+          "figure": 8
         }
       ]
     },
@@ -344,12 +344,12 @@
       "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig1-v3.tif/full/full/0/default.jpg",
       "locations": [
         {
-          "note": "early_elongation",
-          "figure": 1
+          "note": "subcellular_cortex_and_flows",
+          "figure": 19
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 23
+          "note": "early_elongation",
+          "figure": 1
         }
       ]
     },
@@ -474,12 +474,12 @@
       "license_url": "https://creativecommons.org/licenses/by/3.0/",
       "locations": [
         {
-          "note": "early_elongation",
-          "figure": 7
+          "note": "subcellular_cortex_and_flows",
+          "figure": 21
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 26
+          "note": "early_elongation",
+          "figure": 7
         }
       ]
     },
@@ -525,7 +525,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 25
+          "figure": 20
         }
       ]
     },
@@ -590,7 +590,7 @@
         },
         {
           "note": "active_matter_packing_topology",
-          "figure": 18
+          "figure": 7
         }
       ]
     },
@@ -615,7 +615,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 27
+          "figure": 22
         }
       ]
     },
@@ -659,7 +659,8 @@
           "note": "geometry_and_inference",
           "figure": 1
         }
-      ]
+      ],
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained"
     },
     {
       "file": "figures/fick2013_fig3.jpg",
@@ -695,7 +696,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 8
+          "figure": 10
         }
       ]
     },
@@ -714,7 +715,7 @@
       "locations": [
         {
           "note": "early_elongation",
-          "figure": 10
+          "figure": 9
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -734,7 +735,7 @@
       "locations": [
         {
           "note": "early_elongation",
-          "figure": 11
+          "figure": 10
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -757,7 +758,8 @@
           "figure": 3
         }
       ],
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained"
     },
     {
       "file": "figures/kuang2022_fig1.png",
@@ -776,7 +778,7 @@
       "locations": [
         {
           "note": "gastrulation",
-          "figure": 8
+          "figure": 10
         }
       ]
     },
@@ -797,7 +799,7 @@
       "locations": [
         {
           "note": "gastrulation",
-          "figure": 10
+          "figure": 12
         }
       ]
     },
@@ -818,7 +820,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 1
+          "figure": 10
         }
       ]
     },
@@ -839,7 +841,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 4
+          "figure": 13
         }
       ]
     },
@@ -860,7 +862,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 5
+          "figure": 15
         }
       ]
     },
@@ -881,7 +883,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 8
+          "figure": 18
         }
       ]
     },
@@ -902,7 +904,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 10
+          "figure": 1
         }
       ]
     },
@@ -923,7 +925,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 13
+          "figure": 3
         }
       ]
     },
@@ -944,7 +946,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 14
+          "figure": 4
         }
       ]
     },
@@ -965,7 +967,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 19
+          "figure": 8
         }
       ]
     },
@@ -986,7 +988,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 11
+          "figure": 2
         }
       ]
     },
@@ -1027,7 +1029,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 23
+          "figure": 24
         }
       ]
     },
@@ -1047,11 +1049,11 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 24
+          "figure": 9
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 18
+          "figure": 14
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
@@ -1074,7 +1076,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 9
+          "figure": 4
         }
       ]
     },
@@ -1095,7 +1097,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 12
+          "figure": 20
         }
       ]
     },
@@ -1116,7 +1118,7 @@
       "locations": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 13
+          "figure": 21
         }
       ]
     },
@@ -1158,7 +1160,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 16
+          "figure": 12
         }
       ]
     },
@@ -1242,7 +1244,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 6
+          "figure": 5
         }
       ]
     },
@@ -1263,7 +1265,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 11
+          "figure": 8
         }
       ]
     },
@@ -1284,7 +1286,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 7
+          "figure": 6
         }
       ]
     },
@@ -1305,7 +1307,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 9
+          "figure": 7
         }
       ]
     },
@@ -1326,7 +1328,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 12
+          "figure": 9
         }
       ]
     },
@@ -1347,7 +1349,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 14
+          "figure": 10
         }
       ]
     },
@@ -1368,7 +1370,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 15
+          "figure": 11
         }
       ]
     },
@@ -1389,7 +1391,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 31
+          "figure": 15
         }
       ]
     },
@@ -1410,7 +1412,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 21
+          "figure": 17
         }
       ]
     },
@@ -1421,7 +1423,7 @@
       "figure_id": "Fig. 3",
       "source": "https://elifesciences.org/articles/90505#fig3",
       "author": "Dai and Ben Amar",
-      "year": 2023,
+      "year": 2024,
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "sha256": "f1a2529ed458cbba2279ced736b4a967472b876ed4e51b0b576bbe8520d393c5",
@@ -1431,9 +1433,10 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 29
+          "figure": 23
         }
-      ]
+      ],
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained"
     },
     {
       "file": "figures/dai2023_fig7.jpg",
@@ -1442,7 +1445,7 @@
       "figure_id": "Fig. 7",
       "source": "https://elifesciences.org/articles/90505#fig7",
       "author": "Dai and Ben Amar",
-      "year": 2023,
+      "year": 2024,
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "sha256": "b98210913452f0b152d5c777f2b0add0ccead49aafeb1c78c9aaa4688807d666",
@@ -1452,7 +1455,663 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
+          "figure": 24
+        }
+      ],
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained"
+    },
+    {
+      "file": "figures/weng2022_fig5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6149/9119128/610eba35d42b/nihms-1801888-f0005.jpg",
+      "article_doi": "10.1016/j.celrep.2022.110666",
+      "figure_id": "Figure 5",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9119128/#F5",
+      "author": "Weng et al.",
+      "year": 2022,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "PMC author manuscript",
+      "sha256": "a631ba452e61b28194f83ff9984419e2fa4b6d2677994908c3a5b4dec3e477a0",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 11
+        }
+      ]
+    },
+    {
+      "file": "figures/weng2022_fig6.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6149/9119128/2e55c6a6f04a/nihms-1801888-f0006.jpg",
+      "article_doi": "10.1016/j.celrep.2022.110666",
+      "figure_id": "Figure 6",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9119128/#F6",
+      "author": "Weng et al.",
+      "year": 2022,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "PMC author manuscript",
+      "sha256": "91a16ef331118a5e31e194577f3380e844ef5e71fbf5335d8a8231605d279a08",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 12
+        }
+      ]
+    },
+    {
+      "file": "figures/weng2022_fig7.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6149/9119128/a9a778d60d3a/nihms-1801888-f0007.jpg",
+      "article_doi": "10.1016/j.celrep.2022.110666",
+      "figure_id": "Figure 7",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9119128/#F7",
+      "author": "Weng et al.",
+      "year": 2022,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "PMC author manuscript",
+      "sha256": "8dbc48e528befe76344dad6f845e1bf5cbf63511fb0c2263dca346a6ac89b62e",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 13
+        }
+      ]
+    },
+    {
+      "file": "figures/tetley2016_fig7.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax/12094%2Felife-12094-fig7-v3.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.12094",
+      "figure_id": "Figure 7",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4915814/#fig7",
+      "author": "Tetley et al.",
+      "year": 2016,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "00070e69b901fb74b58b41604c4d5ed3bbb5ab3c3fc40a0b9c30592b3439fef7",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 15
+        }
+      ]
+    },
+    {
+      "file": "figures/sknepnek2023_fig2.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:79862%2Felife-79862-fig2-v4.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.79862",
+      "figure_id": "Figure 2",
+      "source": "https://elifesciences.org/articles/79862",
+      "author": "Sknepnek et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "2d13acd5e0587fe99de33bf13a7bd607b859901cbde585383b91d1dd93816eb2",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 17
+        }
+      ]
+    },
+    {
+      "file": "figures/sknepnek2023_fig6.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:79862%2Felife-79862-fig6-v4.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.79862",
+      "figure_id": "Figure 6",
+      "source": "https://elifesciences.org/articles/79862",
+      "author": "Sknepnek et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "1ece0bc198b5e3478ecea3cb8402ac86560e80b00a26ef45def56c118bb1eea6",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 18
+        }
+      ]
+    },
+    {
+      "file": "figures/layton2009_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/de1e/2839815/2926c067e1b3/HJFOA5-000003-000441_1-g001.jpg",
+      "article_doi": "10.2976/1.3266062",
+      "figure_id": "Figure 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839815/#f1",
+      "author": "Layton et al.",
+      "year": 2009,
+      "license": "Copyright 2009 HFSP Publishing; original author/publisher rights retained",
+      "license_url": null,
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "61c5676b9babb010d4a25cdb2a31a5d8730bd23caf357d1645fd7b0672829534",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 22
+        }
+      ]
+    },
+    {
+      "file": "figures/layton2009_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/de1e/2839815/544dfe563b97/HJFOA5-000003-000441_1-g003.jpg",
+      "article_doi": "10.2976/1.3266062",
+      "figure_id": "Figure 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839815/#f3",
+      "author": "Layton et al.",
+      "year": 2009,
+      "license": "Copyright 2009 HFSP Publishing; original author/publisher rights retained",
+      "license_url": null,
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "9c1d71ae9f6f9bd60bb7bddf743444066aa138842baeb7f1c11fcdeed8feaafa",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 23
+        }
+      ]
+    },
+    {
+      "file": "figures/layton2009_fig9.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/de1e/2839815/59d9181b4ff8/HJFOA5-000003-000441_1-g009.jpg",
+      "article_doi": "10.2976/1.3266062",
+      "figure_id": "Figure 9",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839815/#f9",
+      "author": "Layton et al.",
+      "year": 2009,
+      "license": "Copyright 2009 HFSP Publishing; original author/publisher rights retained",
+      "license_url": null,
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "3912963aaa2edefded7c1b68fbf914d8f4aeb73291ce8d2f9c53a6b2c425e2e3",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 24
+        }
+      ]
+    },
+    {
+      "file": "figures/wang2012_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7e1f/3514517/445a3f9506f1/gr1.jpg",
+      "article_doi": "10.1016/j.bpj.2012.09.036",
+      "figure_id": "Figure 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3514517/#fig1",
+      "author": "Wang et al.",
+      "year": 2012,
+      "license": "Copyright 2012 Biophysical Society; original author/publisher rights retained",
+      "license_url": null,
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "6cbd4b7b5a09a2bb3eb9773fc9f1b967ff6a258b334cdead6d2e59b247e9fc0b",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 27
+        }
+      ]
+    },
+    {
+      "file": "figures/wang2012_fig8.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7e1f/3514517/5528ba3df6b9/gr8.jpg",
+      "article_doi": "10.1016/j.bpj.2012.09.036",
+      "figure_id": "Figure 8",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3514517/#fig8",
+      "author": "Wang et al.",
+      "year": 2012,
+      "license": "Copyright 2012 Biophysical Society; original author/publisher rights retained",
+      "license_url": null,
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "3b2c314ea862b49eac6eb458d2fb736015406c4b374619e71a7fe4f2dfb70c62",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 28
+        }
+      ]
+    },
+    {
+      "file": "figures/tah2025_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/14ac/11725931/8218334bd70c/pnas.2322732121fig01.jpg",
+      "article_doi": "10.1073/pnas.2322732121",
+      "figure_id": "Figure 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11725931/#fig01",
+      "author": "Tah et al.",
+      "year": 2025,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "24531def8881272ffd9c7888d7ae8a6687258aa7b9da89755c6b15235bb52508",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 29
+        }
+      ]
+    },
+    {
+      "file": "figures/tah2025_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/14ac/11725931/0e4f716fd4dd/pnas.2322732121fig02.jpg",
+      "article_doi": "10.1073/pnas.2322732121",
+      "figure_id": "Figure 2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11725931/#fig02",
+      "author": "Tah et al.",
+      "year": 2025,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "81ff0d5c36a9f9f2f7cce7c25fb163d592ac173dd00feb702db39e28374afc22",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
           "figure": 30
+        }
+      ]
+    },
+    {
+      "file": "figures/tah2025_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/14ac/11725931/539ffa82ccfd/pnas.2322732121fig03.jpg",
+      "article_doi": "10.1073/pnas.2322732121",
+      "figure_id": "Figure 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11725931/#fig03",
+      "author": "Tah et al.",
+      "year": 2025,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "79fe8e603f7675ff7eaa211bac0324d7fecf4e595b847ad154cc7842f16a6731",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 31
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 23
+        }
+      ]
+    },
+    {
+      "file": "figures/guan2025_fig3.png",
+      "image_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-025-58878-0/MediaObjects/41467_2025_58878_Fig3_HTML.png",
+      "article_doi": "10.1038/s41467-025-58878-0",
+      "figure_id": "Figure 3",
+      "source": "https://www.nature.com/articles/s41467-025-58878-0",
+      "author": "Guan et al.",
+      "year": 2025,
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "ae3cbe46331c26237ac2356c488d22eeb77f89775239aa1da50fbaec0b3911bf",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 9
+        }
+      ]
+    },
+    {
+      "file": "figures/xu2023_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/904d/10263146/53df931e9713/develop-150-201493-g2.jpg",
+      "article_doi": "10.1242/dev.201493",
+      "figure_id": "Figure 2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10263146/#DEV201493F2",
+      "author": "Xu et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "modification": "None",
+      "modifications": "None; complete original figure and labels retained. Display scaling only.",
+      "version": "Published article",
+      "sha256": "35de00ed05d9e9995836b350631db641044004aebea9288f4acfbe950a9985ef",
+      "locations": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 19
+        }
+      ]
+    },
+    {
+      "file": "figures/kuang2022_fig4.png",
+      "image_url": "https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1009755.g004",
+      "article_doi": "10.1371/journal.pcbi.1009755",
+      "figure_id": "Figure 4",
+      "source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009755#pcbi-1009755-g004",
+      "author": "Kuang et al.",
+      "year": 2022,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "9d935849e642a4d40f7cb37d312bcf046d20efa9836d3a2613bc1eb23e24fe75",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 11
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/fang2021_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/863f/8245039/e98cf3fb409f/abg3264-f2.jpg",
+      "article_doi": "10.1126/sciadv.abg3264",
+      "figure_id": "Figure 2",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8245039/",
+      "author": "Fang et al.",
+      "year": 2021,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "20a4ed81dd7dbfd8b21c2f35562817255d68f894e2c65f41e41bc1058f4dcabd",
+      "locations": [
+        {
+          "note": "early_elongation",
+          "figure": 11
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/fang2021_fig5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/863f/8245039/cbe1d3ed6062/abg3264-f5.jpg",
+      "article_doi": "10.1126/sciadv.abg3264",
+      "figure_id": "Figure 5",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8245039/",
+      "author": "Fang et al.",
+      "year": 2021,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "7f201ac4d74494e6bf2988f4ca623d8db8c820848b1ed935a822b7368dc839db",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 7
+        },
+        {
+          "note": "early_elongation",
+          "figure": 12
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/yang2025_fig6.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c161/12549353/729770aa434b/gr6.jpg",
+      "article_doi": "10.1016/j.devcel.2025.06.012",
+      "figure_id": "Figure 6",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/#fig6",
+      "author": "Yang et al.",
+      "year": 2025,
+      "license": "CC BY-NC 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "04e4b891618b215d8a6d2a6d50b5448b84c3fd3fcba84cb0fa6692c6c9039da1",
+      "locations": [
+        {
+          "note": "late_elongation",
+          "figure": 8
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "file": "figures/dai2024_fig5.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:90505%2Felife-90505-fig5-v1.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "Figure 5",
+      "source": "https://elifesciences.org/articles/90505",
+      "author": "Dai & Ben Amar",
+      "year": 2024,
+      "license": "CC BY 4.0",
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "c44d77d35526e9ee890dfadf07af20174335c8ad7f52ea841b506e9e170c5240",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 2
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/dai2024_fig8.jpg",
+      "image_url": "https://iiif.elifesciences.org/lax:90505%2Felife-90505-fig8-v1.tif/full/1800,/0/default.jpg",
+      "article_doi": "10.7554/eLife.90505",
+      "figure_id": "Figure 8",
+      "source": "https://elifesciences.org/articles/90505",
+      "author": "Dai & Ben Amar",
+      "year": 2024,
+      "license": "CC BY 4.0",
+      "version": "Version of Record, 20 June 2024; original eLife image assets retained",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "67171a56dd8a057f4d3ba5561c2e0a5d85216f8314dc8107c63b2aae17c62c1a",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 4
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/kong2019_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d74d/6787039/c2ce0631389a/41598_2019_50690_Fig1_HTML.jpg",
+      "article_doi": "10.1038/s41598-019-50690-3",
+      "figure_id": "Figure 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6787039/",
+      "author": "Kong et al.",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "ed8147306fc003e7c4c0fcd8b6973c9dc0afa7720f099587d6c1a138a8ed68c1",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 7
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/kong2019_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d74d/6787039/2fe27b405f96/41598_2019_50690_Fig4_HTML.jpg",
+      "article_doi": "10.1038/s41598-019-50690-3",
+      "figure_id": "Figure 4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6787039/",
+      "author": "Kong et al.",
+      "year": 2019,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "aa5a6e08b25224a27068584d2b96727aff82f11dc0a85d69414ec31719674749",
+      "locations": [
+        {
+          "note": "geometry_and_inference",
+          "figure": 8
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/bi2016_fig4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/20c1/5619672/0195b477dccf/nihms854380f4.jpg",
+      "article_doi": "10.1103/PhysRevX.6.021011",
+      "figure_id": "Figure 4",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5619672/#F4",
+      "author": "Bi et al.",
+      "year": 2016,
+      "license": "CC BY 3.0",
+      "version": "PMC author manuscript figure",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "440a54c129299663f73fd39cacf07bafb5fd48bb85834bb3b08814b33c0be5f2",
+      "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 14
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "file": "figures/mcfadden2017_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7f/5757993/ebf545b44ed6/pcbi.1005811.g001.jpg",
+      "article_doi": "10.1371/journal.pcbi.1005811",
+      "figure_id": "Figure 1",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5757993/",
+      "author": "McFadden et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "375c201b4edf50385ef6e82083f774e7e744a08b8c73d95bcdfab455596a2ada",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 25
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/mcfadden2017_fig9.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7f/5757993/d275491a690f/pcbi.1005811.g009.jpg",
+      "article_doi": "10.1371/journal.pcbi.1005811",
+      "figure_id": "Figure 9",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5757993/",
+      "author": "McFadden et al.",
+      "year": 2017,
+      "license": "CC BY 4.0",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "5f99602f5fff03ca9765e9d6c25b7d413e48fdac37389dc00f278d2df549727a",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 26
+        }
+      ],
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "figures/niwayama2011_fig3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/abb7/3141991/c7925fa28495/pnas.1101853108fig3.jpg",
+      "article_doi": "10.1073/pnas.1101853108",
+      "figure_id": "Figure 3",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3141991/#F3",
+      "author": "Niwayama et al.",
+      "year": 2011,
+      "license": "Original author/publisher rights retained",
+      "version": "Published article",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; complete original figure and labels retained.",
+      "sha256": "e062fb15fefaf172e717596fb0bb56f07d83325d9d926632889a55a5e1b277a0",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 13
+        }
+      ]
+    },
+    {
+      "file": "figures/miao2022_fig5.jpg",
+      "image_url": null,
+      "article_doi": "10.48550/arXiv.2105.05795",
+      "figure_id": "Figure 5",
+      "source": "https://arxiv.org/pdf/2105.05795v2",
+      "author": "Miao et al.",
+      "year": 2021,
+      "license": "Original author rights retained; arXiv nonexclusive distribution license is not a CC reuse license",
+      "version": "arXiv v2 preprint",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; original embedded JPEG extracted losslessly with pdfimages -j, no cropping or color changes.",
+      "extracted_from_pdf_page": 9,
+      "source_pdf_sha256": "de455f6377b95254c897a93e073bd112e83b420596be9f45c4b5a1a19dc7c93c",
+      "sha256": "ecc6ee9b5e138375d0a51c8cf35a532929b27565b08654e6a523224697e9dde7",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 8
+        }
+      ]
+    },
+    {
+      "file": "figures/miao2022_fig8.jpg",
+      "image_url": null,
+      "article_doi": "10.48550/arXiv.2105.05795",
+      "figure_id": "Figure 8",
+      "source": "https://arxiv.org/pdf/2105.05795v2",
+      "author": "Miao et al.",
+      "year": 2021,
+      "license": "Original author rights retained; arXiv nonexclusive distribution license is not a CC reuse license",
+      "version": "arXiv v2 preprint",
+      "retrieved_on": "2026-10-25",
+      "modifications": "None; original embedded JPEG extracted losslessly with pdfimages -j, no cropping or color changes.",
+      "extracted_from_pdf_page": 12,
+      "source_pdf_sha256": "de455f6377b95254c897a93e073bd112e83b420596be9f45c4b5a1a19dc7c93c",
+      "sha256": "ce161aa04bbdd6bd1d24e1cd6715734777153f4776e956b3da02e7b29740a11a",
+      "locations": [
+        {
+          "note": "gastrulation",
+          "figure": 9
         }
       ]
     }
@@ -1509,121 +2168,121 @@
       "figures/07_quantitative_geometry.svg": [
         {
           "note": "geometry_and_inference",
-          "figure": 2
+          "figure": 5
         }
       ],
       "figures/13_rod_model.svg": [
         {
           "note": "geometry_and_inference",
-          "figure": 4
+          "figure": 6
         }
       ],
       "figures/14_identifiability_model.svg": [
         {
           "note": "geometry_and_inference",
-          "figure": 5
+          "figure": 9
         }
       ],
       "figures/11_plasticity_model.svg": [
         {
           "note": "late_elongation",
-          "figure": 7
+          "figure": 9
         }
       ],
       "figures/12_frap_model.svg": [
         {
           "note": "late_elongation",
-          "figure": 8
+          "figure": 10
         }
       ],
       "figures/08_clutch_model.svg": [
         {
           "note": "gastrulation",
-          "figure": 9
+          "figure": 13
         }
       ],
       "figures/10_anisotropy_model.svg": [
         {
           "note": "early_elongation",
-          "figure": 9
+          "figure": 13
         }
       ],
       "figures/09_closure_model.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 14
+          "figure": 25
         }
       ],
       "figures/15_gastrulation_mechanics.svg": [
         {
           "note": "gastrulation",
-          "figure": 11
+          "figure": 14
         }
       ],
       "figures/16_epithelial_models.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 16
+          "figure": 26
         }
       ],
       "figures/17_elongation_materials.svg": [
         {
           "note": "early_elongation",
-          "figure": 12
+          "figure": 14
         }
       ],
       "figures/18_late_model_comparison.svg": [
         {
           "note": "late_elongation",
-          "figure": 9
+          "figure": 11
         }
       ],
       "figures/19_rod_inference.svg": [
         {
           "note": "geometry_and_inference",
-          "figure": 6
+          "figure": 10
         }
       ],
       "figures/20_packing_rigidity.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 2
+          "figure": 11
         }
       ],
       "figures/21_active_cage.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 3
+          "figure": 12
         }
       ],
       "figures/22_t1_topology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 6
+          "figure": 16
         }
       ],
       "figures/23_nematic_defects.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 7
+          "figure": 17
         }
       ],
       "figures/24_force_network_topology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 9
+          "figure": 19
         }
       ],
       "figures/25_worm_ingression.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 12
+          "figure": 25
         }
       ],
       "figures/26_worm_material_memory.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 17
+          "figure": 26
         }
       ],
       "figures/27_solid_fluid_rheology.svg": [
@@ -1641,67 +2300,67 @@
       "figures/30_four_cell_rearrangement.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 10
+          "figure": 16
         }
       ],
       "figures/29_basal_apical_fields.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 11
+          "figure": 14
         }
       ],
       "figures/31_enclosure_and_adhesion.svg": [
         {
           "note": "epithelial_morphogenesis",
-          "figure": 15
+          "figure": 32
         }
       ],
       "figures/32_cortical_flow_screening.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 5
+          "figure": 27
         }
       ],
       "figures/33_transport_and_exchange.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 8
+          "figure": 28
         }
       ],
       "figures/34_excitable_cortex_strip.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 10
+          "figure": 29
         }
       ],
       "figures/35_flow_alignment_geometry.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 13
+          "figure": 30
         }
       ],
       "figures/36_cytoplasmic_return_flow.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 17
+          "figure": 31
         }
       ],
       "figures/37_network_to_tissue.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 20
+          "figure": 32
         }
       ],
       "figures/38_closed_volume_elongation.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 24
+          "figure": 33
         }
       ],
       "figures/39_cyclic_network_shape.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 28
+          "figure": 34
         }
       ]
     },
@@ -1946,6 +2605,24 @@
       "duration_seconds": 14.08,
       "checked_on": "2026-10-24",
       "playback_checked_on": "2026-10-24"
+    },
+    {
+      "id": "epithelial-published-vertex-simulation",
+      "note": "epithelial_morphogenesis",
+      "article_doi": "10.7554/eLife.12094",
+      "author": "Tetley et al.",
+      "year": 2016,
+      "video": "Video 5",
+      "description": "Published vertex-model simulation 4 corresponding to Figure 7G; Drosophila model, not worm imaging.",
+      "source": "https://doi.org/10.7554/eLife.12094.030",
+      "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/119/2afd92d2b201d28e34225b00378a697faa1afcc2/elife-12094-media5.mp4",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "width": 500,
+      "height": 400,
+      "duration_seconds": 62.5,
+      "verified_on": "2026-10-25"
     }
   ]
 }

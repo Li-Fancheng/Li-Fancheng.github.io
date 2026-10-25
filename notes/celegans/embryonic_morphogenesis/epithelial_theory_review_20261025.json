@@ -1,0 +1,94 @@
+{
+  "checked_on": "2026-10-25",
+  "scope": "Embryonic dorsal epidermal intercalation, ventral enclosure, and adjacent neuroblast/rosette processes. Existing early-embryo packing and post-enclosure elongation models distinguished from a dynamic enclosure model.",
+  "queries": [
+    "C. elegans ventral enclosure mathematical model simulation",
+    "C. elegans dorsal intercalation computational model",
+    "C. elegans epidermal Potts phase-field vertex",
+    "ventral enclosure finite element mechanical model",
+    "convergent extension crawling junction contraction integration",
+    "Drosophila dorsal closure quantitative models"
+  ],
+  "conclusion": "Direct worm studies examined here primarily constrain polarity, protrusions, adhesion and multi-tissue coupling; the expanded note compares mechanistic simulations developed in other systems without relabeling them as validated worm simulations. This search is not a proof of absence.",
+  "papers": [
+    {
+      "doi": "10.1387/ijdb.052040gb",
+      "year": "2006",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1016/j.celrep.2022.110666",
+      "year": "2022",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.7554/eLife.12094",
+      "year": "2016",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.7554/eLife.79862",
+      "year": "2023",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1038/ncb3226",
+      "year": "2015",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1126/science.1079552",
+      "year": "2003",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.2976/1.3266062",
+      "year": "2009",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1016/j.bpj.2012.09.036",
+      "year": "2012",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1073/pnas.2322732121",
+      "year": "2025",
+      "role": "Cross-system mechanistic model or experimental test"
+    },
+    {
+      "doi": "10.1016/j.ydbio.2016.02.023",
+      "year": "2016",
+      "role": "Worm experimental multi-tissue constraints"
+    },
+    {
+      "doi": "10.1038/s41467-025-58878-0",
+      "year": "2025",
+      "role": "Worm measured 3D morphology"
+    },
+    {
+      "doi": "10.1103/PhysRevLett.121.268102",
+      "year": "2018",
+      "role": "Worm post-enclosure continuum model, not a resolved enclosure simulation"
+    }
+  ],
+  "preserved_examples": "Unfitted illustrative calculations retained in collapsed mathematical supplement.",
+  "new_paper_figures": [
+    "figures/weng2022_fig5.jpg",
+    "figures/weng2022_fig6.jpg",
+    "figures/weng2022_fig7.jpg",
+    "figures/tetley2016_fig7.jpg",
+    "figures/sknepnek2023_fig2.jpg",
+    "figures/sknepnek2023_fig6.jpg",
+    "figures/layton2009_fig1.jpg",
+    "figures/layton2009_fig3.jpg",
+    "figures/layton2009_fig9.jpg",
+    "figures/wang2012_fig1.jpg",
+    "figures/wang2012_fig8.jpg",
+    "figures/tah2025_fig1.jpg",
+    "figures/tah2025_fig2.jpg",
+    "figures/tah2025_fig3.jpg",
+    "figures/guan2025_fig3.png",
+    "figures/xu2023_fig2.jpg"
+  ]
+}

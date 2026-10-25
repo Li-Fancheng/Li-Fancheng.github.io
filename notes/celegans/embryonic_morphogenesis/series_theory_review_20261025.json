@@ -1,0 +1,257 @@
+{
+  "checked_on": "2026-10-25",
+  "scope": "All six notes beyond the already rewritten epithelial chapter; no new note or publication action.",
+  "criterion": "Published mechanisms, simulated degrees of freedom, experimental constraints, divergent predictions and unresolved assumptions; preserve distinctions between direct worm models, cross-system theories, candidate models and preprints.",
+  "findings": [
+    {
+      "note": "gastrulation",
+      "gap": "Many-cell state-transition and phase-field studies were summarized too briefly relative to generic energy formulas.",
+      "change": "Expanded actual state stability, noise selectivity, division-time competition and clutch model scope."
+    },
+    {
+      "note": "early_elongation",
+      "gap": "Historical continuum/active-stress models and dynamic orientation model were not compared in enough detail.",
+      "change": "Added actual model saturation, initial-state branches, fitted vs independent checks and pre-stress lineage."
+    },
+    {
+      "note": "late_elongation",
+      "gap": "Textbook rheology and FRAP calculations obscured the published multi-structure model lineage.",
+      "change": "Rebuilt the main theory around viscoplastic reference-state update, filament turnover, and the 2025 3D cadherin-stress model."
+    },
+    {
+      "note": "geometry_and_inference",
+      "gap": "Rod and identifiability examples outweighed detailed reviews of actual geometric models and tested force inference.",
+      "change": "Expanded active strain vs stress, initialization and energy closure, plus experimental force-inference validation."
+    },
+    {
+      "note": "active_matter_packing_topology",
+      "gap": "Good model breadth, but persistence and evolving-reference-state mechanisms were underdeveloped.",
+      "change": "Added collective soft modes vs local escape and a closure counterexample to shape-only phase assignment."
+    },
+    {
+      "note": "subcellular_cortex_and_flows",
+      "gap": "Network turnover and 3D streaming studies were shorter than the associated illustrative models.",
+      "change": "Expanded joint active-stress/viscosity turnover scaling and the actual streaming calculation with independent-scale limits."
+    }
+  ],
+  "sources": {
+    "miao": "https://arxiv.org/pdf/2105.05795v2",
+    "kuang": "https://doi.org/10.1371/journal.pcbi.1009755",
+    "fang": "https://doi.org/10.1126/sciadv.abg3264",
+    "lock": "https://doi.org/10.1038/s41586-019-1509-4",
+    "yang": "https://doi.org/10.1016/j.devcel.2025.06.012",
+    "dai": "https://doi.org/10.7554/eLife.90505.3",
+    "wang": "https://doi.org/10.1016/j.ijnonlinmec.2024.104833",
+    "kong": "https://doi.org/10.1038/s41598-019-50690-3",
+    "bi": "https://doi.org/10.1103/PhysRevX.6.021011",
+    "mcfadden": "https://doi.org/10.1371/journal.pcbi.1005811",
+    "niwayama": "https://doi.org/10.1073/pnas.1101853108"
+  },
+  "access_limits": [
+    "2018 PRL and 2009 continuum historical claims restricted to verified abstracts and later primary model descriptions; no unavailable equations reconstructed.",
+    "2019 supplemental PDF was unavailable; model discussion uses the accessible primary author manuscript and existing correction notice.",
+    "2026 integrated gastrulation preprint remains labeled and was not expanded beyond previously verified material."
+  ],
+  "summary": [
+    {
+      "note": "gastrulation",
+      "figures": 14,
+      "references": 13,
+      "chinese_characters": 14495
+    },
+    {
+      "note": "early_elongation",
+      "figures": 14,
+      "references": 9,
+      "chinese_characters": 13524
+    },
+    {
+      "note": "late_elongation",
+      "figures": 11,
+      "references": 6,
+      "chinese_characters": 13168
+    },
+    {
+      "note": "geometry_and_inference",
+      "figures": 10,
+      "references": 7,
+      "chinese_characters": 12398
+    },
+    {
+      "note": "active_matter_packing_topology",
+      "figures": 26,
+      "references": 44,
+      "chinese_characters": 23880
+    },
+    {
+      "note": "subcellular_cortex_and_flows",
+      "figures": 34,
+      "references": 33,
+      "chinese_characters": 17136
+    }
+  ],
+  "validation": {
+    "hugo_build": "Passed; 241 zh pages, 29 en pages; no warnings or errors",
+    "browser": "All six notes checked at desktop and 375px iframe widths; all paper and calculated images loaded, no KaTeX errors or horizontal page overflow; details expanded where present.",
+    "figure_audit": "Sequential local captions and media locations match; original figures and video sources retained; 14 new image SHA256 values and dimensions verified."
+  },
+  "editorial_update": {
+    "date": "2026-10-25",
+    "scope": "Seven notes and overview",
+    "changes": [
+      "Integrated all 14 disclosure blocks into their related mechanism sections.",
+      "Revised openings, transitions, redundant explanations and figure titles for continuous Chinese research prose.",
+      "Preserved all display equations, figure assets, bibliographies and stage video sources; synchronized figure numbering and media locations."
+    ],
+    "notes": [
+      {
+        "note": "gastrulation",
+        "figures": 14,
+        "display_equations": 17,
+        "references": 13,
+        "videos": 1,
+        "chinese_characters": 13317
+      },
+      {
+        "note": "epithelial_morphogenesis",
+        "figures": 32,
+        "display_equations": 26,
+        "references": 26,
+        "videos": 4,
+        "chinese_characters": 18801
+      },
+      {
+        "note": "early_elongation",
+        "figures": 14,
+        "display_equations": 21,
+        "references": 9,
+        "videos": 2,
+        "chinese_characters": 13198
+      },
+      {
+        "note": "late_elongation",
+        "figures": 11,
+        "display_equations": 21,
+        "references": 6,
+        "videos": 1,
+        "chinese_characters": 11936
+      },
+      {
+        "note": "geometry_and_inference",
+        "figures": 10,
+        "display_equations": 14,
+        "references": 7,
+        "videos": 1,
+        "chinese_characters": 11452
+      },
+      {
+        "note": "active_matter_packing_topology",
+        "figures": 26,
+        "display_equations": 43,
+        "references": 44,
+        "videos": 2,
+        "chinese_characters": 23678
+      },
+      {
+        "note": "subcellular_cortex_and_flows",
+        "figures": 34,
+        "display_equations": 33,
+        "references": 33,
+        "videos": 3,
+        "chinese_characters": 16576
+      }
+    ],
+    "validation": {
+      "equations": "All display formulas retained; phase-field expression reflowed into aligned rows without changing terms.",
+      "browser": "All seven notes passed desktop and mobile image, KaTeX, disclosure and overflow checks.",
+      "build": "Celegans-only preview passed using temporary exclusion of unrelated cell_simulation_3d pages. Full-site build reports 21 pre-existing missing figure-width entries in that separate topic.",
+      "links": "No missing internal article anchors in celegans series."
+    }
+  },
+  "evidence_split": {
+    "date": "2026-10-25",
+    "criterion": "Study object and empirical/model scope, not shared mechanism name. Direct worm research includes explicitly labeled preprints and stage-specific models; generic theory and candidate calculations remain in the transferable part.",
+    "parts": [
+      "线虫中的直接研究",
+      "可供借鉴的其他理论"
+    ],
+    "notes": [
+      {
+        "note": "gastrulation",
+        "figures": 14,
+        "references": 13,
+        "display_equations": 17,
+        "first_part_paper_figures": 12,
+        "second_part_figures": 2,
+        "chinese_characters": 13738
+      },
+      {
+        "note": "epithelial_morphogenesis",
+        "figures": 32,
+        "references": 26,
+        "display_equations": 26,
+        "first_part_paper_figures": 9,
+        "second_part_figures": 23,
+        "chinese_characters": 19234
+      },
+      {
+        "note": "early_elongation",
+        "figures": 14,
+        "references": 9,
+        "display_equations": 21,
+        "first_part_paper_figures": 12,
+        "second_part_figures": 2,
+        "chinese_characters": 13653
+      },
+      {
+        "note": "late_elongation",
+        "figures": 11,
+        "references": 6,
+        "display_equations": 21,
+        "first_part_paper_figures": 8,
+        "second_part_figures": 3,
+        "chinese_characters": 12250
+      },
+      {
+        "note": "geometry_and_inference",
+        "figures": 10,
+        "references": 7,
+        "display_equations": 14,
+        "first_part_paper_figures": 4,
+        "second_part_figures": 6,
+        "chinese_characters": 11866
+      },
+      {
+        "note": "active_matter_packing_topology",
+        "figures": 26,
+        "references": 44,
+        "display_equations": 43,
+        "first_part_paper_figures": 9,
+        "second_part_figures": 17,
+        "chinese_characters": 24748
+      },
+      {
+        "note": "subcellular_cortex_and_flows",
+        "figures": 34,
+        "references": 33,
+        "display_equations": 33,
+        "first_part_paper_figures": 24,
+        "second_part_figures": 10,
+        "chinese_characters": 16853
+      }
+    ],
+    "validation": {
+      "source": "All original display equations, figure assets, bibliographies and video sources retained; local numbers and media locations synchronized.",
+      "scope": "Every figure in the direct-study part is an original paper figure; standalone calculation figures are in the transferable part.",
+      "browser": "Seven notes checked at desktop and mobile widths, 14 checks passed; all images loaded, no KaTeX errors, page overflow, extra disclosure blocks or missing part headings.",
+      "links": "Legacy topic anchors retained, no broken internal article anchors.",
+      "build": "Celegans preview segment passed; temporary exclusion of unrelated 3D-cell pages retained from the preceding turn."
+    }
+  },
+  "heading_numbering": {
+    "date": "2026-10-25",
+    "convention": "Note titles 01/02; H2 1./2.; H3 1.1/1.2; H4 1.1.1; bibliography unnumbered.",
+    "scope": "Seven notes and overview; two research parts retained; legacy topic anchors preserved.",
+    "validation": "Heading-only changes verified against before copies; eight pages rebuilt, displayed TOCs synchronized and internal anchors valid; browser preview has no math errors or horizontal overflow."
+  }
+}
