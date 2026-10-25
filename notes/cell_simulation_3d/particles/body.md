@@ -1,4 +1,4 @@
-> **Part II · Note 06**　上一篇：[05 · 格点与 Cellular Potts](/notes/cell_simulation_3d/lattice_potts/) · [专题目录](/notes/cell_simulation_3d/) · 下一篇：[07 · 有限元与流固耦合](/notes/cell_simulation_3d/continuum_fluids/)
+> **Part II · Note 06**　上一篇：[05 · 格点与 Cellular Potts](/notes/cell_simulation_3d/lattice_potts/) · [专题目录](/notes/cell_simulation_3d/) · 下一篇：[07 · 连续材料与流固耦合](/notes/cell_simulation_3d/continuum_fluids/)
 
 ## 1. 中心模型与亚细胞元的出发点 {#main-lecture}
 
@@ -284,6 +284,58 @@ $$
 
 营养场与力学场也有各自时间尺度。扩散快时可以近似求稳态浓度，力学快时可以在增长之间充分松弛；但这两种快过程不必同时成立。快速推进的细胞还可能先改变局部密度，再改变摄取与周期，反馈的延迟应保留在需要解释的观测中。
 
+<div class="note-anchor" id="球状细胞团为什么会由指数增长变成近似线性增长"></div>
+
+营养场和局部压缩都能改变增长。由单细胞周期推进转向团块半径时，需要同时记录哪些位置仍在增殖。
+
+增长曲线也能反映空间机制。若细胞密度近似恒定，所有细胞具有相同的净增殖率 $g=k_{\rm div}-k_{\rm death}$，则 $\dot N=gN$，球体积与 $N$ 成正比，半径满足
+
+$$
+\dot R=\frac g3R.
+$$
+
+此时体积和细胞数指数增长，半径以三分之一的指数率增加。如果团块变大后只有外侧厚度为 $\delta$ 的壳层继续增殖，而内部净增长近似为零，且 $R\gg\delta$，则
+
+$$
+\dot V\simeq g\,4\pi R^2\delta,
+\qquad \dot R\simeq g\delta.
+$$
+
+半径于是近似线性增长。这里不需要事先为半径写一个经验线性律，空间中“谁还在增长”就能产生这种尺度变化。
+
+但外层增长不唯一说明营养不足。机械压缩也可能让内部细胞停止周期，死亡与更新还会改变净增长率。仅看团块半径曲线，可以由多种机制拟合；加入径向营养分布、增殖标记、细胞体积和压力条件，才更容易区分。
+
+[Van Liedekerke 等（2019）](https://doi.org/10.1371/journal.pcbi.1006273)将受压球状细胞团的增长与细胞体积形变联系，并比较不同力学加载条件；[PhysiCell](https://doi.org/10.1371/journal.pcbi.1005991)提供细胞表型与扩散微环境耦合的另一类实现。两条路线可以放在同一实验上比较：营养固定时改变外部载荷，载荷固定时改变营养，看预测是否分别成立。
+
+<div class="note-anchor" id="组织一直维持大小内部也可能持续更新"></div>
+
+当分裂与死亡总体平衡时，$g$ 约为零，组织平均大小可以稳定。局部事件仍会产生形变和应力，并改变邻接。因此静态外轮廓不意味着组织内部没有力学活动。
+
+若想研究稳态类器官的流动或细胞迁移，可以让模型在保持平均人口的同时保留具体周转事件，再统计应力相关、邻居寿命和细胞位移。这与把整个组织固定在一个能量最小构型上，是两种不同的稳态。
+
+<div class="note-anchor" id="signalling"></div>
+
+人口和接触随形态变化以后，分子交换所依赖的面积、体积和通道也会改变。信号可以反过来调控细胞状态，使力学与运输形成闭环。
+
+对接触依赖的分子交换，可以把细胞看成内部充分混合的小室。令 $c_i$ 为细胞内浓度、$A_{ij}$ 为接触面积，一种守恒写法为
+
+$$
+\frac{d(V_ic_i)}{dt}
+=\sum_j P_{ij}A_{ij}(c_j-c_i)+S_i-k_iV_ic_i.
+$$
+
+当 $P_{ij}=P_{ji}$ 时，成对交换在总物质量中抵消。若细胞生长使 $V_i$ 改变，左边的体积因子同时包含稀释；只写 $\dot c_i$ 而遗漏这一项，会把生长产生的浓度变化解释成额外反应。
+
+只保存接触图的 0/1 值，会丢失面积差异和接触寿命。对经过胞外空间的信号，还要考虑间隙是否连通、通道有多窄、基质是否吸附分子。两团细胞可以具有相似平均邻居数，却具有不同输运路径。
+
+在连续移动域上，相应输运写为
+
+$$
+\partial_tc+\nabla\cdot(c\mathbf u)=D\nabla^2c+S-kc.
+$$
+
+只有在速度场不可压时，守恒平流项才能直接写成 $\mathbf u\cdot\nabla c$。膜上信号还要随表面积变化稀释，与体相方程不同。这些细节会影响形态与信号反馈的方向和时间尺度。
+
 <div class="note-anchor" id="实际计算中成本与误差来自哪里"></div>
 
 短程作用可以用空间分箱或邻居表避免遍历全部细胞对。分箱尺寸、邻居表缓冲和更新频率应覆盖作用范围与单步运动距离。对亚细胞元，还要区分胞内邻居和胞间邻居，避免一个细胞在分裂后仍保留错误连接。
@@ -320,4 +372,4 @@ $$
 
 ---
 
-[← 05 · 格点与 Cellular Potts](/notes/cell_simulation_3d/lattice_potts/) · [专题目录](/notes/cell_simulation_3d/) · [下一篇：07 · 有限元与流固耦合 →](/notes/cell_simulation_3d/continuum_fluids/)
+[← 05 · 格点与 Cellular Potts](/notes/cell_simulation_3d/lattice_potts/) · [专题目录](/notes/cell_simulation_3d/) · [下一篇：07 · 连续材料与流固耦合 →](/notes/cell_simulation_3d/continuum_fluids/)

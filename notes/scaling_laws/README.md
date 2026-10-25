@@ -1,13 +1,15 @@
 # Scaling Laws 机制与学习曲线
 
-网站入口 `/notes/scaling_laws/`。六篇个人文献综述与研究笔记按机制组织，正文不展示代码、复现命令或练习。
+网站入口 `/notes/scaling_laws/`。八篇个人文献综述与研究笔记，从经验发现进入机制分析与综合，正文不展示代码、复现命令或练习。
 
-1. statistical_geometry：统计估计、几何分辨率、宽度换算与数据/模型对偶。
-2. spectral_learning：原联合谱模型、时间/数据/容量的完整推导。
-3. discrete_structure：技能尾部、Poisson 计数、组合共享与数据选择。
-4. feature_learning：时变度量、source 条件、动态加速与 SGD 暂态。
-5. graph_language：2026 年 ER/BA 图与语言工作、熵率与计数基线。
-6. compute_allocation：成本约束、经验曲面、损失底与协议敏感性。
+1. empirical_origins：经典学习曲线、Hestness、Rosenfeld 与计算前沿的问题入口。
+2. statistical_geometry：统计估计、几何分辨率、宽度换算与数据/模型对偶。
+3. spectral_learning：原联合谱模型、时间/数据/容量的完整推导。
+4. discrete_structure：技能尾部、Poisson 计数、组合共享与数据选择。
+5. feature_learning：时变度量、source 条件、动态加速与 SGD 暂态。
+6. graph_language：2026 年 ER/BA 图与语言工作、熵率与计数基线。
+7. compute_allocation：成本约束、经验曲面、损失底、梯度噪声与拟合可靠性。
+8. mechanism_synthesis：共同数学结构、机制比较、独立预测与开放问题。
 
 ## 图与计算
 
@@ -20,7 +22,7 @@
 
 ## 文献与迁移
 
-sources.json 记录十九篇原始文献及对应正文。注意预印本首发年与会议/期刊发表年不同；2025 年的特征学习模型初稿为 2024，Bahri 等的期刊版为 2024、初稿为 2021。
+sources.json 记录二十五篇原始文献及对应正文。注意预印本首发年与会议/期刊发表年不同；2025 年的特征学习模型初稿为 2024，Bahri 等的期刊版为 2024、初稿为 2021。
 
 原 `/notes/neural_network_theory/scaling_laws/` 跳转本专题；time/data/model/compute 四个历史入口直接到对应章节。旧综合稿的六个主要节锚点由专题入口转发。原谱推导和五图全部保留，新增机制内容另行展开。
 
@@ -57,3 +59,25 @@ statistical_geometry 保留原前言与计算图，展开几何上界、带噪�
 新增三张图由 `python notes/scaling_laws/worked_examples.py` 生成。脚本用独立 ODE 积分核对双因子闭式解，用线性代数核对组合恢复与 Markov 平稳分布，用数值积分核对几何插值常数，用独立优化核对生命周期最优条件。结果见 worked_examples_checks.json；均为低维精确模型或说明性计算，不是论文网络实验的复现。
 
 本轮正文、编号、引用、公式保留与浏览器检查记录在 completion_revision_20261025.json。此前报告继续保存其生成时的统计；当前完成情况以这一报告及 verification.json 的最新修订条目为准。
+
+## 2026-10-25 删除正文中的无关说明
+
+六篇正文删去出版、修订年份的叙述，以及预告写作顺序、重复说明段落用途的句子。对应的模型定义、误差来源、公式解释、算例与适用条件保留；书目信息仍集中在各篇参考文献及来源总表。专题目录也删去关于编号和写作安排的自我说明。公式、标题、图和篇末参考文献序列保持一致，记录见 focused_prose_revision_20261025.json。
+
+## 2026-10-25 经验入口与跨机制综合
+
+新增 00 empirical_origins（约十五分钟）和 07 mechanism_synthesis，保留 01–06 的相对次序和全部旧章节锚点。00 以 Hestness 的固定模型／组合学习曲线和 Rosenfeld 的二维误差面为重点，简要连接经典学习曲线及 Kaplan／Chinchilla；历史信息在这里服务于经验问题，不增加无关出版沿革。07 比较已推导的指数、尚需解释的微观条件、独立测量与受控干预。
+
+03 增加谱松弛与随机覆盖的累计测度推导，给出 Gamma 常数、Poisson 与固定样本计数的区别，以及多证据门槛对纯指数混合表示的限制。05 明确定位为受控机制检验。06 保留预算优化与风险面辨认的区分，补充局部梯度噪声、batch 效率及 (Mis)Fitting 的相关讨论。首页增加快速阅读路径和核心结果导航。
+
+运行 `python notes/scaling_laws/mechanism_bridge_checks.py` 可核对指数混合渐近常数、有限 Zipf 尾部、两证据门槛的曲率、Rosenfeld 包络极限，以及局部二次模型的 batch 公式。结果在 mechanism_bridge_checks.json；这些是独立公式核对，不训练神经网络。当前专题结构、引文与页面验证见 origins_synthesis_revision_20261025.json，之前报告保留其各自阶段的统计。
+
+## 2026-10-25 篇号调整
+
+当前八篇统一编号为 01–08，目录、篇首标识、正文篇号引用和页面顺序同步更新。网页路径、章节锚点、正文公式及引用其他专题的 Note 编号保持不变。早期修订记录保留当时篇号；当前对应关系见 numbering_revision_20261025.json。
+
+## 2026-10-25 新增章节的解释性扩写
+
+重点扩充当前 01 empirical_origins 与 08 mechanism_synthesis，将原先压缩的论述展开为实验条件、公式含义、具体例子和可检验的区别。01 详细解释学习曲线口径、Gibbs 与预测熵、固定模型与组合包络、前因子节省的数据量、二维曲面的两项限制，以及计算前沿和单次训练轨迹的区别。08 展开误差权重、同形积分的物理区别、三种半幂律、独立测量及干预，并用正误差项的加权斜率说明有限窗口中的竞争。
+
+04 的随机覆盖小节补充频率与损失权重、证据门槛的直观解释；07 的 batch 小节补充分批梯度、下降量符号、每步进展与总计算的区别。新增数字均为说明性算例；参考文献和既有章节锚点保留，没有新增论文或网络训练。阅读时长与首页路径同步更新，验证见 explanatory_expansion_revision_20261025.json。

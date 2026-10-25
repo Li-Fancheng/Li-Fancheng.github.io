@@ -1,0 +1,24 @@
+{
+  "max_hessian_decomposition_error": 1.0591683209048255e-15,
+  "max_force_norm": 1.2468472119520843e-10,
+  "max_shear_modulus_difference": 1.4236111178789201e-09,
+  "max_path_gradient": 1.3024276144735342e-06,
+  "max_collapsed_branch_mismatch": 8.326672684688674e-17,
+  "min_path_nonselected_edge": 0.11444148898917951,
+  "min_path_area": 0.9624997131369248,
+  "dynamic_intersection_samples": 0,
+  "min_dynamic_area": 0.8106385937309821,
+  "max_dynamic_event_energy_jump": 0.02289681739418825,
+  "passive_amplitude_final_values": {
+    "0.075": 0.03737333747330056,
+    "0.0375": 0.03556033391642737
+  },
+  "independent_audit": {
+    "hessian_directional_max_relative_error": 2.0195604951257824e-10,
+    "stress_virtual_work_absolute_error": 1.4207142406963413e-12,
+    "path_total_area_max_error": 7.105427357601002e-15,
+    "path_self_intersections": 0,
+    "static_modulus_ordering": true,
+    "dynamic_arrays_finite": true
+  }
+}

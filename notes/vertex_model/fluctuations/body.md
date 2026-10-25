@@ -1,4 +1,4 @@
-> **Part VI · Note 09**　[专题目录](/notes/vertex_model/) · 上一篇：[主动软物质的堆积与拓扑](/notes/vertex_model/active_packing/)
+> **Part II · Note 06**　[专题目录](/notes/vertex_model/) · 上一篇：[组织流变与主动动力学](/notes/vertex_model/rheology_activity/) · 下一篇：[各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/)
 
 **物理问题：** 平均受力相同的两片组织，为什么一片只是轻轻起伏，另一片却不断换邻居？一次收缩持续多久、周围细胞是否跟着动，怎样影响最后留下的形变？
 
@@ -260,6 +260,8 @@ $$
 *图 7 · 拓扑改变时，随机变量也需要更新规则。* 引自 [Yamamoto 等（2022），Fig. 1 的作者稿版本](https://arxiv.org/html/2008.13007v2#S2.F1)，原图未修改。三种规则分别保留旧涨落值、重置为零、从稳态分布重新抽取。图中的正负数表示额外张力项相对平均值的偏离。
 
 这涉及一个直接的物理选择：新接触是否继承旧接触的分子状态或张力记忆？即便在拓扑不变时使用相同的 OU 方程，换接时的更新也会改变后续运动。模拟中观察到的持续时间效应，应连同这些规则和所用流动判据一起报告。
+
+[贯穿算例](/notes/vertex_model/rheology_activity/#unified-dynamics)已经在同一 Vertex 网络上接入明确的 OU 驱动与换接规则，但只选择了一个持续时间。它将自发驱动和机械响应放在同一批轨迹中比较；若要研究这里的非单调效应，还需在固定幅度下系统改变持续时间，并核对事件、净重排与应力响应是否同时改变。
 
 ## 6. 空间协同：一起移动，还是互相挤压 {#spatially-correlated-forces}
 
@@ -539,4 +541,4 @@ $$
 - [Torquato & Stillinger (2003), Local density fluctuations, hyperuniformity, and order metrics](https://doi.org/10.1103/PhysRevE.68.041113)。观察窗数目方差与结构因子的联系。
 - [Bi et al. (2016), Motility-driven glass and jamming transitions in biological tissues](https://doi.org/10.1103/PhysRevX.6.021011)。主动细胞模型的笼困、位移分布和慢动力学，另见 [05](/notes/vertex_model/rheology_activity/)。
 
-[← 主动软物质的堆积与拓扑](/notes/vertex_model/active_packing/) · [返回专题目录](/notes/vertex_model/)
+[← 组织流变与主动动力学](/notes/vertex_model/rheology_activity/) · [各向异性、曲面与三维组织 →](/notes/vertex_model/geometry_3d/) · [返回专题目录](/notes/vertex_model/)

@@ -81,7 +81,7 @@ python notes/neural_network_theory/review_checks.py
 
 ## 2026-10-20 Scaling Laws 独立专题
 
-当前网页为四卷十一篇。原第十二篇迁入 `/notes/scaling_laws/`，按统计估计、谱、离散技能、特征学习、随机图和计算配置扩展成六篇。原五张 Scaling 图迁入独立专题，主系列现展示二十张图；历史数值输出仍保留。
+当前网页为四卷十一篇。原第十二篇迁入 `/notes/scaling_laws/`，按统计估计、谱、离散技能、特征学习、随机图和计算配置展开，现加入经验入口与机制综合，共八篇。原五张 Scaling 图迁入独立专题，主系列现展示二十张图；历史数值输出仍保留。
 
 基础实验 17–20 在 experiments.json 使用 topic/note_slug 标记归属，公开镜像指向相邻目录；其余实验的 note_number 保持不变。extended_checks.py 同步更新临界谱图路径。上文二十篇、十七篇和十二篇的说明为历史合并记录。
 

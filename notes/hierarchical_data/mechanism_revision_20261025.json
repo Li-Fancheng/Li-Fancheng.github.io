@@ -1,0 +1,320 @@
+{
+  "revised_on": "2026-10-25",
+  "scope": "Effective-state synthesis, natural-language scaling bridge, compact Transformer parsing comparison, reproducible vector-BP/annealed-closure experiment, transport versus abstract-computation correction, and removal of duplicate arguments.",
+  "pages": [
+    {
+      "slug": "directory",
+      "chinese_characters_before": 2561,
+      "chinese_characters_after": 3273,
+      "original_anchors_preserved": 7,
+      "source_sha256": "5c9ba389d01028780851eccaf423b2b1075329efd920dbf08e127b07ef9591bb"
+    },
+    {
+      "slug": "generative_learning",
+      "chinese_characters_before": 12304,
+      "chinese_characters_after": 12619,
+      "original_anchors_preserved": 44,
+      "source_sha256": "9a23eb930f2c71403bdeffc9454fb5c196ce44e86981f5af93fc4ac3760dc34b"
+    },
+    {
+      "slug": "language_statistics",
+      "chinese_characters_before": 7686,
+      "chinese_characters_after": 8759,
+      "original_anchors_preserved": 28,
+      "source_sha256": "c849cc9c35824d476f1dad8aa2a88d3780f358c284210da64f7047773cf6d550"
+    },
+    {
+      "slug": "inference_generation",
+      "chinese_characters_before": 8522,
+      "chinese_characters_after": 9389,
+      "original_anchors_preserved": 32,
+      "source_sha256": "2388529286788b5168c8ee96f1c17392be283d69d16505b4642d992ee91f4374"
+    },
+    {
+      "slug": "parsing_latents",
+      "chinese_characters_before": 8856,
+      "chinese_characters_after": 10042,
+      "original_anchors_preserved": 30,
+      "source_sha256": "5872b06a94a6726cc5d01f5a8ed7ee18d3b1a1725995b3d45ec7222b8104ee10"
+    },
+    {
+      "slug": "shared_representations",
+      "chinese_characters_before": 10469,
+      "chinese_characters_after": 10277,
+      "original_anchors_preserved": 43,
+      "source_sha256": "358d58c7bfb8fdd03830c320d4dd08327f26813b8d96a4962d271d7cae7cd9c1"
+    }
+  ],
+  "new_primary_references": [
+    "https://proceedings.mlr.press/v306/cagnetta26a.html",
+    "https://tmlr.infinite-conf.org/paper_pages/mPQKyzkA1K.html",
+    "https://proceedings.mlr.press/v306/zhou26at.html"
+  ],
+  "numerical_checks": {
+    "effective_state_matrix": [
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.3,
+        0.7
+      ],
+      [
+        0.55,
+        0.44999999999999996
+      ]
+    ],
+    "matrix_rank": 2,
+    "joint_factorization_error": 0.0,
+    "transport_mutual_information_nats": {
+      "before": 0.0,
+      "after": 0.34657359027997264,
+      "residual": 0.6931471805599453
+    },
+    "transport_residual_error": 1.1102230246251565e-16,
+    "natural_language_exponent_arithmetic": {
+      "TinyStories": 0.1846590909090909,
+      "WikiText": 0.14095744680851066
+    }
+  },
+  "bp_comparison": {
+    "parameters": {
+      "seed": 20261025,
+      "v": 16,
+      "m": 4,
+      "s": 2,
+      "depths": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "grammars": 24,
+      "reference_trees_per_grammar_and_depth": 16
+    },
+    "observable": "Posterior mass assigned to the planted root under deterministic reference-centered soft likelihoods; not a forward-backward channel overlap.",
+    "band": "One sample standard deviation across grammar means (not a confidence interval).",
+    "exact_enumeration_checks": {
+      "root_vs_enumeration": 1.1102230246251565e-16,
+      "leaf_vs_enumeration": 2.220446049250313e-16,
+      "all_perfect_and_uniform_endpoints": "passed"
+    },
+    "summary": {
+      "2": {
+        "maximum_absolute_gap": 0.0029540889096094924,
+        "rmse": 0.0015901887240396641,
+        "bp_half_height_epsilon": 0.6499483375632059,
+        "mf_half_height_epsilon": 0.6487676062900066,
+        "bp_10_90_width": 0.574772902268423,
+        "mf_10_90_width": 0.577510269536957,
+        "largest_grammar_std": 0.02415044012221037
+      },
+      "4": {
+        "maximum_absolute_gap": 0.020697232751472172,
+        "rmse": 0.008180905134630455,
+        "bp_half_height_epsilon": 0.7295372321296073,
+        "mf_half_height_epsilon": 0.7239853598392529,
+        "bp_10_90_width": 0.3211162969861763,
+        "mf_10_90_width": 0.3288409907917922,
+        "largest_grammar_std": 0.03552821065720202
+      },
+      "6": {
+        "maximum_absolute_gap": 0.023862709847960573,
+        "rmse": 0.00753158202180072,
+        "bp_half_height_epsilon": 0.7635910749309018,
+        "mf_half_height_epsilon": 0.760337845835947,
+        "bp_10_90_width": 0.16364587738511815,
+        "mf_10_90_width": 0.1685092516685378,
+        "largest_grammar_std": 0.06039521196999798
+      },
+      "8": {
+        "maximum_absolute_gap": 0.01454103864906553,
+        "rmse": 0.002384964441020961,
+        "bp_half_height_epsilon": 0.7797826214713083,
+        "mf_half_height_epsilon": 0.7794262681014912,
+        "bp_10_90_width": 0.09080134993073485,
+        "mf_10_90_width": 0.08980475459305137,
+        "largest_grammar_std": 0.09284717372424142
+      }
+    },
+    "scope_limit": "Reference-centered deterministic soft fields, not sampled Gaussian/replacement-channel trajectories; no critical-exponent estimate and no neural-network training."
+  },
+  "validation": {
+    "hugo_build": "passed",
+    "build_scope": "Independent full-site HEAD snapshot plus this task’s hierarchical-data note, metadata and figure-policy changes; shared-checkout changes to other topics excluded.",
+    "hugo_version": "0.136.5 extended",
+    "internal_links_checked": 514,
+    "broken_internal_links": 0,
+    "legacy_routes_preserved": 15,
+    "source_to_rendered_numbering": "passed",
+    "all_original_explicit_anchors": "preserved",
+    "browser": {
+      "engine": "Codex in-app browser (CUA)",
+      "cases": [
+        {
+          "slug": "directory",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 17,
+          "mathErrors": 0,
+          "headings": 9,
+          "figures": 1,
+          "references": 0
+        },
+        {
+          "slug": "generative_learning",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 267,
+          "mathErrors": 0,
+          "headings": 39,
+          "figures": 1,
+          "references": 6
+        },
+        {
+          "slug": "language_statistics",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 173,
+          "mathErrors": 0,
+          "headings": 28,
+          "figures": 2,
+          "references": 5
+        },
+        {
+          "slug": "inference_generation",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 155,
+          "mathErrors": 0,
+          "headings": 30,
+          "figures": 2,
+          "references": 5
+        },
+        {
+          "slug": "parsing_latents",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 105,
+          "mathErrors": 0,
+          "headings": 29,
+          "figures": 1,
+          "references": 7
+        },
+        {
+          "slug": "shared_representations",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 114,
+          "mathErrors": 0,
+          "headings": 37,
+          "figures": 3,
+          "references": 6
+        },
+        {
+          "slug": "directory",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 17,
+          "mathErrors": 0,
+          "headings": 9,
+          "figures": 1,
+          "references": 0
+        },
+        {
+          "slug": "generative_learning",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 267,
+          "mathErrors": 0,
+          "headings": 39,
+          "figures": 1,
+          "references": 6
+        },
+        {
+          "slug": "language_statistics",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 173,
+          "mathErrors": 0,
+          "headings": 28,
+          "figures": 2,
+          "references": 5
+        },
+        {
+          "slug": "inference_generation",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 155,
+          "mathErrors": 0,
+          "headings": 30,
+          "figures": 2,
+          "references": 5
+        },
+        {
+          "slug": "parsing_latents",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 105,
+          "mathErrors": 0,
+          "headings": 29,
+          "figures": 1,
+          "references": 7
+        },
+        {
+          "slug": "shared_representations",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 114,
+          "mathErrors": 0,
+          "headings": 37,
+          "figures": 3,
+          "references": 6
+        }
+      ],
+      "mobile_toc": [
+        {
+          "slug": "generative_learning",
+          "links": 39,
+          "opened": true,
+          "all_numbered": true
+        },
+        {
+          "slug": "language_statistics",
+          "links": 28,
+          "opened": true,
+          "all_numbered": true
+        },
+        {
+          "slug": "inference_generation",
+          "links": 30,
+          "opened": true,
+          "all_numbered": true
+        },
+        {
+          "slug": "parsing_latents",
+          "links": 29,
+          "opened": true,
+          "all_numbered": true
+        },
+        {
+          "slug": "shared_representations",
+          "links": 37,
+          "opened": true,
+          "all_numbered": true
+        }
+      ],
+      "viewport_reset": true,
+      "visual_review": [
+        "Desktop unified mechanism and vector-BP comparison section.",
+        "Mobile mechanism diagram, caption and all five numbered table-of-contents panels."
+      ]
+    },
+    "diff_check": "passed"
+  }
+}

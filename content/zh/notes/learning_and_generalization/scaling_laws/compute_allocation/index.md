@@ -1,16 +1,16 @@
 ---
 url: "/notes/scaling_laws/compute_allocation/"
-title: "06 · 计算配置与经验外推"
+title: "07 · 计算配置与经验外推"
 subtitle: "风险曲面、损失底与预算约束下的选择"
 date: "2026-10-20"
 lastmod: "2026-10-25"
-weight: 6
-summary: "推导计算最优配置，比较可加与耦合风险，讨论数据回用、灵活拟合、平台误差、参数计数与训练协议。"
+weight: 7
+summary: "分别讨论已知风险面的预算优化与未知曲面的辨认，加入梯度噪声、batch 效率及拟合方法对配置结论的影响。"
 layout: "cell-cycle"
 article_class: "neural-theory-note"
 math: true
 toc: true
-reading_time: 47
+reading_time: 51
 tags:
   - Scaling Laws
   - 神经网络理论

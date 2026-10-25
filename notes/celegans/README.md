@@ -16,7 +16,7 @@
 
 98 幅论文原图保留面板和标注，来源、权利信息、校验值与逐篇图号见 `embryonic_morphogenesis/media_sources.json`；105 条文献元数据见 `literature_sources.json`。显示宽度与原始尺寸见 `data/celegans_figures.json`，网页保留原图链接。
 
-33 幅计算图使用文中明确给出的几何关系或无量纲模型。生成脚本为 `figures/generate_figures.py`、`figures/generate_model_figures.py` 与 `figures/generate_extended_models.py`、`figures/generate_active_packing_figures.py`、`figures/generate_worm_mechanics_figures.py`、`figures/generate_solid_fluid_figures.py`、`figures/generate_epithelial_spatial_models.py`、`figures/generate_subcellular_models.py`、`figures/generate_morphogenesis_network_models.py`，需要 NumPy、Matplotlib；扩展模型、表皮空间与亚细胞模型脚本另需 SciPy。论文原图不经过这些脚本修改。
+35 幅计算图使用文中明确给出的几何关系或无量纲模型。生成脚本为 `figures/generate_figures.py`、`figures/generate_model_figures.py` 与 `figures/generate_extended_models.py`、`figures/generate_active_packing_figures.py`、`figures/generate_worm_mechanics_figures.py`、`figures/generate_solid_fluid_figures.py`、`figures/generate_epithelial_spatial_models.py`、`figures/generate_subcellular_models.py`、`figures/generate_morphogenesis_network_models.py` 与 `figures/generate_mechanism_synthesis.py`，需要 NumPy、Matplotlib；扩展模型、表皮空间、亚细胞与机制综合脚本另需 SciPy。论文原图不经过这些脚本修改。
 
 各阶段开头嵌入 7 段原始显微影片，第二篇分别展示背侧插入、腹侧包裹和腹侧裂隙封闭；原有激光切割影片保留。影片直接使用研究机构或期刊的远程 MP4，保留播放控制、采样间隔和原始来源，记录见 media_sources.json 中的 embedded_stage_movies。竖向影片限制显示宽度，避免在长篇正文中过度放大。
 
@@ -28,7 +28,7 @@
 
 第六篇的固流转变章节集中讨论 solid–fluid transition：区分静态刚性、动力学解堵、黏弹性交叉与屈服，推导松弛模量、频率响应和蠕变，比较 SPV 相图、流动曲线及 Fielding 本构模型，并分别讨论线虫的组织响应与细胞质微流变。斑马鱼的组织转变与线虫的直接证据分别注明。新增解析图核查蠕变与松弛在 Laplace 域中的互易关系、长期极限与屈服前后响应。
 
-第二篇以已发表理论与实验为主线，展开 Brodland 的突起驱动、Weng 的独立皮层与爬行—收缩协作、Tetley 的身份依赖重排、Sknepnek 的主动 T1、Hutson 与 Layton 的组织受力、Wang 的细胞内网络及 Tah 的闭合刚性模型；每组分别讨论线虫可检验的对应。含 26 篇文献、27 幅论文原图与 5 幅原有计算图、3 段线虫阶段影片及 1 段已发表模型动画。极性、顶底耦合、重排能垒和闭合计算与相应机制合写，参数和生成脚本保留。新增图完整保留，来源、版本与许可记入媒体清单；检索与证据分工见 epithelial_theory_review_20261025.json。
+第二篇以已发表理论与实验为主线，展开 Brodland 的突起驱动、Weng 的独立皮层与爬行—收缩协作、Tetley 的身份依赖重排、Sknepnek 的主动 T1、Hutson 与 Layton 的组织受力、Wang 的细胞内网络及 Tah 的闭合刚性模型；每组分别讨论线虫可检验的对应。含 26 篇文献、27 幅论文原图与 7 幅计算图、3 段线虫阶段影片及 1 段已发表模型动画。极性、顶底耦合、重排能垒和闭合计算与相应机制合写，参数和生成脚本保留。新增图完整保留，来源、版本与许可记入媒体清单；检索与证据分工见 epithelial_theory_review_20261025.json。
 
 第七篇从 actin 丝、马达与交联出发，讨论主动凝胶、屏蔽长度、分子周转与输运、Rho 可激发性及收缩失稳、流动排列、手性转矩、连接耦合、PAR 输运与胞质回流。含 33 篇文献、26 幅论文图、8 幅计算图与 3 段远程原始影片。新增论文图均完整保留并分别注明许可；2026 年周转与微流变工作明确标为预印本。计算脚本核查谱空间力平衡、标记群质量衰减、休息态稳定性、取向解析平均与椭圆边界无穿流条件，参数见 figures/subcellular_model_parameters.json。
 
@@ -41,3 +41,7 @@
 七篇按具体主题划分多个正文大节：前几节在标题中标明“线虫研究”，讨论直接针对线虫的模型与实验；后几节标明“理论借鉴”，讨论其他体系、通用理论与候选计算。相邻的短主题在同一大节中展开，避免目录过碎。研究阶段、预印本状态、模型的原研究体系及其与线虫的对应保留在正文中，公式、论文图、文献表、视频和旧主题链接保留。
 
 编号沿用 Vertex 系列的层级：篇名为 01、02 等；正文大节为 1.、2.，小节为 1.1、1.2，更下一层为 1.1.1。正文主题大节连续编号，小节随所属大节编号；旧主题锚点保留，参考文献不编号。
+
+2026-10-25 按机制综合意见重整：总览以有效形变、方向选择和形态保持开篇，01–05 为发育阅读路径，06–07 为横向专题；基础成像与遗传实验移至阅读指南，以模型—观测—竞争解释表收束。七篇开头分别给出当前判断与未决机制。02 末尾补充接触成熟与加载时序、闭合留下的内部状态，03 衔接应力、刚度与历史的辨识；04 区分 actin 与连接相关记忆的证据，并比较机械并联、串联及更新时序。06 保留邻接拓扑于主线，将主动向列和持续同调移至末尾扩展阅读。07 补充网络受力到组织材料参数的粗粒化关系；01 与05 分别补充内移及三维弯曲的竞争机制比较。
+
+新增两幅候选计算图及可复现脚本、参数与校验：闭合后的相同外形、净应力和初始速率不唯一决定内部状态；线性负载增加与独立成熟下，接触稳定性可由明确的容量边界检验。未增加论文文献或替换论文原图，未将候选参考状态等同于已发表连接周转模型。复核记录见 `embryonic_morphogenesis/mechanism_synthesis_20261025.json`。

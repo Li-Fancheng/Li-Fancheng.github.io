@@ -84,7 +84,7 @@ sections:
         - page: /notes/learning_and_generalization
           label: 学习与泛化 · 三个主题系列
           title: 学习与泛化系列
-          text: 汇集 Grokking、Scaling Laws 和层次结构数据三个 topic，共 16 篇笔记，从训练动力学、学习曲线与数据结构理解学习和泛化。
+          text: 汇集 Grokking、Scaling Laws 和层次结构数据三个 topic，共 18 篇笔记，从训练动力学、学习曲线与数据结构理解学习和泛化。
         - page: /notes/qbio_course
           label: 课程笔记 · 2026 秋季
           title: 定量生物学导论

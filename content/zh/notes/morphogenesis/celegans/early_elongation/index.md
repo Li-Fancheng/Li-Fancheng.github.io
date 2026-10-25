@@ -5,7 +5,7 @@ subtitle: "主动应力 纤维材料 连接与顶端 ECM"
 date: 2026-10-18
 lastmod: 2026-10-25
 weight: 3
-summary: "沿连续体、预应力与动态纤维模型的发展，比较驱动力、方向性承载和纤维重排怎样决定伸长，并结合切割、直径变化和突变体讨论各模型的实验约束。"
+summary: "分开主动应力、方向性刚度与闭合留下的机械状态，比较连续体和动态纤维模型及其释放、松弛与伸长预测。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

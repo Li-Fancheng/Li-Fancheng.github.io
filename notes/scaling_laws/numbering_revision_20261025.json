@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-25",
+  "scope": "Article numbering only: 00–07 becomes 01–08. Routes, section numbering, anchors, formulas and links are unchanged.",
+  "mapping": [
+    {
+      "slug": "empirical_origins",
+      "old_number": 0,
+      "number": 1,
+      "title": "01 · 从学习曲线到 Neural Scaling Laws"
+    },
+    {
+      "slug": "statistical_geometry",
+      "old_number": 1,
+      "number": 2,
+      "title": "02 · 统计估计与几何分辨率"
+    },
+    {
+      "slug": "spectral_learning",
+      "old_number": 2,
+      "number": 3,
+      "title": "03 · 谱与学习分辨率"
+    },
+    {
+      "slug": "discrete_structure",
+      "old_number": 3,
+      "number": 4,
+      "title": "04 · 离散技能与长尾结构"
+    },
+    {
+      "slug": "feature_learning",
+      "old_number": 4,
+      "number": 5,
+      "title": "05 · 特征学习与动态加速"
+    },
+    {
+      "slug": "graph_language",
+      "old_number": 5,
+      "number": 6,
+      "title": "06 · 随机图与语言标度"
+    },
+    {
+      "slug": "compute_allocation",
+      "old_number": 6,
+      "number": 7,
+      "title": "07 · 计算配置与经验外推"
+    },
+    {
+      "slug": "mechanism_synthesis",
+      "old_number": 7,
+      "number": 8,
+      "title": "08 · 机制综合与开放问题"
+    }
+  ],
+  "formula_sequences_unchanged": true,
+  "heading_lines_and_anchors_unchanged": true,
+  "link_destinations_unchanged": true,
+  "file_hashes": {
+    "empirical_origins": "fb04a479aa9f8b6dfc652e4d04b4fbd1445ea9633e977b44da53304936600e2b",
+    "statistical_geometry": "efb94c6325f604680b5305540efa8ed93cebabe8ba7814fcb2a4e518eecf0415",
+    "spectral_learning": "6c9def47e01dad5777bd83151efc4dde112cdcc6881538b6f23deb5eb555fb4f",
+    "discrete_structure": "3d002a68e21c80ae5b056c68bcf2aa852cdedebddfd7de08e0c98783a25409ab",
+    "feature_learning": "f4027b27e82f50fca3866ea6432710996320331aba1572cef78762706dcf6254",
+    "graph_language": "152120205755c42875201f90d186e589617d96c7471a09c4ca156a9d2ff9fd1f",
+    "compute_allocation": "f783088be003e820b84c59f750eb8cd576e38faaa7b4825be7728187aef50a36",
+    "mechanism_synthesis": "c848cf9774f682d534065fd6f9915e15164687169151b04edcaff8bf2436e729",
+    "directory": "7dc9267b94860ec6d9414fccb663afa81653650a453c0b5a5f6d1a22d5f32e4d"
+  },
+  "hugo_build": "passed",
+  "rendered_article_titles_and_markers": 8,
+  "rendered_directory_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}

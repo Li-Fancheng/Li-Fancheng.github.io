@@ -1,0 +1,32 @@
+{
+  "effective_state_matrix": [
+    [
+      0.8,
+      0.2
+    ],
+    [
+      0.8,
+      0.2
+    ],
+    [
+      0.3,
+      0.7
+    ],
+    [
+      0.55,
+      0.44999999999999996
+    ]
+  ],
+  "matrix_rank": 2,
+  "joint_factorization_error": 0.0,
+  "transport_mutual_information_nats": {
+    "before": 0.0,
+    "after": 0.34657359027997264,
+    "residual": 0.6931471805599453
+  },
+  "transport_residual_error": 1.1102230246251565e-16,
+  "natural_language_exponent_arithmetic": {
+    "TinyStories": 0.1846590909090909,
+    "WikiText": 0.14095744680851066
+  }
+}

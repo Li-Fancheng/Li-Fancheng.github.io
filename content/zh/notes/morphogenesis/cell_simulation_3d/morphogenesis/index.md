@@ -1,10 +1,10 @@
 ---
 url: "/notes/cell_simulation_3d/morphogenesis/"
-title: "08 · 三维形态发生：分裂、极性、腔体与信号"
-subtitle: "胚胎、视杯、类器官、腔体与受限迁移的机制比较"
+title: "08 · 三维形态发生：重排、流动、弯曲与腔体"
+subtitle: "组织运动学、材料分区与同一内陷的机制比较"
 date: 2026-10-25
 weight: 8
-summary: "结合受限胚胎、上皮壳、视杯和肠类器官，分析分裂历史、机械反馈、腔体交换、体积预算及核受限迁移。"
+summary: "从胚胎排列与定向重排到组织流动、上皮弯曲和液压形态发生；以同一内陷模式比较收缩、增长、压力及反馈的可检验预测。"
 layout: cell-cycle
 article_class: cell-simulation-3d-note
 math: true

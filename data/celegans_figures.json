@@ -784,5 +784,17 @@
     "kind": "paper",
     "intrinsic_width": 1603,
     "intrinsic_height": 842
+  },
+  "embryonic_morphogenesis/figures/40_closure_mechanical_history": {
+    "width": 1000,
+    "kind": "model",
+    "intrinsic_width": 2280,
+    "intrinsic_height": 733
+  },
+  "embryonic_morphogenesis/figures/41_contact_maturation_loading": {
+    "width": 900,
+    "kind": "model",
+    "intrinsic_width": 1991,
+    "intrinsic_height": 716
   }
 }

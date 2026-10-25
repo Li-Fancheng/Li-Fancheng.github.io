@@ -9,7 +9,8 @@
       "initial_year": 2021,
       "url": "https://arxiv.org/abs/2102.06701",
       "notes": [
-        "statistical_geometry"
+        "statistical_geometry",
+        "mechanism_synthesis"
       ],
       "publication": "PNAS 2024; doi:10.1073/pnas.2311878121",
       "additional_urls": [
@@ -56,7 +57,9 @@
       "notes": [
         "statistical_geometry",
         "spectral_learning",
-        "feature_learning"
+        "feature_learning",
+        "mechanism_synthesis",
+        "discrete_structure"
       ],
       "publication": "ICML 2020"
     },
@@ -91,7 +94,8 @@
       "initial_year": 2023,
       "url": "https://arxiv.org/abs/2303.13506",
       "notes": [
-        "discrete_structure"
+        "discrete_structure",
+        "mechanism_synthesis"
       ],
       "publication": "NeurIPS 2023; revised 2024"
     },
@@ -113,7 +117,9 @@
       "initial_year": 2024,
       "url": "https://arxiv.org/abs/2409.17858",
       "notes": [
-        "feature_learning"
+        "feature_learning",
+        "empirical_origins",
+        "mechanism_synthesis"
       ],
       "publication": "ICLR 2025 spotlight; v2 2025-04-04",
       "additional_urls": [
@@ -128,7 +134,8 @@
       "url": "https://arxiv.org/abs/2601.10684",
       "notes": [
         "graph_language",
-        "compute_allocation"
+        "compute_allocation",
+        "mechanism_synthesis"
       ],
       "publication": "ICML 2026 spotlight; arXiv 2026-01-15",
       "additional_urls": [
@@ -153,7 +160,8 @@
       "initial_year": 2020,
       "url": "https://arxiv.org/abs/2001.08361",
       "notes": [
-        "compute_allocation"
+        "compute_allocation",
+        "empirical_origins"
       ],
       "publication": "Primary manuscript"
     },
@@ -164,7 +172,8 @@
       "initial_year": 2022,
       "url": "https://arxiv.org/abs/2203.15556",
       "notes": [
-        "compute_allocation"
+        "compute_allocation",
+        "empirical_origins"
       ],
       "publication": "Primary manuscript"
     },
@@ -186,7 +195,8 @@
       "initial_year": 2024,
       "url": "https://arxiv.org/abs/2406.19146",
       "notes": [
-        "compute_allocation"
+        "compute_allocation",
+        "empirical_origins"
       ],
       "publication": "NeurIPS 2024; later arXiv revisions exist"
     },
@@ -201,7 +211,8 @@
       ],
       "notes": [
         "statistical_geometry",
-        "spectral_learning"
+        "spectral_learning",
+        "mechanism_synthesis"
       ],
       "publication": "Nature Communications 12, 2914 (2021); arXiv v6 2022-02-04",
       "verified_on": "2026-10-25",
@@ -263,6 +274,100 @@
       "publication": "Primary manuscript, arXiv v1 2024-08-06",
       "verified_on": "2026-10-25",
       "usage": "Concluding discussion: task-dependent inference-compute allocation; distinguish reasoning success and verification from pretraining cross-entropy."
+    },
+    {
+      "id": "seung1992",
+      "authors": "Seung, Sompolinsky, Tishby",
+      "title": "Statistical mechanics of learning from examples",
+      "initial_year": 1992,
+      "url": "https://doi.org/10.1103/PhysRevA.45.6056",
+      "publication": "Physical Review A 45, 6056–6091 (1992)",
+      "notes": [
+        "empirical_origins"
+      ],
+      "usage": "Gibbs learning, realizability and smoothness conditions; inverse-power asymptotics and other possible learning behavior. Not an explanation of arbitrary Transformer exponents.",
+      "verified_on": "2026-10-25"
+    },
+    {
+      "id": "amari1993",
+      "authors": "Amari",
+      "title": "A Universal Theorem on Learning Curves",
+      "initial_year": 1993,
+      "url": "https://doi.org/10.1016/0893-6080%2893%2990013-M",
+      "additional_urls": [
+        "https://bsi-ni.brain.riken.jp/database/file/134/132.pdf"
+      ],
+      "publication": "Neural Networks 6, 161–166 (1993)",
+      "notes": [
+        "empirical_origins"
+      ],
+      "usage": "Average predictive entropy for noiseless dichotomy machines under the theorem assumptions; not a universal MSE or classification-error exponent.",
+      "verified_on": "2026-10-25"
+    },
+    {
+      "id": "hestness2017",
+      "authors": "Hestness, Narang, Ardalani, Diamos, Jun, Kianinejad, Patwary, Yang, Zhou",
+      "title": "Deep Learning Scaling is Predictable, Empirically",
+      "initial_year": 2017,
+      "url": "https://arxiv.org/abs/1712.00409",
+      "additional_urls": [
+        "https://arxiv.org/html/1712.00409v1"
+      ],
+      "publication": "arXiv:1712.00409v1",
+      "notes": [
+        "empirical_origins"
+      ],
+      "usage": "Sections 3–5: cross-domain data sweeps, fixed-model saturation and composite curves, within-study exponent stability under tested improvements. The algebraic risk-ratio examples are independent illustrations.",
+      "verified_on": "2026-10-25"
+    },
+    {
+      "id": "rosenfeld2019",
+      "authors": "Rosenfeld, Rosenfeld, Belinkov, Shavit",
+      "title": "A Constructive Prediction of the Generalization Error Across Scales",
+      "initial_year": 2019,
+      "url": "https://arxiv.org/abs/1909.12673",
+      "additional_urls": [
+        "https://arxiv.org/html/1909.12673v2"
+      ],
+      "publication": "ICLR 2020; arXiv v2 2019-12-20",
+      "notes": [
+        "empirical_origins"
+      ],
+      "usage": "Sections 4–7 and equations (4)–(5): joint model/data error landscape, envelope and extrapolation. The note rewrites the complex modulus as a positive real expression and keeps the actual floor distinct from the internal offset.",
+      "verified_on": "2026-10-25"
+    },
+    {
+      "id": "mccandlish2018",
+      "authors": "McCandlish, Kaplan, Amodei, OpenAI Dota Team",
+      "title": "An Empirical Model of Large-Batch Training",
+      "initial_year": 2018,
+      "url": "https://arxiv.org/abs/1812.06162",
+      "additional_urls": [
+        "https://arxiv.org/html/1812.06162v1"
+      ],
+      "publication": "arXiv:1812.06162v1",
+      "notes": [
+        "compute_allocation"
+      ],
+      "usage": "Section 2, equations (2.2), (2.5), (2.7)–(2.9): gradient covariance, curvature-weighted noise scale, approximate batch crossover and simpler proxy. Local SGD approximation is distinguished from global optimizer and hardware performance.",
+      "verified_on": "2026-10-25"
+    },
+    {
+      "id": "li2025misfitting",
+      "authors": "Li, Kudugunta, Zettlemoyer",
+      "title": "(Mis)Fitting: A Survey of Scaling Laws",
+      "initial_year": 2025,
+      "url": "https://arxiv.org/abs/2502.18969",
+      "additional_urls": [
+        "https://arxiv.org/html/2502.18969v1"
+      ],
+      "publication": "arXiv:2502.18969v1",
+      "notes": [
+        "compute_allocation",
+        "mechanism_synthesis"
+      ],
+      "usage": "Function form, training setup, checkpoint/metric collection and fitting choices can alter fitted conclusions. Used for reliability and identifiability discussion, without importing a survey checklist into the reader flow.",
+      "verified_on": "2026-10-25"
     }
   ],
   "concluding_discussions_review": {
@@ -289,5 +394,17 @@
     "date": "2026-10-25",
     "references": "Each article now contains its own annotated bibliography; shared manifest retains cross-article mappings.",
     "independent_examples": "New interpolation, composition, factor-dynamics, Markov and lifecycle calculations are independent worked examples, not paper experiment reproductions."
+  },
+  "empirical_and_synthesis_revision": {
+    "date": "2026-10-25",
+    "new_sources": [
+      "seung1992",
+      "amari1993",
+      "hestness2017",
+      "rosenfeld2019",
+      "mccandlish2018",
+      "li2025misfitting"
+    ],
+    "scope": "00 empirical origin and 07 mechanism synthesis; 03 includes an independently derived Laplace-measure bridge; 06 adds local gradient-noise and fitting context."
   }
 }

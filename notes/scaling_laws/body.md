@@ -1,25 +1,35 @@
-训练数据、模型和计算增加时，测试损失经常在一段范围内呈现稳定的幂律下降。但相似的曲线可以来自不同过程：估计波动减小、目标结构被逐渐分辨、稀有技能被覆盖，或者训练中的表示变化让学习加速。这个专题整理这些机制的模型、推导、直观例子与文献联系。
+复杂神经网络扩大数据、模型和训练计算时，为什么经常表现出稳定的幂律？这些曲线可能反映有限样本的统计波动、待学习结构的分布，也可能反映训练中不断变化的有效学习尺度。多种过程都能产生幂律，曲线形状本身不足以识别机制。
 
-我关心的不只是指数是多少，还包括指数对应什么观测量、哪些资源被固定、何种结构正在被学会，以及换一个训练协议以后预测是否仍然成立。各篇从具体问题出发，展开符号、推导、算例和适用范围；正文各级标题编号，篇末列出所用文献及继续阅读的路径。
+这里从经验发现进入具体模型，再回到机制比较：从模型、任务和训练过程的独立测量出发，能否预测指数、交叉位置，以及改变资源和协议后的结果？
 
-## 1. 六篇笔记 {#contents}
+## 1. 八篇笔记与各自的任务 {#contents}
 
-| 笔记 | 核心问题 | 主要内容 |
+| 笔记 | 理论角色 | 核心内容 |
 | --- | --- | --- |
-| [01 · 统计估计与分辨率](/notes/scaling_laws/statistical_geometry/) | 更多数据是在反复测量，还是在发现新结构？ | 参数与损失误差、插值常数、teacher–student 回归、特征投影与噪声复杂度 |
-| [02 · 谱与学习分辨率](/notes/scaling_laws/spectral_learning/) | 目标能量与学习速率怎样共同决定曲线？ | 统一谱风险、双模态算例、时间松弛、随机采样、容量截止与目标对齐 |
-| [03 · 离散技能与长尾结构](/notes/scaling_laws/discrete_structure/) | 平滑损失为何能伴随局部能力转变？ | 技能代价、有限覆盖与 Poisson 计数、九格加性共享、组合检验与数据选择 |
-| [04 · 特征学习与动态加速](/notes/scaling_laws/feature_learning/) | 表示变化何时改变指数？ | 双因子闭式轨迹、两时相关与响应、任务难度、反馈积分与有限模型瓶颈 |
-| [05 · 随机图与语言标度](/notes/scaling_laws/graph_language/) | 数据没有幂律，学习还能有幂律吗？ | ER / BA 与四状态图、精确熵率、合法概率分解、支撑学习与隐藏记忆 |
-| [06 · 计算配置与经验外推](/notes/scaling_laws/compute_allocation/) | 各种机制怎样进入同一份预算？ | 训练与生命周期最优解、数据回用、二维交互、平台误差与外推检验 |
+| [01 · 从学习曲线到 Neural Scaling Laws](/notes/scaling_laws/empirical_origins/) | 经验入口 | 经典学习曲线，Hestness 的组合曲线，Rosenfeld 的二维误差面，Kaplan／Chinchilla 的计算前沿 |
+| [02 · 统计估计与几何分辨率](/notes/scaling_laws/statistical_geometry/) | 静态机制 | 统计波动、局部插值、teacher–student 回归、投影平台与噪声复杂度 |
+| [03 · 谱与学习分辨率](/notes/scaling_laws/spectral_learning/) | 静态机制 | 目标加权速率谱，时间松弛、随机采样、容量截止与目标对齐 |
+| [04 · 离散技能与长尾结构](/notes/scaling_laws/discrete_structure/) | 静态机制及其联系 | 技能代价、有限覆盖、组合共享，以及谱松弛与随机覆盖的指数混合结构 |
+| [05 · 特征学习与动态加速](/notes/scaling_laws/feature_learning/) | 动态机制 | 时变学习度量、任务难度、反馈时钟与有限模型瓶颈 |
+| [06 · 随机图与语言标度](/notes/scaling_laws/graph_language/) | 受控机制检验 | 已知生成器、熵率和计数基线；检验输入幂律是否为必要条件 |
+| [07 · 计算配置与经验外推](/notes/scaling_laws/compute_allocation/) | 预测与配置 | 已知曲面上的优化、未知曲面的辨认、梯度噪声与 batch 效率 |
+| [08 · 机制综合与开放问题](/notes/scaling_laws/mechanism_synthesis/) | 跨机制总结 | 共同结构、独立预测、干预检验，以及从推出指数到解释其来源的差距 |
 
-## 2. 从什么问题进入 {#reading-paths}
+## 2. 快速阅读与完整推导 {#reading-paths}
 
-想先理解幂律的不同来源，可以从第一篇的均值估计和地图分辨率开始，再进入第二篇的连续模态与第三篇的离散技能。它们分别强调统计波动、可恢复方向和随机覆盖，也提供了彼此可以比较的简单模型。
+**机制概览。** 先读约 29 分钟的 [01 篇](/notes/scaling_laws/empirical_origins/)，了解经验上究竟需要解释什么；再按下面的结果导航选择问题，最后读 [08 篇的机制比较](/notes/scaling_laws/mechanism_synthesis/#comparison)。各篇开头的学习问题和结尾的边界讨论可以串成一条较短路径。
 
-关心神经网络与固定核的差异，可以直接阅读第四篇。它把隐藏层更新写成时变的学习度量，解释为什么某些目标只有常数改善，而另一些目标能够获得新的时间指数。第五篇进一步把数据生成过程控制起来：用简单的图游走检验哪些输入结构是必要的，哪些网络问题仍未解决。
+**完整理论推导。** 从 02–04 的统计、谱与技能出发，进入 05 的动态表示；用 06 的受控任务检验必要条件，再到 07 的风险面与资源配置。01 和 08 分别提供问题入口与综合。
 
-实际的资源选择汇入第六篇。计算最优公式依赖风险曲面与成本定义；即使若干一维曲线近似幂律，也不能直接认定二维曲面可加。损失底、优化程度、参数计数和数据复用都参与最终的指数解释。
+| 想先弄清的问题 | 核心结果或比较入口 |
+| --- | --- |
+| 更多数据是在测准旧参数，还是分辨新结构？ | [四种受限区域](/notes/scaling_laws/statistical_geometry/#four-regimes)与[噪声下的最优分辨率](/notes/scaling_laws/statistical_geometry/#bias-variance) |
+| 单个模态按指数恢复，总体为何是幂律？ | [小速率端与时间指数](/notes/scaling_laws/spectral_learning/#小速率端决定长期指数) |
+| 谱学习与技能覆盖有什么共同数学结构？ | [累计测度、Gamma 常数与物理区别](/notes/scaling_laws/discrete_structure/#mixture-bridge) |
+| 表示学习何时只改常数，何时改变指数？ | [自洽学习时钟](/notes/scaling_laws/feature_learning/#self-consistent-clock) |
+| 输入没有预置幂律，网络还能有经验幂律吗？ | [ER 实验排除的必要条件](/notes/scaling_laws/graph_language/#discussion-necessity) |
+| 预测风险面与求预算最优，差别在哪里？ | [风险面拟合](/notes/scaling_laws/compute_allocation/#fitting-surface)与[边际最优条件](/notes/scaling_laws/compute_allocation/#最优条件的一般边际解释) |
+| 哪些指数来源已经解释，哪些量还要独立测？ | [机制、假设、独立预测和未解问题](/notes/scaling_laws/mechanism_synthesis/#comparison) |
 
 ## 3. 几个贯穿专题的区别 {#summary}
 
@@ -27,32 +37,33 @@
 
 **数据量与训练时间。** 新的独立数据带来信息，重复读取同一数据主要改变优化过程。在线一遍训练能把步数和已见样本数联系起来，但这种映射依赖 batch 与训练协议。
 
-**参数数、宽度与有效秩。** 一个指数换了横轴就可能改变。把网络参数换成可解析模态、技能数或每步成本，需要明确的映射。
+**参数数、宽度与有效秩。** 换横轴可能改变指数。把网络参数换成可解析模态、技能数或每步成本，需要明确映射。
 
-**充分机制与必要条件。** 幂律谱能产生幂律学习曲线，长尾技能也能；它们各自的可解推导不能证明所有网络都必须沿同一机制工作。ER 随机游走提供了很直接的对照。
+**充分机制与起源解释。** 给定幂律谱或长尾技能，能够推出学习曲线；真实网络为什么具有这样的加权结构，还需要独立解释。输入、初始核、训练后权重与技能频率也不是同一张谱。
 
-**预测与解释。** 一个回归器可以准确拟合预算内的风险面，却未识别微观来源；一个机制模型可以解释某种效应，却未覆盖全部实验区间。二者可以互相约束。
+**预测与机制辨识。** 回归器可以准确预测预算内的风险面，却未识别微观来源；机制模型可以解释某种效应，却未覆盖全部实验区间。留出尺度与受控干预分别约束这两类结论。
 
 ## 4. 文献入口 {#literature}
 
 | 机制与问题 | 代表性原始文献 |
 | --- | --- |
-| 统计学习与四种区域 | [Explaining Neural Scaling Laws](https://arxiv.org/abs/2102.06701)，初稿 2021，PNAS 2024 |
+| 经典学习曲线 | [Statistical mechanics of learning from examples](https://doi.org/10.1103/PhysRevA.45.6056)，1992；[A Universal Theorem on Learning Curves](https://doi.org/10.1016/0893-6080%2893%2990013-M)，1993 |
+| 现代经验入口 | [Deep Learning Scaling is Predictable, Empirically](https://arxiv.org/abs/1712.00409)，2017 |
+| 二维误差面 | [A Constructive Prediction of the Generalization Error Across Scales](https://arxiv.org/abs/1909.12673)，2019 / ICLR 2020 |
+| 统计学习与四种区域 | [Explaining Neural Scaling Laws](https://arxiv.org/abs/2102.06701)，PNAS 2024 |
 | 核谱与目标对齐 | [Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks](https://proceedings.mlr.press/v119/bordelon20a.html)，ICML 2020 |
 | 联合谱与随机特征模型 | [A Solvable Model of Neural Scaling Laws](https://arxiv.org/abs/2210.16859)，2022 |
-| 离散知识与技能 | [The Quantization Model of Neural Scaling](https://arxiv.org/abs/2303.13506)，NeurIPS 2023 |
-| 数据选择 | [Beyond neural scaling laws: beating power law scaling via data pruning](https://arxiv.org/abs/2206.14486)，NeurIPS 2022 |
+| 离散技能与共享 | [The Quantization Model of Neural Scaling](https://arxiv.org/abs/2303.13506)，NeurIPS 2023 |
 | 动态特征与指数改善 | [How Feature Learning Can Improve Neural Scaling Laws](https://arxiv.org/abs/2409.17858)，ICLR 2025 |
-| 受控随机图与语言 | [On the origin of neural scaling laws: from random graphs to natural language](https://arxiv.org/abs/2601.10684)，ICML 2026 |
+| 受控随机图与语言 | [On the origin of neural scaling laws: from random graphs to natural language](https://arxiv.org/abs/2601.10684)，2026 |
 | 经验资源配置 | [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)，2020；[Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)，2022 |
-| 数据回用与协议比较 | [Scaling Data-Constrained Language Models](https://arxiv.org/abs/2305.16264)，2023；[Resolving Discrepancies in Compute-Optimal Scaling of Language Models](https://arxiv.org/abs/2406.19146)，2024 |
+| 梯度噪声与并行效率 | [An Empirical Model of Large-Batch Training](https://arxiv.org/abs/1812.06162)，2018 |
+| 配置复现与拟合可靠性 | [Resolving Discrepancies in Compute-Optimal Scaling of Language Models](https://arxiv.org/abs/2406.19146)，2024；[(Mis)Fitting: A Survey of Scaling Laws](https://arxiv.org/abs/2502.18969)，2025 |
 
-[神经网络理论与可解模型](/notes/neural_network_theory/)提供高维泛化、核方法与训练动力学背景；[层次结构数据与学习理论](/notes/hierarchical_data/)进一步讨论组合生成、长程语言关联和共享表示。三个专题可以沿“数据结构怎样变成可学习的表示”这条线连接起来。
-
-专题中的数值图包括可解模型的直接计算与有限随机图统计，各图注明观测量、假设和计算范围。原论文的网络训练结果通过原始文献讨论，机制示意与独立计算不会被当作训练复现。
+[神经网络理论与可解模型](/notes/neural_network_theory/)提供高维泛化、核方法与训练动力学背景；[层次结构数据与学习理论](/notes/hierarchical_data/)进一步讨论组合生成、长程语言关联和共享表示。
 
 ## 5. 文献与补充材料 {#resources}
 
-各篇末尾列出直接使用的参考文献及其对应内容；来源总表保留初稿、发表年份和修订信息。十三张图包括原有计算图与三个新增算例，均注明模型和观测量。补充材料包含正文、图、计算记录与核对结果。
+补充材料包含八篇正文、十三张计算图、文献来源总表、计算记录与公式核对结果。数值图来自可解模型与有限图统计，独立算例的假设和范围随图说明。
 
 [文献来源总表](sources.json) · [数值记录与补充材料](reproducibility.zip)

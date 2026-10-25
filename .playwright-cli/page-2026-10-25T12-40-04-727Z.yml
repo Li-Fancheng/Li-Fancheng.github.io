@@ -1,0 +1,200 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - link "Li Fancheng" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "首页" [ref=e10] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e11]:
+          - link "论文" [ref=e12] [cursor=pointer]:
+            - /url: /publication/
+        - listitem [ref=e13]:
+          - link "学术报告" [ref=e14] [cursor=pointer]:
+            - /url: /event/
+        - listitem [ref=e15]:
+          - link "笔记" [ref=e16] [cursor=pointer]:
+            - /url: /notes/
+        - listitem [ref=e17]:
+          - link "个人经历" [ref=e18] [cursor=pointer]:
+            - /url: /experience/
+        - listitem [ref=e19]:
+          - link "一些想法" [ref=e20] [cursor=pointer]:
+            - /url: /thoughts/
+      - generic [ref=e21]:
+        - button "search" [ref=e22] [cursor=pointer]
+        - button "appearance" [ref=e26] [cursor=pointer]
+  - article [ref=e31]:
+    - generic [ref=e32]:
+      - link "← 形态发生系列" [ref=e33] [cursor=pointer]:
+        - /url: /notes/morphogenesis/
+      - heading "Vertex Model：从细胞几何到组织力学" [level=1] [ref=e34]
+    - paragraph [ref=e35]: 细胞边界的几何与能量决定局部恢复力；有限形变可以触发邻居交换；驱动、耗散与结构更新共同决定组织怎样松弛和流动。主线依次连接这些过程，最后回到果蝇、斑马鱼和培养上皮中的实验检验。
+    - table [ref=e37]:
+      - rowgroup [ref=e38]:
+        - row [ref=e39]:
+          - columnheader "部分" [ref=e40]
+          - columnheader "笔记" [ref=e41]
+          - columnheader "核心问题" [ref=e42]
+      - rowgroup [ref=e43]:
+        - row [ref=e44]:
+          - cell "I · 几何与刚性" [ref=e45]
+          - cell [ref=e46]:
+            - link "01 · 几何、能量与力学平衡" [ref=e47] [cursor=pointer]:
+              - /url: /notes/vertex_model/foundations/
+          - cell "面积、周长与黏附怎样进入受力？" [ref=e48]
+        - row [ref=e49]:
+          - cell "I · 几何与刚性" [ref=e50]
+          - cell [ref=e51]:
+            - link "02 · 线性响应与非仿射弹性" [ref=e52] [cursor=pointer]:
+              - /url: /notes/vertex_model/linear_response/
+          - cell "内部调整怎样改变弹性？" [ref=e53]
+        - row [ref=e54]:
+          - cell "I · 几何与刚性" [ref=e55]
+          - cell [ref=e56]:
+            - link "03 · 几何不相容、预应力与刚性转变" [ref=e57] [cursor=pointer]:
+              - /url: /notes/vertex_model/rigidity/
+          - cell "几何不相容与预应力怎样产生刚性？" [ref=e58]
+        - row [ref=e59]:
+          - cell "II · 重排与动力学" [ref=e60]
+          - cell [ref=e61]:
+            - link "04 · T1 重排、能量势垒与塑性" [ref=e62] [cursor=pointer]:
+              - /url: /notes/vertex_model/rearrangements/
+          - cell "换邻居需要跨越怎样的能量路径？" [ref=e63]
+        - row [ref=e64]:
+          - cell "II · 重排与动力学" [ref=e65]
+          - cell [ref=e66]:
+            - link "05 · 组织流变与主动动力学" [ref=e67] [cursor=pointer]:
+              - /url: /notes/vertex_model/rheology_activity/
+          - cell "局部形变与结构更新怎样形成黏弹性？" [ref=e68]
+        - row [ref=e69]:
+          - cell "II · 重排与动力学" [ref=e70]
+          - cell [ref=e71]:
+            - link "06 · 涨落、相关与组织重塑" [ref=e72] [cursor=pointer]:
+              - /url: /notes/vertex_model/fluctuations/
+          - cell "涨落的持续时间与空间协同怎样影响重塑？" [ref=e73]
+        - row [ref=e74]:
+          - cell "III · 几何与生物推广" [ref=e75]
+          - cell [ref=e76]:
+            - link "07 · 各向异性、曲面与三维组织" [ref=e77] [cursor=pointer]:
+              - /url: /notes/vertex_model/geometry_3d/
+          - cell "方向、曲率和厚度怎样改变力学？" [ref=e78]
+        - row [ref=e79]:
+          - cell "IV · 实验与机制判别" [ref=e80]
+          - cell [ref=e81]:
+            - link "08 · 形态发生、实验检验与开放问题" [ref=e82] [cursor=pointer]:
+              - /url: /notes/vertex_model/morphogenesis/
+          - cell "怎样用实验区分竞争机制？" [ref=e83]
+        - row [ref=e84]:
+          - cell "专题拓展" [ref=e85]
+          - cell [ref=e86]:
+            - link "主动软物质的堆积与拓扑" [ref=e87] [cursor=pointer]:
+              - /url: /notes/vertex_model/active_packing/
+          - cell "用颗粒堆积、主动向列等体系比较几何约束与集体运动。" [ref=e88]
+    - paragraph [ref=e89]: 经典主线采用汇合二维 Vertex 网络的面积—周长能量。非汇合界面、细胞中心接触图、曲面与三维模型各有自己的自由度与力学假设；拓展篇中的 MIPS、二维熔化和向列缺陷用于对照，相关相图不直接作为 Vertex 刚性判据。
+    - paragraph [ref=e90]:
+      - text: 同一周期网络的
+      - link "残差与弹性" [ref=e91] [cursor=pointer]:
+        - /url: /notes/vertex_model/rigidity/#unified-case
+      - text: 、
+      - link "交界收缩路径" [ref=e92] [cursor=pointer]:
+        - /url: /notes/vertex_model/rearrangements/#unified-t1
+      - text: 和
+      - link "驱动响应" [ref=e93] [cursor=pointer]:
+        - /url: /notes/vertex_model/rheology_activity/#unified-dynamics
+      - text: 使用同一组制备与参数定义。
+    - paragraph [ref=e94]:
+      - text: 三维表示与算法的进一步比较见
+      - link "三维细胞模拟：从相场、网格到 Vertex" [ref=e95] [cursor=pointer]:
+        - /url: /notes/cell_simulation_3d/
+      - text: ，包括相场、表面网格、完整三维 Vertex、Cellular Potts、亚细胞元、连续材料与流固耦合。
+    - group [ref=e96]:
+      - generic "生物案例与论文视频索引" [ref=e97] [cursor=pointer]
+    - heading "刚性、流动性与细胞形状" [level=2] [ref=e98]
+    - list [ref=e99]:
+      - listitem [ref=e100]:
+        - strong [ref=e101]: 刚性（rigidity）
+        - text: ：轻轻使组织变形，它会不会产生恢复力？要用多大力才能让它变形一点？
+      - listitem [ref=e102]:
+        - strong [ref=e103]: 流动性（fluidity）
+        - text: ：持续受力或等待一段时间后，组织能不能重新排列、继续变形，并释放原来的应力？
+      - listitem [ref=e104]:
+        - strong [ref=e105]: 几何指标
+        - text: ：从图像量出的面积、周长和细长程度。它们可能帮助预测软硬，但还要结合接触、受力和时间来理解。
+    - paragraph [ref=e106]:
+      - text: 文中的
+      - generic [ref=e108]:
+        - math [ref=e110]:
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]: p
+              - generic [ref=e115]: "0"
+            - generic [ref=e116]: =
+            - generic [ref=e117]:
+              - generic [ref=e118]: P
+              - generic [ref=e119]: "0"
+            - generic [ref=e120]: /
+            - generic [ref=e122]:
+              - generic [ref=e123]: A
+              - generic [ref=e124]: "0"
+        - generic [aria-hidden] [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - text: p
+              - generic [ref=e128]: "0"
+            - text: =
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - text: P
+              - generic [ref=e138]: "0"
+            - text: /
+            - generic [ref=e151]:
+              - text: A
+              - generic [ref=e152]: "0"
+      - text: 是模型设定的偏好；从真实轮廓量出的
+      - generic [ref=e167]:
+        - math [ref=e169]:
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - generic [ref=e173]: p
+              - generic [ref=e174]: i
+            - generic [ref=e175]: =
+            - generic [ref=e176]:
+              - generic [ref=e177]: P
+              - generic [ref=e178]: i
+            - generic [ref=e179]: /
+            - generic [ref=e181]:
+              - generic [ref=e182]: A
+              - generic [ref=e183]: i
+        - generic [aria-hidden] [ref=e184]:
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - text: p
+              - generic [ref=e187]: i
+            - text: =
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - text: P
+              - generic [ref=e197]: i
+            - text: /
+            - generic [ref=e210]:
+              - text: A
+              - generic [ref=e211]: i
+      - text: 则是实际形状。它们类似弹簧的原长与当前长度，并不总相等。论文常出现的 3.81 是特定二维模型的目标形状指数，
+      - link "Note 03" [ref=e225] [cursor=pointer]:
+        - /url: /notes/vertex_model/rigidity/
+      - text: 讨论它的几何线索与适用范围。
+  - contentinfo [ref=e227]:
+    - paragraph [ref=e228]:
+      - text: © 2026 Li Fancheng. Licensed under
+      - link "CC BY NC ND 4.0" [ref=e229] [cursor=pointer]:
+        - /url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    - paragraph:
+      - link "Creative Commons":
+        - /url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    - paragraph [ref=e230]:
+      - text: 使用
+      - link "Hugo Blox Builder" [ref=e231] [cursor=pointer]:
+        - /url: https://hugoblox.com/?utm_campaign=poweredby
+      - text: 构建。

@@ -344,12 +344,12 @@
       "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig1-v3.tif/full/full/0/default.jpg",
       "locations": [
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 19
-        },
-        {
           "note": "early_elongation",
           "figure": 1
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 19
         }
       ]
     },
@@ -474,12 +474,12 @@
       "license_url": "https://creativecommons.org/licenses/by/3.0/",
       "locations": [
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 21
-        },
-        {
           "note": "early_elongation",
           "figure": 7
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 21
         }
       ]
     },
@@ -883,7 +883,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 18
+          "figure": 25
         }
       ]
     },
@@ -1008,7 +1008,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 21
+          "figure": 18
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/3.0/"
@@ -1029,7 +1029,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 24
+          "figure": 21
         }
       ]
     },
@@ -1768,7 +1768,7 @@
         },
         {
           "note": "active_matter_packing_topology",
-          "figure": 23
+          "figure": 20
         }
       ]
     },
@@ -1873,12 +1873,12 @@
       "sha256": "7f201ac4d74494e6bf2988f4ca623d8db8c820848b1ed935a822b7368dc839db",
       "locations": [
         {
-          "note": "late_elongation",
-          "figure": 7
-        },
-        {
           "note": "early_elongation",
           "figure": 12
+        },
+        {
+          "note": "late_elongation",
+          "figure": 7
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
@@ -2126,7 +2126,8 @@
       "figures/generate_solid_fluid_figures.py",
       "figures/generate_epithelial_spatial_models.py",
       "figures/generate_subcellular_models.py",
-      "figures/generate_morphogenesis_network_models.py"
+      "figures/generate_morphogenesis_network_models.py",
+      "figures/generate_mechanism_synthesis.py"
     ],
     "displayed_files": [
       "figures/07_quantitative_geometry.svg",
@@ -2161,7 +2162,9 @@
       "figures/36_cytoplasmic_return_flow.svg",
       "figures/37_network_to_tissue.svg",
       "figures/38_closed_volume_elongation.svg",
-      "figures/39_cyclic_network_shape.svg"
+      "figures/39_cyclic_network_shape.svg",
+      "figures/40_closure_mechanical_history.svg",
+      "figures/41_contact_maturation_loading.svg"
     ],
     "description": "Analytical solutions and numerical integration of dimensionless models explicitly defined in the notes. No fitted or experimental measurements.",
     "locations": {
@@ -2264,49 +2267,49 @@
       "figures/23_nematic_defects.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 17
+          "figure": 24
         }
       ],
       "figures/24_force_network_topology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 19
+          "figure": 26
         }
       ],
       "figures/25_worm_ingression.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 25
+          "figure": 22
         }
       ],
       "figures/26_worm_material_memory.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 26
+          "figure": 23
         }
       ],
       "figures/27_solid_fluid_rheology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 20
+          "figure": 17
         }
       ],
       "figures/28_yield_and_flow.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 22
-        }
-      ],
-      "figures/30_four_cell_rearrangement.svg": [
-        {
-          "note": "epithelial_morphogenesis",
-          "figure": 16
+          "figure": 19
         }
       ],
       "figures/29_basal_apical_fields.svg": [
         {
           "note": "epithelial_morphogenesis",
           "figure": 14
+        }
+      ],
+      "figures/30_four_cell_rearrangement.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 16
         }
       ],
       "figures/31_enclosure_and_adhesion.svg": [
@@ -2362,13 +2365,26 @@
           "note": "subcellular_cortex_and_flows",
           "figure": 34
         }
+      ],
+      "figures/40_closure_mechanical_history.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 34
+        }
+      ],
+      "figures/41_contact_maturation_loading.svg": [
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 33
+        }
       ]
     },
     "parameter_files": [
       "figures/epithelial_spatial_model_parameters.json",
       "figures/subcellular_model_parameters.json",
       "figures/morphogenesis_network_parameters.json"
-    ]
+    ],
+    "mechanism_synthesis_checks": "figures/mechanism_synthesis_parameters.json"
   },
   "external_movies": [
     {

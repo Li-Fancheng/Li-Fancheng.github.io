@@ -1,4 +1,4 @@
-> **Part III · Note 04**　[专题目录](/notes/vertex_model/) · 上一篇：[刚性转变](/notes/vertex_model/rigidity/)
+> **Part II · Note 04**　[专题目录](/notes/vertex_model/) · 上一篇：[几何不相容、预应力与刚性转变](/notes/vertex_model/rigidity/) · 下一篇：[组织流变与主动动力学](/notes/vertex_model/rheology_activity/)
 
 **物理问题：** 顶点连续移动到什么时候会改变邻接关系？一次邻居交换为什么可能产生不可逆形变？
 
@@ -124,7 +124,7 @@ $k$ 是每单位时间的事件率；$\Delta E$ 是势垒高度；$k_BT$ 是热�
 
 真实细胞经常通过持续收缩和黏附更新来换邻居，这些驱动消耗能量、有方向也有记忆。把上式用于细胞之前，需要先确认这种随机跨越的图像是否合适。后面的指数率计算用于说明势垒分布会带来什么后果；它不是默认胚胎的 T1 都由热运动触发。
 
-当驱动具有有限记忆时，涨落幅度和持续时间需要分别进入动力学；新接触是否保留旧张力也会影响事件。[Note 09](/notes/vertex_model/fluctuations/#nonmonotonic-fluidization)结合随机张力模型讨论这些因素怎样改变长期重排。
+当驱动具有有限记忆时，涨落幅度和持续时间需要分别进入动力学；新接触是否保留旧张力也会影响事件。[Note 06](/notes/vertex_model/fluctuations/#nonmonotonic-fluidization)结合随机张力模型讨论这些因素怎样改变长期重排。
 
 ### 3.1 为什么平均势垒不能直接代入指数
 
@@ -249,6 +249,22 @@ $$
 
 从一次 T1 到组织流动，中间有三步需要连起来：当前形状和内部张力决定哪些路径容易走；细胞驱动与运动阻力决定走得多快；事件的方向和相互影响决定最后释放多少应力。下一篇把这些变化与随时间测得的应力曲线联系起来。
 
+## 6. 同一个周期网络：让指定交界真正消失 {#unified-t1}
+
+延续 [Note 03 的 16 细胞网络](/notes/vertex_model/rigidity/#unified-case)，追踪同一顶点对 $(2,3)$。固定这条边的长度和方向，逐步缩短它；每一步重新松弛其他允许坐标。到零长度时切换邻接，再沿新边方向展开，并松弛到新拓扑中的局部极小值。周围细胞一直参与受力，不是只算独立的四个细胞。
+
+![同一周期网络中被追踪的交界、两种拓扑的松弛路径及路径势垒随目标周长的变化。](figures/unified_t1.svg)
+
+*图 8 · 从线性恢复力走向同一网络的有限形变。* A 标出细胞编号与选定交界；B 横轴正值表示旧边、负值表示新边，曲线沿从右向左的方向经过零长度；C 记录该路径相对初态的最高能量。两种拓扑在零边长处的能量差小于 $10^{-16}$，展开后的端点属于另一邻接关系。小于 $10^{-8}$ 的路径代价只标为数值未分辨。
+
+由于保留了指定边方向，这里算的是**受约束的局部松弛路径**。它提供这条具体路径的势垒，不能宣称已经找到全构型空间的最低鞍点；也没有允许其他边先交换、绕开当前反应坐标。这一限制与冻结所有周围顶点不同，后者还会额外限制内部松弛。
+
+路径势垒从 $p_0=3.65$ 的约 $0.01386$，下降到 $3.75$ 的约 $0.003934$、$3.79$ 的约 $0.000727$；在所测 $3.84,3.90$ 构型中已低于图示分辨率。各点沿用相同的初始拓扑与交界标签，但这个趋势只描述所选边与制备，不是全体边的势垒分布。
+
+现在可以把几个问题放在同一片组织上问：当前极小值有没有线性恢复力？沿这条有限路径需要爬多高？新拓扑的端点能量是否更低？它们分别对应 Hessian、路径最高点和端点差。即使最高点很低，跨越一次要等多久，也仍需要驱动、耗散和换接动力学。
+
+本例只计算 T1。分裂、细胞移除与参考结构更新造成的应力松弛，在 [Note 05](/notes/vertex_model/rheology_activity/#non-t1-remodelling)中单独比较，不能由这里的换边路径代替。
+
 ## 技术附录：从等待时间走向慢松弛 {#technical-appendices}
 
 ### A. 一个固定跃迁率对应什么时间分布
@@ -287,4 +303,4 @@ $$
 - [Merkel et al. (2017), Triangles bridge the scales: Quantifying cellular contributions to tissue deformation](https://doi.org/10.1103/PhysRevE.95.032401)：从细胞变化到组织形变的运动学分解。
 - [Barton et al. (2017), Active Vertex Model for cell-resolution description of epithelial tissue mechanics](https://doi.org/10.1371/journal.pcbi.1005569)：主动驱动与拓扑操作的模型实现。
 
-[← 几何刚性](/notes/vertex_model/rigidity/) · [下一篇：组织流变与主动动力学 →](/notes/vertex_model/rheology_activity/)
+[← 几何不相容、预应力与刚性转变](/notes/vertex_model/rigidity/) · [组织流变与主动动力学 →](/notes/vertex_model/rheology_activity/) · [返回专题目录](/notes/vertex_model/)

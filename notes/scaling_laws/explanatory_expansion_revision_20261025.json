@@ -1,0 +1,321 @@
+{
+  "date": "2026-10-25",
+  "stage": "Explanatory prose expansion of the new chapters",
+  "scope": "Expand current Notes 01 and 08, with shorter explanatory additions to the new coverage bridge in Note 04 and batch section in Note 07. No new paper or network training experiment.",
+  "articles": [
+    {
+      "slug": "empirical_origins",
+      "number": 1,
+      "chinese_before": 3021,
+      "chinese_after": 6455,
+      "baseline_math_preserved": 23,
+      "math_after": 36,
+      "body_sha256": "f343a2be6718e42ed7d45f9f9d8eaaa888374804f8316505ab4e353a6211b3e7"
+    },
+    {
+      "slug": "mechanism_synthesis",
+      "number": 8,
+      "chinese_before": 3465,
+      "chinese_after": 6885,
+      "baseline_math_preserved": 23,
+      "math_after": 38,
+      "body_sha256": "a06ba6c2db671ccf6214d9040c3262d9015cfa7d3dd70f51ad2f4af2bacad0eb"
+    },
+    {
+      "slug": "discrete_structure",
+      "number": 4,
+      "chinese_before": 8036,
+      "chinese_after": 8371,
+      "baseline_math_preserved": 150,
+      "math_after": 150,
+      "body_sha256": "3615ca4f34097d594eaa7e649947fc900693ab4394f5dcb6acfbab22fc7e08eb"
+    },
+    {
+      "slug": "compute_allocation",
+      "number": 7,
+      "chinese_before": 9744,
+      "chinese_after": 9970,
+      "baseline_math_preserved": 162,
+      "math_after": 164,
+      "body_sha256": "c5ed6665df0df8946c645c9d2784cd65a68fc78add94c463276d237e0b01e74e"
+    }
+  ],
+  "additions": {
+    "empirical_origins": [
+      "Axes, metrics and fixed conditions of a learning curve",
+      "Gibbs learning and predictive entropy in plain terms",
+      "Fixed complexity versus increasing resolution",
+      "Data-subset protocol, fixed models and composite envelopes",
+      "Numerical meaning of prefactor and exponent improvements",
+      "Coupled model/data bottlenecks and envelope regions",
+      "Compute tradeoffs, frontier versus trajectory, iso-budget comparisons",
+      "Protocol differences and limits of extrapolation"
+    ],
+    "mechanism_synthesis": [
+      "Error types behind the same average risk",
+      "Target weighting and genuinely independent prediction",
+      "Rate measure as an error inventory; two-rate example",
+      "Physical resource axes, sharing and effective clocks",
+      "Measurement uncertainty and prediction intervals",
+      "Three mechanisms yielding a half exponent",
+      "Crossed data/time interventions and controlled representations",
+      "What ER experiments do and do not rule out",
+      "Weighted local slope of positive error components",
+      "Concrete prediction-and-intervention research loop"
+    ]
+  },
+  "independent_numeric_checks": {
+    "constant_factor_data_ratio": 0.3276800000000001,
+    "exponent_advantage_at_10x": 0.7943282347242815,
+    "exponent_advantage_at_100x": 0.6309573444801932,
+    "two_rate_risk_at_10": 0.03689901294082225,
+    "equal_error_local_exponent": 0.6
+  },
+  "static_validation": {
+    "pages": [
+      {
+        "slug": "directory",
+        "math_expressions": 0,
+        "display_equations": 0,
+        "numbered_headings": 5,
+        "images": 0,
+        "bibliography_items": 0,
+        "internal_references": 24,
+        "chinese_characters": 1415,
+        "sha256": "fd3502642295fade24ce664a284a9de65c0113399352f2f515139430e80c8e94",
+        "old_formula_sequence_preserved": 0,
+        "old_explicit_anchors_preserved": 5
+      },
+      {
+        "slug": "empirical_origins",
+        "math_expressions": 36,
+        "display_equations": 7,
+        "numbered_headings": 22,
+        "images": 0,
+        "bibliography_items": 7,
+        "internal_references": 29,
+        "chinese_characters": 6455,
+        "sha256": "f343a2be6718e42ed7d45f9f9d8eaaa888374804f8316505ab4e353a6211b3e7",
+        "old_formula_sequence_preserved": 23,
+        "old_explicit_anchors_preserved": 18
+      },
+      {
+        "slug": "statistical_geometry",
+        "math_expressions": 310,
+        "display_equations": 44,
+        "numbered_headings": 38,
+        "images": 1,
+        "bibliography_items": 6,
+        "internal_references": 50,
+        "chinese_characters": 11915,
+        "sha256": "efb94c6325f604680b5305540efa8ed93cebabe8ba7814fcb2a4e518eecf0415"
+      },
+      {
+        "slug": "spectral_learning",
+        "math_expressions": 307,
+        "display_equations": 43,
+        "numbered_headings": 53,
+        "images": 4,
+        "bibliography_items": 6,
+        "internal_references": 59,
+        "chinese_characters": 12242,
+        "sha256": "6c9def47e01dad5777bd83151efc4dde112cdcc6881538b6f23deb5eb555fb4f"
+      },
+      {
+        "slug": "discrete_structure",
+        "math_expressions": 150,
+        "display_equations": 23,
+        "numbered_headings": 31,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 44,
+        "chinese_characters": 8371,
+        "sha256": "3615ca4f34097d594eaa7e649947fc900693ab4394f5dcb6acfbab22fc7e08eb",
+        "old_formula_sequence_preserved": 150,
+        "old_explicit_anchors_preserved": 31
+      },
+      {
+        "slug": "feature_learning",
+        "math_expressions": 137,
+        "display_equations": 23,
+        "numbered_headings": 28,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 40,
+        "chinese_characters": 7254,
+        "sha256": "f4027b27e82f50fca3866ea6432710996320331aba1572cef78762706dcf6254"
+      },
+      {
+        "slug": "graph_language",
+        "math_expressions": 109,
+        "display_equations": 17,
+        "numbered_headings": 29,
+        "images": 2,
+        "bibliography_items": 2,
+        "internal_references": 41,
+        "chinese_characters": 7512,
+        "sha256": "152120205755c42875201f90d186e589617d96c7471a09c4ca156a9d2ff9fd1f"
+      },
+      {
+        "slug": "compute_allocation",
+        "math_expressions": 164,
+        "display_equations": 29,
+        "numbered_headings": 38,
+        "images": 2,
+        "bibliography_items": 9,
+        "internal_references": 44,
+        "chinese_characters": 9970,
+        "sha256": "c5ed6665df0df8946c645c9d2784cd65a68fc78add94c463276d237e0b01e74e",
+        "old_formula_sequence_preserved": 162,
+        "old_explicit_anchors_preserved": 38
+      },
+      {
+        "slug": "mechanism_synthesis",
+        "math_expressions": 38,
+        "display_equations": 3,
+        "numbered_headings": 21,
+        "images": 0,
+        "bibliography_items": 7,
+        "internal_references": 29,
+        "chinese_characters": 6885,
+        "sha256": "a06ba6c2db671ccf6214d9040c3262d9015cfa7d3dd70f51ad2f4af2bacad0eb",
+        "old_formula_sequence_preserved": 23,
+        "old_explicit_anchors_preserved": 20
+      }
+    ],
+    "notes": 8,
+    "source_to_html_math": 1251,
+    "numbered_headings": 265,
+    "bibliography_items": 43,
+    "internal_references": 360,
+    "figures": 13,
+    "errors": []
+  },
+  "browser_validation": {
+    "cases": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 36,
+        "errors": 0,
+        "code": 0,
+        "headings": 22,
+        "slug": "empirical_origins",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 150,
+        "errors": 0,
+        "code": 0,
+        "headings": 31,
+        "slug": "discrete_structure",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 164,
+        "errors": 0,
+        "code": 0,
+        "headings": 38,
+        "slug": "compute_allocation",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 38,
+        "errors": 0,
+        "code": 0,
+        "headings": 21,
+        "slug": "mechanism_synthesis",
+        "status": 200,
+        "mixedFormulaSize": {
+          "width": 832,
+          "scrollWidth": 832
+        }
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 36,
+        "errors": 0,
+        "code": 0,
+        "headings": 22,
+        "slug": "empirical_origins",
+        "status": 200,
+        "tocHash": "#references"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 150,
+        "errors": 0,
+        "code": 0,
+        "headings": 31,
+        "slug": "discrete_structure",
+        "status": 200,
+        "tocHash": "#references"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 164,
+        "errors": 0,
+        "code": 0,
+        "headings": 38,
+        "slug": "compute_allocation",
+        "status": 200,
+        "tocHash": "#references"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 38,
+        "errors": 0,
+        "code": 0,
+        "headings": 21,
+        "slug": "mechanism_synthesis",
+        "status": 200,
+        "tocHash": "#references",
+        "mixedFormulaSize": {
+          "width": 342,
+          "scrollWidth": 342
+        }
+      }
+    ],
+    "viewports": [
+      1440,
+      390
+    ],
+    "all_series_katex_expressions_parsed": 1251,
+    "formula_errors": [],
+    "horizontal_overflow_cases": 0,
+    "visual_review": [
+      "Origin budget explanation on mobile",
+      "Same-exponent worked comparison on desktop",
+      "Mixed-risk effective slope on mobile"
+    ]
+  },
+  "preservation": {
+    "old_formulas_in_order": true,
+    "previous_anchors": true,
+    "reference_sections_and_reading_navigation": true,
+    "images": true,
+    "article_numbers": "01–08 unchanged"
+  },
+  "verified_primary_context": [
+    "https://arxiv.org/html/1712.00409v1#S3",
+    "https://arxiv.org/html/1909.12673v2#S5.SS2",
+    "https://arxiv.org/html/2203.15556v1",
+    "https://arxiv.org/html/2406.19146v4"
+  ],
+  "metadata": "Reading times and directory introductory path updated to the expanded prose.",
+  "file_hashes": {
+    "notes/scaling_laws/README.md": "c589f8512193957d3996b16b41df2f1ac316f7ac8aad65987ecda72b5370ff61",
+    "notes/scaling_laws/body.md": "fd3502642295fade24ce664a284a9de65c0113399352f2f515139430e80c8e94",
+    "notes/scaling_laws/series.json": "d06d9136e31b7b95197c609faf346ae318bf87d6e4a555fe7e4958363f79cea3"
+  }
+}

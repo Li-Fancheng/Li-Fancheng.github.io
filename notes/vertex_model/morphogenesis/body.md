@@ -1,4 +1,4 @@
-> **Part V · Note 07**　[专题目录](/notes/vertex_model/) · 上一篇：[几何推广](/notes/vertex_model/geometry_3d/)
+> **Part IV · Note 08**　[专题目录](/notes/vertex_model/) · 上一篇：[各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/)
 
 **物理问题：** 一个模型画出了像胚胎或类器官的形状，怎样进一步判断它是否保留了真实的力学机制？
 
@@ -117,7 +117,7 @@ $$
 | 腹沟形成 | 顶面面积、收缩后的回弹与内陷深度 | 脉冲、形变保留和面外自由度 |
 | 卵室延长 | 基底骨架、卵室宽度与长轴 | 顶基底差异、基质连接和曲面受力 |
 
-腹沟的脉冲与稳定机制见 [Note 05](/notes/vertex_model/rheology_activity/#fly-pulsed-constriction)，腹沟和卵室的空间几何见 [Note 06](/notes/vertex_model/geometry_3d/#fly-ventral-furrow)。这样比较以后，模型省略了哪一项就有具体含义：省略外部连接会漏掉蛹翅的边界作用，省略基底面会漏掉卵室中的施力位置，而只数 T1 又会漏掉没有换邻居的形变。
+腹沟的脉冲与稳定机制见 [Note 05](/notes/vertex_model/rheology_activity/#fly-pulsed-constriction)，腹沟和卵室的空间几何见 [Note 07](/notes/vertex_model/geometry_3d/#fly-ventral-furrow)。这样比较以后，模型省略了哪一项就有具体含义：省略外部连接会漏掉蛹翅的边界作用，省略基底面会漏掉卵室中的施力位置，而只数 T1 又会漏掉没有换邻居的形变。
 
 ## 3. 斑马鱼：同一个胚胎里，为什么需要几种组织物理 {#zebrafish}
 
@@ -258,9 +258,9 @@ $$
 
 ### 3.6 从力学再走回信号：模型必须允许双向反馈
 
-最后，界面与孔隙不只是决定材料响应。它们还决定形态素经过的细胞外通道。[Autorino 等（2026）](https://doi.org/10.1038/s41556-026-01954-4)把 Nodal 信号、接触重组和运输反馈联系起来，相关原图与守恒推导见 [Note 06](/notes/vertex_model/geometry_3d/#porosity-transport)。
+最后，界面与孔隙不只是决定材料响应。它们还决定形态素经过的细胞外通道。[Autorino 等（2026）](https://doi.org/10.1038/s41556-026-01954-4)把 Nodal 信号、接触重组和运输反馈联系起来，相关原图与守恒推导见 [Note 07](/notes/vertex_model/geometry_3d/#porosity-transport)。
 
-可以顺着变化的先后读这个反馈：信号改变细胞的界面作用，接触扩大或缩小，液体通道随之改变，分子运输和局部浓度也可能变化，最后影响细胞收到的信号。一次接触重组可能同时改变承力和运输，但要解释信号范围，仍要测量中间的通道、浓度与反应步骤。相关模型和视频放在 Note 06。
+可以顺着变化的先后读这个反馈：信号改变细胞的界面作用，接触扩大或缩小，液体通道随之改变，分子运输和局部浓度也可能变化，最后影响细胞收到的信号。一次接触重组可能同时改变承力和运输，但要解释信号范围，仍要测量中间的通道、浓度与反应步骤。相关模型和视频放在 Note 07。
 
 贯穿这几组斑马鱼实验的共同方法，是让**材料定义、测量协议与发育功能逐一对应**：先确定测到的是哪种响应，再找出能独立操纵的局部机制，最后检验该机制是否改变预测的流场、形态或信号范围。
 
@@ -441,4 +441,4 @@ $$
 - [Williams-Masson et al. (1997), An actin-mediated two-step mechanism is required for ventral enclosure of the C. elegans hypodermis](https://pubmed.ncbi.nlm.nih.gov/9247332/)。
 - [Lardennois et al. (2019), An actin-based viscoplastic lock ensures progressive body-axis elongation](https://doi.org/10.1038/s41586-019-1509-4)。
 
-[← 各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/) · [主动软物质的堆积与拓扑 →](/notes/vertex_model/active_packing/) · [返回专题目录](/notes/vertex_model/)
+[← 各向异性、曲面与三维组织](/notes/vertex_model/geometry_3d/) · [返回专题目录](/notes/vertex_model/)

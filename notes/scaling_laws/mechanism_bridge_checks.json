@@ -1,0 +1,97 @@
+{
+  "cumulative_measure_constant": [
+    {
+      "nu": 0.3,
+      "resource": 50.0,
+      "risk": 0.277542359350638,
+      "asymptote": 0.27754235935063815,
+      "relative_error": 5.551115123125783e-16
+    },
+    {
+      "nu": 0.5,
+      "resource": 50.0,
+      "risk": 0.12533141373155,
+      "asymptote": 0.12533141373155002,
+      "relative_error": 2.220446049250313e-16
+    },
+    {
+      "nu": 2.0,
+      "resource": 50.0,
+      "risk": 0.0007999999999999995,
+      "asymptote": 0.0008,
+      "relative_error": 6.661338147750939e-16
+    }
+  ],
+  "zipf_poisson_constant": [
+    {
+      "s": 1.6,
+      "D": 10000.0,
+      "skills": 1000000,
+      "finite_sum": 0.027762447853001422,
+      "infinite_asymptote": 0.02794560201171724,
+      "omitted_mass_upper_bound": 0.00018315426855462931,
+      "relative_error": 0.006553952877416114
+    },
+    {
+      "s": 2.0,
+      "D": 10000.0,
+      "skills": 1000000,
+      "finite_sum": 0.00690927506263005,
+      "infinite_asymptote": 0.006909882989426709,
+      "omitted_mass_upper_bound": 6.079271018540267e-07,
+      "relative_error": 8.797931854842567e-05
+    },
+    {
+      "s": 3.0,
+      "D": 10000.0,
+      "skills": 1000000,
+      "finite_sum": 0.0009145909390872179,
+      "infinite_asymptote": 0.0009145909395036837,
+      "omitted_mass_upper_bound": 4.1595368629035374e-13,
+      "relative_error": 4.5535741843849564e-10
+    }
+  ],
+  "fixed_count_rate_change_max_error": 1.1102230246251565e-16,
+  "two_evidence_negative_curvature": -0.026199384098495423,
+  "rosenfeld_envelope": {
+    "complex_vs_real_max_error": 3.3306690738754696e-16,
+    "internal_offset": 0.03,
+    "actual_floor": 0.03853605455296726,
+    "small_scale_limit": 0.9
+  },
+  "local_batch_quadratic": {
+    "noise_scale": 0.34823529411764703,
+    "enumerated_checks": [
+      {
+        "batch": 1,
+        "exact_expected_loss": 0.45462478184991273,
+        "formula_loss": 0.45462478184991284,
+        "predicted_improvement": 0.5453752181500874,
+        "max_error": 1.1102230246251565e-16
+      },
+      {
+        "batch": 2,
+        "exact_expected_loss": 0.37374749498997994,
+        "formula_loss": 0.37374749498998006,
+        "predicted_improvement": 0.62625250501002,
+        "max_error": 1.1102230246251565e-16
+      },
+      {
+        "batch": 4,
+        "exact_expected_loss": 0.3235930735930736,
+        "formula_loss": 0.32359307359307365,
+        "predicted_improvement": 0.6764069264069263,
+        "max_error": 5.551115123125783e-17
+      },
+      {
+        "batch": 8,
+        "exact_expected_loss": 0.29537767756482525,
+        "formula_loss": 0.29537767756482514,
+        "predicted_improvement": 0.7046223224351749,
+        "max_error": 1.1102230246251565e-16
+      }
+    ]
+  },
+  "scope": "Independent formula checks, not empirical-paper or neural-network training reproduction.",
+  "status": "passed"
+}

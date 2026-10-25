@@ -1,0 +1,827 @@
+{
+  "date": "2026-10-25",
+  "stage": "Empirical origin, cross-mechanism bridge and synthesis",
+  "scope": "Implements the supplied review priorities P0–P3 while retaining the relative order and URLs of Notes 01–06. Note 06 remains one article.",
+  "priorities": {
+    "P0": {
+      "article": "empirical_origins",
+      "reading_time_minutes": 15,
+      "focus": [
+        "Classical learning curves and their assumptions",
+        "Hestness: fixed-model versus composite curves and conditional exponent stability",
+        "Rosenfeld: joint risk surface and envelope",
+        "Kaplan/Chinchilla: compute frontiers, experimental protocol and three theoretical questions"
+      ]
+    },
+    "P1": {
+      "bridge": "discrete_structure#mixture-bridge",
+      "synthesis": "mechanism_synthesis",
+      "content": [
+        "Cumulative rate measure, integration by parts and Gamma constant",
+        "Zipf frequency measure and the coverage exponent with its leading constant",
+        "Different resource axes, fixed-count rate transformation, cutoff and evidence-threshold limits",
+        "Distinction between fitting an exponent, conditional mechanisms and predicting its origin"
+      ]
+    },
+    "P2": {
+      "comparison": "mechanism_synthesis#comparison",
+      "tables": [
+        "Mechanism, assumptions, exponent and unresolved microscopic quantities",
+        "Independent measurements and subsequent predictions"
+      ],
+      "interventions": [
+        "Training time versus new independent data",
+        "Target alignment and frozen versus adaptive representation",
+        "Controlled graph tests of necessary conditions"
+      ]
+    },
+    "P3": {
+      "graph_role": "Controlled mechanism test",
+      "directory": "Two reading paths, result navigation and 00–07 reading order",
+      "compute_note": "Added gradient-noise/batch section and fitting-reliability context; optimization and surface identification remain distinct",
+      "site_counts": "Eight scaling-law notes; eighteen notes in learning/generalization"
+    }
+  },
+  "articles": [
+    {
+      "number": 0,
+      "slug": "empirical_origins",
+      "title": "00 · 从学习曲线到 Neural Scaling Laws",
+      "subtitle": "经验发现、指数稳定性与理论问题",
+      "summary": "从经典学习曲线进入 Hestness 的组合曲线、Rosenfeld 的二维误差面和 Kaplan／Chinchilla 的计算前沿，明确幂律起源、指数稳定性与外推检验的问题。",
+      "chinese_characters": 3021,
+      "display_equations": 7,
+      "reading_time": 15
+    },
+    {
+      "number": 1,
+      "slug": "statistical_geometry",
+      "title": "01 · 统计估计与几何分辨率",
+      "subtitle": "从有限采样的波动到不断细化的函数结构",
+      "summary": "从统计波动与几何插值出发，用 teacher–student 回归和随机特征投影逐步解释表示平台、噪声、最优复杂度与四种标度区域，连接论文公式及数据—模型对偶。",
+      "chinese_characters": 11915,
+      "display_equations": 44,
+      "reading_time": 64
+    },
+    {
+      "number": 2,
+      "slug": "spectral_learning",
+      "title": "02 · 谱与学习分辨率",
+      "subtitle": "训练速率、目标尾部与有效模态的统一计算",
+      "summary": "由统一谱风险完整推导时间、数据和容量标度，保留目标对齐、噪声、正则化、谱截止与有限窗口。",
+      "chinese_characters": 12242,
+      "display_equations": 43,
+      "reading_time": 65
+    },
+    {
+      "number": 3,
+      "slug": "discrete_structure",
+      "title": "03 · 离散技能与长尾结构",
+      "subtitle": "随机覆盖、局部能力形成与组合共享",
+      "summary": "从技能尾部、有限覆盖与共享部件推导数据和容量指数，再联系谱松弛与 Poisson 覆盖的指数混合结构，保留速率含义和门槛差异。",
+      "chinese_characters": 8036,
+      "display_equations": 23,
+      "reading_time": 41
+    },
+    {
+      "number": 4,
+      "slug": "feature_learning",
+      "title": "04 · 特征学习与动态加速",
+      "subtitle": "初始核下的任务难度与自洽学习时钟",
+      "summary": "由两层参数化推导时变学习度量，解释困难任务的指数改善、有限模型瓶颈、SGD 暂态与计算配置。",
+      "chinese_characters": 7254,
+      "display_equations": 23,
+      "reading_time": 38
+    },
+    {
+      "number": 5,
+      "slug": "graph_language",
+      "title": "05 · 随机图与语言标度",
+      "subtitle": "从 ER 和 BA 游走到可控的序列学习",
+      "summary": "以 ER／BA 游走和已知熵率作为受控机制检验，区分概率估计、支撑学习与网络瓶颈，检查输入幂律是否为必要条件。",
+      "chinese_characters": 7512,
+      "display_equations": 17,
+      "reading_time": 36
+    },
+    {
+      "number": 6,
+      "slug": "compute_allocation",
+      "title": "06 · 计算配置与经验外推",
+      "subtitle": "风险曲面、损失底与预算约束下的选择",
+      "summary": "分别讨论已知风险面的预算优化与未知曲面的辨认，加入梯度噪声、batch 效率及拟合方法对配置结论的影响。",
+      "chinese_characters": 9744,
+      "display_equations": 29,
+      "reading_time": 50
+    },
+    {
+      "number": 7,
+      "slug": "mechanism_synthesis",
+      "title": "07 · 机制综合与开放问题",
+      "subtitle": "共同数学结构、独立预测与起源解释的边界",
+      "summary": "比较统计波动、几何分辨率、固定谱、技能覆盖与动态表示，区分曲线拟合、条件性机制与起源解释，列出独立观测、干预和开放问题。",
+      "chinese_characters": 3465,
+      "display_equations": 2,
+      "reading_time": 15
+    }
+  ],
+  "primary_sources": 25,
+  "new_primary_sources": [
+    "seung1992",
+    "amari1993",
+    "hestness2017",
+    "rosenfeld2019",
+    "mccandlish2018",
+    "li2025misfitting"
+  ],
+  "source_checks": {
+    "Rosenfeld": "Equation (5) rewritten as a real modulus; its true floor is distinct from the internal offset.",
+    "Hestness": "Within-study empirical stability is distinguished from a universal architecture-invariant exponent; fixed-model saturation and composite curves are retained.",
+    "Amari": "Predictive entropy and noiseless dichotomy assumptions are not substituted for arbitrary MSE or classification loss.",
+    "McCandlish": "Curvature-weighted noise scale and simpler proxy are distinguished; local SGD approximation is not an exact global optimizer rule.",
+    "MisFitting": "Verified title: (Mis)Fitting: A Survey of Scaling Laws; no unsupported conference venue is assigned.",
+    "exponential_mixture": "Applies to nonnegative decaying components with the stated measure assumptions; the spectral comparison is restricted to noiseless bias relaxation, and multi-evidence coverage needs a different filter."
+  },
+  "independent_formula_checks": {
+    "cumulative_measure_constant": [
+      {
+        "nu": 0.3,
+        "resource": 50.0,
+        "risk": 0.277542359350638,
+        "asymptote": 0.27754235935063815,
+        "relative_error": 5.551115123125783e-16
+      },
+      {
+        "nu": 0.5,
+        "resource": 50.0,
+        "risk": 0.12533141373155,
+        "asymptote": 0.12533141373155002,
+        "relative_error": 2.220446049250313e-16
+      },
+      {
+        "nu": 2.0,
+        "resource": 50.0,
+        "risk": 0.0007999999999999995,
+        "asymptote": 0.0008,
+        "relative_error": 6.661338147750939e-16
+      }
+    ],
+    "zipf_poisson_constant": [
+      {
+        "s": 1.6,
+        "D": 10000.0,
+        "skills": 1000000,
+        "finite_sum": 0.027762447853001422,
+        "infinite_asymptote": 0.02794560201171724,
+        "omitted_mass_upper_bound": 0.00018315426855462931,
+        "relative_error": 0.006553952877416114
+      },
+      {
+        "s": 2.0,
+        "D": 10000.0,
+        "skills": 1000000,
+        "finite_sum": 0.00690927506263005,
+        "infinite_asymptote": 0.006909882989426709,
+        "omitted_mass_upper_bound": 6.079271018540267e-07,
+        "relative_error": 8.797931854842567e-05
+      },
+      {
+        "s": 3.0,
+        "D": 10000.0,
+        "skills": 1000000,
+        "finite_sum": 0.0009145909390872179,
+        "infinite_asymptote": 0.0009145909395036837,
+        "omitted_mass_upper_bound": 4.1595368629035374e-13,
+        "relative_error": 4.5535741843849564e-10
+      }
+    ],
+    "fixed_count_rate_change_max_error": 1.1102230246251565e-16,
+    "two_evidence_negative_curvature": -0.026199384098495423,
+    "rosenfeld_envelope": {
+      "complex_vs_real_max_error": 3.3306690738754696e-16,
+      "internal_offset": 0.03,
+      "actual_floor": 0.03853605455296726,
+      "small_scale_limit": 0.9
+    },
+    "local_batch_quadratic": {
+      "noise_scale": 0.34823529411764703,
+      "enumerated_checks": [
+        {
+          "batch": 1,
+          "exact_expected_loss": 0.45462478184991273,
+          "formula_loss": 0.45462478184991284,
+          "predicted_improvement": 0.5453752181500874,
+          "max_error": 1.1102230246251565e-16
+        },
+        {
+          "batch": 2,
+          "exact_expected_loss": 0.37374749498997994,
+          "formula_loss": 0.37374749498998006,
+          "predicted_improvement": 0.62625250501002,
+          "max_error": 1.1102230246251565e-16
+        },
+        {
+          "batch": 4,
+          "exact_expected_loss": 0.3235930735930736,
+          "formula_loss": 0.32359307359307365,
+          "predicted_improvement": 0.6764069264069263,
+          "max_error": 5.551115123125783e-17
+        },
+        {
+          "batch": 8,
+          "exact_expected_loss": 0.29537767756482525,
+          "formula_loss": 0.29537767756482514,
+          "predicted_improvement": 0.7046223224351749,
+          "max_error": 1.1102230246251565e-16
+        }
+      ]
+    },
+    "scope": "Independent formula checks, not empirical-paper or neural-network training reproduction.",
+    "status": "passed"
+  },
+  "static_validation": {
+    "pages": [
+      {
+        "slug": "directory",
+        "math_expressions": 0,
+        "display_equations": 0,
+        "numbered_headings": 5,
+        "images": 0,
+        "bibliography_items": 0,
+        "internal_references": 24,
+        "chinese_characters": 1417,
+        "sha256": "b4e4f4dbb62da01e2157b331f4b7a600b3b1ce11cc5d3a5ad7b539b0ef6fdf4c",
+        "old_formula_sequence_preserved": 0,
+        "old_explicit_anchors_preserved": 5
+      },
+      {
+        "slug": "empirical_origins",
+        "math_expressions": 23,
+        "display_equations": 7,
+        "numbered_headings": 18,
+        "images": 0,
+        "bibliography_items": 7,
+        "internal_references": 25,
+        "chinese_characters": 3021,
+        "sha256": "cf8dc85dd36ca716fdea96bbe70eda81e19e1ff857cfb5d5b2e6ecca37143cd7"
+      },
+      {
+        "slug": "statistical_geometry",
+        "math_expressions": 310,
+        "display_equations": 44,
+        "numbered_headings": 38,
+        "images": 1,
+        "bibliography_items": 6,
+        "internal_references": 50,
+        "chinese_characters": 11915,
+        "sha256": "889faa450d4470cb83e0b6786120013365ccb696d528d96a6e61b6f95376752f",
+        "old_formula_sequence_preserved": 310,
+        "old_explicit_anchors_preserved": 38
+      },
+      {
+        "slug": "spectral_learning",
+        "math_expressions": 307,
+        "display_equations": 43,
+        "numbered_headings": 53,
+        "images": 4,
+        "bibliography_items": 6,
+        "internal_references": 59,
+        "chinese_characters": 12242,
+        "sha256": "fe1d45bfdfb87f92becaa0a7facf691125fee26a74f2a33600c3adf9bcd557cd",
+        "old_formula_sequence_preserved": 307,
+        "old_explicit_anchors_preserved": 54
+      },
+      {
+        "slug": "discrete_structure",
+        "math_expressions": 150,
+        "display_equations": 23,
+        "numbered_headings": 31,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 44,
+        "chinese_characters": 8036,
+        "sha256": "08fe726a48df5c8e3d81ff80c2b42d348d1e779dc78bdbe7f8118f79569a1d53",
+        "old_formula_sequence_preserved": 126,
+        "old_explicit_anchors_preserved": 27
+      },
+      {
+        "slug": "feature_learning",
+        "math_expressions": 137,
+        "display_equations": 23,
+        "numbered_headings": 28,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 40,
+        "chinese_characters": 7254,
+        "sha256": "f66e3259eb0ab41cd40f3b45b6d80ba4dcdc228ade6e5847d5d1d16fd8e317ec",
+        "old_formula_sequence_preserved": 137,
+        "old_explicit_anchors_preserved": 28
+      },
+      {
+        "slug": "graph_language",
+        "math_expressions": 109,
+        "display_equations": 17,
+        "numbered_headings": 29,
+        "images": 2,
+        "bibliography_items": 2,
+        "internal_references": 41,
+        "chinese_characters": 7512,
+        "sha256": "2354aee8820a78ddd05e0c3276e7d1ee6e8a5f033ab60620492d4d3fe3e0ac68",
+        "old_formula_sequence_preserved": 109,
+        "old_explicit_anchors_preserved": 29
+      },
+      {
+        "slug": "compute_allocation",
+        "math_expressions": 162,
+        "display_equations": 29,
+        "numbered_headings": 38,
+        "images": 2,
+        "bibliography_items": 9,
+        "internal_references": 44,
+        "chinese_characters": 9744,
+        "sha256": "bd32841747703e94637ad9d9d61837641216d3dad9fbb3d7e9dcac2301ccf165",
+        "old_formula_sequence_preserved": 151,
+        "old_explicit_anchors_preserved": 37
+      },
+      {
+        "slug": "mechanism_synthesis",
+        "math_expressions": 23,
+        "display_equations": 2,
+        "numbered_headings": 20,
+        "images": 0,
+        "bibliography_items": 7,
+        "internal_references": 28,
+        "chinese_characters": 3465,
+        "sha256": "cf53d18d992ed551687e05907c38553b8b84eb4a732d654984b2c02c9c0fda4d"
+      }
+    ],
+    "notes": 8,
+    "source_to_html_math": 1221,
+    "numbered_headings": 260,
+    "bibliography_items": 43,
+    "internal_references": 355,
+    "figures": 13,
+    "errors": []
+  },
+  "browser_validation": {
+    "article_and_directory_cases": 18,
+    "viewports": [
+      1440,
+      390
+    ],
+    "all_source_katex_expressions_checked": 1221,
+    "formula_errors": [],
+    "horizontal_overflow_cases": 0,
+    "mobile_reference_toc_cases": 8,
+    "next_article_links_followed": 14,
+    "cases": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 0,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 5,
+        "bib": 0,
+        "images": [],
+        "slug": "directory",
+        "status": 200,
+        "directoryArticleTitles": []
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 23,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 18,
+        "bib": 7,
+        "images": [],
+        "slug": "empirical_origins",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/statistical_geometry/",
+        "nextPath": "/notes/scaling_laws/statistical_geometry/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 310,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 38,
+        "bib": 6,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "statistical_geometry",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/spectral_learning/",
+        "nextPath": "/notes/scaling_laws/spectral_learning/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 307,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 53,
+        "bib": 6,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "spectral_learning",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/discrete_structure/",
+        "nextPath": "/notes/scaling_laws/discrete_structure/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 150,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 31,
+        "bib": 3,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "discrete_structure",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/feature_learning/",
+        "nextPath": "/notes/scaling_laws/feature_learning/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 137,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 28,
+        "bib": 3,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "feature_learning",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/graph_language/",
+        "nextPath": "/notes/scaling_laws/graph_language/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 109,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 29,
+        "bib": 2,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "graph_language",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/compute_allocation/",
+        "nextPath": "/notes/scaling_laws/compute_allocation/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 162,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 38,
+        "bib": 9,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "compute_allocation",
+        "status": 200,
+        "nextHref": "/notes/scaling_laws/mechanism_synthesis/",
+        "nextPath": "/notes/scaling_laws/mechanism_synthesis/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 23,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 20,
+        "bib": 7,
+        "images": [],
+        "slug": "mechanism_synthesis",
+        "status": 200
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 0,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 5,
+        "bib": 0,
+        "images": [],
+        "slug": "directory",
+        "status": 200,
+        "directoryArticleTitles": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 23,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 18,
+        "bib": 7,
+        "images": [],
+        "slug": "empirical_origins",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/statistical_geometry/",
+        "nextPath": "/notes/scaling_laws/statistical_geometry/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 310,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 38,
+        "bib": 6,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "statistical_geometry",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/spectral_learning/",
+        "nextPath": "/notes/scaling_laws/spectral_learning/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 307,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 53,
+        "bib": 6,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "spectral_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/discrete_structure/",
+        "nextPath": "/notes/scaling_laws/discrete_structure/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 150,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 31,
+        "bib": 3,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "discrete_structure",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/feature_learning/",
+        "nextPath": "/notes/scaling_laws/feature_learning/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 137,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 28,
+        "bib": 3,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "feature_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/graph_language/",
+        "nextPath": "/notes/scaling_laws/graph_language/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 109,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 29,
+        "bib": 2,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "graph_language",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/compute_allocation/",
+        "nextPath": "/notes/scaling_laws/compute_allocation/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 162,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 38,
+        "bib": 9,
+        "images": [
+          {
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "slug": "compute_allocation",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references",
+        "nextHref": "/notes/scaling_laws/mechanism_synthesis/",
+        "nextPath": "/notes/scaling_laws/mechanism_synthesis/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 23,
+        "mathErrors": 0,
+        "code": 0,
+        "headings": 20,
+        "bib": 7,
+        "images": [],
+        "slug": "mechanism_synthesis",
+        "status": 200,
+        "mobileTocOpened": true,
+        "mobileTocReferenceHash": "#references"
+      }
+    ],
+    "directory_order_and_table_scroll": {
+      "directoryCases": [
+        {
+          "width": 1440,
+          "directoryOrder": [
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07"
+          ]
+        },
+        {
+          "width": 390,
+          "directoryOrder": [
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07"
+          ]
+        }
+      ],
+      "mobileTable": {
+        "initial": {
+          "width": 342,
+          "scrollWidth": 1194
+        },
+        "end": {
+          "scrollLeft": 852,
+          "width": 342,
+          "scrollWidth": 1194
+        }
+      },
+      "horizontalOverflow": false,
+      "latestQualifierRendered": true
+    },
+    "visual_review": [
+      "00 mobile Rosenfeld explanation and formula",
+      "07 desktop comparison tables",
+      "07 mobile table before and after horizontal scrolling",
+      "03 mobile cumulative measure derivation",
+      "06 mobile local batch formulas",
+      "Directory mobile reading paths"
+    ]
+  },
+  "preservation": {
+    "all_previous_article_formulas_preserved_in_order": true,
+    "all_previous_explicit_heading_and_alias_anchors_preserved": true,
+    "all_previous_figure_links_preserved": true,
+    "existing_13_figures_unchanged": true,
+    "previous_reports_retained": true
+  },
+  "file_hashes": {
+    "notes/scaling_laws/body.md": "b4e4f4dbb62da01e2157b331f4b7a600b3b1ce11cc5d3a5ad7b539b0ef6fdf4c",
+    "notes/scaling_laws/series.json": "3da7ba3302ebbcee0c2a5dfdd7bf2ecab9d49f5af6f175f28abf4a01a8720924",
+    "notes/scaling_laws/sources.json": "7e6a1516a47fd678d7ff1e1f7a1dbf390a074552984b4883884fd3b55f1ade36",
+    "notes/scaling_laws/README.md": "1fcd1877dca5142f8e76f332e584f91dda6e7f7105d59708542b2591d090d97a",
+    "notes/scaling_laws/mechanism_bridge_checks.py": "0e37239b53562010145d6117bcdf0462d7900d28031c7b5c6950aa409672bbac",
+    "notes/scaling_laws/mechanism_bridge_checks.json": "b49d0e84cbce21889adb1a9f05fd76106ebde779ab5828c2f66d6bdd65bc3f8b",
+    "assets/css/custom.css": "8bc29951d3214baa2faeca0b50c8194a0f6f9525185973b20fddcf5cc91d36df",
+    "notes/neural_network_theory/body.md": "ecea62a71da7cb844a8de1240d27e82511491e27d2e9d8a9eec66ea4db0d7fd9",
+    "notes/neural_network_theory/README.md": "987cb48e05ab6c30d4c197d611111e08f59165bf7a9c59bdcc5093dcc6026f6c"
+  },
+  "validation_scope": "Local Hugo build, real-browser rendering and independent low-dimensional formula checks. No neural-network training or reproduction of paper training experiments."
+}

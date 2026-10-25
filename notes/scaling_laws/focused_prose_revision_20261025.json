@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-25",
+  "stage": "Focused prose revision",
+  "scope": "Six articles and directory: remove publication chronology from the explanatory body and trim writing previews, self-description and redundant statements of purpose. Technical explanations and assumptions remain. Bibliography metadata stays in reference sections.",
+  "validation": {
+    "pages": [
+      {
+        "slug": "directory",
+        "math_expressions": 0,
+        "headings": 5,
+        "images": 0,
+        "internal_references": 11,
+        "chinese_before": 1470,
+        "chinese_after": 1326,
+        "source_sha256": "133169e6883552cb5ba21d55625f0ef76de54f62aab97f21bb7b801606779fed",
+        "baseline_sha256": "21ff2781847a48c4e598bea4057c51fa8366e8d61ab5a84b24c2148ad21b3e5c"
+      },
+      {
+        "slug": "statistical_geometry",
+        "math_expressions": 310,
+        "headings": 38,
+        "images": 1,
+        "internal_references": 48,
+        "chinese_before": 12100,
+        "chinese_after": 11897,
+        "source_sha256": "c9c3f902b616694410ba5ee7a2668a9abe2ba444e03d42fa1376a9eacd227351",
+        "baseline_sha256": "ba4548f563a8f51fe24de49604ed09cde53616cad65cacc1bc1a97e266fb56ff"
+      },
+      {
+        "slug": "spectral_learning",
+        "math_expressions": 307,
+        "headings": 53,
+        "images": 4,
+        "internal_references": 59,
+        "chinese_before": 12392,
+        "chinese_after": 12242,
+        "source_sha256": "fe1d45bfdfb87f92becaa0a7facf691125fee26a74f2a33600c3adf9bcd557cd",
+        "baseline_sha256": "64e20b334ea390b327c44fea6b6444fd88c510c3f4ce7167588271a2f88c4f40"
+      },
+      {
+        "slug": "discrete_structure",
+        "math_expressions": 126,
+        "headings": 27,
+        "images": 2,
+        "internal_references": 39,
+        "chinese_before": 7414,
+        "chinese_after": 7299,
+        "source_sha256": "72badff5ecd2b208f0782dd5abdfaf7ecb445b97fe29dca232ba3e3b001d8629",
+        "baseline_sha256": "d67f4e3a6d3c41ab4a34c5e51675d82a608d7cc075137a0961397e08f8739ea3"
+      },
+      {
+        "slug": "feature_learning",
+        "math_expressions": 137,
+        "headings": 28,
+        "images": 2,
+        "internal_references": 40,
+        "chinese_before": 7455,
+        "chinese_after": 7254,
+        "source_sha256": "f66e3259eb0ab41cd40f3b45b6d80ba4dcdc228ade6e5847d5d1d16fd8e317ec",
+        "baseline_sha256": "c855048e87913fe42a008781553aa5b58beb9bc0ab770bd209892095eda07c6e"
+      },
+      {
+        "slug": "graph_language",
+        "math_expressions": 109,
+        "headings": 29,
+        "images": 2,
+        "internal_references": 41,
+        "chinese_before": 7508,
+        "chinese_after": 7458,
+        "source_sha256": "9ddd47b595fab21e4a970bed24cc893f78c6521d3267308705e3ef5ec1ea2551",
+        "baseline_sha256": "8c676cf2387d1fc1fdc481fb0ff0c67c1facedfc0444a9fc6c18851b7ebcd3ea"
+      },
+      {
+        "slug": "compute_allocation",
+        "math_expressions": 151,
+        "headings": 37,
+        "images": 2,
+        "internal_references": 41,
+        "chinese_before": 9304,
+        "chinese_after": 9218,
+        "source_sha256": "33802d5e532377627c6150f689270db29e1bf2971e2970af686c90c91ecaca96",
+        "baseline_sha256": "c99b3ab74c8337a0086e327fb79c3ee298dbc3e01ad2ec7bb52cd4e4684d4e1b"
+      }
+    ],
+    "formula_sequences_unchanged": true,
+    "headings_and_anchors_unchanged": true,
+    "figures_unchanged": true,
+    "bibliographies_and_reading_navigation_unchanged": true,
+    "source_to_html_math": 1140,
+    "internal_references": 279,
+    "errors": []
+  },
+  "changes": [
+    {
+      "slug": "directory",
+      "removed": "这个专题整理这些机制的模型、推导、直观例子与文献联系。",
+      "replacement": ""
+    },
+    {
+      "slug": "directory",
+      "removed": "我关心的不只是指数是多少，还包括指数对应什么观测量、哪些资源被固定、何种结构正在被学会，以及换一个训练协议以后预测是否仍然成立。各篇从具体问题出发，展开符号、推导、算例和适用范围；正文各级标题编号，篇末列出所用文献及继续阅读的路径。",
+      "replacement": "指数对应的观测量、固定的资源、正在学习的结构和训练协议，都会影响标度关系及其外推范围。"
+    },
+    {
+      "slug": "directory",
+      "removed": "各篇末尾列出直接使用的参考文献及其对应内容；来源总表保留初稿、发表年份和修订信息。十三张图包括原有计算图与三个新增算例，均注明模型和观测量。补充材料包含正文、图、计算记录与核对结果。",
+      "replacement": "补充材料包含正文、十三张计算图、文献来源总表、计算记录与核对结果。"
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "论文初稿发表于 2021 年，期刊版发表于 [PNAS 2024](https://doi.org/10.1073/pnas.2311878121)。这个分类先帮助我们确定误差的来源，再讨论相应的指数。",
+      "replacement": ""
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "要把这种区别算清楚，最好先知道真实规律是什么。后面的 teacher–student 模型固定一个教师来生成标签，再分别限制学生能用的特征和它见到的样本。学生装不下教师、样本不够、标签有噪声，会留下不同的误差；其中一些随数据消失，另一些只会在扩大表示以后消失。均值估计与地图插值提供直觉，这个模型则让直觉中的每项误差有一个明确位置。",
+      "replacement": "Teacher–student 模型固定一个教师来生成标签，再分别限制学生能用的特征和它见到的样本。学生装不下教师、样本不够、标签有噪声，会留下不同的误差；其中一些随数据消失，另一些只会在扩大表示以后消失。"
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "这两个方框表达式把“地图”和“测量”连接到同一个模型：一个问学生缺哪些表达方向，另一个问有限例题还没有约束哪些方向。它们在有限规模上已经有意义，幂律则需要进一步规定这些遗漏方向的能量怎样分布。这里先取有限 $S$ 是为了清楚展示矩阵；若学生和训练数据最终覆盖全部 $S$ 个独立方向，无噪声风险可以直接归零。持续的幂律需要足够长的结构尾部，并且测量区间尚未触及这个有限秩截止。",
+      "replacement": "无限数据风险来自学生缺失的表示方向，全特征风险来自有限样本尚未约束的方向。遗漏方向的能量分布决定风险是否呈现幂律。若学生和训练数据最终覆盖全部 $S$ 个独立方向，无噪声风险可以直接归零；有限 $S$ 下，持续的幂律要求测量区间尚未触及有限秩截止。"
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "这是读四种曲线时最容易漏掉的区别。",
+      "replacement": ""
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "这一步是本文的理想截断推导。",
+      "replacement": "这一推导假定按目标能量截断。"
+    },
+    {
+      "slug": "statistical_geometry",
+      "removed": "这一问题在后面的谱与特征学习两篇中继续讨论。",
+      "replacement": ""
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "下面的公式会将这两份信息分别保留。",
+      "replacement": ""
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "我们先固定这组坐标，算清各条资源轴的作用；训练中表示本身的变化，接着在[特征学习一篇](/notes/scaling_laws/feature_learning/)讨论。",
+      "replacement": "固定坐标下，三种资源分别限制模态的恢复、估计和表示；[特征学习](/notes/scaling_laws/feature_learning/)还允许这些坐标及学习速率随训练变化。"
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "统一坐标系的意义，是让这些差异能够被逐项比较，而不是让三种资源变成同一件事。",
+      "replacement": ""
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "因此以下各节都先说明观测量，再比较它的标度。",
+      "replacement": ""
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "训练时间首先是一个动力学变量。下面从固定特征或冻结核出发；",
+      "replacement": "固定特征或冻结核时，训练时间通过各模态的松弛速率进入风险；"
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "这比仅仅发现一段近似幂律更有区分力，因为它关注模型能否解释整段演化的形状。",
+      "replacement": ""
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "后面的随机图实验尤其提醒我们：",
+      "replacement": "随机图实验中，"
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "[2020 年的逐模态核学习曲线](https://proceedings.mlr.press/v119/bordelon20a.html)与 [2021 年发表的任务—模型对齐研究](https://www.nature.com/articles/s41467-021-23103-1)共同追踪核与目标；[Maloney 等的可解模型](https://arxiv.org/abs/2210.16859)又联合规定数据生成与随机特征，计算模型和数据两种限制。每一步都在补全从指定谱到测试风险所需的假设。",
+      "replacement": "[Bordelon 等的核学习曲线](https://proceedings.mlr.press/v119/bordelon20a.html)与 [Canatar 等的任务—模型对齐研究](https://www.nature.com/articles/s41467-021-23103-1)同时保留核谱与目标投影；[Maloney 等的可解模型](https://arxiv.org/abs/2210.16859)联合规定数据生成与随机特征，计算模型和数据两种限制。"
+    },
+    {
+      "slug": "spectral_learning",
+      "removed": "后续研究也开始直接分析训练以后形成的权重谱。[Defilippis 等，Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](https://arxiv.org/abs/2509.24882)于 2025 年提出、2026 年修订，在二次和对角网络中连接正则化、风险区域与学得的谱。",
+      "replacement": "[Defilippis 等](https://arxiv.org/abs/2509.24882)研究训练以后形成的权重谱，在二次和对角网络中连接正则化、风险区域与学得的谱。"
+    },
+    {
+      "slug": "discrete_structure",
+      "removed": "先从一个容易计算的情况出发：每个样本只需要一种技能，技能之间互不帮助，学会以后便能消除对应的误差。频率、学习成本和样本门槛怎样进入指数，在这个模型里都能单独追踪。随后再放开独立性，考察共享规则和组合依赖会怎样改变结果。这样也便于判断，哪些结论来自长尾，哪些其实来自对技能结构的假设。",
+      "replacement": "独立技能模型假定每个样本只需要一种技能，技能之间互不帮助，学会以后便能消除对应的误差。技能频率、学习成本和样本门槛分别控制覆盖、容量和形成次序。若技能共享部件，或依赖其他技能先形成，这些关系也会改变。"
+    },
+    {
+      "slug": "discrete_structure",
+      "removed": "本例采用的是特意规定的可加风险，目的是读清每项权重，而不是声称真实语言模型恰好按三项知识分区。",
+      "replacement": "本例假定三项风险可加；真实语言模型中的任务可能共享技能，不能直接沿用这种分区。"
+    },
+    {
+      "slug": "discrete_structure",
+      "removed": "因此，下面把技能频率、形成门槛和参数代价分别写出。这样，某条曲线偏离简单长尾预测时，能够具体检查是哪一项假设出了问题，而不必立刻给失败样本再增加一个技能名字。",
+      "replacement": "技能频率相同，形成门槛和参数代价仍可能不同；曲线偏离长尾预测时，这三项假设需要分别检验。"
+    },
+    {
+      "slug": "discrete_structure",
+      "removed": "这里的模型指数为 $a$。但真正关键的假设是 $m\\propto N$，而不是最后的积分。",
+      "replacement": "模型指数为 $a$ 依赖 $m\\propto N$。"
+    },
+    {
+      "slug": "discrete_structure",
+      "removed": "一次出现可能只给出含混线索，多次互补的情境才足以辨认规则。所以下面的计算将样本门槛单独列出，而不把“见过”直接等同于“掌握”。",
+      "replacement": "一次出现可能只给出含混线索，多次互补的情境才足以辨认规则；出现一次即掌握只是特殊情形。"
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "还有一个容易忽略的情况：两种模型能表示的函数完全相同，仅仅因为参数化不同，梯度下降也会走出不同轨迹。后面从一个两层因子模型开始计算这种差异。先把表达能力固定，才能看清训练过程中改变更新方向和速度，本身能够带来多少收益。",
+      "replacement": "两种模型能表示的函数完全相同，仅仅因为参数化不同，梯度下降也会走出不同轨迹。在同一函数空间内，更新方向和速度的变化仍可能缩短训练时间。"
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "[Bordelon 等的特征学习模型](https://arxiv.org/abs/2409.17858)于 2024 年提出、在 ICLR 2025 发表。论文按目标相对于初始核的难度，分析特征变化何时改善时间和计算指数。下面从两层因子模型开始，计算更新隐藏表示怎样改变函数的运动，再进入论文的渐近结果。",
+      "replacement": "[Bordelon 等的特征学习模型](https://arxiv.org/abs/2409.17858)按目标相对于初始核的难度，分析特征变化何时改善时间和计算指数。"
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "下面的渐近计算只保留难方向残差与核增长之间的反馈；新函数方向的形成不在这个模型之内。",
+      "replacement": "该模型中的反馈发生在难方向残差与核增长之间，不生成固定投影以外的新函数方向。"
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "这个简单推导把后面的比较放在同一基线上：特征学习是否让可解析模态边界增长得更快？\n\n",
+      "replacement": ""
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "这是资源轴之间的一次明确换算。",
+      "replacement": ""
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "前面解析例子的作用，是把这些前提放在可以逐项检查的位置。",
+      "replacement": ""
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "[Bordelon、Atanasov 与 Pehlevan](https://arxiv.org/abs/2409.17858)于 2024 年提出、在 ICLR 2025 发表的模型，具体计算了目标难度如何影响动态加速。",
+      "replacement": "[Bordelon、Atanasov 与 Pehlevan 的模型](https://arxiv.org/abs/2409.17858)计算了目标难度如何影响动态加速。"
+    },
+    {
+      "slug": "feature_learning",
+      "removed": "另一条进展来自 [Defilippis 等关于浅层网络的研究](https://arxiv.org/html/2509.24882v3)。其 2026 年修订版把二次、对角网络与矩阵压缩感知、LASSO 联系起来，分析全局最优解的风险区域和权重谱。",
+      "replacement": "[Defilippis 等关于浅层网络的研究](https://arxiv.org/html/2509.24882v3)把二次、对角网络与矩阵压缩感知、LASSO 联系起来，分析全局最优解的风险区域和权重谱。"
+    },
+    {
+      "slug": "graph_language",
+      "removed": "于 2026 年比较了 ER 图、BA 图、语言 bigram 和简化生成语言。",
+      "replacement": "比较了 ER 图、BA 图、语言 bigram 和简化生成语言。"
+    },
+    {
+      "slug": "graph_language",
+      "removed": "问题于是更具体了：已知概率表的估计，本来就有随样本量改善的统计误差；有限网络还要用共享参数表示这张表，并通过训练找到它。下面先算清计数器的基线，再看神经模型比这个基线多了哪些限制。只有这样，才能判断图数据上的幂律究竟解释到了哪一步。",
+      "replacement": "估计转移概率表会留下随样本量改善的统计误差；有限网络还要用共享参数表示这张表，并通过训练找到它。计数器的误差可作为基线，进一步区分概率估计、表示压缩与网络优化的限制。"
+    },
+    {
+      "slug": "graph_language",
+      "removed": "下面讨论连通且具有适当遍历性的图；孤立节点、断开分量或周期性需要单独规定采样方式。",
+      "replacement": "这些平稳采样公式假定图连通且具有适当遍历性；孤立节点、断开分量或周期性需要单独规定采样方式。"
+    },
+    {
+      "slug": "graph_language",
+      "removed": "后面的交叉熵分解会把这两种误差分别算出来。",
+      "replacement": ""
+    },
+    {
+      "slug": "compute_allocation",
+      "removed": "这一篇先在已知风险和成本的模型中计算最优配置，再回到经验拟合。讨论数据回用时，还要分清新增独立样本和多读一轮旧数据：两者都增加训练 token，带来的统计信息却不同。参数数、数据量与更新步数各自怎样计入预算，会直接影响最后得到的计算指数。",
+      "replacement": "新增独立样本和多读一轮旧数据都增加训练 token，带来的统计信息却不同。参数数、数据量与更新步数各自怎样计入预算，会直接影响计算指数。"
+    },
+    {
+      "slug": "compute_allocation",
+      "removed": "下面先完整求解可分双幂律，再与谱模型中的耦合风险作比较。",
+      "replacement": ""
+    },
+    {
+      "slug": "compute_allocation",
+      "removed": "本篇大部分推导把一次预训练作为成本对象。部署后，同一个模型可能被调用很多次，生成更多候选、进行搜索或使用验证器都会增加每次请求的成本。",
+      "replacement": "一次预训练成本之外，同一个模型可能被调用很多次；生成更多候选、进行搜索或使用验证器，都会增加每次请求的成本。"
+    }
+  ],
+  "file_hashes": {
+    "notes/scaling_laws/README.md": "768aafe53c53252f87bfd89468391248a315865b3fef947592df2e88b7e83fff",
+    "notes/scaling_laws/series.json": "4a80d0a3b06450e87b00f14a6f585bfef14a1edeb7488cae0aeaba2c4ad6984a"
+  },
+  "hugo_build": "passed",
+  "browser_validation": "Not repeated for this text-only revision; source-to-HTML math, all internal references and structural invariants were checked."
+}

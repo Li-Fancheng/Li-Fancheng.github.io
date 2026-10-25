@@ -12,6 +12,7 @@
 </div>
 
 {{- /* A theory series follows reading order rather than publication date. */ -}}
+{{ if ne .Params.show_article_cards false }}
 {{ $view := .Params.view | default "article-grid" }}
 <div class="flex flex-col items-center">
   {{ partial "functions/render_view" (dict "fragment" "start" "page" . "item" . "view" $view) }}
@@ -20,4 +21,5 @@
   {{ end }}
   {{ partial "functions/render_view" (dict "fragment" "end" "page" . "item" . "view" $view) }}
 </div>
+{{ end }}
 {{ end }}

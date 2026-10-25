@@ -1,6 +1,6 @@
 {
   "reviewed_on": "2026-10-25",
-  "scope": "Five substantial reviews connecting hierarchical generative data, statistical learning, parsing, generation and multilingual representation geometry.",
+  "scope": "RHM and related statistical learning, inference, parsing and shared-representation theories, organized around effective states; includes a selective bridge to natural-language scaling and Transformer parsing computation.",
   "references": [
     {
       "question": "层级生成与可学习性的早期形式化",
@@ -246,6 +246,74 @@
       "role": "用正交最小二乘映射比较表示坐标及留出迁移",
       "coverage": [
         "shared_representations/#允许一次对齐后应该测量什么"
+      ]
+    },
+    {
+      "question": "真实语言统计与数据标度",
+      "title": "Deriving Neural Scaling Laws from the Statistics of Natural Language",
+      "authors": [
+        "Francesco Cagnetta",
+        "Allan Raventós",
+        "Surya Ganguli",
+        "Matthieu Wyart"
+      ],
+      "url": "https://proceedings.mlr.press/v306/cagnetta26a.html",
+      "additional_urls": [
+        "https://arxiv.org/html/2602.07488"
+      ],
+      "publication": "ICML 2026, PMLR 306:10450–10480",
+      "role": "关联谱、条件熵和窗口内快速学习条件；区分 operator norm 与词表均方根，区分 token 预算与独立样本。",
+      "coverage": [
+        "language_statistics/#natural-language-scaling"
+      ],
+      "checked_sections": [
+        "arXiv v3 Sections 3–5",
+        "Appendix A"
+      ],
+      "limitations": [
+        "Conditional entropy is estimated through converged model losses.",
+        "Horizon-limited exponent requires sufficiently fast within-horizon learning and a non-saturating context."
+      ]
+    },
+    {
+      "question": "Transformer 中的边界与动态规划信息流",
+      "title": "Physics of Language Models: Part 1, Learning Hierarchical Language Structures",
+      "authors": [
+        "Zeyuan Allen-Zhu",
+        "Yuanzhi Li"
+      ],
+      "url": "https://tmlr.infinite-conf.org/paper_pages/mPQKyzkA1K.html",
+      "additional_urls": [
+        "https://arxiv.org/html/2305.13673"
+      ],
+      "publication": "TMLR, December 2025; first preprint 2023",
+      "role": "祖先与短语边界的可解码性、去除位置偏置后的边界注意力，以及与动态规划相容的计算安排。",
+      "coverage": [
+        "parsing_latents/#boundary-computation"
+      ],
+      "checked_sections": [
+        "Sections 4–5, especially Section 5.3"
+      ],
+      "limitations": [
+        "Decodable parsing states and compatible attention are evidence, not identification of a unique causal algorithm."
+      ]
+    },
+    {
+      "question": "局部到全局的解析表示与计算构造",
+      "title": "How Transformers Represent Hierarchies: A Local-to-Global Mechanism",
+      "authors": [
+        "Zhiling Zhou",
+        "Tianhao Wang",
+        "Zhuoran Yang"
+      ],
+      "url": "https://proceedings.mlr.press/v306/zhou26at.html",
+      "publication": "ICML 2026, PMLR 306:165889–165934",
+      "role": "将训练网络的逐层解析表示与显式二叉 PCFG 解析构造比较。",
+      "coverage": [
+        "parsing_latents/#local-to-global-construction"
+      ],
+      "limitations": [
+        "An explicit construction is not a generic gradient-training guarantee."
       ]
     }
   ]

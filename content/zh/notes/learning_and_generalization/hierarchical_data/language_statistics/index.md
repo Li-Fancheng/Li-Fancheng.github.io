@@ -5,12 +5,12 @@ subtitle: "长程关联、有效上下文与稀有规则"
 date: 2026-10-20
 lastmod: 2026-10-25
 weight: 2
-summary: "从共同祖先解释长程关联，连接有限样本的有效上下文、架构差异与长尾学习曲线。"
+summary: "从关联阈值与条件信息进入真实语言的统计标度理论，比较范数、有效样本、快速学习、架构复用与长尾机制。"
 layout: cell-cycle
 article_class: neural-theory-note
 math: true
 toc: true
-reading_time: 44
+reading_time: 52
 tags:
   - 层次结构数据
   - 神经网络理论

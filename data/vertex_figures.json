@@ -354,5 +354,21 @@
   "fluctuations/figures/density_windows": {
     "width": 820,
     "kind": "model"
+  },
+  "rigidity/figures/unified_network": {
+    "width": 820,
+    "kind": "model"
+  },
+  "rigidity/figures/unified_hessian": {
+    "width": 900,
+    "kind": "model"
+  },
+  "rearrangements/figures/unified_t1": {
+    "width": 900,
+    "kind": "model"
+  },
+  "rheology_activity/figures/unified_dynamics": {
+    "width": 900,
+    "kind": "model"
   }
 }

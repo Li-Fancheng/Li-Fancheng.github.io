@@ -5,7 +5,7 @@ subtitle: "中心线 杆力学 卵壳约束与参数估计"
 date: 2026-10-18
 lastmod: 2026-10-25
 weight: 5
-summary: "从三维分层材料模型讨论伸长、弯曲、扭转与能量转换，再结合力反演的切割验证，说明哪些观测能够区分驱动力、材料参数和参考状态。"
+summary: "比较主动弯扭、卵壳接触与参考形态的竞争预测，结合三维追踪、释放与参数辨识，判断哪些观测能够区分机制。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

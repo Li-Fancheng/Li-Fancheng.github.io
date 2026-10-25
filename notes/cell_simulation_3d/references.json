@@ -184,7 +184,6 @@
       "verified_source": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005991",
       "chapters": [
         "particles",
-        "morphogenesis",
         "validation"
       ],
       "checked_on": "2026-10-25",
@@ -546,8 +545,7 @@
       "kind": "research",
       "checked_on": "2026-10-25",
       "chapters": [
-        "particles",
-        "morphogenesis"
+        "particles"
       ],
       "volume": "15",
       "issue": "3",
@@ -673,7 +671,7 @@
       "kind": "research",
       "checked_on": "2026-10-25",
       "chapters": [
-        "morphogenesis"
+        "surface_mesh"
       ],
       "volume": "201",
       "issue": "7",
@@ -940,6 +938,58 @@
       ],
       "checked_on": "2026-10-25",
       "kind": "research"
+    },
+    {
+      "id": "guirao2015",
+      "authors": "Guirao et al.",
+      "title": "Unified quantitative characterization of epithelial tissue development",
+      "year": 2015,
+      "doi": "10.7554/eLife.08519",
+      "verified_source": "https://elifesciences.org/articles/08519",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "eLife",
+      "volume": "4",
+      "page": "e08519",
+      "metadata_source": "https://api.crossref.org/works/10.7554/eLife.08519",
+      "publication_note": "Cited as eLife 4:e08519 (2015); version of record updated 2016-03-22."
+    },
+    {
+      "id": "etournay2015",
+      "authors": "Etournay et al.",
+      "title": "Interplay of cell dynamics and epithelial tension during morphogenesis of the Drosophila pupal wing",
+      "year": 2015,
+      "doi": "10.7554/eLife.07090",
+      "verified_source": "https://elifesciences.org/articles/07090",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "eLife",
+      "volume": "4",
+      "page": "e07090",
+      "metadata_source": "https://api.crossref.org/works/10.7554/eLife.07090"
+    },
+    {
+      "id": "mongera2018",
+      "authors": "Mongera et al.",
+      "title": "A fluid-to-solid jamming transition underlies vertebrate body axis elongation",
+      "year": 2018,
+      "doi": "10.1038/s41586-018-0479-2",
+      "verified_source": "https://www.nature.com/articles/s41586-018-0479-2",
+      "chapters": [
+        "morphogenesis"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research",
+      "journal": "Nature",
+      "volume": "561",
+      "page": "401-405",
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41586-018-0479-2"
     }
   ],
   "software": [

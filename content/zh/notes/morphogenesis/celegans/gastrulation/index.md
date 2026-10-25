@@ -5,7 +5,7 @@ subtitle: "Gastrulation 细胞身份 收缩耦合与空间约束"
 date: 2026-10-18
 lastmod: 2026-10-25
 weight: 1
-summary: "结合内移实验，比较收缩与连接耦合、多细胞稳定性、噪声选择和相场模型，讨论细胞身份、分裂时序与受限空间怎样共同决定内移。"
+summary: "比较皮层驱动、连接传力与几何能垒，结合双通道运动和邻居响应，区分内移延迟的竞争机制。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

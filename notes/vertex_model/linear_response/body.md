@@ -1,4 +1,4 @@
-> **Part II · Note 02**　[专题目录](/notes/vertex_model/) · 上一篇：[模型基础](/notes/vertex_model/foundations/)
+> **Part I · Note 02**　[专题目录](/notes/vertex_model/) · 上一篇：[几何、能量与力学平衡](/notes/vertex_model/foundations/) · 下一篇：[几何不相容、预应力与刚性转变](/notes/vertex_model/rigidity/)
 
 **物理问题：** 把组织轻轻剪切一下，要用多大力？如果给细胞时间重新挪动位置，为什么会更容易变形？
 
@@ -223,24 +223,24 @@ $$
 
 若 $\gamma=\gamma_0e^{i\omega t}$，则 $c_\alpha=-\Xi_\alpha\gamma_0/(\lambda_\alpha+i\omega\zeta)$。将分母实部、虚部分开，每个模态对储能与损耗的贡献均可单独追踪。
 
-令 $a_\alpha=w_\alpha/(A_{\rm tot}\lambda_\alpha)$、$\tau_\alpha=\zeta/\lambda_\alpha$，并记充分松弛模量为 $G_\infty$，可将同一公式改写为
+令 $a_\alpha=w_\alpha/(A_{\rm tot}\lambda_\alpha)$、$\tau_\alpha=\zeta/\lambda_\alpha$，并记当前拓扑内充分松弛后的模量为 $G_{\rm eq}^{\rm(top)}$。下面简记为 $G_{\rm eq}$；它不包括后续换邻居的松弛。相应瞬时值为 $G_{\rm inst}=G_{\rm eq}+\sum_\alpha a_\alpha$，可将同一公式改写为
 
 $$
-G^*(\omega)=G_\infty+
+G^*(\omega)=G_{\rm eq}+
 \sum_\alpha a_\alpha\frac{i\omega\tau_\alpha}{1+i\omega\tau_\alpha}.
 $$
 
 对应的阶跃应变松弛为
 
 $$
-G(t)=G_\infty+\sum_\alpha a_\alpha e^{-t/\tau_\alpha}.
+G(t)=G_{\rm eq}+\sum_\alpha a_\alpha e^{-t/\tau_\alpha}.
 $$
 
 这是一组有不同松弛时间的 Maxwell 支路与长期弹性支路并联的表示。它来自当前二次能量、坐标约定与顶点摩擦假设；若耗散还直接依赖外部应变率或存在内部摩擦，完整应力中会出现额外项。
 
 ![模态刚度、剪切耦合权重和多个松弛时间产生的频率响应。](figures/mode_coupling.svg)
 
-*图 4 · 低能谱需要和加载耦合一起阅读。* 自制两模态模型，$G_\infty=0.2$、$(a_1,a_2)=(0.6,0.4)$、$(\tau_1,\tau_2)=(0.2,5)$。频率响应由上式精确计算。它展示多个耗散时间如何出现，不代表完整组织中只有两个模态。
+*图 4 · 低能谱需要和加载耦合一起阅读。* 自制两模态模型，$G_{\rm eq}=0.2$、$(a_1,a_2)=(0.6,0.4)$、$(\tau_1,\tau_2)=(0.2,5)$。频率响应由上式精确计算。它展示多个耗散时间如何出现，不代表完整组织中只有两个模态。
 
 ### 4.2 无序使单一时间尺度变得不够
 
@@ -291,6 +291,8 @@ $$
 与 Hessian 公式对照。有限差分要比较多个小应变：太大会触发非线性或换盆地，太小会被最小化误差淹没。若触发 T1，就已经离开固定拓扑的线性响应问题。
 
 体积模量也可从各向同性面积应变推导，但应明确应变是 $\delta A/A$ 还是长度应变；两者相差系数。各向异性组织则需要测多个独立应变，得到完整弹性张量。
+
+同一周期 Vertex 网络上的 Hessian、仿射模量与重新最小化结果，在 [Note 03 的贯穿算例](/notes/vertex_model/rigidity/#unified-case)中逐项比较；对应数据保留完整矩阵，能将这里的计算落实到实际多边形构型。
 
 ### 5.1 一个不需要直接求逆的计算核心
 
@@ -366,4 +368,4 @@ $$
 - [Damavandi et al. (2022), Energetic rigidity II](https://doi.org/10.1103/PhysRevE.105.025004)：Hessian、预应力和宏观模量的关系。
 - [Tong et al. (2022), Linear viscoelastic properties of the vertex model for epithelial tissues](https://doi.org/10.1371/journal.pcbi.1010135)：规则与无序网络在宽频率范围的线性响应。
 
-[← 模型基础](/notes/vertex_model/foundations/) · [下一篇：几何不相容与刚性转变 →](/notes/vertex_model/rigidity/)
+[← 几何、能量与力学平衡](/notes/vertex_model/foundations/) · [几何不相容、预应力与刚性转变 →](/notes/vertex_model/rigidity/) · [返回专题目录](/notes/vertex_model/)

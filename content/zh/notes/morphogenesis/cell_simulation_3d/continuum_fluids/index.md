@@ -1,6 +1,6 @@
 ---
 url: "/notes/cell_simulation_3d/continuum_fluids/"
-title: "07 · 有限元与流固耦合：胞内材料、流体和渗透"
+title: "07 · 连续材料与流固耦合：胞内材料、流体和渗透"
 subtitle: "有限变形、黏弹性、浸入边界与多孔弹性"
 date: 2026-10-25
 weight: 7

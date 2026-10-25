@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+<title id="title">从有效状态到实际计算</title><desc id="desc">子树内部观测经边界状态影响外部预测；有效状态需经过统计辨认、递归复用和计算实现。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6a7b91"/></marker></defs>
+<rect width="720" height="720" rx="14" fill="#f8fafc"/>
+<g font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, sans-serif" fill="#20364e">
+<text x="32" y="49" font-size="28" font-weight="650">大量内部实现，少数对外预测坐标</text>
+<text x="32" y="83" font-size="20" fill="#5f7085">条件分隔给出压缩的依据，统计与算法决定能否学到。</text>
+<rect x="32" y="111" width="198" height="94" rx="10" fill="#e8f0fb" stroke="#d6e0e9"/>
+<text x="131" y="149" text-anchor="middle" font-size="24" font-weight="600">内部观测 B</text>
+<text x="131" y="181" text-anchor="middle" font-size="20">词形与内部实现</text>
+<rect x="261" y="111" width="198" height="94" rx="10" fill="#e3f3ed" stroke="#d6e0e9"/>
+<text x="360" y="149" text-anchor="middle" font-size="24" font-weight="600">边界状态 A</text>
+<text x="360" y="181" text-anchor="middle" font-size="20">后验权重 q(a|b)</text>
+<rect x="490" y="111" width="198" height="94" rx="10" fill="#fff1e3" stroke="#d6e0e9"/>
+<text x="589" y="149" text-anchor="middle" font-size="24" font-weight="600">外部目标 C</text>
+<text x="589" y="181" text-anchor="middle" font-size="20">类别与后续词</text>
+<path d="M235 159H254" stroke="#6a7b91" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M464 159H483" stroke="#6a7b91" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="360" y="246" text-anchor="middle" font-size="26" font-family="Georgia,serif">p(c | b) = Σₐ p(c | a) p(a | b)</text>
+<text x="360" y="280" text-anchor="middle" font-size="20" fill="#5f7085">给定 A 后，B 与 C 条件独立。</text>
+<path d="M32 304H688" stroke="#dae3eb"/>
+<text x="32" y="341" font-size="26" font-weight="600">从概率结构到学习优势，还需四个环节</text>
+<rect x="32" y="368" width="312" height="119" rx="9" fill="white" stroke="#bdcddd"/>
+<text x="188" y="401" text-anchor="middle" font-size="24" font-weight="600">1  有效状态</text>
+<text x="188" y="436" text-anchor="middle" font-size="22" font-weight="400">对外关系能被少数</text>
+<text x="188" y="464" text-anchor="middle" font-size="22" font-weight="400">硬或软状态表达</text>
+<path d="M349 425H369" stroke="#6a7b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="376" y="368" width="312" height="119" rx="9" fill="white" stroke="#bdcddd"/>
+<text x="532" y="401" text-anchor="middle" font-size="24" font-weight="600">2  统计可辨认</text>
+<text x="532" y="436" text-anchor="middle" font-size="22" font-weight="400">不同作用的差别</text>
+<text x="532" y="464" text-anchor="middle" font-size="22" font-weight="400">超过有限样本噪声</text>
+<rect x="32" y="510" width="312" height="119" rx="9" fill="white" stroke="#bdcddd"/>
+<text x="188" y="543" text-anchor="middle" font-size="24" font-weight="600">3  递归复用</text>
+<text x="188" y="578" text-anchor="middle" font-size="22" font-weight="400">恢复的状态继续</text>
+<text x="188" y="606" text-anchor="middle" font-size="22" font-weight="400">组织下一尺度关系</text>
+<path d="M349 567H369" stroke="#6a7b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="376" y="510" width="312" height="119" rx="9" fill="white" stroke="#bdcddd"/>
+<text x="532" y="543" text-anchor="middle" font-size="24" font-weight="600">4  实际计算</text>
+<text x="532" y="578" text-anchor="middle" font-size="22" font-weight="400">架构与训练取得</text>
+<text x="532" y="606" text-anchor="middle" font-size="22" font-weight="400">并使用这些关系</text>
+<text x="360" y="678" text-anchor="middle" font-size="20" fill="#5f7085">低秩不独自证明树，共同几何还需功能检验。</text></g></svg>

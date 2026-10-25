@@ -1,4 +1,4 @@
-> **Part VI · Note 08**　[专题目录](/notes/vertex_model/) · 上一篇：[形态发生与实验检验](/notes/vertex_model/morphogenesis/)
+> **专题拓展**　[专题目录](/notes/vertex_model/) · [涨落与组织重塑](/notes/vertex_model/fluctuations/)
 
 **物理问题：** 自己会动的颗粒为什么有时聚成一团，有时被邻居困住，有时又不断产生缺陷和流动？堆积的几何、接触的拓扑和取向的拓扑，分别限制了什么？
 
@@ -122,18 +122,13 @@ $$
 
 投影到刚度为 $h_\alpha\gt0$ 的归一化模态上，就得到 $\Gamma_p\dot u_\alpha=-h_\alpha u_\alpha+f_\alpha^a(t)$。模式的恢复时间是 $\tau_\alpha=\Gamma_p/h_\alpha$：刚度小的模式，需要更长时间才能回到原位。整体平移的零模不包括在这里。
 
-进一步取各颗粒推进方向独立、各向同性、没有对齐反馈，且方向相关按 $e^{-|t|/\tau_r}$ 衰减。在 $d$ 维中，模态力的相关为 $\langle f_\alpha^a(t)f_\alpha^a(0)\rangle=(f_a^2/d)e^{-|t|/\tau_r}$。对这个线性受迫方程积分，稳态方差为
+进一步取各颗粒推进方向独立、各向同性、没有对齐反馈，且方向相关按 $e^{-|t|/\tau_r}$ 衰减。在 $d$ 维中，模态力的相关为 $\langle f_\alpha^a(t)f_\alpha^a(0)\rangle=(f_a^2/d)e^{-|t|/\tau_r}$。将这个相关函数代入 [Note 06 的单模态响应](/notes/vertex_model/fluctuations/#fluctuations-and-response)，就能计算其位移方差。
 
-$$
-\boxed{\langle u_\alpha^2\rangle=
-\frac{f_a^2}{d\,h_\alpha(h_\alpha+\Gamma_p/\tau_r)}.}
-$$
-
-若方向在模式恢复前已改变许多次，即 $\tau_r\ll\tau_\alpha$，则 $\langle u_\alpha^2\rangle\simeq f_a^2\tau_r/(d\Gamma_p h_\alpha)$，类似快速随机敲击软弹簧。若推进方向保持很久，即 $\tau_r\gg\tau_\alpha$，颗粒能接近当前推力下的位移，方差变成 $f_a^2/(d h_\alpha^2)$。两种极限都更容易激发软模式，但对刚度的依赖不同。
+方向改变很快时，软模式受到许多次短促推动；方向保持很久时，位移更接近当前力下的静态变形。两种极限都偏向激发软模式，但对刚度的依赖不同。具体的方差、频谱和控制变量在主线的涨落篇统一推导。
 
 这说明，被邻居困住并不意味着每个颗粒只独立抖动：同一个软模态可以让许多颗粒协同移动。这一计算只适用于接触和模态仍近似固定的时候；一旦位移足以打开接触或触发重排，就要更新网络。不同模态通常也不能共用一个“有效温度”，因为活动的持续时间会分别与它们的恢复时间竞争。它与 [Note 02 的模态响应](/notes/vertex_model/linear_response/)相接，但驱动力的时间结构多了一层物理。
 
-驱动的空间相关还会改变它在不同模式上的投影；同向推动可以增强共同位移，同时减少相对形变。[Note 09](/notes/vertex_model/fluctuations/#spatially-correlated-forces)用两个耦合自由度计算这一差别，并继续讨论涨落频谱和接触更新。
+驱动的空间相关还会改变它在不同模式上的投影；同向推动可以增强共同位移，同时减少相对形变。[Note 06](/notes/vertex_model/fluctuations/#spatially-correlated-forces)用两个耦合自由度计算这一差别，并继续讨论涨落频谱和接触更新。
 
 ## 4. 堆得整不整齐：六重键取向与二维熔化 {#hexatic-order}
 
@@ -167,7 +162,7 @@ $$
 
 在相分离区域里，还要说明相关函数是在密相内部计算，还是混合了稀相、密相与界面。两个取向不同的晶粒，也可能让整盒平均序参量很小；局部有序、空间相关和全局平均承担不同的判断。
 
-密度在大尺度上是否均匀，还需要窗口数目方差与结构因子。[Note 09 的密度涨落部分](/notes/vertex_model/fluctuations/#density-fluctuations)推导两者的联系，并区分巨数目涨落、超均匀与取向有序。
+密度在大尺度上是否均匀，还需要窗口数目方差与结构因子。[Note 06 的密度涨落部分](/notes/vertex_model/fluctuations/#density-fluctuations)推导两者的联系，并区分巨数目涨落、超均匀与取向有序。
 
 ## 5. 从配位数到接触网络的拓扑 {#packing-topology}
 
@@ -396,4 +391,4 @@ Vertex Model 可以同时保留细胞边界、邻接和形状向列场，但这�
 - [Keber et al. (2014), Topology and dynamics of active nematic vesicles](https://doi.org/10.1126/science.1254784)。闭合曲面上的拓扑约束与主动运动。
 - [Saw et al. (2017), Topological defects in epithelia govern cell death and extrusion](https://doi.org/10.1038/nature21718)。培养上皮的取向、应力与细胞挤出。
 
-[← 形态发生、实验检验与开放问题](/notes/vertex_model/morphogenesis/) · [涨落、相关与组织重塑 →](/notes/vertex_model/fluctuations/) · [返回专题目录](/notes/vertex_model/)
+[返回专题目录](/notes/vertex_model/) · [形态发生与机制检验](/notes/vertex_model/morphogenesis/)

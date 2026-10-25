@@ -260,6 +260,24 @@ a 中粉色细胞参与模拟，灰色细胞提供固定边界；这不是把整
 
 成像初始化还带来一个边界问题：只允许中央细胞演化、固定外围细胞时，外围既提供几何约束，也会传递反力。这个设置适合研究局部结构在既定组织中的稳定性；若要解释整层上皮的自发弯曲，还需放开相应边界并给出周围组织的力学。固定边界条件与自由组织的结果应分别解释。
 
+<div class="note-anchor" id="细胞核为什么在受限迁移中成为关键"></div>
+
+显式核的另一项用途是受限迁移。对于穿行在开放基质中的细胞，环境几何通过孔隙、牵引和胞内结构限制运动。
+
+一个细胞能伸出细长前缘，不代表整个细胞都能通过同样宽的通道。核的尺寸、形变与耗散可以限制通过过程；基质还可以被牵拉或降解，从而改变可用孔隙。
+
+[Wolf 等（2013）](https://doi.org/10.1083/jcb.201210152)将三维基质中的迁移限制与孔隙、核变形、蛋白水解和牵引联系起来。这类结果为模型选择提供了直接线索：只有外壳的模型可能难以区分限制来自核还是皮层；只有中心排斥的模型则还需额外闭合形变。
+
+可以让核成为另一个弹性面或体，将基质表示成可变形纤维，再比较通过时间、核长宽比和局部基质位移。若模型只拟合平均速度，改变黏附与改变核刚度都可能补偿同一个结果；加入核形变可以帮助区分两者。
+
+<div class="note-anchor" id="nuclear-transit"></div>
+
+核通过狭窄孔隙需要改变形状，前缘牵引则要提供相应功。若将核的主要形变用 $e$ 表示，一个弹性近似给出 $\Delta E_n\sim K_nV_ne^2$；持续力 $F$ 在距离 $\ell$ 上能提供的功约为 $F\ell$。这个尺度比较说明，更大的核、更窄的孔与更强的牵引会以不同方式改变通过条件。
+
+它还没有给出通过时间。核材料的黏性与参考态更新，会使加载速率产生影响；基质纤维的移动或降解，又会随时间改变孔径。一个细胞最初停住，可能是在积累形变，也可能是在打开环境通道。只把停留时间拟合成更大的局部阻力，会将这几种过程混在一起。
+
+实验中同步追踪核长宽比、孔径、基质位移和质心轨迹，便可区分“细胞被迫变形”和“细胞改变了孔道”。模型若含显式核与纤维，应分别输出这些量；若采用中心代理，则需说明通过规则怎样由这些实验标定。Wolf 等的三维迁移研究为这种联合观察提供了生物学背景。
+
 <div class="note-anchor" id="细胞核分裂和腔体如何接入"></div>
 
 组织应用还要求在同一曲面框架中处理胞内结构和生物事件。它们增加的自由度，需要与原有材料和接触相容。
@@ -293,6 +311,8 @@ a 中粉色细胞参与模拟，灰色细胞提供固定边界；这不是把整
 3. Van Liedekerke et al. (2020). [A quantitative high-resolution computational mechanics cell model for growing and regenerating tissues](https://doi.org/10.1007/s10237-019-01204-7). *Biomechanics and Modeling in Mechanobiology*, 19(1), 189-220. 在线发表于 2019 年。
 
 4. Runser, Vetter and Iber (2024). [SimuCell3D: three-dimensional simulation of tissue mechanics with cell polarization](https://doi.org/10.1038/s43588-024-00620-9). *Nature Computational Science*, 4(4), 299-309.
+
+5. Wolf et al. (2013). [Physical limits of cell migration: control by ECM space and nuclear deformation and tuning by proteolysis and traction force](https://doi.org/10.1083/jcb.201210152). *Journal of Cell Biology*, 201(7), 1069-1084.
 
 ---
 

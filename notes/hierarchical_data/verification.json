@@ -1,57 +1,57 @@
 {
   "checked_on": "2026-10-25",
   "full_site_build": "passed in independent snapshot",
-  "build_scope": "Independent full-site snapshot containing HEAD plus the hierarchical_data content and note changes only; other topics were concurrently edited in the shared checkout.",
+  "build_scope": "Independent full-site HEAD snapshot plus this task’s hierarchical-data note, metadata and figure-policy changes; shared-checkout changes to other topics excluded.",
   "pages": [
     {
       "slug": "directory",
-      "headings": 7,
+      "headings": 9,
       "references": 0,
-      "images": 0,
-      "source_sha256": "7b1cd14fbce5a9146a56f2a6f15f66d9ed7547cbab0aebc8c7c3301f9661ace2"
+      "images": 1,
+      "source_sha256": "5c9ba389d01028780851eccaf423b2b1075329efd920dbf08e127b07ef9591bb"
     },
     {
       "slug": "generative_learning",
-      "headings": 38,
+      "headings": 39,
       "references": 6,
       "images": 1,
-      "source_sha256": "16e4f1d0e77443b7a48b3a7f9cd5d7c49d4c61affa84cf841f9257d9f87ddfd0"
+      "source_sha256": "9a23eb930f2c71403bdeffc9454fb5c196ce44e86981f5af93fc4ac3760dc34b"
     },
     {
       "slug": "language_statistics",
-      "headings": 24,
-      "references": 4,
+      "headings": 28,
+      "references": 5,
       "images": 2,
-      "source_sha256": "8d0295695b32427f30477391047fcd2c000fcefe4133f1fd2d5dea0ac445b62f"
+      "source_sha256": "c849cc9c35824d476f1dad8aa2a88d3780f358c284210da64f7047773cf6d550"
     },
     {
       "slug": "inference_generation",
-      "headings": 27,
+      "headings": 30,
       "references": 5,
-      "images": 1,
-      "source_sha256": "e55d1916c0506367a310f07c3ef9251929b0eced830d673dab9cffa891f69f15"
+      "images": 2,
+      "source_sha256": "2388529286788b5168c8ee96f1c17392be283d69d16505b4642d992ee91f4374"
     },
     {
       "slug": "parsing_latents",
-      "headings": 25,
-      "references": 5,
+      "headings": 29,
+      "references": 7,
       "images": 1,
-      "source_sha256": "d2662ecd9623a1bf7a6dfb388028fa1d8e786dd8176715b6985bc58eb0084d58"
+      "source_sha256": "5872b06a94a6726cc5d01f5a8ed7ee18d3b1a1725995b3d45ec7222b8104ee10"
     },
     {
       "slug": "shared_representations",
       "headings": 37,
       "references": 6,
       "images": 3,
-      "source_sha256": "96568aff902bde579f7d4925f96b7cf6c1330342a6932c0f9233ae9d81a31657"
+      "source_sha256": "358d58c7bfb8fdd03830c320d4dd08327f26813b8d96a4962d271d7cae7cd9c1"
     }
   ],
-  "internal_references_checked": 459,
+  "internal_references_checked": 514,
   "broken_internal_references": 0,
   "legacy_anchors": 15,
-  "primary_references": 24,
-  "math_total": 730,
-  "figure_placements": 8,
+  "primary_references": 27,
+  "math_total": 831,
+  "figure_placements": 10,
   "browser": {
     "engine": "Codex in-app browser (CUA)",
     "cases": [
@@ -59,113 +59,160 @@
         "slug": "directory",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 12,
+        "math": 17,
         "mathErrors": 0,
-        "figure_placements": 0
+        "headings": 9,
+        "figures": 1,
+        "references": 0
       },
       {
         "slug": "generative_learning",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 244,
+        "math": 267,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 39,
+        "figures": 1,
+        "references": 6
       },
       {
         "slug": "language_statistics",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 136,
+        "math": 173,
         "mathErrors": 0,
-        "figure_placements": 2
+        "headings": 28,
+        "figures": 2,
+        "references": 5
       },
       {
         "slug": "inference_generation",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 131,
+        "math": 155,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 30,
+        "figures": 2,
+        "references": 5
       },
       {
         "slug": "parsing_latents",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 100,
+        "math": 105,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 29,
+        "figures": 1,
+        "references": 7
       },
       {
         "slug": "shared_representations",
         "width": 1280,
         "scrollWidth": 1265,
-        "math": 107,
+        "math": 114,
         "mathErrors": 0,
-        "figure_placements": 3
+        "headings": 37,
+        "figures": 3,
+        "references": 6
       },
       {
         "slug": "directory",
         "width": 390,
         "scrollWidth": 375,
-        "math": 12,
+        "math": 17,
         "mathErrors": 0,
-        "figure_placements": 0
+        "headings": 9,
+        "figures": 1,
+        "references": 0
       },
       {
         "slug": "generative_learning",
         "width": 390,
         "scrollWidth": 375,
-        "math": 244,
+        "math": 267,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 39,
+        "figures": 1,
+        "references": 6
       },
       {
         "slug": "language_statistics",
         "width": 390,
         "scrollWidth": 375,
-        "math": 136,
+        "math": 173,
         "mathErrors": 0,
-        "figure_placements": 2
+        "headings": 28,
+        "figures": 2,
+        "references": 5
       },
       {
         "slug": "inference_generation",
         "width": 390,
         "scrollWidth": 375,
-        "math": 131,
+        "math": 155,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 30,
+        "figures": 2,
+        "references": 5
       },
       {
         "slug": "parsing_latents",
         "width": 390,
         "scrollWidth": 375,
-        "math": 100,
+        "math": 105,
         "mathErrors": 0,
-        "figure_placements": 1
+        "headings": 29,
+        "figures": 1,
+        "references": 7
       },
       {
         "slug": "shared_representations",
         "width": 390,
         "scrollWidth": 375,
-        "math": 107,
+        "math": 114,
         "mathErrors": 0,
-        "figure_placements": 3
+        "headings": 37,
+        "figures": 3,
+        "references": 6
       }
     ],
-    "mobile_toc": {
-      "opened": true,
-      "links": 25,
-      "all_links_numbered": true
-    },
-    "reference_jump": {
-      "hash": "#ref-6",
-      "target_found": true
-    },
-    "visual_review": [
-      "Desktop: note header, numbered table of contents and inside–outside equations.",
-      "Mobile: original parsing figure, reference bibliography and onward-reading links."
+    "mobile_toc": [
+      {
+        "slug": "generative_learning",
+        "links": 39,
+        "opened": true,
+        "all_numbered": true
+      },
+      {
+        "slug": "language_statistics",
+        "links": 28,
+        "opened": true,
+        "all_numbered": true
+      },
+      {
+        "slug": "inference_generation",
+        "links": 30,
+        "opened": true,
+        "all_numbered": true
+      },
+      {
+        "slug": "parsing_latents",
+        "links": 29,
+        "opened": true,
+        "all_numbered": true
+      },
+      {
+        "slug": "shared_representations",
+        "links": 37,
+        "opened": true,
+        "all_numbered": true
+      }
     ],
-    "viewport_reset": true
+    "viewport_reset": true,
+    "visual_review": [
+      "Desktop unified mechanism and vector-BP comparison section.",
+      "Mobile mechanism diagram, caption and all five numbered table-of-contents panels."
+    ]
   },
   "numerical_checks": {
     "worked_correlation_thresholds": [
@@ -185,7 +232,42 @@
     "inside_outside_root_posterior": [
       0.6923076923076923,
       0.30769230769230776
-    ]
+    ],
+    "effective_state_matrix": [
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.3,
+        0.7
+      ],
+      [
+        0.55,
+        0.44999999999999996
+      ]
+    ],
+    "matrix_rank": 2,
+    "joint_factorization_error": 0.0,
+    "transport_mutual_information_nats": {
+      "before": 0.0,
+      "after": 0.34657359027997264,
+      "residual": 0.6931471805599453
+    },
+    "transport_residual_error": 1.1102230246251565e-16,
+    "natural_language_exponent_arithmetic": {
+      "TinyStories": 0.1846590909090909,
+      "WikiText": 0.14095744680851066
+    }
   },
-  "editorial_revision_report": "editorial_revision_20261025.json"
+  "bp_exact_enumeration_checks": {
+    "root_vs_enumeration": 1.1102230246251565e-16,
+    "leaf_vs_enumeration": 2.220446049250313e-16,
+    "all_perfect_and_uniform_endpoints": "passed"
+  },
+  "mechanism_revision_report": "mechanism_revision_20261025.json"
 }

@@ -1,4 +1,4 @@
-> **Part IV · Note 06**　[专题目录](/notes/vertex_model/) · 上一篇：[流变与活性](/notes/vertex_model/rheology_activity/)
+> **Part III · Note 07**　[专题目录](/notes/vertex_model/) · 上一篇：[涨落、相关与组织重塑](/notes/vertex_model/fluctuations/) · 下一篇：[形态发生、实验检验与开放问题](/notes/vertex_model/morphogenesis/)
 
 **物理问题：** 细胞朝哪个方向伸长、上皮怎样弯曲、细胞有多高，为什么会影响组织力学？二维模型什么时候需要增加这些信息？
 
@@ -86,6 +86,8 @@ $\overset{\circ}{Q}$ 记录细胞自身伸长的变化，$R$ 概括邻居重排�
 这项分解首先回答“发生了什么”，不是“什么力驱动了它”。如果组织主要通过邻居交换延长，仍可能由内部定向收缩、细胞突出或外部组织拉力驱动；如果细胞先被拉长再重排，也不说明二者之间只有单向因果关系。
 
 在连续描述中使用 $\overset{\circ}{Q}$，是为了避免刚体旋转被误认为细胞形状改变。精确的客观导数和相关项需要与三角形伸长变量的定义一致；换一种 $Q$ 的归一化，不能保持所有系数原样不变。
+
+这一步只分解形变。由能量得到应力，再为重排率补充闭合，才能推出具体流变；三个假设合成 Maxwell 方程的过程集中在 [Note 05](/notes/vertex_model/rheology_activity/#discrete-continuum-bridge)。平面各向异性已经会改变这一关系，不需要等到增加厚度或曲率才出现。
 
 ### 2.2 果蝇蛹翅中的分解，具体是怎样做的 {#fly-wing-decomposition}
 
@@ -368,4 +370,4 @@ $$
 - [Merkel & Manning (2018), A geometrically controlled rigidity transition in a model for confluent 3D tissues](https://doi.org/10.1088/1367-2630/aaaa13)。
 - [Rozman et al. (2020), Collective cell mechanics of epithelial shells with organoid-like morphologies](https://doi.org/10.1038/s41467-020-17535-4)。
 
-[← 流变与活性](/notes/vertex_model/rheology_activity/) · [下一篇：形态发生、实验检验与开放问题 →](/notes/vertex_model/morphogenesis/)
+[← 涨落、相关与组织重塑](/notes/vertex_model/fluctuations/) · [形态发生、实验检验与开放问题 →](/notes/vertex_model/morphogenesis/) · [返回专题目录](/notes/vertex_model/)

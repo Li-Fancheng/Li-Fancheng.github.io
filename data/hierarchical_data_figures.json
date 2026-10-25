@@ -46,5 +46,17 @@
     "kind": "original-explanatory",
     "intrinsic_width": 2099,
     "intrinsic_height": 812
+  },
+  "figures/bp_mean_field": {
+    "width": 1100,
+    "kind": "original-bp-comparison",
+    "intrinsic_width": 2263,
+    "intrinsic_height": 699
+  },
+  "figures/effective_states": {
+    "width": 900,
+    "kind": "original-mechanism-diagram",
+    "intrinsic_width": 720,
+    "intrinsic_height": 720
   }
 }

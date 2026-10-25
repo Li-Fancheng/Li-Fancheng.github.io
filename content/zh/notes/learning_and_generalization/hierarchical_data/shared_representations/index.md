@@ -5,7 +5,7 @@ subtitle: "共享层次、表示相似性与坐标对齐"
 date: 2026-10-20
 lastmod: 2026-10-25
 weight: 5
-summary: "结合多语言层级模型，解释中间层共享几何、跨语言对齐和逐层新信息，并联系概念谱结构。"
+summary: "区分共同几何与坐标，修正仿射残差中信息运输与抽象的关系，以共现谱和功能干预检验替代机制。"
 layout: cell-cycle
 article_class: neural-theory-note
 math: true

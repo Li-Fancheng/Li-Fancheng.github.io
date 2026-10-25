@@ -1,0 +1,25 @@
+{
+  "model": "prescribed axisymmetric mode, dimensionless ODEs",
+  "parameters": {
+    "tau_p": 4.0,
+    "kappa": 2.0,
+    "mu": 1.0,
+    "initial_x": 0.03,
+    "pulse_force": -0.25,
+    "pulse_on": 2.0,
+    "pulse_off": 4.0,
+    "mode_height_over_radius": 0.12,
+    "dt": 0.002
+  },
+  "common_equilibrium_x": 1.0,
+  "rk4_step_halving_max_error": {
+    "active": 1.27675647831893e-14,
+    "growth": 5.684341886080802e-14,
+    "hydraulic": 4.451994328746878e-14
+  },
+  "hydraulic_eigenvalues": [
+    -1.5930703308172536,
+    -0.15692966918274642
+  ],
+  "scope": "A projected mode comparison, not a cross-representation 3D tissue benchmark."
+}

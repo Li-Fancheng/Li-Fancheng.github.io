@@ -1,4 +1,4 @@
-一张图像或一句话可以有指数多个表面实现，却由有限、可复用的局部规律生成。学习器怎样发现这些规律，把它们组织成表示，并在不同语言或模态之间保留共同关系？这个专题从层次结构数据出发，连接统计学习、生成推断和表示几何。
+一张图像或一句话可以有指数多个表面实现，却由有限、可复用的局部规律生成。学习器怎样发现这些规律，把它们组织成表示，并在不同语言或模态之间保留共同关系？这个专题以随机层级语法（RHM）及其相关理论为主线，连接统计学习、生成推断和表示几何；它不试图覆盖所有层次学习模型。
 
 五篇笔记按问题展开，并采用篇内连续的章节编号。每篇从直观例子建立对象，再展开公式、中间推导与可检验的讨论，篇末给出独立参考文献和前后篇导航。精确概率计算、均场近似、简化算例与原论文的网络实验分别说明，便于判断一个结论依赖哪些假设。
 
@@ -39,7 +39,19 @@
 
 默认先抽取一套随机字典，再在训练与测试中固定；同层规则跨位置共享，不同完整样本独立生成。前三篇先研究已知固定分块，第四篇才去掉边界提示，第五篇再把单语言改成共享高层、各自实现低层的多语言模型。改变这些条件时，样本标度、推断算法与可辨识性都需要重新检查。
 
-## 3. 几条贯穿的联系 {#connections}
+## 3. 从有效状态到实际计算 {#unified-mechanism}
+
+复杂子树可以有大量内部实现，但在给定边界隐状态 $A$ 后，内部观测 $B$ 与外部目标 $C$ 条件独立。因此
+
+$$
+p(c\mid b)=\sum_a p(c\mid a)p(a\mid b).
+$$
+
+这个分解贯穿五篇：无歧义时，后验权重成为同义类的硬标签；有噪或有歧义时，保留软候选；有限数据决定哪些对外作用可辨认；已恢复状态又成为下一尺度的学习单位。共享高层原因还可使不同语言表达共同关系，但实际坐标和计算仍须另测。[Note 01 的有效状态短章](/notes/hierarchical_data/generative_learning/#effective-states)给出分解、低维算例和辨识边界。
+
+![有效状态、统计可辨识性、递归复用与实际计算的机制图](figures/effective_states.svg "机制图｜子树通过边界状态影响外部；条件统计的差异超过有限样本噪声后，才可能形成稳定编码，并被网络递归复用。每个箭头分别需要模型、统计或算法条件，不能由其中一环替代其余各环。")
+
+## 4. 几条贯穿的联系 {#connections}
 
 **规则与统计信号。** 生成树提供可复用的对象，但不保证它们能从有限数据辨认。第一篇建立同义关系，第二篇追踪信号怎样随距离衰减，第四篇再讨论边界和目标也未知时的困难。
 
@@ -51,7 +63,7 @@
 
 所有笔记使用叶层为 $0$、根层为 $L$ 的记号；原论文的层编号不同，在比较标度公式时重新对齐。数据树的层次、网络计算层和训练时间分别定义。
 
-## 4. 怎样按问题阅读 {#reading-paths}
+## 5. 怎样按问题阅读 {#reading-paths}
 
 第一次阅读建议按 01–05 的顺序：先建立完整语法与同义关系，再看有限样本统计，随后计算已知规律下的最优后验，最后进入未知边界和共享表示。
 
@@ -59,11 +71,19 @@
 
 每篇的结尾都把结论接向下一步。读公式时可沿“对象是什么—哪些条件已知—统计怎样估计—误差如何汇总”检查；读几何图时再补上“允许哪些坐标变换—使用哪个空模型—是否验证功能”三项问题。
 
-## 5. 与其他笔记的联系 {#perspective}
+## 6. 三个贯穿全专题的未解决问题 {#open-questions}
+
+**A · 什么决定一个层次可被辨认？** 需要知道不同隐状态对可见目标的作用是否分离，并比较分离度与统计噪声。[标签向量的 $\Delta$](/notes/hierarchical_data/generative_learning/#规则出现过与规则能够被归类相差多少证据)、[关联阈值与真实语言](/notes/hierarchical_data/language_statistics/#natural-language-scaling)、[语境消歧](/notes/hierarchical_data/parsing_latents/#context-disambiguation)分别考察这一问题；更换目标可能改变可辨认的等价类。
+
+**B · 局部发现何时变成跨尺度优势？** 已存在可见信号，并不保证训练能取得它。参数共享、目标尺度、误差传播和优化都决定复用能否继续。[逐层串联](/notes/hierarchical_data/generative_learning/#shallow-to-deep-chaining)、[隐变量预测](/notes/hierarchical_data/parsing_latents/#latent-prediction)和[Transformer 解析计算](/notes/hierarchical_data/parsing_latents/#transformer-parsing)给出不同条件下的答案；一般端到端学习仍不由这些结果共同自动保证。
+
+**C · 共同表示是否承担共同计算？** 共享原因、邻域、坐标和预测功能必须分开测量。[跨位置运输的反例](/notes/hierarchical_data/shared_representations/#残差为什么不等于信息论上的新信息)说明新残差未必是新抽象；[状态替换与受控预测](/notes/hierarchical_data/shared_representations/#functional-tests)则把几何关系接向因果作用。固定高层状态、改变低层实现以后，功能是否保持，是比增加一个相似性指标更直接的检验。
+
+## 7. 与其他笔记的联系 {#perspective}
 
 [神经网络理论与可解模型](/notes/neural_network_theory/)提供核方法、特征学习和深度动力学背景；其中的[层级组合学习](/notes/neural_network_theory/hierarchical_learning/)用奇偶机制模型分析弱信号和链式梯度，与这里典型随机语法的统计信号形成对照。[Scaling Laws 机制与学习曲线](/notes/scaling_laws/)进一步比较统计估计、谱结构、离散技能和动态特征的标度机制，[扩散模型的动力学](/notes/diffusion_dynamics/)则从生成过程的时间演化进入。
 
-## 6. 文献与研究脉络 {#references}
+## 8. 文献与研究脉络 {#references}
 
 各篇在相关推导与结论旁链接原文，并在篇末列出作者、年份和出处。这里保留总表，便于沿同一问题比较不同模型；预印本与正式发表版本按同一项工作处理。
 
@@ -93,6 +113,9 @@
 | 概率图模型与消息传递 | [Wainwright 与 Jordan：Graphical Models, Exponential Families, and Variational Inference](https://doi.org/10.1561/2200000001)，2008 | 树上的边缘后验与 sum-product |
 | 语法概率估计 | [Lari 与 Young：The estimation of stochastic context-free grammars using the Inside-Outside algorithm](https://doi.org/10.1016/0885-2308(90)90022-X)，1990 | 软解析、外部权重与规则期望计数 |
 | 正交坐标对齐 | [Schönemann：A generalized solution of the orthogonal Procrustes problem](https://doi.org/10.1007/BF02289451)，1966 | 允许正交变换后的最小二乘匹配 |
+| 真实语言的数据标度 | [Deriving Neural Scaling Laws from the Statistics of Natural Language](https://proceedings.mlr.press/v306/cagnetta26a.html)，ICML 2026 | 关联谱、条件熵与快速学习条件连接到语料学习曲线 |
+| Transformer 的解析信息流 | [Physics of Language Models: Part 1, Learning Hierarchical Language Structures](https://tmlr.infinite-conf.org/paper_pages/mPQKyzkA1K.html)，TMLR 2025 | 边界、祖先读出及与动态规划相容的注意力 |
+| 局部到全局的解析计算 | [How Transformers Represent Hierarchies: A Local-to-Global Mechanism](https://proceedings.mlr.press/v306/zhou26at.html)，ICML 2026 | 区分训练网络的表示证据与显式计算构造 |
 
 ---
 

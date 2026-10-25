@@ -232,5 +232,29 @@
     "kind": "paper",
     "intrinsic_width": 2342,
     "intrinsic_height": 2172
+  },
+  "morphogenesis/figures/etournay2015_fig04": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 3151,
+    "intrinsic_height": 3229
+  },
+  "morphogenesis/figures/etournay2015_fig02": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 4204,
+    "intrinsic_height": 4010
+  },
+  "morphogenesis/figures/mongera2018_fig04": {
+    "width": 820,
+    "kind": "paper",
+    "intrinsic_width": 2124,
+    "intrinsic_height": 1248
+  },
+  "morphogenesis/figures/mechanism_comparison": {
+    "width": 1000,
+    "kind": "calculation",
+    "intrinsic_width": 1104,
+    "intrinsic_height": 787
   }
 }

@@ -4,49 +4,49 @@
     "slug": "generative_learning",
     "title": "01 · 层次生成与表征学习",
     "subtitle": "从随机语法到同义不变性与样本复杂度",
-    "summary": "从可复用部件与随机规则出发，展开同义表示、样本复杂度、可证明逐层训练与稀疏数据中的空间稳定性。",
-    "chinese_characters": 12304,
+    "summary": "以有效状态分解统一同义、软表示与可辨识性，再推导随机语法的样本阈值、梯度信号与逐层训练保证。",
+    "chinese_characters": 12619,
     "display_equations": 35,
-    "reading_time": 67
+    "reading_time": 68
   },
   {
     "number": 2,
     "slug": "language_statistics",
     "title": "02 · 语言统计与学习曲线",
     "subtitle": "长程关联、有效上下文与稀有规则",
-    "summary": "从共同祖先解释长程关联，连接有限样本的有效上下文、架构差异与长尾学习曲线。",
-    "chinese_characters": 7686,
-    "display_equations": 25,
-    "reading_time": 44
+    "summary": "从关联阈值与条件信息进入真实语言的统计标度理论，比较范数、有效样本、快速学习、架构复用与长尾机制。",
+    "chinese_characters": 8759,
+    "display_equations": 32,
+    "reading_time": 52
   },
   {
     "number": 3,
     "slug": "inference_generation",
     "title": "03 · 层级推断与扩散生成",
     "subtitle": "信念传播、重建转变与组合泛化",
-    "summary": "逐步推导树上后验、联合生成、重建转变与相关变化，区分已知规则推断和有限数据学习。",
-    "chinese_characters": 8522,
-    "display_equations": 26,
-    "reading_time": 48
+    "summary": "以精确 BP 为基准，区分实际噪声与退火闭合，用固定字典数值对照检验近似，再讨论相关变化与组合生成。",
+    "chinese_characters": 9389,
+    "display_equations": 29,
+    "reading_time": 53
   },
   {
     "number": 4,
     "slug": "parsing_latents",
     "title": "04 · 语法解析与隐变量学习",
     "subtitle": "可变边界、歧义、预测目标与粗粒化",
-    "summary": "从未知组合边界进入歧义与动态规划，对照根标签串联与隐变量预测，讨论粗粒化和结构可辨识性。",
-    "chinese_characters": 8856,
+    "summary": "区分未知结构发现、最优软解析与 Transformer 解析计算，再讨论隐变量目标、粗粒化和可辨识性。",
+    "chinese_characters": 10042,
     "display_equations": 12,
-    "reading_time": 42
+    "reading_time": 47
   },
   {
     "number": 5,
     "slug": "shared_representations",
     "title": "05 · 跨语言表示与共享几何",
     "subtitle": "共享层次、表示相似性与坐标对齐",
-    "summary": "结合多语言层级模型，解释中间层共享几何、跨语言对齐和逐层新信息，并联系概念谱结构。",
-    "chinese_characters": 10469,
-    "display_equations": 15,
+    "summary": "区分共同几何与坐标，修正仿射残差中信息运输与抽象的关系，以共现谱和功能干预检验替代机制。",
+    "chinese_characters": 10277,
+    "display_equations": 17,
     "reading_time": 50
   }
 ]

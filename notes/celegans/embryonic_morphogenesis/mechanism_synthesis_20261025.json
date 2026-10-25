@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-25",
+  "scope": "Mechanism synthesis of the existing seven-note C. elegans embryonic morphogenesis series; no literature expansion.",
+  "priorities": {
+    "P1": "Overview rewritten around effective deformation, direction selection, and shape retention. Developmental notes 01–05 separated from cross-cutting notes 06–07; imaging/genetic basics follow the synthesis.",
+    "P2": "02 adds contact capacity and loading schedules, then a two-state material example with matched shape, total stress and initial strain rate. 03 compares present drive, tangent stiffness and inherited state.",
+    "P3": "04 distinguishes evidential status of actin remodeling and cadherin trafficking; mechanical series/parallel configurations are separated from kinetic dependency and phase division.",
+    "P4": "06 leads with rigidity loss, active barrier crossing and identity-directed rearrangement; adjacency remains core, nematic defects and persistent homology move to expanded reading.",
+    "other_notes": "01 connects drive, transfer and geometry; 05 compares active bending, contact and reference curvature; 07 maps microscopic network variables to surface stress, tangent stiffness, relaxation and reference state."
+  },
+  "evidence_boundaries": [
+    "All new constitutive examples explicitly labeled as candidate models, without fitted embryo parameters.",
+    "No assignment of permanent junction reference strain to the published Yang model; its concentration–line-tension feedback is distinguished from that hypothesis.",
+    "Mechanical series geometry does not imply both molecular update paths are required; length fractions retained in serial strain formula.",
+    "History denotes present internal variables, not an independent force from past events.",
+    "Cadherin fluorescence is not assumed to measure force or number of load-bearing units."
+  ],
+  "primary_sources_checked": [
+    {
+      "doi": "10.1103/PhysRevLett.121.268102",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.268102",
+      "access": "Official abstract; prestress, passive stress, nonlinear elasticity and measured opening supported. Full article gated."
+    },
+    {
+      "doi": "10.7554/eLife.23866",
+      "url": "https://elifesciences.org/articles/23866",
+      "access": "Official article, anisotropic force and stiffness and joint model/measurement interpretation."
+    },
+    {
+      "doi": "10.1038/s41586-019-1509-4",
+      "url": "https://www.nature.com/articles/s41586-019-1509-4",
+      "access": "Official abstract and available figure captions; actin remodeling and retraction evidence."
+    },
+    {
+      "doi": "10.1016/j.devcel.2025.06.012",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12549353/",
+      "access": "Indexed primary-article passages on FRAP, force-balance model and mild JAC-1 effects; full PMC open intermittently returned a browser challenge. Existing note and original figure provenance retained."
+    }
+  ],
+  "calculations": {
+    "script": "figures/generate_mechanism_synthesis.py",
+    "parameters_and_checks": "figures/mechanism_synthesis_parameters.json",
+    "figures": [
+      "figures/40_closure_mechanical_history.svg",
+      "figures/41_contact_maturation_loading.svg"
+    ],
+    "checks": "Mechanical energy balance and long-time limits; 150 sampled load ramps verify the endpoint capacity criterion."
+  },
+  "source_validation": {
+    "overview": {
+      "main_sections": 6,
+      "images": 2,
+      "display_equations": 0,
+      "chinese_characters": 5864,
+      "legacy_anchors_retained": 12
+    },
+    "gastrulation": {
+      "main_sections": 8,
+      "images": 14,
+      "display_equations": 18,
+      "chinese_characters": 14358,
+      "legacy_anchors_retained": 34
+    },
+    "epithelial_morphogenesis": {
+      "main_sections": 10,
+      "images": 34,
+      "display_equations": 29,
+      "chinese_characters": 21190,
+      "legacy_anchors_retained": 42
+    },
+    "early_elongation": {
+      "main_sections": 7,
+      "images": 14,
+      "display_equations": 21,
+      "chinese_characters": 14456,
+      "legacy_anchors_retained": 29
+    },
+    "late_elongation": {
+      "main_sections": 9,
+      "images": 11,
+      "display_equations": 21,
+      "chinese_characters": 13595,
+      "legacy_anchors_retained": 21
+    },
+    "geometry_and_inference": {
+      "main_sections": 10,
+      "images": 10,
+      "display_equations": 14,
+      "chinese_characters": 12509,
+      "legacy_anchors_retained": 28
+    },
+    "active_matter_packing_topology": {
+      "main_sections": 10,
+      "images": 26,
+      "display_equations": 39,
+      "chinese_characters": 25360,
+      "legacy_anchors_retained": 77
+    },
+    "subcellular_cortex_and_flows": {
+      "main_sections": 5,
+      "images": 34,
+      "display_equations": 34,
+      "chinese_characters": 17814,
+      "legacy_anchors_retained": 15
+    }
+  },
+  "preservation": "All 98 original paper image files verified against stored SHA-256; original displayed figures, bibliographies, video sources and stable anchors retained. 06 captions and media locations renumbered for the new order.",
+  "validation": {
+    "source": "Passed: heading sequences, legacy anchors, local and cross-note fragment links, figure numbering, complete bibliographies, video sources, and SHA-256 of all 98 original paper images.",
+    "html": "Overview and seven article H2 sequences exactly match current sources; newest closure-state equation present; 06 expanded reading occurs after the core material.",
+    "calculation": "Passed: energy balance and long-time limits for two material states; 150 sampled loading ramps agree with the analytical stability boundary.",
+    "build": "Targeted Celegans preview succeeded, 10 Chinese pages generated including overview and redirects. Temporary preview ignores unrelated in-progress 3D-cell, vertex, scaling-law and hierarchical-data series; repository build configuration unchanged.",
+    "browser": "16 final desktop/mobile checks passed: all figures loaded, no KaTeX errors, horizontal page/content overflow, extra body disclosures or broken TOC anchors. 01 image checked again with load-event waiting.",
+    "preview": "/private/tmp/celegans-mechanism-synthesis-20261025/mechanical-state-preview.png"
+  }
+}

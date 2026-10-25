@@ -589,7 +589,31 @@
       "stage": "Complete section structure and worked-example expansion",
       "report": "completion_revision_20261025.json",
       "scope": "Current six-article and directory validation; previous reports describe their historical revision stages."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Focused prose revision: remove unrelated chronology and editorial scaffolding",
+      "report": "focused_prose_revision_20261025.json",
+      "scope": "Current text-only cleanup; previous mathematical and browser checks describe their historical revision stages."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Empirical entry and mechanism synthesis: eight-article series",
+      "report": "origins_synthesis_revision_20261025.json",
+      "scope": "Current eight-article structure, scientific additions, source checks and page validation; older reports retain historical stage counts."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Article numbering 01–08",
+      "report": "numbering_revision_20261025.json",
+      "scope": "Numbering-only revision; previous reports retain their historical article numbers and validation details."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Explanatory expansion of current Notes 01 and 08",
+      "report": "explanatory_expansion_revision_20261025.json",
+      "scope": "Current expanded prose, examples, source context and page validation; earlier reports retain their historical source hashes and lengths."
     }
   ],
-  "current_revision": "completion_revision_20261025.json"
+  "current_revision": "explanatory_expansion_revision_20261025.json"
 }
