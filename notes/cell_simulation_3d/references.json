@@ -872,6 +872,74 @@
       "page": "045007",
       "journal": "Physical Biology",
       "metadata_source": "https://api.crossref.org/works/10.1088/1478-3975/8/4/045007"
+    },
+    {
+      "id": "steinberg1963",
+      "authors": "Steinberg",
+      "title": "Reconstruction of tissues by dissociated cells. Some morphogenetic tissue movements and the sorting out of embryonic cells may have a common explanation.",
+      "year": 1963,
+      "doi": "10.1126/science.141.3579.401",
+      "verified_source": "https://pubmed.ncbi.nlm.nih.gov/13983728/",
+      "journal": "Science",
+      "volume": "141",
+      "issue": "3579",
+      "page": "401-408",
+      "chapters": [
+        "foundations"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research"
+    },
+    {
+      "id": "cahnhilliard1958",
+      "authors": "Cahn and Hilliard",
+      "title": "Free Energy of a Nonuniform System. I. Interfacial Free Energy",
+      "year": 1958,
+      "doi": "10.1063/1.1744102",
+      "verified_source": "https://doi.org/10.1063/1.1744102",
+      "journal": "The Journal of Chemical Physics",
+      "volume": "28",
+      "issue": "2",
+      "page": "258-267",
+      "chapters": [
+        "phase_field"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research"
+    },
+    {
+      "id": "allencahn1979",
+      "authors": "Allen and Cahn",
+      "title": "A microscopic theory for antiphase boundary motion and its application to antiphase domain coarsening",
+      "year": 1979,
+      "doi": "10.1016/0001-6160(79)90196-2",
+      "verified_source": "https://www.sciencedirect.com/science/article/pii/0001616079901962",
+      "journal": "Acta Metallurgica",
+      "volume": "27",
+      "issue": "6",
+      "page": "1085-1095",
+      "chapters": [
+        "phase_field"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research"
+    },
+    {
+      "id": "potts1952",
+      "authors": "Potts",
+      "title": "Some generalized order-disorder transformations",
+      "year": 1952,
+      "doi": "10.1017/S0305004100027419",
+      "verified_source": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/some-generalized-orderdisorder-transformations/5FD50240095F40BD123171E5F76CDBE0",
+      "journal": "Mathematical Proceedings of the Cambridge Philosophical Society",
+      "volume": "48",
+      "issue": "1",
+      "page": "106-109",
+      "chapters": [
+        "lattice_potts"
+      ],
+      "checked_on": "2026-10-25",
+      "kind": "research"
     }
   ],
   "software": [

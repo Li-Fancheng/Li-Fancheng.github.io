@@ -58,5 +58,23 @@
     "kind": "model",
     "intrinsic_width": 2244,
     "intrinsic_height": 814
+  },
+  "figures/skills_composition": {
+    "width": 1000,
+    "kind": "worked-example",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 900
+  },
+  "figures/factor_dynamics": {
+    "width": 1000,
+    "kind": "worked-example",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 900
+  },
+  "figures/markov_example": {
+    "width": 1000,
+    "kind": "worked-example",
+    "intrinsic_width": 2700,
+    "intrinsic_height": 900
   }
 }

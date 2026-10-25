@@ -1,0 +1,197 @@
+{
+  "revised_on": "2026-10-25",
+  "scope": "Numbered sections, substantive derivations and worked diagnostics, per-note bibliographies, and top/bottom series navigation.",
+  "pages": [
+    {
+      "slug": "generative_learning",
+      "chinese_characters_before": 10245,
+      "chinese_characters_after": 12304,
+      "numbered_sections": 11,
+      "numbered_subsections": 27,
+      "references": 6,
+      "source_sha256": "16e4f1d0e77443b7a48b3a7f9cd5d7c49d4c61affa84cf841f9257d9f87ddfd0"
+    },
+    {
+      "slug": "language_statistics",
+      "chinese_characters_before": 5945,
+      "chinese_characters_after": 7686,
+      "numbered_sections": 7,
+      "numbered_subsections": 17,
+      "references": 4,
+      "source_sha256": "8d0295695b32427f30477391047fcd2c000fcefe4133f1fd2d5dea0ac445b62f"
+    },
+    {
+      "slug": "inference_generation",
+      "chinese_characters_before": 6797,
+      "chinese_characters_after": 8522,
+      "numbered_sections": 7,
+      "numbered_subsections": 20,
+      "references": 5,
+      "source_sha256": "e55d1916c0506367a310f07c3ef9251929b0eced830d673dab9cffa891f69f15"
+    },
+    {
+      "slug": "parsing_latents",
+      "chinese_characters_before": 7133,
+      "chinese_characters_after": 8856,
+      "numbered_sections": 6,
+      "numbered_subsections": 19,
+      "references": 5,
+      "source_sha256": "d2662ecd9623a1bf7a6dfb388028fa1d8e786dd8176715b6985bc58eb0084d58"
+    },
+    {
+      "slug": "shared_representations",
+      "chinese_characters_before": 8034,
+      "chinese_characters_after": 10469,
+      "numbered_sections": 11,
+      "numbered_subsections": 26,
+      "references": 6,
+      "source_sha256": "96568aff902bde579f7d4925f96b7cf6c1330342a6932c0f9233ae9d81a31657"
+    }
+  ],
+  "total_chinese_characters_added": 9683,
+  "validation": {
+    "build": "passed",
+    "build_scope": "Independent full-site snapshot containing HEAD plus the hierarchical_data content and note changes only; other topics were concurrently edited in the shared checkout.",
+    "hugo_version": "0.136.5 extended",
+    "internal_links_checked": 459,
+    "broken_internal_links": 0,
+    "legacy_routes_preserved": 15,
+    "primary_references": 24,
+    "numerical_checks": {
+      "worked_correlation_thresholds": [
+        146.28571428571428,
+        2340.5714285714284,
+        37449.142857142855,
+        599186.2857142857,
+        9586980.57142857
+      ],
+      "support_size_log2": 514,
+      "procrustes_max_error": 3.3306690738754696e-15,
+      "ridge_stationarity_max_error": 9.13852327144582e-15,
+      "denoising_risk_decomposition_error": 2.42861286636753e-17,
+      "gaussian_score_finite_difference_error": 9.59754498097709e-12,
+      "inside_outside_evidence": 0.32499999999999996,
+      "inside_outside_rule_posterior_max_error": 0.0,
+      "inside_outside_root_posterior": [
+        0.6923076923076923,
+        0.30769230769230776
+      ]
+    },
+    "browser": {
+      "engine": "Codex in-app browser (CUA)",
+      "cases": [
+        {
+          "slug": "directory",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 12,
+          "mathErrors": 0,
+          "figure_placements": 0
+        },
+        {
+          "slug": "generative_learning",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 244,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "language_statistics",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 136,
+          "mathErrors": 0,
+          "figure_placements": 2
+        },
+        {
+          "slug": "inference_generation",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 131,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "parsing_latents",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 100,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "shared_representations",
+          "width": 1280,
+          "scrollWidth": 1265,
+          "math": 107,
+          "mathErrors": 0,
+          "figure_placements": 3
+        },
+        {
+          "slug": "directory",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 12,
+          "mathErrors": 0,
+          "figure_placements": 0
+        },
+        {
+          "slug": "generative_learning",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 244,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "language_statistics",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 136,
+          "mathErrors": 0,
+          "figure_placements": 2
+        },
+        {
+          "slug": "inference_generation",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 131,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "parsing_latents",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 100,
+          "mathErrors": 0,
+          "figure_placements": 1
+        },
+        {
+          "slug": "shared_representations",
+          "width": 390,
+          "scrollWidth": 375,
+          "math": 107,
+          "mathErrors": 0,
+          "figure_placements": 3
+        }
+      ],
+      "mobile_toc": {
+        "opened": true,
+        "links": 25,
+        "all_links_numbered": true
+      },
+      "reference_jump": {
+        "hash": "#ref-6",
+        "target_found": true
+      },
+      "visual_review": [
+        "Desktop: note header, numbered table of contents and inside–outside equations.",
+        "Mobile: original parsing figure, reference bibliography and onward-reading links."
+      ],
+      "viewport_reset": true
+    },
+    "diff_check": "passed for notes/hierarchical_data and content/zh/notes/hierarchical_data"
+  }
+}

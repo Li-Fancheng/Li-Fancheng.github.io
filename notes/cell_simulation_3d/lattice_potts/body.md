@@ -1,16 +1,20 @@
 > **Part II · Note 05**　上一篇：[04 · 三维 Vertex：共享多面体与拓扑重排](/notes/cell_simulation_3d/vertex_3d/) · [专题目录](/notes/cell_simulation_3d/) · 下一篇：[06 · 中心粒子与亚细胞元](/notes/cell_simulation_3d/particles/)
 
-## 1. 体素身份与细胞形状 {#main-lecture}
+## 1. 从 Potts 状态到细胞占据区 {#main-lecture}
 
-把空间分成小体素，每个体素保存一个整数标签：这个位置属于细胞 1、细胞 2，还是外部介质。一个细胞可以占据许多体素，形状由这些体素的集合决定。若接触处一个体素从细胞 2 改为细胞 1，两个细胞的边界就向前移动了一小步。
+Cellular Potts Model，简称 CPM，将细胞看成空间中一片带有共同身份的区域。计算域由体素覆盖，每个体素保存标签，边界便是相邻标签不同的位置。形变通过局部改变空间归属实现：若一个位置从细胞 B 改为细胞 A，A 在这里向外扩张，B 同时回缩。程序不必始终沿着一套膜节点追踪边界。
 
-Cellular Potts Model，简称 CPM，正是这样描述细胞形变。它起源于扩展 Potts 模型的细胞分选工作：[Graner 与 Glazier（1992）](https://doi.org/10.1103/PhysRevLett.69.2013)研究二维差异黏附，[Glazier 与 Graner（1993）](https://doi.org/10.1103/PhysRevE.47.2128)进一步分析分选和重排。三维版本沿用身份更新的思路，但体积、表面、连通和运动规则都需要三维实现。
+它的数学来源是格点统计模型。[Potts（1952）](https://doi.org/10.1017/S0305004100027419)用多个离散状态及相邻状态之间的作用研究有序与无序的转变。后来将这类思想用于细胞时，一个标签被赋予了整个细胞的身份，许多同标签格点共同形成细胞形状。局部相互作用使界面有代价，体积等整体项则维持每个细胞的尺度。
 
-标签 $\sigma(\mathbf x)$ 表示细胞身份，类型 $\tau(\sigma)$ 表示细胞属于哪一类。两个同为上皮的细胞仍应有不同身份；否则它们相遇时会合并成同一个对象。介质通常记为 0，也可以增加基质、腔体和胞内区室等身份类别。
+[Graner 与 Glazier（1992）](https://doi.org/10.1103/PhysRevLett.69.2013)把扩展 Potts 模型用于差异黏附驱动的细胞分选，[Glazier 与 Graner（1993）](https://doi.org/10.1103/PhysRevE.47.2128)进一步讨论分选与重排。这条路线吸引人的地方，是将接触偏好、形状变化和细胞身份放进同一个离散过程：改变邻域中的标签即可移动边界，胞间接触网络随占据区域一起变化。
 
-CPM 与相场都能在规则背景网格上运行，但它们更新的变量不同。相场是连续数值并求解场方程，CPM 则尝试离散的身份复制，再根据局部能量变化决定是否接受。
+身份与类型在这里承担不同作用。两个上皮细胞可以有相同类型，却需要不同身份，否则贴合后会被当成同一个对象。细胞与介质、核与胞质或不同基质区也可以分别编码，但编码以后仍需说明哪些更新被允许、哪些区域必须保持连通。空间标签提供了表达这些结构的工具，具体规则决定它们的物理含义。
 
-### 1.1 三维球状团的侵袭形态 {#paper-invasion}
+随机接受规则使系统能够越过部分局部能垒，产生边界涨落与接触调整。生物应用中的有效涨落强度，通常概括未显式解析的活动和形变过程。将它用于细胞动力学时，需要以运动、接触形成或松弛实验建立时间映射；格点模型的热平衡语言不能直接决定真实细胞的速度和主动驱动。
+
+三维版本沿用身份更新的基本思想，同时把面积、体积、邻域和连通性换成三维对象。它尤其便于将形变与分裂、迁移、化学响应和复杂环境组合。以下先把一次复制的能量和概率写清，再讨论这些规则怎样共同产生可见形态，以及它们受哪些离散尺度限制。
+
+<div class="note-anchor" id="paper-invasion"></div>
 
 ![三维 Cellular Potts 球状细胞团及纤维基质设置，和不同参数下的侵袭形态序列。](figures/cpm_score2023_fig01.png)
 
@@ -20,7 +24,9 @@ a 是红色细胞团与绿色纤维基质的空间设置，原图移去前半部
 
 [这项工作](https://doi.org/10.1371/journal.pcbi.1010471)同时考虑运动、细胞间作用和基质排列。图中时间写作 Monte Carlo step，其物理时长需要另行标定。要理解这些形态如何出现，下面先拆开一次身份复制所改变的能量。
 
-## 2. 局部身份复制的能量变化 {#一次复制尝试改变了哪些能量}
+## 2. 接触能、体积与随机复制 {#energy-and-updates}
+
+<div class="note-anchor" id="一次复制尝试改变了哪些能量"></div>
 
 典型的说明性 Hamiltonian 为
 
@@ -46,7 +52,7 @@ $$
 
 这个展开让体积约束的作用很清楚：一个已经偏大的细胞再增加体素，代价越来越高；一个偏小的细胞失去体素，也会受到惩罚。体积不是被严格锁定，而是在有限涨落中被拉回目标附近。
 
-### 2.1 接触代价与有效黏附功 {#j-为什么不能直接叫作黏附强度}
+<div class="note-anchor" id="j-为什么不能直接叫作黏附强度"></div>
 
 $J_{AB}$ 是 A、B 接触的离散能量代价。若增大它，通常会使 A、B 的相互接触更不利；但最终分选由多个接触代价的相对大小决定。
 
@@ -54,7 +60,7 @@ $J_{AB}$ 是 A、B 接触的离散能量代价。若增大它，通常会使 A�
 
 这使 CPM 很适合表达不同细胞类型的相对接触偏好。但如果真实系统中黏附还改变接触处皮层张力，仅拟合一组 $J$ 通常不能拆出分子黏附与皮层收缩的独立贡献。
 
-## 3. 随机接受与非平衡驱动 {#updates}
+### 2.1 随机过程与接受规则 {#updates}
 
 选定源和目标后，计算 $\Delta\mathcal H$。常见接受规则为
 
@@ -70,7 +76,7 @@ $$
 
 *图 2 · 能垒和格点各向异性分别影响更新。* 左图为平面界面截断最近邻格点键的几何估计，右图为 Metropolis 接受率。它们不是完整 CPM 的形态或迁移结果。
 
-### 3.1 提议概率与详细平衡 {#接受公式与详细平衡之间还有一步}
+<div class="note-anchor" id="接受公式与详细平衡之间还有一步"></div>
 
 如果想让无主动项的模型采样 $\pi(C)\propto e^{-\mathcal H(C)/T}$，就应检查从构型 $C$ 提议到 $C'$ 的概率 $q(C\to C')$。一般的接受率需要包含
 
@@ -86,7 +92,9 @@ $$
 
 [Voß-Böhme（2012）](https://doi.org/10.1371/journal.pone.0042852)对 CPM 的多尺度解释与数学性质作了系统分析，适合在已经理解基本更新之后阅读。它有助于把离散随机过程与想要解释的连续组织动力学分开。
 
-## 4. Monte Carlo 时钟与物理时间 {#monte-carlo-时钟怎样对应实验时间}
+## 3. 格点、时钟与连通约束 {#lattice-and-time}
+
+<div class="note-anchor" id="monte-carlo-时钟怎样对应实验时间"></div>
 
 一 Monte Carlo step 常定义为与总格点数相当的一批复制尝试，也有程序只从边界抽样。相同的 MCS 名称，不代表相同的尝试分布或物理时间。
 
@@ -96,7 +104,7 @@ $$
 
 CPM 也不是一般意义上的节点力平衡求解器。局部能量差会影响随机转移概率，但从它到连续速度与牵引的关系，依赖尝试几何、涨落与时间粗粒化。若研究目标直接涉及局部应力，应说明采用什么定义与标定。
 
-### 4.1 一个可计算的跳跃模型说明时间映射的来源 {#jump-mobility}
+<div class="note-anchor" id="jump-mobility"></div>
 
 将某个有效界面位置简化为一维坐标，每次向前或向后移动 $a$，零偏置时两个方向的尝试率都为 $\nu$。若外力 $f$ 对前进一步做功 $fa$，选择满足局部速率比的教学模型
 
@@ -117,7 +125,7 @@ $$
 
 真实细胞边界上，不同位置的尝试还通过体积约束、连通性和形状耦合。质心的一次位移通常由许多局部复制累积而成，不能把一个体素的 $a$ 直接当成整个细胞的步长。实验时间标定因此需要在实际使用的细胞尺寸、邻域和参数下完成，并在另一种动力学观测上交叉检验。
 
-## 5. 格点各向异性 {#anisotropy}
+### 3.1 方向偏好与物理参数缩放 {#anisotropy}
 
 在最近邻立方格点中，法向为 $\mathbf n$ 的平面，每单位面积穿过的格点键数正比于
 
@@ -131,7 +139,7 @@ $$
 
 一个简单检验是把相同的细胞团相对网格旋转，再比较最终外形、迁移方向和分选速度。若差异始终跟着坐标轴走，就不能把它解释成细胞自发选择的生物方向。受限迁移中的孔道也应相对格点转向检查，因为只有少数体素宽的通道尤其容易受离散方向影响。
 
-### 5.1 细网格也可能保留晶格式界面能 {#lattice-surface-energy}
+<div class="note-anchor" id="lattice-surface-energy"></div>
 
 前面的 $|n_x|+|n_y|+|n_z|$ 并不只是有限像素造成的锯齿。轴向法线取 $(1,0,0)$ 时该量为 1，沿空间对角线的单位法线取 $(1,1,1)/\sqrt3$ 时为 $\sqrt3$。最近邻模型由此赋予不同方向有限比例的界面能，格距变小并不会让这个比例自动趋于 1。
 
@@ -139,7 +147,7 @@ $$
 
 这与生物极性引起的各向异性不同。生物极性随细胞和组织方向旋转，格点偏好则固定在计算坐标轴上。把组织相对格点转动后，形态差异仍留在实验室方向还是跟着坐标轴走，是区分两者的一项直接对照。
 
-## 6. 物理参数与格距缩放 {#网格细化以后哪些参数必须改变}
+<div class="note-anchor" id="网格细化以后哪些参数必须改变"></div>
 
 设格距为 $h$，物理体积 $V=h^3v$，物理表面积近似为 $A=h^2s$。若希望离散体积能对应
 
@@ -162,7 +170,9 @@ $$
 
 *图 3 · 体素数与物理体积要同时换算。* 左图按正文缩放 $v_0,\lambda_V$，绘制同一物理体积能；右图用精确有限差分计算增加或移去一个体素的代价。没有引入随机接受过程。
 
-## 7. 细胞连通性与分裂 {#connectivity}
+<div class="note-anchor" id="connectivity"></div>
+
+能量和格距换算约束了更新的代价，允许哪些更新还取决于细胞的完整性。对总体素数的控制不会独自保证这一点。
 
 一个标签占据的总体素数可以完全正确，同时分散成两块。体积罚项只能看到总数，无法知道细胞是否断裂。若研究中的细胞应该保持连通，就必须限制会使标签断开的更新，或采用有明确连通性质的算法。
 
@@ -172,7 +182,9 @@ $$
 
 分裂时也有同样的问题：将母标签沿平面一分为二后，两个子标签可能并不连通。分裂轴、切面与细胞凹陷相互作用，需要在事件完成时检查，而不是只给两个身份分别分配一半目标体积。
 
-## 8. 迁移、胞内区室与基质 {#如何增加迁移细胞核和基质}
+## 4. 迁移、分选与基质环境 {#biological-processes}
+
+<div class="note-anchor" id="如何增加迁移细胞核和基质"></div>
 
 最简单的持续迁移可以用一个细胞极性方向，偏向接受朝该方向扩展的复制。另一种路线把短期活动记忆赋给新获得的体素：近期扩张处更容易继续扩张，局部正反馈形成前缘，活动又随时间衰减。
 
@@ -184,7 +196,7 @@ $$
 
 化学信号通常在另一套网格上求解，再影响复制偏置或细胞状态。若两套网格不同，需要定义插值与源汇分配；若细胞摄取的是固定总量，细化化学网格后积分摄取量应保持一致。
 
-### 8.1 趋化、趋动与持续性如何区分 {#趋化趋动与持续性如何区分}
+<div class="note-anchor" id="趋化趋动与持续性如何区分"></div>
 
 若浓度场为 $c(\mathbf x)$，可以让边界扩张偏向浓度升高的方向。一种局部能量偏置写成 $\Delta\mathcal H_{\rm chem}=-\chi[c(\mathbf x_{\rm target})-c(\mathbf x_{\rm source})]$，具体还需指定哪些细胞、扩张或回缩尝试采用该项。
 
@@ -194,7 +206,7 @@ $$
 
 化学场自身也会被细胞摄取或分泌改变。更新顺序若过粗，细胞可能根据很久以前的浓度作出反应。力学、化学与胞内活动可使用不同子步长，但需要检验它们的耦合误差。
 
-### 8.2 三维侵袭中的形态指标与机制比较 {#invasion-metrics}
+<div class="note-anchor" id="invasion-metrics"></div>
 
 回到开头的四类侵袭形态，一个半径并不足以区分它们。少数细胞远离主体，会显著增大最大半径；主体边缘整体变粗糙，也可能使最大半径增加，但这两个过程涉及的细胞比例、连接与迁移方式很不相同。
 
@@ -204,13 +216,15 @@ $$
 
 例如，固定细胞周期与运动规则，只改变纤维取向，若侵袭方向随之转向，支持的是基质几何对运动的引导。固定基质而改变胞间作用，若主体连通性变化，则约束另一条机制。两种干预可能都增加最远迁移距离，但空间组织和时间轨迹不必相同。
 
-## 9. 细胞分选、包裹与对外界面 {#怎样使用-cpm-研究细胞分选}
+<div class="note-anchor" id="怎样使用-cpm-研究细胞分选"></div>
+
+侵袭强调细胞与外部基质的作用，分选则更集中地检验不同胞间界面及对外表面的竞争。两者都需要将动力学与终态结构配合比较。
 
 一个有说服力的分选模型，应同时比较初始混合比例、团块形状、异类型接触面积、细胞交换速度和最终结构。只比较终态“红细胞在里面、蓝细胞在外面”，很多不同参数组都可能做到。
 
 还可以有针对性地改变细胞—介质接触代价，检验包裹顺序是否改变；改变活动而保留接触能，检验分选速度与终态是否分别受影响。这样才有机会区分差异界面能与差异运动性。若实验在分选期间存在明显增殖，人口增长也可能改变接触统计，需要一起计入。
 
-### 9.1 异型接触与内外包裹顺序 {#用接触能判断分选方向还需要考虑外表面}
+<div class="note-anchor" id="用接触能判断分选方向还需要考虑外表面"></div>
 
 在相同接触面积权重的简化比较中，将两块 A—B 接触替换为一块 A—A 与一块 B—B，能量变化为 $J_{AA}+J_{BB}-2J_{AB}$。定义
 
@@ -226,23 +240,37 @@ $$
 
 [CompuCell3D 的官方文档](https://compucell3dreferencemanual.readthedocs.io/en/latest/)可以作为具体实现入口，尤其应核对体积、表面、连接与化学场使用的定义。文献中的 Hamiltonian 提供物理图景，程序里的邻域、更新频率与边界规则决定这一图景怎样成为真实轨迹。
 
-CPM 让细胞身份、形变和多种生物规则较容易结合；精细曲率、连续牵引与时间映射则需要额外工作。下一篇将换到无背景格点的粒子描述，看看把细胞压缩成一个中心，或展开成一组亚细胞元，会保留哪些信息。
+## 5. 离散动力学的解释范围与局限 {#model-limits}
 
-## 10. 参考文献 {#references}
+CPM 的优势在于将细胞身份与空间占据直接联系起来。组织出现大形变、分选或单细胞迁移时，边界和邻接可以随局部更新一起改变；核、介质和基质又能在相同空间上组合。对于关注形态与细胞状态的多过程问题，这种统一表示十分实用，其解释仍需要落实到完整的更新规则。
 
-1. Graner and Glazier (1992). [Simulation of biological cell sorting using a two-dimensional extended Potts model](https://doi.org/10.1103/PhysRevLett.69.2013). *Physical Review Letters*, 69(13), 2013-2016.
+格点引入的长度与方向是最基本的限制。少数体素宽的通道、尖端或接触，可能对网格方向和邻域选择高度敏感。细化网格可以减小轮廓的阶梯感，却不一定消除最近邻模板保留的方向相关界面能。真实组织的极性随细胞转动，格点偏好留在计算坐标轴上；二者应通过相对旋转的对照来区分。
 
-2. Glazier and Graner (1993). [Simulation of the differential adhesion driven rearrangement of biological cells](https://doi.org/10.1103/PhysRevE.47.2128). *Physical Review E*, 47(3), 2128-2154.
+能量与运动的关系同样需要谨慎解释。一次局部复制的能量差决定接受倾向，整体迁移率还取决于尝试频率、位移尺度、接受率和允许状态。给同一个 MCS 赋予秒数，只有在这些条件及相应细胞尺寸下才有意义。用质心扩散标定时间以后，仍需检查接触形成、形变和分裂后松弛是否具有合适的相对速度。
 
-3. Herold, Behle, Rosenbauer, Ferruzzi and Schug (2023). [Development of a scoring function for comparing simulated and experimental tumor spheroids](https://doi.org/10.1371/journal.pcbi.1010471). *PLOS Computational Biology*, 19(3), e1010471.
+有效涨落还会承担多个过程。它可能帮助边界越过离散能垒，也可能被用来表示未解析的活动。两种用途在改变格距、接触能和驱动后未必同时成立。若每次更换条件都重新调整涨落以获得相似轨迹，就难以判断变化来自细胞活动还是更新器。明确的极性、局部活动记忆和化学响应，可以使其中一部分作用得到更直接的实验约束。
 
-4. Voß-Böhme (2012). [Multi-Scale Modeling in Morphogenesis: A Critical Analysis of the Cellular Potts Model](https://doi.org/10.1371/journal.pone.0042852). *PLoS ONE*, 7(9), e42852.
+连通性与胞内区室也属于动力学。禁止碎裂能够保持细胞完整，同时排除了一组更新路径；它并未自动加入膜张力、核包膜或胞质输运。区室化模型能比较核和胞质的几何限制，但各自的形变代价与耦合仍需标定。对于压力、局部牵引和精细曲率，通常还需要明确的观测定义或与连续力学模型的对应。
 
-5. Durand and Guesnet (2016). [An efficient Cellular Potts Model algorithm that forbids cell fragmentation](https://doi.org/10.1016/j.cpc.2016.07.030). *Computer Physics Communications*, 208, 54-63.
+因而，CPM 最有说服力的应用，是在统一参数、更新与测量下同时解释形态、迁移和事件统计，再预测独立干预。它可以为生物机制提供空间上的检验，但某个参数名称并不唯一对应一种分子过程。下一篇的无背景格点模型将把这种约化转移到中心和亚细胞元上，进一步讨论接触关系如何代替未解析的形状。
 
-6. Niculescu, Textor and de Boer (2015). [Crawling and Gliding: A Computational Model for Shape-Driven Cell Migration](https://doi.org/10.1371/journal.pcbi.1004280). *PLOS Computational Biology*.
+## 6. 参考文献 {#references}
 
-7. Scianna, Preziosi and Wolf (2013). [A Cellular Potts model simulating cell migration on and in matrix environments](https://doi.org/10.3934/mbe.2013.10.235). *Mathematical Biosciences and Engineering*, 10(1), 235-261.
+1. Potts (1952). [Some generalized order-disorder transformations](https://doi.org/10.1017/S0305004100027419). *Mathematical Proceedings of the Cambridge Philosophical Society*, 48(1), 106-109.
+
+2. Graner and Glazier (1992). [Simulation of biological cell sorting using a two-dimensional extended Potts model](https://doi.org/10.1103/PhysRevLett.69.2013). *Physical Review Letters*, 69(13), 2013-2016.
+
+3. Glazier and Graner (1993). [Simulation of the differential adhesion driven rearrangement of biological cells](https://doi.org/10.1103/PhysRevE.47.2128). *Physical Review E*, 47(3), 2128-2154.
+
+4. Herold, Behle, Rosenbauer, Ferruzzi and Schug (2023). [Development of a scoring function for comparing simulated and experimental tumor spheroids](https://doi.org/10.1371/journal.pcbi.1010471). *PLOS Computational Biology*, 19(3), e1010471.
+
+5. Voß-Böhme (2012). [Multi-Scale Modeling in Morphogenesis: A Critical Analysis of the Cellular Potts Model](https://doi.org/10.1371/journal.pone.0042852). *PLoS ONE*, 7(9), e42852.
+
+6. Durand and Guesnet (2016). [An efficient Cellular Potts Model algorithm that forbids cell fragmentation](https://doi.org/10.1016/j.cpc.2016.07.030). *Computer Physics Communications*, 208, 54-63.
+
+7. Niculescu, Textor and de Boer (2015). [Crawling and Gliding: A Computational Model for Shape-Driven Cell Migration](https://doi.org/10.1371/journal.pcbi.1004280). *PLOS Computational Biology*.
+
+8. Scianna, Preziosi and Wolf (2013). [A Cellular Potts model simulating cell migration on and in matrix environments](https://doi.org/10.3934/mbe.2013.10.235). *Mathematical Biosciences and Engineering*, 10(1), 235-261.
 
 ---
 

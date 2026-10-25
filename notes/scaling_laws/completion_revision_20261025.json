@@ -1,0 +1,836 @@
+{
+  "date": "2026-10-25",
+  "stage": "Completed explanatory notes: section numbering, worked examples, local bibliography and reading navigation",
+  "comparison_notes": [
+    "vertex_model/linear_response",
+    "celegans/embryonic_morphogenesis"
+  ],
+  "scope": "Six Chinese scaling-law articles and their directory. Existing opening figures, formulas and legacy heading anchors are preserved; examples expand the mechanism explanations.",
+  "articles": [
+    {
+      "slug": "statistical_geometry",
+      "title": "01 · 统计估计与几何分辨率",
+      "chinese_characters_before": 10533,
+      "chinese_characters_after": 12100,
+      "display_equations_before": 38,
+      "display_equations_after": 44,
+      "numbered_headings": 38,
+      "legacy_heading_anchors_preserved": 33,
+      "bibliography_sources": [
+        "bahri2021",
+        "hastie2019",
+        "cui2021",
+        "canatar2021",
+        "bordelon2020",
+        "maloney2022"
+      ],
+      "bibliography_items": 6,
+      "figure_placements": 1,
+      "body_sha256": "ba4548f563a8f51fe24de49604ed09cde53616cad65cacc1bc1a97e266fb56ff",
+      "baseline_sha256": "f46fc3a76d034bd84b96b765c7afe82833a5c065c8452f04b457644450a8445b"
+    },
+    {
+      "slug": "spectral_learning",
+      "title": "02 · 谱与学习分辨率",
+      "chinese_characters_before": 10343,
+      "chinese_characters_after": 12392,
+      "display_equations_before": 39,
+      "display_equations_after": 43,
+      "numbered_headings": 53,
+      "legacy_heading_anchors_preserved": 47,
+      "bibliography_sources": [
+        "bordelon2020",
+        "canatar2021",
+        "mei2019",
+        "maloney2022",
+        "cui2021",
+        "defilippis2025"
+      ],
+      "bibliography_items": 6,
+      "figure_placements": 4,
+      "body_sha256": "64e20b334ea390b327c44fea6b6444fd88c510c3f4ce7167588271a2f88c4f40",
+      "baseline_sha256": "33a16bf17284c01edc096aa4e096aac85f8e813fbf00b319b6de5befcd2d250e"
+    },
+    {
+      "slug": "discrete_structure",
+      "title": "03 · 离散技能与长尾结构",
+      "chinese_characters_before": 4889,
+      "chinese_characters_after": 7414,
+      "display_equations_before": 13,
+      "display_equations_after": 18,
+      "numbered_headings": 27,
+      "legacy_heading_anchors_preserved": 17,
+      "bibliography_sources": [
+        "michaud2023",
+        "sorscher2022",
+        "schaeffer2023"
+      ],
+      "bibliography_items": 3,
+      "figure_placements": 2,
+      "body_sha256": "d67f4e3a6d3c41ab4a34c5e51675d82a608d7cc075137a0961397e08f8739ea3",
+      "baseline_sha256": "6b90856acba337c53cce20a15fc16e0ea8b92b31b7e339f5720585658b9d4a9f"
+    },
+    {
+      "slug": "feature_learning",
+      "title": "04 · 特征学习与动态加速",
+      "chinese_characters_before": 5128,
+      "chinese_characters_after": 7455,
+      "display_equations_before": 17,
+      "display_equations_after": 23,
+      "numbered_headings": 28,
+      "legacy_heading_anchors_preserved": 20,
+      "bibliography_sources": [
+        "bordelon2025",
+        "bordelon2020",
+        "defilippis2025"
+      ],
+      "bibliography_items": 3,
+      "figure_placements": 2,
+      "body_sha256": "c855048e87913fe42a008781553aa5b58beb9bc0ab770bd209892095eda07c6e",
+      "baseline_sha256": "4ba6c7ea15ab61d0a24bb20419a51aa4cf8c47c46e306e58e5225857ce3bd315"
+    },
+    {
+      "slug": "graph_language",
+      "title": "05 · 随机图与语言标度",
+      "chinese_characters_before": 5309,
+      "chinese_characters_after": 7508,
+      "display_equations_before": 12,
+      "display_equations_after": 17,
+      "numbered_headings": 29,
+      "legacy_heading_anchors_preserved": 20,
+      "bibliography_sources": [
+        "barkeshli2026",
+        "barabasi1999"
+      ],
+      "bibliography_items": 2,
+      "figure_placements": 2,
+      "body_sha256": "8c676cf2387d1fc1fdc481fb0ff0c67c1facedfc0444a9fc6c18851b7ebcd3ea",
+      "baseline_sha256": "b488d1c8be0e64a4d7a1f2dbad1aae6dcdfeb96d180474e13b1662d2c173f6ea"
+    },
+    {
+      "slug": "compute_allocation",
+      "title": "06 · 计算配置与经验外推",
+      "chinese_characters_before": 7120,
+      "chinese_characters_after": 9304,
+      "display_equations_before": 22,
+      "display_equations_after": 26,
+      "numbered_headings": 37,
+      "legacy_heading_anchors_preserved": 30,
+      "bibliography_sources": [
+        "kaplan2020",
+        "hoffmann2022",
+        "porian2024",
+        "muennighoff2023",
+        "snell2024",
+        "barkeshli2026",
+        "maloney2022"
+      ],
+      "bibliography_items": 7,
+      "figure_placements": 2,
+      "body_sha256": "c99b3ab74c8337a0086e327fb79c3ee298dbc3e01ad2ec7bb52cd4e4684d4e1b",
+      "baseline_sha256": "66de307055ff76108b5761b731a6ef8be2620d64003dcc8e5f8b9a26f4598e68"
+    }
+  ],
+  "totals": {
+    "chinese_characters_before": 43322,
+    "chinese_characters_after": 56173,
+    "display_equations_before": 141,
+    "display_equations_after": 171,
+    "numbered_article_headings": 212,
+    "numbered_directory_headings": 5,
+    "article_bibliography_items": 27,
+    "primary_sources": 19,
+    "unique_figures": 13,
+    "new_figures": 3
+  },
+  "content_additions": {
+    "statistical_geometry": [
+      "MSE, RMSE and noise floor with finite numerical values",
+      "Taylor curvature, explicit sine interpolation constants, target direction and projection"
+    ],
+    "spectral_learning": [
+      "Two-mode risk and orthogonality",
+      "Discrete gradient descent clock and learning-rate schedule",
+      "Growing estimation complexity, random-input sampling, parameter-to-mode mapping"
+    ],
+    "discrete_structure": [
+      "Weighted three-skill example and unequal acquisition costs",
+      "Exact finite coverage and finite skill-table tail",
+      "Five-observation additive completion, connectivity and distribution shifts",
+      "Continuous local probability versus exact-match scoring"
+    ],
+    "feature_learning": [
+      "Fully solved balanced scalar factor dynamics and matched frozen initial metric",
+      "Two-time correlations and responses",
+      "Concrete source-condition examples, illustrative memory integral and risk floor",
+      "Explicit compute-exponent comparison"
+    ],
+    "graph_language": [
+      "Four-state transition matrix, stationary distribution and entropy floor",
+      "Known-support parameter count and cross-entropy decomposition",
+      "Illegal probability mass versus legal conditional proportions",
+      "Hidden-state sequence memory and baseline comparison"
+    ],
+    "compute_allocation": [
+      "Lifecycle cost optimum and independently optimized numerical table",
+      "Explicit interaction surface and rectangular mixed difference",
+      "Numerical effect of loss-floor bias and protocol reporting"
+    ]
+  },
+  "scientific_scope": [
+    "Worked examples are independently derived low-dimensional models, with stated assumptions and limitations.",
+    "The scalar factor model has exponential late convergence and is not evidence of a changed neural power-law exponent.",
+    "The effective-memory equation is an illustrative scaling closure, not a complete DMFT reproduction.",
+    "Graph figures do not include Transformer training; the additive example assumes the correct functional rule.",
+    "Research discussions retain paper-specific assumptions and distinguish initial manuscript from publication or revision years."
+  ],
+  "worked_example_checks": {
+    "additive_composition": {
+      "observations": 5,
+      "identifiable_rank": 5,
+      "full_table": [
+        [
+          1.0,
+          4.0,
+          6.0
+        ],
+        [
+          2.0,
+          5.0,
+          7.0
+        ],
+        [
+          4.0,
+          7.0,
+          9.0
+        ]
+      ],
+      "recovery_max_error": 1.7763568394002505e-15
+    },
+    "factor_dynamics": {
+      "theta0": 0.01,
+      "closed_form_vs_ode_max_error": 4.952763754673128e-10,
+      "adaptive_half_target_time": 2.297559925067295,
+      "frozen_half_target_time": 34.15484223532219,
+      "scope": "One mode; late convergence is exponential, not a neural power law."
+    },
+    "four_state_markov": {
+      "P": [
+        [
+          0.0,
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        [
+          0.5,
+          0.0,
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.5,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "pi": [
+        0.375,
+        0.25,
+        0.25,
+        0.125
+      ],
+      "entropy_nats": 0.7585531985305138,
+      "uniform_predictor_excess": 0.6277411625893767,
+      "known_support_dimension": 4,
+      "cross_entropy_decomposition_max_error": 8.326672684688674e-17
+    },
+    "interpolation_leading_constants": {
+      "intervals": 64,
+      "relative_errors": [
+        0.00012047165763451329,
+        0.0004206389511602904
+      ]
+    },
+    "lifecycle_optima": [
+      {
+        "Q": 0.0,
+        "N": 146.1706403533513,
+        "D": 1140.2198571735644,
+        "risk": 0.6354226953319637,
+        "marginal_condition_relative_error": 5.1762244224528324e-09
+      },
+      {
+        "Q": 1000.0,
+        "N": 116.20553279320309,
+        "D": 1267.573706063805,
+        "risk": 0.6502426184086928,
+        "marginal_condition_relative_error": 8.749047621660399e-11
+      },
+      {
+        "Q": 10000.0,
+        "N": 46.20993692615015,
+        "D": 1940.0611878426992,
+        "risk": 0.7412367344800431,
+        "marginal_condition_relative_error": 2.076312766007272e-08
+      }
+    ],
+    "status": "passed"
+  },
+  "static_validation": {
+    "pages": [
+      {
+        "slug": "directory",
+        "math_expressions": 0,
+        "display_equations": 0,
+        "numbered_headings": 5,
+        "internal_references_checked": 11,
+        "image_placements": 0,
+        "bibliography_items": 0
+      },
+      {
+        "slug": "statistical_geometry",
+        "math_expressions": 310,
+        "display_equations": 44,
+        "numbered_headings": 38,
+        "internal_references_checked": 48,
+        "image_placements": 1,
+        "bibliography_items": 6,
+        "legacy_heading_anchors_preserved": 33,
+        "baseline_math_preserved": 271
+      },
+      {
+        "slug": "spectral_learning",
+        "math_expressions": 307,
+        "display_equations": 43,
+        "numbered_headings": 53,
+        "internal_references_checked": 59,
+        "image_placements": 4,
+        "bibliography_items": 6,
+        "legacy_heading_anchors_preserved": 47,
+        "baseline_math_preserved": 280
+      },
+      {
+        "slug": "discrete_structure",
+        "math_expressions": 126,
+        "display_equations": 18,
+        "numbered_headings": 27,
+        "internal_references_checked": 39,
+        "image_placements": 2,
+        "bibliography_items": 3,
+        "legacy_heading_anchors_preserved": 17,
+        "baseline_math_preserved": 81
+      },
+      {
+        "slug": "feature_learning",
+        "math_expressions": 137,
+        "display_equations": 23,
+        "numbered_headings": 28,
+        "internal_references_checked": 40,
+        "image_placements": 2,
+        "bibliography_items": 3,
+        "legacy_heading_anchors_preserved": 20,
+        "baseline_math_preserved": 87
+      },
+      {
+        "slug": "graph_language",
+        "math_expressions": 109,
+        "display_equations": 17,
+        "numbered_headings": 29,
+        "internal_references_checked": 41,
+        "image_placements": 2,
+        "bibliography_items": 2,
+        "legacy_heading_anchors_preserved": 20,
+        "baseline_math_preserved": 70
+      },
+      {
+        "slug": "compute_allocation",
+        "math_expressions": 151,
+        "display_equations": 26,
+        "numbered_headings": 37,
+        "internal_references_checked": 41,
+        "image_placements": 2,
+        "bibliography_items": 7,
+        "legacy_heading_anchors_preserved": 30,
+        "baseline_math_preserved": 112
+      }
+    ],
+    "source_to_html_math_expressions": 1140,
+    "numbered_headings": 217,
+    "internal_references_checked": 279,
+    "figure_placements": 13,
+    "errors": []
+  },
+  "browser_validation": {
+    "cases": 14,
+    "viewports": [
+      1440,
+      390
+    ],
+    "katex_errors": 0,
+    "horizontal_overflow_cases": 0,
+    "mobile_toc_reference_navigation": 6,
+    "next_article_links_followed": 10,
+    "all_source_katex_expressions_parsed": 1140,
+    "all_source_parse_errors": [],
+    "mobile_aligned_factor_equations": [
+      {
+        "width": 342,
+        "scrollWidth": 342,
+        "tex": "\n\\begin{aligned}\n\\dot a&=b(1-ab),\\\\\n\\dot b&=a(1-ab),\\\\\n\\frac{d}{dt}(a^2-b^2)&=0.\n\\end{aligned}\n"
+      },
+      {
+        "width": 342,
+        "scrollWidth": 342,
+        "tex": "\n\\begin{aligned}\n\\dot\\theta&=2\\theta(1-\\theta),\\\\\n\\theta(t)&=\\frac{1}{1+(\\theta_0^{-1}-1)e^{-2t}}.\n\\end{aligned}\n"
+      }
+    ],
+    "legacy_routes": [
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/",
+        "path": "/notes/scaling_laws/",
+        "hash": "",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/time_scaling/",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#time-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/data_scaling/",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#data-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/model_scaling/",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#model-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/compute_scaling/",
+        "path": "/notes/scaling_laws/compute_allocation/",
+        "hash": "#compute-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#joint-risk",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#joint-risk",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#time-scaling",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#time-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#data-scaling",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#data-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#model-scaling",
+        "path": "/notes/scaling_laws/spectral_learning/",
+        "hash": "#model-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#compute-scaling",
+        "path": "/notes/scaling_laws/compute_allocation/",
+        "hash": "#compute-scaling",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#interpretation",
+        "path": "/notes/scaling_laws/compute_allocation/",
+        "hash": "#interpretation",
+        "anchorExists": true
+      },
+      {
+        "old": "/notes/neural_network_theory/scaling_laws/#summary",
+        "path": "/notes/scaling_laws/",
+        "hash": "#summary",
+        "anchorExists": true
+      }
+    ],
+    "cases_detail": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 0,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [],
+        "bib": 0,
+        "slug": "directory",
+        "status": 200
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 310,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/statistical_geometry.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 6,
+        "slug": "statistical_geometry",
+        "status": 200,
+        "followNextHref": "/notes/scaling_laws/spectral_learning/",
+        "followNextPath": "/notes/scaling_laws/spectral_learning/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 307,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/critical_spectrum.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/time_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/data_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/model_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 6,
+        "slug": "spectral_learning",
+        "status": 200,
+        "followNextHref": "/notes/scaling_laws/discrete_structure/",
+        "followNextPath": "/notes/scaling_laws/discrete_structure/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 126,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/discrete_skills.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/skills_composition.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 3,
+        "slug": "discrete_structure",
+        "status": 200,
+        "followNextHref": "/notes/scaling_laws/feature_learning/",
+        "followNextPath": "/notes/scaling_laws/feature_learning/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 137,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/factor_dynamics.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/feature_learning.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 3,
+        "slug": "feature_learning",
+        "status": 200,
+        "followNextHref": "/notes/scaling_laws/graph_language/",
+        "followNextPath": "/notes/scaling_laws/graph_language/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 109,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/random_graphs.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/markov_example.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 2,
+        "slug": "graph_language",
+        "status": 200,
+        "followNextHref": "/notes/scaling_laws/compute_allocation/",
+        "followNextPath": "/notes/scaling_laws/compute_allocation/"
+      },
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "math": 151,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/compute_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/fitting_floor.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 7,
+        "slug": "compute_allocation",
+        "status": 200
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 0,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [],
+        "bib": 0,
+        "slug": "directory",
+        "status": 200
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 310,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/statistical_geometry.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 6,
+        "slug": "statistical_geometry",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references",
+        "followNextHref": "/notes/scaling_laws/spectral_learning/",
+        "followNextPath": "/notes/scaling_laws/spectral_learning/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 307,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/critical_spectrum.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/time_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/data_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/model_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 6,
+        "slug": "spectral_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references",
+        "followNextHref": "/notes/scaling_laws/discrete_structure/",
+        "followNextPath": "/notes/scaling_laws/discrete_structure/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 126,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/discrete_skills.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/skills_composition.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 3,
+        "slug": "discrete_structure",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references",
+        "followNextHref": "/notes/scaling_laws/feature_learning/",
+        "followNextPath": "/notes/scaling_laws/feature_learning/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 137,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/factor_dynamics.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/feature_learning.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 3,
+        "slug": "feature_learning",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references",
+        "followNextHref": "/notes/scaling_laws/graph_language/",
+        "followNextPath": "/notes/scaling_laws/graph_language/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 109,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/random_graphs.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/markov_example.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 2,
+        "slug": "graph_language",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references",
+        "followNextHref": "/notes/scaling_laws/compute_allocation/",
+        "followNextPath": "/notes/scaling_laws/compute_allocation/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "math": 151,
+        "mathErrors": 0,
+        "code": 0,
+        "images": [
+          {
+            "src": "/notes/scaling_laws/figures/compute_scaling.svg",
+            "loaded": true,
+            "reserved": true
+          },
+          {
+            "src": "/notes/scaling_laws/figures/fitting_floor.svg",
+            "loaded": true,
+            "reserved": true
+          }
+        ],
+        "bib": 7,
+        "slug": "compute_allocation",
+        "status": 200,
+        "mobileTocOpened": true,
+        "tocNavigationHash": "#references"
+      }
+    ],
+    "visual_review": [
+      "Desktop bibliography and bottom reading navigation",
+      "Desktop Markov worked example with numbered TOC",
+      "Mobile factor equations after multiline adjustment",
+      "Mobile additive example and bibliography layout"
+    ]
+  },
+  "source_checks": {
+    "python_syntax": "passed",
+    "existing_formula_sequence_preserved_as_subsequence": true,
+    "existing_heading_anchors_preserved": true,
+    "source_and_rendered_math_match": true,
+    "rendered_code_elements": 0,
+    "git_diff_whitespace": "passed"
+  },
+  "reproducibility_files": {
+    "script": "worked_examples.py",
+    "checks": "worked_examples_checks.json",
+    "new_figures": [
+      "figures/skills_composition.svg",
+      "figures/skills_composition.png",
+      "figures/factor_dynamics.svg",
+      "figures/factor_dynamics.png",
+      "figures/markov_example.svg",
+      "figures/markov_example.png"
+    ],
+    "archive_policy": "Update scaling_laws files in the three identical shared archives; preserve unrelated entries."
+  },
+  "file_hashes": {
+    "notes/scaling_laws/body.md": "21ff2781847a48c4e598bea4057c51fa8366e8d61ab5a84b24c2148ad21b3e5c",
+    "notes/scaling_laws/series.json": "f5022982e36a572e3af06170cddc56260e0b46673bf761b50f5eb8c28c4ad340",
+    "notes/scaling_laws/sources.json": "346f497349c7af2b29e192ff2e094bf2dd34802efc8eb95e33f494b2b00529ba",
+    "notes/scaling_laws/README.md": "21de24c71eb1ce00a6fd6f53917c2175d1a2ad53aa6a60ede9c870a2b2fc5839",
+    "notes/scaling_laws/worked_examples.py": "ecd7701a40231a0ed0fd9697ef42e1805472303cff6bf60cdc2a969444b6bae5",
+    "notes/scaling_laws/worked_examples_checks.json": "602e45add0e104e9ce2edf49484a70fbe84a857b44f4e278e12c7817a5fb60eb",
+    "data/scaling_laws_figures.json": "b0c4d32a8d59aac582c786d239700cda5bdca3e4c84a07f611c628abfa9d04cd"
+  }
+}

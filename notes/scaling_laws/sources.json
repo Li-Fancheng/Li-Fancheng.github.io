@@ -55,7 +55,8 @@
       "url": "https://proceedings.mlr.press/v119/bordelon20a.html",
       "notes": [
         "statistical_geometry",
-        "spectral_learning"
+        "spectral_learning",
+        "feature_learning"
       ],
       "publication": "ICML 2020"
     },
@@ -78,7 +79,8 @@
       "url": "https://arxiv.org/abs/2210.16859",
       "notes": [
         "statistical_geometry",
-        "spectral_learning"
+        "spectral_learning",
+        "compute_allocation"
       ],
       "publication": "Primary manuscript"
     },
@@ -113,7 +115,10 @@
       "notes": [
         "feature_learning"
       ],
-      "publication": "ICLR 2025 spotlight; v2 2025-04-04"
+      "publication": "ICLR 2025 spotlight; v2 2025-04-04",
+      "additional_urls": [
+        "https://arxiv.org/html/2409.17858v2"
+      ]
     },
     {
       "id": "barkeshli2026",
@@ -279,5 +284,10 @@
       "porian2024"
     ],
     "scope": "Selected developments and model boundaries, rather than an exhaustive survey. Suggested future experiments in the notes are author synthesis, not established findings."
+  },
+  "completed_note_structure": {
+    "date": "2026-10-25",
+    "references": "Each article now contains its own annotated bibliography; shared manifest retains cross-article mappings.",
+    "independent_examples": "New interpolation, composition, factor-dynamics, Markov and lifecycle calculations are independent worked examples, not paper experiment reproductions."
   }
 }

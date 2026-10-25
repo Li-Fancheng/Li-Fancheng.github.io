@@ -583,6 +583,13 @@
       "stage": "Opening expansion and editorial revision",
       "report": "editorial_revision_20261025.json",
       "scope": "Latest text revision; previous expansion reports retain their historical source hashes."
+    },
+    {
+      "date": "2026-10-25",
+      "stage": "Complete section structure and worked-example expansion",
+      "report": "completion_revision_20261025.json",
+      "scope": "Current six-article and directory validation; previous reports describe their historical revision stages."
     }
-  ]
+  ],
+  "current_revision": "completion_revision_20261025.json"
 }

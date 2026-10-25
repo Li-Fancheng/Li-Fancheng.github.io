@@ -1,0 +1,100 @@
+{
+  "additive_composition": {
+    "observations": 5,
+    "identifiable_rank": 5,
+    "full_table": [
+      [
+        1.0,
+        4.0,
+        6.0
+      ],
+      [
+        2.0,
+        5.0,
+        7.0
+      ],
+      [
+        4.0,
+        7.0,
+        9.0
+      ]
+    ],
+    "recovery_max_error": 1.7763568394002505e-15
+  },
+  "factor_dynamics": {
+    "theta0": 0.01,
+    "closed_form_vs_ode_max_error": 4.952763754673128e-10,
+    "adaptive_half_target_time": 2.297559925067295,
+    "frozen_half_target_time": 34.15484223532219,
+    "scope": "One mode; late convergence is exponential, not a neural power law."
+  },
+  "four_state_markov": {
+    "P": [
+      [
+        0.0,
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      [
+        0.5,
+        0.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        0.5,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "pi": [
+      0.375,
+      0.25,
+      0.25,
+      0.125
+    ],
+    "entropy_nats": 0.7585531985305138,
+    "uniform_predictor_excess": 0.6277411625893767,
+    "known_support_dimension": 4,
+    "cross_entropy_decomposition_max_error": 8.326672684688674e-17
+  },
+  "interpolation_leading_constants": {
+    "intervals": 64,
+    "relative_errors": [
+      0.00012047165763451329,
+      0.0004206389511602904
+    ]
+  },
+  "lifecycle_optima": [
+    {
+      "Q": 0.0,
+      "N": 146.1706403533513,
+      "D": 1140.2198571735644,
+      "risk": 0.6354226953319637,
+      "marginal_condition_relative_error": 5.1762244224528324e-09
+    },
+    {
+      "Q": 1000.0,
+      "N": 116.20553279320309,
+      "D": 1267.573706063805,
+      "risk": 0.6502426184086928,
+      "marginal_condition_relative_error": 8.749047621660399e-11
+    },
+    {
+      "Q": 10000.0,
+      "N": 46.20993692615015,
+      "D": 1940.0611878426992,
+      "risk": 0.7412367344800431,
+      "marginal_condition_relative_error": 2.076312766007272e-08
+    }
+  ],
+  "status": "passed"
+}

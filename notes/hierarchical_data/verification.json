@@ -1,419 +1,191 @@
 {
-  "checked_on": "2026-10-24",
-  "full_site_build": "passed",
+  "checked_on": "2026-10-25",
+  "full_site_build": "passed in independent snapshot",
+  "build_scope": "Independent full-site snapshot containing HEAD plus the hierarchical_data content and note changes only; other topics were concurrently edited in the shared checkout.",
   "pages": [
     {
       "slug": "directory",
-      "chinese_characters": 1474,
-      "source_sha256": "6dd17924f2745e63299b2b4a5388e9fbb2e19ee8a20afb6eb6a0491dc5446aca",
-      "math": 2,
-      "display_math": 0,
-      "internal_references": 11,
-      "figures": 0,
-      "code_blocks": 0
+      "headings": 7,
+      "references": 0,
+      "images": 0,
+      "source_sha256": "7b1cd14fbce5a9146a56f2a6f15f66d9ed7547cbab0aebc8c7c3301f9661ace2"
     },
     {
       "slug": "generative_learning",
-      "chinese_characters": 10245,
-      "source_sha256": "bcda99a62f3d79ed410ffabbda662a02e3c1f1669bc36616d0beadfff84b6061",
-      "math": 203,
-      "display_math": 34,
-      "internal_references": 44,
-      "figures": 1,
-      "code_blocks": 0
+      "headings": 38,
+      "references": 6,
+      "images": 1,
+      "source_sha256": "16e4f1d0e77443b7a48b3a7f9cd5d7c49d4c61affa84cf841f9257d9f87ddfd0"
     },
     {
       "slug": "language_statistics",
-      "chinese_characters": 5945,
-      "source_sha256": "b140bf114fd771e739328f1e2b6cb3027c9d43e7c0fedcc5bca973947338eca9",
-      "math": 96,
-      "display_math": 23,
-      "internal_references": 29,
-      "figures": 2,
-      "code_blocks": 0
+      "headings": 24,
+      "references": 4,
+      "images": 2,
+      "source_sha256": "8d0295695b32427f30477391047fcd2c000fcefe4133f1fd2d5dea0ac445b62f"
     },
     {
       "slug": "inference_generation",
-      "chinese_characters": 6797,
-      "source_sha256": "d6d3b4fd71eac7dbf5f0e71c0bbbfeff203af6d357bb8067c0148d93f5c225b0",
-      "math": 114,
-      "display_math": 23,
-      "internal_references": 29,
-      "figures": 1,
-      "code_blocks": 0
+      "headings": 27,
+      "references": 5,
+      "images": 1,
+      "source_sha256": "e55d1916c0506367a310f07c3ef9251929b0eced830d673dab9cffa891f69f15"
     },
     {
       "slug": "parsing_latents",
-      "chinese_characters": 7133,
-      "source_sha256": "652a9d563cf56cfc03c56eb52a500bcb9f840f5f6dd01061a315588f2cfea2c5",
-      "math": 70,
-      "display_math": 7,
-      "internal_references": 30,
-      "figures": 1,
-      "code_blocks": 0
+      "headings": 25,
+      "references": 5,
+      "images": 1,
+      "source_sha256": "d2662ecd9623a1bf7a6dfb388028fa1d8e786dd8176715b6985bc58eb0084d58"
     },
     {
       "slug": "shared_representations",
-      "chinese_characters": 8034,
-      "source_sha256": "0a2c8ed57fe6eb52fafe647f8ff5e12e6be56d8e2d1d199a0bfea7cad45f2d44",
-      "math": 85,
-      "display_math": 12,
-      "internal_references": 45,
-      "figures": 3,
-      "code_blocks": 0
+      "headings": 37,
+      "references": 6,
+      "images": 3,
+      "source_sha256": "96568aff902bde579f7d4925f96b7cf6c1330342a6932c0f9233ae9d81a31657"
     }
   ],
-  "math_total": 570,
-  "figure_placements": 8,
-  "internal_references": 188,
+  "internal_references_checked": 459,
+  "broken_internal_references": 0,
   "legacy_anchors": 15,
-  "primary_references": 20,
+  "primary_references": 24,
+  "math_total": 730,
+  "figure_placements": 8,
   "browser": {
-    "viewports": [
+    "engine": "Codex in-app browser (CUA)",
+    "cases": [
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 2,
+        "slug": "directory",
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 12,
         "mathErrors": 0,
-        "code": 0,
-        "images": [],
-        "slug": "",
-        "path": "/notes/hierarchical_data/",
-        "status": 200
+        "figure_placements": 0
       },
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 203,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/grammar.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "generative_learning",
-        "path": "/notes/hierarchical_data/generative_learning/",
-        "status": 200
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 244,
+        "mathErrors": 0,
+        "figure_placements": 1
       },
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 96,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/correlations.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/rare_rules.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "language_statistics",
-        "path": "/notes/hierarchical_data/language_statistics/",
-        "status": 200
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 136,
+        "mathErrors": 0,
+        "figure_placements": 2
       },
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 114,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/denoising.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "inference_generation",
-        "path": "/notes/hierarchical_data/inference_generation/",
-        "status": 200
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 131,
+        "mathErrors": 0,
+        "figure_placements": 1
       },
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 70,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/parsing.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "parsing_latents",
-        "path": "/notes/hierarchical_data/parsing_latents/",
-        "status": 200
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 100,
+        "mathErrors": 0,
+        "figure_placements": 1
       },
       {
-        "width": 1440,
-        "scrollWidth": 1425,
-        "math": 85,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/novelty.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/hierarchy_spectrum.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "shared_representations",
-        "path": "/notes/hierarchical_data/shared_representations/",
-        "status": 200
+        "width": 1280,
+        "scrollWidth": 1265,
+        "math": 107,
+        "mathErrors": 0,
+        "figure_placements": 3
       },
       {
+        "slug": "directory",
         "width": 390,
         "scrollWidth": 375,
-        "math": 2,
+        "math": 12,
         "mathErrors": 0,
-        "code": 0,
-        "images": [],
-        "slug": "",
-        "path": "/notes/hierarchical_data/",
-        "status": 200
+        "figure_placements": 0
       },
       {
-        "width": 390,
-        "scrollWidth": 375,
-        "math": 203,
-        "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/grammar.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
         "slug": "generative_learning",
-        "path": "/notes/hierarchical_data/generative_learning/",
-        "status": 200,
-        "mobileTocOpened": true
-      },
-      {
         "width": 390,
         "scrollWidth": 375,
-        "math": 96,
+        "math": 244,
         "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/correlations.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/rare_rules.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
+        "figure_placements": 1
+      },
+      {
         "slug": "language_statistics",
-        "path": "/notes/hierarchical_data/language_statistics/",
-        "status": 200,
-        "mobileTocOpened": true
-      },
-      {
         "width": 390,
         "scrollWidth": 375,
-        "math": 114,
+        "math": 136,
         "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/denoising.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
+        "figure_placements": 2
+      },
+      {
         "slug": "inference_generation",
-        "path": "/notes/hierarchical_data/inference_generation/",
-        "status": 200,
-        "mobileTocOpened": true
-      },
-      {
         "width": 390,
         "scrollWidth": 375,
-        "math": 70,
+        "math": 131,
         "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/parsing.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
+        "figure_placements": 1
+      },
+      {
         "slug": "parsing_latents",
-        "path": "/notes/hierarchical_data/parsing_latents/",
-        "status": 200,
-        "mobileTocOpened": true
-      },
-      {
         "width": 390,
         "scrollWidth": 375,
-        "math": 85,
+        "math": 100,
         "mathErrors": 0,
-        "code": 0,
-        "images": [
-          {
-            "src": "/notes/hierarchical_data/figures/geometry_alignment.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/novelty.svg",
-            "loaded": true,
-            "reserved": true
-          },
-          {
-            "src": "/notes/hierarchical_data/figures/hierarchy_spectrum.svg",
-            "loaded": true,
-            "reserved": true
-          }
-        ],
+        "figure_placements": 1
+      },
+      {
         "slug": "shared_representations",
-        "path": "/notes/hierarchical_data/shared_representations/",
-        "status": 200,
-        "mobileTocOpened": true
+        "width": 390,
+        "scrollWidth": 375,
+        "math": 107,
+        "mathErrors": 0,
+        "figure_placements": 3
       }
     ],
-    "redirects": [
-      "architectures",
-      "belief-propagation",
-      "coarse-graining",
-      "correlated-changes",
-      "diffusion",
-      "generation",
-      "language",
-      "latent-prediction",
-      "parsing",
-      "rare-rules",
-      "rhm",
-      "sample-complexity",
-      "sparsity",
-      "structure",
-      "synonyms"
+    "mobile_toc": {
+      "opened": true,
+      "links": 25,
+      "all_links_numbered": true
+    },
+    "reference_jump": {
+      "hash": "#ref-6",
+      "target_found": true
+    },
+    "visual_review": [
+      "Desktop: note header, numbered table of contents and inside–outside equations.",
+      "Mobile: original parsing figure, reference bibliography and onward-reading links."
     ],
-    "same_page_hash_change": true,
-    "directory_to_article_link": true,
-    "mobile_toc": true,
-    "legacy_route_checks_date": "2026-10-20",
-    "current_article_checks_date": "2026-10-24"
+    "viewport_reset": true
   },
-  "katex_errors": 0,
-  "calculation_checks": {
-    "hierarchical_models": {
-      "correlation_threshold_max_relative_error": 0.0,
-      "F_uniform_fixed_point_error": 0.0,
-      "F_correct_fixed_point_error": 0.0,
-      "F_separator_error": 5.551115123125783e-17,
-      "F_derivative_at_correct": 0.48484848484848486,
-      "F_derivative_formula_error": 0.0,
-      "unstable_derivative": 1.4422476586888662,
-      "mean_field_nu": 1.8927961115215053,
-      "BP_root_vs_enumeration_max_error": 5.551115123125783e-17,
-      "BP_leaf_vs_enumeration_max_error": 1.1102230246251565e-16
-    },
-    "representation_models": {
-      "rotation_accuracy_quadrature_max_error": 3.3333333333440684e-05,
-      "novelty_fit_sentences": 6000,
-      "novelty_test_pairs": 600,
-      "novelty_mKNN_raw": 0.21850000000000003,
-      "novelty_mKNN_residual": 0.8706666666666668,
-      "novelty_II_raw": 0.8602277777777778,
-      "novelty_II_residual": 0.006205555555555555,
-      "semantic_product_max_error": 0.0,
-      "hierarchical_kernel_diagonalization_error": 8.881784197001252e-16,
-      "hierarchical_kernel_min_eigenvalue": 0.1999999999999999,
-      "worked_BP_joint_error": 1.3877787807814457e-17
-    }
+  "numerical_checks": {
+    "worked_correlation_thresholds": [
+      146.28571428571428,
+      2340.5714285714284,
+      37449.142857142855,
+      599186.2857142857,
+      9586980.57142857
+    ],
+    "support_size_log2": 514,
+    "procrustes_max_error": 3.3306690738754696e-15,
+    "ridge_stationarity_max_error": 9.13852327144582e-15,
+    "denoising_risk_decomposition_error": 2.42861286636753e-17,
+    "gaussian_score_finite_difference_error": 9.59754498097709e-12,
+    "inside_outside_evidence": 0.32499999999999996,
+    "inside_outside_rule_posterior_max_error": 0.0,
+    "inside_outside_root_posterior": [
+      0.6923076923076923,
+      0.30769230769230776
+    ]
   },
-  "prose_expansion": {
-    "report": "prose_expansion_report.json",
-    "date": "2026-10-22",
-    "chinese_characters_before": 25968,
-    "chinese_characters_after": 35067,
-    "formula_sequences_unchanged": true,
-    "validation": {
-      "checked_on": "2026-10-22",
-      "hugo_build": "passed",
-      "formula_sequences_unchanged": true,
-      "source_to_html_equations": 524,
-      "katex_errors": 0,
-      "all_topics_katex_expressions_checked": 3546,
-      "internal_references_checked": 176,
-      "broken_references": 0,
-      "browser_cases": 12,
-      "viewports": [
-        390,
-        1440
-      ],
-      "horizontal_overflow_cases": 0,
-      "image_placements": 8,
-      "rendered_code_elements": 0,
-      "mobile_toc_cases": 5,
-      "visual_review": "Desktop shared-representation discussion and mobile scaling discussion inspected; prose, headings and formulas legible."
-    }
-  },
-  "literature_update": {
-    "report": "literature_update_20261024.json",
-    "primary_url": "https://proceedings.mlr.press/v336/ren26a.html",
-    "formula_checks": {
-      "ideal_orthogonal_ridge_max_error": 1.1657341758564144e-15,
-      "normalized_conditional_vector_max_error": 4.440892098500626e-16,
-      "reference_position_A_posterior": [
-        1.0,
-        0.0
-      ],
-      "other_position_A_posterior": [
-        0.0,
-        1.0
-      ],
-      "RBF_same_patch_kernel_lower_bound": 0.9999906250439452,
-      "RBF_distinct_patch_kernel_upper_bound": 1.9287498479639042e-22,
-      "geometric_sum_cases": 12,
-      "new_neural_training": false
-    },
-    "validation": {
-      "checked_on": "2026-10-24",
-      "hugo_build": "passed",
-      "source_to_html_equations": 570,
-      "all_topics_katex_expressions_checked": 3592,
-      "katex_errors": 0,
-      "internal_references_checked": 188,
-      "broken_references": 0,
-      "primary_sources": 20,
-      "browser_cases": 12,
-      "viewports": [
-        390,
-        1440
-      ],
-      "horizontal_overflow_cases": 0,
-      "mobile_toc_cases": 5,
-      "image_placements": 8,
-      "rendered_code_elements": 0,
-      "visual_review": "New theory section reviewed on desktop and mobile; regularized-regression display scrolls within its formula container at narrow width."
-    }
-  }
+  "editorial_revision_report": "editorial_revision_20261025.json"
 }

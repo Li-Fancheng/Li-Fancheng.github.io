@@ -9,7 +9,7 @@ layout: "cell-cycle"
 article_class: "neural-theory-note"
 math: true
 toc: true
-reading_time: 56
+reading_time: 65
 tags:
   - Scaling Laws
   - 神经网络理论

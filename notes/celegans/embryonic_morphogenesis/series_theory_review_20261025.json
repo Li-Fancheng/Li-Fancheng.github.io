@@ -170,88 +170,208 @@
   },
   "evidence_split": {
     "date": "2026-10-25",
-    "criterion": "Study object and empirical/model scope, not shared mechanism name. Direct worm research includes explicitly labeled preprints and stage-specific models; generic theory and candidate calculations remain in the transferable part.",
-    "parts": [
-      "线虫中的直接研究",
-      "可供借鉴的其他理论"
-    ],
+    "criterion": "Study object and empirical/model scope, not shared mechanism name. Direct worm research includes explicitly labeled preprints and stage-specific models; generic theory and candidate calculations remain in the transferable sections.",
     "notes": [
       {
         "note": "gastrulation",
         "figures": 14,
         "references": 13,
         "display_equations": 17,
-        "first_part_paper_figures": 12,
-        "second_part_figures": 2,
-        "chinese_characters": 13738
+        "chinese_characters": 13738,
+        "worm_study_paper_figures": 12,
+        "transferable_theory_figures": 2
       },
       {
         "note": "epithelial_morphogenesis",
         "figures": 32,
         "references": 26,
         "display_equations": 26,
-        "first_part_paper_figures": 9,
-        "second_part_figures": 23,
-        "chinese_characters": 19234
+        "chinese_characters": 19234,
+        "worm_study_paper_figures": 9,
+        "transferable_theory_figures": 23
       },
       {
         "note": "early_elongation",
         "figures": 14,
         "references": 9,
         "display_equations": 21,
-        "first_part_paper_figures": 12,
-        "second_part_figures": 2,
-        "chinese_characters": 13653
+        "chinese_characters": 13653,
+        "worm_study_paper_figures": 12,
+        "transferable_theory_figures": 2
       },
       {
         "note": "late_elongation",
         "figures": 11,
         "references": 6,
         "display_equations": 21,
-        "first_part_paper_figures": 8,
-        "second_part_figures": 3,
-        "chinese_characters": 12250
+        "chinese_characters": 12250,
+        "worm_study_paper_figures": 8,
+        "transferable_theory_figures": 3
       },
       {
         "note": "geometry_and_inference",
         "figures": 10,
         "references": 7,
         "display_equations": 14,
-        "first_part_paper_figures": 4,
-        "second_part_figures": 6,
-        "chinese_characters": 11866
+        "chinese_characters": 11866,
+        "worm_study_paper_figures": 4,
+        "transferable_theory_figures": 6
       },
       {
         "note": "active_matter_packing_topology",
         "figures": 26,
         "references": 44,
         "display_equations": 43,
-        "first_part_paper_figures": 9,
-        "second_part_figures": 17,
-        "chinese_characters": 24748
+        "chinese_characters": 24748,
+        "worm_study_paper_figures": 9,
+        "transferable_theory_figures": 17
       },
       {
         "note": "subcellular_cortex_and_flows",
         "figures": 34,
         "references": 33,
         "display_equations": 33,
-        "first_part_paper_figures": 24,
-        "second_part_figures": 10,
-        "chinese_characters": 16853
+        "chinese_characters": 16853,
+        "worm_study_paper_figures": 24,
+        "transferable_theory_figures": 10
       }
     ],
     "validation": {
       "source": "All original display equations, figure assets, bibliographies and video sources retained; local numbers and media locations synchronized.",
-      "scope": "Every figure in the direct-study part is an original paper figure; standalone calculation figures are in the transferable part.",
-      "browser": "Seven notes checked at desktop and mobile widths, 14 checks passed; all images loaded, no KaTeX errors, page overflow, extra disclosure blocks or missing part headings.",
+      "scope": "Every figure in the worm-study sections is an original paper figure; standalone calculation figures are in the transferable sections.",
+      "browser": "Seven notes checked at desktop and mobile widths, 14 checks passed; all images loaded, no KaTeX errors, page overflow, extra disclosure blocks or missing category headings.",
       "links": "Legacy topic anchors retained, no broken internal article anchors.",
       "build": "Celegans preview segment passed; temporary exclusion of unrelated 3D-cell pages retained from the preceding turn."
-    }
+    },
+    "categories": [
+      "线虫中的直接研究",
+      "可供借鉴的其他理论"
+    ],
+    "layout": "Multiple thematic main sections. Worm studies precede transferable research; these are evidence categories rather than two parent sections."
   },
   "heading_numbering": {
     "date": "2026-10-25",
     "convention": "Note titles 01/02; H2 1./2.; H3 1.1/1.2; H4 1.1.1; bibliography unnumbered.",
-    "scope": "Seven notes and overview; two research parts retained; legacy topic anchors preserved.",
-    "validation": "Heading-only changes verified against before copies; eight pages rebuilt, displayed TOCs synchronized and internal anchors valid; browser preview has no math errors or horizontal overflow."
+    "scope": "Seven notes and overview; multiple thematic main sections numbered continuously, worm studies first and transferable theory afterwards; legacy anchors preserved.",
+    "validation": "Thematic structure and continuous numbers verified against source and rendered TOCs; existing body and media retained; nine Celegans pages built; desktop/mobile browser checks passed."
+  },
+  "thematic_structure": {
+    "date": "2026-10-25",
+    "request": "Restore multiple topic-based main sections and label worm research versus transferable theory explicitly in the headings; do not use two giant parent sections.",
+    "notes": {
+      "gastrulation": {
+        "main_sections": 8,
+        "worm_sections": 4,
+        "borrowed_sections": 4,
+        "outline": [
+          "线虫研究：细胞内移与力传递",
+          "线虫研究：细胞球模型与内移能量地形",
+          "线虫研究：相场模型与胚胎重排",
+          "线虫研究：皮层中的 RhoA 脉冲",
+          "理论借鉴：三维表面与细胞形状",
+          "理论借鉴：Molecular clutch 与边界传力",
+          "理论借鉴：收缩结构与主动凝胶",
+          "理论借鉴：怎样比较这些内移模型"
+        ]
+      },
+      "epithelial_morphogenesis": {
+        "main_sections": 9,
+        "worm_sections": 4,
+        "borrowed_sections": 5,
+        "outline": [
+          "线虫研究：背侧插入与前缘极性",
+          "线虫研究：腹侧包裹与裂隙封口",
+          "线虫研究：神经母细胞与表皮的作用及闭合后的预应力",
+          "线虫研究：三维形态与细胞接触",
+          "理论借鉴：局部活性区怎样形成",
+          "理论借鉴：突起怎样与连接共同完成一次重排",
+          "理论借鉴：邻居交换与主动连接",
+          "理论借鉴：闭合需要整个组织网络共同运动",
+          "理论借鉴：扰动的顺序与模型辨识"
+        ]
+      },
+      "early_elongation": {
+        "main_sections": 7,
+        "worm_sections": 4,
+        "borrowed_sections": 3,
+        "outline": [
+          "线虫研究：表皮怎样让身体变细变长",
+          "线虫研究：力传递网络 连接与细胞外基质",
+          "线虫研究：连续体模型中的组织分工与预应力",
+          "线虫研究：从已有方向性到不断建立的方向性",
+          "理论借鉴：各向异性材料的通用计算",
+          "理论借鉴：表皮与基质之间的传力距离",
+          "理论借鉴：模型假设与实验区分"
+        ]
+      },
+      "late_elongation": {
+        "main_sections": 8,
+        "worm_sections": 5,
+        "borrowed_sections": 3,
+        "outline": [
+          "线虫研究：反复收缩怎样留下更多长度",
+          "线虫研究：从周期变形到不可逆的结构锁定",
+          "线虫研究：Actin 切断与重新束化的两个后果",
+          "线虫研究：连接交换怎样进入实际的伸长模型",
+          "线虫研究：从细胞自主机制走向组织间的力传递网络",
+          "理论借鉴：周期黏弹性与定向参考状态更新",
+          "理论借鉴：荧光恢复与伸长稀释",
+          "理论借鉴：材料性质取决于观察的时间尺度"
+        ]
+      },
+      "geometry_and_inference": {
+        "main_sections": 10,
+        "worm_sections": 4,
+        "borrowed_sections": 6,
+        "outline": [
+          "线虫研究：三维体形 运动与卵壳约束",
+          "线虫研究：从圆柱材料到可弯曲的身体",
+          "线虫研究：组织布局与主动预应变",
+          "线虫研究：周期弯曲的能量怎样进入伸长",
+          "理论借鉴：弧长与投影及主动弯曲",
+          "理论借鉴：杆模型的几何与受力",
+          "理论借鉴：卵壳约束怎样改变弯曲",
+          "理论借鉴：机械能收支与形态记忆",
+          "理论借鉴：怎样区分能拟合同一条曲线的模型",
+          "理论借鉴：高度可重复的形态如何容纳局部波动"
+        ]
+      },
+      "active_matter_packing_topology": {
+        "main_sections": 10,
+        "worm_sections": 4,
+        "borrowed_sections": 6,
+        "outline": [
+          "线虫研究：早期排列与细胞内移",
+          "线虫研究：手性流与定向重排",
+          "线虫研究：伸长与材料更新",
+          "线虫研究：力反演与细胞质力学",
+          "理论借鉴：受限堆积与刚性",
+          "理论借鉴：主动颗粒与细胞组织",
+          "理论借鉴：邻接拓扑、主动向列与力网络",
+          "理论借鉴：固流转变、屈服与其他胚胎的材料证据",
+          "理论借鉴：面向线虫的候选计算与检验",
+          "理论借鉴：模型与线虫实验的对应"
+        ]
+      },
+      "subcellular_cortex_and_flows": {
+        "main_sections": 5,
+        "worm_sections": 2,
+        "borrowed_sections": 3,
+        "outline": [
+          "线虫研究：合子皮层的网络 流动与极化",
+          "线虫研究：细胞内移与全身形态发生",
+          "理论借鉴：离散网络与连续材料理论",
+          "理论借鉴：输运 激发与取向的简化模型",
+          "理论借鉴：胞质流与多尺度传力的候选模型"
+        ]
+      }
+    },
+    "validation": {
+      "source": "Continuous heading numbers and category ordering verified. All existing display equations, figure and video source sequences, bibliographies and legacy anchors retained. Prose is unchanged except references to the former two-part structure.",
+      "rendered_html": "Seven notes have the expected top-level thematic headings and TOC hierarchy; all TOC anchors resolve and no duplicate IDs exist.",
+      "browser": "Seven notes checked at desktop and mobile widths: 14 final checks passed, no horizontal overflow, KaTeX errors or extra disclosure blocks; all images loaded, including the two 01 images on a focused recheck.",
+      "build": "Nine Chinese pages built successfully in the Celegans segment. Unrelated in-progress scaling-law, hierarchical-data and 3D-cell series excluded only through the temporary preview configuration and environment.",
+      "preview": "02 preview saved showing sections 3–4 labeled as worm studies and sections 5 onward labeled as transferable theory."
+    }
   }
 }

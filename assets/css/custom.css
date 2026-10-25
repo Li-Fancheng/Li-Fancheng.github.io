@@ -4,6 +4,7 @@
 .cell-cycle-subtitle { font-size: 1.2rem; opacity: .8; }
 .cell-cycle-meta { font-size: .85rem; opacity: .7; }
 .cell-cycle-article :is(h2, h3) { scroll-margin-top: 6rem; }
+.cell-simulation-3d-note .note-anchor { scroll-margin-top: 6rem; }
 .cell-cycle-article .katex-display { overflow-x: auto; overflow-y: hidden; padding: .75rem .25rem; }
 .cell-cycle-table { max-width: 100%; overflow-x: auto; margin-block: 2rem; }
 /* Keep absolutely positioned accessible math inside the scrolling table. */
