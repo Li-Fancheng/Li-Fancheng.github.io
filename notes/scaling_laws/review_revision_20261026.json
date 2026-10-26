@@ -1,0 +1,417 @@
+{
+  "date": "2026-10-26",
+  "stage": "Note 08 rewritten as a theory review",
+  "title": "08 · 理论脉络与综合认识",
+  "scope": "Reorganizes existing results into a review of their theoretical roles and conditional connections. Replaces the earlier evidence-hierarchy, independent-measurement and intervention-focused main structure.",
+  "structure": [
+    "1. Introduction: resource axes and distinct explanatory tasks",
+    "2. Static origins: Bahri, geometry/spectra, Bordelon/Canatar, Maloney and Michaud",
+    "3. Fixed representation to feature learning",
+    "4. Controlled graph tests and compute scaling as consequences of risk relations",
+    "5. Shared understanding, model scope and state of the theory",
+    "6. References"
+  ],
+  "connections": {
+    "variance_resolution": "Fixed-complexity statistical correction versus an optimized complexity envelope within a stated two-term proxy; not claimed as the exact formula for every Bahri regime.",
+    "geometry_spectrum": "Explicit uniform-torus Sobolev projection upper bound and conditional radial Fourier-kernel eigenvalue ordering; target regularity and kernel smoothness remain distinct. Bounds are not promoted to exact universal exponents.",
+    "random_features": "Joint latent Gaussian/random-feature structure; teacher averaging, N,D below latent rank, noiseless/unregularized exchange symmetry and its noise limitation. Gram spectra alone are not used to prove arbitrary risk duality.",
+    "skills_spectrum": "Shared positive Laplace representation under stated assumptions, with optimization rate/target energy distinguished from appearance frequency/test usage. Capacity and sample mappings differ.",
+    "feature_learning": "Uses the same initial source-condition notation as the kernel model; rich hard-task time exponent is model-specific, while the fixed projection retains the capacity bottleneck and finite-data limits.",
+    "computation": "Optimizing a supplied risk surface under a supplied cost is a consequence/application layer, not another microscopic origin theory."
+  },
+  "primary_source_checks": [
+    {
+      "source": "bahri2021",
+      "url": "https://arxiv.org/html/2102.06701",
+      "sections": [
+        "2.3.4",
+        "2.4"
+      ],
+      "use": "Four regimes and the conditional geometry/kernel connection."
+    },
+    {
+      "source": "maloney2022",
+      "url": "https://arxiv.org/html/2210.16859",
+      "sections": [
+        "3.2.3, equations (165)–(166)"
+      ],
+      "use": "Noiseless exchange symmetry, latent-rank range and label-noise limitation."
+    },
+    {
+      "source": "bordelon2020",
+      "url": "https://proceedings.mlr.press/v119/bordelon20a.html",
+      "use": "Mode-dependent generalization and spectral learning stages."
+    },
+    {
+      "source": "canatar2021",
+      "url": "https://arxiv.org/abs/2006.13198",
+      "use": "Task-model alignment and separate target weights."
+    },
+    {
+      "source": "cui2021",
+      "url": "https://arxiv.org/abs/2105.15004",
+      "use": "Gaussian-design KRR noise/regularization crossovers."
+    },
+    {
+      "source": "michaud2023",
+      "url": "https://arxiv.org/abs/2303.13506",
+      "use": "Quantization hypothesis, toy tasks and exploratory gradient decompositions."
+    },
+    {
+      "source": "bordelon2025",
+      "url": "https://arxiv.org/html/2409.17858v2",
+      "sections": [
+        "2, initial projection",
+        "4, equations (8)–(9)"
+      ],
+      "use": "Initial difficulty, time improvement and unchanged model bottleneck."
+    }
+  ],
+  "article": {
+    "number": 8,
+    "chinese_characters_before": 6885,
+    "chinese_characters_after": 8069,
+    "display_equations": 16,
+    "reading_time": 38,
+    "references": 12,
+    "body_sha256": "2ee17c083f5899e3f8aefa85da51e924a196eb8e716802d671cce46ea4cb151c"
+  },
+  "independent_formula_checks": {
+    "bias_variance_optimum": [
+      {
+        "A": 1.0,
+        "s": 1.0,
+        "sigma2": 1.0,
+        "D": 100.0,
+        "predicted_M": 10.0,
+        "optimized_M": 9.999999998266047,
+        "relative_error": 1.7339529811977172e-10
+      },
+      {
+        "A": 2.0,
+        "s": 0.5,
+        "sigma2": 0.3,
+        "D": 1000.0,
+        "predicted_M": 223.14431669405644,
+        "optimized_M": 223.14431660335978,
+        "relative_error": 4.0644843046777623e-10
+      },
+      {
+        "A": 0.7,
+        "s": 2.0,
+        "sigma2": 2.0,
+        "D": 10000.0,
+        "predicted_M": 19.12931182772389,
+        "optimized_M": 19.12931183025757,
+        "relative_error": 1.3245027297159595e-10
+      }
+    ],
+    "fixed_and_optimized_example": {
+      "fixed_M_10_D_100": 0.2,
+      "fixed_M_10_D_10000": 0.101,
+      "optimized_D_10000": 0.02
+    },
+    "finite_fourier_projection_example": {
+      "r": 1.4,
+      "weighted_energy": 3.9943167611801127,
+      "checks": [
+        {
+          "K": 3,
+          "tail": 0.00887710722971073,
+          "Sobolev_bound": 0.15901661440878243
+        },
+        {
+          "K": 7,
+          "tail": 0.00028039614201447725,
+          "Sobolev_bound": 0.016706462364272794
+        },
+        {
+          "K": 15,
+          "tail": 9.400215280233779e-06,
+          "Sobolev_bound": 0.002021578862294905
+        },
+        {
+          "K": 30,
+          "tail": 4.495618837587299e-07,
+          "Sobolev_bound": 0.0002916270437381223
+        }
+      ],
+      "scope": "Illustrates the stated deterministic upper bound; not a fitted exact exponent or neural-network experiment."
+    },
+    "compute_optimal_exponents": [
+      {
+        "a": 0.3,
+        "b": 0.2,
+        "numerical_model_exponent": 0.40000000217917026,
+        "predicted_model_exponent": 0.4,
+        "numerical_risk_exponent": 0.11999999999999997,
+        "predicted_risk_exponent": 0.12
+      },
+      {
+        "a": 1.0,
+        "b": 2.0,
+        "numerical_model_exponent": 0.6666666661731183,
+        "predicted_model_exponent": 0.6666666666666666,
+        "numerical_risk_exponent": 0.6666666666666665,
+        "predicted_risk_exponent": 0.6666666666666666
+      },
+      {
+        "a": 0.7,
+        "b": 0.7,
+        "numerical_model_exponent": 0.5,
+        "predicted_model_exponent": 0.5,
+        "numerical_risk_exponent": 0.3499999999999999,
+        "predicted_risk_exponent": 0.35
+      }
+    ],
+    "source_condition_notation": {
+      "p": 2.0,
+      "q": 1.0,
+      "beta": 0.5,
+      "lazy_time_exponent": 0.5,
+      "rich_hard_task_exponent": 0.6666666666666666,
+      "capacity_exponent": 1.0
+    },
+    "status": "passed"
+  },
+  "static_validation": {
+    "pages": [
+      {
+        "slug": "directory",
+        "math_expressions": 0,
+        "display_equations": 0,
+        "headings": 5,
+        "images": 0,
+        "bibliography_items": 0,
+        "internal_references": 24,
+        "sha256": "6c18c49be797c48076ba61eecebe514d977bb290bb1fc4c36b35a9c0dceb12c8"
+      },
+      {
+        "slug": "empirical_origins",
+        "math_expressions": 36,
+        "display_equations": 7,
+        "headings": 22,
+        "images": 0,
+        "bibliography_items": 7,
+        "internal_references": 29,
+        "sha256": "f343a2be6718e42ed7d45f9f9d8eaaa888374804f8316505ab4e353a6211b3e7",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "statistical_geometry",
+        "math_expressions": 310,
+        "display_equations": 44,
+        "headings": 38,
+        "images": 1,
+        "bibliography_items": 6,
+        "internal_references": 50,
+        "sha256": "efb94c6325f604680b5305540efa8ed93cebabe8ba7814fcb2a4e518eecf0415",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "spectral_learning",
+        "math_expressions": 307,
+        "display_equations": 43,
+        "headings": 53,
+        "images": 4,
+        "bibliography_items": 6,
+        "internal_references": 59,
+        "sha256": "6c9def47e01dad5777bd83151efc4dde112cdcc6881538b6f23deb5eb555fb4f",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "discrete_structure",
+        "math_expressions": 150,
+        "display_equations": 23,
+        "headings": 31,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 44,
+        "sha256": "3615ca4f34097d594eaa7e649947fc900693ab4394f5dcb6acfbab22fc7e08eb",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "feature_learning",
+        "math_expressions": 137,
+        "display_equations": 23,
+        "headings": 28,
+        "images": 2,
+        "bibliography_items": 3,
+        "internal_references": 40,
+        "sha256": "f4027b27e82f50fca3866ea6432710996320331aba1572cef78762706dcf6254",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "graph_language",
+        "math_expressions": 109,
+        "display_equations": 17,
+        "headings": 29,
+        "images": 2,
+        "bibliography_items": 2,
+        "internal_references": 41,
+        "sha256": "152120205755c42875201f90d186e589617d96c7471a09c4ca156a9d2ff9fd1f",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "compute_allocation",
+        "math_expressions": 164,
+        "display_equations": 29,
+        "headings": 38,
+        "images": 2,
+        "bibliography_items": 9,
+        "internal_references": 44,
+        "sha256": "ee04a9309acd47c0b9b3bea99495d12b5d241e49c66b868505067d704a4835d8",
+        "math_unchanged_from_HEAD": true
+      },
+      {
+        "slug": "mechanism_synthesis",
+        "math_expressions": 83,
+        "display_equations": 16,
+        "headings": 21,
+        "images": 0,
+        "bibliography_items": 12,
+        "internal_references": 29,
+        "sha256": "2ee17c083f5899e3f8aefa85da51e924a196eb8e716802d671cce46ea4cb151c",
+        "old_anchor_fragments_preserved": 21
+      }
+    ],
+    "all_source_to_html_math": 1296,
+    "numbered_headings": 265,
+    "bibliography_items": 48,
+    "internal_references_checked": 360,
+    "errors": []
+  },
+  "browser_validation": {
+    "cases": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "title": "08 · 理论脉络与综合认识",
+        "math": 83,
+        "errors": 0,
+        "code": 0,
+        "h2": [
+          "1. 引言：已有理论解释了什么",
+          "2. 幂律的静态起源：统计波动、结构分辨率与长尾",
+          "3. 从固定表示到特征学习：理论增加了什么",
+          "4. 从理论模型回到神经网络：受控实验与计算标度",
+          "5. 综合讨论：共同认识、解释范围与理论现状",
+          "6. 参考文献"
+        ],
+        "missingOldAnchors": [],
+        "bib": 12,
+        "status": 200,
+        "oldAliasTargetTop": 179.78125,
+        "cardNumbers": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "previousArticleNextTitle": "下一篇：理论脉络与综合认识 →",
+        "followNextPath": "/notes/scaling_laws/mechanism_synthesis/"
+      },
+      {
+        "width": 390,
+        "scrollWidth": 390,
+        "title": "08 · 理论脉络与综合认识",
+        "math": 83,
+        "errors": 0,
+        "code": 0,
+        "h2": [
+          "1. 引言：已有理论解释了什么",
+          "2. 幂律的静态起源：统计波动、结构分辨率与长尾",
+          "3. 从固定表示到特征学习：理论增加了什么",
+          "4. 从理论模型回到神经网络：受控实验与计算标度",
+          "5. 综合讨论：共同认识、解释范围与理论现状",
+          "6. 参考文献"
+        ],
+        "missingOldAnchors": [],
+        "bib": 12,
+        "status": 200,
+        "mobileTocHash": "#data-feature-duality",
+        "oldAliasTargetTop": 161.96875,
+        "cardNumbers": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "previousArticleNextTitle": "下一篇：理论脉络与综合认识 →",
+        "followNextPath": "/notes/scaling_laws/mechanism_synthesis/"
+      }
+    ],
+    "formulasParsed": 1296,
+    "failures": []
+  },
+  "preservation": {
+    "route": "/notes/scaling_laws/mechanism_synthesis/",
+    "old_public_fragments": [
+      "introduction",
+      "levels-of-explanation",
+      "11-一个指数可以被怎样得到",
+      "12-三种不同的证据",
+      "shared-structure",
+      "21-谱松弛与随机覆盖",
+      "22-数学同形没有确定物理来源",
+      "23-所谓统一还缺少哪一层",
+      "comparison",
+      "31-各种指数分别依赖什么",
+      "32-哪些测量能增加独立预测",
+      "same-exponent-example",
+      "interventions",
+      "41-分开训练时间与独立样本",
+      "42-保持输入结构改变任务或表示",
+      "43-随机图排除了什么又留下什么",
+      "open-problems",
+      "51-从有效结构回到结构的形成",
+      "52-有限窗口里的竞争机制",
+      "53-有用的外推与可识别的机制",
+      "references"
+    ],
+    "silent_alias_mapping": {
+      "levels-of-explanation": "comparison",
+      "11-一个指数可以被怎样得到": "target-alignment",
+      "12-三种不同的证据": "scope-of-connections",
+      "22-数学同形没有确定物理来源": "21-谱松弛与随机覆盖",
+      "23-所谓统一还缺少哪一层": "resource-specific-limits",
+      "31-各种指数分别依赖什么": "variance-and-resolution",
+      "32-哪些测量能增加独立预测": "state-of-the-field",
+      "same-exponent-example": "geometry-and-spectrum",
+      "41-分开训练时间与独立样本": "resource-specific-limits",
+      "42-保持输入结构改变任务或表示": "target-alignment",
+      "51-从有效结构回到结构的形成": "state-of-the-field",
+      "52-有限窗口里的竞争机制": "variance-and-resolution",
+      "53-有用的外推与可识别的机制": "compute-as-consequence"
+    },
+    "first_seven_article_math_unchanged": true,
+    "first_six_article_bodies_unchanged": true,
+    "note_07_body_change": "Next-article title and transition sentence only.",
+    "prior_note_08_formulas": "Intentional replacement as part of the requested structural rewrite; no preservation claim for its retired evidence-focused formulas.",
+    "old_reports_retained": true
+  },
+  "related_updates": [
+    "Topic-directory description and review links",
+    "Note 07 navigation labels",
+    "Series and article metadata",
+    "Existing-source usage mappings"
+  ],
+  "file_hashes": {
+    "notes/scaling_laws/mechanism_synthesis/body.md": "2ee17c083f5899e3f8aefa85da51e924a196eb8e716802d671cce46ea4cb151c",
+    "notes/scaling_laws/body.md": "6c18c49be797c48076ba61eecebe514d977bb290bb1fc4c36b35a9c0dceb12c8",
+    "notes/scaling_laws/compute_allocation/body.md": "ee04a9309acd47c0b9b3bea99495d12b5d241e49c66b868505067d704a4835d8",
+    "notes/scaling_laws/README.md": "c7f83def9f6771b93531b4333ff60032b0fa6200b616d70506f57976b36f8223",
+    "notes/scaling_laws/series.json": "8cf8c7f370baf4ac81a5a65c536605c98082dade2f419e696c3207cb462a66ef",
+    "notes/scaling_laws/sources.json": "ba21db04bdb685141a683716815698388447fa2202a8a2d5109bbb01a51fe678",
+    "content/zh/notes/learning_and_generalization/scaling_laws/mechanism_synthesis/index.md": "e680733a39dccac31bd8206647e16a8222b0b003a624b2a09c4eca98d7e525a6"
+  },
+  "validation_scope": "Local Hugo build, full-series source-to-HTML math and internal link checks, review-page desktop/mobile rendering, and elementary independent formula checks. No paper training reproduction or new research model is claimed."
+}

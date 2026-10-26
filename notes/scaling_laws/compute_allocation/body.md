@@ -1,4 +1,4 @@
-> **Scaling Laws · Note 07**　[专题目录](/notes/scaling_laws/) · 上一篇：[随机图与语言标度](/notes/scaling_laws/graph_language/) · 下一篇：[机制综合与开放问题](/notes/scaling_laws/mechanism_synthesis/)
+> **Scaling Laws · Note 07**　[专题目录](/notes/scaling_laws/) · 上一篇：[随机图与语言标度](/notes/scaling_laws/graph_language/) · 下一篇：[理论脉络与综合认识](/notes/scaling_laws/mechanism_synthesis/)
 
 **学习问题：** 在给定风险与实际成本下，怎样分配模型、数据、训练轮数和部署预算，又怎样验证推荐？
 
@@ -503,6 +503,6 @@ $$
 
 9. **Li, Kudugunta, Zettlemoyer（2025）**. [(Mis)Fitting: A Survey of Scaling Laws](https://arxiv.org/abs/2502.18969)。函数形式、训练设置、数据提取与拟合方法对标度结论的影响。
 
-**继续阅读。** 下一篇比较不同机制怎样产生相似曲线，以及哪些独立测量可以区分这些解释。更广的背景见[神经网络理论](/notes/neural_network_theory/)与[层次结构数据](/notes/hierarchical_data/)。
+**继续阅读。** 下一篇综述不同理论承担的解释任务，讨论统计波动、结构分辨率、谱与特征学习之间的联系。更广的背景见[神经网络理论](/notes/neural_network_theory/)与[层次结构数据](/notes/hierarchical_data/)。
 
-[← 上一篇：随机图与语言标度](/notes/scaling_laws/graph_language/) · [返回专题目录](/notes/scaling_laws/) · [下一篇：机制综合与开放问题 →](/notes/scaling_laws/mechanism_synthesis/)
+[← 上一篇：随机图与语言标度](/notes/scaling_laws/graph_language/) · [返回专题目录](/notes/scaling_laws/) · [下一篇：理论脉络与综合认识 →](/notes/scaling_laws/mechanism_synthesis/)

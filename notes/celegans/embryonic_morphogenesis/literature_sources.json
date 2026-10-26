@@ -1033,5 +1033,32 @@
     "title": "Bayesian inference of force dynamics during morphogenesis",
     "journal": "Journal of Theoretical Biology",
     "group": "形态发生模型与实验反演"
+  },
+  {
+    "doi": "10.1038/357255a0",
+    "authors": "Goldstein B",
+    "year": "1992",
+    "title": "Induction of gut in Caenorhabditis elegans embryos",
+    "journal": "Nature",
+    "group": "早期排列与发育信号"
+  },
+  {
+    "doi": "10.1083/jcb.129.4.1071",
+    "authors": "Goldstein B",
+    "year": "1995",
+    "title": "Cell contacts orient some cell division axes in the Caenorhabditis elegans embryo",
+    "journal": "Journal of Cell Biology",
+    "pmcid": "PMC2120481",
+    "group": "早期排列与发育信号"
+  },
+  {
+    "doi": "10.1016/j.cub.2024.10.070",
+    "authors": "Weng S, Hayashi M, Inoue Y, Wallingford JB",
+    "year": "2025",
+    "title": "Planar polarized force propagation integrates cell behavior with tissue shaping during convergent extension",
+    "journal": "Current Biology",
+    "pmcid": "PMC11706704",
+    "group": "表皮重排与闭合的理论和实验",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11706704/"
   }
 ]

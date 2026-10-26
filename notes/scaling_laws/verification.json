@@ -613,7 +613,13 @@
       "stage": "Explanatory expansion of current Notes 01 and 08",
       "report": "explanatory_expansion_revision_20261025.json",
       "scope": "Current expanded prose, examples, source context and page validation; earlier reports retain their historical source hashes and lengths."
+    },
+    {
+      "date": "2026-10-26",
+      "stage": "Note 08 theory review rewrite",
+      "report": "review_revision_20261026.json",
+      "scope": "Current Note 08 theoretical organization and validation; prior reports retain their historical text, formulas and article metadata."
     }
   ],
-  "current_revision": "explanatory_expansion_revision_20261025.json"
+  "current_revision": "review_revision_20261026.json"
 }

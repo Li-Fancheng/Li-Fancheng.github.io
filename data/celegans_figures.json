@@ -504,7 +504,7 @@
     "intrinsic_height": 597
   },
   "embryonic_morphogenesis/figures/33_transport_and_exchange": {
-    "width": 1000,
+    "width": 620,
     "kind": "model",
     "intrinsic_width": 1161,
     "intrinsic_height": 683
@@ -534,7 +534,7 @@
     "intrinsic_height": 1511
   },
   "embryonic_morphogenesis/figures/35_flow_alignment_geometry": {
-    "width": 1000,
+    "width": 600,
     "kind": "model",
     "intrinsic_width": 1336,
     "intrinsic_height": 434
@@ -558,7 +558,7 @@
     "intrinsic_height": 3499
   },
   "embryonic_morphogenesis/figures/36_cytoplasmic_return_flow": {
-    "width": 1000,
+    "width": 620,
     "kind": "model",
     "intrinsic_width": 1261,
     "intrinsic_height": 432
@@ -796,5 +796,17 @@
     "kind": "model",
     "intrinsic_width": 1991,
     "intrinsic_height": 716
+  },
+  "embryonic_morphogenesis/figures/michaux2018_fig10": {
+    "width": 760,
+    "kind": "paper",
+    "intrinsic_width": 1093,
+    "intrinsic_height": 1280
+  },
+  "embryonic_morphogenesis/figures/slabodnick2023_fig5": {
+    "width": 840,
+    "kind": "paper",
+    "intrinsic_width": 2000,
+    "intrinsic_height": 1029
   }
 }

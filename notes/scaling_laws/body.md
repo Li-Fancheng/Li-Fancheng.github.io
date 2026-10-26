@@ -1,6 +1,6 @@
 复杂神经网络扩大数据、模型和训练计算时，为什么经常表现出稳定的幂律？这些曲线可能反映有限样本的统计波动、待学习结构的分布，也可能反映训练中不断变化的有效学习尺度。多种过程都能产生幂律，曲线形状本身不足以识别机制。
 
-这里从经验发现进入具体模型，再回到机制比较：从模型、任务和训练过程的独立测量出发，能否预测指数、交叉位置，以及改变资源和协议后的结果？
+从经验发现进入具体模型，再综合它们解释的误差、所取的资源极限和相互联系，可以看清已有理论怎样组织起来，以及各项结论的适用范围。
 
 ## 1. 八篇笔记与各自的任务 {#contents}
 
@@ -13,11 +13,11 @@
 | [05 · 特征学习与动态加速](/notes/scaling_laws/feature_learning/) | 动态机制 | 时变学习度量、任务难度、反馈时钟与有限模型瓶颈 |
 | [06 · 随机图与语言标度](/notes/scaling_laws/graph_language/) | 受控机制检验 | 已知生成器、熵率和计数基线；检验输入幂律是否为必要条件 |
 | [07 · 计算配置与经验外推](/notes/scaling_laws/compute_allocation/) | 预测与配置 | 已知曲面上的优化、未知曲面的辨认、梯度噪声与 batch 效率 |
-| [08 · 机制综合与开放问题](/notes/scaling_laws/mechanism_synthesis/) | 跨机制总结 | 共同结构、独立预测、干预检验，以及从推出指数到解释其来源的差距 |
+| [08 · 理论脉络与综合认识](/notes/scaling_laws/mechanism_synthesis/) | 理论综述 | 不同解释层次、静态与动态表示的联系、已有认识与适用范围 |
 
 ## 2. 快速阅读与完整推导 {#reading-paths}
 
-**机制概览。** 先读约 29 分钟的 [01 篇](/notes/scaling_laws/empirical_origins/)，了解经验上究竟需要解释什么；再按下面的结果导航选择问题，最后读 [08 篇的机制比较](/notes/scaling_laws/mechanism_synthesis/#comparison)。各篇开头的学习问题和结尾的边界讨论可以串成一条较短路径。
+**机制概览。** 先读约 29 分钟的 [01 篇](/notes/scaling_laws/empirical_origins/)，了解经验上究竟需要解释什么；再按下面的结果导航选择问题，最后读 [08 篇的理论综述](/notes/scaling_laws/mechanism_synthesis/#comparison)。各篇开头的学习问题和结尾的边界讨论可以串成一条较短路径。
 
 **完整理论推导。** 从 02–04 的统计、谱与技能出发，进入 05 的动态表示；用 06 的受控任务检验必要条件，再到 07 的风险面与资源配置。01 和 08 分别提供问题入口与综合。
 
@@ -29,7 +29,7 @@
 | 表示学习何时只改常数，何时改变指数？ | [自洽学习时钟](/notes/scaling_laws/feature_learning/#self-consistent-clock) |
 | 输入没有预置幂律，网络还能有经验幂律吗？ | [ER 实验排除的必要条件](/notes/scaling_laws/graph_language/#discussion-necessity) |
 | 预测风险面与求预算最优，差别在哪里？ | [风险面拟合](/notes/scaling_laws/compute_allocation/#fitting-surface)与[边际最优条件](/notes/scaling_laws/compute_allocation/#最优条件的一般边际解释) |
-| 哪些指数来源已经解释，哪些量还要独立测？ | [机制、假设、独立预测和未解问题](/notes/scaling_laws/mechanism_synthesis/#comparison) |
+| 已有理论怎样联系，已经解释了哪些问题？ | [各理论的解释任务与相互联系](/notes/scaling_laws/mechanism_synthesis/#comparison) |
 
 ## 3. 几个贯穿专题的区别 {#summary}
 

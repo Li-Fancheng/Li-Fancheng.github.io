@@ -1,11 +1,11 @@
 ---
 url: "/notes/celegans/embryonic_morphogenesis/subcellular_cortex_and_flows/"
 title: "07 亚细胞骨架与流动"
-subtitle: "从局部骨架与流动到胚胎内移 伸长与弯扭"
+subtitle: "网络产力 皮层图案与跨尺度传力"
 date: 2026-10-24
-lastmod: 2026-10-25
+lastmod: 2026-10-26
 weight: 7
-summary: "从马达、交联和丝周转出发，讨论亚细胞网络怎样形成主动应力、方向性刚度、机械松弛与参考状态，并参与胚胎的整体形变。"
+summary: "围绕网络连通与周转、RhoA反馈、流动取向、胞质回流和连接耦合，结合线虫实验与已发表模型，综述亚细胞活动怎样产生并传递形态作用。"
 layout: cell-cycle
 article_class: celegans-note
 math: true

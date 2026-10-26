@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-26",
+  "note": "subcellular_cortex_and_flows",
+  "scope": "Literature-focused mechanism review; no new original simulation or hypothesis-testing calculation added.",
+  "structure": [
+    "Network connectivity and turnover link force generation to dissipation.",
+    "Transport, local RhoA feedback and mechanochemical aggregation are compared with their respective experimental constraints.",
+    "Flow-induced actin alignment, PAR redistribution and chiral torque remain distinct mechanisms.",
+    "Cortex-to-cytoplasm and cortex-to-junction transmission are compared through published spatial and paired-motion evidence.",
+    "Ingression, enclosure, anisotropic epidermal loading and material renewal connect subcellular processes to embryonic shape; full tissue models are linked to note 06."
+  ],
+  "evidence_changes": [
+    {
+      "paper": "Michaux et al. 2018",
+      "source": "https://doi.org/10.1083/jcb.201806161",
+      "figures": [
+        2,
+        8,
+        10
+      ],
+      "role": "Place the experimentally constrained local feedback model beside AB-cell pulse measurements; do not infer spatial wave propagation from the local ODE."
+    },
+    {
+      "paper": "Nishikawa et al. 2017",
+      "source": "https://doi.org/10.7554/eLife.19595",
+      "figures": [
+        1,
+        2
+      ],
+      "role": "Place transport-corrected reaction analysis and the published mechanochemical model together; identify the single-field growth rate as an explanatory reduction."
+    },
+    {
+      "paper": "Reymann et al. 2016",
+      "source": "https://doi.org/10.7554/eLife.17807",
+      "figures": [
+        2,
+        4
+      ],
+      "role": "Connect measured velocity and compression to fitted orientation profiles, perturbations and ingression theory."
+    },
+    {
+      "paper": "Niwayama et al. 2011",
+      "source": "https://doi.org/10.1073/pnas.1101853108",
+      "figures": [
+        3
+      ],
+      "role": "Use original 3D flow and PIV profiles as evidence; keep the analytic ellipse as a small principle illustration."
+    },
+    {
+      "paper": "Slabodnick et al. 2023",
+      "source": "https://doi.org/10.1371/journal.pgen.1010319",
+      "figures": [
+        1,
+        5,
+        6
+      ],
+      "role": "Pair observed slippage, measurement workflow and zyxin perturbation; identify the spring-network illustration as distinct from a fit to these experiments."
+    },
+    {
+      "paper": "Lardennois et al. 2019 and Yang et al. 2025",
+      "sources": [
+        "https://doi.org/10.1038/s41586-019-1509-4",
+        "https://doi.org/10.1016/j.devcel.2025.06.012"
+      ],
+      "role": "Reuse original network-remodeling and junction-exchange figures instead of scalar cylinder demonstrations."
+    }
+  ],
+  "source_validation": {
+    "figures": 34,
+    "paper_figures": 29,
+    "auxiliary_figures": 5,
+    "references": 33,
+    "main_sections": 5,
+    "legacy_anchors_preserved": 16,
+    "old_paper_files_hash_verified": 98,
+    "paper_library_count": 100,
+    "videos_preserved": true,
+    "new_original_calculation": false,
+    "withdrawn_examples": [
+      "34_excitable_cortex_strip.svg",
+      "38_closed_volume_elongation.svg",
+      "39_cyclic_network_shape.svg"
+    ],
+    "other_notes_figure_locations_unchanged": true,
+    "original_panels_preserved": true,
+    "bibliography_contiguous": true,
+    "no_equation_render_errors": true
+  },
+  "new_original_paper_figures": [
+    "figures/michaux2018_fig10.jpg",
+    "figures/slabodnick2023_fig5.png"
+  ],
+  "archival_policy": "The three withdrawn self-authored example assets and both Dai paper figures remain in the shared library. Other notes retain their figures and locations.",
+  "build": {
+    "tool": "Hugo 0.136.5",
+    "status": "passed",
+    "scope": "Targeted note 07 render"
+  },
+  "browser": {
+    "complete": true,
+    "reports": [
+      {
+        "width": 1165,
+        "scrollWidth": 1165,
+        "nominalWidth": 1180,
+        "images": 34,
+        "unloaded": [],
+        "mathErrors": [],
+        "disclosures": 0,
+        "missingAnchors": [],
+        "headings": [
+          "1. 网络结构怎样决定产力与耗散",
+          "2. 皮层图案从哪里来 分子反应与主动汇聚",
+          "3. 流动怎样组织取向 极性与手性",
+          "4. 皮层活动怎样传到胞质与细胞边界",
+          "5. 亚细胞网络怎样参与胚胎形态变化",
+          "参考文献"
+        ]
+      },
+      {
+        "width": 360,
+        "scrollWidth": 360,
+        "nominalWidth": 375,
+        "images": 34,
+        "unloaded": [],
+        "mathErrors": [],
+        "disclosures": 0,
+        "missingAnchors": [],
+        "headings": [
+          "1. 网络结构怎样决定产力与耗散",
+          "2. 皮层图案从哪里来 分子反应与主动汇聚",
+          "3. 流动怎样组织取向 极性与手性",
+          "4. 皮层活动怎样传到胞质与细胞边界",
+          "5. 亚细胞网络怎样参与胚胎形态变化",
+          "参考文献"
+        ]
+      }
+    ]
+  },
+  "preview_screenshot": "/private/tmp/celegans-subcellular-20261026/literature-review-preview.png"
+}

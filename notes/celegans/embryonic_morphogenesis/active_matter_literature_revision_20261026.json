@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-26",
+  "note": "active_matter_packing_topology",
+  "scope": "Literature-focused revision of note 06; no new original model or hypothesis-testing calculation results added.",
+  "changes": [
+    "Connect four-cell packing to published P2–EMS induction and division-orientation studies.",
+    "Compress general packing and active-cell derivations; reduce repeated rheological criteria in section 7.",
+    "Replace the former candidate examples in section 8 with published spatial intercalation, contact-geometry, force-propagation and C. elegans elongation models.",
+    "Synthesize established mechanisms in section 9 and shorten nematic and force-network topology to further reading in section 10.",
+    "Keep C. elegans evidence distinct from models of other systems; retain original paper images and remote movies with provenance."
+  ],
+  "principal_model_sources": [
+    {
+      "authors": "Weng et al.",
+      "year": 2022,
+      "url": "https://doi.org/10.1016/j.celrep.2022.110666"
+    },
+    {
+      "authors": "Sknepnek et al.",
+      "year": 2023,
+      "url": "https://doi.org/10.7554/eLife.79862"
+    },
+    {
+      "authors": "Weng et al.",
+      "year": 2025,
+      "url": "https://doi.org/10.1016/j.cub.2024.10.070"
+    },
+    {
+      "authors": "Lardennois et al.",
+      "year": 2019,
+      "url": "https://doi.org/10.1038/s41586-019-1509-4"
+    },
+    {
+      "authors": "Fang et al.",
+      "year": 2021,
+      "url": "https://doi.org/10.1126/sciadv.abg3264"
+    },
+    {
+      "authors": "Yang et al.",
+      "year": 2025,
+      "url": "https://doi.org/10.1016/j.devcel.2025.06.012"
+    },
+    {
+      "authors": "Dai and Ben Amar",
+      "year": 2024,
+      "url": "https://doi.org/10.7554/eLife.90505.3"
+    },
+    {
+      "authors": "Tah et al.",
+      "year": 2025,
+      "url": "https://doi.org/10.1073/pnas.2322732121"
+    }
+  ],
+  "source_validation": {
+    "figure_count": 29,
+    "paper_figures": 26,
+    "auxiliary_figures": 3,
+    "section7_before_characters": 4757,
+    "section7_after_characters": 2987,
+    "section7_reduction_percent": 37.2,
+    "preserved_legacy_anchors": 77,
+    "bibliography_entries": 52,
+    "video_sources": [
+      "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5b36/7394549/35a054ebf3fe/elife-54930-video2-pmcvs_normal.mp4",
+      "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/119/2afd92d2b201d28e34225b00378a697faa1afcc2/elife-12094-media5.mp4",
+      "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-025-57783-w/MediaObjects/41467_2025_57783_MOESM4_ESM.mp4"
+    ],
+    "images_sha256": "All 98 archived paper figures unchanged",
+    "no_new_calculation_added": true
+  },
+  "build": {
+    "status": "passed",
+    "tool": "Hugo 0.136.5",
+    "scope": "Targeted note 06 render"
+  },
+  "browser": {
+    "complete": true,
+    "reports": [
+      {
+        "width": 1165,
+        "scrollWidth": 1165,
+        "nominalWidth": 1180,
+        "images": 29,
+        "unloaded": [],
+        "mathErrors": [],
+        "disclosures": 0,
+        "missingAnchors": [],
+        "headings": [
+          "1. 线虫研究：早期排列与细胞内移",
+          "2. 线虫研究：手性流与定向重排",
+          "3. 线虫研究：伸长与材料更新",
+          "4. 线虫研究：力反演与细胞质力学",
+          "5. 理论借鉴：受限堆积怎样选择细胞接触",
+          "6. 理论借鉴：主动细胞模型保留哪些空间自由度",
+          "7. 理论借鉴：组织怎样加载、松弛与继续承载",
+          "8. 空间模型综述：插入、力传播与身体伸长",
+          "9. 文献综合：定向重排怎样与承载共存",
+          "10. 扩展阅读：主动向列与力网络拓扑",
+          "参考文献"
+        ]
+      },
+      {
+        "width": 360,
+        "scrollWidth": 360,
+        "nominalWidth": 375,
+        "images": 29,
+        "unloaded": [],
+        "mathErrors": [],
+        "disclosures": 0,
+        "missingAnchors": [],
+        "headings": [
+          "1. 线虫研究：早期排列与细胞内移",
+          "2. 线虫研究：手性流与定向重排",
+          "3. 线虫研究：伸长与材料更新",
+          "4. 线虫研究：力反演与细胞质力学",
+          "5. 理论借鉴：受限堆积怎样选择细胞接触",
+          "6. 理论借鉴：主动细胞模型保留哪些空间自由度",
+          "7. 理论借鉴：组织怎样加载、松弛与继续承载",
+          "8. 空间模型综述：插入、力传播与身体伸长",
+          "9. 文献综合：定向重排怎样与承载共存",
+          "10. 扩展阅读：主动向列与力网络拓扑",
+          "参考文献"
+        ]
+      }
+    ]
+  },
+  "paper_image_integrity": {
+    "checked": 98,
+    "all_sha256_unchanged": true
+  },
+  "historical_assets": "Withdrawn self-authored examples remain archived; original paper files were not deleted or modified.",
+  "preview_screenshot": "/private/tmp/celegans-spatial-20261026/literature-review-preview.png"
+}

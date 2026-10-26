@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-10-25",
+  "checked_on": "2026-10-26",
   "note": "Original paper panels reproduced for a cited research note; figure-specific attribution and rights below.",
   "reused_figures": [
     {
@@ -99,12 +99,12 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "gastrulation",
-          "figure": 3
+          "note": "subcellular_cortex_and_flows",
+          "figure": 23
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 16
+          "note": "gastrulation",
+          "figure": 3
         }
       ]
     },
@@ -144,6 +144,10 @@
       "modifications": "None; original panels and labels retained.",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 25
+        },
         {
           "note": "gastrulation",
           "figure": 5
@@ -185,6 +189,10 @@
       "modifications": "None; original panels and labels retained.",
       "locations": [
         {
+          "note": "active_matter_packing_topology",
+          "figure": 20
+        },
+        {
           "note": "epithelial_morphogenesis",
           "figure": 1
         }
@@ -206,12 +214,12 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 2
-        },
-        {
           "note": "active_matter_packing_topology",
           "figure": 5
+        },
+        {
+          "note": "epithelial_morphogenesis",
+          "figure": 2
         }
       ]
     },
@@ -273,16 +281,16 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "locations": [
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 6
+          "note": "subcellular_cortex_and_flows",
+          "figure": 28
         },
         {
           "note": "active_matter_packing_topology",
           "figure": 6
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 18
+          "note": "epithelial_morphogenesis",
+          "figure": 6
         }
       ]
     },
@@ -344,12 +352,12 @@
       "image_url": "https://iiif.elifesciences.org/lax/23866%2Felife-23866-fig1-v3.tif/full/full/0/default.jpg",
       "locations": [
         {
-          "note": "early_elongation",
-          "figure": 1
+          "note": "subcellular_cortex_and_flows",
+          "figure": 29
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 19
+          "note": "early_elongation",
+          "figure": 1
         }
       ]
     },
@@ -474,12 +482,12 @@
       "license_url": "https://creativecommons.org/licenses/by/3.0/",
       "locations": [
         {
-          "note": "early_elongation",
-          "figure": 7
+          "note": "subcellular_cortex_and_flows",
+          "figure": 31
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 21
+          "note": "early_elongation",
+          "figure": 7
         }
       ]
     },
@@ -525,7 +533,7 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 20
+          "figure": 30
         }
       ]
     },
@@ -546,6 +554,10 @@
         {
           "note": "late_elongation",
           "figure": 2
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 25
         }
       ]
     },
@@ -566,6 +578,10 @@
         {
           "note": "late_elongation",
           "figure": 3
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 32
         }
       ]
     },
@@ -615,7 +631,11 @@
         },
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 22
+          "figure": 33
+        },
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 27
         }
       ]
     },
@@ -637,6 +657,10 @@
         {
           "note": "late_elongation",
           "figure": 6
+        },
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 34
         }
       ]
     },
@@ -713,6 +737,10 @@
       "retrieved_on": "2026-10-18",
       "modifications": "None; original panels and labels retained.",
       "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 26
+        },
         {
           "note": "early_elongation",
           "figure": 9
@@ -841,7 +869,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 13
+          "figure": 12
         }
       ]
     },
@@ -859,12 +887,7 @@
       "modification": "None",
       "modifications": "None; original panels and labels retained.",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "locations": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 15
-        }
-      ]
+      "locations": []
     },
     {
       "file": "figures/defects2025_fig1.png",
@@ -883,7 +906,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 25
+          "figure": 29
         }
       ]
     },
@@ -1008,7 +1031,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 18
+          "figure": 13
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/3.0/"
@@ -1029,7 +1052,7 @@
       "locations": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 21
+          "figure": 19
         }
       ]
     },
@@ -1048,12 +1071,12 @@
       "modifications": "None; original panels and labels retained.",
       "locations": [
         {
-          "note": "active_matter_packing_topology",
-          "figure": 9
+          "note": "subcellular_cortex_and_flows",
+          "figure": 22
         },
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 14
+          "note": "active_matter_packing_topology",
+          "figure": 9
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
@@ -1139,7 +1162,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 1
+          "figure": 17
         }
       ]
     },
@@ -1160,7 +1183,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 12
+          "figure": 18
         }
       ]
     },
@@ -1181,7 +1204,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 2
+          "figure": 1
         }
       ]
     },
@@ -1202,7 +1225,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 3
+          "figure": 2
         }
       ]
     },
@@ -1223,7 +1246,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 4
+          "figure": 3
         }
       ]
     },
@@ -1244,7 +1267,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 5
+          "figure": 8
         }
       ]
     },
@@ -1265,7 +1288,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 8
+          "figure": 13
         }
       ]
     },
@@ -1286,7 +1309,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 6
+          "figure": 9
         }
       ]
     },
@@ -1307,7 +1330,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 7
+          "figure": 11
         }
       ]
     },
@@ -1328,7 +1351,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 9
+          "figure": 14
         }
       ]
     },
@@ -1349,7 +1372,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 10
+          "figure": 15
         }
       ]
     },
@@ -1370,7 +1393,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 11
+          "figure": 19
         }
       ]
     },
@@ -1391,7 +1414,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 15
+          "figure": 6
         }
       ]
     },
@@ -1412,7 +1435,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 17
+          "figure": 27
         }
       ]
     },
@@ -1430,12 +1453,7 @@
       "retrieved_on": "2026-10-24",
       "modification": "None",
       "modifications": "None; original panels and labels retained.",
-      "locations": [
-        {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 23
-        }
-      ],
+      "locations": [],
       "version": "Version of Record, 20 June 2024; original eLife image assets retained"
     },
     {
@@ -1454,8 +1472,8 @@
       "modifications": "None; original panels and labels retained.",
       "locations": [
         {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 24
+          "note": "active_matter_packing_topology",
+          "figure": 28
         }
       ],
       "version": "Version of Record, 20 June 2024; original eLife image assets retained"
@@ -1476,6 +1494,10 @@
       "version": "PMC author manuscript",
       "sha256": "a631ba452e61b28194f83ff9984419e2fa4b6d2677994908c3a5b4dec3e477a0",
       "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 21
+        },
         {
           "note": "epithelial_morphogenesis",
           "figure": 11
@@ -1498,6 +1520,10 @@
       "version": "PMC author manuscript",
       "sha256": "91a16ef331118a5e31e194577f3380e844ef5e71fbf5335d8a8231605d279a08",
       "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 22
+        },
         {
           "note": "epithelial_morphogenesis",
           "figure": 12
@@ -1565,6 +1591,10 @@
       "sha256": "2d13acd5e0587fe99de33bf13a7bd607b859901cbde585383b91d1dd93816eb2",
       "locations": [
         {
+          "note": "active_matter_packing_topology",
+          "figure": 23
+        },
+        {
           "note": "epithelial_morphogenesis",
           "figure": 17
         }
@@ -1586,6 +1616,10 @@
       "version": "Published article",
       "sha256": "1ece0bc198b5e3478ecea3cb8402ac86560e80b00a26ef45def56c118bb1eea6",
       "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 24
+        },
         {
           "note": "epithelial_morphogenesis",
           "figure": 18
@@ -1719,6 +1753,10 @@
       "sha256": "24531def8881272ffd9c7888d7ae8a6687258aa7b9da89755c6b15235bb52508",
       "locations": [
         {
+          "note": "active_matter_packing_topology",
+          "figure": 16
+        },
+        {
           "note": "epithelial_morphogenesis",
           "figure": 29
         }
@@ -1740,6 +1778,10 @@
       "version": "Published article",
       "sha256": "81ff0d5c36a9f9f2f7cce7c25fb163d592ac173dd00feb702db39e28374afc22",
       "locations": [
+        {
+          "note": "active_matter_packing_topology",
+          "figure": 18
+        },
         {
           "note": "epithelial_morphogenesis",
           "figure": 30
@@ -1763,12 +1805,12 @@
       "sha256": "79fe8e603f7675ff7eaa211bac0324d7fecf4e595b847ad154cc7842f16a6731",
       "locations": [
         {
-          "note": "epithelial_morphogenesis",
-          "figure": 31
+          "note": "active_matter_packing_topology",
+          "figure": 17
         },
         {
-          "note": "active_matter_packing_topology",
-          "figure": 20
+          "note": "epithelial_morphogenesis",
+          "figure": 31
         }
       ]
     },
@@ -1873,12 +1915,12 @@
       "sha256": "7f201ac4d74494e6bf2988f4ca623d8db8c820848b1ed935a822b7368dc839db",
       "locations": [
         {
-          "note": "early_elongation",
-          "figure": 12
-        },
-        {
           "note": "late_elongation",
           "figure": 7
+        },
+        {
+          "note": "early_elongation",
+          "figure": 12
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
@@ -2001,12 +2043,7 @@
       "retrieved_on": "2026-10-25",
       "modifications": "None; complete original figure and labels retained.",
       "sha256": "440a54c129299663f73fd39cacf07bafb5fd48bb85834bb3b08814b33c0be5f2",
-      "locations": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 14
-        }
-      ],
+      "locations": [],
       "license_url": "https://creativecommons.org/licenses/by/3.0/"
     },
     {
@@ -2025,7 +2062,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 25
+          "figure": 4
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
@@ -2046,7 +2083,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 26
+          "figure": 5
         }
       ],
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
@@ -2067,7 +2104,7 @@
       "locations": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 13
+          "figure": 20
         }
       ]
     },
@@ -2114,6 +2151,48 @@
           "figure": 9
         }
       ]
+    },
+    {
+      "file": "figures/michaux2018_fig10.jpg",
+      "image_url": "https://cdn.rupress.org/rup/content_public/journal/jcb/217/12/10.1083_jcb.201806161/6/jcb_201806161_fig10.jpeg",
+      "article_doi": "10.1083/jcb.201806161",
+      "figure_id": "fig10",
+      "source": "https://rupress.org/view-large/figure/9710691/jcb_201806161_fig10.jpeg",
+      "author": "Michaux et al.",
+      "year": 2018,
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "sha256": "23bae03a5374d5fae0fc6cd95296215e88f8068be43b583b1fe717e905c0f97a",
+      "retrieved_on": "2026-10-26",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 12
+        }
+      ]
+    },
+    {
+      "file": "figures/slabodnick2023_fig5.png",
+      "image_url": "https://journals.plos.org/plosgenetics/article/figure/image?download=&id=10.1371%2Fjournal.pgen.1010319.g005&size=large",
+      "article_doi": "10.1371/journal.pgen.1010319",
+      "figure_id": "pgen.1010319.g005",
+      "source": "https://doi.org/10.1371/journal.pgen.1010319.g005",
+      "author": "Slabodnick et al.",
+      "year": 2023,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "0aef4dc617f4a3a3b5778fa6f1a480e9be013627c139d1cd7972a0c70f611dbe",
+      "retrieved_on": "2026-10-26",
+      "modification": "None",
+      "modifications": "None; original panels and labels retained.",
+      "locations": [
+        {
+          "note": "subcellular_cortex_and_flows",
+          "figure": 24
+        }
+      ]
     }
   ],
   "original_figures": {
@@ -2144,25 +2223,16 @@
       "figures/18_late_model_comparison.svg",
       "figures/19_rod_inference.svg",
       "figures/20_packing_rigidity.svg",
-      "figures/21_active_cage.svg",
       "figures/22_t1_topology.svg",
-      "figures/23_nematic_defects.svg",
-      "figures/24_force_network_topology.svg",
-      "figures/25_worm_ingression.svg",
-      "figures/26_worm_material_memory.svg",
       "figures/27_solid_fluid_rheology.svg",
-      "figures/28_yield_and_flow.svg",
       "figures/29_basal_apical_fields.svg",
       "figures/30_four_cell_rearrangement.svg",
       "figures/31_enclosure_and_adhesion.svg",
       "figures/32_cortical_flow_screening.svg",
       "figures/33_transport_and_exchange.svg",
-      "figures/34_excitable_cortex_strip.svg",
       "figures/35_flow_alignment_geometry.svg",
       "figures/36_cytoplasmic_return_flow.svg",
       "figures/37_network_to_tissue.svg",
-      "figures/38_closed_volume_elongation.svg",
-      "figures/39_cyclic_network_shape.svg",
       "figures/40_closure_mechanical_history.svg",
       "figures/41_contact_maturation_loading.svg"
     ],
@@ -2252,52 +2322,16 @@
           "figure": 11
         }
       ],
-      "figures/21_active_cage.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 12
-        }
-      ],
       "figures/22_t1_topology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 16
-        }
-      ],
-      "figures/23_nematic_defects.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 24
-        }
-      ],
-      "figures/24_force_network_topology.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 26
-        }
-      ],
-      "figures/25_worm_ingression.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 22
-        }
-      ],
-      "figures/26_worm_material_memory.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 23
+          "figure": 14
         }
       ],
       "figures/27_solid_fluid_rheology.svg": [
         {
           "note": "active_matter_packing_topology",
-          "figure": 17
-        }
-      ],
-      "figures/28_yield_and_flow.svg": [
-        {
-          "note": "active_matter_packing_topology",
-          "figure": 19
+          "figure": 15
         }
       ],
       "figures/29_basal_apical_fields.svg": [
@@ -2321,49 +2355,31 @@
       "figures/32_cortical_flow_screening.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 27
+          "figure": 7
         }
       ],
       "figures/33_transport_and_exchange.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 28
-        }
-      ],
-      "figures/34_excitable_cortex_strip.svg": [
-        {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 29
+          "figure": 10
         }
       ],
       "figures/35_flow_alignment_geometry.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 30
+          "figure": 16
         }
       ],
       "figures/36_cytoplasmic_return_flow.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 31
+          "figure": 21
         }
       ],
       "figures/37_network_to_tissue.svg": [
         {
           "note": "subcellular_cortex_and_flows",
-          "figure": 32
-        }
-      ],
-      "figures/38_closed_volume_elongation.svg": [
-        {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 33
-        }
-      ],
-      "figures/39_cyclic_network_shape.svg": [
-        {
-          "note": "subcellular_cortex_and_flows",
-          "figure": 34
+          "figure": 26
         }
       ],
       "figures/40_closure_mechanical_history.svg": [
@@ -2384,7 +2400,19 @@
       "figures/subcellular_model_parameters.json",
       "figures/morphogenesis_network_parameters.json"
     ],
-    "mechanism_synthesis_checks": "figures/mechanism_synthesis_parameters.json"
+    "mechanism_synthesis_checks": "figures/mechanism_synthesis_parameters.json",
+    "archived_example_files": [
+      "figures/21_active_cage.svg",
+      "figures/23_nematic_defects.svg",
+      "figures/24_force_network_topology.svg",
+      "figures/25_worm_ingression.svg",
+      "figures/26_worm_material_memory.svg",
+      "figures/28_yield_and_flow.svg",
+      "figures/34_excitable_cortex_strip.svg",
+      "figures/38_closed_volume_elongation.svg",
+      "figures/39_cyclic_network_shape.svg"
+    ],
+    "archival_note": "Historical self-authored examples withdrawn from the 2026-10-26 literature revisions of notes 06 and 07 remain in the image library. No new hypothesis-testing calculations were added."
   },
   "external_movies": [
     {
@@ -2639,6 +2667,25 @@
       "height": 400,
       "duration_seconds": 62.5,
       "verified_on": "2026-10-25"
+    },
+    {
+      "id": "active-review-published-intercalation",
+      "note": "active_matter_packing_topology",
+      "article_doi": "10.7554/eLife.12094",
+      "author": "Tetley et al.",
+      "year": 2016,
+      "video": "Video 5",
+      "description": "Published vertex-model simulation 4 corresponding to Figure 7G; Drosophila model, not worm imaging.",
+      "source": "https://doi.org/10.7554/eLife.12094.030",
+      "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/119/2afd92d2b201d28e34225b00378a697faa1afcc2/elife-12094-media5.mp4",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "retrieved_on": "2026-10-25",
+      "width": 500,
+      "height": 400,
+      "duration_seconds": 62.5,
+      "verified_on": "2026-10-25",
+      "usage": "Reuse of the remote published model animation in the literature review; no local copy or re-encoding."
     }
   ]
 }

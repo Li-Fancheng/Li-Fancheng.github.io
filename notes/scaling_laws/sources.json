@@ -30,6 +30,10 @@
           "2.2: Lipschitz bounds versus local interpolation estimates",
           "3.1: controlled deep teacher-student experiments"
         ]
+      },
+      "synthesis_review_usage": {
+        "verified_on": "2026-10-26",
+        "scope": "Four regimes and section 2.3.4 geometry/kernel relation. The two-term bias–variance proxy and explicit Sobolev projection inequality in Note 08 are explanatory derivations, not universal formulas attributed to this paper."
       }
     },
     {
@@ -83,9 +87,15 @@
       "notes": [
         "statistical_geometry",
         "spectral_learning",
-        "compute_allocation"
+        "compute_allocation",
+        "mechanism_synthesis"
       ],
-      "publication": "Primary manuscript"
+      "publication": "Primary manuscript",
+      "synthesis_review_usage": {
+        "verified_on": "2026-10-26",
+        "sections": "3.2.3, equations (165)–(166)",
+        "scope": "Joint latent Gaussian / random-feature model; teacher averaging, no label noise, no ridge, N and D below latent rank, away from the interpolation singularity. Exchange symmetry is not transferred to arbitrary tasks or noisy risk."
+      }
     },
     {
       "id": "michaud2023",
@@ -124,7 +134,12 @@
       "publication": "ICLR 2025 spotlight; v2 2025-04-04",
       "additional_urls": [
         "https://arxiv.org/html/2409.17858v2"
-      ]
+      ],
+      "synthesis_review_usage": {
+        "verified_on": "2026-10-26",
+        "sections": "Model definition, equations (8)–(9), model bottleneck discussion",
+        "scope": "Rich/lazy time exponents and fixed initial projection; preserves separate finite-data, model and SGD limitations."
+      }
     },
     {
       "id": "barkeshli2026",
@@ -161,7 +176,8 @@
       "url": "https://arxiv.org/abs/2001.08361",
       "notes": [
         "compute_allocation",
-        "empirical_origins"
+        "empirical_origins",
+        "mechanism_synthesis"
       ],
       "publication": "Primary manuscript"
     },
@@ -173,7 +189,8 @@
       "url": "https://arxiv.org/abs/2203.15556",
       "notes": [
         "compute_allocation",
-        "empirical_origins"
+        "empirical_origins",
+        "mechanism_synthesis"
       ],
       "publication": "Primary manuscript"
     },
@@ -196,7 +213,8 @@
       "url": "https://arxiv.org/abs/2406.19146",
       "notes": [
         "compute_allocation",
-        "empirical_origins"
+        "empirical_origins",
+        "mechanism_synthesis"
       ],
       "publication": "NeurIPS 2024; later arXiv revisions exist"
     },
@@ -226,7 +244,8 @@
       "url": "https://arxiv.org/abs/2105.15004",
       "notes": [
         "statistical_geometry",
-        "spectral_learning"
+        "spectral_learning",
+        "mechanism_synthesis"
       ],
       "publication": "NeurIPS 2021; J. Stat. Mech. (2022) 114004; arXiv v2 2021-12-15",
       "verified_on": "2026-10-25",
@@ -406,5 +425,23 @@
       "li2025misfitting"
     ],
     "scope": "00 empirical origin and 07 mechanism synthesis; 03 includes an independently derived Laplace-measure bridge; 06 adds local gradient-noise and fitting context."
+  },
+  "synthesis_review_revision": {
+    "date": "2026-10-26",
+    "sources": [
+      "bahri2021",
+      "maloney2022",
+      "bordelon2020",
+      "canatar2021",
+      "cui2021",
+      "michaud2023",
+      "bordelon2025",
+      "barkeshli2026",
+      "kaplan2020",
+      "hoffmann2022",
+      "porian2024",
+      "li2025misfitting"
+    ],
+    "scope": "Review of existing theoretical results and conditional connections; evidence hierarchies and intervention design are compressed rather than proposed as the article framework."
   }
 }
