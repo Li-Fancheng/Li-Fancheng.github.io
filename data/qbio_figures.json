@@ -71,5 +71,10 @@
   "stochastic_dynamics/figures/04_same_distribution_different_clocks": {"width": 880, "kind": "model"},
   "stochastic_dynamics/figures/05_noise_filtering": {"width": 900, "kind": "model"},
   "stochastic_dynamics/figures/06_barrier_and_first_passage": {"width": 800, "kind": "model"},
-  "stochastic_dynamics/figures/07_same_occupancy_different_currents": {"width": 760, "kind": "model"}
+  "stochastic_dynamics/figures/07_same_occupancy_different_currents": {"width": 760, "kind": "model"},
+  "stochastic_dynamics/figures/08_marginals_and_memory": {"width": 900, "kind": "model"},
+  "stochastic_dynamics/figures/09_persistence_and_diffusion": {"width": 800, "kind": "model"},
+  "stochastic_dynamics/figures/10_discrete_and_gaussian": {"width": 800, "kind": "model"},
+  "stochastic_dynamics/figures/11_quasistationary_extinction": {"width": 840, "kind": "model"},
+  "stochastic_dynamics/figures/12_gaussian_density_and_circulation": {"width": 920, "kind": "model"}
 }

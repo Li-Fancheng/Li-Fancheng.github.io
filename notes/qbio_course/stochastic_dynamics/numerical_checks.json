@@ -48,5 +48,64 @@
       "entropy_rate_in_kB": 3.5155593237379517,
       "stationary_residual": 1.850371707708594e-17
     }
-  ]
+  ],
+  "persistence": {
+    "MSD_from_covariance_integral": 1.765367048105469,
+    "MSD_formula": 1.7653670481054693
+  },
+  "burst_process": {
+    "batch_size": 3,
+    "arrival_rate": 4.0,
+    "mean_from_stationary_generator": 12.00000000000006,
+    "variance_from_stationary_generator": 24.000000000004555
+  },
+  "quasistationarity": {
+    "K": 60,
+    "kappa": 0.00543086505865098,
+    "lifetime": 184.13272824871086,
+    "lifetime_from_backward_times": 184.1327282481962
+  },
+  "linear_OU": {
+    "shear_covariance": [
+      [
+        5.5,
+        1.5
+      ],
+      [
+        1.5,
+        1.0
+      ]
+    ],
+    "rotating_covariance": [
+      [
+        1.0,
+        8.326672684688674e-18
+      ],
+      [
+        -1.6653345369377347e-17,
+        1.0
+      ]
+    ],
+    "rotating_cross_covariance_at_t0p7": [
+      [
+        0.08440318529167402,
+        -0.489359853537482
+      ],
+      [
+        0.489359853537482,
+        0.08440318529167412
+      ]
+    ]
+  },
+  "splitting_probability": {
+    "D": 0.1,
+    "start": 0.2,
+    "quadrature": 0.7146912081668207,
+    "backward_BVP": 0.7146912081640218
+  },
+  "extinction_action": {
+    "R0": 1.5,
+    "quadrature": 0.07213177477483106,
+    "closed_form": 0.07213177477483101
+  }
 }

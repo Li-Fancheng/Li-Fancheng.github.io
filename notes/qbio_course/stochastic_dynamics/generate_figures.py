@@ -18,7 +18,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch
 import numpy as np
 from scipy.integrate import quad, solve_bvp
-from scipy.stats import binom, poisson
+from scipy.linalg import expm, solve_continuous_lyapunov
+from scipy.stats import binom, norm, poisson
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT.parent))
@@ -223,6 +224,146 @@ def stationary_currents():
     save(fig, "07_same_occupancy_different_currents")
 
 
+def marginals_and_memory():
+    rng = np.random.default_rng(810)
+    count, r = 180, 0.94
+    independent = rng.normal(size=count)
+    correlated = np.empty(count)
+    correlated[0] = rng.normal()
+    for i in range(1, count):
+        correlated[i] = r * correlated[i - 1] + np.sqrt(1 - r*r) * rng.normal()
+    fig, axes = plt.subplots(1, 3, figsize=(12.8, 4.1))
+    axes[0].plot(independent, color=GREEN, linewidth=1.1, label="Independent")
+    axes[0].plot(correlated, color=PURPLE, linewidth=1.7, label="Correlated")
+    axes[0].set(xlabel="Time step", ylabel="State value", title="A  Different paths")
+    axes[0].legend(fontsize=11)
+    x = np.linspace(-3.5, 3.5, 300)
+    axes[1].plot(x, norm.pdf(x), color=BLUE)
+    axes[1].set(xlabel="State value", ylabel="One-time density",
+                title="B  Both have the same Gaussian density")
+    lag = np.arange(41)
+    axes[2].plot(lag, r**lag, color=PURPLE, label=r"$r^{|\ell|}$, $r=0.94$")
+    axes[2].plot(lag, (lag == 0).astype(float), "o-", color=GREEN,
+                 markersize=3, label="Independent")
+    axes[2].set(xlabel="Lag in time steps", ylabel="Normalized correlation",
+                title="C  A distribution does not fix memory")
+    axes[2].legend(fontsize=11)
+    save(fig, "08_marginals_and_memory")
+
+
+def persistence_and_diffusion():
+    v, rate = 1.0, 0.5
+    D = v*v / (2*rate)
+    t = np.logspace(-2, 2, 350)
+    msd = v*v/rate * (t + np.expm1(-2*rate*t)/(2*rate))
+    fig, axes = plt.subplots(1, 2, figsize=(10.7, 4.2))
+    axes[0].loglog(t, msd, color=BLUE, label="Persistent motion")
+    short, long = t < 0.6, t > 2
+    axes[0].loglog(t[short], v*v*t[short]**2, "--", color=ORANGE,
+                   label=r"Ballistic: $v^2t^2$")
+    axes[0].loglog(t[long], 2*D*t[long], ":", color=GREEN,
+                   label=r"Diffusive: $2D_{\rm eff}t$")
+    axes[0].set(xlabel="Time", ylabel="Mean squared displacement",
+                title="A  Losing direction changes the scaling")
+    axes[0].legend(fontsize=11)
+    s = np.linspace(0, 7, 300)
+    covariance = v*v*np.exp(-2*rate*s)
+    axes[1].plot(s, covariance, color=PURPLE)
+    axes[1].fill_between(s, 0, covariance, color=PURPLE, alpha=0.2)
+    axes[1].text(2.5, 0.5, r"Area $=D_{\rm eff}=1$", fontsize=14, color=PURPLE)
+    axes[1].set(xlabel="Time lag", ylabel="Velocity correlation",
+                title="B  Memory sets the diffusion coefficient", ylim=(0, 1.08))
+    save(fig, "09_persistence_and_diffusion")
+
+
+def discrete_and_gaussian():
+    fig, axes = plt.subplots(1, 2, figsize=(10.9, 4.1))
+    for ax, mu, letter in zip(axes, (2, 30), ("A", "B")):
+        n = np.arange(-5 if mu == 2 else -3, int(mu + 5*np.sqrt(mu)) + 1)
+        bins = norm.cdf((n + .5 - mu)/np.sqrt(mu)) - norm.cdf((n - .5 - mu)/np.sqrt(mu))
+        valid = n >= 0
+        ax.bar(n[valid], poisson.pmf(n[valid], mu), width=.72, color=BLUE,
+               alpha=.7, label="Exact Poisson")
+        ax.plot(n, bins, "o-", color=ORANGE, markersize=3, label="Binned Gaussian")
+        ax.axvspan(n[0]-.5, -.5, color="#e9dce8", alpha=.8)
+        ax.set(xlabel="Count bin $n$", ylabel="Probability per unit bin",
+               title=f"{letter}  Mean count $\\mu={mu}$", xlim=(n[0]-.5, n[-1]+.5))
+        ax.legend(fontsize=11)
+    save(fig, "10_discrete_and_gaussian")
+
+
+def population_model(K=60, beta=1.5, delta=1):
+    n = np.arange(K+1)
+    births, deaths = beta*n*(1-n/K), delta*n
+    Q = np.diag(-births-deaths) + np.diag(births[:-1], 1) + np.diag(deaths[1:], -1)
+    eigenvalues, eigenvectors = np.linalg.eig(Q[1:, 1:].T)
+    index = np.argmax(eigenvalues.real)
+    assert abs(eigenvalues[index].imag) < 1e-10
+    kappa = -float(eigenvalues[index].real)
+    q = eigenvectors[:, index].real
+    if q.sum() < 0:
+        q = -q
+    assert q.min() > -1e-10
+    q = np.maximum(q, 0)
+    q /= q.sum()
+    return Q, q, kappa
+
+
+def quasistationary_extinction():
+    Q, q, kappa = population_model()
+    initial = np.zeros(61)
+    initial[20] = 1
+    scaled = np.linspace(0, 4, 100)
+    survival = np.array([(expm(Q.T*t/kappa) @ initial)[1:].sum() for t in scaled])
+    fig, axes = plt.subplots(1, 2, figsize=(10.9, 4.2))
+    axes[0].semilogy(scaled, survival, color=BLUE, label="Finite-state evolution")
+    axes[0].semilogy(scaled, np.exp(-scaled), "--", color=ORANGE,
+                     label="Quasistationary exponential")
+    axes[0].set(xlabel=r"Time / quasistationary lifetime $\kappa^{-1}$",
+                ylabel="Survival probability", title="A  Probability continues to leave")
+    axes[0].legend(fontsize=11)
+    states = np.arange(1, 61)
+    for time, color in zip((.1, 1, 3), (GREEN, ORANGE, PURPLE)):
+        p = (expm(Q.T*time/kappa) @ initial)[1:]
+        axes[1].plot(states, p/p.sum(), color=color, linewidth=1.6,
+                     label=rf"$\kappa t={time:g}$")
+    axes[1].plot(states, q, "--", color=BLUE, linewidth=2.2, label="QSD eigenvector")
+    axes[1].set(xlabel="Population $n$", ylabel="Conditional probability",
+                title="B  Surviving samples keep a stable shape", xlim=(0, 45))
+    axes[1].legend(fontsize=10)
+    save(fig, "11_quasistationary_extinction")
+
+
+def gaussian_density_and_circulation():
+    fig, axes = plt.subplots(1, 3, figsize=(12.9, 4.3))
+    grid = np.linspace(-2.8, 2.8, 151)
+    X, Y = np.meshgrid(grid, grid)
+    p = np.exp(-(X*X+Y*Y)/2)/(2*np.pi)
+    for ax, omega, letter in zip(axes[:2], (0, 2), ("A", "B")):
+        ax.contourf(X, Y, p, levels=9, cmap="Blues", alpha=.8)
+        ax.contour(X, Y, p, levels=[.02, .05, .1, .14], colors="white", linewidths=.7)
+        if omega:
+            coarse = np.linspace(-2.3, 2.3, 9)
+            u, v = np.meshgrid(coarse, coarse)
+            density = np.exp(-(u*u+v*v)/2)/(2*np.pi)
+            ax.quiver(u, v, -omega*v*density, omega*u*density,
+                      color=ORANGE, angles="xy", scale_units="xy", scale=.5, width=.009)
+        else:
+            ax.text(0, -.1, r"$\mathbf{J}_*=0$", color=ORANGE, fontsize=20,
+                    ha="center", va="center")
+        ax.set(xlabel="$x$", ylabel="$y$", aspect="equal",
+               title=f"{letter}  Same density, $\\omega_0={omega}$")
+    time = np.linspace(0, 6, 300)
+    cross = np.exp(-time)*np.sin(2*time)
+    axes[2].plot(time, cross, color=PURPLE, label="$C_{yx}(t)$")
+    axes[2].plot(time, -cross, color=GREEN, label="$C_{xy}(t)$")
+    axes[2].axhline(0, color="#aab4bf", linewidth=.8)
+    axes[2].set(xlabel="Time lag", ylabel="Cross-correlation",
+                title="C  Time order reveals circulation")
+    axes[2].legend(fontsize=11)
+    save(fig, "12_gaussian_density_and_circulation")
+
+
 def numerical_checks():
     """Cross-check formulas using different representations of the process."""
     mu, gamma = 12, 0.7
@@ -284,6 +425,69 @@ def numerical_checks():
                       "entropy_rate_in_kB": (a-b) * np.log(a/b),
                       "stationary_residual": stationary_residual})
 
+    # Persistence: integrate velocity covariance independently of the MSD formula.
+    time, speed, rate = 1.7, 1.0, .5
+    msd_integral = 2*quad(lambda s: (time-s)*speed**2*np.exp(-2*rate*s), 0, time)[0]
+    msd_formula = speed**2/rate*(time-(1-np.exp(-2*rate*time))/(2*rate))
+    assert abs(msd_integral-msd_formula) < 1e-12
+
+    # Bursts: solve a truncated exact stationary generator, not moment equations.
+    nmax, batch, arrival = 150, 3, 4.0
+    burst_Q = np.zeros((nmax+1, nmax+1))
+    for n_i in range(nmax+1):
+        if n_i + batch <= nmax:
+            burst_Q[n_i, n_i+batch] = arrival
+        if n_i:
+            burst_Q[n_i, n_i-1] = n_i
+        burst_Q[n_i, n_i] = -burst_Q[n_i].sum()
+    stationarity = burst_Q.T.copy()
+    stationarity[-1] = 1
+    rhs = np.zeros(nmax+1)
+    rhs[-1] = 1
+    burst_p = np.linalg.solve(stationarity, rhs)
+    burst_mean = float(np.arange(nmax+1) @ burst_p)
+    burst_variance = float((np.arange(nmax+1)-burst_mean)**2 @ burst_p)
+    assert abs(burst_mean-12) < 1e-9 and abs(burst_variance-24) < 1e-8
+
+    # Quasistationary lifetime: eigenvalue versus weighted backward times.
+    population_Q, quasi, kappa = population_model()
+    backward_times = np.linalg.solve(population_Q[1:, 1:], -np.ones(60))
+    quasi_mean_time = float(quasi @ backward_times)
+    assert abs(kappa*quasi_mean_time-1) < 1e-9
+
+    # Stable shear and rotating OU: solve matrix Lyapunov equations independently.
+    lam, D_ou, shear, omega = 1.0, 1.0, 3.0, 2.0
+    A_shear = np.array([[-lam, shear], [0, -lam]])
+    cov_shear = solve_continuous_lyapunov(A_shear, -2*D_ou*np.eye(2))
+    predicted_shear = np.array([[D_ou/lam+shear**2*D_ou/(2*lam**3), shear*D_ou/(2*lam**2)],
+                               [shear*D_ou/(2*lam**2), D_ou/lam]])
+    assert np.max(np.abs(cov_shear-predicted_shear)) < 1e-12
+    rotation = np.array([[0., -1.], [1., 0.]])
+    A_rotation = -lam*np.eye(2)+omega*rotation
+    cov_rotation = solve_continuous_lyapunov(A_rotation, -2*D_ou*np.eye(2))
+    assert np.max(np.abs(cov_rotation-D_ou/lam*np.eye(2))) < 1e-12
+    lag = .7
+    C = expm(A_rotation*lag) @ cov_rotation
+    assert abs(C[1, 0]-D_ou/lam*np.exp(-lam*lag)*np.sin(omega*lag)) < 1e-12
+
+    # Splitting probability: an absorbing/absorbing BVP versus its quadrature.
+    split_D = .1
+    split_mesh = np.linspace(-1, 1, 400)
+    def split_ode(q, y):
+        return np.vstack((y[1], (q**3-q)*y[1]/split_D))
+    splitting = solve_bvp(split_ode, lambda ya, yb: np.array([ya[0], yb[0]-1]),
+                          split_mesh, np.vstack(((split_mesh+1)/2, np.full_like(split_mesh,.5))),
+                          tol=1e-8)
+    assert splitting.success
+    split_integral = quad(lambda y: np.exp(potential(y)/split_D), -1, .2)[0]
+    split_integral /= quad(lambda y: np.exp(potential(y)/split_D), -1, 1)[0]
+    split_backward = float(splitting.sol(.2)[0])
+    assert abs(split_integral-split_backward) < 1e-8
+    R0 = 1.5
+    action_integral = quad(lambda x: np.log(R0*(1-x)), 0, 1-1/R0)[0]
+    action_formula = np.log(R0)-1+1/R0
+    assert abs(action_integral-action_formula) < 1e-12
+
     report = {
         "seed_birth_death": 204, "seed_noise_filter": 306,
         "birth_death": {"mean": mu, "gamma": gamma, "max_stationary_edge_flux": flux_error},
@@ -297,6 +501,19 @@ def numerical_checks():
                        "max_recursion_vs_linear_system_difference": extinction_error,
                        "time_from_n8": float(times_linear[7])},
         "rings": rings,
+        "persistence": {"MSD_from_covariance_integral": msd_integral, "MSD_formula": msd_formula},
+        "burst_process": {"batch_size": batch, "arrival_rate": arrival,
+                          "mean_from_stationary_generator": burst_mean,
+                          "variance_from_stationary_generator": burst_variance},
+        "quasistationarity": {"K": 60, "kappa": kappa, "lifetime": 1/kappa,
+                              "lifetime_from_backward_times": quasi_mean_time},
+        "linear_OU": {"shear_covariance": cov_shear.tolist(),
+                      "rotating_covariance": cov_rotation.tolist(),
+                      "rotating_cross_covariance_at_t0p7": C.tolist()},
+        "splitting_probability": {"D": split_D, "start": .2,
+                                  "quadrature": split_integral, "backward_BVP": split_backward},
+        "extinction_action": {"R0": R0, "quadrature": action_integral,
+                              "closed_form": action_formula},
     }
     (ROOT / "numerical_checks.json").write_text(json.dumps(report, indent=2) + "\n")
     return report
@@ -307,9 +524,11 @@ def main():
     configure_style()
     checks = numerical_checks()
     for build in (walk_and_diffusion, hidden_state_memory, birth_death_dynamics,
-                  different_clocks, noise_filtering, barrier_and_first_passage, stationary_currents):
+                  different_clocks, noise_filtering, barrier_and_first_passage, stationary_currents,
+                  marginals_and_memory, persistence_and_diffusion, discrete_and_gaussian,
+                  quasistationary_extinction, gaussian_density_and_circulation):
         build()
-    print(json.dumps({"figures": 7, "checks": checks}, indent=2))
+    print(json.dumps({"figures": 12, "checks": checks}, indent=2))
 
 
 if __name__ == "__main__":

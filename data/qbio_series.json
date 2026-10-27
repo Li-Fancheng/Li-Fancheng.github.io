@@ -113,23 +113,23 @@
     "parts": [
       {
         "slug": "randomness_and_hidden_states",
-        "title": "相同条件下的细胞为什么仍走出不同的轨迹",
-        "summary": "从分子计数与粗粒化理解有效随机性，推导随机游走的扩散极限，再用隐藏启动子构象计算观测中的记忆。",
-        "kind": "正文与补充推导",
+        "title": "随机性、粗粒化与马尔可夫描述",
+        "summary": "用倍增映射、相关序列、持续运动和隐藏状态，建立从观测分布到马尔可夫描述的理论联系。",
+        "kind": "正文与附录",
         "source": "stochastic_dynamics/01_randomness_and_hidden_states.md"
       },
       {
         "slug": "events_to_dynamics",
-        "title": "从分子反应事件到概率与轨迹方程",
-        "summary": "用同一个生成–降解模型连接主方程、稳态分布、Gillespie 模拟、连续噪声近似与时间关联，比较各层描述的适用条件。",
-        "kind": "正文与补充推导",
+        "title": "随机动力学的生成元与连续极限",
+        "summary": "从转移半群与前后向对偶出发，推导主方程、事件模拟、Itô 扩散、Fokker–Planck 与 OU 过程，区分等价表示和尺度近似。",
+        "kind": "正文与附录",
         "source": "stochastic_dynamics/02_events_to_dynamics.md"
       },
       {
         "slug": "noise_response_and_rare_events",
-        "title": "相同的表达分布为什么会产生不同的细胞行为",
-        "summary": "计算下游对时间关联的读取、势垒逃逸与首达时间，再用有限群体和三态环讨论吸收边界与非平衡动力学。",
-        "kind": "正文与补充推导",
+        "title": "涨落、首达过程与非平衡稳态",
+        "summary": "计算相关噪声的响应、首达与 Kramers 逃逸，连接 WKB、准稳态和概率流，再用三态环与旋转 OU 分析路径不可逆性。",
+        "kind": "正文与附录",
         "source": "stochastic_dynamics/03_noise_response_and_rare_events.md"
       }
     ]
