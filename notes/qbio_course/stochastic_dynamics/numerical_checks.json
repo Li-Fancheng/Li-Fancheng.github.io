@@ -107,5 +107,23 @@
     "R0": 1.5,
     "quadrature": 0.07213177477483106,
     "closed_form": 0.07213177477483101
-  }
+  },
+  "promoter_switching": [
+    {
+      "on_rate": 0.2,
+      "off_rate": 0.2,
+      "mean_from_master_equation": 10.000000000000085,
+      "variance_from_master_equation": 81.42857142857639,
+      "fano_from_master_equation": 8.14285714285757,
+      "fano_from_moments": 8.142857142857142
+    },
+    {
+      "on_rate": 20.0,
+      "off_rate": 20.0,
+      "mean_from_master_equation": 10.000000000000004,
+      "variance_from_master_equation": 12.439024390244388,
+      "fano_from_master_equation": 1.2439024390244384,
+      "fano_from_moments": 1.2439024390243902
+    }
+  ]
 }

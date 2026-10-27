@@ -488,6 +488,42 @@ def numerical_checks():
     action_formula = np.log(R0)-1+1/R0
     assert abs(action_integral-action_formula) < 1e-12
 
+    # Promoter switching: stationary joint master equation versus moment formulas.
+    promoter_checks = []
+    cutoff, synthesis, removal = 100, 20.0, 1.0
+    for on_rate, off_rate in ((.2, .2), (20.0, 20.0)):
+        joint_Q = np.zeros((2*(cutoff+1), 2*(cutoff+1)))
+        for number in range(cutoff+1):
+            for state in (0, 1):
+                index = 2*number+state
+                joint_Q[index, 2*number+1-state] = on_rate if state == 0 else off_rate
+                if number:
+                    joint_Q[index, index-2] = removal*number
+                if state and number < cutoff:
+                    joint_Q[index, index+2] = synthesis
+                joint_Q[index, index] = -joint_Q[index].sum()
+        constraints = joint_Q.T.copy()
+        constraints[-1] = 1
+        normalizer = np.zeros(len(joint_Q))
+        normalizer[-1] = 1
+        joint_p = np.linalg.solve(constraints, normalizer)
+        counts = np.repeat(np.arange(cutoff+1), 2)
+        promoter_states = np.tile([0, 1], cutoff+1)
+        mean = float(counts @ joint_p)
+        variance = float((counts-mean)**2 @ joint_p)
+        pi = on_rate/(on_rate+off_rate)
+        covariance = float((counts-mean)*(promoter_states-pi) @ joint_p)
+        predicted_covariance = synthesis*pi*(1-pi)/(removal+on_rate+off_rate)
+        predicted_fano = 1+synthesis*(1-pi)/(removal+on_rate+off_rate)
+        assert abs(mean-synthesis*pi/removal) < 1e-9
+        assert abs(covariance-predicted_covariance) < 1e-9
+        assert abs(variance/mean-predicted_fano) < 1e-8
+        promoter_checks.append({"on_rate": on_rate, "off_rate": off_rate,
+                                "mean_from_master_equation": mean,
+                                "variance_from_master_equation": variance,
+                                "fano_from_master_equation": variance/mean,
+                                "fano_from_moments": predicted_fano})
+
     report = {
         "seed_birth_death": 204, "seed_noise_filter": 306,
         "birth_death": {"mean": mu, "gamma": gamma, "max_stationary_edge_flux": flux_error},
@@ -514,6 +550,7 @@ def numerical_checks():
                                   "quadrature": split_integral, "backward_BVP": split_backward},
         "extinction_action": {"R0": R0, "quadrature": action_integral,
                               "closed_form": action_formula},
+        "promoter_switching": promoter_checks,
     }
     (ROOT / "numerical_checks.json").write_text(json.dumps(report, indent=2) + "\n")
     return report
