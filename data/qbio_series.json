@@ -106,5 +106,32 @@
         "source": "chemotaxis/03_collective_patterns.md"
       }
     ]
+  },
+  "stochastic_dynamics": {
+    "root": "/notes/qbio_course/stochastic_dynamics/",
+    "directory": "stochastic_dynamics",
+    "parts": [
+      {
+        "slug": "randomness_and_hidden_states",
+        "title": "相同条件下的细胞为什么仍走出不同的轨迹",
+        "summary": "从分子计数与粗粒化理解有效随机性，推导随机游走的扩散极限，再用隐藏启动子构象计算观测中的记忆。",
+        "kind": "正文与补充推导",
+        "source": "stochastic_dynamics/01_randomness_and_hidden_states.md"
+      },
+      {
+        "slug": "events_to_dynamics",
+        "title": "从分子反应事件到概率与轨迹方程",
+        "summary": "用同一个生成–降解模型连接主方程、稳态分布、Gillespie 模拟、连续噪声近似与时间关联，比较各层描述的适用条件。",
+        "kind": "正文与补充推导",
+        "source": "stochastic_dynamics/02_events_to_dynamics.md"
+      },
+      {
+        "slug": "noise_response_and_rare_events",
+        "title": "相同的表达分布为什么会产生不同的细胞行为",
+        "summary": "计算下游对时间关联的读取、势垒逃逸与首达时间，再用有限群体和三态环讨论吸收边界与非平衡动力学。",
+        "kind": "正文与补充推导",
+        "source": "stochastic_dynamics/03_noise_response_and_rare_events.md"
+      }
+    ]
   }
 }

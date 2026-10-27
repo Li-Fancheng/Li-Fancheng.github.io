@@ -1,0 +1,52 @@
+{
+  "seed_birth_death": 204,
+  "seed_noise_filter": 306,
+  "birth_death": {
+    "mean": 12,
+    "gamma": 0.7,
+    "max_stationary_edge_flux": 8.326672684688674e-15
+  },
+  "filter": {
+    "input_variance": 12,
+    "tau_x": 4,
+    "tau_y": 2,
+    "variance_from_spectrum": 8.0,
+    "variance_from_moments": 8.0
+  },
+  "first_passage": {
+    "D": 0.08,
+    "reflecting_boundary": -2,
+    "target": 0.8,
+    "start": -1,
+    "integral": 117.75589053208807,
+    "backward_BVP": 117.75589053343414,
+    "relative_difference": 1.1430989680400324e-11
+  },
+  "extinction": {
+    "K": 24,
+    "beta": 1.5,
+    "delta": 1.0,
+    "max_recursion_vs_linear_system_difference": 3.907985046680551e-14,
+    "time_from_n8": 20.477131639279076
+  },
+  "rings": [
+    {
+      "clockwise_rate": 1,
+      "counterclockwise_rate": 1,
+      "probability_per_state": 0.3333333333333333,
+      "mean_residence_time": 0.5,
+      "edge_current": 0.0,
+      "entropy_rate_in_kB": 0.0,
+      "stationary_residual": 0.0
+    },
+    {
+      "clockwise_rate": 1.8,
+      "counterclockwise_rate": 0.2,
+      "probability_per_state": 0.3333333333333333,
+      "mean_residence_time": 0.5,
+      "edge_current": 0.5333333333333333,
+      "entropy_rate_in_kB": 3.5155593237379517,
+      "stationary_residual": 1.850371707708594e-17
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Typography and vector export shared by the four quantitative biology notes.
+"""Typography and vector export shared by the quantitative biology notes.
 
 Text uses Arial where available, with portable sans-serif fallbacks. Mathematics
 uses Computer Modern, matching the LaTeX-style equations on the website. SVG

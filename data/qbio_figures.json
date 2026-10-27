@@ -64,5 +64,12 @@
   "chemotaxis/figures/paper_laganenka2016_fig2": {"width": 760, "kind": "paper"},
   "chemotaxis/figures/sensing_01_temporal_filter": {"width": 560, "kind": "model"},
   "chemotaxis/figures/mattingly_2026_fig1": {"width": 720, "kind": "paper"},
-  "chemotaxis/figures/mattingly_2026_fig3": {"width": 860, "kind": "paper"}
+  "chemotaxis/figures/mattingly_2026_fig3": {"width": 860, "kind": "paper"},
+  "stochastic_dynamics/figures/01_walk_and_diffusion": {"width": 760, "kind": "model"},
+  "stochastic_dynamics/figures/02_hidden_state_memory": {"width": 760, "kind": "model"},
+  "stochastic_dynamics/figures/03_birth_death_dynamics": {"width": 800, "kind": "model"},
+  "stochastic_dynamics/figures/04_same_distribution_different_clocks": {"width": 880, "kind": "model"},
+  "stochastic_dynamics/figures/05_noise_filtering": {"width": 900, "kind": "model"},
+  "stochastic_dynamics/figures/06_barrier_and_first_passage": {"width": 800, "kind": "model"},
+  "stochastic_dynamics/figures/07_same_occupancy_different_currents": {"width": 760, "kind": "model"}
 }
