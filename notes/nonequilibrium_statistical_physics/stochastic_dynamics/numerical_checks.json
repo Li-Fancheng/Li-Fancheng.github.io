@@ -51,5 +51,14 @@
     "ou_kernel_mean_error": 1.1102230246251565e-16,
     "ou_kernel_variance_error": 2.7755575615628914e-16,
     "chapman_kolmogorov_relative_error": 3.574918139293004e-14
+  },
+  "path_ensembles": {
+    "brownian_fluctuation_prefactor_relative_error": 3.552713678800501e-15,
+    "bridge_covariance_from_action_hessian_max_error": 8.326672684688674e-17,
+    "bridge_conditioning_and_drift_independence_max_error": 6.661338147750939e-16,
+    "ou_integrated_observable_variance_error": 0.0,
+    "fourier_noise_weight_relative_error": 2.220446049250313e-16,
+    "midpoint_jacobian_normalization_error": 2.220446049250313e-16,
+    "ou_stationary_initial_and_noise_covariance_max_error": 5.551115123125783e-17
   }
 }

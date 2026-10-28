@@ -265,6 +265,101 @@ def mfpt(diffusion, start=-1, target=0.8, left=-2):
     return value
 
 
+def path_ensemble_figures():
+    """Conditioned Brownian paths, endpoint density, and OU two-time kernels."""
+    x0, final, duration, drift, diffusion = 0.0, 1.5, 2.0, 0.3, 0.2
+    t = np.linspace(0, duration, 801)
+    step = t[1] - t[0]
+    rng = np.random.default_rng(2026102803)
+    wiener = np.c_[np.zeros(6), np.cumsum(rng.normal(0, np.sqrt(step), (6, len(t) - 1)), axis=1)]
+    reference = x0 + (final - x0) * t / duration
+    bridges = reference + np.sqrt(2 * diffusion) * (wiener - t / duration * wiener[:, -1, None])
+    fig, ax = plt.subplots(1, 2, figsize=(10.6, 4.5), layout="constrained")
+    for index, path in enumerate(bridges):
+        ax[0].plot(t, path, color=BLUE, alpha=0.4, lw=1, label="conditioned sample paths" if index == 0 else None)
+    ax[0].plot(t, reference, color=INK, lw=2.6, label="conditional mean / reference")
+    ax[0].plot(t, x0 + drift * t, color=ORANGE, ls="--", label="unconditioned mean")
+    ax[0].scatter([0, duration], [x0, final], color=INK, s=30, zorder=4)
+    ax[0].set(title="A  Many histories share the same endpoints", xlabel="time", ylabel="$X_t$")
+    ax[0].legend(loc="upper left", fontsize=9)
+    endpoint_mean = x0 + drift * duration
+    endpoint_variance = 2 * diffusion * duration
+    x = np.linspace(endpoint_mean - 3.5 * np.sqrt(endpoint_variance), endpoint_mean + 3.5 * np.sqrt(endpoint_variance), 800)
+    density = gaussian(x, endpoint_mean, endpoint_variance)
+    ax[1].plot(x, density, color=INK, label="endpoint transition density")
+    ax[1].axvline(endpoint_mean, color=ORANGE, ls="--", label="natural mean $x_0+vT$")
+    ax[1].vlines(final, 0, gaussian(final, endpoint_mean, endpoint_variance), color=BLUE, lw=2)
+    ax[1].scatter([final], [gaussian(final, endpoint_mean, endpoint_variance)], color=BLUE, label="selected endpoint $x_f$")
+    ax[1].set(title="B  Conditioning selects an endpoint", xlabel="$x_f$", ylabel="$K(x_f,T|x_0,0)$", ylim=(0, density.max() * 1.22))
+    ax[1].legend(loc="upper right", fontsize=9)
+    save(fig, "07_bridges_and_propagator")
+
+    times = np.linspace(0, 4, 241)
+    source, observation = np.meshgrid(times, times)
+    gamma, noise = 1.0, 0.4
+    covariance = noise / gamma * np.exp(-gamma * abs(observation - source))
+    response = np.where(observation > source, np.exp(-gamma * (observation - source)), 0)
+    fig, ax = plt.subplots(1, 2, figsize=(10.3, 4.6), layout="constrained")
+    for panel, values, title, cmap, maximum in zip(ax, [covariance, response],
+            ["A  Correlation is symmetric", "B  Response is causal"], ["Blues", "Oranges"], [noise / gamma, 1]):
+        mesh = panel.imshow(values, origin="lower", extent=(0, 4, 0, 4), interpolation="nearest", cmap=cmap, vmin=0, vmax=maximum)
+        panel.plot([0, 4], [0, 4], color=INK, ls=":", lw=1, alpha=0.6)
+        panel.set(title=title, xlabel="time $s$", ylabel="time $t$", xticks=range(5), yticks=range(5))
+        fig.colorbar(mesh, ax=panel, shrink=0.85, pad=0.03)
+    save(fig, "08_ou_correlation_response")
+
+
+def path_ensemble_checks():
+    """Verify finite-dimensional path integrals and continuum observables."""
+    steps, duration, diffusion, drift, x0, final = 11, 2.0, 0.2, 0.3, 0.0, 1.5
+    step = duration / steps
+    laplacian = 2 * np.eye(steps - 1) - np.eye(steps - 1, k=1) - np.eye(steps - 1, k=-1)
+    hessian = laplacian / (2 * diffusion * step)
+    sign, logdet = np.linalg.slogdet(hessian)
+    assert sign == 1
+    log_prefactor = -steps / 2 * np.log(4 * np.pi * diffusion * step) + (steps - 1) / 2 * np.log(2 * np.pi) - logdet / 2
+    prefactor_error = abs(np.exp(log_prefactor + 0.5 * np.log(4 * np.pi * diffusion * duration)) - 1)
+    interior_times = np.arange(1, steps) * step
+    first, second = np.meshgrid(interior_times, interior_times)
+    exact_covariance = 2 * diffusion * (np.minimum(first, second) - first * second / duration)
+    covariance_error = np.max(abs(np.linalg.inv(hessian) - exact_covariance))
+
+    def kernel(x, elapsed, initial, velocity):
+        return gaussian(x, initial + velocity * elapsed, 2 * diffusion * elapsed)
+
+    time = 0.7
+    values = np.linspace(-0.6, 1.6, 9)
+    conditional_mean = x0 + (final - x0) * time / duration
+    conditional_variance = 2 * diffusion * time * (1 - time / duration)
+    conditioned_errors = []
+    for velocity in [-0.4, drift, 1.2]:
+        conditional = kernel(values, time, x0, velocity) * kernel(final, duration - time, values, velocity) / kernel(final, duration, x0, velocity)
+        conditioned_errors.append(np.max(abs(conditional - gaussian(values, conditional_mean, conditional_variance))))
+
+    gamma, noise, total = 1.3, 0.4, 2.1
+    integrated_variance = 2 * quad(lambda lag: (total - lag) * noise / gamma * np.exp(-gamma * lag), 0, total)[0]
+    predicted_variance = 2 * noise / gamma ** 2 * (total - (1 - np.exp(-gamma * total)) / gamma)
+    q, epsilon = 0.25, 0.05
+    fourier_weight = quad(lambda k: np.exp(-noise * epsilon * k * k) * np.cos(k * q) / np.pi, 0, np.inf, epsabs=1e-11)[0]
+    gaussian_weight = gaussian(q, 0, 2 * noise * epsilon)
+    multiplier = 1 + gamma * epsilon / 2
+    midpoint_mass = quad(lambda y: multiplier * gaussian(multiplier * y - (1 - gamma * epsilon / 2) * 0.8, 0, 2 * noise * epsilon), -np.inf, np.inf)[0]
+    stationary_errors = []
+    for t, s in [(0.0, 0.4), (0.2, 1.0), (0.7, 0.7), (1.8, 0.3)]:
+        initial_contribution = noise / gamma * np.exp(-gamma * (t + s))
+        shared_noise = 2 * noise * quad(lambda u: np.exp(-gamma * (t - u)) * np.exp(-gamma * (s - u)), 0, min(t, s))[0]
+        stationary_errors.append(abs(initial_contribution + shared_noise - noise / gamma * np.exp(-gamma * abs(t - s))))
+    return {
+        "brownian_fluctuation_prefactor_relative_error": float(prefactor_error),
+        "bridge_covariance_from_action_hessian_max_error": float(covariance_error),
+        "bridge_conditioning_and_drift_independence_max_error": float(max(conditioned_errors)),
+        "ou_integrated_observable_variance_error": float(abs(integrated_variance - predicted_variance)),
+        "fourier_noise_weight_relative_error": float(abs(fourier_weight / gaussian_weight - 1)),
+        "midpoint_jacobian_normalization_error": float(abs(midpoint_mass - 1)),
+        "ou_stationary_initial_and_noise_covariance_max_error": float(max(stationary_errors)),
+    }
+
+
 def spectrum_figure():
     diffusions = np.linspace(0.025, 0.12, 28)
     exact = np.array([mfpt(d) for d in diffusions])
@@ -314,9 +409,11 @@ def analytical_checks():
 if __name__ == "__main__":
     ou_figures()
     transport_mechanisms()
+    path_ensemble_figures()
     checks = {"bistable_transport": bistable_figure(), "path_action": path_figure(),
               "first_passage_and_spectrum": spectrum_figure(), "analytical": analytical_checks(),
-              "probability_transport": probability_transport_checks()}
+              "probability_transport": probability_transport_checks(),
+              "path_ensembles": path_ensemble_checks()}
     assert checks["bistable_transport"]["probability_mass_max_error"] < 1e-8
     assert checks["bistable_transport"]["minimum_probability"] > -1e-10
     assert checks["bistable_transport"]["stationary_generator_residual"] < 1e-8
@@ -326,5 +423,6 @@ if __name__ == "__main__":
     assert checks["analytical"]["ou_bridge_action_identity_error"] < 1e-8
     assert checks["analytical"]["euler_ou_variance_identity_error"] < 1e-12
     assert max(checks["probability_transport"].values()) < 1e-8
+    assert max(checks["path_ensembles"].values()) < 1e-8
     (ROOT / "numerical_checks.json").write_text(json.dumps(checks, indent=2) + "\n")
     print(json.dumps(checks, indent=2))

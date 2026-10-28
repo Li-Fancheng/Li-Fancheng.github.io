@@ -20,8 +20,8 @@ tags: [非平衡统计物理, 随机动力学, 随机过程]
    从确定性与隐变量开始，沿牛顿方程、环境约化、记忆和白噪声近似得到 Langevin 动力学，再用 Itô 框架统一表述，计算 OU 的涨落、关联与响应。
 2. **[Fokker–Planck Dynamics：概率输运、稳态与亚稳态](fokker_planck/)**  
    从确定性流场的概率输运出发，再引入无偏随机运动产生的扩散流；衔接相空间 Kramers 与过阻尼方程，用 OU 和双稳势理解概率弛豫，最后以传播核接到路径概率。
-3. **[Path Probabilities and Path Integrals：随机历史的代价](path_integrals/)**  
-   从局部转移连接整段历史的概率，先理解弱噪声代价、最优爬坡路径和势垒指数，再讨论有限噪声的 Onsager–Machlup 表示与关联响应泛函。
+3. **[Path Probabilities and Path Integrals：随机历史、关联与响应](path_integrals/)**\
+   从传播核的时间切片建立路径系综，推导 Onsager–Machlup 权重，用 Brownian bridge 理解端点约束与路径涨落，再用 OU 生成泛函和 MSRJD 计算关联、累计观测量与响应。
 4. **[Markov Processes and Generators：局部规律与全局统计](markov_generators/)**  
    用转移核和生成元统一前向、后向演化，计算首达时间与分裂概率，解释 OU 谱和双稳慢模式，并以主方程与 Feynman–Kac 连接跳跃过程和路径泛函。
 
@@ -39,6 +39,8 @@ $W_t$ 为标准 Wiener 过程，$\mathbb E[(W_{t+h}-W_t)^2]=h$。因此 $D$ 的�
 | --- | --- | --- |
 | Ornstein–Uhlenbeck（OU） | $b(x)=-\gamma x$，$\gamma>0$ | 精确分布、涨落产生与弛豫、关联、响应和谱 |
 | 双稳扩散 | $b(x)=-U'(x)$，$U(x)=(x^2-1)^2/4$ | 亚稳态、时间尺度分离、罕见路径和首次到达 |
+
+第三篇另用常漂移 Brownian 运动作为路径积分的可解例子，明确区分端点传播密度、给定两端的 bridge，以及参考曲线周围的随机涨落。
 
 双稳模型的图采用无量纲位置和时间：稳定点在 $x=\pm1$，势垒在 $x=0$，势垒高度 $\Delta U=1/4$。一般有量纲情形中，写成 $b=-U'$ 意味着把常数迁移率吸收到 $U$ 里；$U$ 与 $D$ 具有相同单位，$U/D$ 才是无量纲量。若真实势能为 $V$、迁移率为 $\mu$，则 $U=\mu V$；热浴平衡时另有 $D=\mu k_{\mathrm B}T$。
 
