@@ -1,14 +1,16 @@
 ---
 title: "Fokker–Planck Dynamics：概率输运、稳态与亚稳态"
-subtitle: "漂移与扩散怎样重分配概率，为什么局域平衡可以先于全局平衡"
+subtitle: "从确定性概率输运到随机扩散、概率弛豫与传播核"
 date: 2026-10-28
 weight: 2
-summary: "推导概率密度的演化与概率流，在 OU、双稳势和有驱动的环上扩散中研究分布、边界条件及多个弛豫时间尺度。"
+summary: "从初始概率云与确定性输运出发，建立扩散流和 Fokker–Planck 方程，衔接 Kramers 与过阻尼模型，再用 OU、双稳势和传播核理解概率弛豫与路径统计。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true
 toc: true
-reading_time: 40
+reading_time: 55
+note_scripts:
+  - js/ou-probability-cloud.js
 tags: [非平衡统计物理, 随机动力学, Fokker–Planck]
 ---
 

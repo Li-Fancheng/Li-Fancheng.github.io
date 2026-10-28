@@ -131,6 +131,57 @@ def reversible_grid(diffusion, size):
     return x, dx, pi, eigenvalues, vectors
 
 
+def transport_mechanisms():
+    """Use the same initial cloud to isolate deterministic and random effects."""
+    x = np.linspace(-3, 6, 2401)
+    initial_mean, initial_variance, diffusion = 2.0, 0.04, 0.4
+    times = [0, 0.25, 0.7, 1.5]
+    colors = [INK, ORANGE, GREEN, BLUE]
+    fig, axes = plt.subplots(1, 3, figsize=(11, 3.7), layout="constrained")
+    titles = ["A  Deterministic contraction", "B  Pure diffusion", "C  Drift and diffusion (OU)"]
+    for ax, model, title in zip(axes, ["drift", "diffusion", "ou"], titles):
+        for time, color in zip(times, colors):
+            decay = np.exp(-time)
+            mean = initial_mean if model == "diffusion" else initial_mean * decay
+            if model == "drift":
+                variance = initial_variance * decay ** 2
+            elif model == "diffusion":
+                variance = initial_variance + 2 * diffusion * time
+            else:
+                variance = initial_variance * decay ** 2 + diffusion * (1 - decay ** 2)
+            ax.plot(x, gaussian(x, mean, variance), color=color, label=f"$t={time:g}$")
+        ax.set(title=title, xlabel="$x$", ylabel="$p(x,t)$", xlim=(-3, 6))
+        ax.legend(fontsize=9)
+    save(fig, "06_transport_mechanisms")
+
+
+def probability_transport_checks():
+    """Check conservation, moments, and composition using independent quadrature."""
+    gamma, diffusion, initial = 1.3, 0.4, 1.7
+
+    def kernel(x, time, start):
+        variance = diffusion / gamma * (-np.expm1(-2 * gamma * time))
+        return gaussian(x, start * np.exp(-gamma * time), variance)
+
+    time = 0.8
+    mass = quad(lambda x: kernel(x, time, initial), -np.inf, np.inf)[0]
+    mean = quad(lambda x: x * kernel(x, time, initial), -np.inf, np.inf)[0]
+    variance = quad(lambda x: (x - mean) ** 2 * kernel(x, time, initial), -np.inf, np.inf)[0]
+    expected_mean = initial * np.exp(-gamma * time)
+    expected_variance = diffusion / gamma * (1 - np.exp(-2 * gamma * time))
+    t1, t2, final = 0.3, 0.5, -0.2
+    composed = quad(lambda y: kernel(final, t2, y) * kernel(y, t1, initial), -np.inf, np.inf)[0]
+    direct = kernel(final, t1 + t2, initial)
+    drift_mass = quad(lambda x: np.exp(time) * gaussian(x * np.exp(time), initial, 0.04), -np.inf, np.inf)[0]
+    return {
+        "deterministic_pushforward_mass_error": float(abs(drift_mass - 1)),
+        "ou_kernel_mass_error": float(abs(mass - 1)),
+        "ou_kernel_mean_error": float(abs(mean - expected_mean)),
+        "ou_kernel_variance_error": float(abs(variance - expected_variance)),
+        "chapman_kolmogorov_relative_error": float(abs(composed / direct - 1)),
+    }
+
+
 def bistable_figure():
     diffusion = 0.07
     x, dx, pi, ev, vec = reversible_grid(diffusion, 401)
@@ -262,8 +313,10 @@ def analytical_checks():
 
 if __name__ == "__main__":
     ou_figures()
+    transport_mechanisms()
     checks = {"bistable_transport": bistable_figure(), "path_action": path_figure(),
-              "first_passage_and_spectrum": spectrum_figure(), "analytical": analytical_checks()}
+              "first_passage_and_spectrum": spectrum_figure(), "analytical": analytical_checks(),
+              "probability_transport": probability_transport_checks()}
     assert checks["bistable_transport"]["probability_mass_max_error"] < 1e-8
     assert checks["bistable_transport"]["minimum_probability"] > -1e-10
     assert checks["bistable_transport"]["stationary_generator_residual"] < 1e-8
@@ -272,5 +325,6 @@ if __name__ == "__main__":
     assert checks["first_passage_and_spectrum"]["slow_rate_relative_change_401_to_801"] < 0.002
     assert checks["analytical"]["ou_bridge_action_identity_error"] < 1e-8
     assert checks["analytical"]["euler_ou_variance_identity_error"] < 1e-12
+    assert max(checks["probability_transport"].values()) < 1e-8
     (ROOT / "numerical_checks.json").write_text(json.dumps(checks, indent=2) + "\n")
     print(json.dumps(checks, indent=2))

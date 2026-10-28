@@ -59,6 +59,32 @@
 .qbio-part-navigation a { display: block; text-decoration: none; line-height: 1.6; }
 .qbio-part-navigation a:last-child { text-align: right; }
 .qbio-part-navigation span { display: block; margin-bottom: .3rem; font-size: .8rem; opacity: .7; }
+.ou-cloud { margin-block: 2rem; padding: 1rem 1.25rem; border: 1px solid #94a3b866; border-radius: .65rem; }
+.ou-cloud .ou-cloud-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin: 0 0 .5rem; }
+.ou-cloud-heading [data-ou-time], .ou-cloud-readouts { font-variant-numeric: tabular-nums; }
+.ou-cloud-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: .85rem; }
+.ou-cloud-legend span::before { content: ""; display: inline-block; width: 1.4rem; margin-right: .4rem; vertical-align: middle; border-top: 2px solid; }
+.ou-cloud-current { color: #2878c2; }
+.ou-cloud-reference { color: #8796a5; }
+.ou-cloud-stationary::before { border-top-style: dashed !important; }
+.ou-cloud svg { display: block; width: 100%; height: auto; margin-block: .5rem; overflow: visible; }
+.ou-cloud-axis { stroke: currentColor; stroke-width: 1; opacity: .65; }
+.ou-cloud-grid { stroke: currentColor; stroke-width: 1; opacity: .13; }
+.ou-cloud-axis-text { fill: currentColor; font-family: sans-serif; font-size: 14px; }
+.ou-cloud-reference-path { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .5; }
+.ou-cloud-stationary-path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-dasharray: 6 5; opacity: .7; }
+.ou-cloud-current-path, .ou-cloud-delta { fill: none; stroke: #2878c2; stroke-width: 3; }
+.ou-cloud-area { fill: #2878c2; opacity: .13; }
+.ou-cloud-mean-line { stroke: #bf7c31; stroke-width: 1.4; stroke-dasharray: 4 5; opacity: .8; }
+.ou-cloud-control { display: block; font-size: .9rem; }
+.ou-cloud-control input { display: block; width: 100%; min-height: 2.25rem; cursor: pointer; accent-color: #2878c2; }
+.ou-cloud-control input:focus-visible { outline: 2px solid #2878c2; outline-offset: 3px; }
+.ou-cloud-readouts { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-size: .9rem; }
+.ou-cloud .ou-cloud-explanation { margin: .75rem 0 0; font-size: .85rem; line-height: 1.7; opacity: .85; }
+@media (max-width: 640px) {
+  .ou-cloud { padding: .8rem; }
+  .ou-cloud-axis-text { font-size: 21px; }
+}
 @media (max-width: 600px) {
   .qbio-part-navigation { grid-template-columns: 1fr; }
   .qbio-part-navigation a:last-child { text-align: left; }

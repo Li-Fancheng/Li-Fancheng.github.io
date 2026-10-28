@@ -44,5 +44,12 @@
   "analytical": {
     "euler_ou_variance_identity_error": 1.1102230246251565e-16,
     "ou_bridge_action_identity_error": 1.4432899320127035e-15
+  },
+  "probability_transport": {
+    "deterministic_pushforward_mass_error": 0.0,
+    "ou_kernel_mass_error": 0.0,
+    "ou_kernel_mean_error": 1.1102230246251565e-16,
+    "ou_kernel_variance_error": 2.7755575615628914e-16,
+    "chapman_kolmogorov_relative_error": 3.574918139293004e-14
   }
 }

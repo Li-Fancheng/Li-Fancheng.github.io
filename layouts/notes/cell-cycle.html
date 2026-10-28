@@ -18,4 +18,12 @@
     {{ $content | safeHTML }}
   </article>
 </div>
+{{ range .Params.note_scripts }}
+  {{ with resources.Get . }}
+    {{ $script := . | minify | fingerprint }}
+    <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+  {{ else }}
+    {{ errorf "Missing note script: %s" . }}
+  {{ end }}
+{{ end }}
 {{ end }}

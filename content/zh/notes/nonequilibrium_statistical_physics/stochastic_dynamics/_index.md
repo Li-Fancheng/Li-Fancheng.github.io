@@ -19,7 +19,7 @@ tags: [非平衡统计物理, 随机动力学, 随机过程]
 1. **[Langevin Dynamics：随机轨道、涨落与弛豫](langevin/)**  
    从确定性与隐变量开始，沿牛顿方程、环境约化、记忆和白噪声近似得到 Langevin 动力学，再用 Itô 框架统一表述，计算 OU 的涨落、关联与响应。
 2. **[Fokker–Planck Dynamics：概率输运、稳态与亚稳态](fokker_planck/)**  
-   从局部概率收支建立概率流，研究漂移与扩散如何形成分布，再用双稳扩散区分阱内弛豫与阱间交换，用环上的匀速扩散展示稳态流。
+   从确定性流场的概率输运出发，再引入无偏随机运动产生的扩散流；衔接相空间 Kramers 与过阻尼方程，用 OU 和双稳势理解概率弛豫，最后以传播核接到路径概率。
 3. **[Path Probabilities and Path Integrals：随机历史的代价](path_integrals/)**  
    从局部转移连接整段历史的概率，先理解弱噪声代价、最优爬坡路径和势垒指数，再讨论有限噪声的 Onsager–Machlup 表示与关联响应泛函。
 4. **[Markov Processes and Generators：局部规律与全局统计](markov_generators/)**  
