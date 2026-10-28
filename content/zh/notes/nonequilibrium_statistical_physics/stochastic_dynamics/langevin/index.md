@@ -1,9 +1,9 @@
 ---
-title: "Langevin Dynamics：随机轨道、涨落与弛豫"
-subtitle: "从确定性、隐变量与牛顿方程，到 Langevin 动力学和 Itô 统一表述"
+title: "Langevin Dynamics：从牛顿运动到随机轨迹"
+subtitle: "PART I · 粒子视角 · Forces, Noise, and Stochastic Trajectories"
 date: 2026-10-28
 weight: 1
-summary: "从确定性系统与隐变量出发，解释消去环境为何留下记忆和随机力，建立 Langevin 与 Itô 框架，再研究 OU 的涨落、弛豫、关联与响应。"
+summary: "从确定性与隐变量进入环境约化，在短记忆近似下建立 Langevin 与 Itô 描述，用 OU 和双稳势提出涨落、弛豫与换阱问题。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true

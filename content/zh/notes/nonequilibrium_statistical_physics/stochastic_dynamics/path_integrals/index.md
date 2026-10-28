@@ -1,9 +1,9 @@
 ---
-title: "Path Probabilities and Path Integrals：随机历史、关联与响应"
-subtitle: "从传播核与 Onsager–Machlup，到路径观测量、生成泛函和 MSRJD"
+title: "Path Integrals：从终点概率到随机路径系综"
+subtitle: "PART III · 历史视角 · Path Weights, Fluctuations, and Rare Events"
 date: 2026-10-28
 weight: 3
-summary: "由传播核的时间切片建立路径系综，推导 Onsager–Machlup，以 Brownian bridge 区分参考路径和真实涨落，再用 OU 生成泛函与 MSRJD 计算关联和响应。"
+summary: "从终点概率展开路径求和，用 Brownian bridge 理解条件历史、用双稳越垒理解噪声代价，进阶发展生成泛函与 MSRJD。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true

@@ -1,9 +1,9 @@
 ---
-title: "Fokker–Planck Dynamics：概率输运、稳态与亚稳态"
-subtitle: "从确定性概率输运到随机扩散、概率弛豫与传播核"
+title: "Fokker–Planck Dynamics：从粒子运动到概率输运"
+subtitle: "PART II · 概率视角 · Probability Density, Current, and Relaxation"
 date: 2026-10-28
 weight: 2
-summary: "从初始概率云与确定性输运出发，建立扩散流和 Fokker–Planck 方程，衔接 Kramers 与过阻尼模型，再用 OU、双稳势和传播核理解概率弛豫与路径统计。"
+summary: "从确定性搬运与对称随机游走建立概率流，研究 OU 稳态宽度、持续流与双稳亚稳态，再以传播核走向历史系综。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true
