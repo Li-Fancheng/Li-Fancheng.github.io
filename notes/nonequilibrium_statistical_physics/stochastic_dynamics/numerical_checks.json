@@ -1,0 +1,48 @@
+{
+  "bistable_transport": {
+    "probability_mass_max_error": 1.0754286350334041e-11,
+    "minimum_probability": -1.1364344293168597e-16,
+    "stationary_generator_residual": 4.263256414560601e-14
+  },
+  "path_action": {
+    "endpoint_potential_difference": 0.246375,
+    "candidate_actions": [
+      0.24637499999999934,
+      0.2503754504357465,
+      0.24852866927007
+    ],
+    "reverse_path_action_error": 6.661338147750939e-16
+  },
+  "first_passage_and_spectrum": {
+    "bistable_rates_D_005": {
+      "201": [
+        0.002778370518201491,
+        0.8224494306871554,
+        1.3133253488984966,
+        1.7786529884668065,
+        2.4511118360655995
+      ],
+      "401": [
+        0.0027767007691228197,
+        0.8222980293848542,
+        1.3139470617127278,
+        1.7803514734196453,
+        2.45405711524509
+      ],
+      "801": [
+        0.002776281011401264,
+        0.8222598872828889,
+        1.3141031414510957,
+        1.7807785237259328,
+        2.454798175727767
+      ]
+    },
+    "slow_rate_relative_change_401_to_801": 0.00015119424864851183,
+    "kramers_relative_error_D_0025": 0.04155201478329784,
+    "target_top_vs_crossing_time_ratio_D_0025": 2.000043391911321
+  },
+  "analytical": {
+    "euler_ou_variance_identity_error": 1.1102230246251565e-16,
+    "ou_bridge_action_identity_error": 1.4432899320127035e-15
+  }
+}
