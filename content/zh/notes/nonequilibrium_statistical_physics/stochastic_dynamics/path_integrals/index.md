@@ -8,7 +8,7 @@ layout: cell-cycle
 article_class: qbio-part-article
 math: true
 toc: true
-reading_time: 35
+reading_time: 45
 tags: [非平衡统计物理, 随机动力学, 路径积分]
 ---
 
