@@ -60,7 +60,7 @@ def inertial_crossover():
     short, long = u < 0.4, u > 3
     ax[0].loglog(u[short], u[short]**2, color=ORANGE, ls="--", label="ballistic: slope 2")
     ax[0].loglog(u[long], 2*u[long], color=GREEN, ls="--", label="diffusive: slope 1")
-    ax[0].set(xlabel=r"$t/\tau_m$", ylabel=r"$\langle\Delta X^2\rangle/(D\tau_m)$", title="A  One particle, two time regimes")
+    ax[0].set(xlabel=r"$t/\tau_m$", ylabel=r"$\langle\Delta x^2\rangle/(D\tau_m)$", title="A  One particle, two time regimes")
     ax[0].legend(fontsize=9)
     lag = np.linspace(0, 6, 300)
     ax[1].plot(lag, np.exp(-lag), color=BLUE)

@@ -28,14 +28,12 @@ G(x_f,T\mid x_0,0)
 =\int dy\,G(x_f,T\mid y,s)G(y,s\mid x_0,0).
 $$
 
-把时间等分为 $N$ 段，记 $\varepsilon=T/N$、$t_k=k\varepsilon$，$x_N=x_f$。对时间齐次 Markov 过程，反复使用 Chapman–Kolmogorov 关系可得
+把时间等分为 $N$ 段，记 $\varepsilon=T/N$、$t_k=k\varepsilon$，并用 $x_k=x(t_k)$ 记录各时刻的位置，$x_N=x_f$。对时间齐次 Markov 过程，反复使用 Chapman–Kolmogorov 关系可得
 
 $$
-\boxed{\begin{gathered}
-G(x_f,T\mid x_0,0)\\
+\boxed{G(x_f,T\mid x_0,0)
 =\int\prod_{k=1}^{N-1}dx_k
-\prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k).
-\end{gathered}}
+\prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k)}.
 $$
 
 这里每个短时核先回答“从当前状态到下一状态的概率是多少”。沿着指定的离散历史，把这些条件密度相乘，便得到它的联合权重；对所有中间位置积分，便将所有可能历史的贡献合并起来。对精确转移核，这个公式在任意有限切片数下都成立，还不需要任何连续路径积分的形式操作。
@@ -53,7 +51,7 @@ $$
 传播核的拼接给出了框架，还需要知道局部转移规律。对前两篇的加性噪声模型
 
 $$
-dX_t=b(X_t)dt+\sqrt{2D}\,dW_t.
+dx(t)=b(x(t))dt+\sqrt{2D}\,dW_t.
 $$
 
 采用前点 Itô 的 Euler 离散，
@@ -84,7 +82,7 @@ $$
 $$
 \boxed{S_\varepsilon[x]
 =\sum_{k=0}^{N-1}
-\frac{[\Delta x_k-b(x_k)\varepsilon]^2}{4D\varepsilon}.}
+\frac{[\Delta x_k-b(x_k)\varepsilon]^2}{4D\varepsilon}}.
 $$
 
 分子是每一步需要噪声补上的位移平方。若这份额外位移只有本步标准差 $\sqrt{2D\varepsilon}$，指数代价为 $1/2$；若达到三倍标准差，代价便为 $9/2$。因此一段运动的权重既取决于走了多远，也取决于这些位移发生在多短的时间内。相同的额外距离挤在很短一段完成，通常比均匀分散到许多步需要更罕见的噪声。
@@ -113,10 +111,8 @@ $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速
 时间切片越来越细时，人们把这份多重积分简写为路径积分：
 
 $$
-\boxed{\begin{gathered}
-G(x_f,T\mid x_0,0)\\
-=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\,e^{-S[x]}.
-\end{gathered}}
+\boxed{G(x_f,T\mid x_0,0)
+=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\,e^{-S[x]}}.
 $$
 
 $S$ 与 $\mathcal D x$ 成对规定完整权重，包括离散 Gaussian 的归一化。这个记号概括的是刚刚构造的概率乘积与中间位置求和，没有添加新的运动规律。
@@ -127,7 +123,7 @@ $S$ 与 $\mathcal D x$ 成对规定完整权重，包括离散 Gaussian 的归�
 
 ## 3.4 Brownian bridge：直线是条件平均 {#brownian-bridge}
 
-先取自由 Brownian。若已知 $X_0=x_0$、$X_T=x_f$，中间时刻的条件密度就是两段传播相乘，再除以抵达终点的密度：
+先取自由 Brownian。若已知 $x(0)=x_0$、$x(T)=x_f$，中间时刻的条件密度就是两段传播相乘，再除以抵达终点的密度：
 
 $$
 p(x,t\mid x_0,0;x_f,T)
@@ -139,25 +135,25 @@ $$
 
 $$
 \frac{(x-x_0)^2}{4Dt}+\frac{(x_f-x)^2}{4D(T-t)}
-=\frac{T[x-m_t]^2}{4Dt(T-t)}
+=\frac{T[x-m(t)]^2}{4Dt(T-t)}
 +\frac{(x_f-x_0)^2}{4DT},
 $$
 
-其中 $m_t=x_0+(x_f-x_0)t/T$。右边第二项由分母的终点核抵消，所以条件密度仍是 Gaussian，并读出
+其中 $m(t)=x_0+(x_f-x_0)t/T$。右边第二项由分母的终点核抵消，所以条件密度仍是 Gaussian，并读出
 
 $$
 \begin{aligned}
-\mathbb E[X_t\mid x_0,x_f]&=x_0+\frac tT(x_f-x_0),\\
-\operatorname{Var}(X_t\mid x_0,x_f)&=2Dt\left(1-\frac tT\right).
+\mathbb E[x(t)\mid x_0,x_f]&=x_0+\frac tT(x_f-x_0),\\
+\operatorname{Var}(x(t)\mid x_0,x_f)&=2Dt\left(1-\frac tT\right).
 \end{aligned}
 $$
 
 靠近出发时刻，运动还没积累多少涨落；靠近到达时刻，剩余时间已不允许位置任意偏离终点。两种限制使中点的方差最大，值为 $DT/2$。固定 $T$ 而增大 $D$，条件平均仍是同一条直线，周围的路径束却更宽；固定 $D$、在更长时间后到达同一终点，粒子也有更多时间中途游走。两端不变，绝不意味着中途运动已经确定。
 
-将 $x_*(t)=m_t$ 记为这条条件平均，给定两端后的过程可构造为
+将 $x_*(t)=m(t)$ 记为这条条件平均，给定两端后的过程可构造为
 
 $$
-X_t=x_*(t)+\sqrt{2D}\left(W_t-\frac tT W_T\right),
+x(t)=x_*(t)+\sqrt{2D}\left(W_t-\frac tT W_T\right),
 $$
 
 其均值为 $x_*(t)$，连通协方差为
@@ -167,7 +163,7 @@ C_{\mathrm{bridge}}(t,s)
 =2D\left[\min(t,s)-\frac{ts}{T}\right].
 $$
 
-构造中减去 $tW_T/T$，正好移除了每条自由噪声记录最终积累的总偏移；它不消除局部起伏。由此得到的 $X_t$ 仍有 Brownian 的短时粗糙性。条件平均的光滑性来自不同样本的起伏相互抵消，不能据此说一条“通常的路径”就是直线。
+构造中减去 $tW_T/T$，正好移除了每条自由噪声记录最终积累的总偏移；它不消除局部起伏。由此得到的 $x(t)$ 仍有 Brownian 的短时粗糙性。条件平均的光滑性来自不同样本的起伏相互抵消，不能据此说一条“通常的路径”就是直线。
 
 这份构造是在生成具有指定条件分布的样本。实际实验也可以先不改变动力学，只从普通运动记录里筛选终点位于很小目标窗的那些次。筛选改变我们对中途运动的判断，无须粒子预先知道目标，更没有在原动力学中施加一个指向未来终点的真实外力。
 
@@ -226,10 +222,10 @@ $$
 知道某个粒子的终点，仍不能知道它此前在原点上方和下方各待了多久。最简单的历史观测量是带符号的轨迹面积
 
 $$
-A_T=\int_0^T X_tdt.
+A_T=\int_0^T x(t)dt.
 $$
 
-令自由 Brownian 从 $X_0=0$ 出发。对 $t\ge s$，$X_t=X_s+\sqrt{2D}(W_t-W_s)$，后续增量与 $X_s$ 独立，所以 $\langle X_tX_s\rangle=2D\min(t,s)$。面积平均为零，方差却不会抵消：
+令自由 Brownian 从 $x(0)=0$ 出发。对 $t\ge s$，$x(t)=x(s)+\sqrt{2D}(W_t-W_s)$，后续增量与 $x(s)$ 独立，所以 $\langle x(t)x(s)\rangle=2D\min(t,s)$。面积平均为零，方差却不会抵消：
 
 $$
 \begin{aligned}
@@ -272,7 +268,7 @@ $$
 
 Langevin 给出局部运动，Fokker–Planck 展示概率云与流，路径积分则把同一规律组织成整段历史的统计。它们回答不同问题，并由短时条件转移相容地联系起来。
 
-如果要同时提取许多时刻的关联，可以选读生成泛函 $Z[j]=\langle e^{\int_0^Tj(t)X_tdt}\rangle$：对 $j$ 求导会取出相应时刻的位置因子。完整 Gaussian 计算、响应场与 OM 测度细节保存在[路径积分进阶](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/)；双稳上坡与越垒代价保存在[罕见事件选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/)，都不是本篇必读前提。
+如果要同时提取许多时刻的关联，可以选读生成泛函 $Z[j]=\langle e^{\int_0^Tj(t)x(t)dt}\rangle$：对 $j$ 求导会取出相应时刻的位置因子。完整 Gaussian 计算、响应场与 OM 测度细节保存在[路径积分进阶](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/)；双稳上坡与越垒代价保存在[罕见事件选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/)，都不是本篇必读前提。
 
 前三篇主要依靠连续 Gaussian 扰动。若粒子突然长跳、持续直行、长时间停滞，或其增量彼此相关，哪些假设已经改变？下一篇以这些运动规则为线索，介绍常见随机过程与所需微积分。
 

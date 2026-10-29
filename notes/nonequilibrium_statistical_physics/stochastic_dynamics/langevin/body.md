@@ -12,9 +12,9 @@
 
 ### 随机初始条件不等于持续的随机驱动
 
-假设自由质点仍严格满足 $m\ddot X=0$，只把初速度 $v_0$ 当作随机变量。那么 $X_t=X_0+v_0t$，每一条轨道仍是直线。知道后来任意一段运动，就可以获得关于同一个 $v_0$ 的信息；不同时段的位移并不是独立抽样的随机量。
+假设自由质点仍严格满足 $m\ddot x(t)=0$，只把初速度 $v(0)$ 当作随机变量。那么 $x(t)=x(0)+v(0)t$，每一条轨道仍是直线。知道后来任意一段运动，就可以获得关于同一个 $v(0)$ 的信息；不同时段的位移并不是独立抽样的随机量。
 
-若 $X_0$ 固定，位置方差会按 $t^2\operatorname{Var}(v_0)$ 增长。这和 Brownian 扩散中按 $t$ 增长的均方位移不同。两者都能用概率描述，但一种是不确定的初始速度贯穿整个未来，另一种是在所保留的尺度上不断有新的、近似独立的扰动进入。引入“随机性”以后，仍然必须说明它来自哪里、具有怎样的时间关联。
+若 $x(0)$ 固定，位置方差会按 $t^2\operatorname{Var}(v(0))$ 增长。这和 Brownian 扩散中按 $t$ 增长的均方位移不同。两者都能用概率描述，但一种是不确定的初始速度贯穿整个未来，另一种是在所保留的尺度上不断有新的、近似独立的扰动进入。引入“随机性”以后，仍然必须说明它来自哪里、具有怎样的时间关联。
 
 液体中的粒子正是第二种情形：即使刚刚测准它的位置和速度，下一小段时间里仍会有新的分子碰撞。要描述这些碰撞，得回到牛顿方程中的环境力。
 
@@ -26,29 +26,29 @@
 
 ### 从完整受力开始
 
-设关注的粒子质量为 $m$、位置为 $X$，环境坐标统记为 $\boldsymbol q=(q_1,\ldots,q_N)$。粒子既受到外部势能 $V(X)$ 的作用，也与环境相互作用：
+设关注的粒子质量为 $m$，位置记为 $x(t)$，环境坐标统记为 $\boldsymbol q(t)=(q_1(t),\ldots,q_N(t))$。外力 $F(x)=-V'(x)$ 来自外部势能，粒子还与环境相互作用：
 
 $$
-m\ddot X_t=-V'(X_t)
-+F_{\mathrm{bath}}(X_t,\boldsymbol q_t,\dot{\boldsymbol q}_t).
+m\ddot x(t)=-V'(x(t))
++F_{\mathrm{bath}}(x(t),\boldsymbol q(t),\dot{\boldsymbol q}(t)).
 $$
 
 环境本身也满足动力学方程，例如
 
 $$
-m_i\ddot q_i=F_i(X,\boldsymbol q),\qquad i=1,\ldots,N.
+m_i\ddot q_i(t)=F_i(x(t),\boldsymbol q(t)),\qquad i=1,\ldots,N.
 $$
 
-到这里没有任何随机项。给定全部位置、速度及相互作用后，目标粒子和环境共同构成一个确定性系统。但第一条方程还不是关于 $X$ 的封闭方程：不知道环境当前处于什么状态，就不知道它此刻施加多大的力。
+到这里没有任何随机项。给定全部位置、速度及相互作用后，目标粒子和环境共同构成一个确定性系统。但第一条方程还不是只关于 $x(t)$ 的封闭方程：不知道环境当前处于什么状态，就不知道它此刻施加多大的力。
 
 ### 为什么不能只用平均环境力
 
 缓慢拖动粒子时，液体平均会产生反向阻力。即使不拖动，来自不同方向的碰撞仍会使粒子加速；正、负冲量在平均里抵消，在动量平方中却都留下正贡献。只用平均阻力，最终会把粒子减速到静止，漏掉热运动本身。
 
-因此我们保留环境的两种作用：可重复的平均反作用，以及每次准备环境时不同的剩余力。对各向同性液体中的慢运动，平均阻力的最低阶是 $-\zeta\dot X$；把平衡环境造成的保守平均力吸收到 $V$ 中，便有熟悉的受力形式
+因此我们保留环境的两种作用：可重复的平均反作用，以及每次准备环境时不同的剩余力。对各向同性液体中的慢运动，平均阻力的最低阶是 $-\zeta\dot x(t)$；把平衡环境造成的保守平均力吸收到 $V$ 中，便有熟悉的受力形式
 
 $$
-m\ddot X_t=-V'(X_t)-\zeta\dot X_t+\eta(t).
+m\ddot x(t)=-V'(x(t))-\zeta\dot x(t)+\eta(t).
 $$
 
 其中 $\eta$ 来自未被记录的分子运动。给出全部环境初态时，这份力仍可由确定性动力学决定；对不同环境初态作统计描述时，才把它作为随机过程处理。接下来还需给出这份力的统计：它有多强？两次冲量会相关多久？
@@ -64,17 +64,17 @@ $$
 先不预设随机力有多强。将短记忆近似放回受力式，写成
 
 $$
-m\ddot X_t=-\zeta\dot X_t-V'(X_t)+\eta(t),
+m\ddot x(t)=-\zeta\dot x(t)-V'(x(t))+\eta(t),
 \qquad \langle\eta(t)\rangle=0,
 \qquad \langle\eta(t)\eta(s)\rangle=A\delta(t-s).
 $$
 
 $A$ 的单位是力平方乘时间。白噪声通过冲量才有意义：$\langle[\int_t^{t+h}\eta(s)ds]^2\rangle=Ah$；$\eta(t)$ 没有普通的有限逐点方差。随机冲量的典型大小按 $\sqrt h$ 增长，与固定外力的冲量按 $h$ 增长不同。
 
-撤去外势，令 $v_t=\dot X_t$、$\tau_m=m/\zeta$。先乘积分因子再积分，得到
+撤去外势，令 $v(t)=\dot x(t)$、$\tau_m=m/\zeta$。先乘积分因子再积分，得到
 
 $$
-v_t=v_0e^{-t/\tau_m}
+v(t)=v(0)e^{-t/\tau_m}
 +\frac1m\int_0^t e^{-(t-s)/\tau_m}\eta(s)ds.
 $$
 
@@ -82,10 +82,10 @@ $$
 
 $$
 \begin{aligned}
-\operatorname{Var}(v_t)
-&=\operatorname{Var}(v_0)e^{-2t/\tau_m}
+\operatorname{Var}(v(t))
+&=\operatorname{Var}(v(0))e^{-2t/\tau_m}
 +\frac A{m^2}\int_0^t e^{-2(t-s)/\tau_m}ds\\
-&=\operatorname{Var}(v_0)e^{-2t/\tau_m}
+&=\operatorname{Var}(v(0))e^{-2t/\tau_m}
 +\frac{A}{2\zeta m}(1-e^{-2t/\tau_m}).
 \end{aligned}
 $$
@@ -101,10 +101,8 @@ $$
 将这个强度代回受力式，便得到惯性 Langevin 方程：
 
 $$
-\boxed{\begin{aligned}
-m\ddot X_t&=-\zeta\dot X_t-V'(X_t)\\
-&\quad+\sqrt{2\zeta k_{\mathrm B}T}\,\xi(t).
-\end{aligned}}
+\boxed{m\ddot x(t)=-\zeta\dot x(t)-V'(x(t))
++\sqrt{2\zeta k_{\mathrm B}T}\,\xi(t)}.
 $$
 
 $\xi$ 表示单位强度 Gaussian 白噪声，$\langle\xi(t)\xi(s)\rangle=\delta(t-s)$。方程保留牛顿式的受力结构，同时将环境细节改写为摩擦和随机力。噪声幅度由热平衡与方差收支共同固定。主动环境或外部随机驱动也能写类似方程，但 $A$ 不必满足这个平衡约束。
@@ -113,20 +111,20 @@ $\xi$ 表示单位强度 Gaussian 白噪声，$\langle\xi(t)\xi(s)\rangle=\delta
 
 把同一段位置记录不断放大：在很短的一段里，粒子应当沿已有速度运动；在长记录里，却看不到一个始终保持的运动方向。两种印象都来自同一条自由 Langevin 方程。控制跨越的是 $\tau_m=m/\zeta$，它衡量阻力显著改变速度所需的时间。
 
-选 $X_0$ 固定、初速度从零均值热平衡分布采样，$\langle v_0^2\rangle=k_{\mathrm B}T/m$，并与未来噪声独立。这使速度过程从一开始就平稳。将上节的解乘以 $v_0$ 再平均，噪声部分不贡献交叉平均，故
+选 $x(0)$ 固定、初速度从零均值热平衡分布采样，$\langle v(0)^2\rangle=k_{\mathrm B}T/m$，并与未来噪声独立。这使速度过程从一开始就平稳。将上节的解乘以 $v(0)$ 再平均，噪声部分不贡献交叉平均，故
 
 $$
-C_v(t)=\langle v_tv_0\rangle_{\mathrm{st}}
+C_v(t)=\langle v(t)v(0)\rangle_{\mathrm{st}}
 =\frac{k_{\mathrm B}T}{m}e^{-|t|/\tau_m}.
 $$
 
-即使 $\langle v_t\rangle=0$，$C_v(t)$ 也不为零：若粒子现在向右，过很短时间仍较可能向右。平均速度把左右方向抵消了，关联函数保留了方向持续的信息。
+即使 $\langle v(t)\rangle=0$，$C_v(t)$ 也不为零：若粒子现在向右，过很短时间仍较可能向右。平均速度把左右方向抵消了，关联函数保留了方向持续的信息。
 
-位置位移是速度的时间积分。将它平方，需要统计两个时刻的速度乘积；相隔 $s$ 的时间对在整段记录中共有长度 $t-s$ 的取法。利用平稳性和对称性，把正方形积分区域折成一个三角形：
+位置位移 $\Delta x=x(t)-x(0)$ 是速度的时间积分。将它平方，需要统计两个时刻的速度乘积；相隔 $s$ 的时间对在整段记录中共有长度 $t-s$ 的取法。利用平稳性和对称性，把正方形积分区域折成一个三角形：
 
 $$
 \begin{aligned}
-\langle[X_t-X_0]^2\rangle
+\langle[x(t)-x(0)]^2\rangle
 &=\int_0^tdu\int_0^tds\,C_v(u-s)\\
 &=2\int_0^t(t-s)C_v(s)ds\\
 &=2D\left[t-\tau_m(1-e^{-t/\tau_m})\right],
@@ -138,12 +136,12 @@ $$
 
 $$
 \begin{aligned}
-t\ll\tau_m:&\quad \langle\Delta X^2\rangle\simeq\frac{k_{\mathrm B}T}{m}t^2,\\
-t\gg\tau_m:&\quad \langle\Delta X^2\rangle\simeq2Dt.
+t\ll\tau_m:&\quad \langle\Delta x^2\rangle\simeq\frac{k_{\mathrm B}T}{m}t^2,\\
+t\gg\tau_m:&\quad \langle\Delta x^2\rangle\simeq2Dt.
 \end{aligned}
 $$
 
-在 $t\ll\tau_m$ 时，同一段内的速度几乎相同，位移近似 $v_0t$，平方平均便为 $\langle v_0^2\rangle t^2$。这里仍可能发生很多分子碰撞；“弹道”要求的是粒子速度尚未显著改变，并不要求一次碰撞都没有。白噪声模型下可分辨的短时窗口实际上是 $\tau_{\mathrm{bath}}\ll t\ll\tau_m$。
+在 $t\ll\tau_m$ 时，同一段内的速度几乎相同，位移近似 $v(0)t$，平方平均便为 $\langle v(0)^2\rangle t^2$。这里仍可能发生很多分子碰撞；“弹道”要求的是粒子速度尚未显著改变，并不要求一次碰撞都没有。白噪声模型下可分辨的短时窗口实际上是 $\tau_{\mathrm{bath}}\ll t\ll\tau_m$。
 
 到 $t\gg\tau_m$ 时，可以把长记录分成许多时长远大于 $\tau_m$ 的片段。相邻片段的速度关联只在接缝附近一小段内显著，相比整段位移的贡献较小；粗粒化后，各段便近似不相关。位移平方的贡献按片段数相加，MSD 就与总时间成正比。精确式中的 $-2D\tau_m(1-e^{-t/\tau_m})$ 保留了有限观测时长内速度记忆的影响；只在长时的主导项里才可略去。若初速度固定为零，最早的运动必须先由噪声建立速度，不能直接套用热初态的弹道系数。
 
@@ -156,11 +154,8 @@ $$
 图中长时扩散的斜率也可以不做完整积分就读出。对 MSD 求时间导数，得到 $2\int_0^t C_v(s)ds$；当记录远长于关联时间，这个积分已接近一个常数。因此
 
 $$
-\boxed{\begin{aligned}
-D&=\int_0^\infty C_v(s)ds\\
-&=\frac{k_{\mathrm B}T}{m}\tau_m
-=\mu k_{\mathrm B}T.
-\end{aligned}}
+\boxed{D=\int_0^\infty C_v(s)\,ds
+=\frac{k_{\mathrm B}T}{m}\tau_m=\mu k_{\mathrm B}T}.
 $$
 
 这里 $\mu=\zeta^{-1}$ 是迁移率。积分表达式就是当前模型的 Green–Kubo 关系：速度涨落越强、同一方向保持越久，位置扩散越快。质量较大的粒子热速度平方较小，记忆时间却较长；在这个模型里两种质量依赖恰好抵消，长时 $D$ 不依赖 $m$，短时跨越仍依赖它。
@@ -177,12 +172,12 @@ $$
 如果只关心 $t\gg\tau_m$ 的运动，并且力和位置在速度弛豫期间变化很小，就可消去快速速度。对常摩擦和加性热噪声，得到
 
 $$
-\boxed{dX_t=\mu F(X_t)dt+\sqrt{2D}\,dW_t.}
+\boxed{dx(t)=\mu F(x(t))dt+\sqrt{2D}\,dW_t}.
 $$
 
-这里仍取 $F(x)=-V'(x)$、$D=\mu k_{\mathrm B}T$，$W_t$ 是标准 Wiener 过程。读懂方程所需的第一条规则是：不相交时间窗的 $\Delta W$ 独立，且 $\Delta W\sim\mathcal N(0,\Delta t)$。所以一小步由平均位移 $\mu F(x)\Delta t$ 和方差 $2D\Delta t$ 的随机位移组成。它的准确含义是将这些增量积分累加；形式记号 $\xi=\dot W$ 不代表普通可微函数。
+这里仍取 $F(x)=-V'(x)$、$D=\mu k_{\mathrm B}T$，$W_t$ 是标准 Wiener 过程。$dx(t)$ 表示粗粒化位置的随机增量，沿用 $x(t)$ 记号不要求轨迹具有普通导数；$dW_t$ 则保留随机微积分的标准写法。读懂方程所需的第一条规则是：不相交时间窗的 $\Delta W$ 独立，且 $\Delta W\sim\mathcal N(0,\Delta t)$。所以一小步由平均位移 $\mu F(x)\Delta t$ 和方差 $2D\Delta t$ 的随机位移组成。它的准确含义是将这些增量积分累加；形式记号 $\xi=\dot W$ 不代表普通可微函数。
 
-自由情形 $X_t=x_0+\sqrt{2D}W_t$ 立即给出 $\langle X_t\rangle=x_0$、$\langle(X_t-x_0)^2\rangle=2Dt$，与上一节长时极限相符。一般有效模型也可用漂移 $b(x)$ 写成 $dX_t=b(X_t)dt+\sqrt{2D}\,dW_t$，但 $b,D$ 不一定具有热平衡解释。
+自由情形 $x(t)=x_0+\sqrt{2D}W_t$ 立即给出 $\langle x(t)\rangle=x_0$、$\langle(x(t)-x_0)^2\rangle=2Dt$，与上一节长时极限相符。接下来把平均漂移速度记为 $b(x)$；当前热浴模型中 $b(x)=\mu F(x)$，一般有效模型也可写成 $dx(t)=b(x(t))dt+\sqrt{2D}\,dW_t$，但 $b,D$ 不一定具有热平衡解释。
 
 Brownian 位置在这个理想极限下几乎处处不可微；真实惯性粒子在短时仍有速度。白噪声速度、过阻尼位置与微观牛顿轨迹的光滑性不同，因为消去了不同的时间尺度。完整的 Wiener 定义、Itô 公式和状态依赖噪声留在[第四篇](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus)，这里继续用加性增量计算受回复力的运动。
 
@@ -199,11 +194,11 @@ Brownian 位置在这个理想极限下几乎处处不可微；真实惯性粒�
 把线性回复与随机增量放到同一条方程中，得到
 
 $$
-dX_t=-\gamma X_t\,dt+\sqrt{2D}\,dW_t,
+dx(t)=-\gamma x(t)\,dt+\sqrt{2D}\,dW_t,
 \qquad \gamma>0.
 $$
 
-它既可描述谐势中的过阻尼粒子，也可描述一般稳定固定点附近的线性涨落：若 $b(x_*)=0$ 且 $b'(x_*)=-\gamma$，在噪声振幅近似常数的局部区域，令 $X=x-x_*$ 即得到 OU。这个近似只覆盖典型小涨落，不自动适用于远离固定点的跨势垒运动。
+它既可描述谐势中的过阻尼粒子，也可描述一般稳定固定点附近的线性涨落：若 $b(x_*)=0$ 且 $b'(x_*)=-\gamma$，将位置原点移到 $x_*$，并在噪声振幅近似常数的局部区域保留线性项，就得到上述 OU 方程。这个近似只覆盖典型小涨落，不自动适用于远离固定点的跨势垒运动。
 
 ### 当前位置是过去扰动的衰减叠加
 
@@ -212,20 +207,20 @@ $$
 乘以积分因子 $e^{\gamma t}$，可以把上述叠加关系准确写成
 
 $$
-X_t=e^{-\gamma t}X_0
+x(t)=e^{-\gamma t}x(0)
 +\sqrt{2D}\int_0^t e^{-\gamma(t-s)}\,dW_s.
 $$
 
 积分中的指数就是每一次过去扰动留下的权重。比如隔一个回复时间 $\gamma^{-1}$ 再看，一次位移只剩原来的 $e^{-1}$；隔几个回复时间，它便很难从后来的噪声中辨认出来。自由 Brownian 位置会保留每次位移，OU 位置却只显著保留最近一段时间的扰动。
 
-若 $X_0=x_0$ 固定，噪声积分是高斯变量。将不同时段的独立噪声方差相加，得到
+若 $x(0)=x_0$ 固定，噪声积分是高斯变量。下面用 $\mathbb E[\cdot\mid x_0]$ 表示在这个固定起点下对噪声的条件平均。将不同时段的独立噪声方差相加，得到
 
 $$
-\mathbb E[X_t\mid x_0]=x_0e^{-\gamma t},\qquad
-\operatorname{Var}(X_t\mid x_0)=\frac D\gamma(1-e^{-2\gamma t}).
+\mathbb E[x(t)\mid x_0]=x_0e^{-\gamma t},\qquad
+\operatorname{Var}(x(t)\mid x_0)=\frac D\gamma(1-e^{-2\gamma t}).
 $$
 
-刚释放时 $\operatorname{Var}(X_t\mid x_0)\simeq2Dt$；位置还没有明显回复，轨迹看起来接近自由扩散。很久以后方差停在 $D/\gamma$，但粒子仍不断穿过中心、离开中心。饱和的是不同实现之间的分散程度；单条轨迹不会沿着均值线逐渐静止。
+刚释放时 $\operatorname{Var}(x(t)\mid x_0)\simeq2Dt$；位置还没有明显回复，轨迹看起来接近自由扩散。很久以后方差停在 $D/\gamma$，但粒子仍不断穿过中心、离开中心。饱和的是不同实现之间的分散程度；单条轨迹不会沿着均值线逐渐静止。
 
 ### 宽度的收支与物理参数
 
@@ -237,16 +232,16 @@ $$
 
 ![OU 的单条轨道、方差、时间关联与响应](../figures/01_ou_fluctuations.svg)
 
-*图 1b｜取 $\gamma=1,D=0.4$。左上为从 $X_0=2$ 出发的样本轨道和集合均值，阴影为理论均值两侧一个标准差；右上显示方差向 $D/\gamma$ 饱和。下方将稳态关联与因果响应并列，二者有相同衰减率，却有不同定义。轨道用 OU 精确转移采样。*
+*图 1b｜取 $\gamma=1,D=0.4$。左上为从 $x(0)=2$ 出发的样本轨道和集合均值，阴影为理论均值两侧一个标准差；右上显示方差向 $D/\gamma$ 饱和。下方将稳态关联与因果响应并列，二者有相同衰减率，却有不同定义。轨道用 OU 精确转移采样。*
 
 左上图中的某条样本可能一度远离正在返回的平均线。回复力并不保证位置在每一步都更靠近中心：在足够短的步长内，噪声位移按 $\sqrt{dt}$ 缩放，完全可能压过按 $dt$ 缩放的平均回复。只有将许多次这样的运动平均，才得到平滑的指数衰减线。
 
 ### 改变摩擦，会把涨落压小吗
 
-上面把 $D$ 和 $\gamma$ 当作可独立改变的有效参数。对温度固定的热浴与刚度固定的谐势，还要记得它们来自同一个摩擦系数。若真实势能为 $\kappa x^2/2$，则 $\gamma=\kappa/\zeta$、$D=k_{\mathrm B}T/\zeta$，于是
+上面把 $D$ 和 $\gamma$ 当作可独立改变的有效参数。对温度固定的热浴与刚度固定的谐势，还要记得它们来自同一个摩擦系数。若真实势能为 $\kappa x^2/2$，则 $\gamma=\kappa/\zeta$、$D=k_{\mathrm B}T/\zeta$，稳态位置方差 $\sigma_{\mathrm{st}}^2$ 与回复时间 $\tau$ 为
 
 $$
-v_{\mathrm{ss}}=\frac{k_{\mathrm B}T}{\kappa},
+\sigma_{\mathrm{st}}^2=\frac{k_{\mathrm B}T}{\kappa},
 \qquad \tau=\frac{\zeta}{\kappa}.
 $$
 
@@ -262,17 +257,17 @@ $$
 
 在稳态记录中挑出小球恰好位于中心右侧的时刻，再观察一段时间之后的位置。很短时间后，它通常仍较可能在右侧，因为回复还没有完全消除这次偏离；间隔足够长以后，新的随机扰动已取代旧的偏离，知道它先前在右侧对预测现在帮助不大。相关函数就是把这种“先前状态还剩多少预测价值”做成定量统计。
 
-稳态初始条件满足 $\mathbb E X_0=0$、$\mathbb E X_0^2=D/\gamma$。对 $t\ge s$，把精确解从 $s$ 开始写出，后续噪声积分与 $X_s$ 独立，于是
+稳态初始条件满足 $\langle x(0)\rangle=0$、$\langle x^2(0)\rangle=D/\gamma$。对 $t\ge s$，把精确解从 $s$ 开始写出，后续噪声积分与 $x(s)$ 独立，于是
 
 $$
-C(t-s)=\langle X_tX_s\rangle_{\mathrm{ss}}
+C(t-s)=\langle x(t)x(s)\rangle_{\mathrm{st}}
 =\frac D\gamma e^{-\gamma|t-s|}.
 $$
 
-相关时间 $1/\gamma$ 描述偏离的信息多久以后仍然可见。它同时决定时间平均的统计效率。令 $\overline X_{\mathcal T}=\mathcal T^{-1}\int_0^{\mathcal T}X_tdt$，则
+相关时间 $1/\gamma$ 描述偏离的信息多久以后仍然可见。它同时决定时间平均的统计效率。令 $\overline x_{\mathcal T}=\mathcal T^{-1}\int_0^{\mathcal T}x(t)dt$，则
 
 $$
-\operatorname{Var}(\overline X_{\mathcal T})
+\operatorname{Var}(\overline x_{\mathcal T})
 =\frac{2}{\mathcal T^2}\int_0^{\mathcal T}(\mathcal T-s)C(s)\,ds
 \simeq\frac{2D}{\gamma^2\mathcal T}
 \quad(\mathcal T\gg\gamma^{-1}).
@@ -295,15 +290,15 @@ OU 对低频扰动跟随得较充分，对快于回复时间的驱动响应较�
 在漂移中加入小外源 $h(t)$：
 
 $$
-dX_t=[-\gamma X_t+h(t)]dt+\sqrt{2D}\,dW_t.
+dx(t)=[-\gamma x(t)+h(t)]dt+\sqrt{2D}\,dW_t.
 $$
 
 平均值的变化为
 
 $$
-\delta\langle X_t\rangle=\int_{-\infty}^t e^{-\gamma(t-s)}h(s)ds,
+\delta\langle x(t)\rangle=\int_{-\infty}^t e^{-\gamma(t-s)}h(s)ds,
 \qquad
-R(t,s)=\frac{\delta\langle X_t\rangle}{\delta h(s)}
+R(t,s)=\frac{\delta\langle x(t)\rangle}{\delta h(s)}
 =\Theta(t-s)e^{-\gamma(t-s)}.
 $$
 
@@ -319,19 +314,19 @@ $$
 
 ## 附录 A：数值小步怎样保留正确涨落
 
-对加性噪声，Euler–Maruyama 更新为 $X_{n+1}=X_n+b(X_n)h+\sqrt{2Dh}Z_n$，其中每步的 $Z_n$ 独立服从标准高斯。随机项必须按 $\sqrt h$ 缩放，才能使固定时长内累积的方差保持有限。
+对加性噪声，记 $x_n=x(t_n)$、$t_n=nh$。Euler–Maruyama 更新为 $x_{n+1}=x_n+b(x_n)h+\sqrt{2Dh}Z_n$，其中每步的 $Z_n$ 独立服从标准高斯。随机项必须按 $\sqrt h$ 缩放，才能使固定时长内累积的方差保持有限。
 
 OU 可用精确更新作为基准：
 
 $$
-X_{n+1}=e^{-\gamma h}X_n
+x_{n+1}=e^{-\gamma h}x_n
 +\sqrt{\frac D\gamma(1-e^{-2\gamma h})}\,Z_n.
 $$
 
-Euler 版本为 $X_{n+1}=(1-\gamma h)X_n+\sqrt{2Dh}Z_n$，稳态方差
+Euler 版本为 $x_{n+1}=(1-\gamma h)x_n+\sqrt{2Dh}Z_n$，稳态方差
 
 $$
-v_h=\frac{D}{\gamma(1-\gamma h/2)},\qquad0\lt\gamma h\lt2.
+\sigma_h^2=\frac{D}{\gamma(1-\gamma h/2)},\qquad0\lt\gamma h\lt2.
 $$
 
 稳定并不等于精确：接近稳定边界时，方差会显著偏大。比较减半步长后的宽度和关联时间，比判断一条轨迹“看起来会抖”更有判别力。复现本专题图与数值核对可使用[原有计算脚本](../generate_figures.py)和[本次新增图的脚本](../generate_intro_figures.py)。
@@ -345,8 +340,8 @@ $$
 粒子先前的运动可以扰动周围介质，介质随后继续反过来推它。在可解的谐振子热浴模型中，先解出环境坐标，再代回目标粒子的牛顿方程，可以得到广义 Langevin 方程的一种标准形式：
 
 $$
-m\ddot X_t=-V'(X_t)
--\int_0^t K(t-s)\dot X_s\,ds+\eta(t).
+m\ddot x(t)=-V'(x(t))
+-\int_0^t K(t-s)\dot x(s)\,ds+\eta(t).
 $$
 
 记忆核 $K$ 给出过去的速度对当前反作用的权重；$\eta(t)$ 保留环境初态中不能由目标粒子初态确定的部分。给定全部环境初态以后，$\eta$ 仍由确定性运动决定；对环境初态赋予分布以后，它才成为随机过程。线性速度卷积适用于相应热浴模型，更一般的约化还可能留下非线性、状态依赖的记忆。[Zwanzig 的工作](https://link.springer.com/article/10.1007/BF01008729)给出了这类精确约化。
@@ -355,10 +350,10 @@ $$
 
 ### 什么时候记忆可以近似为瞬时阻尼
 
-设环境记忆只维持到 $\tau_{\mathrm{env}}$ 左右，而速度在这段时间内变化很小。在积分有显著权重的范围里，把 $\dot X_s$ 换成 $\dot X_t$，得到
+设环境记忆只维持到 $\tau_{\mathrm{env}}$ 左右，而速度在这段时间内变化很小。在积分有显著权重的范围里，把 $\dot x(s)$ 换成 $\dot x(t)$，得到
 
 $$
-\int_0^t K(t-s)\dot X_s\,ds\simeq\zeta\dot X_t,
+\int_0^t K(t-s)\dot x(s)\,ds\simeq\zeta\dot x(t),
 \qquad \zeta=\int_0^\infty K(s)ds.
 $$
 
@@ -366,7 +361,7 @@ $$
 
 类似地，要将随机力近似为 Gaussian 白噪声，需在 $\tau_{\mathrm{bath}}\ll h\ll\tau_{\mathrm{system}}$ 的窗口内有许多弱扰动，且关联、方差和混合条件允许中心极限定理式的粗粒化。环境“大而复杂”并不足够：少量强冲击或长记忆都可能破坏它。
 
-当状态选为 $(X,\dot X)$ 且这些近似成立时，当前状态才可能足以预测下一步的条件分布，即具有 Markov 性。不要把它同“两个时刻不相关”混淆：正文 OU 中的旧偏离需要时间才消退，却只需当前值便可继续演化。[第四篇的 OU 例子](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ou-model)会直接比较这两个判断。
+当状态选为 $(x(t),v(t))$ 且这些近似成立时，当前状态才可能足以预测下一步的条件分布，即具有 Markov 性。不要把它同“两个时刻不相关”混淆：正文 OU 中的旧偏离需要时间才消退，却只需当前值便可继续演化。[第四篇的 OU 例子](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ou-model)会直接比较这两个判断。
 
 ### 阻尼与涨落为什么必须一起保留
 

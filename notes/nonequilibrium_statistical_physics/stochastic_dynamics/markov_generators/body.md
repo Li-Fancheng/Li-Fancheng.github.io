@@ -240,7 +240,7 @@ $$
 \mathcal L(x^2-D/\gamma)=-2\gamma(x^2-D/\gamma).
 $$
 
-所以均值和方差偏离的两种弛豫率来自不同的谱模式。在稳态加权内积中展开 $f-\langle f\rangle_{\mathrm{ss}}=\sum_{n\ge1}c_n\phi_n$，若模式正交归一，则
+所以均值和方差偏离的两种弛豫率来自不同的谱模式。在稳态加权内积中展开 $f-\langle f\rangle_{\mathrm{st}}=\sum_{n\ge1}c_n\phi_n$，若模式正交归一，则
 
 $$
 \langle f(X_t)f(X_0)\rangle_c

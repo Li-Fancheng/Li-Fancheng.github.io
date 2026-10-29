@@ -73,9 +73,9 @@ def ou_figures():
         ax[0, 0].plot(t, path, alpha=0.6, lw=0.9)
     ax[0, 0].fill_between(t, mean - np.sqrt(variance), mean + np.sqrt(variance), color=BLUE, alpha=0.12)
     ax[0, 0].plot(t, mean, color=INK, label="ensemble mean")
-    ax[0, 0].set(title="A  Sample paths and ensemble statistics", xlabel="time", ylabel="$X_t$")
+    ax[0, 0].set(title="A  Sample paths and ensemble statistics", xlabel="time", ylabel="$x(t)$")
     ax[0, 0].legend()
-    ax[0, 1].plot(t, variance, color=BLUE, label="$v(t)$")
+    ax[0, 1].plot(t, variance, color=BLUE, label=r"$\sigma^2(t)$")
     ax[0, 1].axhline(diffusion / gamma, color=ORANGE, ls="--", label="$D/\\gamma$")
     ax[0, 1].set(title="B  Continuous injection, finite variance", xlabel="time", ylabel="variance", ylim=(0, 0.47))
     ax[0, 1].legend(loc="lower right")
@@ -280,7 +280,7 @@ def path_ensemble_figures():
     ax[0].plot(t, reference, color=INK, lw=2.6, label="conditional mean / reference")
     ax[0].plot(t, x0 + drift * t, color=ORANGE, ls="--", label="unconditioned mean")
     ax[0].scatter([0, duration], [x0, final], color=INK, s=30, zorder=4)
-    ax[0].set(title="A  Many histories share the same endpoints", xlabel="time", ylabel="$X_t$")
+    ax[0].set(title="A  Many histories share the same endpoints", xlabel="time", ylabel="$x(t)$")
     ax[0].legend(loc="upper left", fontsize=9)
     endpoint_mean = x0 + drift * duration
     endpoint_variance = 2 * diffusion * duration
@@ -290,7 +290,7 @@ def path_ensemble_figures():
     ax[1].axvline(endpoint_mean, color=ORANGE, ls="--", label="natural mean $x_0+vT$")
     ax[1].vlines(final, 0, gaussian(final, endpoint_mean, endpoint_variance), color=BLUE, lw=2)
     ax[1].scatter([final], [gaussian(final, endpoint_mean, endpoint_variance)], color=BLUE, label="selected endpoint $x_f$")
-    ax[1].set(title="B  Conditioning selects an endpoint", xlabel="$x_f$", ylabel="$K(x_f,T|x_0,0)$", ylim=(0, density.max() * 1.22))
+    ax[1].set(title="B  Conditioning selects an endpoint", xlabel="$x_f$", ylabel="$G(x_f,T|x_0,0)$", ylim=(0, density.max() * 1.22))
     ax[1].legend(loc="upper right", fontsize=9)
     save(fig, "07_bridges_and_propagator")
 

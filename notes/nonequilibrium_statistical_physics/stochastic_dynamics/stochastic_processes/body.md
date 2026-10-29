@@ -8,7 +8,11 @@
 
 把固定的步进时间改为随机事件时刻，得到 Poisson 更新；让方向在事件之间保持，得到持续游走。若远距离位移远比 Gaussian 预言的常见，就要检查跳幅的重尾；若这份长位移必须花相应时间完成，又会从 flight 转向 walk。最后还可以让慢运动来自长等待，或来自相邻增量互相抵消。这两种机制都能使 MSD 增长变慢，却留下很不一样的记录。
 
-下表可在阅读后返回查找性质，无需先记住所有标签。这里的随机过程 $\{X_t\}_{t\ge0}$ 指随时间变化的一族随机变量；一次实验将这些读数连成一条样本路径。
+前三篇一直用 $x(t)$ 描述粒子的运动。在概率论中，通常把同一随机过程记为 $\{X_t\}_{t\ge0}$：每个 $X_t$ 是给定时刻的随机变量，固定一次实验的初态与噪声实现，便得到一条具体的样本路径。下面采用这种过程记号；$X_t$ 与前面的 $x(t)$ 描述的是同一种随机运动。
+
+本篇用 $\mathbb E[\cdot]$ 表示期望，它与前三篇的系综平均 $\langle\cdot\rangle$ 含义相同；竖线后的条件说明在哪一组已筛选的实验中平均。此前的条件平均也保留过 $\mathbb E[\cdot\mid\cdot]$ 写法。稳态仍统一用下标 $\mathrm{st}$，不另用符号区分有流与无流的稳态。
+
+下表可在阅读后返回查找性质，无需先记住所有标签。
 
 | 标准或典型模型 | 路径与运动机制 | Markov 状态 | 代表性统计 |
 | --- | --- | --- | --- |
@@ -66,14 +70,14 @@ $$
 dX_t=b(X_t,t)\,dt+\sigma(X_t,t)\,dW_t.
 $$
 
+这里 $\sigma(X,t)$ 是噪声振幅，单位为位置除以时间的平方根；$\sigma^2(X,t)dt$ 给出一步噪声的条件方差。前三篇的 $\sigma^2(t)$ 则表示整个位置分布的方差，两处记号可由自变量和单位区分。
+
 先对 $f(X,t)$ 作 Taylor 展开。一次项保留 $f_x\Delta X$，二次项 $f_{xx}(\Delta X)^2/2$ 的主要部分为 $f_{xx}\sigma^2\Delta t/2$；$\Delta t\Delta W$ 和更高阶项在适当正则条件下消失。因此
 
 $$
-\boxed{\begin{aligned}
-df(X_t,t)&=
-\left[f_t+b f_x+\frac{\sigma^2}{2}f_{xx}\right]dt\\
-&\quad+\sigma f_x\,dW_t.
-\end{aligned}}
+\boxed{df(X_t,t)=
+\left[f_t+b f_x+\frac{\sigma^2}{2}f_{xx}\right]dt
++\sigma f_x\,dW_t}.
 $$
 
 这就是 Itô 公式。额外的二阶导数项把随机轨道的粗糙性转化成了可观测量的系统性变化。
@@ -188,7 +192,7 @@ $$
 
 $$
 d\eta_t=-\frac{\eta_t}{\tau_c}dt+\sigma_\eta dW_t,
-\qquad \dot X_t=b(X_t)+\eta_t.
+\qquad dX_t=[b(X_t)+\eta_t]dt.
 $$
 
 稳态环境的关联为 $(\sigma_\eta^2\tau_c/2)e^{-|t-s|/\tau_c}$，在时间 $\tau_c$ 内保持同向驱动的倾向，因此称为有色噪声。对粒子运动而言，不能把这段持续性当作每一步都重新抽样的白噪声。
@@ -228,11 +232,8 @@ $$
 对离散状态 $i\to j$ 的事件率 $w_{i\to j}$，概率收支推广为主方程
 
 $$
-\boxed{\begin{aligned}
-\frac{dp_i(t)}{dt}
-={}&\sum_{j\ne i}\bigl[w_{j\to i}p_j(t)\\
-&\qquad{}-w_{i\to j}p_i(t)\bigr].
-\end{aligned}}
+\boxed{\frac{dp_i(t)}{dt}
+=\sum_{j\ne i}\left[w_{j\to i}p_j(t)-w_{i\to j}p_i(t)\right]}.
 $$
 
 每一项都是流入减流出，与第二篇的守恒思路相同。连续 Gaussian 小步不是唯一机制：有限的大跳需要保持非局部转移；只有跳幅变小、事件加快并有适当矩条件时，才可取漂移扩散极限。不能把重尾大跳无条件截成局部二阶 Fokker–Planck 方程。
@@ -242,7 +243,7 @@ $$
 Poisson 事件也可以改变方向，而不直接改变位置。让粒子在两次事件之间以速率 $v$ 直行，事件到来时将方向 $\sigma_t=\pm1$ **翻转**，翻转率记为 $\alpha$。这是一维 run-and-tumble 模型。刚开始的一小段里，粒子通常还未换向，不能把相邻位移当作独立 Brownian 小步。从左右等概率的方向初态出发，平均位移为零，单条路径却先是一段段直行：
 
 $$
-\dot X_t=v\sigma_t.
+dX_t=v\sigma_t\,dt.
 $$
 
 若到时刻 $t$ 翻转 $N_t$ 次，$\sigma_t\sigma_0=(-1)^{N_t}$。Poisson 求和给出 $\mathbb E[(-1)^{N_t}]=e^{-2\alpha t}$，因此方向的关联时间为 $1/(2\alpha)$。这里的 $\alpha$ 指翻转率；若文献规定“重新随机选方向”的事件率，数值中的因子 2 会随约定改变。
