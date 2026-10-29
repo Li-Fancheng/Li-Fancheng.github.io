@@ -1,6 +1,9 @@
 > **III · 深度与表征形成 · Note 07**
 >
+
 > ← [Note 06](/notes/neural_network_theory/teacher_student_theory/) · [系列目录](/notes/neural_network_theory/) · [Note 08](/notes/neural_network_theory/sgd/) →
+
+**延伸阅读：** [Hierarchical Learning 理论综述](/notes/hierarchical_data/)进一步比较 Saxe 谱动力学、staircase/leap、非线性中间表示、LoFi 与跨层反馈。这里保留预先给定乘法架构的可解模型；未知支持的发现见[梯度可达性](/notes/hierarchical_data/gradient_accessibility/)。
 
 **可解性层次：** 明确的机制模型与研究型推导。
 

@@ -89,3 +89,11 @@
   .qbio-part-navigation { grid-template-columns: 1fr; }
   .qbio-part-navigation a:last-child { text-align: left; }
 }
+
+/* Keep the six-column literature comparison readable inside its scroll wrapper. */
+.hierarchical-comparison-note .cell-cycle-table { position: relative; }
+.hierarchical-comparison-note .cell-cycle-table table:has(th:nth-child(6)) {
+  width: 64rem;
+  min-width: 64rem;
+  max-width: none;
+}

@@ -1,6 +1,8 @@
-> **层次结构数据 · Note 04**　[← 03 · 层级推断与扩散生成](/notes/hierarchical_data/inference_generation/) · [专题目录](/notes/hierarchical_data/) · [05 · 跨语言表示与共享几何 →](/notes/hierarchical_data/shared_representations/)
+> **Hierarchical Learning · RHM 04**　[← 03 · 层级推断与扩散生成](/notes/hierarchical_data/inference_generation/) · [专题目录](/notes/hierarchical_data/) · [05 · 跨语言表示与共享几何 →](/notes/hierarchical_data/shared_representations/)
 
 **本篇问题：** 组合边界也未知时，怎样保存候选解析，并把可靠的隐变量继续用作下一层的学习对象？
+
+**理论定位：** 本篇研究生成边界与任务状态；非线性中间表示降低后续学习成本的其他模型，见[理论 03](/notes/hierarchical_data/nonlinear_depth/)。把逐层处理称为 RG 之前需要的条件，见[综合篇](/notes/hierarchical_data/mechanism_comparison/#effective-theory)。
 
 **阅读主线：** 第一部分由未知结构进入后验和[网络计算](#transformer-parsing)；第二部分研究[有效状态的再次预测](#latent-prediction)与粗粒化，最后按任务界定恢复目标。
 

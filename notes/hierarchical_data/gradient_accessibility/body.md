@@ -59,7 +59,7 @@ $$
 2022 年令非零 Fourier 支持组成 $\mathcal S=\{S_1,\ldots,S_m\}$。Merged-staircase property（MSP）要求存在排序，使
 
 $$
-\left|S_i\setminus\bigcup_{j<i}S_j\right|\le1
+\left|S_i\setminus\bigcup_{j\lt i}S_j\right|\le1
 \quad\text{对每个 }i.
 $$
 
@@ -93,7 +93,7 @@ $$
 
 $$
 \operatorname{Leap}(h_*)=
-\min_\pi\max_i\left|S_{\pi(i)}\setminus\bigcup_{j<i}S_{\pi(j)}\right|.
+\min_\pi\max_i\left|S_{\pi(i)}\setminus\bigcup_{j\lt i}S_{\pi(j)}\right|.
 $$
 
 MSP 恰为 leap 至多 1 的结构条件。纯 $k$ 次奇偶的 leap 是 $k$；完整 staircase 的 leap 是 1；$x_1+x_1x_2x_3+x_2x_3x_4$ 的 leap 是 2。高次已经熟悉的变量不计作新方向。
@@ -103,7 +103,7 @@ MSP 恰为 leap 至多 1 的结构条件。纯 $k$ 次奇偶的 leap 是 $k$；�
 $$
 \operatorname{Leap}(h_*)=
 \min_\pi\max_i\sum_{k=1}^r\nu_{\pi(i),k}
-\mathbf1\{\nu_{\pi(j),k}=0\text{ 对所有 }j<i\}.
+\mathbf1\{\nu_{\pi(j),k}=0\text{ 对所有 }j\lt i\}.
 $$
 
 所以单变量 $\operatorname{He}_k(z_1)$ 的 leap 也是 $k$，并非 1；一旦 $z_1$ 已经出现，其后更高次幂不会再次按新方向计费。Gaussian 的坐标可以旋转，因而 leap 与选择的潜在基底有关；原文还讨论旋转不变版本。不要把任意一个展开的支持图当成数据分布的绝对不变量。[Abbe et al., 2023，Definition 1](https://proceedings.mlr.press/v195/abbe23a.html) [[3]](#ref-3)。

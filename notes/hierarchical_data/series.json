@@ -1,52 +1,117 @@
 [
   {
     "number": 1,
-    "slug": "generative_learning",
-    "title": "01 · 层次生成与表征学习",
-    "subtitle": "从随机语法到同义不变性与样本复杂度",
-    "summary": "以有效状态分解统一同义、软表示与可辨识性，再推导随机语法的样本阈值、梯度信号与逐层训练保证。",
-    "chinese_characters": 12619,
-    "display_equations": 35,
-    "reading_time": 68
+    "slug": "spectral_dynamics",
+    "title": "理论 01 · 谱结构与集体学习动力学",
+    "subtitle": "从奇异模态、语义分化到共享路径竞争",
+    "summary": "推导深线性模态方程、特征时间和层级语义几何，区分谱速率分离与新特征可达性。",
+    "chinese_characters": 3035,
+    "display_equations": 12,
+    "reading_time": 18,
+    "part": "theory"
   },
   {
     "number": 2,
-    "slug": "language_statistics",
-    "title": "02 · 语言统计与学习曲线",
-    "subtitle": "长程关联、有效上下文与稀有规则",
-    "summary": "从关联阈值与条件信息进入真实语言的统计标度理论，比较范数、有效样本、快速学习、架构复用与长尾机制。",
-    "chinese_characters": 8759,
-    "display_equations": 32,
-    "reading_time": 52
+    "slug": "gradient_accessibility",
+    "title": "理论 02 · 梯度可达性与学习瓶颈",
+    "subtitle": "Staircase、merged staircase、leap 与鞍区逃逸",
+    "summary": "从 Boolean Fourier 支持解释学习入口，比较三代 staircase 理论的结构条件、训练协议与复杂度保证。",
+    "chinese_characters": 3102,
+    "display_equations": 8,
+    "reading_time": 17,
+    "part": "theory"
   },
   {
     "number": 3,
-    "slug": "inference_generation",
-    "title": "03 · 层级推断与扩散生成",
-    "subtitle": "信念传播、重建转变与组合泛化",
-    "summary": "以精确 BP 为基准，区分实际噪声与退火闭合，用固定字典数值对照检验近似，再讨论相关变化与组合生成。",
-    "chinese_characters": 9389,
-    "display_equations": 29,
-    "reading_time": 53
+    "slug": "nonlinear_depth",
+    "title": "理论 03 · 非线性中间表示与深度优势",
+    "subtitle": "核投影、层级多项式与有效维数降低",
+    "summary": "比较非线性特征学习、潜在子空间与层级谱估计，严格区分表达、样本、计算和训练轨迹。",
+    "chinese_characters": 3503,
+    "display_equations": 11,
+    "reading_time": 20,
+    "part": "theory"
   },
   {
     "number": 4,
-    "slug": "parsing_latents",
-    "title": "04 · 语法解析与隐变量学习",
-    "subtitle": "可变边界、歧义、预测目标与粗粒化",
-    "summary": "区分未知结构发现、最优软解析与 Transformer 解析计算，再讨论隐变量目标、粗粒化和可辨识性。",
-    "chinese_characters": 10042,
-    "display_equations": 12,
-    "reading_time": 47
+    "slug": "coupled_feature_learning",
+    "title": "理论 04 · 跨层反馈与共同演化",
+    "subtitle": "Neural LoFi、后向特征修正与配对模态",
+    "summary": "从前向低阶滤波进入跨层特征—响应选择，区分局部梯度结果、谱算法和三层自洽替代动力学。",
+    "chinese_characters": 3746,
+    "display_equations": 15,
+    "reading_time": 23,
+    "part": "theory"
   },
   {
     "number": 5,
+    "slug": "generative_learning",
+    "title": "RHM 01 · 层次生成与表征学习",
+    "subtitle": "从随机语法到同义不变性与样本复杂度",
+    "summary": "以有效状态分解统一同义、软表示与可辨识性，再推导随机语法的样本阈值、梯度信号与逐层训练保证。",
+    "chinese_characters": 14235,
+    "display_equations": 37,
+    "reading_time": 78,
+    "part": "rhm",
+    "rhm_number": 1
+  },
+  {
+    "number": 6,
+    "slug": "language_statistics",
+    "title": "RHM 02 · 语言统计与学习曲线",
+    "subtitle": "长程关联、有效上下文与稀有规则",
+    "summary": "从关联阈值与条件信息进入真实语言的统计标度理论，比较范数、有效样本、快速学习、架构复用与长尾机制。",
+    "chinese_characters": 8800,
+    "display_equations": 32,
+    "reading_time": 52,
+    "part": "rhm",
+    "rhm_number": 2
+  },
+  {
+    "number": 7,
+    "slug": "inference_generation",
+    "title": "RHM 03 · 层级推断与扩散生成",
+    "subtitle": "信念传播、重建转变与组合泛化",
+    "summary": "以精确 BP 为基准，区分实际噪声与退火闭合，用固定字典数值对照检验近似，再讨论相关变化与组合生成。",
+    "chinese_characters": 9434,
+    "display_equations": 29,
+    "reading_time": 54,
+    "part": "rhm",
+    "rhm_number": 3
+  },
+  {
+    "number": 8,
+    "slug": "parsing_latents",
+    "title": "RHM 04 · 语法解析与隐变量学习",
+    "subtitle": "可变边界、歧义、预测目标与粗粒化",
+    "summary": "区分未知结构发现、最优软解析与 Transformer 解析计算，再讨论隐变量目标、粗粒化和可辨识性。",
+    "chinese_characters": 10094,
+    "display_equations": 12,
+    "reading_time": 51,
+    "part": "rhm",
+    "rhm_number": 4
+  },
+  {
+    "number": 9,
     "slug": "shared_representations",
-    "title": "05 · 跨语言表示与共享几何",
+    "title": "RHM 05 · 跨语言表示与共享几何",
     "subtitle": "共享层次、表示相似性与坐标对齐",
     "summary": "区分共同几何与坐标，修正仿射残差中信息运输与抽象的关系，以共现谱和功能干预检验替代机制。",
-    "chinese_characters": 10277,
+    "chinese_characters": 10320,
     "display_equations": 17,
-    "reading_time": 50
+    "reading_time": 53,
+    "part": "rhm",
+    "rhm_number": 5
+  },
+  {
+    "number": 10,
+    "slug": "mechanism_comparison",
+    "title": "综合 · 层级学习机制比较与未解决问题",
+    "subtitle": "从分阶段曲线到可检验的集体动力学",
+    "summary": "跨文献比较谱速率、梯度可达性、维数降低与跨层反馈，讨论合作、竞争、噪声和有效理论的条件。",
+    "chinese_characters": 4102,
+    "display_equations": 1,
+    "reading_time": 19,
+    "part": "synthesis"
   }
 ]

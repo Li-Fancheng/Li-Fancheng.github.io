@@ -72,7 +72,7 @@ $$
 学生具有标量瓶颈与残差连接，可写成
 
 $$
-u(x)=u^\top\sigma_1(Vx+s),\qquad
+\nu(x)=u^\top\sigma_1(Vx+s),\qquad
 f_\theta(x)=\nu(x)+c^\top\operatorname{ReLU}(a\nu(x)+b).
 $$
 

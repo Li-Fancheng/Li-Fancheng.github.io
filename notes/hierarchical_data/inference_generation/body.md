@@ -1,6 +1,8 @@
-> **层次结构数据 · Note 03**　[← 02 · 语言统计与学习曲线](/notes/hierarchical_data/language_statistics/) · [专题目录](/notes/hierarchical_data/) · [04 · 语法解析与隐变量学习 →](/notes/hierarchical_data/parsing_latents/)
+> **Hierarchical Learning · RHM 03**　[← 02 · 语言统计与学习曲线](/notes/hierarchical_data/language_statistics/) · [专题目录](/notes/hierarchical_data/) · [04 · 语法解析与隐变量学习 →](/notes/hierarchical_data/parsing_latents/)
 
 **本篇问题：** 规则已知时怎样精确计算含噪样本的后验，这个最优参照与实际扩散学习相差哪些环节？
+
+**理论定位：** 本篇以已知生成规则的概率推断为参照；学习规则如何取得表示见[梯度可达性](/notes/hierarchical_data/gradient_accessibility/)，训练反馈中的响应则见[跨层耦合](/notes/hierarchical_data/coupled_feature_learning/#exact-gradient)。
 
 **阅读主线：** 以[精确 BP](#belief-propagation)建立基准，区分噪声现象与[均场闭合](#annealed-closure)，再用[固定字典数值对照](#bp-mean-field-comparison)检验近似，并回到有限数据生成。
 

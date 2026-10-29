@@ -1,273 +1,437 @@
 {
-  "checked_on": "2026-10-25",
+  "checked_on": "2026-10-29",
   "full_site_build": "passed in independent snapshot",
-  "build_scope": "Independent full-site HEAD snapshot plus this task’s hierarchical-data note, metadata and figure-policy changes; shared-checkout changes to other topics excluded.",
+  "hugo": "0.136.5 extended darwin/arm64",
+  "build_scope": "HEAD be5a95c snapshot plus hierarchical_data bodies/wrappers, related hierarchical_learning back-link and scoped comparison-table CSS; unrelated working-tree changes excluded.",
+  "build_counts": {
+    "zh": 284,
+    "en": 29
+  },
+  "baseline_for_preserved_rhm": "5fe1208",
   "pages": [
     {
       "slug": "directory",
-      "headings": 9,
-      "references": 0,
+      "headings": 19,
+      "display_equations": 1,
+      "chinese_characters": 3755,
       "images": 1,
-      "source_sha256": "5c9ba389d01028780851eccaf423b2b1075329efd920dbf08e127b07ef9591bb"
+      "links": 100,
+      "source_sha256": "7840d0170b8425854058f98eb86f5e3ef281deb50c61e7a469b41789c2784733",
+      "reference_anchors": 0
+    },
+    {
+      "slug": "spectral_dynamics",
+      "headings": 17,
+      "display_equations": 12,
+      "chinese_characters": 3035,
+      "images": 0,
+      "links": 65,
+      "source_sha256": "8f03f4b4d830ed917768eeab1a446f07689f6a1864187128be560863d9e8d7fe",
+      "reference_anchors": 3
+    },
+    {
+      "slug": "gradient_accessibility",
+      "headings": 20,
+      "display_equations": 8,
+      "chinese_characters": 3102,
+      "images": 0,
+      "links": 70,
+      "source_sha256": "d3be85ca9db1c674a351d1abcffa711cd885d7364503cea566aac071b80c07fa",
+      "reference_anchors": 3
+    },
+    {
+      "slug": "nonlinear_depth",
+      "headings": 20,
+      "display_equations": 11,
+      "chinese_characters": 3503,
+      "images": 0,
+      "links": 81,
+      "source_sha256": "9560c35918e327012160917c68a84754ffc774d729d341c1e1c790960a969748",
+      "reference_anchors": 6
+    },
+    {
+      "slug": "coupled_feature_learning",
+      "headings": 20,
+      "display_equations": 15,
+      "chinese_characters": 3746,
+      "images": 0,
+      "links": 72,
+      "source_sha256": "ef06af8912aa64554abf6caf0c72adf93952a7d0324e5dd030b60b0aa34a147c",
+      "reference_anchors": 3
     },
     {
       "slug": "generative_learning",
-      "headings": 39,
-      "references": 6,
+      "headings": 45,
+      "display_equations": 37,
+      "chinese_characters": 14235,
       "images": 1,
-      "source_sha256": "9a23eb930f2c71403bdeffc9454fb5c196ce44e86981f5af93fc4ac3760dc34b"
+      "links": 150,
+      "source_sha256": "4836b561f3c2b249e3b3db39c44250b3c55fa87ff9072da80337dc9ae78b2e3c",
+      "reference_anchors": 7
     },
     {
       "slug": "language_statistics",
       "headings": 28,
-      "references": 5,
+      "display_equations": 32,
+      "chinese_characters": 8800,
       "images": 2,
-      "source_sha256": "c849cc9c35824d476f1dad8aa2a88d3780f358c284210da64f7047773cf6d550"
+      "links": 100,
+      "source_sha256": "747a0b4a983ce22288a93cf352d089f3ef121d4bdc86ced50813878834f43913",
+      "reference_anchors": 5
     },
     {
       "slug": "inference_generation",
       "headings": 30,
-      "references": 5,
+      "display_equations": 29,
+      "chinese_characters": 9434,
       "images": 2,
-      "source_sha256": "2388529286788b5168c8ee96f1c17392be283d69d16505b4642d992ee91f4374"
+      "links": 103,
+      "source_sha256": "c2df157ab262a7ef5b5e3e6f2b63d3397cbe10d7b7cfc50f17798769af5c638c",
+      "reference_anchors": 5
     },
     {
       "slug": "parsing_latents",
       "headings": 29,
-      "references": 7,
+      "display_equations": 12,
+      "chinese_characters": 10094,
       "images": 1,
-      "source_sha256": "5872b06a94a6726cc5d01f5a8ed7ee18d3b1a1725995b3d45ec7222b8104ee10"
+      "links": 107,
+      "source_sha256": "60bc31d978642037e09b016748b9765bf2336636d70fcf54b82c36e911e2eb72",
+      "reference_anchors": 7
     },
     {
       "slug": "shared_representations",
       "headings": 37,
-      "references": 6,
+      "display_equations": 17,
+      "chinese_characters": 10320,
       "images": 3,
-      "source_sha256": "358d58c7bfb8fdd03830c320d4dd08327f26813b8d96a4962d271d7cae7cd9c1"
+      "links": 127,
+      "source_sha256": "62d107b1b48c51a2b332846bfd904cf82e6c32cf28f833b8a20b72c14322dd50",
+      "reference_anchors": 6
+    },
+    {
+      "slug": "mechanism_comparison",
+      "headings": 21,
+      "display_equations": 1,
+      "chinese_characters": 4102,
+      "images": 0,
+      "links": 83,
+      "source_sha256": "f34989db1975fad3212b6863b8d63f0dfda9c0dbefce4ef20f21ac92e0787367",
+      "reference_anchors": 0
     }
   ],
-  "internal_references_checked": 514,
+  "page_links_scanned": 1058,
   "broken_internal_references": 0,
   "legacy_anchors": 15,
-  "primary_references": 27,
-  "math_total": 831,
-  "figure_placements": 10,
+  "required_papers_covered": 16,
+  "primary_references": 43,
+  "math_total": 1224,
+  "math_engine": "KaTeX 0.16.9",
+  "math_errors": [],
+  "source_checks": [],
+  "numerical_checks": {
+    "logistic_max_residual": 7.508654809029736e-11,
+    "four_item_hierarchy_eigenvectors": "passed"
+  },
   "browser": {
     "engine": "Codex in-app browser (CUA)",
     "cases": [
       {
         "slug": "directory",
-        "width": 1280,
-        "scrollWidth": 1265,
-        "math": 17,
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 32,
         "mathErrors": 0,
-        "headings": 9,
-        "figures": 1,
-        "references": 0
+        "headings": 19,
+        "toc_links": 0,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "spectral_dynamics",
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 68,
+        "mathErrors": 0,
+        "headings": 17,
+        "toc_links": 17,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "gradient_accessibility",
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 58,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "nonlinear_depth",
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 104,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "coupled_feature_learning",
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 99,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": false
       },
       {
         "slug": "generative_learning",
-        "width": 1280,
-        "scrollWidth": 1265,
-        "math": 267,
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 286,
         "mathErrors": 0,
-        "headings": 39,
-        "figures": 1,
-        "references": 6
+        "headings": 45,
+        "toc_links": 45,
+        "mobile_toc_open": false
       },
       {
         "slug": "language_statistics",
-        "width": 1280,
-        "scrollWidth": 1265,
-        "math": 173,
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 177,
         "mathErrors": 0,
         "headings": 28,
-        "figures": 2,
-        "references": 5
+        "toc_links": 28,
+        "mobile_toc_open": false
       },
       {
         "slug": "inference_generation",
-        "width": 1280,
-        "scrollWidth": 1265,
+        "width": 1600,
+        "scrollWidth": 1587,
         "math": 155,
         "mathErrors": 0,
         "headings": 30,
-        "figures": 2,
-        "references": 5
+        "toc_links": 30,
+        "mobile_toc_open": false
       },
       {
         "slug": "parsing_latents",
-        "width": 1280,
-        "scrollWidth": 1265,
+        "width": 1600,
+        "scrollWidth": 1587,
         "math": 105,
         "mathErrors": 0,
         "headings": 29,
-        "figures": 1,
-        "references": 7
+        "toc_links": 29,
+        "mobile_toc_open": false
       },
       {
         "slug": "shared_representations",
-        "width": 1280,
-        "scrollWidth": 1265,
+        "width": 1600,
+        "scrollWidth": 1587,
         "math": 114,
         "mathErrors": 0,
         "headings": 37,
-        "figures": 3,
-        "references": 6
+        "toc_links": 37,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "mechanism_comparison",
+        "width": 1600,
+        "scrollWidth": 1587,
+        "math": 26,
+        "mathErrors": 0,
+        "headings": 21,
+        "toc_links": 21,
+        "mobile_toc_open": false
       },
       {
         "slug": "directory",
         "width": 390,
-        "scrollWidth": 375,
-        "math": 17,
+        "scrollWidth": 377,
+        "math": 32,
         "mathErrors": 0,
-        "headings": 9,
-        "figures": 1,
-        "references": 0
+        "headings": 19,
+        "toc_links": 0,
+        "mobile_toc_open": false
+      },
+      {
+        "slug": "spectral_dynamics",
+        "width": 390,
+        "scrollWidth": 377,
+        "math": 68,
+        "mathErrors": 0,
+        "headings": 17,
+        "toc_links": 17,
+        "mobile_toc_open": true
+      },
+      {
+        "slug": "gradient_accessibility",
+        "width": 390,
+        "scrollWidth": 377,
+        "math": 58,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": true
+      },
+      {
+        "slug": "nonlinear_depth",
+        "width": 390,
+        "scrollWidth": 377,
+        "math": 104,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": true
+      },
+      {
+        "slug": "coupled_feature_learning",
+        "width": 390,
+        "scrollWidth": 377,
+        "math": 99,
+        "mathErrors": 0,
+        "headings": 20,
+        "toc_links": 20,
+        "mobile_toc_open": true
       },
       {
         "slug": "generative_learning",
         "width": 390,
-        "scrollWidth": 375,
-        "math": 267,
+        "scrollWidth": 377,
+        "math": 286,
         "mathErrors": 0,
-        "headings": 39,
-        "figures": 1,
-        "references": 6
+        "headings": 45,
+        "toc_links": 45,
+        "mobile_toc_open": true
       },
       {
         "slug": "language_statistics",
         "width": 390,
-        "scrollWidth": 375,
-        "math": 173,
+        "scrollWidth": 377,
+        "math": 177,
         "mathErrors": 0,
         "headings": 28,
-        "figures": 2,
-        "references": 5
+        "toc_links": 28,
+        "mobile_toc_open": true
       },
       {
         "slug": "inference_generation",
         "width": 390,
-        "scrollWidth": 375,
+        "scrollWidth": 377,
         "math": 155,
         "mathErrors": 0,
         "headings": 30,
-        "figures": 2,
-        "references": 5
+        "toc_links": 30,
+        "mobile_toc_open": true
       },
       {
         "slug": "parsing_latents",
         "width": 390,
-        "scrollWidth": 375,
+        "scrollWidth": 377,
         "math": 105,
         "mathErrors": 0,
         "headings": 29,
-        "figures": 1,
-        "references": 7
+        "toc_links": 29,
+        "mobile_toc_open": true
       },
       {
         "slug": "shared_representations",
         "width": 390,
-        "scrollWidth": 375,
+        "scrollWidth": 377,
         "math": 114,
         "mathErrors": 0,
         "headings": 37,
-        "figures": 3,
-        "references": 6
+        "toc_links": 37,
+        "mobile_toc_open": true
+      },
+      {
+        "slug": "mechanism_comparison",
+        "width": 390,
+        "scrollWidth": 377,
+        "math": 26,
+        "mathErrors": 0,
+        "headings": 21,
+        "toc_links": 21,
+        "mobile_toc_open": true
       }
     ],
-    "mobile_toc": [
-      {
-        "slug": "generative_learning",
-        "links": 39,
-        "opened": true,
-        "all_numbered": true
-      },
-      {
-        "slug": "language_statistics",
-        "links": 28,
-        "opened": true,
-        "all_numbered": true
-      },
-      {
-        "slug": "inference_generation",
-        "links": 30,
-        "opened": true,
-        "all_numbered": true
-      },
-      {
-        "slug": "parsing_latents",
-        "links": 29,
-        "opened": true,
-        "all_numbered": true
-      },
-      {
-        "slug": "shared_representations",
-        "links": 37,
-        "opened": true,
-        "all_numbered": true
-      }
-    ],
-    "viewport_reset": true,
-    "visual_review": [
-      "Desktop unified mechanism and vector-BP comparison section.",
-      "Mobile mechanism diagram, caption and all five numbered table-of-contents panels."
-    ]
-  },
-  "numerical_checks": {
-    "worked_correlation_thresholds": [
-      146.28571428571428,
-      2340.5714285714284,
-      37449.142857142855,
-      599186.2857142857,
-      9586980.57142857
-    ],
-    "support_size_log2": 514,
-    "procrustes_max_error": 3.3306690738754696e-15,
-    "ridge_stationarity_max_error": 9.13852327144582e-15,
-    "denoising_risk_decomposition_error": 2.42861286636753e-17,
-    "gaussian_score_finite_difference_error": 9.59754498097709e-12,
-    "inside_outside_evidence": 0.32499999999999996,
-    "inside_outside_rule_posterior_max_error": 0.0,
-    "inside_outside_root_posterior": [
-      0.6923076923076923,
-      0.30769230769230776
-    ],
-    "effective_state_matrix": [
-      [
-        0.8,
-        0.2
-      ],
-      [
-        0.8,
-        0.2
-      ],
-      [
-        0.3,
-        0.7
-      ],
-      [
-        0.55,
-        0.44999999999999996
-      ]
-    ],
-    "matrix_rank": 2,
-    "joint_factorization_error": 0.0,
-    "transport_mutual_information_nats": {
-      "before": 0.0,
-      "after": 0.34657359027997264,
-      "residual": 0.6931471805599453
+    "page_overflow_cases": 0,
+    "formula_parse_errors": 0,
+    "comparison_table_mobile": {
+      "viewport_width": 390,
+      "page_scroll_width": 377,
+      "wrapper_width": 330,
+      "table_scroll_width": 1024
     },
-    "transport_residual_error": 1.1102230246251565e-16,
-    "natural_language_exponent_arithmetic": {
-      "TinyStories": 0.1846590909090909,
-      "WikiText": 0.14095744680851066
-    }
+    "keyboard_anchor_navigation": "passed on MSP definition and literature comparison",
+    "viewport_reset": true
   },
-  "bp_exact_enumeration_checks": {
-    "root_vs_enumeration": 1.1102230246251565e-16,
-    "leaf_vs_enumeration": 2.220446049250313e-16,
-    "all_perfect_and_uniform_endpoints": "passed"
-  },
-  "mechanism_revision_report": "mechanism_revision_20261025.json"
+  "validation_script": "review_checks.py",
+  "delivery_report": "revision_report.md",
+  "limitations": [
+    "No independent reproof of all cited theorems or reproduction of neural-network training experiments.",
+    "Full-site Hugo build validated; publication and deployed search indexing were not performed.",
+    "2026 LoFi, BackLoFi and Delrocq references are the specified preprint versions."
+  ],
+  "prior_rhm_verification": {
+    "checked_on": "2026-10-25",
+    "numerical_checks": {
+      "worked_correlation_thresholds": [
+        146.28571428571428,
+        2340.5714285714284,
+        37449.142857142855,
+        599186.2857142857,
+        9586980.57142857
+      ],
+      "support_size_log2": 514,
+      "procrustes_max_error": 3.3306690738754696e-15,
+      "ridge_stationarity_max_error": 9.13852327144582e-15,
+      "denoising_risk_decomposition_error": 2.42861286636753e-17,
+      "gaussian_score_finite_difference_error": 9.59754498097709e-12,
+      "inside_outside_evidence": 0.32499999999999996,
+      "inside_outside_rule_posterior_max_error": 0.0,
+      "inside_outside_root_posterior": [
+        0.6923076923076923,
+        0.30769230769230776
+      ],
+      "effective_state_matrix": [
+        [
+          0.8,
+          0.2
+        ],
+        [
+          0.8,
+          0.2
+        ],
+        [
+          0.3,
+          0.7
+        ],
+        [
+          0.55,
+          0.44999999999999996
+        ]
+      ],
+      "matrix_rank": 2,
+      "joint_factorization_error": 0.0,
+      "transport_mutual_information_nats": {
+        "before": 0.0,
+        "after": 0.34657359027997264,
+        "residual": 0.6931471805599453
+      },
+      "transport_residual_error": 1.1102230246251565e-16,
+      "natural_language_exponent_arithmetic": {
+        "TinyStories": 0.1846590909090909,
+        "WikiText": 0.14095744680851066
+      }
+    },
+    "bp_exact_enumeration_checks": {
+      "root_vs_enumeration": 1.1102230246251565e-16,
+      "leaf_vs_enumeration": 2.220446049250313e-16,
+      "all_perfect_and_uniform_endpoints": "passed"
+    },
+    "mechanism_revision_report": "mechanism_revision_20261025.json"
+  }
 }

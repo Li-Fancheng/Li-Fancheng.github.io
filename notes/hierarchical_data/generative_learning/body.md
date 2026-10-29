@@ -1,4 +1,4 @@
-> **层次结构数据 · Note 01**　[专题目录](/notes/hierarchical_data/) · [02 · 语言统计与学习曲线 →](/notes/hierarchical_data/language_statistics/)
+> **Hierarchical Learning · RHM 01**　[← 理论 04 · 跨层反馈](/notes/hierarchical_data/coupled_feature_learning/) · [专题目录](/notes/hierarchical_data/) · [02 · 语言统计与学习曲线 →](/notes/hierarchical_data/language_statistics/)
 
 **本篇问题：** 有限、可复用的局部规则，怎样从没有中间标签的样本中被发现，并变成可组合的表示？
 
@@ -629,4 +629,4 @@ $$
 
 ---
 
-[专题目录](/notes/hierarchical_data/) · [02 · 语言统计与学习曲线 →](/notes/hierarchical_data/language_statistics/)
+[← 理论 04 · 跨层反馈](/notes/hierarchical_data/coupled_feature_learning/) · [专题目录](/notes/hierarchical_data/) · [02 · 语言统计与学习曲线 →](/notes/hierarchical_data/language_statistics/)

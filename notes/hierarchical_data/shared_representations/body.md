@@ -1,6 +1,8 @@
-> **层次结构数据 · Note 05**　[← 04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) · [专题目录](/notes/hierarchical_data/)
+> **Hierarchical Learning · RHM 05**　[← 04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) · [专题目录](/notes/hierarchical_data/) · [综合比较 →](/notes/hierarchical_data/mechanism_comparison/)
 
 **本篇问题：** 两种语言共享内容以后，什么时候表现为共同邻域、共同坐标，以及可复用的计算？
+
+**理论定位：** 共享几何的谱机制还可对照[Saxe 语义理论](/notes/hierarchical_data/spectral_dynamics/#semantic-hierarchy)与[Neural Race](/notes/hierarchical_data/spectral_dynamics/#neural-race)；相似表示是否承担相同计算，最终需要功能干预。
 
 **阅读主线：** 先分开共享关系与共享坐标，再计算多语言推断；测量与残差之后，以[替代机制](#concept-geometry)和[功能检验](#functional-tests)界定几何证据能说明什么。
 
@@ -412,6 +414,6 @@ $$
 
 ---
 
-[← 04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) · [专题目录](/notes/hierarchical_data/)
+[← 04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) · [专题目录](/notes/hierarchical_data/) · [综合比较 →](/notes/hierarchical_data/mechanism_comparison/)
 
 后续阅读：[神经网络理论中的层级组合学习](/notes/neural_network_theory/hierarchical_learning/)进一步比较高阶统计与优化信号；[Scaling Laws 机制与学习曲线](/notes/scaling_laws/)将这里的层级统计与其他学习曲线机制放在一起讨论。

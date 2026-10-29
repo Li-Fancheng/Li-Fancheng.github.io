@@ -1,6 +1,8 @@
-> **层次结构数据 · Note 02**　[← 01 · 层次生成与表征学习](/notes/hierarchical_data/generative_learning/) · [专题目录](/notes/hierarchical_data/) · [03 · 层级推断与扩散生成 →](/notes/hierarchical_data/inference_generation/)
+> **Hierarchical Learning · RHM 02**　[← 01 · 层次生成与表征学习](/notes/hierarchical_data/generative_learning/) · [专题目录](/notes/hierarchical_data/) · [03 · 层级推断与扩散生成 →](/notes/hierarchical_data/inference_generation/)
 
 **本篇问题：** 远处上下文包含什么信息，需要多少独立样本才能利用它，为什么不同机制都可能给出幂律？
+
+**理论定位：** 本篇讨论样本可辨性与上下文统计；固定数据上的模态形成时间见[谱动力学](/notes/hierarchical_data/spectral_dynamics/#feature-times)，两类横轴的比较见[综合篇](/notes/hierarchical_data/mechanism_comparison/#control-variables)。
 
 **阅读主线：** 先计算关联与条件信息，再看[真实语料的条件标度理论](#natural-language-scaling)，随后比较架构和长尾，最后用[二维诊断](#context-diagnostics)分开统计与算法限制。
 
@@ -189,14 +191,14 @@ D^{-\delta}\int_1^{n_*(D)}
 n^{2\beta\delta-\gamma-1}\,dn.
 $$
 
-当 $\delta>a$，积分由不断扩大的边界尺度主导，仍得到 $D^{-a}$；当 $\delta<a$，旧尺度学得太慢，误差按 $D^{-\delta}$ 下降；相等时多出 $\log D$。因此在这一共同指数的尺度假设下，
+当 $\delta>a$，积分由不断扩大的边界尺度主导，仍得到 $D^{-a}$；当 $\delta\lt a$，旧尺度学得太慢，误差按 $D^{-\delta}$ 下降；相等时多出 $\log D$。因此在这一共同指数的尺度假设下，
 
 $$
 \mathcal L(D)-H_\infty\asymp
 \begin{cases}
 D^{-a},&\delta>a,\\
 D^{-a}\log D,&\delta=a,\\
-D^{-\delta},&\delta<a.
+D^{-\delta},&\delta\lt a.
 \end{cases}
 $$
 

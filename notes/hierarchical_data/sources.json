@@ -1,6 +1,6 @@
 {
-  "reviewed_on": "2026-10-25",
-  "scope": "RHM and related statistical learning, inference, parsing and shared-representation theories, organized around effective states; includes a selective bridge to natural-language scaling and Transformer parsing computation.",
+  "reviewed_on": "2026-10-29",
+  "scope": "Mechanism-centric hierarchical learning: spectral dynamics, gradient accessibility, nonlinear intermediate representations, cross-layer feedback and preserved RHM subseries. Primary full texts and specified 2026 versions checked; evidence levels kept distinct.",
   "references": [
     {
       "question": "层级生成与可学习性的早期形式化",
@@ -315,6 +315,313 @@
       "limitations": [
         "An explicit construction is not a generic gradient-training guarantee."
       ]
+    },
+    {
+      "id": "saxe14",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Saxe AM, McClelland JL, Ganguli S",
+      "title": "Exact solutions to the nonlinear dynamics of learning in deep linear neural networks",
+      "url": "https://arxiv.org/abs/1312.6120",
+      "publication": "ICLR 2014; arXiv:1312.6120",
+      "coverage": [
+        "spectral_dynamics/#mode-reduction",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Sections 1.1–1.3, 2; aligned mode solution and initialization"
+      ],
+      "limitations": [
+        "Exact whitened matrix gradient flow; scalar closure requires aligned modes, balanced initialization for logistic solution; input-output map remains linear."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "saxe19",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Saxe AM, McClelland JL, Ganguli S",
+      "title": "A mathematical theory of semantic development in deep neural networks",
+      "url": "https://doi.org/10.1073/pnas.1820226116",
+      "publication": "PNAS 116(23):11537–11546 (2019)",
+      "coverage": [
+        "spectral_dynamics/#semantic-hierarchy",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Main text and hierarchical dataset/spectral supplementary derivations"
+      ],
+      "limitations": [
+        "Tree-generated semantic correlations; emergence reflects task spectrum, not a universal coarse-to-fine ordering."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "abbe21",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Abbe E, Boix-Adserà E, Brennan MS, Bresler G, Nagaraj D",
+      "title": "The Staircase Property: How Hierarchical Structure Can Guide Deep Learning",
+      "url": "https://papers.nips.cc/paper_files/paper/2021/hash/e2db7186375992e729165726762cb4c1-Abstract.html",
+      "publication": "NeurIPS 34 (2021)",
+      "coverage": [
+        "gradient_accessibility/#staircase",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Definition 1.1, Algorithms 1–3, Theorem 2.2"
+      ],
+      "limitations": [
+        "Sparse quadratic architecture, layerwise stochastic block-coordinate descent; ordinary ResNet observations are numerical."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "abbe22",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Abbe E, Boix-Adserà E, Misiakiewicz T",
+      "title": "The merged-staircase property: a necessary and nearly sufficient condition for SGD learning of sparse functions on two-layer neural networks",
+      "url": "https://proceedings.mlr.press/v178/abbe22a.html",
+      "publication": "COLT, PMLR 178:4782–4887 (2022)",
+      "coverage": [
+        "gradient_accessibility/#merged-staircase",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Definitions 1–2, dimension-free dynamics, necessity and generic sufficiency; Section 4 degeneracies"
+      ],
+      "limitations": [
+        "Strong O(d)-scaling in the specified mean-field single-pass setting; sufficiency excludes degenerate coefficient sets and has activation assumptions."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "abbe23",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Abbe E, Boix-Adserà E, Misiakiewicz T",
+      "title": "SGD learning on neural networks: leap complexity and saddle-to-saddle dynamics",
+      "url": "https://proceedings.mlr.press/v195/abbe23a.html",
+      "publication": "COLT, PMLR 195:2552–2623 (2023)",
+      "coverage": [
+        "gradient_accessibility/#leap-complexity",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Definition 1, Conjecture 2, Section 3 and online-SGD proof discussion"
+      ],
+      "limitations": [
+        "General leap characterization is a conjecture; proved Gaussian subclass uses smooth two-layer model, projections and layerwise SGD. Saddle-to-saddle proof has increasing-leap restrictions. Steps, arithmetic time and samples distinguished."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "lofi",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Dandi Y, Vilucchio M, Arnaboldi L, Tabanelli H, Krzakala F",
+      "title": "Deep Learning as Neural Low-Degree Filtering: A Spectral Theory of Hierarchical Feature Learning",
+      "url": "https://arxiv.org/abs/2605.13612v2",
+      "publication": "arXiv:2605.13612v2, 2026-09-04, preprint",
+      "coverage": [
+        "coupled_feature_learning/#forward-lofi",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Proposition 1, Algorithm 1, Theorem 1, Sections 2–3, effective-dimension appendix"
+      ],
+      "limitations": [
+        "Local small-initialization layerwise gradient expansion motivates hard spectral selection and nonlinear random lifts; algorithm is not arbitrary-time end-to-end SGD."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "backlofi",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Dandi Y, Vilucchio M, Tabanelli H, Krzakala F",
+      "title": "Neural LoFi with Backward Coupling: A Spectral Theory of Cross-Layer Feature Learning",
+      "url": "https://arxiv.org/abs/2610.32849v1",
+      "publication": "arXiv:2610.32849v1, 2026-10-23, preprint",
+      "coverage": [
+        "coupled_feature_learning/#backlofi-local",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Theorem 1, Algorithm 1, equations 15–19, Theorem 2, Appendix C and deep staircase experiments"
+      ],
+      "limitations": [
+        "Local theorem freezes surrounding representations; fitted-network label replacement and sensitivity approximations are algorithm choices. Three-layer closure is for a continuous spectral surrogate under ordered limits; state includes coupling and response functions."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "delrocq",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Delrocq A, Wu S. Zihan, Bellec G, Gerstner W",
+      "title": "Self-supervised local learning rules learn the hidden hierarchical structure of high-dimensional data",
+      "url": "https://arxiv.org/abs/2605.18557v1",
+      "publication": "arXiv:2605.18557v1, 2026-05-18, preprint",
+      "coverage": [
+        "generative_learning/#local-learning-rules",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Section 2 objectives; equations 7–9; Sections 3.1–3.5, Figures 3–6"
+      ],
+      "limitations": [
+        "Matched CNN/RHM numerical study. DFA omits upper intermediate masks while retaining own-layer derivative. Local SSL uses same-object pairs; no universal theorem for all local learning."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "bfc_full",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Allen-Zhu Z, Li Y",
+      "title": "Backward Feature Correction: How Deep Learning Performs Deep (Hierarchical) Learning",
+      "url": "https://proceedings.mlr.press/v195/allen-zhu23a.html",
+      "publication": "COLT, PMLR 195:4598 (2023), extended abstract; full arXiv:2001.04413v6",
+      "coverage": [
+        "coupled_feature_learning/#backward-feature-correction",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Full v6 Sections 1–4, Theorems 1–2, information-gap and error-correction example"
+      ],
+      "limitations": [
+        "Quadratic hierarchical target, prescribed SGD variant, regularization, information gap and depth restrictions; no unconditional lower bound for all possible layerwise algorithms."
+      ],
+      "checked_on": "2026-10-29",
+      "additional_urls": [
+        "https://arxiv.org/abs/2001.04413v6"
+      ]
+    },
+    {
+      "id": "dandi25",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Dandi Y, Pesce L, Zdeborová L, Krzakala F",
+      "title": "The Computational Advantage of Depth in Learning High-Dimensional Hierarchical Targets",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/eb3878c1dcbfff9ee95d5d033e5f5942-Abstract-Conference.html",
+      "publication": "NeurIPS 38 (2025)",
+      "coverage": [
+        "nonlinear_depth/#dandi-depth",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "SIGHT/MIGHT definitions, Assumptions 1–3, Theorem 1 and Appendix C"
+      ],
+      "limitations": [
+        "Proof uses spherical SGD, correlation loss, fresh batches, reinitialization and a preconditioned layer step. Joint backprop is supported separately by numerical experiments."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "race",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Saxe AM, Sodhani S, Lewallen SJ",
+      "title": "The Neural Race Reduction: Dynamics of Abstraction in Gated Networks",
+      "url": "https://proceedings.mlr.press/v162/saxe22a.html",
+      "publication": "ICML, PMLR 162:19287–19309 (2022)",
+      "coverage": [
+        "spectral_dynamics/#neural-race",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Sections 2–4, pathway reduction, equations 16–17"
+      ],
+      "limitations": [
+        "Specified gates and compatible pathway statistics; symmetry reduction and numerical random-initialization agreement distinguished. Path count renamed q to avoid sample-count collision."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "nichani",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Nichani E, Damian A, Lee JD",
+      "title": "Provable Guarantees for Nonlinear Feature Learning in Three-Layer Neural Networks",
+      "url": "https://papers.nips.cc/paper_files/paper/2023/hash/236b6a814a1d2c0ff504ca7bf380f7ff-Abstract-Conference.html",
+      "publication": "NeurIPS 36 (2023)",
+      "coverage": [
+        "nonlinear_depth/#nichani",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Algorithm 1, Theorem 1, Section 4.2 and Theorem 4"
+      ],
+      "limitations": [
+        "Fixed innermost random features, one middle-layer gradient step and independent readout data. Depth separation is target/accuracy/parameter specific."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "wang",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Wang Z, Nichani E, Lee JD",
+      "title": "Learning Hierarchical Polynomials with Three-Layer Neural Networks",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/af536fa4312b5b2e5c541156cd31e93b-Abstract-Conference.html",
+      "publication": "ICLR 2024",
+      "coverage": [
+        "nonlinear_depth/#wang",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Assumptions 1–6, Algorithm 1, Theorem 1 and Corollary 1"
+      ],
+      "limitations": [
+        "Gaussian spread-out pure-Hermite feature, nonzero outer derivative, bottleneck/residual network with fixed random first map. Explicit theorem uses d^(k+3alpha) for vanishing error, not a universal fixed-precision d^k log formula."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "tabanelli",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Tabanelli H, Dandi Y, Pesce L, Krzakala F",
+      "title": "Deep Learning of Compositional Targets with Hierarchical Spectral Methods",
+      "url": "https://proceedings.mlr.press/v306/tabanelli26a.html",
+      "publication": "ICML, PMLR 306:117916–117938 (2026)",
+      "coverage": [
+        "nonlinear_depth/#hierarchical-spectral",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Algorithm 1, Assumptions 3.1–3.2, Theorems 3.3 and 3.5, Gaussian equivalence and spectral cleaning"
+      ],
+      "limitations": [
+        "Random dense tensors, intermediate rank and controlled contractions; proof regime epsilon<1/2 with operator norm assumptions. Theorem 3.3 projected bound not mislabeled full-space bound; not direct SGD dynamics."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "chen",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Chen M, Bai Y, Lee JD, Zhao T, Wang H, Xiong C, Socher R",
+      "title": "Towards Understanding Hierarchical Learning: Benefits of Neural Representations",
+      "url": "https://papers.nips.cc/paper/2020/hash/fb647ca6672b0930e9d00dc384d8b16f-Abstract.html",
+      "publication": "NeurIPS 33 (2020)",
+      "coverage": [
+        "nonlinear_depth/#chen-random-representation",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Algorithm 1, Theorems 1–3, whitening and Quad-Neural/Quad-Raw comparison"
+      ],
+      "limitations": [
+        "Task-independent random representation; quadratic Taylor learner with regularization. Comparison of specified upper bounds is not a universal raw-input lower bound; NTK limit differs."
+      ],
+      "checked_on": "2026-10-29"
+    },
+    {
+      "id": "daniely",
+      "question": "Hierarchical learning mechanisms",
+      "authors_display": "Daniely A",
+      "title": "Deep Networks Learn Deep Hierarchical Models",
+      "url": "https://proceedings.mlr.press/v306/daniely26a.html",
+      "publication": "ICML, PMLR 306:22909–22936 (2026)",
+      "coverage": [
+        "nonlinear_depth/#daniely-label-hierarchy",
+        "mechanism_comparison/#literature-map"
+      ],
+      "checked_sections": [
+        "Definitions 3.1–3.3, Algorithm 1, Theorem 4.2 and proof outline"
+      ],
+      "limitations": [
+        "Multiple output labels observed, hierarchy among labels unknown; polynomial-threshold complexity and margin/robustness conditions. Not arbitrary hidden-circuit discovery from one terminal label."
+      ],
+      "checked_on": "2026-10-29"
     }
   ]
 }
