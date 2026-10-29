@@ -1,0 +1,120 @@
+{
+  "source_revision": "1fb1903",
+  "date": "2026-10-29",
+  "advanced_destinations": {
+    "bistability_and_uphill_paths": "rare_events/",
+    "generators_first_passage_kramers_spectra_feynman_kac": "markov_generators/",
+    "gaussian_functionals_msrjd_om_jacobian": "path_integral_methods/"
+  },
+  "fourth_article": "stochastic_processes/",
+  "legacy_anchors": {
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#11-随机性与隐变量确定性的规律为什么仍需要概率": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#why-random",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#运动规律与我们掌握的状态是两件事": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#why-random",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#本专题怎样对待随机性是否真实存在": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#why-random",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#12-从牛顿方程到开放系统": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#bath-memory",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#13-消去环境以后记忆阻尼与随机力": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#bath-memory",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#环境为什么会记住粒子的过去": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#bath-memory",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#14-白噪声极限与-langevin-方程": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#thermal-noise",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#从有限时间的随机冲量理解噪声": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#thermal-noise",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#得到带随机力的牛顿方程": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#thermal-noise",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#15-从-langevin-到-itô在状态空间中统一描述": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#overdamped",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#二阶运动方程怎样变成一阶状态方程": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#overdamped",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#再消去速度过阻尼动力学": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#overdamped",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#brownian-位置为什么不否定原来的牛顿轨道": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#overdamped",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#16-为什么随机动力学需要新的微积分": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#随机积分约定与乘性噪声": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#17-ou-过程涨落如何被产生又如何被消除": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#ou-trajectories",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#精确解与有限时间传播": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#ou-trajectories",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#矩方程中的机制": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#ou-trajectories",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#18-时间关联频谱与线性响应": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#correlation-response",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#从阱内起伏到偶发换阱": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#附录-a怎样模拟怎样判断结果可信": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#附录-a数值小步怎样保留正确涨落",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#21-从一条轨道转向一团概率分布": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#density-ensemble",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#22-确定性动力学也会输运概率": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#probability-conservation",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#23-随机运动如何输运概率从随机游走到-fick-定律": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#random-walk",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#左右跳跃无偏净概率流为什么仍有方向": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#random-walk",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#从一点初态长出一团概率云": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#random-walk",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#24-漂移与扩散共同作用fokkerplanck-方程": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#drift-diffusion",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#推广保留惯性时概率怎样在相空间中流动": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#kramers-equation",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#验证与推广itô-公式和状态依赖扩散": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#25-ou概率云怎样形成有限宽度的稳态": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#ou-density",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#26-分布不再变化概率还可以持续流动吗": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#stationary-current",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#边界如何改变同一内部方程的预测": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#boundaries",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#27-双稳势局部已弛豫为什么全局仍未平衡": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#局域稳态仍然携带缓慢变化的权重": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#稳态权重还受到阱宽影响": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#28-传播核从单时刻分布走向整条历史": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/#propagators",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#31-相同的终点包含怎样不同的历史": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#time-slicing",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#先看历史再把它们合成终点概率": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#time-slicing",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#时间切片给这份求和以明确含义": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#time-slicing",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#固定终点以后路径权重还要归一化": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#time-slicing",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#32-一段历史需要噪声补上多少运动onsagermachlup-权重": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#gaussian-weights",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#33-brownian-bridge条件平均为什么不是一条典型轨迹": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#brownian-bridge",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#带漂移的-brownian-运动固定终点改变了什么": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#brownian-bridge",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#条件平均是一条直线真实轨迹仍然粗糙": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#brownian-bridge",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#34-双稳越垒罕见历史怎样克服回复作用": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#从右阱有多少概率转向它怎样过去": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#上坡需要付出代价下坡可以顺着动力学完成": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#势垒为什么决定转换率的指数尺度": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#35-进阶从路径观测量到生成泛函": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#从一个终点到沿途的累计量": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#生成泛函一次组织所有多时刻统计": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#ou-的-gaussian-生成泛函以及一次具体计算": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#36-进阶msrjd-怎样组织关联与响应": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#保留动力学约束为什么有助于计算响应": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#从-delta-约束完成一次基本推导": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#与-onsagermachlup-怎样相接": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#辅助场为什么称为响应场": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#ou在同一泛函中恢复关联与响应": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#非线性项与计算的扩展": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd",
+    "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/#附录-a中点-om-表示中的-jacobian": "/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#om-jacobian"
+  },
+  "figure_destinations": {
+    "01_ou_fluctuations": "langevin/",
+    "02_ou_transport": "fokker_planck/",
+    "03_bistable_transport": "rare_events/",
+    "04_optimal_paths": "rare_events/",
+    "05_first_passage_and_spectrum": "markov_generators/",
+    "06_transport_mechanisms": "fokker_planck/",
+    "07_bridges_and_propagator": "path_integrals/",
+    "08_ou_correlation_response": "path_integral_methods/"
+  },
+  "title_changes": [
+    {
+      "path": "content/zh/notes/nonequilibrium_statistical_physics/stochastic_dynamics/_index.md",
+      "old": "非平衡统计物理中的随机动力学",
+      "new": "随机动力学：从单条轨迹到概率与历史"
+    },
+    {
+      "path": "content/zh/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/index.md",
+      "old": "Langevin Dynamics：从牛顿运动到随机轨迹",
+      "new": "Langevin Dynamics：从牛顿方程到随机轨迹"
+    },
+    {
+      "path": "content/zh/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/index.md",
+      "old": "Fokker–Planck Dynamics：从粒子运动到概率输运",
+      "new": "Fokker–Planck Dynamics：从随机轨迹到概率流"
+    },
+    {
+      "path": "content/zh/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/index.md",
+      "old": "Path Integrals：从终点概率到随机路径系综",
+      "new": "Path Integrals：从终点分布到随机历史"
+    },
+    {
+      "path": "content/zh/notes/nonequilibrium_statistical_physics/stochastic_dynamics/markov_generators/index.md",
+      "old": "Markov Processes and Generators：从局部随机规律到全局预测",
+      "new": "选读：生成元、首次到达与弛豫谱"
+    }
+  ],
+  "verification": {
+    "website_build": "Hugo 0.136.5 extended: pass",
+    "pages_checked": 9,
+    "legacy_heading_ids_preserved": 98,
+    "original_svg_figures_reused": 8,
+    "new_svg_png_pairs": 5,
+    "rendering": "7 article pages: no KaTeX errors or unparsed math",
+    "responsive": "phone viewport: no document overflow; long display math scrolls within its container",
+    "ou_control": "zero-time delta state and late-time variance checked",
+    "numerical_checks": "intro_numerical_checks.json"
+  }
+}

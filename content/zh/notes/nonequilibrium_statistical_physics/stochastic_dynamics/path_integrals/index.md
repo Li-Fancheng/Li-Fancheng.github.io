@@ -1,14 +1,15 @@
 ---
-title: "Path Integrals：从终点概率到随机路径系综"
-subtitle: "PART III · 历史视角 · Path Weights, Fluctuations, and Rare Events"
+title: "Path Integrals：从终点分布到随机历史"
+subtitle: "PART III · 历史视角 · Path Weights and Conditioned Histories"
 date: 2026-10-28
+lastmod: 2026-10-29
 weight: 3
-summary: "从终点概率展开路径求和，用 Brownian bridge 理解条件历史、用双稳越垒理解噪声代价，进阶发展生成泛函与 MSRJD。"
+summary: "从时间切片与 Gaussian 小步得到路径权重，计算 Brownian bridge、罕见终点、轨迹面积与圆环路径方向。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true
 toc: true
-reading_time: 65
+reading_time: 45
 tags: [非平衡统计物理, 随机动力学, 路径积分]
 ---
 

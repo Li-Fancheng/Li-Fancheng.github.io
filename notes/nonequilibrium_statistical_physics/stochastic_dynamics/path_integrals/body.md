@@ -1,62 +1,51 @@
-上一节可以预测右阱在时刻 $T$ 获得多少概率，但那些到达右阱的粒子，途中经历了什么？它们何时离开左阱，怎样抵抗回复漂移，又在势垒附近停留了多久？同一个终点可以由许多历史到达，终点密度已经把它们合并起来。
+从同一个起点出发、在同一时刻抵达同一终点，并没有规定中途怎样走。两条记录可以有不同的最大偏离、停留时间和轨迹下方的面积。第二篇的传播核已经把这些历史合并成一个终点密度；现在我们将中间位置保留下来，问每段运动怎样被赋予统计权重。
 
-本篇先提出两个问题。**给定相同起终点，哪些历史共同构成了这份条件系综？在双稳系统里，一段罕见历史又怎样持续克服确定性回复，完成换阱？** 路径积分保留中间的运动，用每段历史的权重回答它们。
-
-前四节围绕这两个问题展开：先展示路径求和的物理含义，再通过时间切片赋予它精确定义，用 Brownian bridge 分清参考路径与真实涨落，最后解释双稳越垒的指数代价。3.5—3.6 节在此基础上发展生成泛函与 MSRJD，用来系统计算整段历史上的关联、累计量和外力响应；OM Jacobian 的换元细节放在附录。
-
-## 3.1 相同的终点，包含怎样不同的历史
-
-### 先看历史，再把它们合成终点概率
+## 3.1 终点相同，中间的运动仍然不同 {#history-question}
 
 ![相同端点的 Brownian bridge 历史及其对应的终点传播密度](../figures/07_bridges_and_propagator.svg)
 
-*图 4a｜取 $x_0=0,x_f=1.5,T=2,v=0.3,D=0.2$。左图中多条条件轨道共享起终点，黑线为条件平均 $x_*$；橙色虚线为未加终点条件时的平均运动，末端并不到达指定目标。右图为未条件化的终点密度，分别标出自然均值和所选终点。曲线由高斯增量构造，采用有限时间采样。*
+*图 3a｜取 $x_0=0,x_f=1.5,T=2,v=0.3,D=0.2$。左图中多条条件轨道共享起终点，黑线为条件平均 $x_*$；橙色虚线为未加终点条件时的平均运动，末端并不到达指定目标。右图为未条件化的终点密度，分别标出自然均值和所选终点。曲线由高斯增量构造，采用有限时间采样。*
 
-左图的每条样本都抵达同一个目标，中间运动却不同；右图显示尚未施加终点约束的传播密度，给出抵达各个终点的总权重，却没有标记中间怎样走。图中的黑线是这些条件历史的平均，并没有取代它们。在 Fokker–Planck 方程中求解的传播核，也可以这样理解为所有能够连接两端的历史贡献之和：
+左图的粗糙样本共享两端，黑线却只是这些条件历史的平均；右图的未条件化终点密度则回答“抵达这里有多可能”。这两幅图使用不同的系综：一个筛选已经抵达的样本，另一个允许所有终点。路径方法让这两种统计通过同一份短时运动规律联系起来。
+
+圆环上还有一个更明显的例子：相同的取模终点，可以由顺时针绕一圈、逆时针绕一圈，或根本没有绕圈的历史抵达。若关心运动方向，终点位置之外还要保留绕圈的信息。
+
+<span id="31-相同的终点包含怎样不同的历史"></span>
+<span id="先看历史再把它们合成终点概率"></span>
+<span id="时间切片给这份求和以明确含义"></span>
+<span id="固定终点以后路径权重还要归一化"></span>
+
+## 3.2 时间切片：路径求和从普通概率乘积开始 {#time-slicing}
+
+先只插入一个中间时刻 $s$。给定起点 $x_0$，先到 $y$、再到 $x_f$ 的条件密度相乘；将所有 $y$ 的可能性相加：
 
 $$
-\boxed{K(x_f,T\mid x_0,0)
-=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\;e^{-S[x]}.}
+G(x_f,T\mid x_0,0)
+=\int dy\,G(x_f,T\mid y,s)G(y,s\mid x_0,0).
 $$
-
-这里 $S[x]$ 与测度 $\mathcal D x$ 成对规定历史权重，不能只凭一个连续作用量猜出完整概率。这个表达式先说明要对什么求和；下面用离散时间的普通联合密度逐步定义它。
-
-### 时间切片给这份求和以明确含义
-
-固定起点 $x_0$ 与观察时长 $T$，传播核给出终点附近的概率密度。它并没有选定一条连接起终点的轨道。若还指定一个中间位置，就在所有历史里选出了经过该位置的一类；指定更多中间位置，则越来越详细地记录了这类运动怎样发生。
 
 把时间等分为 $N$ 段，记 $\varepsilon=T/N$、$t_k=k\varepsilon$，$x_N=x_f$。对时间齐次 Markov 过程，反复使用 Chapman–Kolmogorov 关系可得
 
 $$
 \boxed{
-K(x_f,T\mid x_0,0)
+G(x_f,T\mid x_0,0)
 =\int\prod_{k=1}^{N-1}dx_k
-\prod_{k=0}^{N-1}K_\varepsilon(x_{k+1}\mid x_k).}
+\prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k).}
 $$
 
 这里每个短时核先回答“从当前状态到下一状态的概率是多少”。沿着指定的离散历史，把这些条件密度相乘，便得到它的联合权重；对所有中间位置积分，便将所有可能历史的贡献合并起来。对精确转移核，这个公式在任意有限切片数下都成立，还不需要任何连续路径积分的形式操作。
 
 这个构造也说明了路径表示为何自然。普通多变量概率论中，不关心哪个变量，就对它积分；这里的中间变量恰好是不同时间的位置。路径积分把这种有限维的概率边缘化延伸到越来越密的时间记录上，运动规律仍来自同一个转移过程。
 
-### 固定终点以后，路径权重还要归一化
+固定起点与终点时，乘积还包含到达该终点的密度。若问“在已经到达的样本中，中间位置如何分布”，需要除以 $G(x_f,T\mid x_0,0)$。连续位置上的精确终点和单条精确路径通常具有零概率；这里使用条件密度、有限分辨率记录或路径邻域，而非某条曲线的普通概率。
 
-上式的乘积包含到达指定终点的密度。若进一步问“在已经到达 $x_f$ 的历史中，中间位置如何分布”，就要除以这个终点密度：
+<span id="32-一段历史需要噪声补上多少运动onsagermachlup-权重"></span>
 
-$$
-p(x_1,\ldots,x_{N-1}\mid x_0,x_f)
-=\frac{\prod_{k=0}^{N-1}K_\varepsilon(x_{k+1}\mid x_k)}
-{K(x_f,T\mid x_0,0)}.
-$$
-
-这种给定两端的条件过程称为 bridge。它与只指定初态、终点自由的系综回答不同问题：后者比较终点有多可能，前者比较到达这个终点的不同方式。后面讨论参考路径时会使用 bridge；计算通常的因果响应时，则回到固定初始准备、终点自由的系综。
-
-连续位置中，一个精确终点通常具有零概率，条件过程应通过转移密度或相应的正规条件分布理解。同样，单条精确连续路径通常具有零概率。谈论某条历史的权重时，实际比较的是离散观测值的密度、路径邻域或一类受约束历史，而不是某条精确曲线的普通概率。
-
-## 3.2 一段历史需要噪声补上多少运动：Onsager–Machlup 权重
+## 3.3 Gaussian 小步怎样累加成路径代价 {#gaussian-weights}
 
 ### 每一步的高斯增量怎样给路径赋权
 
-传播核的拼接给出了框架，还需要知道局部转移规律。现在接回上一节已经建立的加性噪声模型
+传播核的拼接给出了框架，还需要知道局部转移规律。对前两篇的加性噪声模型
 
 $$
 dX_t=b(X_t)dt+\sqrt{2D}\,dW_t.
@@ -72,7 +61,7 @@ $$
 对给定的出发位置 $x_k$，先由漂移预期一段位移 $b(x_k)\varepsilon$，再加上本步随机位移。将标准高斯变量换成下一步位置，得到离散模型的精确一步密度
 
 $$
-K_\varepsilon^{\mathrm E}(x_{k+1}\mid x_k)
+G_\varepsilon^{\mathrm E}(x_{k+1}\mid x_k)
 =\frac1{\sqrt{4\pi D\varepsilon}}
 \exp\left[-\frac{[\Delta x_k-b(x_k)\varepsilon]^2}
 {4D\varepsilon}\right].
@@ -114,20 +103,72 @@ $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速
 
 典型 Brownian 路径不可微，普通意义下的平方速度积分并不是一个可以直接逐条计算的有限量。连续表达式要依托时间切片、路径测度和相应极限。它对光滑参考曲线的含义，与整份粗糙路径系综的定义属于两个需要联系起来的层次。
 
-在弱噪声极限中，这个光滑历史代价给出主导指数；完整的有限噪声 OM 表示还要指定漂移求值与换元因子。例如中点规则带有 $b'/2$ 的修正，推导见附录 A。下一节先取常漂移，因 $b'=0$，可以把注意力集中到端点条件与路径涨落本身。
+在弱噪声极限中，这个光滑历史代价给出主导指数；完整的有限噪声 OM 表示还要指定漂移求值与换元因子。例如中点规则带有 $b'/2$ 的修正，推导见[OM Jacobian 选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#om-jacobian)。下面先在自由和常漂移 Brownian 中计算；其 $b'=0$，可以集中研究端点约束和路径涨落。
 
-## 3.3 Brownian bridge：条件平均为什么不是一条典型轨迹
-
-### 带漂移的 Brownian 运动：固定终点改变了什么
-
-先选择一个可以完整计算的模型，
+时间切片越来越细时，人们把这份多重积分简写为路径积分：
 
 $$
-dX_t=v\,dt+\sqrt{2D}\,dW_t,\qquad
-X_0=x_0,\qquad X_T=x_f.
+\boxed{G(x_f,T\mid x_0,0)
+=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\;e^{-S[x]}.}
 $$
 
-没有终点约束时，平均位置沿 $x_0+vt$ 运动；指定终点以后，我们从全部历史中选出到达 $x_f$ 的一类。即使 $x_f$ 偏离自然漂移的终点，也仍有随机历史能够抵达，只是它们的总权重可能较小。
+$S$ 与 $\mathcal D x$ 成对规定完整权重，包括离散 Gaussian 的归一化。这个记号概括的是刚刚构造的概率乘积与中间位置求和，没有添加新的运动规律。
+
+<span id="33-brownian-bridge条件平均为什么不是一条典型轨迹"></span>
+<span id="带漂移的-brownian-运动固定终点改变了什么"></span>
+<span id="条件平均是一条直线真实轨迹仍然粗糙"></span>
+
+## 3.4 Brownian bridge：直线是条件平均 {#brownian-bridge}
+
+先取自由 Brownian。若已知 $X_0=x_0$、$X_T=x_f$，中间时刻的条件密度就是两段传播相乘，再除以抵达终点的密度：
+
+$$
+p(x,t\mid x_0,0;x_f,T)
+=\frac{G(x_f,T\mid x,t)G(x,t\mid x_0,0)}
+{G(x_f,T\mid x_0,0)}.
+$$
+
+将两个 Gaussian 的指数相加，关于中间位置的二次项满足
+
+$$
+\frac{(x-x_0)^2}{4Dt}+\frac{(x_f-x)^2}{4D(T-t)}
+=\frac{T[x-m_t]^2}{4Dt(T-t)}
++\frac{(x_f-x_0)^2}{4DT},
+$$
+
+其中 $m_t=x_0+(x_f-x_0)t/T$。右边第二项由分母的终点核抵消，所以条件密度仍是 Gaussian，并读出
+
+$$
+\boxed{\begin{aligned}
+\mathbb E[X_t\mid x_0,x_f]&=x_0+\frac tT(x_f-x_0),\\
+\operatorname{Var}(X_t\mid x_0,x_f)&=2Dt\left(1-\frac tT\right).
+\end{aligned}}
+$$
+
+两端的方差为零，中间最大；固定终点限制了能保留下来的涨落，却没有消除中途的折返。开篇黑线是一条直线，而每条实际样本仍粗糙，不能把条件平均称为典型 Brownian 路径。
+
+将 $x_*(t)=m_t$ 记为这条条件平均，给定两端后的过程可构造为
+
+$$
+X_t=x_*(t)+\sqrt{2D}\left(W_t-\frac tT W_T\right),
+$$
+
+其均值为 $x_*(t)$，连通协方差为
+
+$$
+C_{\mathrm{bridge}}(t,s)
+=2D\left[\min(t,s)-\frac{ts}{T}\right].
+$$
+
+两端方差为零，是因为起终点已经固定；中间仍有非零涨落，方差在中点最大。这个约束没有使任意一条样本变成直线，只使很多受约束样本的平均沿着直线。对比图中样本与黑线，可以直接看出条件平均和典型轨迹的不同。
+
+本模型还有一个可解释的结果：给定相同两端后，bridge 的均值和协方差不再依赖常漂移 $v$。不同 $v$ 改变抵达该终点的总密度，但在到达这一终点的历史内部，漂移对权重的影响已归入同一个端点因子。这与前面的作用量分解一致。
+
+所以“最小作用量路径”需要附带条件来理解。在这里它是条件均值和一个光滑参考历史；实际样本仍具有 Brownian 粗糙性。弱噪声时，固定两端的路径系综会集中到这个参考历史附近，才可以进一步谈论主导路径的近似。有限噪声下仍需保留整个涨落集合。
+
+## 3.5 罕见终点：用最简单的漂移计算参考历史 {#rare-endpoints}
+
+不需要复杂势阱，也能看到作用量的用途。常漂移 Brownian 的典型终点是 $x_0+vT$；若要求在同样时长内抵达相距许多个扩散宽度的 $x_f$，这类样本的总权重会很小。现在问：满足这个端点的光滑参考历史需要多大噪声补偿？
 
 常漂移满足 $b'=0$，作用量为 $S=\int_0^T(\dot x-v)^2dt/(4D)$。为了找出满足端点的最小代价光滑曲线，令 $x\to x+\delta x$，并保持两端不动。一次变分后分部积分，
 
@@ -156,317 +197,91 @@ $$
 这份分解在时间切片上也成立。终点所需的整体偏离由 $S_{\min}$ 提供指数代价，周围仍有无数个中途折返的 $q$ 需要求和。对于本模型，后者正是无漂移、两端回到零的 Gaussian 路径积分，给出
 
 $$
-\boxed{K(x_f,T\mid x_0,0)
+\boxed{G(x_f,T\mid x_0,0)
 =\frac1{\sqrt{4\pi DT}}e^{-S_{\min}}.}
 $$
 
 前因子随 $D,T$ 改变，保证终点密度归一。只保留最小作用量，能够读取指数中终点的相对代价，却没有完成整份传播概率的计算。这个 Gaussian 例子中的分解是精确的，不依赖弱噪声近似；对一般非线性作用量，围绕主导历史的展开通常才是一种近似。
 
-### 条件平均是一条直线，真实轨迹仍然粗糙
+## 3.6 沿途累计的量：Brownian 轨迹下方的面积 {#path-observables}
 
-给定两端后的过程可以具体写为
-
-$$
-X_t=x_*(t)+\sqrt{2D}\left(W_t-\frac tT W_T\right),
-$$
-
-其均值为 $x_*(t)$，连通协方差为
-
-$$
-C_{\mathrm{bridge}}(t,s)
-=2D\left[\min(t,s)-\frac{ts}{T}\right].
-$$
-
-两端方差为零，是因为起终点已经固定；中间仍有非零涨落，方差在中点最大。这个约束没有使任意一条样本变成直线，只使很多受约束样本的平均沿着直线。对比图中样本与黑线，可以直接看出条件平均和典型轨迹的不同。
-
-本模型还有一个可解释的结果：给定相同两端后，bridge 的均值和协方差不再依赖常漂移 $v$。不同 $v$ 改变抵达该终点的总密度，但在到达这一终点的历史内部，漂移对权重的影响已归入同一个端点因子。这与前面的作用量分解一致。
-
-所以“最小作用量路径”需要附带条件来理解。在这里它是条件均值和一个光滑参考历史；实际样本仍具有 Brownian 粗糙性。弱噪声时，固定两端的路径系综会集中到这个参考历史附近，才可以进一步谈论主导路径的近似。有限噪声下仍需保留整个涨落集合。
-
-## 3.4 双稳越垒：罕见历史怎样克服回复作用
-
-### 从“右阱有多少概率”转向“它怎样过去”
-
-第二篇看到，概率先在左阱底附近形成局域分布，随后才极缓慢地转移到右阱。概率云揭示了交换有多慢；现在追问一次成功转换需要怎样的运动。对同一个模型，
-
-$$
-\dot x(t)=-U'(x(t))+\eta(t),\qquad
-\langle\eta(t)\eta(s)\rangle=2D\delta(t-s),
-\qquad U(x)=\frac14(x^2-1)^2.
-$$
-
-从左阱底 $x_a=-1$ 向势垒 $x_s=0$ 运动时，确定性漂移始终把粒子拉回左阱。普通小涨落因此多次失败。一次成功转换要求噪声在一段时间中提供恰当的反向偏离，使粒子不被回复作用拉回去；它不必每一瞬间单调上升，但在弱噪声极限下，有一类代价最小的历史支配指数尺度。
-
-这里的状态已采用过阻尼约化，没有独立保留的惯性动能帮助粒子继续上冲。越垒所需的持续偏离，要由随机驱动提供。路径代价正适合读取这份要求。
-
-### 上坡需要付出代价，下坡可以顺着动力学完成
-
-把噪声强度从指数代价中分离，定义 $I[x]=D S_0[x]$。对光滑候选历史，配方得到
-
-$$
-\begin{aligned}
-I[x]&=\frac14\int_0^T[\dot x+U'(x)]^2dt\\
-&=U(x_T)-U(x_0)
-+\frac14\int_0^T[\dot x-U'(x)]^2dt.
-\end{aligned}
-$$
-
-第二项非负，所以从阱底爬到势垒的代价至少是 $\Delta U=U(x_s)-U(x_a)$。若上坡历史沿反向漂移 $\dot x=+U'(x)$，平方余项可以消失：这条曲线在上坡过程中持续要求噪声抵抗原漂移。到达另一侧以后，沿原漂移 $\dot x=-U'(x)$ 下坡，原式中的平方直接为零，不再支付同样的指数代价。
-
-![双稳势中的上坡与下坡，以及相同端点下候选历史的代价比较](../figures/04_optimal_paths.svg)
-
-*图 4b｜左图区分反向漂移的上坡和自然漂移的下坡。右图固定从 $-0.95$ 到 $-0.05$ 的端点与时长，黑线沿反向漂移，代价 $I=0.246375$ 恰等于两端势差；两条扰动曲线代价更高。这些是用于比较弱噪声代价的光滑候选曲线，不是实际随机样本。*
-
-精确从稳定点出发的反向确定性解仍停在该固定点，精确到达势垒顶也需要极限处理。因此“最小代价为势垒高”指允许足够长时间、端点邻域趋小后的代价下确界，不能将它解释成一条有限时间内从固定点自动启动的反向轨道。噪声模型的实际路径仍然粗糙，主导历史描述的是路径系综集中在哪类运动附近。
-
-### 势垒为什么决定转换率的指数尺度
-
-历史权重含 $e^{-I/D}$，最小上坡代价为 $\Delta U$。在弱噪声、阱内混合远快于换阱的亚稳态条件下，成功转换率因而具有
-
-$$
-\boxed{k\asymp \exp\left(-\frac{\Delta U}{D}\right).}
-$$
-
-这里 $\asymp$ 只表示主导指数尺度；在固定无量纲时间单位下，可更准确地写成 $D\log k\to-\Delta U$。它尚未给出尝试频率和曲率前因子。[Berglund 的综述](https://arxiv.org/abs/1106.5799)讨论了从路径大偏差到越垒时间的联系及其条件。
-
-这解释了第二篇的慢概率交换：多数历史在阱内反复起伏，能够协调完成上坡的历史所占权重极小。很长的等待时间主要花在这些失败尝试之间；它与一次已成功转换的运动持续多久是两个统计量。路径分析确定了罕见转换的机制和指数代价，平均等待的完整数值仍需计算。
-
-从真实势能 $V_{\mathrm{pot}}$ 出发，$U=\mu V_{\mathrm{pot}}$、$D=\mu k_{\mathrm B}T$，于是同一个指数成为 $\Delta V_{\mathrm{pot}}/(k_{\mathrm B}T)$。势垒与噪声的比值决定难度，迁移率还会进入时间前因子。第四篇将用首次到达方程计算它，而不必逐条枚举这些罕见历史。
-
-## 3.5 进阶：从路径观测量到生成泛函
-
-两个主要例子已经说明为什么需要路径系综。若希望计算整段记录的累计涨落，或者同时提取许多时刻的统计，就需要进一步组织这些平均。下面保留原有系综，改变我们从历史中读取的量。
-
-### 从一个终点到沿途的累计量
-
-两条历史即使有相同两端，也可能在中间长期停留在不同区域，因而给出不同的时间积分
+知道某个粒子的终点，仍不能知道它此前在原点上方和下方各待了多久。最简单的历史观测量是带符号的轨迹面积
 
 $$
 A_T=\int_0^T X_tdt.
 $$
 
-两时关联 $\langle X_tX_s\rangle$ 同样读取历史中的多个位置。对一个正确归一化的路径系综，这些量统一写成 $\langle\mathcal O[X]\rangle=\int\mathcal D x\,\mathcal O[x]e^{-S[x]}$，其中测度包含初始准备、终点条件及前面讨论的归一化因素。
-
-要研究通常的关联和外力响应，以下固定初始分布 $p_0$，将终点自由积分，因而未扰动总路径权重为一。若研究 bridge 下的累计量，就改用前面除以终点传播核后的条件系综。观测量可以相同，平均所使用的历史集合必须说明。
-
-### 生成泛函：一次组织所有多时刻统计
-
-对一个随机变量，可以用矩母函数生成各阶矩。对随机历史，需要在不同时间分别读取位置，于是把单个参数推广为时间函数 $J(t)$：
+令自由 Brownian 从 $X_0=0$ 出发。对 $t\ge s$，$X_t=X_s+\sqrt{2D}(W_t-W_s)$，后续增量与 $X_s$ 独立，所以 $\langle X_tX_s\rangle=2D\min(t,s)$。面积平均为零，方差却不会抵消：
 
 $$
-Z[J]=\left\langle e^{\int_0^T J(t)X_tdt}\right\rangle,
-\qquad W[J]=\ln Z[J],\qquad Z[0]=1.
+\begin{aligned}
+\operatorname{Var}(A_T)
+&=2D\int_0^Tdt\int_0^Tds\,\min(t,s)\\
+&=4D\int_0^Tdt\int_0^t s\,ds
+=\boxed{\frac{2D}{3}T^3}.
+\end{aligned}
 $$
 
-在有限时间切片上，指数就是 $\sum_k\varepsilon J(t_k)x_k$；对某个时刻的源求导，会从指数中取出相应的位置因子。连续极限中，
+面积的单位是长度乘时间，$DT^3$ 的单位正是其平方。典型位置按 $\sqrt T$ 增长，再积累一段时长 $T$，面积的典型大小便按 $T^{3/2}$ 增长；平方就是 $T^3$。这个累计量需要多时刻相关，不能从某一个终点密度单独读取。
+
+![Brownian bridge 的条件方差与自由 Brownian 的轨迹面积](../figures/13_history_observables.svg)
+
+*图 3b｜左图将 bridge 的采样方差与 $2Dt(1-t/T)$ 对照；右图给出一条从零出发的自由 Brownian 样本，填色区分正负面积。取 $D=0.2,T=2$，左图使用 4000 条独立 bridge，右图选取一条兼有正负偏离的历史以说明面积收支，不能用它代替面积的系综方差。*
+
+如果改为固定两端的 bridge，仍有非零的面积涨落：同一个协方差积分给出平均 $T(x_0+x_f)/2$、方差 $DT^3/6$。端点条件改变了所平均的历史集合，因此累计量也随之改变。
+
+## 3.7 选读：密度相同，历史仍可具有时间方向 {#time-reversal}
+
+回到第二篇周长 $L$ 的驱动圆环。初始位置从均匀稳态 $1/L$ 采样，取完整的连续路径，并把它提升为未取模的坐标 $x(t)$，以保留绕圈数。时间反演的历史定义为将位置记录次序倒转；位置为偶变量，动力学的常漂移参数 $v$ 保持不变。
+
+在同一有限时间分割上，正向历史增量为 $\Delta x_k$，反向为 $-\Delta x_k$。初始稳态密度相同而相消，Gaussian 一步权重给出
 
 $$
-\left.\frac{\delta W}{\delta J(t)}\right|_0=\langle X_t\rangle,
-\qquad
-\left.\frac{\delta^2W}{\delta J(t)\delta J(s)}\right|_0
-=\langle X_tX_s\rangle_c.
+\begin{aligned}
+\log\frac{\mathbb P[\mathrm{history}]}{\mathbb P[\mathrm{reversed\ history}]}
+&=\sum_k\frac{(\Delta x_k+v\varepsilon)^2-(\Delta x_k-v\varepsilon)^2}{4D\varepsilon}\\
+&=\boxed{\frac vD\,\Delta x_{\mathrm{unwrapped}}}.
+\end{aligned}
 $$
 
-这里 $\langle X_tX_s\rangle_c=\langle X_tX_s\rangle-\langle X_t\rangle\langle X_s\rangle$。对 $Z$ 求导生成原始矩，对 $\ln Z$ 求导会扣除均值等可分解部分，得到连通关联或更高阶累积量。生成泛函因而把许多不同的多时刻问题组织成同一个对象的导数。
+这里比较的是匹配的离散历史密度或路径权重，不是两条单独曲线的非零概率。总位移必须包含绕圈的 $nL$，不能只用取模终点减起点；只看圆环终点会把不同权重的历史混合掉。若 $v=\mu F$、$D=\mu k_{\mathrm B}T$，右边就是恒力沿未取模位移所做的功除以 $k_{\mathrm B}T$。
 
-$J$ 在这里是提取统计的记账工具。它暂时按观测量给历史加权，求导后再设为零；并没有在原运动方程中施加一个真实外力。下一节的驱动 $h(t)$ 才会改变运动规律，两种源的作用需要区分。
+这只针对稳态、加性常漂移模型与上述反演定义，不能直接推广成任意非平稳、位置依赖漂移的通式。它说明一个清楚的事实：密度一动不动，顺向与逆向历史仍可有不同权重。
 
-### OU 的 Gaussian 生成泛函，以及一次具体计算
+## 3.8 三种视角以后，还会遇到哪些运动 {#further-reading}
 
-对 Gaussian 过程，任意有限组时刻的位置联合分布都是多元高斯。有限维高斯积分的配方给出“源乘均值，加上源的二次型”；取时间切片极限，就得到
+Langevin 给出局部运动，Fokker–Planck 展示概率云与流，路径积分则把同一规律组织成整段历史的统计。它们回答不同问题，并由短时条件转移相容地联系起来。
 
-$$
-W[J]=\int_0^T J(t)m(t)dt
-+\frac12\int_0^Tdt\int_0^Tds\,J(t)C(t,s)J(s),
-$$
+如果要同时提取许多时刻的关联，可以选读生成泛函 $Z[j]=\langle e^{\int_0^Tj(t)X_tdt}\rangle$：对 $j$ 求导会取出相应时刻的位置因子。完整 Gaussian 计算、响应场与 OM 测度细节保存在[路径积分进阶](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/)；双稳上坡与越垒代价保存在[罕见事件选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/)，都不是本篇必读前提。
 
-其中 $m(t)$ 为均值、$C$ 为连通协方差。这个结果同时保留所有时刻，而非只描述某个终点。
+前三篇主要依靠连续 Gaussian 扰动。若粒子突然长跳、持续直行、长时间停滞，或其增量彼此相关，哪些假设已经改变？下一篇以这些运动规则为线索，介绍常见随机过程与所需微积分。
 
-先选取稳态准备的零均值 OU：$dX=-\gamma Xdt+\sqrt{2D}\,dW$，$X_0$ 从方差 $D/\gamma$ 的稳态分布采样，并与未来噪声独立。于是
+<span id="34-双稳越垒罕见历史怎样克服回复作用"></span>
+<span id="从右阱有多少概率转向它怎样过去"></span>
+<span id="上坡需要付出代价下坡可以顺着动力学完成"></span>
+<span id="势垒为什么决定转换率的指数尺度"></span>
 
-$$
-\boxed{W[J]=\frac D{2\gamma}
-\int_0^Tdt\int_0^Tds\,
-J(t)e^{-\gamma|t-s|}J(s).}
-$$
+选读：[罕见上坡历史与势垒代价](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths)。
 
-两次源导数立即恢复 $C(t,s)=(D/\gamma)e^{-\gamma|t-s|}$。由于 $W$ 只有二次项，三阶及以上连通累积量为零；Gaussian 多时刻统计已由均值与协方差完整确定。
+<span id="35-进阶从路径观测量到生成泛函"></span>
+<span id="从一个终点到沿途的累计量"></span>
+<span id="生成泛函一次组织所有多时刻统计"></span>
+<span id="ou-的-gaussian-生成泛函以及一次具体计算"></span>
 
-现在令整段时间内 $J(t)=\lambda$，则 $Z[J]$ 就变成累计量 $A_T$ 的矩母函数。将上述核积分，得到 $A_T$ 为零均值高斯变量，方差为
+选读：[Gaussian 生成泛函与累计涨落](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional)。
 
-$$
-\boxed{\operatorname{Var}(A_T)
-=\frac{2D}{\gamma^2}
-\left[T-\frac{1-e^{-\gamma T}}\gamma\right].}
-$$
+<span id="36-进阶msrjd-怎样组织关联与响应"></span>
+<span id="保留动力学约束为什么有助于计算响应"></span>
+<span id="从-delta-约束完成一次基本推导"></span>
+<span id="与-onsagermachlup-怎样相接"></span>
+<span id="辅助场为什么称为响应场"></span>
+<span id="ou在同一泛函中恢复关联与响应"></span>
+<span id="非线性项与计算的扩展"></span>
 
-当 $T\ll\gamma^{-1}$，位置尚未显著失去记忆，$A_T$ 近似为 $TX_0$，方差按 $(D/\gamma)T^2$ 增长；当 $T\gg\gamma^{-1}$，许多相隔较远的时间段近似失去关联，方差的主导项改为与 $T$ 成正比。这是沿整条历史累计的涨落，从同一个生成泛函即可算出。
+选读：[MSRJD 响应场与因果响应](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd)。
 
-初始准备会改变这个计算。若固定 $X_0=x_0$，则 $m(t)=x_0e^{-\gamma t}$，协方差为 $(D/\gamma)[e^{-\gamma|t-s|}-e^{-\gamma(t+s)}]$；把它们代入一般 Gaussian 公式即可。不能只因后续方程相同，就将固定初态与稳态准备的有限时间统计混用。
+<span id="附录-a中点-om-表示中的-jacobian"></span>
 
-## 3.6 进阶：MSRJD 怎样组织关联与响应
+选读：[OM 测度与 Jacobian](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#om-jacobian)。
 
-### 保留动力学约束，为什么有助于计算响应
-
-Onsager–Machlup 直接用位置历史表达权重。若还想系统地研究驱动变化，或把非线性漂移组织成可展开的项，先保留运动方程的约束通常更方便。约束中漂移只出现一次，外源怎样进入也更加直接。
-
-以 $\dot x=b(x)+h(t)+\eta(t)$ 为例，$\langle\eta(t)\eta(s)\rangle=2D\delta(t-s)$。以下仍用前点 Itô 离散，并保持初始准备固定、终点自由；因此不会对未来终点另加条件。将本步实际位移记为 $\Delta x_k$，噪声位移 $\eta_k$ 的方差为 $2D\varepsilon$，方程约束为
-
-$$
-\delta\left(\Delta x_k-\varepsilon b(x_k)-\varepsilon h_k-\eta_k\right).
-$$
-
-这里的 $h$ 是外部驱动，时间步长始终记为 $\varepsilon$。给定一组噪声实现，这份 Delta 约束只允许符合动力学的下一步位置；再按高斯噪声权重平均，就恢复原过程的转移概率。
-
-### 从 Delta 约束完成一次基本推导
-
-令 $q_k=\Delta x_k-\varepsilon b(x_k)-\varepsilon h_k$。对约束使用 Fourier 表示，再积分噪声：
-
-$$
-\delta(q_k-\eta_k)
-=\int\frac{d\hat x_k}{2\pi}e^{-i\hat x_k(q_k-\eta_k)},
-\qquad
-\left\langle e^{i\hat x_k\eta_k}\right\rangle
-=e^{-D\varepsilon\hat x_k^2}.
-$$
-
-各步相乘后的指数因此为
-
-$$
-\sum_k\left[-i\hat x_k
-(\Delta x_k-\varepsilon b(x_k)-\varepsilon h_k)
--D\varepsilon\hat x_k^2\right].
-$$
-
-取 $\widetilde x_k=i\hat x_k$，并转为连续记号，得到 Martin–Siggia–Rose–Janssen–de Dominicis（MSRJD）作用量
-
-$$
-\boxed{S_h[x,\widetilde x]
-=\int_0^Tdt\left[
-\widetilde x(\dot x-b(x)-h)-D\widetilde x^2\right].}
-$$
-
-于是可将生成泛函写成
-
-$$
-Z[J,h]=\int dx_0\,p_0(x_0)
-\int_{x(0)=x_0}\mathcal Dx\,\mathcal D\widetilde x\;
-e^{-S_h[x,\widetilde x]+\int_0^T Jx\,dt},
-$$
-
-终点自由积分，测度按上述离散构造规定，归一化为 $Z[0,h]=1$。对前点加性噪声，方程约束到位置变量的 Jacobian 没有额外路径依赖；换用别的规则时仍需相应调整。
-
-这份作用量的两个部分具有不同来源。$\widetilde x(\dot x-b-h)$ 实施动力学约束，$-D\widetilde x^2$ 来自高斯噪声的特征函数。$\widetilde x$ 是引入约束时出现的辅助变量，并不是新增的物理坐标或独立噪声。[Chow 与 Buice 的综述](https://link.springer.com/article/10.1186/s13408-015-0018-5)也从离散 Delta 约束建立了这类响应场表示。
-
-### 与 Onsager–Machlup 怎样相接
-
-由于 $\hat x$ 沿实轴积分，$\widetilde x=i\hat x$ 的积分轮廓沿虚轴。作用量中 $-D\widetilde x^2$ 的符号必须连同这个轮廓理解，不能将它作为实轴上可归一化的普通概率密度。
-
-如果重新积分辅助 Fourier 变量，每一步恰好给出
-
-$$
-\int\frac{d\hat x_k}{2\pi}
-e^{-D\varepsilon\hat x_k^2-i\hat x_kq_k}
-=\frac1{\sqrt{4\pi D\varepsilon}}
-e^{-q_k^2/(4D\varepsilon)}.
-$$
-
-这就是前面的高斯一步权重，包括归一化因子。因此 OM 与 MSRJD 是同一随机动力学的不同表示：积分响应场得到位置路径权重，保留响应场则能更直接地提取驱动作用。与中点 OM 比较时，还要同时转换离散规则和 Jacobian。
-
-### 辅助场为什么称为响应场
-
-外力在作用量中只增加一项
-
-$$
-S_h=S_0-\int_0^T\widetilde x(s)h(s)ds.
-$$
-
-对 $h(s)$ 求导，会在路径平均中取出 $\widetilde x(s)$。令 $W[J,h]=\ln Z[J,h]$，便得到
-
-$$
-\boxed{R(t,s)
-=\left.\frac{\delta\langle X_t\rangle_h}{\delta h(s)}\right|_{h=0}
-=\left.\frac{\delta^2W}{\delta J(t)\delta h(s)}\right|_0
-=\langle x(t)\widetilde x(s)\rangle_c.}
-$$
-
-归一化 $Z[0,h]=1$ 还给出 $\langle\widetilde x(s)\rangle=0$，因而这里也可以省略连通下标。响应场的物理作用正由这个导数关系定义：改变真实驱动怎样影响位置统计，可以在扩展路径表示中用一次混合关联计算。
-
-因果性要求早于扰动的观测不受其影响，$t\lt s$ 时 $R(t,s)=0$。这里使用的是没有未来终点约束的原过程；bridge 中对未来结果的筛选不能与这种无条件因果响应混淆。前点 Itô 规则还规定了等时求值，本篇按离散约定取 $\Theta(0)=0$。
-
-### OU：在同一泛函中恢复关联与响应
-
-取 $b=-\gamma x$，未扰动作用量为
-
-$$
-S_0=\int_0^Tdt\left[
-\widetilde x(\partial_t+\gamma)x-D\widetilde x^2\right].
-$$
-
-二次作用量中的确定性算子为 $\partial_t+\gamma$。其迟致 Green 函数满足 $(\partial_t+\gamma)R(t,s)=\delta(t-s)$，并在 $t\lt s$ 为零，所以
-
-$$
-\boxed{R(t,s)=\Theta(t-s)e^{-\gamma(t-s)}.}
-$$
-
-扰动产生的位移会按与普通弛豫相同的速率消失。对固定初始准备的小驱动，平均改变为 $\delta m(t)=\int_0^tR(t,s)h(s)ds$，与第一篇直接解运动方程的结果一致。
-
-对前面选定的稳态初始分布，协方差包含初始涨落的残余，以及后来噪声的共同贡献：
-
-$$
-C(t,s)=\frac D\gamma e^{-\gamma(t+s)}
-+2D\int_0^{\min(t,s)}R(t,u)R(s,u)du
-=\frac D\gamma e^{-\gamma|t-s|}.
-$$
-
-一次早于两个观测时刻的噪声，会分别通过两个响应核影响它们；对共同来源累加，就得到两时关联。晚于其中一个观测时刻的噪声不能改变已经发生的位置，因此积分只到两时刻的较小值。关联读取共同涨落，响应读取一次受控扰动的后果，二者在同一个 Gaussian 理论中有清楚的不同作用。
-
-![OU 的时间关联与因果响应核](../figures/08_ou_correlation_response.svg)
-
-*图 4c｜$\gamma=1,D=0.4$，横轴为时刻 $s$、纵轴为时刻 $t$。左图的稳态关联关于 $t=s$ 对称，两侧的时刻都可以共享过去噪声；右图的响应只在 $t>s$ 一侧有权重。色标分别表示各自的数值，关联与响应的量纲和幅度不相同。*
-
-外部 $h$ 对 OU 只改变均值，不改变未扰动的协方差。因此其完整 Gaussian 生成泛函还可写为
-
-$$
-W[J,h]=\int_0^Tdt\,J(t)\int_0^t ds\,R(t,s)h(s)
-+\frac12\int_0^Tdt\int_0^Tds\,J(t)C(t,s)J(s).
-$$
-
-两次 $J$ 导数读取 $C$，一次 $J$ 和一次 $h$ 导数读取 $R$。这将前面的路径统计与真实动力学响应放进了同一个计算结构，而不是在得到一个形式作用量后便结束。
-
-### 非线性项与计算的扩展
-
-若漂移改成 $b(x)=-\gamma x-gx^3$，取 $g>0$，作用量在 Gaussian 部分之外增加 $g\int\widetilde x x^3dt$。这类非线性项会耦合不同阶的涨落，在微扰组织中称为相互作用顶点。生成泛函仍然定义关联与响应，Gaussian 理论提供展开的起点；这里不继续发展图形计算或重整化。
-
-端点约束使我们看见同一终点背后的路径系综，双稳越垒使我们理解噪声怎样完成罕见运动，生成泛函与响应场则让整段历史的统计能够系统计算。这些问题使用同一套局部运动规律，只是保留和读取的信息不同。
-
-现在留下一个具体问题：已知跨势垒历史的指数代价，从左阱出发，平均多久第一次抵达右阱？完整路径系综当然包含答案，但若只求每个初始位置的平均等待，也许可以直接为这张预测函数写方程。下一篇从这个问题进入后向演化，并最终说明轨迹、概率和历史为何由同一 Markov 结构相容地联系起来。
-
-## 附录 A：中点 OM 表示中的 Jacobian
-
-前点离散中，定义随机位移 $q_k=x_{k+1}-x_k-b(x_k)\varepsilon$。固定 $x_0$ 后，从 $x_1,\ldots,x_N$ 到 $q_0,\ldots,q_{N-1}$ 的 Jacobian 矩阵是三角的，对角元均为一，因此没有额外的路径依赖因子。
-
-若采用中点规则，漂移改为 $b(\bar x_k)$，$\bar x_k=(x_k+x_{k+1})/2$。这时改变下一步位置，也同时改变了本步用来评估漂移的位置。小步局部换元给出
-
-$$
-\left|\frac{\partial q_k}{\partial x_{k+1}}\right|
-=\left|1-\frac\varepsilon2b'(\bar x_k)\right|,
-\qquad
-\prod_k\left|1-\frac\varepsilon2b'(\bar x_k)\right|
-\simeq e^{-\frac12\sum_k\varepsilon b'(\bar x_k)}.
-$$
-
-因而常用的中点 Onsager–Machlup 表示写为
-
-$$
-\boxed{S_{\mathrm{OM}}[x]
-=\int_0^Tdt\left[
-\frac{(\dot x-b(x))^2}{4D}+\frac12b'(x)
-\right],}
-$$
-
-并配合该规则的测度。Jacobian 补偿了变量换元时邻域体积的伸缩；它没有增加一种新的物理力。对这里的加性噪声，前点与中点方案可以收敛到同一扩散，但各自的漂移求值、测度和 Jacobian 必须一致使用。
-
-对于光滑曲线附近的小管概率，Onsager–Machlup 泛函也有相应解释，仍需指定邻域与参考测度。这里不展开一般几何随机微积分，只保留关键区别：**平方噪声代价给出了核心权重结构，完整的有限噪声路径表示还包含换元和测度信息。** 关于这些构造的进一步讨论，可参见 [Chow 与 Buice 的综述](https://link.springer.com/article/10.1186/s13408-015-0018-5)。
-
-**上一篇：**[Fokker–Planck Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/) · **下一篇：**[Markov Processes and Generators](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/markov_generators/)。
+**上一篇：**[Fokker–Planck Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/) · **下一篇：**[Stochastic Processes：随机过程与随机微积分导览](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/)。

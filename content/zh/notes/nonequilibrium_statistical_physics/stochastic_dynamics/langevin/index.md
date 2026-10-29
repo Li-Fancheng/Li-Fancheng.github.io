@@ -1,14 +1,15 @@
 ---
-title: "Langevin Dynamics：从牛顿运动到随机轨迹"
+title: "Langevin Dynamics：从牛顿方程到随机轨迹"
 subtitle: "PART I · 粒子视角 · Forces, Noise, and Stochastic Trajectories"
 date: 2026-10-28
+lastmod: 2026-10-29
 weight: 1
-summary: "从确定性与隐变量进入环境约化，在短记忆近似下建立 Langevin 与 Itô 描述，用 OU 和双稳势提出涨落、弛豫与换阱问题。"
+summary: "从环境约化与待定噪声幅度建立 Langevin，计算速度关联、弹道到扩散跨越、OU 回复与受控响应。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true
 toc: true
-reading_time: 55
+reading_time: 45
 tags: [非平衡统计物理, 随机动力学, Langevin]
 ---
 

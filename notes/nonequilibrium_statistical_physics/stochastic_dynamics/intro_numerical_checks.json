@@ -1,0 +1,41 @@
+{
+  "ring": {
+    "normalization_error": 0.0,
+    "stationary_current": 0.13333333333333333,
+    "diffusion": 0.4
+  },
+  "levy": {
+    "walk_front_max_excess": 0.0,
+    "walk_speed_max_error": 0.0,
+    "stable_characteristic_function_error": 0.0008728376265559707
+  },
+  "ctrw_fbm": {
+    "fbm_covariance_factor_relative_error": 4.058603188911033e-15,
+    "fbm_lag_one_correlation": -0.24231979609508647,
+    "fbm_lag_one_exact": -0.242141716744801,
+    "ctrw_lag_one_correlation": 0.0015063429184794747,
+    "ctrw_mean_steps_first_5": 8.73828125,
+    "ctrw_mean_steps_age_10_to_15": 3.6748046875,
+    "fbm_msd_first_5": 2.660073664854088,
+    "fbm_msd_age_10_to_15": 2.7849727216949374,
+    "time_average_delay": 0.2,
+    "ctrw_time_average_T10": 0.26462195444915254,
+    "ctrw_time_average_T20": 0.19924501050420168,
+    "fbm_time_average_T10": 0.3808823515717122,
+    "fbm_time_average_T20": 0.38038029243373145,
+    "fbm_time_average_exact": 0.3807307877431757
+  },
+  "histories": {
+    "bridge_sample_variance_max_absolute_error": 0.006166906476257866,
+    "bridge_endpoint_max_error": 0.0,
+    "brownian_area_grid_variance": 1.066665,
+    "brownian_area_continuous_variance": 1.0666666666666667,
+    "brownian_area_sample_variance": 1.0536155289116096
+  },
+  "analytical": {
+    "inertial_correlation_integral_max_error": 3.552713678800501e-15,
+    "persistent_correlation_integral_max_error": 7.105427357601002e-15,
+    "ring_time_reversal_log_ratio_error": 1.3322676295501878e-15,
+    "lomax_waiting_laplace_small_s_relative_error": 0.0013536899510528944
+  }
+}
