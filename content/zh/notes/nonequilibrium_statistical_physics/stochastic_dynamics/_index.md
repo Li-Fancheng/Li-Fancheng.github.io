@@ -15,6 +15,8 @@ tags: [非平衡统计物理, 随机动力学, 随机过程]
 
 **I 轨迹 · II 概率流 · III 随机历史 · IV 常见随机过程与工具。** 前三篇沿着连续的物理问题展开；第四篇是一份可以单独查阅的过程指南。自由 Brownian 和线性 OU 是主线，常漂移与驱动圆环提供最简单的输运和非平衡稳态例子。
 
+{{% shared-note "nonequilibrium_statistical_physics/stochastic_dynamics" %}}
+
 ## 从一次运动到许多可能的历史
 
 1. **[Langevin Dynamics：从牛顿方程到随机轨迹](langevin/)**\
@@ -26,7 +28,7 @@ tags: [非平衡统计物理, 随机动力学, 随机过程]
 4. **[Stochastic Processes：随机过程与随机微积分导览](stochastic_processes/)**\
    当运动出现跳跃、持续直行、重尾位移、长等待或相关增量，应怎样选模型？对照 Wiener、OU、Poisson、持续游走、Lévy、CTRW 与 fBm，并查阅 Itô/Stratonovich 规则。
 
-前三篇不要求预先掌握生成元、半群、Feynman–Kac 或响应场。第四篇也不将这些工具作为阅读终点；它帮助区分过程模型、积分规则与统计表示，适合读文献时按需返回。
+前三篇不要求预先掌握生成元、半群、Feynman–Kac 或响应场。第四篇既可接着读，也适合读文献时按需返回；其中 Itô 等距、CTRW 的 Laplace 推导和时间平均 MSD 的细算放在可展开的选读框，首次阅读可以跳过。
 
 ## 主线模型与统一记号
 

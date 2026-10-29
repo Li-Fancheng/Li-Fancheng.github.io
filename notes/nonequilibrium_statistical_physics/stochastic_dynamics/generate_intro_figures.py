@@ -20,6 +20,38 @@ ROOT = style.ROOT
 BLUE, ORANGE, GREEN, INK = style.BLUE, style.ORANGE, style.GREEN, style.INK
 
 
+def brownian_overview():
+    """The same free dynamics, with an additional endpoint condition in C."""
+    rng = np.random.default_rng(2026102914)
+    diffusion, duration, endpoint, steps = .3, 2., 1.2, 400
+    t = np.linspace(0, duration, steps + 1)
+    w = np.c_[np.zeros(5), np.cumsum(
+        rng.normal(scale=np.sqrt(duration / steps), size=(5, steps)), axis=1)]
+    free = np.sqrt(2 * diffusion) * w
+    bridges = free - t[None, :] / duration * free[:, -1:] + endpoint * t / duration
+    fig, ax = plt.subplots(1, 3, figsize=(12.6, 4.2), layout="constrained")
+    for path in free:
+        ax[0].plot(t, path, color=BLUE, alpha=.55, lw=.85)
+    ax[0].axhline(0, color=INK, ls="--", lw=1.2)
+    ax[0].set(title="A  Repeated free trajectories", xlabel="time t", ylabel="position x")
+    x = np.linspace(-3.8, 3.8, 500)
+    for time, color in zip([.15, .6, 2.], [GREEN, ORANGE, BLUE]):
+        density = style.gaussian(x, 0., 2 * diffusion * time)
+        ax[1].plot(x, density, color=color, label=f"t = {time:g}")
+    ax[1].set(title="B  Unconditioned densities", xlabel="position x", ylabel="density p(x,t)", ylim=(0, 1.4))
+    ax[1].legend(fontsize=10)
+    for path in bridges:
+        ax[2].plot(t, path, color=ORANGE, alpha=.55, lw=.85)
+    ax[2].plot(t, endpoint * t / duration, color=INK, ls="--", lw=1.2)
+    ax[2].scatter([0, duration], [0, endpoint], color=INK, s=25, zorder=5)
+    ax[2].set(title="C  Conditioned on the endpoint", xlabel="time t", ylabel="position x")
+    # Identical trajectory axes make the additional endpoint constraint visible.
+    extent = max(np.max(np.abs(free)), np.max(np.abs(bridges))) + .15
+    for panel in [ax[0], ax[2]]:
+        panel.set(xlim=(0, duration), ylim=(-extent, extent))
+    style.save(fig, "14_brownian_views")
+
+
 def inertial_crossover():
     u = np.geomspace(1e-3, 100, 800)
     exact = 2 * (u + np.expm1(-u))
@@ -204,6 +236,7 @@ def analytical_checks():
 
 
 if __name__=="__main__":
+    brownian_overview()
     inertial_crossover()
     checks={"ring":ring_current(),"levy":levy_comparison(),"ctrw_fbm":ctrw_fbm(),
             "histories":history_observables(),"analytical":analytical_checks()}
