@@ -129,27 +129,36 @@ C_v(t)=\langle v(t)v_0\rangle_{\mathrm{st}}
 \[ \langle[x(t)-x_0]^2\rangle =2D\left[t-\tau_m\left(1-e^{-t/\tau_m}\right)\right] , \qquad D=\frac{k_{\mathrm B}T}{\zeta}.\]
 
 这个结果完整地描述了粒子从弹道运动到扩散运动的过渡。
-- 短时间 \(t\ll\tau_m\)：将指数函数展开，得到 \(\langle\Delta x^2(t)\rangle\simeq(k_{\mathrm B}T/m)t^2\)。此时速度尚未明显改变，粒子近似做匀速运动。
-- 长时间 \(t\gg\tau_m\)：指数项逐渐消失，得到 \(\langle\Delta x^2(t)\rangle\simeq2Dt\)。此时粒子已经失去初始速度的记忆，表现为正常扩散。
 
-其中，
-\( D=\frac{k_{\mathrm B}T}{\zeta} \) 是 Einstein 关系，它将宏观扩散系数与温度和微观阻尼联系起来。
+当 \(t\ll\tau_m\) 时，将指数函数展开，可以得到 \(\langle\Delta x^2(t)\rangle\simeq(k_{\mathrm B}T/m)t^2\)。此时粒子的速度尚未明显改变，位移近似随时间线性增长，因此均方位移正比于 \(t^2\)，这就是弹道运动。
 
+当 \(t\gg\tau_m\) 时，指数项逐渐消失，均方位移趋于 \(\langle\Delta x^2(t)\rangle\simeq2Dt\)。粒子已经失去对初始速度的记忆，位移的均方值转而随时间线性增长，这正是正常扩散的特征。这里的 \(D\) 就是长时间尺度上的扩散系数。
 
 ![惯性 Brownian 粒子的速度相关与弹道到扩散跨越](../figures/09_inertial_crossover.svg)
 
-*图 1a｜以 $\tau_m$ 为时间单位、$D\tau_m$ 为均方位移单位。左图的精确 MSD 在短时接近斜率 2、长时接近斜率 1；右图的速度关联在 $\tau_m$ 尺度上衰减。初速度为平稳热准备，图中两条渐近线只在各自的时间极限有效。*
+*图 1｜左图展示均方位移从短时 \(t^2\) 增长到长时 \(t\) 增长的过渡；右图展示速度关联函数在时间尺度 \(\tau_m\) 上的指数衰减。时间以 \(\tau_m\) 为单位，均方位移以 \(D\tau_m\) 为单位。*
 
-图中长时扩散的斜率也可以不做完整积分就读出。对 MSD 求时间导数，得到 $2\int_0^t C_v(s)ds$；当记录远长于关联时间，这个积分已接近一个常数。因此
+除了得到完整的均方位移，我们还可以从速度关联函数直接确定长时间的扩散系数。对均方位移关于时间求导，有 \(\frac{d}{dt}\langle\Delta x^2(t)\rangle=2\int_0^t C_v(s)\,ds\)。当观察时间远大于速度关联时间时，积分已经接近一个常数，而此时均方位移的增长率正是 \(2D\)。因此，
 
-$$
-\boxed{D=\int_0^\infty C_v(s)\,ds
-=\frac{k_{\mathrm B}T}{m}\tau_m=\mu k_{\mathrm B}T}.
-$$
+\[
+D=\int_0^\infty C_v(s)\,ds
+=\frac{k_{\mathrm B}T}{m}\tau_m
+=\frac{k_{\mathrm B}T}{\zeta}.
+\]
 
-这里 $\mu=\zeta^{-1}$ 是迁移率。积分表达式就是当前模型的 Green–Kubo 关系：速度涨落越强、同一方向保持越久，位置扩散越快。质量较大的粒子热速度平方较小，记忆时间却较长；在这个模型里两种质量依赖恰好抵消，长时 $D$ 不依赖 $m$，短时跨越仍依赖它。
+这就是扩散系数的 Green–Kubo 关系。它给出了一个很直观的物理图像：粒子的速度涨落越强，或者速度能够在同一方向上保持得越久，位置扩散就越快。
 
-为什么最后的式子还包含受力响应？施加恒力 $f$ 后，平均速度满足 $m\,d\langle v\rangle/dt=-\zeta\langle v\rangle+f$，长期漂移速度为 $f/\zeta$，所以迁移率 $\mu=\partial\langle v\rangle_{\mathrm{st}}/\partial f=1/\zeta$。同一个液体既阻碍受力运动，也提供热冲量；用热动能固定冲量强度后，扩散系数便满足 $D=\mu k_{\mathrm B}T$。这就是 Einstein 关系在当前模型中的来由。[Tong 的讲义](https://davidtong.org/pdfs/teaching/kinetic-theory/kinetic3.pdf)也从速度记忆讨论了这一计算。
+在当前模型中，质量较大的粒子具有较小的热速度，但其速度弛豫时间 \(\tau_m=m/\zeta\) 也更长。这两种质量依赖恰好相互抵消，因此长时间的扩散系数 \(D\) 与粒子质量无关。不过，质量仍然决定了从弹道运动过渡到扩散运动所需的时间。
+
+最后，我们还可以将扩散与粒子受到外力时的响应联系起来。假设对粒子施加一个恒定的外力 \(f\)，那么平均速度满足 \(m\,d\langle v\rangle/dt=-\zeta\langle v\rangle+f\)。经过足够长的时间，粒子达到稳定的漂移速度 \(\langle v\rangle_{\mathrm{st}}=f/\zeta\)。因此，定义迁移率（mobility）为单位外力引起的稳态速度响应，就有 \(\mu=\partial\langle v\rangle_{\mathrm{st}}/\partial f=1/\zeta\)。
+
+将这一结果与前面得到的扩散系数比较，便得到
+
+\[
+D=\mu k_{\mathrm B}T.
+\]
+
+这就是著名的 Einstein 关系。它将粒子在没有外力时的自发扩散，与受到外力时的运动响应联系了起来。两者看起来是不同的现象，但实际上都受到同一个环境的影响：液体一方面通过摩擦阻碍粒子运动，另一方面又通过热涨落不断推动粒子。对于平衡热浴，涨落与耗散之间的联系最终保证了 Einstein 关系成立。
 
 <span id="15-从-langevin-到-itô在状态空间中统一描述"></span>
 <span id="二阶运动方程怎样变成一阶状态方程"></span>
