@@ -131,6 +131,7 @@ C_v(t)=\langle v(t)v_0\rangle_{\mathrm{st}}
 这个结果完整地描述了粒子从弹道运动到扩散运动的过渡。
 - 短时间 \(t\ll\tau_m\)：将指数函数展开，得到 \(\langle\Delta x^2(t)\rangle\simeq(k_{\mathrm B}T/m)t^2\)。此时速度尚未明显改变，粒子近似做匀速运动。
 - 长时间 \(t\gg\tau_m\)：指数项逐渐消失，得到 \(\langle\Delta x^2(t)\rangle\simeq2Dt\)。此时粒子已经失去初始速度的记忆，表现为正常扩散。
+
 其中，
 \( D=\frac{k_{\mathrm B}T}{\zeta} \) 是 Einstein 关系，它将宏观扩散系数与温度和微观阻尼联系起来。
 
