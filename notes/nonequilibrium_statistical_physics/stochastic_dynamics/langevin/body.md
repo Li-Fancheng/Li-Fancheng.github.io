@@ -95,13 +95,19 @@ $$
 现在才引入**平衡热浴**的物理条件。温度为 $T$ 的液体不能把重粒子的长期动能任意调大或调小；均分定理要求 $m\langle v^2\rangle_{\mathrm{st}}/2=k_{\mathrm B}T/2$，因此
 
 $$
-A=2\zeta k_{\mathrm B}T,
-\qquad
-\boxed{m\ddot X_t=-\zeta\dot X_t-V'(X_t)
-+\sqrt{2\zeta k_{\mathrm B}T}\,\xi(t).}
+A=2\zeta k_{\mathrm B}T.
 $$
 
-$\xi$ 表示单位强度 Gaussian 白噪声，$\langle\xi(t)\xi(s)\rangle=\delta(t-s)$。这是惯性 Langevin 方程；它保留牛顿式的受力结构，同时将环境细节改写为摩擦和随机力。噪声幅度由热平衡与方差收支共同固定。主动环境或外部随机驱动也能写类似方程，但 $A$ 不必满足这个平衡约束。
+将这个强度代回受力式，便得到惯性 Langevin 方程：
+
+$$
+\boxed{\begin{aligned}
+m\ddot X_t&=-\zeta\dot X_t-V'(X_t)\\
+&\quad+\sqrt{2\zeta k_{\mathrm B}T}\,\xi(t).
+\end{aligned}}
+$$
+
+$\xi$ 表示单位强度 Gaussian 白噪声，$\langle\xi(t)\xi(s)\rangle=\delta(t-s)$。方程保留牛顿式的受力结构，同时将环境细节改写为摩擦和随机力。噪声幅度由热平衡与方差收支共同固定。主动环境或外部随机驱动也能写类似方程，但 $A$ 不必满足这个平衡约束。
 
 ## 1.4 同一颗粒子：从弹道运动到扩散 {#inertial-msd}
 
@@ -110,8 +116,8 @@ $\xi$ 表示单位强度 Gaussian 白噪声，$\langle\xi(t)\xi(s)\rangle=\delta
 选 $X_0$ 固定、初速度从零均值热平衡分布采样，$\langle v_0^2\rangle=k_{\mathrm B}T/m$，并与未来噪声独立。这使速度过程从一开始就平稳。将上节的解乘以 $v_0$ 再平均，噪声部分不贡献交叉平均，故
 
 $$
-\boxed{C_v(t)=\langle v_tv_0\rangle_{\mathrm{st}}
-=\frac{k_{\mathrm B}T}{m}e^{-|t|/\tau_m}.}
+C_v(t)=\langle v_tv_0\rangle_{\mathrm{st}}
+=\frac{k_{\mathrm B}T}{m}e^{-|t|/\tau_m}.
 $$
 
 即使 $\langle v_t\rangle=0$，$C_v(t)$ 也不为零：若粒子现在向右，过很短时间仍较可能向右。平均速度把左右方向抵消了，关联函数保留了方向持续的信息。
@@ -150,12 +156,14 @@ $$
 图中长时扩散的斜率也可以不做完整积分就读出。对 MSD 求时间导数，得到 $2\int_0^t C_v(s)ds$；当记录远长于关联时间，这个积分已接近一个常数。因此
 
 $$
-\boxed{D=\int_0^\infty C_v(s)ds
-=\frac{k_{\mathrm B}T}{m}\tau_m
-=\mu k_{\mathrm B}T,\qquad\mu=\zeta^{-1}.}
+\boxed{\begin{aligned}
+D&=\int_0^\infty C_v(s)ds\\
+&=\frac{k_{\mathrm B}T}{m}\tau_m
+=\mu k_{\mathrm B}T.
+\end{aligned}}
 $$
 
-第一种写法是这里的 Green–Kubo 关系：速度涨落越强、同一方向保持越久，位置扩散越快。质量较大的粒子热速度平方较小，记忆时间却较长；在这个模型里两种质量依赖恰好抵消，长时 $D$ 不依赖 $m$，短时跨越仍依赖它。
+这里 $\mu=\zeta^{-1}$ 是迁移率。积分表达式就是当前模型的 Green–Kubo 关系：速度涨落越强、同一方向保持越久，位置扩散越快。质量较大的粒子热速度平方较小，记忆时间却较长；在这个模型里两种质量依赖恰好抵消，长时 $D$ 不依赖 $m$，短时跨越仍依赖它。
 
 为什么最后的式子还包含受力响应？施加恒力 $f$ 后，平均速度满足 $m\,d\langle v\rangle/dt=-\zeta\langle v\rangle+f$，长期漂移速度为 $f/\zeta$，所以迁移率 $\mu=\partial\langle v\rangle_{\mathrm{st}}/\partial f=1/\zeta$。同一个液体既阻碍受力运动，也提供热冲量；用热动能固定冲量强度后，扩散系数便满足 $D=\mu k_{\mathrm B}T$。这就是 Einstein 关系在当前模型中的来由。[Tong 的讲义](https://davidtong.org/pdfs/teaching/kinetic-theory/kinetic3.pdf)也从速度记忆讨论了这一计算。
 
@@ -169,11 +177,10 @@ $$
 如果只关心 $t\gg\tau_m$ 的运动，并且力和位置在速度弛豫期间变化很小，就可消去快速速度。对常摩擦和加性热噪声，得到
 
 $$
-\boxed{dX_t=\mu F(X_t)dt+\sqrt{2D}\,dW_t,
-\qquad F(x)=-V'(x),\quad D=\mu k_{\mathrm B}T.}
+\boxed{dX_t=\mu F(X_t)dt+\sqrt{2D}\,dW_t.}
 $$
 
-这里 $W_t$ 是标准 Wiener 过程。读懂方程所需的第一条规则是：不相交时间窗的 $\Delta W$ 独立，且 $\Delta W\sim\mathcal N(0,\Delta t)$。所以一小步由平均位移 $\mu F(x)\Delta t$ 和方差 $2D\Delta t$ 的随机位移组成。它的准确含义是将这些增量积分累加；形式记号 $\xi=\dot W$ 不代表普通可微函数。
+这里仍取 $F(x)=-V'(x)$、$D=\mu k_{\mathrm B}T$，$W_t$ 是标准 Wiener 过程。读懂方程所需的第一条规则是：不相交时间窗的 $\Delta W$ 独立，且 $\Delta W\sim\mathcal N(0,\Delta t)$。所以一小步由平均位移 $\mu F(x)\Delta t$ 和方差 $2D\Delta t$ 的随机位移组成。它的准确含义是将这些增量积分累加；形式记号 $\xi=\dot W$ 不代表普通可微函数。
 
 自由情形 $X_t=x_0+\sqrt{2D}W_t$ 立即给出 $\langle X_t\rangle=x_0$、$\langle(X_t-x_0)^2\rangle=2Dt$，与上一节长时极限相符。一般有效模型也可用漂移 $b(x)$ 写成 $dX_t=b(X_t)dt+\sqrt{2D}\,dW_t$，但 $b,D$ 不一定具有热平衡解释。
 
@@ -258,8 +265,8 @@ $$
 稳态初始条件满足 $\mathbb E X_0=0$、$\mathbb E X_0^2=D/\gamma$。对 $t\ge s$，把精确解从 $s$ 开始写出，后续噪声积分与 $X_s$ 独立，于是
 
 $$
-\boxed{C(t-s)=\langle X_tX_s\rangle_{\mathrm{ss}}
-=\frac D\gamma e^{-\gamma|t-s|}.}
+C(t-s)=\langle X_tX_s\rangle_{\mathrm{ss}}
+=\frac D\gamma e^{-\gamma|t-s|}.
 $$
 
 相关时间 $1/\gamma$ 描述偏离的信息多久以后仍然可见。它同时决定时间平均的统计效率。令 $\overline X_{\mathcal T}=\mathcal T^{-1}\int_0^{\mathcal T}X_tdt$，则

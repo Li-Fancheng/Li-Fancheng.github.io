@@ -55,8 +55,8 @@ $$
 对确定性运动，短时间 $h$ 内通过某个截面的粒子，来自上游宽度约为 $|b(x)|h$ 的区域。该区域的概率约为密度乘以宽度；按方向带上符号，再除以时间，得到 $J_{\mathrm{drift}}(x,t)=b(x)p(x,t)$。因此
 
 $$
-\boxed{\frac{\partial p(x,t)}{\partial t}
-=-\frac{\partial}{\partial x}\left[b(x)p(x,t)\right].}
+\frac{\partial p(x,t)}{\partial t}
+=-\frac{\partial}{\partial x}\left[b(x)p(x,t)\right].
 $$
 
 这是一维确定性动力学诱导的 Liouville 型输运方程。它不需要微观运动具有随机性，初态中的概率已经足以成为输运对象。对于一般非 Hamiltonian 流，局部体积可以收缩或膨胀；这里使用的是概率守恒的广义输运含义。
@@ -114,19 +114,24 @@ J_{i+1/2}=\frac{P_i-P_{i+1}}{2\tau}
 \longrightarrow-D\frac{\partial p(x,t)}{\partial x}.
 $$
 
-例如左格点平均有 100 个粒子、右格点有 20 个，一步里平均有 50 个向右通过界面，10 个向左通过，净值为 40 个向右。两种跳跃率相等，两种通量却不相等。连续极限中，格点占据差变成密度梯度，得到 Fick 定律与概率扩散：
+例如左格点平均有 100 个粒子、右格点有 20 个，一步里平均有 50 个向右通过界面，10 个向左通过，净值为 40 个向右。两种跳跃率相等，两种通量却不相等。连续极限中，格点占据差变成密度梯度，得到 Fick 定律：
 
 $$
-\boxed{J_{\mathrm{diff}}(x,t)=-D\frac{\partial p(x,t)}{\partial x},
-\qquad\frac{\partial p(x,t)}{\partial t}
-=D\frac{\partial^2p(x,t)}{\partial x^2}.}
+\boxed{J_{\mathrm{diff}}(x,t)=-D\frac{\partial p(x,t)}{\partial x}.}
+$$
+
+将这份净流代入概率连续性方程，便恢复刚才由随机游走得到的扩散方程：
+
+$$
+\frac{\partial p(x,t)}{\partial t}
+=D\frac{\partial^2p(x,t)}{\partial x^2}.
 $$
 
 若从一点 $x_0$ 出发，第一篇的独立 Gaussian 增量给出
 
 $$
-\boxed{G(x,t\mid x_0,0)=\frac1{\sqrt{4\pi Dt}}
-\exp\left[-\frac{(x-x_0)^2}{4Dt}\right],\qquad t>0.}
+G(x,t\mid x_0,0)=\frac1{\sqrt{4\pi Dt}}
+\exp\left[-\frac{(x-x_0)^2}{4Dt}\right],\qquad t>0.
 $$
 
 $G$ 是给定初态的转移密度。它的中心保持 $x_0$，方差为 $2Dt$，与轨迹计算一致。密度峰降低并不表示概率消失，整条曲线面积仍为一；同样，即使平均位置不动，各次样本仍在不断离开原点。
@@ -143,14 +148,19 @@ $G$ 是给定初态的转移密度。它的中心保持 $x_0$，方差为 $2Dt$�
 
 *图 2a｜三图采用同一个初始高斯分布，均值为 $2$、方差为 $0.04$。只保留 $b=-x$ 时，概率向原点移动并持续收缩；只保留 $D=0.4$ 的扩散时，中心不动而宽度增加；两者结合时，中心返回，宽度接近有限值。各图纵轴标度独立，以看清不同的峰形变化。*
 
-恢复漂移以后，确定性部分以速度 $b(x)$ 搬运概率，随机部分按密度梯度扩散。将两份流相加并代入连续性方程，得到完整形式
+恢复漂移以后，确定性部分以速度 $b(x)$ 搬运概率，随机部分按密度梯度扩散。两份流相加，得到
+
+$$
+J(x,t)=b(x)p(x,t)-D\frac{\partial p(x,t)}{\partial x}.
+$$
+
+一个区间的概率变化由这份总流在两端的差决定。代入连续性方程，得到完整的密度演化方程：
 
 $$
 \boxed{\begin{aligned}
 \frac{\partial p(x,t)}{\partial t}
-&=-\frac{\partial}{\partial x}[b(x)p(x,t)]
-+D\frac{\partial^2p(x,t)}{\partial x^2},\\
-J(x,t)&=b(x)p(x,t)-D\frac{\partial p(x,t)}{\partial x}.
+&=-\frac{\partial}{\partial x}[b(x)p(x,t)]\\
+&\quad+D\frac{\partial^2p(x,t)}{\partial x^2}.
 \end{aligned}}
 $$
 
@@ -159,13 +169,13 @@ $$
 对热浴中的过阻尼粒子，$b=\mu F$、$\mu=1/\zeta$。若力来自真实势能 $V(x)$，$F=-V'$，并且热浴满足 Einstein 关系 $D=\mu k_{\mathrm B}T$，还可写成 Smoluchowski 形式
 
 $$
-\boxed{\frac{\partial p(x,t)}{\partial t}
+\frac{\partial p(x,t)}{\partial t}
 =\frac1\zeta\frac{\partial}{\partial x}
 \left[V'(x)p(x,t)
-+k_{\mathrm B}T\frac{\partial p(x,t)}{\partial x}\right].}
++k_{\mathrm B}T\frac{\partial p(x,t)}{\partial x}\right].
 $$
 
-这个形式直接连接了势能、摩擦、温度与概率演化；一般有效模型的漂移和扩散则未必具有这种热浴解释。
+这里漂移与扩散都带有同一个 $1/\zeta$：增大摩擦会同时减慢受力搬运和热扩散。在固定势能与温度下，决定二者相对强弱的势能与热能尺度没有改变，所以最终的平衡密度不随摩擦改变，弛豫快慢却会改变。这个特殊形式用到了保守力、常摩擦和平衡热浴；一般有效模型的漂移与噪声强度并不一定由同一个温度约束。
 
 ### 常漂移：中心移动与扩散宽度可以分开
 
@@ -272,8 +282,8 @@ $$
 宽度达到 $D/\gamma$ 后，两项流逐点相消。稳态密度为
 
 $$
-\boxed{p_{\mathrm{st}}(x)=\sqrt{\frac\gamma{2\pi D}}
-\exp\left[-\frac{\gamma x^2}{2D}\right].}
+p_{\mathrm{st}}(x)=\sqrt{\frac\gamma{2\pi D}}
+\exp\left[-\frac{\gamma x^2}{2D}\right].
 $$
 
 在这份高斯密度中，$p_x=-(\gamma x/D)p$，所以 $-Dp_x=\gamma xp$ 恰好抵消 $-\gamma xp$。这里每个位置的**净**流为零，并非每个方向都没有粒子通过：热粒子仍来回移动，统计上两个方向的通量相抵。离开稳态、例如突然升温以后，这种逐点抵消被打破，才会有改变宽度的净流。
@@ -345,7 +355,7 @@ $$
 于是 $DT''(x)=-1$，两端已到目标，所以 $T(0)=T(L)=0$。积分两次即得
 
 $$
-\boxed{T(x)=\frac{x(L-x)}{2D}.}
+T(x)=\frac{x(L-x)}{2D}.
 $$
 
 越靠近边界，等待越短；从中点出发平均为 $L^2/(8D)$。将整个区间放大一倍，退出时间增加为四倍；将 $D$ 增大一倍，退出时间减半。这正是扩散探索一个给定距离所需的时间尺度。上面的短时递推没有求完整密度，却直接算出了事件平均；更一般的受力、单端目标和罕见等待放在[首次到达选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/markov_generators/)。
@@ -368,8 +378,8 @@ $$
 任意初始分布都可看成许多点初态的加权组合。Fokker–Planck 方程对密度是线性的，因此每个初始点贡献的传播结果可以相加：
 
 $$
-\boxed{p(x,t)=\int dx_0\,
-G(x,t\mid x_0,0)p_0(x_0).}
+p(x,t)=\int dx_0\,
+G(x,t\mid x_0,0)p_0(x_0).
 $$
 
 这里没有要求轨道动力学对 $x$ 是线性的。即使 $b(x)$ 非线性，只要粒子独立、漂移与扩散系数不由密度反馈决定，给定过程的密度演化仍然线性。它表达的是不同初始样本的概率可以直接混合。
@@ -381,12 +391,13 @@ $$
 对于正确状态空间上的 Markov 过程，可以把从 $0$ 到 $t$ 的传播在中间时刻 $s$ 拆开。先到达所有可能的中间位置 $y$，再从每个 $y$ 继续演化，将中间位置积分掉：
 
 $$
-\boxed{G(x,t\mid x_0,0)
-=\int dy\,G(x,t\mid y,s)G(y,s\mid x_0,0),
-\qquad 0\lt s\lt t.}
+\boxed{\begin{gathered}
+G(x,t\mid x_0,0)\\
+=\int dy\,G(x,t\mid y,s)G(y,s\mid x_0,0).
+\end{gathered}}
 $$
 
-这就是 Chapman–Kolmogorov 关系。它说明有限时间的概率传播可以由连续的条件传播连接起来。若尚未消去速度，单独的位置不具备所需闭合性，应当在 $(x,v)$ 上连接传播核；前面对状态空间的选择在这里仍然重要。
+这里 $0\lt s\lt t$。这就是 Chapman–Kolmogorov 关系：先传播到中间时刻，再从那里继续，合起来应与一次传播到终点相同。若尚未消去速度，单独的位置不具备所需闭合性，应当在 $(x,v)$ 上连接传播核；前面对状态空间的选择在这里仍然重要。
 
 ### 保留中间位置，就得到多时刻概率
 
@@ -427,10 +438,9 @@ $$
 将它们放进相空间连续性方程，得到
 
 $$
-\boxed{
 \partial_t\rho=-\partial_x(v\rho)
 -\partial_v\left[\left(\frac{F(x)}m-\frac\zeta m v\right)\rho\right]
-+D_v\partial_v^2\rho.}
++D_v\partial_v^2\rho.
 $$
 
 这就是 Kramers 方程，也是完整状态 $(x,v)$ 上的 Fokker–Planck 方程。它清楚地区分了空间搬运和速度扩散：没有直接的 $\partial_x^2\rho$ 项，位置仍会因随机速度的累积而分散。

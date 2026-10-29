@@ -31,10 +31,11 @@ $$
 把时间等分为 $N$ 段，记 $\varepsilon=T/N$、$t_k=k\varepsilon$，$x_N=x_f$。对时间齐次 Markov 过程，反复使用 Chapman–Kolmogorov 关系可得
 
 $$
-\boxed{
-G(x_f,T\mid x_0,0)
+\boxed{\begin{gathered}
+G(x_f,T\mid x_0,0)\\
 =\int\prod_{k=1}^{N-1}dx_k
-\prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k).}
+\prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k).
+\end{gathered}}
 $$
 
 这里每个短时核先回答“从当前状态到下一状态的概率是多少”。沿着指定的离散历史，把这些条件密度相乘，便得到它的联合权重；对所有中间位置积分，便将所有可能历史的贡献合并起来。对精确转移核，这个公式在任意有限切片数下都成立，还不需要任何连续路径积分的形式操作。
@@ -97,8 +98,8 @@ $$
 对光滑候选曲线，离散平方和形式上对应
 
 $$
-\boxed{S_0[x]=\frac1{4D}\int_0^T
-\left[\frac{dx(t)}{dt}-b(x(t))\right]^2dt.}
+S_0[x]=\frac1{4D}\int_0^T
+\left[\frac{dx(t)}{dt}-b(x(t))\right]^2dt.
 $$
 
 $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速度。噪声是高斯的，因此这种补偿的平方决定指数代价。对同一离散化、同一分辨率下的两段历史，作用量差直接决定其密度权重之比中的指数部分。
@@ -112,8 +113,10 @@ $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速
 时间切片越来越细时，人们把这份多重积分简写为路径积分：
 
 $$
-\boxed{G(x_f,T\mid x_0,0)
-=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\;e^{-S[x]}.}
+\boxed{\begin{gathered}
+G(x_f,T\mid x_0,0)\\
+=\int_{x(0)=x_0}^{x(T)=x_f}\mathcal D x\,e^{-S[x]}.
+\end{gathered}}
 $$
 
 $S$ 与 $\mathcal D x$ 成对规定完整权重，包括离散 Gaussian 的归一化。这个记号概括的是刚刚构造的概率乘积与中间位置求和，没有添加新的运动规律。
@@ -143,10 +146,10 @@ $$
 其中 $m_t=x_0+(x_f-x_0)t/T$。右边第二项由分母的终点核抵消，所以条件密度仍是 Gaussian，并读出
 
 $$
-\boxed{\begin{aligned}
+\begin{aligned}
 \mathbb E[X_t\mid x_0,x_f]&=x_0+\frac tT(x_f-x_0),\\
 \operatorname{Var}(X_t\mid x_0,x_f)&=2Dt\left(1-\frac tT\right).
-\end{aligned}}
+\end{aligned}
 $$
 
 靠近出发时刻，运动还没积累多少涨落；靠近到达时刻，剩余时间已不允许位置任意偏离终点。两种限制使中点的方差最大，值为 $DT/2$。固定 $T$ 而增大 $D$，条件平均仍是同一条直线，周围的路径束却更宽；固定 $D$、在更长时间后到达同一终点，粒子也有更多时间中途游走。两端不变，绝不意味着中途运动已经确定。
@@ -212,8 +215,8 @@ $$
 这份分解在时间切片上也成立。终点所需的整体偏离由 $S_{\min}$ 提供指数代价，周围仍有无数个中途折返的 $q$ 需要求和。对于本模型，后者正是无漂移、两端回到零的 Gaussian 路径积分，给出
 
 $$
-\boxed{G(x_f,T\mid x_0,0)
-=\frac1{\sqrt{4\pi DT}}e^{-S_{\min}}.}
+G(x_f,T\mid x_0,0)
+=\frac1{\sqrt{4\pi DT}}e^{-S_{\min}}.
 $$
 
 前因子随 $D,T$ 改变，保证终点密度归一。只保留最小作用量，能够读取指数中终点的相对代价，却没有完成整份传播概率的计算。这个 Gaussian 例子中的分解是精确的，不依赖弱噪声近似；对一般非线性作用量，围绕主导历史的展开通常才是一种近似。
@@ -233,7 +236,7 @@ $$
 \operatorname{Var}(A_T)
 &=2D\int_0^Tdt\int_0^Tds\,\min(t,s)\\
 &=4D\int_0^Tdt\int_0^t s\,ds
-=\boxed{\frac{2D}{3}T^3}.
+=\frac{2D}{3}T^3.
 \end{aligned}
 $$
 
@@ -257,7 +260,7 @@ $$
 \begin{aligned}
 \log\frac{\mathbb P[\mathrm{history}]}{\mathbb P[\mathrm{reversed\ history}]}
 &=\sum_k\frac{(\Delta x_k+v\varepsilon)^2-(\Delta x_k-v\varepsilon)^2}{4D\varepsilon}\\
-&=\boxed{\frac vD\,\Delta x_{\mathrm{unwrapped}}}.
+&=\frac vD\,\Delta x_{\mathrm{unwrapped}}.
 \end{aligned}
 $$
 

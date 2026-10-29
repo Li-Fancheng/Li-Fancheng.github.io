@@ -36,8 +36,8 @@ $$
 不相交区间上的增量独立，样本路径连续。对 $t\ge s$，写 $W_t=W_s+(W_t-W_s)$，后面的增量与 $W_s$ 独立且均值为零，因而
 
 $$
-\boxed{\mathbb E[W_tW_s]=\min(t,s),\qquad
-\mathbb E[(W_t-W_s)^2]=|t-s|.}
+\mathbb E[W_tW_s]=\min(t,s),\qquad
+\mathbb E[(W_t-W_s)^2]=|t-s|.
 $$
 
 $\operatorname{Var}(W_t)=t$ 持续增大，所以位置并不平稳；任意等时长增量却有相同分布。乘上 $\sqrt{2D}$ 并加上初态，就得到[第一篇的自由位置过程](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/)。
@@ -55,7 +55,7 @@ $$
 对整段时间相加，最后一项不会像光滑运动那样消失：在分割变细时，$\sum_k(\Delta W_k)^2\to t$（依概率收敛）。所以
 
 $$
-\boxed{d(W_t^2)=2W_t\,dW_t+dt.}
+d(W_t^2)=2W_t\,dW_t+dt.
 $$
 
 这是二次变差的作用。把固定时长切成 $N$ 份，每个随机位移平方约为 $1/N$，总共 $N$ 份，贡献仍有限；光滑位移的平方则约为 $1/N^2$，总和趋于零。
@@ -69,10 +69,11 @@ $$
 先对 $f(X,t)$ 作 Taylor 展开。一次项保留 $f_x\Delta X$，二次项 $f_{xx}(\Delta X)^2/2$ 的主要部分为 $f_{xx}\sigma^2\Delta t/2$；$\Delta t\Delta W$ 和更高阶项在适当正则条件下消失。因此
 
 $$
-\boxed{
-df(X_t,t)=
-\left[f_t+b f_x+\frac{\sigma^2}{2}f_{xx}\right]dt
-+\sigma f_x\,dW_t.}
+\boxed{\begin{aligned}
+df(X_t,t)&=
+\left[f_t+b f_x+\frac{\sigma^2}{2}f_{xx}\right]dt\\
+&\quad+\sigma f_x\,dW_t.
+\end{aligned}}
 $$
 
 这就是 Itô 公式。额外的二阶导数项把随机轨道的粗糙性转化成了可观测量的系统性变化。
@@ -208,8 +209,8 @@ $$
 先解 $P_0=e^{-rt}$，再逐个积分，得到
 
 $$
-\boxed{\Pr(N_t=n)=e^{-rt}\frac{(rt)^n}{n!},
-\qquad\mathbb EN_t=\operatorname{Var}(N_t)=rt.}
+\Pr(N_t=n)=e^{-rt}\frac{(rt)^n}{n!},
+\qquad\mathbb EN_t=\operatorname{Var}(N_t)=rt.
 $$
 
 从 $P_0(t)$ 还可读出首次等待的密度 $\psi(\tau)=re^{-r\tau}$。已经等了一个平均等待时间 $1/r$，并不意味着事件“该来了”：下一小段仍以相同的率发生。这份无记忆性使当前计数足以预测后续统计。$N_t$ 本身随时间增加，非平稳；增量分布却只依赖时间窗长度。后面 CTRW 将专门改变这条等待规则。
@@ -227,8 +228,11 @@ $$
 对离散状态 $i\to j$ 的事件率 $w_{i\to j}$，概率收支推广为主方程
 
 $$
-\boxed{\frac{dp_i(t)}{dt}
-=\sum_{j\ne i}\left[w_{j\to i}p_j(t)-w_{i\to j}p_i(t)\right].}
+\boxed{\begin{aligned}
+\frac{dp_i(t)}{dt}
+={}&\sum_{j\ne i}\bigl[w_{j\to i}p_j(t)\\
+&\qquad{}-w_{i\to j}p_i(t)\bigr].
+\end{aligned}}
 $$
 
 每一项都是流入减流出，与第二篇的守恒思路相同。连续 Gaussian 小步不是唯一机制：有限的大跳需要保持非局部转移；只有跳幅变小、事件加快并有适当矩条件时，才可取漂移扩散极限。不能把重尾大跳无条件截成局部二阶 Fokker–Planck 方程。
@@ -249,8 +253,8 @@ $$
 \begin{aligned}
 \langle[X_t-X_0]^2\rangle
 &=2v^2\int_0^t(t-s)e^{-2\alpha s}ds\\
-&=\boxed{\frac{v^2}{\alpha}t
--\frac{v^2}{2\alpha^2}(1-e^{-2\alpha t})}.
+&=\frac{v^2}{\alpha}t
+-\frac{v^2}{2\alpha^2}(1-e^{-2\alpha t}).
 \end{aligned}
 $$
 
@@ -269,8 +273,8 @@ $$
 选择典型的一维对称稳定 Lévy 过程，其独立平稳增量满足
 
 $$
-\boxed{\mathbb E\,e^{ik(X_t-X_0)}=e^{-Kt|k|^\alpha},
-\qquad K>0,\quad0\lt \alpha\lt 2.}
+\mathbb E\,e^{ik(X_t-X_0)}=e^{-Kt|k|^\alpha},
+\qquad K>0,\quad0\lt \alpha\lt 2.
 $$
 
 $K$ 的单位是长度的 $\alpha$ 次方除以时间。特征函数依赖 $k(Kt)^{1/\alpha}$，故分位宽度等典型尺度正比于 $t^{1/\alpha}$。独立小步相加后仍保持这种稳定分布的形状，只改变尺度；普通 Gaussian 极限所需的有限步长方差在这里已失效。
@@ -328,9 +332,9 @@ $$
 对上述重尾，低频行为为 $1-\widetilde\psi(s)\sim a_\beta s^\beta$，$a_\beta>0$ 的单位是时间的 $\beta$ 次方。于是 $\widetilde m(s)\sim1/(a_\beta s^{1+\beta})$，利用 $t^\beta$ 的 Laplace 变换，得到长时
 
 $$
-\boxed{m(t)\sim\frac{t^\beta}{a_\beta\Gamma(1+\beta)},
+m(t)\sim\frac{t^\beta}{a_\beta\Gamma(1+\beta)},
 \qquad\langle[X_t-X_0]^2\rangle
-=\sigma_Y^2m(t)\propto t^\beta.}
+=\sigma_Y^2m(t)\propto t^\beta.
 $$
 
 系数 $a_\beta$ 取决于等待分布的具体尺度，指数 $\beta$ 由长尾决定。例如本专题数值图使用 $\psi(\tau)=\beta\tau_0^\beta/(\tau+\tau_0)^{1+\beta}$，这时 $a_\beta=\Gamma(1-\beta)\tau_0^\beta$。低频渐近对应长时；有限时数值不必处处落在一条纯幂律上。[MIT 的 CTRW 讲义](https://ocw.mit.edu/courses/18-366-random-walks-and-diffusion-fall-2006/f3713d068fc4f5de471d599badfa9691_lec23_chris_06.pdf)从同一更新结构展开。
@@ -350,9 +354,9 @@ Poisson 等待满足 $\Pr(\tau>a+h\mid\tau>a)=e^{-rh}$，与已经等了多久�
 保留 Gaussian 增量，也能得到次扩散：不再让它们独立，而让刚才的位移容易被后来的位移抵消。这个模型不需要等待时钟。标准化的 fractional Brownian motion $B_H(t)$ 是零均值 Gaussian 过程，$B_H(0)=0$，具有连续路径与协方差
 
 $$
-\boxed{\mathbb E[B_H(t)B_H(s)]
+\mathbb E[B_H(t)B_H(s)]
 =\frac12\left[t^{2H}+s^{2H}-|t-s|^{2H}\right],
-\qquad0\lt H\lt 1.}
+\qquad0\lt H\lt 1.
 $$
 
 它给出 $\operatorname{Var}(B_H(t))=t^{2H}$；位置非平稳，增量平稳。恢复物理单位可用 $X_t=X_0+\sqrt{2K_H}B_H(t)$，其中 $K_H$ 的单位是长度平方除以时间的 $2H$ 次方。$H=1/2$ 恰好恢复 Wiener。
@@ -468,8 +472,8 @@ $$
 进一步把所保留的状态统记为 $\boldsymbol Z$，许多白噪声驱动的 Markov 扩散都可以写成
 
 $$
-\boxed{d\boldsymbol Z_t=\boldsymbol a(\boldsymbol Z_t,t)dt
-+B(\boldsymbol Z_t,t)d\boldsymbol W_t.}
+d\boldsymbol Z_t=\boldsymbol a(\boldsymbol Z_t,t)dt
++B(\boldsymbol Z_t,t)d\boldsymbol W_t.
 $$
 
 这是 Itô 随机微分方程的一般形式。漂移 $\boldsymbol a$ 规定给定当前状态时的平均增量，矩阵 $B$ 规定各变量的随机增量如何由同一组独立 Wiener 驱动产生。小时间窗内的条件协方差为 $BB^{\mathsf T}h+o(h)$，所以噪声怎样耦合不同自由度也包含在这个表达式中。
