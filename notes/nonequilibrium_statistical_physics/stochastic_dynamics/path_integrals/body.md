@@ -51,7 +51,7 @@ $$
 传播核的拼接给出了框架，还需要知道局部转移规律。对前两篇的加性噪声模型
 
 $$
-dx(t)=b(x(t))dt+\sqrt{2D}\,dW_t.
+dx=b(x)dt+\sqrt{2D}\,dW_t.
 $$
 
 采用前点 Itô 的 Euler 离散，
@@ -97,7 +97,7 @@ $$
 
 $$
 S_0[x]=\frac1{4D}\int_0^T
-\left[\frac{dx(t)}{dt}-b(x(t))\right]^2dt.
+\left[\dot x-b(x)\right]^2dt.
 $$
 
 $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速度。噪声是高斯的，因此这种补偿的平方决定指数代价。对同一离散化、同一分辨率下的两段历史，作用量差直接决定其密度权重之比中的指数部分。
@@ -225,7 +225,7 @@ $$
 A_T=\int_0^T x(t)dt.
 $$
 
-令自由 Brownian 从 $x(0)=0$ 出发。对 $t\ge s$，$x(t)=x(s)+\sqrt{2D}(W_t-W_s)$，后续增量与 $x(s)$ 独立，所以 $\langle x(t)x(s)\rangle=2D\min(t,s)$。面积平均为零，方差却不会抵消：
+令自由 Brownian 从 $x_0=0$ 出发。对 $t\ge s$，$x(t)=x(s)+\sqrt{2D}(W_t-W_s)$，后续增量与 $x(s)$ 独立，所以 $\langle x(t)x(s)\rangle=2D\min(t,s)$。面积平均为零，方差却不会抵消：
 
 $$
 \begin{aligned}
