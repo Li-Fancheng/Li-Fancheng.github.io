@@ -329,7 +329,7 @@ OU 过程还可以用来描述其他具有线性回复机制的涨落。例如�
 
 在平衡态下，粒子的平均位置为零，但这并不意味着它在不同时刻的位置相互独立。如果粒子此刻偏离了平衡位置，那么经过一段较短的时间后，它通常仍会保留一部分原来的偏离。随着时间增长，回复力逐渐消除原来的偏离，而新的随机扰动又不断改变粒子的位置，因此先前状态对之后运动的影响会逐渐减弱。
 
-我们可以用位置自关联函数（autocorrelation function）来描述这种联系。对于处于稳态的 OU 过程，定义
+我们可以用位置自关联函数来描述这种联系。对于处于稳态的 OU 过程，定义
 
 \[
 C(\tau)=\langle x(t+\tau)x(t)\rangle_{\mathrm{st}}.
@@ -347,12 +347,10 @@ x(t+\tau)=e^{-\gamma\tau}x(t)
 其中，第一项来自时刻 \(t\) 的位置，第二项来自之后新产生的随机扰动。由于后续噪声与 \(x(t)\) 相互独立，将两边乘以 \(x(t)\) 并取平均，噪声项便不再贡献关联。再利用稳态方差 \(\langle x^2\rangle_{\mathrm{st}}=D/\gamma\)，得到
 
 \[
-\begin{aligned}
 C(\tau)
-&=e^{-\gamma\tau}\langle x^2\rangle_{\mathrm{st}}\\
-&=\frac{D}{\gamma}e^{-\gamma\tau},
+=e^{-\gamma\tau}\langle x^2\rangle_{\mathrm{st}}
+=\frac{D}{\gamma}e^{-\gamma\tau},
 \qquad \tau\geq0.
-\end{aligned}
 \]
 
 对于负的时间差，利用关联函数的对称性，便有 \(C(\tau)=(D/\gamma)e^{-\gamma|\tau|}\)。
