@@ -119,19 +119,20 @@ C_v(t)=\langle v(t)v_0\rangle_{\mathrm{st}}
 
 接下来，我们计算粒子的均方位移。由于位移是速度在时间上的积分，\(\Delta x(t)=\int_0^t v(s)\,ds\)，将其平方并取平均后，自然会出现不同时刻的速度乘积 \(\langle v(t_1)v(t_2)\rangle\)，也就是速度关联函数。因此，粒子位移的增长不仅取决于速度的大小，还取决于不同时刻的速度能够保持多强的关联。
 
-前面我们已经假设初速度服从热平衡分布，因此速度过程从一开始就是平稳的（stationary）。平稳性意味着速度的统计性质不随时间改变，两个时刻的速度关联只取决于它们之间的时间差，而与具体的观测时刻无关，即 \(\langle v(t_1)v(t_2)\rangle=C_v(|t_1-t_2|)\)。利用这一性质，我们可以将位移的积分表达式代入均方位移，得到两个时间积分。由于交换 \(t_1\) 和 \(t_2\) 的先后顺序不会改变速度乘积的平均值，因此只需要计算 \(t_1\geq t_2\) 的部分，再乘以 \(2\)。于是
+前面我们已经假设初速度服从热平衡分布，因此速度过程从一开始就是平稳的（stationary）。平稳性意味着速度的统计性质不随时间改变，两个时刻的速度关联只取决于它们之间的时间差，而与具体的观测时刻无关，即 \(\langle v(t_1)v(t_2)\rangle=C_v(|t_1-t_2|)\)。利用这一性质，我们可以将位移的积分表达式代入均方位移，得到两个时间积分。由于交换 \(t_1\) 和 \(t_2\) 的先后顺序不会改变速度乘积的平均值，因此只需要计算 \(t_1\geq t_2\) 的部分。于是
 
 
 \[ \begin{aligned} \langle[\Delta x(t)]^2\rangle &=\int_0^t dt_1\int_0^t dt_2\, \langle v(t_1)v(t_2)\rangle\\ &=2\int_0^t dt_1\int_0^{t_1}dt_2\, C_v(t_1-t_2)\\ &=2\int_0^t d\tau\,(t-\tau)C_v(\tau). \end{aligned} \]
 
-展开指数，就能读出两段不同的物理图像：
+将前面求得的指数速度关联函数 \(C_v(s)=(k_{\mathrm B}T/m)e^{-s/\tau_m}\) 代入，并完成积分，就得到自由 Brownian 粒子的均方位移：
 
-$$
-\begin{aligned}
-t\ll\tau_m:&\quad \langle\Delta x^2\rangle\simeq\frac{k_{\mathrm B}T}{m}t^2,\\
-t\gg\tau_m:&\quad \langle\Delta x^2\rangle\simeq2Dt.
-\end{aligned}
-$$
+\[ \langle[x(t)-x_0]^2\rangle =2D\left[t-\tau_m\left(1-e^{-t/\tau_m}\right)\right] , \qquad D=\frac{k_{\mathrm B}T}{\zeta}.\]
+
+这个结果完整地描述了粒子从弹道运动到扩散运动的过渡。
+- 短时间 \(t\ll\tau_m\)：将指数函数展开，得到 \(\langle\Delta x^2(t)\rangle\simeq(k_{\mathrm B}T/m)t^2\)。此时速度尚未明显改变，粒子近似做匀速运动。
+- 长时间 \(t\gg\tau_m\)：指数项逐渐消失，得到 \(\langle\Delta x^2(t)\rangle\simeq2Dt\)。此时粒子已经失去初始速度的记忆，表现为正常扩散。
+其中，
+\( D=\frac{k_{\mathrm B}T}{\zeta} \) 是 Einstein 关系，它将宏观扩散系数与温度和微观阻尼联系起来。
 
 在 $t\ll\tau_m$ 时，同一段内的速度几乎相同，位移近似 $v_0t$，平方平均便为 $\langle v_0^2\rangle t^2$。这里仍可能发生很多分子碰撞；“弹道”要求的是粒子速度尚未显著改变，并不要求一次碰撞都没有。白噪声模型下可分辨的短时窗口实际上是 $\tau_{\mathrm{bath}}\ll t\ll\tau_m$。
 
