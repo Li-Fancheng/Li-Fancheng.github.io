@@ -326,7 +326,7 @@ $$
 
 *图 2c｜取周长 $L=6$、漂移速度 $v=0.8$、$D=0.4$。左图的箭头标出稳态净流的循环方向；右图显示以弧长为坐标时密度 $1/L$ 与流 $v/L$ 均为空间常数，使用不同纵轴以区分量纲。密度的流入与流出相抵，仍允许概率持续绕圈。*
 
-若只保存这段实验的位置直方图，便会丢掉驱动方向的信息。需要保留时间顺序，或统计绕圈的净次数，才能区分 $v=0$ 与 $v\ne0$。第三篇将用同一个圆环比较顺向、逆向历史的权重。
+若只保存这段实验的位置直方图，便会丢掉驱动方向的信息。需要保留时间顺序，或统计绕圈的净次数，才能区分 $v=0$ 与 $v\ne0$。
 
 <span id="边界如何改变同一内部方程的预测"></span>
 
@@ -357,7 +357,7 @@ $$
 T(x)=\frac{x(L-x)}{2D}.
 $$
 
-越靠近边界，等待越短；从中点出发平均为 $L^2/(8D)$。将整个区间放大一倍，退出时间增加为四倍；将 $D$ 增大一倍，退出时间减半。这正是扩散探索一个给定距离所需的时间尺度。上面的短时递推没有求完整密度，却直接算出了事件平均；更一般的受力、单端目标和罕见等待放在[首次到达选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/markov_generators/)。
+越靠近边界，等待越短；从中点出发平均为 $L^2/(8D)$。将整个区间放大一倍，退出时间增加为四倍；将 $D$ 增大一倍，退出时间减半。这正是扩散探索一个给定距离所需的时间尺度。上面的短时递推没有求完整密度，却直接算出了事件平均。
 
 <span id="28-传播核从单时刻分布走向整条历史"></span>
 
@@ -410,61 +410,5 @@ $$
 每一步都只使用给定当前状态的条件传播。对任意未观测的中间位置积分，便恢复相应的边缘分布；保留中间位置或对它们加上约束，则能比较不同运动历史。时间分割越来越细时，这套构造自然通向下一篇的路径概率和路径积分。
 
 一份单时刻密度告诉我们当时的占据，却不单独标记此前的最大偏离或沿途停留时间。给定完整转移核的 Markov 过程可以重建多时刻统计；下一篇保留这些中间位置，改变表示与计算对象，研究整条历史的权重。
-
-<span id="推广保留惯性时概率怎样在相空间中流动"></span>
-
-## 选读附录：惯性粒子的相空间 Kramers 方程 {#kramers-equation}
-
-如果速度尚未快速弛豫，同样的概率守恒应当应用到完整状态 $(x(t),v(t))$。位置相同而速度不同，短时未来仍然不同。定义相空间密度 $\rho(x,v,t)=\langle\delta(x-x(t))\delta(v-v(t))\rangle$，位置密度只是它的边缘 $p(x,t)=\int\rho(x,v,t)dv$。令确定性力为 $F(x)=-V'(x)$，采用相同的常数摩擦系数 $\zeta$ 与平衡热浴：
-
-$$
-dx(t)=v(t)dt,\qquad
-dv(t)=\left[\frac{F(x(t))}m-\frac\zeta m v(t)\right]dt
-+\sqrt{2D_v}\,dW_t,
-\qquad D_v=\frac{\zeta k_{\mathrm B}T}{m^2}.
-$$
-
-在相空间里，速度把概率沿位置方向搬运，确定性力与阻尼把概率沿速度方向搬运。噪声直接作用于速度，因此随机展宽首先发生在速度方向。相应的两分量概率流为
-
-$$
-J_x=v\rho,\qquad
-J_v=\left(\frac{F(x)}m-\frac\zeta m v\right)\rho
--D_v\partial_v\rho.
-$$
-
-将它们放进相空间连续性方程，得到
-
-$$
-\partial_t\rho=-\partial_x(v\rho)
--\partial_v\left[\left(\frac{F(x)}m-\frac\zeta m v\right)\rho\right]
-+D_v\partial_v^2\rho.
-$$
-
-这就是 Kramers 方程，也是完整状态 $(x,v)$ 上的 Fokker–Planck 方程。它清楚地区分了空间搬运和速度扩散：没有直接的 $\partial_x^2\rho$ 项，位置仍会因随机速度的累积而分散。
-
-若对速度积分，并假设速度方向边界流在无穷远消失，只得到
-
-$$
-\partial_t p=-\partial_x\left(\int v\rho(x,v,t)dv\right).
-$$
-
-括号里是按位置分辨的速度一阶矩，等于 $p(x,t)\mathbb E[v(t)\mid x(t)=x]$；其中的条件平均速度不能只凭位置密度 $p$ 推出。因此，“对速度积分”本身不会自动给出封闭的位置扩散方程。进一步使用速度弛豫比位置演化快的过阻尼近似，才得到上一节的位置过程
-
-$$
-dx(t)=b(x(t))dt+\sqrt{2D}\,dW_t,
-\qquad b=F/\zeta,\qquad D=k_{\mathrm B}T/\zeta.
-$$
-
-这就回到了本篇前面使用的闭合位置过程，也说明为什么必须先说明过阻尼近似，不能直接将速度积分等同于消去惯性。Kramers 方程与过阻尼约化的系统联系可参见 [Tong 的随机过程讲义](https://www.damtp.cam.ac.uk/user/tong/kintheory/three.pdf)。这里的 $D_v$ 是速度平方／时间，$D$ 是位置平方／时间，两者不应混用。
-
-<span id="验证与推广itô-公式和状态依赖扩散"></span>
-
-选读：[随机过程与 Itô 微积分](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus)。
-
-<span id="27-双稳势局部已弛豫为什么全局仍未平衡"></span>
-<span id="局域稳态仍然携带缓慢变化的权重"></span>
-<span id="稳态权重还受到阱宽影响"></span>
-
-选读：[双稳亚稳态与概率交换](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability)。
 
 **上一篇：**[Langevin Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/) · **下一篇：**[Path Integrals：从终点分布到随机历史](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/)。

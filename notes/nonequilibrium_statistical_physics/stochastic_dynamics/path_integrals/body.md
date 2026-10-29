@@ -106,7 +106,7 @@ $\dot x-b(x)$ 是为了实现候选曲线，随机驱动需要补上的有效速
 
 这时有一个必须保留的区别。光滑参考曲线的一步位移按 $\varepsilon$ 缩放，典型 Brownian 样本却按 $\sqrt\varepsilon$ 缩放。对后者，$S_\varepsilon$ 的每步贡献通常为常数量级，步数增加时总和就增长，不能把 $\dot x$ 当成普通速度代入一个有限的 $S_0$。整份粗糙路径的统计由带归一化的时间切片极限定义；光滑曲线则用来比较实现某种宏观运动需要怎样的噪声。
 
-在弱噪声极限中，这个光滑历史代价给出主导指数；完整的有限噪声 OM 表示还要指定漂移求值与换元因子。例如中点规则带有 $b'/2$ 的修正，推导见[OM Jacobian 选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#om-jacobian)。下面先在自由和常漂移 Brownian 中计算；其 $b'=0$，可以集中研究端点约束和路径涨落。
+在弱噪声极限中，这个光滑历史代价给出主导指数；一般漂移下的完整有限噪声权重，还需连同离散化约定和换元因子理解。下面只在自由和常漂移 Brownian 中计算；其 $b'=0$，可以集中研究端点约束和路径涨落。
 
 时间切片越来越细时，人们把这份多重积分简写为路径积分：
 
@@ -246,58 +246,10 @@ $$
 
 如果改为固定两端的 bridge，仍有非零的面积涨落：将 $C_{\mathrm{bridge}}$ 作同样的双重积分，得到平均 $T(x_0+x_f)/2$、方差 $DT^3/6$。其方差只有自由 Brownian 面积的四分之一。筛去终点不同的历史，连带限制了此前持续偏向一侧的程度，但同样两端之间仍能有不同的正负面积。
 
-## 3.7 选读：密度相同，历史仍可具有时间方向 {#time-reversal}
-
-回到第二篇周长 $L$ 的驱动圆环。初始位置从均匀稳态 $1/L$ 采样，取完整的连续路径，并把它提升为未取模的坐标 $x(t)$，以保留绕圈数。时间反演的历史定义为将位置记录次序倒转；位置为偶变量，动力学的常漂移参数 $v$ 保持不变。
-
-在同一有限时间分割上，正向历史增量为 $\Delta x_k$，反向为 $-\Delta x_k$。初始稳态密度相同而相消，Gaussian 一步权重给出
-
-$$
-\begin{aligned}
-\log\frac{\mathbb P[\mathrm{history}]}{\mathbb P[\mathrm{reversed\ history}]}
-&=\sum_k\frac{(\Delta x_k+v\varepsilon)^2-(\Delta x_k-v\varepsilon)^2}{4D\varepsilon}\\
-&=\frac vD\,\Delta x_{\mathrm{unwrapped}}.
-\end{aligned}
-$$
-
-这里比较的是匹配的离散历史密度或路径权重，不是两条单独曲线的非零概率。总位移必须包含绕圈的 $nL$，不能只用取模终点减起点；只看圆环终点会把不同权重的历史混合掉。若 $v=\mu F$、$D=\mu k_{\mathrm B}T$，右边就是恒力沿未取模位移所做的功除以 $k_{\mathrm B}T$。
-
-当 $v>0$ 时，净向右的历史比其倒放记录更常见，权重比为 $e^{v\Delta x/D}$；$v=0$ 时则相同。密度的均匀性没有保存这种时间顺序信息。这个简式依赖稳态准备、加性常漂移及上述反演定义；非平稳准备或位置依赖漂移还会带来其他项。
-
-## 3.8 三种视角以后，还会遇到哪些运动 {#further-reading}
+## 3.7 三种视角以后，还会遇到哪些运动 {#further-reading}
 
 Langevin 给出局部运动，Fokker–Planck 展示概率云与流，路径积分则把同一规律组织成整段历史的统计。它们回答不同问题，并由短时条件转移相容地联系起来。
 
-如果要同时提取许多时刻的关联，可以选读生成泛函 $Z[j]=\langle e^{\int_0^Tj(t)x(t)dt}\rangle$：对 $j$ 求导会取出相应时刻的位置因子。完整 Gaussian 计算、响应场与 OM 测度细节保存在[路径积分进阶](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/)；双稳上坡与越垒代价保存在[罕见事件选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/)，都不是本篇必读前提。
-
 前三篇主要依靠连续 Gaussian 扰动。若粒子突然长跳、持续直行、长时间停滞，或其增量彼此相关，哪些假设已经改变？下一篇以这些运动规则为线索，介绍常见随机过程与所需微积分。
-
-<span id="34-双稳越垒罕见历史怎样克服回复作用"></span>
-<span id="从右阱有多少概率转向它怎样过去"></span>
-<span id="上坡需要付出代价下坡可以顺着动力学完成"></span>
-<span id="势垒为什么决定转换率的指数尺度"></span>
-
-选读：[罕见上坡历史与势垒代价](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#uphill-paths)。
-
-<span id="35-进阶从路径观测量到生成泛函"></span>
-<span id="从一个终点到沿途的累计量"></span>
-<span id="生成泛函一次组织所有多时刻统计"></span>
-<span id="ou-的-gaussian-生成泛函以及一次具体计算"></span>
-
-选读：[Gaussian 生成泛函与累计涨落](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#gaussian-functional)。
-
-<span id="36-进阶msrjd-怎样组织关联与响应"></span>
-<span id="保留动力学约束为什么有助于计算响应"></span>
-<span id="从-delta-约束完成一次基本推导"></span>
-<span id="与-onsagermachlup-怎样相接"></span>
-<span id="辅助场为什么称为响应场"></span>
-<span id="ou在同一泛函中恢复关联与响应"></span>
-<span id="非线性项与计算的扩展"></span>
-
-选读：[MSRJD 响应场与因果响应](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#msrjd)。
-
-<span id="附录-a中点-om-表示中的-jacobian"></span>
-
-选读：[OM 测度与 Jacobian](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/#om-jacobian)。
 
 **上一篇：**[Fokker–Planck Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/) · **下一篇：**[Stochastic Processes：随机过程与随机微积分导览](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/)。

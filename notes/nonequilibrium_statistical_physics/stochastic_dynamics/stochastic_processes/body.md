@@ -132,7 +132,7 @@ $$
 +\frac12\frac{\partial^2}{\partial x^2}[\sigma^2(x)p(x,t)].
 $$
 
-导数作用于整个 $\sigma^2p$，不能将常数扩散流机械替换为 $-D(x)p_x$。当 $\sigma=\sqrt{2D}$ 为常数时，转换修正为零，二阶项就是第二篇的 $Dp_{xx}$。用 Itô 公式核对密度方程的分部积分过程保留在[选读附录 B](#用-itô-公式核对概率输运)。
+导数作用于整个 $\sigma^2p$，不能将常数扩散流机械替换为 $-D(x)p_x$。当 $\sigma=\sqrt{2D}$ 为常数时，转换修正为零，二阶项就是第二篇的 $Dp_{xx}$。
 
 <details class="qbio-derivations" id="ito-isometry">
 <summary>选读计算：Itô 等距与左端、对称求值的差别</summary>
@@ -396,7 +396,7 @@ $H>1/2$ 时正相关，前一步的方向较易延续；$H\lt1/2$ 时负相关�
 
 不必同时拟合所有模型。若看到了明显长直行，先测方向关联和速度；若看到了长平台，先检查事件识别与等待分布，再比较制备后不同时段的活动。若轨迹连续却有次扩散，可以测等时间增量的正负关联。前面的 CTRW 与 fBm 便会在这些检查中分开。
 
-另一个实用问题是：把同一条记录延长，测得的活动强度会不会系统改变？这需要把“许多次实验在同一时刻平均”与“同一条实验沿时间平均”区分开。以下给出一种具体计算，初次阅读可以先接选读附录或返回专题首页。
+另一个实用问题是：把同一条记录延长，测得的活动强度会不会系统改变？这需要把“许多次实验在同一时刻平均”与“同一条实验沿时间平均”区分开。下面的计算比较同一条记录在不同测量时长下给出的结果。
 
 <details class="qbio-derivations" id="time-average-msd">
 <summary>选读计算：时间平均 MSD 怎样区分 CTRW 与 fBm</summary>
@@ -449,73 +449,4 @@ fBm 理论值为 $0.2^{0.6}\simeq0.381$；CTRW 则随记录延长而减小。这
 
 从 Brownian 游走出发，我们依次改动了回复、事件时刻、方向持续、跳幅尾部、长位移的耗时、等待分布和增量关联。选择模型时，可以沿相反顺序工作：先找记录中普通独立小步解释不了的特征，再决定应当修改哪条运动规则。方差随时间的幂律只是其中一项证据。
 
-
-## 选读附录 A：乘性涨落的平均增长与典型增长
-
-一个能直接看出差异的例子是几何 Brownian 运动：
-
-$$
-dX=aX\,dt+sX\,dW,\qquad X_0>0.
-$$
-
-对 $\log X$ 用 Itô 公式，得到
-
-$$
-X_t=X_0\exp\left[(a-s^2/2)t+sW_t\right].
-$$
-
-其均值为 $X_0e^{at}$，而中位数为 $X_0e^{(a-s^2/2)t}$。取 $0\lt a\lt s^2/2$，均值随时间增长，中位数却随时间减小：少量增长很大的轨迹抬高了平均，至少一半样本却落在越来越小的中位数以下。若只画平均轨迹，会漏掉多数实验中很不同的经历。[Pavliotis 的教材](https://www.ma.imperial.ac.uk/~pavl/PavliotisBook.pdf)第 3 章给出了随机积分和转换公式的系统处理。
-
-一个直观原因是，乘性起伏的增减不对称地影响长期结果。一个量先乘以 $1+\varepsilon$，再乘以 $1-\varepsilon$，最后得到的是原值的 $1-\varepsilon^2$ 倍；相同幅度的一次相对增长和一次相对下降，不能相互复原。连续极限中，这种二阶积累正对应对数增长率里的修正。少数极大的结果又会抬高算术平均，所以平均轨迹和多数样本的经历可以明显不同。
-
-## 选读附录 B：多变量状态与密度方程的核对
-
-进一步把所保留的状态统记为 $\boldsymbol Z$，许多白噪声驱动的 Markov 扩散都可以写成
-
-$$
-d\boldsymbol Z_t=\boldsymbol a(\boldsymbol Z_t,t)dt
-+B(\boldsymbol Z_t,t)d\boldsymbol W_t.
-$$
-
-这是 Itô 随机微分方程的一般形式。漂移 $\boldsymbol a$ 规定给定当前状态时的平均增量，矩阵 $B$ 规定各变量的随机增量如何由同一组独立 Wiener 驱动产生。小时间窗内的条件协方差为 $BB^{\mathsf T}h+o(h)$，所以噪声怎样耦合不同自由度也包含在这个表达式中。
-
-它的准确含义是积分关系
-
-$$
-\boldsymbol Z_t=\boldsymbol Z_0
-+\int_0^t\boldsymbol a(\boldsymbol Z_s,s)ds
-+\int_0^t B(\boldsymbol Z_s,s)d\boldsymbol W_s.
-$$
-
-普通时间积分积累漂移，随机积分积累噪声增量。对 Itô 积分，每一小步的系数使用该步新噪声到来前的信息。状态依赖的系数仍然可以是随机的，但不会提前使用尚未发生的噪声；4.3 节已经解释这个先后关系如何影响微积分规则。
-
-用这套写法，惯性 Langevin 可将位置和速度都放进 $\boldsymbol Z$，前面的有色噪声模型则将 $X$ 和 $\eta$ 都保留为状态。受力、耗散和涨落决定系数 $\boldsymbol a,B$，Itô 方程规定白噪声增量怎样累加。有一般记忆核的广义 Langevin 方程还可能需要保留历史，未必有有限维的闭合 Itô 表述。
-
-### 用 Itô 公式核对概率输运
-
-物理收支给出了方程的结构，Itô 公式则将它与轨道模型精确对照。对一般一维 Itô 过程 $dX=b(X)dt+\sigma(X)dW$，令 $a(x)=\sigma^2(x)/2$。对足够光滑的函数 $f$，
-
-$$
-\frac d{dt}\langle f(X_t)\rangle
-=\int p(x,t)[b(x)f'(x)+a(x)f''(x)]dx.
-$$
-
-同一个平均也等于 $\int f(x)p(x,t)dx$。在边界项消失或与边界条件相容时，对右侧分部积分一次和两次，得到
-
-$$
-\int f\,\partial_t p\,dx
-=\int f[-\partial_x(bp)+\partial_x^2(ap)]dx.
-$$
-
-等式对足够丰富的 $f$ 成立，因而
-
-$$
-\partial_t p=-\partial_x(bp)+\partial_x^2(ap),
-\qquad J=bp-\partial_x(ap).
-$$
-
-常数 $a=D$ 时恢复前面的漂移扩散流；状态依赖时，导数必须作用于整个 $ap$。改变噪声强度的空间分布，会改变各处随机增量的统计，不能只在常数 $D$ 的 Fick 形式里替换一个符号。若原方程采用 Stratonovich 约定，还需先换成相应的 Itô 漂移。
-
 **上一篇：**[Path Integrals](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/) · **[返回专题首页](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/)**。
-
-需要继续计算事件与响应时，可分别查阅[生成元与首达选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/markov_generators/)、[罕见事件选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/)和[MSRJD 选读](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integral_methods/)。

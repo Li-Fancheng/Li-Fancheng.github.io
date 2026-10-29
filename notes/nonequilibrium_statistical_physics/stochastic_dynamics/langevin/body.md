@@ -321,55 +321,6 @@ $$
 \sigma_h^2=\frac{D}{\gamma(1-\gamma h/2)},\qquad0\lt\gamma h\lt2.
 $$
 
-稳定并不等于精确：接近稳定边界时，方差会显著偏大。比较减半步长后的宽度和关联时间，比判断一条轨迹“看起来会抖”更有判别力。复现本专题图与数值核对可使用[原有计算脚本](../generate_figures.py)和[本次新增图的脚本](../generate_intro_figures.py)。
-
-## 选读：环境记忆的平衡约束
-
-正文先采用了短记忆环境。若粒子运动后在介质中留下的扰动来不及消失，当前反作用就会依赖过去；这时怎样修改受力方程？以下保留这条约化思路，首次阅读可直接接第二篇。
-
-### 消去环境以后，为什么还留下过去的影响
-
-粒子先前的运动可以扰动周围介质，介质随后继续反过来推它。在可解的谐振子热浴模型中，先解出环境坐标，再代回目标粒子的牛顿方程，可以得到广义 Langevin 方程的一种标准形式：
-
-$$
-m\ddot x(t)=-V'(x(t))
--\int_0^t K(t-s)\dot x(s)\,ds+\eta(t).
-$$
-
-记忆核 $K$ 给出过去的速度对当前反作用的权重；$\eta(t)$ 保留环境初态中不能由目标粒子初态确定的部分。给定全部环境初态以后，$\eta$ 仍由确定性运动决定；对环境初态赋予分布以后，它才成为随机过程。线性速度卷积适用于相应热浴模型，更一般的约化还可能留下非线性、状态依赖的记忆。[Zwanzig 的工作](https://link.springer.com/article/10.1007/BF01008729)给出了这类精确约化。
-
-耗散也可在这里理解：粒子的能量转移到大量环境自由度，散布在不再追踪的运动中。完整系统可以守恒能量，被保留粒子的能量却减少。若环境很小、能量会显著返回，便不能始终将环境当成无限热库。
-
-### 什么时候记忆可以近似为瞬时阻尼
-
-设环境记忆只维持到 $\tau_{\mathrm{env}}$ 左右，而速度在这段时间内变化很小。在积分有显著权重的范围里，把 $\dot x(s)$ 换成 $\dot x(t)$，得到
-
-$$
-\int_0^t K(t-s)\dot x(s)\,ds\simeq\zeta\dot x(t),
-\qquad \zeta=\int_0^\infty K(s)ds.
-$$
-
-这里默认核可积且已离开初始瞬态。黏滞阻力只读取当前速度，是短记忆近似的结果；消去变量本身并不保证这一点。
-
-类似地，要将随机力近似为 Gaussian 白噪声，需在 $\tau_{\mathrm{bath}}\ll h\ll\tau_{\mathrm{system}}$ 的窗口内有许多弱扰动，且关联、方差和混合条件允许中心极限定理式的粗粒化。环境“大而复杂”并不足够：少量强冲击或长记忆都可能破坏它。
-
-当状态选为 $(x(t),v(t))$ 且这些近似成立时，当前状态才可能足以预测下一步的条件分布，即具有 Markov 性。不要把它同“两个时刻不相关”混淆：正文 OU 中的旧偏离需要时间才消退，却只需当前值便可继续演化。[第四篇的 OU 例子](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ou-model)会直接比较这两个判断。
-
-### 阻尼与涨落为什么必须一起保留
-
-对平衡热浴，随机力的关联与同一个记忆核有关；在上述标准模型和相应平衡初态下，有 $\langle\eta(t)\eta(s)\rangle=k_{\mathrm B}T K(|t-s|)$。记忆核一方面决定环境怎样消除粒子的动量，另一方面决定环境动量涨落怎样返回粒子。
-
-只保留阻尼会使自由速度最终归零，只保留持续随机驱动则会不断增大速度方差。温度固定的平衡环境应把动能维持在相应热尺度，因此两种作用的强度受到共同约束。对于非热或主动环境，仍然可以研究阻尼与随机力，但不能自动使用同一平衡关系。
-
-从确定性开放系统到记忆核，再到短记忆近似的推导，可参见 [Pavliotis 的非平衡统计力学讲义](https://www.ma.ic.ac.uk/~pavl/noneqstatmech.pdf)。这里先保留这些近似的物理意义，不展开完整的投影算子方法。
-
-<span id="16-为什么随机动力学需要新的微积分"></span>
-<span id="随机积分约定与乘性噪声"></span>
-
-选读：[随机过程与 Itô 微积分](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/#ito-calculus)。
-
-<span id="从阱内起伏到偶发换阱"></span>
-
-选读：[双稳亚稳态与概率交换](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/rare_events/#bistability)。
+稳定并不等于精确：接近稳定边界时，方差会显著偏大。比较减半步长后的宽度和关联时间，比判断一条轨迹“看起来会抖”更有判别力。复现本专题图与数值核对可使用[OU 与概率输运脚本](../generate_figures.py)和[入门示例脚本](../generate_intro_figures.py)。
 
 **下一篇：**[Fokker–Planck Dynamics：从随机轨迹到概率流](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/)。

@@ -1,91 +1,130 @@
-一张图像或一句话可以有指数多个表面实现，却由有限、可复用的局部规律生成。学习器怎样发现这些规律，把它们组织成表示，并在不同语言或模态之间保留共同关系？这个专题以随机层级语法（RHM）及其相关理论为主线，连接统计学习、生成推断和表示几何；它不试图覆盖所有层次学习模型。
+深度网络能够在训练中形成新的表示，但“数据具有层级”本身没有解释这种形成。我们还需要知道：中间状态在观测中留下什么信号，指定学习规则能否取得它，已有表示怎样改变下一步问题，以及上下层如何共同修正。这个专题以 **Hierarchical Learning 的理论机制**为主线，将谱动力学、梯度可达性、非线性表示与跨层反馈接到可控生成模型上。
 
-五篇笔记按问题展开，并采用篇内连续的章节编号。每篇从直观例子建立对象，再展开公式、中间推导与可检验的讨论，篇末给出独立参考文献和前后篇导航。精确概率计算、均场近似、简化算例与原论文的网络实验分别说明，便于判断一个结论依赖哪些假设。
+原有五篇随机层级模型（Random Hierarchy Model，RHM）笔记保留为生成数据部分。RHM 让局部字典、同义变化、推断参照和样本阈值可被定义与测量；它是检验学习机制的重要模型，不是整个领域的通用理论框架。新增理论章节均有编号、公式解释、适用条件、篇末文献和连续阅读链接。
 
-## 1. 五篇笔记 {#contents}
+## 1. 专题结构与阅读次序 {#contents}
 
-| Note | 主要问题 | 关键计算 |
+| 部分 | 正文 | 贯穿问题 |
 | --- | --- | --- |
-| [01 · 层次生成与表征学习](/notes/hierarchical_data/generative_learning/) | 不同表面实现怎样被认成同一个部件？ | 小语法、标签统计、样本阈值与可证明逐层训练 |
-| [02 · 语言统计与学习曲线](/notes/hierarchical_data/language_statistics/) | 更远的上下文何时真正有用？ | 关联平台、条件熵分解、有限样本分辨率与长尾积分 |
-| [03 · 层级推断与扩散生成](/notes/hierarchical_data/inference_generation/) | 加噪以后哪些层次仍能恢复？ | 树上后验、联合采样、均场固定点与动力学关联 |
-| [04 · 语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) | 组合边界未知时怎样学习？ | 多重解析、区间动态规划、隐变量预测与可辨识性 |
-| [05 · 跨语言表示与共享几何](/notes/hierarchical_data/shared_representations/) | 翻译句为何在中间层更相似？ | 共享语法、几何与坐标、邻域指标、仿射残差与概念谱 |
+| 理论 01 | [谱结构与集体学习动力学](/notes/hierarchical_data/spectral_dynamics/) | 已有相关模态为什么以不同速率增长？Saxe 2014/2019 与 Neural Race |
+| 理论 02 | [梯度可达性与学习瓶颈](/notes/hierarchical_data/gradient_accessibility/) | 哪些结构让新特征获得有效梯度？Staircase、MSP、leap 与鞍区逃逸 |
+| 理论 03 | [非线性中间表示与深度优势](/notes/hierarchical_data/nonlinear_depth/) | 表示如何改变核投影、有效维数与组合目标的学习成本？ |
+| 理论 04 | [跨层反馈与共同演化](/notes/hierarchical_data/coupled_feature_learning/) | 前向 LoFi 缺少什么？BFC 与 BackLoFi 怎样让高层修正底层？ |
+| RHM 01 | [层次生成与表征学习](/notes/hierarchical_data/generative_learning/) | 规则复用、同义不变性、样本阈值、逐层保证与局部学习规则 |
+| RHM 02 | [语言统计与学习曲线](/notes/hierarchical_data/language_statistics/) | 长程相关、有限样本分辨率、有效上下文与稀有规则 |
+| RHM 03 | [层级推断与扩散生成](/notes/hierarchical_data/inference_generation/) | 已知字典下的最优后验、BP、噪声与生成评价 |
+| RHM 04 | [语法解析与隐变量学习](/notes/hierarchical_data/parsing_latents/) | 边界和结构未知时，消歧与预测目标怎样改变学习？ |
+| RHM 05 | [跨语言表示与共享几何](/notes/hierarchical_data/shared_representations/) | 共享原因是否形成共享几何、坐标与实际计算？ |
+| 综合 | [机制比较与未解决问题](/notes/hierarchical_data/mechanism_comparison/) | 哪些机制相通，哪些不能统一？集体动力学还缺什么？ |
 
-## 2. 先分清生成规律、推断与学习 {#starting-point}
+## 2. 先分清五种“层级” {#starting-point}
 
-可以把整个专题的任务放在同一个情境里：生成者用一套固定语法不断产生句子，学习者只看到最终字符串，有时还看到类别标签。研究者知道内部树，所以可以计算理想答案，也可以精确控制哪些因素改变。这个便利让许多在真实语言中混在一起的问题，能够被单独检验。
+### 2.1 生成、目标、架构、表示和时间 {#hierarchy-definitions}
 
-| 层面 | 已知与未知 | 需要回答的问题 |
+**数据生成层级**是潜变量、树和语法产生观测的条件结构；**目标组合层级**是 $f_*(x)=g_2(g_1(x))$ 等预测函数分解；**架构层级**是计算图中的层数、局部连接和共享；**表示层级**是网络实际形成的中间变量；**动力学层级**则是不同特征随训练出现与增长的顺序。多粒度标签又可以额外提供监督层级。
+
+这些结构可以相互支持，也可以错位。数据由多级树生成，不保证根标签保留所有中间状态的信息；深网络可以用近似固定特征完成任务；一个隐层也可以在训练中多次改变其表示。可读出某个潜变量不证明网络以它执行后续计算，逐层可读出也不证明严格的动力学门控。
+
+一个简单对照是：Saxe 语义理论的多级分化发生在一个隐层中，Abbe 的支持逐次发现也能发生在两层网络中；RHM 则把潜在生成结构放进输入分布。不能只凭三者都出现“由粗到细”，便认定它们解释同一种层级。
+
+### 2.2 记号与四条独立坐标轴 {#notation}
+
+理论部分使用下表；具体模型改变约定时会重新声明。
+
+| 记号 | 含义 | 比较时的约束 |
 | --- | --- | --- |
-| 生成模型 | 给定字典、规则概率与树的组织 | 有多少合法样本，哪些变化共享同一原因？ |
-| 已知规则的推断 | 规律已知，这次样本的隐状态未知 | 不完整观测支持哪些解释，它们各有多大概率？ |
-| 有限数据学习 | 只能看到样本，字典或表示未知 | 哪些统计能暴露规律，多少样本足够？ |
-| 网络实现 | 还指定了架构、参数与训练方法 | 所需统计能否被取得，表示能否逐层复用？ |
-| 表示评价 | 只能通过读出、距离或干预观察内部状态 | 共享的是局部关系、坐标方向，还是实际功能？ |
+| $P$ | 独立训练样本数 | 与相关 token 预算、数据重复轮次分开 |
+| $t,T$ | 连续训练时间或离散步数 | 明确是否吸收学习率、是否每步使用新样本 |
+| $L_{\rm net},D$ | 网络深度或权重矩阵数 | 原文可能把输入层也计入层数 |
+| $\ell,L_{\rm data}$ | 数据潜在层级与总深度 | 不自动对应训练时刻或网络层 |
+| $d,r,p_\ell$ | 环境维数、潜在维数与网络宽度 | 有限 $r$ 与随 $d$ 增长的 $r$ 产生不同复杂度 |
+| $K,G$ | 表示核与响应核 | 区分固定核、标签自适应核和随时间变化的核 |
 
-生成空间很大，不代表必须记住每条样本；字典很小，也不代表一定容易发现。后验能够精确计算，不代表网络已经学会字典；表示邻域很相似，也不代表探针能够直接跨语言迁移。这些联系构成五篇的共同问题，而不是五个彼此独立的应用。
+RHM 子系列沿用其原记号：叶层为 $0$、根层为 $L$，网络层另用 $k$，分支数 $s$、叶长 $d=s^L$、词表 $v$、每父规则数 $m$、根类别数 $n_c$。某些篇中 $t$ 是扩散噪声时间或上下文变量，会局部定义；不得与本部分的训练时间直接等同。
 
-### 2.1 记号与默认条件 {#notation}
+## 3. 学习新表示必须跨过哪些环节 {#unified-mechanism}
 
-| 记号 | 含义 | 比较公式时需要留意 |
-| --- | --- | --- |
-| $L,\ell$ | 数据树深与节点高度；叶层为 $0$ | 原论文可能从根向下编号 |
-| $s,d=s^L$ | 固定分支数与叶序列长度 | 第四篇的可变分支使句长成为随机量 |
-| $v,m,n_c$ | 层内词表、每父规则数与根类别数 | 部分分析取 $n_c=v$，并要求局部无歧义 |
-| $\rho=m/v^{s-1}$ | 规则对完整子元组空间的占有率 | 语言统计主要考虑 $\rho<1$ |
-| $P$ | 独立生成的完整训练序列数 | 不直接等于相关 token 的数量 |
-| $k,t$ | 网络计算层与噪声时间或上下文长度 | $t$ 的具体含义在各篇重新定义 |
+### 3.1 信息存在、统计可辨与梯度可达 {#three-bottlenecks}
 
-默认先抽取一套随机字典，再在训练与测试中固定；同层规则跨位置共享，不同完整样本独立生成。前三篇先研究已知固定分块，第四篇才去掉边界提示，第五篇再把单语言改成共享高层、各自实现低层的多语言模型。改变这些条件时，样本标度、推断算法与可辨识性都需要重新检查。
+首先是**信息条件**：中间原因是否能从观测与可用监督中辨认？若不同隐状态对所有任务目标有相同作用，标签只能识别它们的等价类。其次是**统计条件**：有用相关与谱间隙能否超过有限样本误差？最后是**算法条件**：初始化、激活与学习规则能否取得该相关，而不是被对称性、弱信号或错误路径阻挡？
 
-## 3. 从有效状态到实际计算 {#unified-mechanism}
+已有足够数据不自动满足第三项，表示可表达也不满足前两项。反过来，若已经知道潜在规则，最优推断可能很容易；这不等于未知规则能被学习。理论应明确是在研究存在性、样本界、可计算学习保证还是指定训练的实际轨迹。
 
-复杂子树可以有大量内部实现，但在给定边界隐状态 $A$ 后，内部观测 $B$ 与外部目标 $C$ 条件独立。因此
+### 3.2 表示怎样改变后续问题 {#representation-changes-problem}
+
+设 $z=\phi(x)$ 保留任务相关信息。一方面，组合目标可能在 $z$ 中降低次数或维数：$g(p(x))$ 在标量 $p$ 上只剩一维外层拟合；另一方面，当前简单函数空间改变，原先高阶的输入相关可能变成 $\mathbb E[y\phi^2]$ 或 $\mathbb E[y\psi\phi]$ 等低阶信号。层级学习的优势需要同时计入形成 $z$ 的成本和表示误差，不能只计算“假如已经知道 $z$”的后续收益。
+
+RHM 提供一个明确的概率版本。若子树内部观测 $B$ 与外部目标 $C$ 在给定边界状态 $A$ 后独立，则
 
 $$
 p(c\mid b)=\sum_a p(c\mid a)p(a\mid b).
 $$
 
-这个分解贯穿五篇：无歧义时，后验权重成为同义类的硬标签；有噪或有歧义时，保留软候选；有限数据决定哪些对外作用可辨认；已恢复状态又成为下一尺度的学习单位。共享高层原因还可使不同语言表达共同关系，但实际坐标和计算仍须另测。[Note 01 的有效状态短章](/notes/hierarchical_data/generative_learning/#effective-states)给出分解、低维算例和辨识边界。
+无歧义时，后验退化为同义类编码；有歧义时要保留软后验。这个分解解释为什么边界状态可以被递归复用，却还没有证明网络会学得它。[有效状态短章](/notes/hierarchical_data/generative_learning/#effective-states)进一步分析任务充分性和可辨识性。
 
-![有效状态、统计可辨识性、递归复用与实际计算的机制图](figures/effective_states.svg "机制图｜子树通过边界状态影响外部；条件统计的差异超过有限样本噪声后，才可能形成稳定编码，并被网络递归复用。每个箭头分别需要模型、统计或算法条件，不能由其中一环替代其余各环。")
+![有效状态、统计可辨识性、递归复用与实际计算](figures/effective_states.svg "RHM 中的一条机制链｜每个箭头分别需要概率、统计或算法条件。其他理论可能使用不同中间对象，不能仅凭相同示意箭头视为同一定理。")
 
-## 4. 几条贯穿的联系 {#connections}
+## 4. 五条理论路线如何连接 {#connections}
 
-**规则与统计信号。** 生成树提供可复用的对象，但不保证它们能从有限数据辨认。第一篇建立同义关系，第二篇追踪信号怎样随距离衰减，第四篇再讨论边界和目标也未知时的困难。
+### 4.1 谱与时间：放大已经存在的模态 {#route-spectrum}
 
-**统计阈值与训练保证。** [可证明的逐层串联](/notes/hierarchical_data/generative_learning/#shallow-to-deep-chaining)将局部标签信号、可复用表示和误差控制接成深层学习保证，重点补充 [Ren、Dandi、Krzakala、Lee 的 COLT 2026 工作](https://proceedings.mlr.press/v336/ren26a.html)。这条监督学习路线与第四篇的隐变量预测使用不同目标和恢复条件，需要分别比较。
+[Saxe 2014/2019](/notes/hierarchical_data/spectral_dynamics/)把白化数据的输入输出相关分解为奇异模态。在对齐、平衡条件下，两个权重矩阵的端到端幅度满足 $\dot m=2m(s-m)$。奇异值决定早期放大与特征时间，树生成的相关谱可以形成粗到细的语义分化。Neural Race 再把路径复用和竞争引入可解动力学。其可贵之处是时间预测明确，局限是深线性输入输出映射不具有一般非线性组合表达能力。
 
-**推断与学习。** 第三篇先假设字典已知，计算真正的后验；其他各篇讨论如何从数据接近这个参照。最优后验仍有歧义，与模型没有学会正确后验，是两种不同限制。
+### 4.2 可达性：先行特征改变有效梯度 {#route-accessibility}
 
-**共享内容与表面实现。** 第五篇将前面的单语言模型扩展到共享高层规则的语言。重点纳入 [A theory of platonic representations in language models](https://arxiv.org/abs/2610.07168)，并结合概念层次、统计对称性与相似性校准，区分共享几何、坐标对齐和实际计算。
+[Abbe 2021/2022/2023](/notes/hierarchical_data/gradient_accessibility/)把目标写成 Fourier/Hermite 项：支持能否按小步接续，决定未知坐标如何被发现。MSP 和 leap 将复杂度联系到最难引入的新方向，而不只是最终次数。2023 年将部分结构推进到有限宽、离散在线 SGD 的鞍区逃逸分析，但面向一般网络的复杂度刻画仍是猜想。
 
-所有笔记使用叶层为 $0$、根层为 $L$ 的记号；原论文的层编号不同，在比较标度公式时重新对齐。数据树的层次、网络计算层和训练时间分别定义。
+### 4.3 非线性中间表示：改写统计与计算成本 {#route-depth}
 
-## 5. 怎样按问题阅读 {#reading-paths}
+[Nichani、Wang、Dandi 2025 与 Tabanelli 2026](/notes/hierarchical_data/nonlinear_depth/)分别研究任务相关核投影、层级多项式、增长潜在维数以及随机张量谱恢复。它们具体展示新表示怎样降低后续有效维数或次数。Chen 2020 的固定随机表示与 Daniely 2026 的可观察多标签，帮助分清“表示有用”“表示被发现”以及“监督已经提供入口”。这些结果多数采用受控逐层训练或谱估计，不能统一改称普通端到端 SGD 定理。
 
-第一次阅读建议按 01–05 的顺序：先建立完整语法与同义关系，再看有限样本统计，随后计算已知规律下的最优后验，最后进入未知边界和共享表示。
+### 4.4 反馈：上层响应修正底层选择 {#route-feedback}
 
-如果关心学习曲线，可以先读 01 的样本阈值与 02 的上下文和长尾分析；如果关心扩散，先读 01 的生成模型，再进入 03 的 BP、噪声通道与生成评价；如果关心跨语言表示，读过 03 的上下行消息后进入 05，会更容易理解编码、解码与中间层共享的含义。04 则解释固定分块为什么是一个强假设，以及隐变量目标怎样改变学习信号。
+[BFC、Neural LoFi 与 BackLoFi](/notes/hierarchical_data/coupled_feature_learning/)回答不同问题。前向 LoFi 将小初始化局部梯度转成低阶谱滤波与非线性提升；BFC 证明特定信息间隙模型中联合训练可以逐次修正低层偏差；BackLoFi 从相邻输入行和输出列的梯度推出特征—响应配对，并给三层谱替代过程的自洽演化。局部定理、算法设计、受控极限和数值观察在正文中分别标明。
 
-每篇的结尾都把结论接向下一步。读公式时可沿“对象是什么—哪些条件已知—统计怎样估计—误差如何汇总”检查；读几何图时再补上“允许哪些坐标变换—使用哪个空模型—是否验证功能”三项问题。
+### 4.5 生成结构、架构与学习规则 {#route-rhm}
 
-## 6. 三个贯穿全专题的未解决问题 {#open-questions}
+[RHM 五篇](/notes/hierarchical_data/generative_learning/)让前述问题落到随机语法、同义归并、最优后验、未知边界与共享表示上。新增的 [Delrocq 2026 局部学习规则讨论](/notes/hierarchical_data/generative_learning/#local-learning-rules)比较输入相关 masking、直接反馈与局部自监督，强调有效学习不只有逼近监督 BP 一条路线。规则复用与卷积共享能改变成本，但数据与架构的匹配本身也提供了知识。
 
-**A · 什么决定一个层次可被辨认？** 需要知道不同隐状态对可见目标的作用是否分离，并比较分离度与统计噪声。[标签向量的 $\Delta$](/notes/hierarchical_data/generative_learning/#规则出现过与规则能够被归类相差多少证据)、[关联阈值与真实语言](/notes/hierarchical_data/language_statistics/#natural-language-scaling)、[语境消歧](/notes/hierarchical_data/parsing_latents/#context-disambiguation)分别考察这一问题；更换目标可能改变可辨认的等价类。
+## 5. 怎样按科学问题阅读 {#reading-paths}
 
-**B · 局部发现何时变成跨尺度优势？** 已存在可见信号，并不保证训练能取得它。参数共享、目标尺度、误差传播和优化都决定复用能否继续。[逐层串联](/notes/hierarchical_data/generative_learning/#shallow-to-deep-chaining)、[隐变量预测](/notes/hierarchical_data/parsing_latents/#latent-prediction)和[Transformer 解析计算](/notes/hierarchical_data/parsing_latents/#transformer-parsing)给出不同条件下的答案；一般端到端学习仍不由这些结果共同自动保证。
+第一次阅读可按目录的理论 01–04、RHM 01–05、综合比较前进。也可以选择以下路线：
 
-**C · 共同表示是否承担共同计算？** 共享原因、邻域、坐标和预测功能必须分开测量。[跨位置运输的反例](/notes/hierarchical_data/shared_representations/#残差为什么不等于信息论上的新信息)说明新残差未必是新抽象；[状态替换与受控预测](/notes/hierarchical_data/shared_representations/#functional-tests)则把几何关系接向因果作用。固定高层状态、改变低层实现以后，功能是否保持，是比增加一个相似性指标更直接的检验。
+- **学习顺序与特征时间：** [精确模态解](/notes/hierarchical_data/spectral_dynamics/#feature-times) → [leap 与鞍区逃逸](/notes/hierarchical_data/gradient_accessibility/#saddle-dynamics) → [三种机制的干预预测](/notes/hierarchical_data/mechanism_comparison/#three-mechanisms)。
+- **深度为什么有用：** [核投影与非线性特征](/notes/hierarchical_data/nonlinear_depth/#nichani) → [有效维数下降](/notes/hierarchical_data/nonlinear_depth/#dandi-depth) → [RHM 逐层保证](/notes/hierarchical_data/generative_learning/#shallow-to-deep-chaining)。
+- **反馈与局部学习：** [配对模态](/notes/hierarchical_data/coupled_feature_learning/#backlofi-local) → [自洽替代动力学](/notes/hierarchical_data/coupled_feature_learning/#self-consistent) → [局部学习规则](/notes/hierarchical_data/generative_learning/#local-learning-rules)。
+- **语言与生成：** [统计与上下文](/notes/hierarchical_data/language_statistics/) → [BP 与扩散](/notes/hierarchical_data/inference_generation/) → [未知边界解析](/notes/hierarchical_data/parsing_latents/) → [共享表示的功能检验](/notes/hierarchical_data/shared_representations/#functional-tests)。
+
+## 6. 哪些问题仍需进一步理论 {#open-questions}
+
+不能再把“前一个特征帮助后一个特征”作为无人研究的想法：staircase、BFC、LoFi 和 BackLoFi 已经给出不同实例。更具体的问题是：何时只是增长率不同，何时有真正的可达性改变；耦合何时导致明显延迟或突发；模态如何竞争与稳定；有限样本噪声怎样沿自适应训练轨迹改变谱选择；以及何时能从高维权重或函数态约化到少数有预测力的集体变量。
+
+[综合篇](/notes/hierarchical_data/mechanism_comparison/)给出跨文献比较表、可区分机制的干预与有效理论要求。统计场论和 RG 可以作为有条件的研究工具，但网络逐层变换本身不等于 RG。需要先确定消去的自由度、保留的观测量、流动参数和约化误差。
 
 ## 7. 与其他笔记的联系 {#perspective}
 
-[神经网络理论与可解模型](/notes/neural_network_theory/)提供核方法、特征学习和深度动力学背景；其中的[层级组合学习](/notes/neural_network_theory/hierarchical_learning/)用奇偶机制模型分析弱信号和链式梯度，与这里典型随机语法的统计信号形成对照。[Scaling Laws 机制与学习曲线](/notes/scaling_laws/)进一步比较统计估计、谱结构、离散技能和动态特征的标度机制，[扩散模型的动力学](/notes/diffusion_dynamics/)则从生成过程的时间演化进入。
+[神经网络理论与可解模型](/notes/neural_network_theory/)提供固定核、特征学习与优化背景。[层级组合学习](/notes/neural_network_theory/hierarchical_learning/)用预先给定乘法架构的奇偶模型解释弱幅度与等待，本专题进一步研究未知特征怎样被发现。[Scaling Laws](/notes/scaling_laws/)讨论统计、谱与技能增长的曲线机制；[扩散动力学](/notes/diffusion_dynamics/)讨论噪声过程及生成。不同专题中的时间、样本量和尺度变量各自定义。
 
-## 8. 文献与研究脉络 {#references}
+## 8. 参考文献与研究脉络 {#references}
 
-各篇在相关推导与结论旁链接原文，并在篇末列出作者、年份和出处。这里保留总表，便于沿同一问题比较不同模型；预印本与正式发表版本按同一项工作处理。
+### 8.1 理论部分的原始文献 {#theory-references}
+
+核心论文的完整作者、年份、发表信息和适用条件见各篇末尾；这里按机制给出入口。
+
+| 机制 | 原始工作 | 本专题讨论 |
+| --- | --- | --- |
+| 集体模态与语义分化 | [Saxe 2014](https://arxiv.org/abs/1312.6120)、[Saxe 2019，PNAS](https://doi.org/10.1073/pnas.1820226116)、[Neural Race 2022，ICML](https://proceedings.mlr.press/v162/saxe22a.html) | [理论 01](/notes/hierarchical_data/spectral_dynamics/) |
+| 支持可达性与跃迁复杂度 | [Abbe 2021，NeurIPS](https://papers.nips.cc/paper_files/paper/2021/hash/e2db7186375992e729165726762cb4c1-Abstract.html)、[2022，COLT](https://proceedings.mlr.press/v178/abbe22a.html)、[2023，COLT](https://proceedings.mlr.press/v195/abbe23a.html) | [理论 02](/notes/hierarchical_data/gradient_accessibility/) |
+| 非线性中间表示 | [Nichani 2023](https://papers.nips.cc/paper_files/paper/2023/hash/236b6a814a1d2c0ff504ca7bf380f7ff-Abstract-Conference.html)、[Wang 2024](https://proceedings.iclr.cc/paper_files/paper/2024/hash/af536fa4312b5b2e5c541156cd31e93b-Abstract-Conference.html)、[Dandi 2025](https://papers.nips.cc/paper_files/paper/2025/hash/eb3878c1dcbfff9ee95d5d033e5f5942-Abstract-Conference.html)、[Tabanelli 2026，ICML](https://proceedings.mlr.press/v306/tabanelli26a.html) | [理论 03](/notes/hierarchical_data/nonlinear_depth/) |
+| 表示与监督的边界 | [Chen 2020，NeurIPS](https://papers.nips.cc/paper/2020/hash/fb647ca6672b0930e9d00dc384d8b16f-Abstract.html)、[Daniely 2026，ICML](https://proceedings.mlr.press/v306/daniely26a.html) | [理论 03 §6](/notes/hierarchical_data/nonlinear_depth/#other-representations) |
+| 前向选择与跨层修正 | [BFC 2023，COLT](https://proceedings.mlr.press/v195/allen-zhu23a.html)、[完整 v6](https://arxiv.org/abs/2001.04413v6)、[LoFi v2](https://arxiv.org/abs/2605.13612v2)、[BackLoFi v1](https://arxiv.org/abs/2610.32849v1) | [理论 04](/notes/hierarchical_data/coupled_feature_learning/)；后两篇为 2026 年预印本 |
+| 局部学习与生成层级 | [Delrocq 2026，arXiv v1](https://arxiv.org/abs/2605.18557v1) | [RHM 01 §8](/notes/hierarchical_data/generative_learning/#local-learning-rules)，预印本 |
+
+2026 年文献状态核查截至 **2026-10-29**。预印本版本与正式发表结果分别标明；版本更新可能改变算法或结论，应以正文实际核对的版本为准。
+
+### 8.2 RHM、语言、推断与表示文献 {#rhm-references}
+
+以下保留原专题的研究脉络；每篇正文对相应推导和限制有更详细解释。
 
 | 问题 | 原始文献 | 关注的联系 |
 | --- | --- | --- |
@@ -119,4 +158,4 @@ $$
 
 ---
 
-从第一篇开始：[01 · 层次生成与表征学习 →](/notes/hierarchical_data/generative_learning/)
+[从理论 01 · 谱结构与集体学习动力学开始 →](/notes/hierarchical_data/spectral_dynamics/) · [直接进入 RHM 子系列 →](/notes/hierarchical_data/generative_learning/) · [机制比较与未解决问题](/notes/hierarchical_data/mechanism_comparison/)
