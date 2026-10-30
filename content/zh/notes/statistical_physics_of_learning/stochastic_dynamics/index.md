@@ -21,7 +21,7 @@ $$
 w_{k+1}=(1-\eta a)w_k-\eta\xi_k.
 $$
 
-当 $0<\eta a<2$ 时，这个离散过程有稳态。设稳态方差为 $V$，则 $V=(1-\eta a)^2V+\eta^2\sigma^2$，所以
+当 $0\lt \eta a\lt 2$ 时，这个离散过程有稳态。设稳态方差为 $V$，则 $V=(1-\eta a)^2V+\eta^2\sigma^2$，所以
 
 $$
 V=\frac{\eta\sigma^2}{2a-\eta a^2}.
