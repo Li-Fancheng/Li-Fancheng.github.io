@@ -12,9 +12,17 @@ tags:
   - 文献阅读
 ---
 
-为什么高维学习问题可以被少数变量描述？一篇漂亮的理论工作常常先替换问题：固定特征、构造随机数据、取高维极限，或把学习过程投影到少数序参量上。这里也纳入相变、非平衡随机动力学和重整化群方向的代表作。重点不是罗列结论，而是欣赏作者如何挑选问题、设计可解的近似，并借此看见原问题中本来难以分辨的机制。文献不限期刊和会议；这是一份可继续扩展的阅读地图。
+做理论研究时，我常觉得最困难的不是计算，而是不知道应该计算什么。面对复杂系统，有很多因素可以舍弃，也有很多极限可以取：哪些结构必须留下？一个简化究竟能回答什么问题？
 
-已有笔记可配合阅读：[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层次结构数据与 RHM](/notes/hierarchical_data/) 和 [扩散模型的动力学](/notes/diffusion_dynamics/)。
+这里想从几篇有启发性的工作出发，练习理解研究者怎样把复杂问题变成有物理内容的简单问题。不同做法不一定是同一种意义上的近似：有的是受控极限，有的是隔离机制的最小模型，还有的是人为设计数据。它们能支持的结论也不同。
+
+## 先读三个例子
+
+- [深度线性网络：去掉非线性，为什么还能看到复杂的学习动力学？](/notes/statistical_physics_of_learning/deep_linear_model/) 从平台期出发，保留层间乘法，分离深度参数化造成的动力学。
+- [NTK 与平均场：先换变量，再决定怎样闭合](/notes/statistical_physics_of_learning/changing_variables/) 从函数动力学的恒等式出发，比较固定切核与移动的神经元分布。
+- [RHM：如果想研究层次结构，应该怎样造数据？](/notes/statistical_physics_of_learning/designing_hierarchy/) 从高斯混合开始，构造包含组合与等价替换的数据世界。
+
+下面暂时保留原来的论文地图，供沿着问题继续阅读；这些条目还没有按上面三个例子的写法重新整理。也可参看[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层次结构数据](/notes/hierarchical_data/) 和 [扩散模型的动力学](/notes/diffusion_dynamics/)。
 
 ## 怎样欣赏一个漂亮的近似？
 
