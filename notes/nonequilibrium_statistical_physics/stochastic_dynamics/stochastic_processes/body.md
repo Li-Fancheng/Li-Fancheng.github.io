@@ -2,7 +2,7 @@
 
 前三篇以 Brownian 小步为基础，计算了轨迹、概率云和历史。这里沿用这份起点，逐一改变运动规则，考察回复、事件时钟、方向持续、重尾和相关增量各自带来什么。处理状态依赖噪声所需的随机微积分集中在附录。
 
-## 4.1 随机过程的运动机制 {#process-map}
+## 5.1 随机过程的运动机制 {#process-map}
 
 先回想普通无偏游走：等时间间隔、独立选方向、有限步长方差。在扩散极限中，它成为 Wiener 运动。只要改动其中一条规则，就可能离开普通扩散；不一定需要把所有规则同时换掉。
 
@@ -31,7 +31,7 @@
 
 正文从独立增量出发，依次改变回复、事件时钟、方向持续、跳幅与等待规则，最后用轨迹统计辨别机制。需要处理状态依赖噪声时，可以直接查阅[附录 A](#ito-calculus)中的 Itô 公式与积分约定，再返回具体模型。
 
-## 4.2 Wiener 与 OU：独立增量和线性回复 {#wiener}
+## 5.2 Wiener 与 OU：独立增量和线性回复 {#wiener}
 
 要具体生成一条自由 Brownian 记录，选择步长 $h$，独立抽取 $Z_k\sim\mathcal N(0,1)$，令 $\Delta W_k=\sqrt h Z_k$，再累加这些增量。缩小步长时，这个构造趋向标准 Wiener 过程：
 
@@ -90,7 +90,7 @@ $$
 
 联合状态 $(X_t,\eta_t)$ 可闭合为 Markov 过程；只知道 $X_t$，一般还不知道当前的驱动偏向。同一位置可能由正的环境驱动推来，也可能由负的驱动推来，紧接着的运动会不同。此时过去的位置记录能帮助推测隐藏的 $\eta_t$，于是单独位置显出记忆。过程是否 Markov，始终要连同所记录的状态一起说。
 
-## 4.3 Poisson 过程与随机跳跃 {#poisson-jumps}
+## 5.3 Poisson 过程与随机跳跃 {#poisson-jumps}
 
 现在改变运动的时钟。格点游走规定每隔固定时间迈一步，但一次反应或一次跃迁未必按钟点发生。最简单的假设是事件有恒定发生率 $r$：短时间 $h$ 内发生一次的概率为 $rh+o(h)$，多次事件的概率为 $o(h)$，不相交时间窗的事件独立。这定义齐次 Poisson 计数。
 
@@ -131,7 +131,7 @@ $$
 
 每一项都是流入减流出，与第二篇的守恒思路相同。连续 Gaussian 小步不是唯一机制：有限的大跳需要保持非局部转移；只有跳幅变小、事件加快并有适当矩条件时，才可取漂移扩散极限。不能把重尾大跳无条件截成局部二阶 Fokker–Planck 方程。
 
-## 4.4 持续游走与方向关联 {#persistent-walk}
+## 5.4 持续游走与方向关联 {#persistent-walk}
 
 Poisson 事件也可以改变方向，而不直接改变位置。让粒子在两次事件之间以速率 $v$ 直行，事件到来时将方向 $\sigma_t=\pm1$ **翻转**，翻转率记为 $\alpha$。这是一维 run-and-tumble 模型。刚开始的一小段里，粒子通常还未换向，不能把相邻位移当作独立 Brownian 小步。从左右等概率的方向初态出发，平均位移为零，单条路径却先是一段段直行：
 
@@ -158,7 +158,7 @@ $$
 
 单独的位置一般不足以预测下一小步，因为还需要知道向哪边走；联合状态 $(X,\sigma)$ 才闭合。最简模拟也不必每步抽 Gaussian 数：独立抽指数等待 $-\log U/\alpha$，沿当前方向走完这一段，再翻转方向。持续游走和扩散近似的联系可对照 [MIT 随机游走讲义](https://ocw.mit.edu/courses/18-366-random-walks-and-diffusion-fall-2006/pages/lecture-notes/)。
 
-## 4.5 Lévy flight 与 Lévy walk {#levy-flight-walk}
+## 5.5 Lévy flight 与 Lévy walk {#levy-flight-walk}
 
 持续游走已经放弃了独立方向，但速度有限、翻向等待仍为指数分布。若实验里还频繁出现特别长的一次位移，需要继续问：是跳幅本身很大，还是粒子沿同一方向走了特别久？先只改变增量的尾部，再检查有限速度会增加什么限制。
 
@@ -193,7 +193,7 @@ $K$ 的单位是长度的 $\alpha$ 次方除以时间。特征函数依赖 $k(Kt
 
 右图的大位移必须占用相应时长；若把它误画成瞬时跳跃，就会丢掉位移与耗时的关联。反过来，若事件本来只是短于观测分辨率的一次跃迁，跳跃模型又可能是合适的有效描述。[Zaburdaev、Denisov 与 Klafter 的综述](https://doi.org/10.1103/RevModPhys.87.483)系统区分了这些模型。
 
-## 4.6 CTRW：长等待与次扩散 {#ctrw}
+## 5.6 CTRW：长等待与次扩散 {#ctrw}
 
 Lévy walk 的长时段仍在走；重尾等待 CTRW 却可以很久不动。每次先等一个独立时间 $\tau_k$，再跳一个独立、零均值、有限方差 $\sigma_Y^2$ 的位移 $Y_k$，两组随机量彼此独立。从时刻零开始一次新的等待，令完成的步数为 $N(t)$：
 
@@ -245,7 +245,7 @@ Poisson 等待满足 $\Pr(\tau>a+h\mid\tau>a)=e^{-rh}$，与已经等了多久�
 
 只记录位置通常不是 Markov，因为还缺当前等待的年龄；加入它可以建立扩充状态的更新模型。若把一条记录中的长平台误当作许多独立的“零位移步”，便会丢掉这份年龄信息。
 
-## 4.7 fBm：增量关联与次扩散 {#fractional-brownian}
+## 5.7 fBm：增量关联与次扩散 {#fractional-brownian}
 
 保留 Gaussian 增量，也能得到次扩散：不再让它们独立，而让刚才的位移容易被后来的位移抵消。这个模型不需要等待时钟。标准化的 fractional Brownian motion $B_H(t)$ 是零均值 Gaussian 过程，$B_H(0)=0$，具有连续路径与协方差
 
@@ -277,7 +277,7 @@ $H>1/2$ 时正相关，前一步的方向较易延续；$H\lt1/2$ 时负相关�
 
 相同指数之所以不能区分机制，是因为 MSD 把许多不同的信息合成了一个平方平均。在 CTRW 中，跳幅可以互相独立，位移增长变慢来自可用时间里完成的更新变少；在这里的 fBm 中，每个时间窗都有 Gaussian 增量，但前后的相反方向倾向使它们部分抵消。前一种机制应进一步检查平台长度和观测开始时刻，后一种则应检查增量关联，并确认测量噪声没有人为产生反相关。
 
-## 4.8 从轨迹统计识别运动机制 {#diagnosis}
+## 5.8 从轨迹统计识别运动机制 {#diagnosis}
 
 有限采样会把很快的运动压成一个跳跃，也会把微小位移藏成平台。先明确时间分辨率、定位误差和事件识别规则，再比较多种统计：
 
@@ -475,4 +475,4 @@ $$
 5. He, Y., Burov, S., Metzler, R. & Barkai, E. (2008). [Random Time-Scale Invariant Diffusion and Transport Coefficients](https://doi.org/10.1103/PhysRevLett.101.058101). *Physical Review Letters* **101**, 058101. 重尾等待 CTRW 的时间平均与系综统计。
 6. Deng, W. & Barkai, E. (2009). [Ergodic Properties of Fractional Brownian-Langevin Motion](https://arxiv.org/abs/0809.2430). fBm 及相关运动的有限记录时间平均统计。
 
-**上一篇：**[Path Integrals](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/) · **[返回专题首页](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/)**。
+**上一篇：**[三种描述的联系](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/relations/) · **[返回专题首页](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/)**。

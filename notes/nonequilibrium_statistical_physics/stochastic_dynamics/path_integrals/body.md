@@ -1,4 +1,4 @@
-从同一个起点出发、在同一时刻抵达同一终点，并没有规定中途怎样走。两条记录可以有不同的最大偏离、停留时间和轨迹下方的面积。第二篇的传播核已经把这些历史合并成一个终点密度；现在我们将中间位置保留下来，问每段运动怎样被赋予统计权重。
+从同一个起点出发、在同一时刻抵达同一终点，并没有规定中途怎样走。两条记录可以有不同的最大偏离、停留时间和轨迹下方的面积。第二篇的转移密度把这些历史合并成一个终点分布；如果将中间位置保留下来，就能进一步比较每段运动的统计权重。
 
 ## 3.1 终点条件与路径统计 {#history-question}
 
@@ -23,12 +23,24 @@
 
 <span id="time-slicing"></span>
 
+记 $G(y,t\mid x_0,0)$ 为从确定起点 $x_0$ 出发，时刻 $t$ 在终点 $y$ 附近的条件概率密度。它包含起点与后续运动的联系，不同于仅给出某一时刻占据比例的密度。例如第二篇中正、反驱动和无驱动的圆环具有相同的均匀稳态密度，给定同一起点后，三者的转移密度却不同。
+
+对固定起点，$G$ 在初始时刻为 $\delta(y-x_0)$，随后作为终点 $y$ 的函数满足前向 Fokker–Planck 方程及所选边界条件。将任意初态看作点初态的概率混合，可得
+
+$$
+p(y,t)=\int G(y,t\mid x_0,0)p_0(x_0)\,dx_0.
+$$
+
+这是对初始样本的加权平均，不要求漂移对位置线性，只要求使用同一个给定过程的转移规律。对保持概率的过程，核对终点积分为一；对到达边界即终止的过程，核仅统计存活路径，其积分是从 $x_0$ 出发的存活概率。
+
 先只插入一个中间时刻 $s$。给定起点 $x_0$，先到 $y$、再到 $x_f$ 的条件密度相乘；将所有 $y$ 的可能性相加：
 
 $$
 G(x_f,T\mid x_0,0)
 =\int dy\,G(x_f,T\mid y,s)G(y,s\mid x_0,0).
 $$
+
+这就是 Chapman–Kolmogorov 关系：Markov 性保证给定中间状态后，后续转移无须额外知道此前的历史。状态必须选得足以具有这一性质；例如惯性过程通常要用 $(x,v)$ 拼接，而不能只用位置。
 
 把时间等分为 $N$ 段，记 $\varepsilon=T/N$、$t_k=k\varepsilon$，并用 $x_k=x(t_k)$ 记录各时刻的位置，$x_N=x_f$。对时间齐次 Markov 过程，反复使用 Chapman–Kolmogorov 关系可得
 
@@ -38,7 +50,14 @@ $$
 \prod_{k=0}^{N-1}G_\varepsilon(x_{k+1}\mid x_k)}.
 $$
 
-这里每个短时核先回答“从当前状态到下一状态的概率是多少”。沿着指定的离散历史，把这些条件密度相乘，便得到它的联合权重；对所有中间位置积分，便将所有可能历史的贡献合并起来。对精确转移核，这个公式在任意有限切片数下都成立，还不需要任何连续路径积分的形式操作。
+这里每个短时核先回答从当前状态到下一状态的条件分布。若起点也从 $p_0$ 中抽取，保留所有时刻便得到联合密度
+
+$$
+p(x_0,\ldots,x_N)=p_0(x_0)\prod_{k=0}^{N-1}
+G_\varepsilon(x_{k+1}\mid x_k).
+$$
+
+沿着指定的离散历史，条件密度相乘给出联合权重；固定起点时省去 $p_0(x_0)$，对所有中间位置积分则合并成终点密度。对精确转移核，这个公式在任意有限切片数下都成立，还不需要任何连续路径积分的形式操作。
 
 例如记录了 $T/3$ 和 $2T/3$ 的位置，就要对这两个变量积分才能只留下终点。若关心是否越过某条界线，可以先限制各个切片的位置，再考虑切片变密的极限；有限个采样点仍可能漏掉中间的穿越。对所有中间位置不加限制时，每一种历史都参与终点概率的收支；加上条件或限制以后，不同历史的贡献便被区别开来。
 
@@ -285,7 +304,7 @@ $$
 
 Langevin 给出局部运动，Fokker–Planck 展示概率云与流，路径积分则把同一规律组织成整段历史的统计。它们回答不同问题，并由短时条件转移相容地联系起来。
 
-前三篇主要依靠连续 Gaussian 扰动。若粒子突然长跳、持续直行、长时间停滞，或其增量彼此相关，哪些假设已经改变？下一篇以这些运动规则为线索，介绍常见随机过程与所需微积分。
+下一篇将以短时转移为桥梁，整理这三种描述怎样相互推导，再用 OU 过程检验它们的联系。
 
 ## 参考文献 {#references}
 
@@ -293,4 +312,4 @@ Langevin 给出局部运动，Fokker–Planck 展示概率云与流，路径积�
 2. Majumdar, S. N. (2005). [Brownian Functionals in Physics and Computer Science](https://arxiv.org/abs/cond-mat/0510064). Brownian 路径积分与沿轨迹累计观测量的入门综述，可结合第 3.5 节阅读。
 3. Pavliotis, G. A. (2014). [Stochastic Processes and Applications](https://www.ma.imperial.ac.uk/~pavl/PavliotisBook.pdf). 随机微分方程、转移核与条件过程的数学背景。
 
-**上一篇：**[Fokker–Planck Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/) · **下一篇：**[Stochastic Processes：随机过程与随机微积分导览](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/stochastic_processes/)。
+**上一篇：**[Fokker–Planck Dynamics](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/) · **下一篇：**[三种描述的联系：从随机方程到概率与路径](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/relations/)。
