@@ -4,12 +4,12 @@ subtitle: "PART IV · 综合与复习 · Trajectories, Densities, and Histories"
 date: 2026-10-30
 lastmod: 2026-10-30
 weight: 4
-summary: "以短时转移为桥梁，整理 Langevin、Fokker–Planck 和路径积分之间的推导，并用 OU 过程检验三种描述。"
+summary: "双向推导轨迹、概率和路径描述，并引出到达概率、条件动力学和路径观测量的演化方程。"
 layout: cell-cycle
 article_class: qbio-part-article
 math: true
 toc: true
-reading_time: 35
+reading_time: 60
 tags: [非平衡统计物理, 随机动力学, Langevin, Fokker–Planck, 路径积分]
 ---
 

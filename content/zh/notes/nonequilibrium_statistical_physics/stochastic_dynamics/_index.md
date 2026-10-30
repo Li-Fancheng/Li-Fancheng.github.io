@@ -26,7 +26,7 @@ tags: [非平衡统计物理, 随机动力学, 随机过程]
 3. **[Path Integrals：从终点分布到随机历史](path_integrals/)**\
    同一个终点由哪些历史抵达？用时间切片构造权重，计算 Brownian bridge、偏离典型运动的终点和轨迹面积。
 4. **[三种描述的联系：从随机方程到概率与路径](relations/)**\
-   从短时转移连接 Langevin、Fokker–Planck 和路径积分，双向推导并用 OU 过程对照三种计算。
+   双向推导 Langevin、Fokker–Planck 与路径积分，并引出到达概率、条件路径动力学和路径观测量的演化方程。
 5. **[Stochastic Processes：随机过程与随机微积分导览](stochastic_processes/)**\
    当运动出现跳跃、持续直行、重尾位移、长等待或相关增量，应怎样选模型？对照 Wiener、OU、Poisson、持续游走、Lévy、CTRW 与 fBm，并查阅 Itô/Stratonovich 规则。
 
