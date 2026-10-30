@@ -29,7 +29,7 @@ $$
 在接近平衡、空间近似均匀的热浴中，若粒子运动足够缓慢，可以将平均阻力对速度历史的响应保留到一阶。将平均保守作用吸收到 $V(x)$，并采用与平衡热浴相容的初始准备，可写出一种广义 Langevin 形式：
 
 \[
-m\dot v(t)=-V'(x(t))
+m\dot v(t)=-\left.\frac{dV}{dx}\right|_{x=x(t)}
 -\int_0^t K(t-s)v(s)\,ds+\eta(t),
 \qquad\dot x=v.
 \]
@@ -54,7 +54,7 @@ $K(u)$ 是因果的摩擦记忆核，描述时刻 $s$ 的运动在延迟 $u=t-s$
 最后，还需假设在所研究的空间范围内，摩擦系数与涨落强度对位置的依赖可以忽略，才能使用常数摩擦和加性噪声。于是得到本文采用的模型
 
 \[
-m\ddot x=-V'(x)-\zeta\dot x+\eta(t).
+m\ddot x=-\frac{dV}{dx}-\zeta\dot x+\eta(t).
 \]
 
 这套近似保留了 $(x,v)$ 及环境的有效阻尼和随机冲量，舍去了环境的详细状态与快速记忆，使 $(x,v)$ 构成封闭的 Markov 描述。如果环境记忆不能忽略，或噪声强度明显依赖位置，就需要回到带记忆或乘性噪声的模型。下一节再利用热平衡确定白噪声的强度。
@@ -210,7 +210,7 @@ D=\mu k_{\mathrm B}T.
 m\ddot x=F(x)-\zeta\dot x+\sqrt{2\zeta k_{\mathrm B}T}\,\xi(t),
 \]
 
-其中 $F=-V'$，并继续假设 $\zeta,T$ 为常数。记 $\tau_x$ 为位置在所关心的空间尺度上明显演化、或外力明显变化所需的较短时间。过阻尼约化要求存在中间观测窗口
+其中 $F(x)=-\frac{dV}{dx}$，并继续假设 $\zeta,T$ 为常数。记 $\tau_x$ 为位置在所关心的空间尺度上明显演化、或外力明显变化所需的较短时间。过阻尼约化要求存在中间观测窗口
 
 \[
 \tau_{\mathrm{bath}}\ll\tau_m=\frac m\zeta
@@ -791,5 +791,17 @@ D_{ij}=\frac12\int_0^\infty
 这里的 $\eta_{\mathrm{sh}}$ 是黏度，不是正文的随机力 $\eta(t)$。应力记录动量输运，正如速度记录粒子位移；黏度的平衡关联计算及应力归一化示例见 [LAMMPS 的黏度说明](https://docs.lammps.org/Howto_viscosity.html)。不同输运问题的流及其共轭驱动具有不同量纲，前面的体积和温度因子需要随定义确定。
 
 在数值计算中，可以检查截断积分 $D(t_c)=\int_0^{t_c}C_v(t)dt$ 是否在关联衰减后出现稳定区间，并与均方位移的长时斜率比较。更长的积分上限也会累积更多关联尾部的采样噪声，因此应同时增加独立轨迹或观测时长来判断收敛。
+
+## 参考文献 {#references}
+
+以下文献对应本文的 Brownian 运动、环境约化、OU 过程及涨落响应推导；每条后附与正文的联系。
+
+1. Einstein, A. (1905). [Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen](https://doi.org/10.1002/andp.19053220806). *Annalen der Physik* **322**, 549–560. Brownian 扩散与迁移率之间的 Einstein 关系，对应第 1.3 节。
+2. Uhlenbeck, G. E. & Ornstein, L. S. (1930). [On the Theory of the Brownian Motion](https://doi.org/10.1103/PhysRev.36.823). *Physical Review* **36**, 823–841. 速度弛豫、位移统计与谐势中 Brownian 运动的经典计算，对应第 1.3、1.5–1.6 节。
+3. Kubo, R. (1966). [The fluctuation-dissipation theorem](https://doi.org/10.1088/0034-4885/29/1/306). *Reports on Progress in Physics* **29**, 255–284. 广义 Langevin 方程、摩擦记忆、线性响应与平衡涨落之间的联系，对应第 1.1–1.2、1.6 节及附录 B–C；另有[开放全文](https://www.zib.de/userpage/donati/stochastics2023/06/references/Kubo1966.pdf)。
+4. Di Pasquale, N., Hudson, T., Icardi, M., Rovigatti, L. & Spinaci, M. (2023). [A systematic analysis of the memory term in coarse-grained models: The case of the Markovian approximation](https://doi.org/10.1017/S0956792522000158). *European Journal of Applied Mathematics* **34**, 326–345. 分析以瞬时作用近似记忆项的条件与误差，并讨论空间依赖，对应第 1.1 节。
+5. Cugliandolo, L. F. (2011). [Out of equilibrium dynamics of complex systems](https://giamarchi.unige.ch/wp-content/php_code/notes/cuso/Cugliandolo/DynamicsComplexSystems-lectures1-4.pdf). Cours de troisième cycle de la Suisse Romande 课程讲义，第 2.3–2.4 节。由热浴模型建立 Langevin 描述，并讨论记忆、过阻尼极限与谐势弛豫，可结合第 1.1、1.4–1.5 节阅读。
+6. Tong, D. (2012). [Kinetic Theory](https://www.damtp.cam.ac.uk/user/tong/kintheory/). University of Cambridge 课程讲义，第 3–4 章。第 3 章介绍 Langevin、扩散与 Einstein 关系，第 4 章介绍响应函数、耗散和涨落耗散定理，可用于串联正文与附录 B–C。
+7. LAMMPS Developers. [Calculate viscosity](https://docs.lammps.org/Howto_viscosity.html). *LAMMPS Documentation*. 通过平衡剪切应力的自关联计算黏度的 Green–Kubo 示例，对应附录 C.3。
 
 **下一篇：**[Fokker–Planck Dynamics：从随机轨迹到概率流](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/)。
