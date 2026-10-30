@@ -2,7 +2,7 @@
 title: "随机动力学：从单条轨迹到概率与历史"
 subtitle: "三个物理视角，一份随机过程与工具指南"
 date: 2026-10-28
-lastmod: 2026-10-29
+lastmod: 2026-10-30
 summary: "从 Brownian 与 OU 理解粒子运动、概率流和历史统计，再按物理机制认识常见随机过程。"
 layout: series
 show_article_cards: false

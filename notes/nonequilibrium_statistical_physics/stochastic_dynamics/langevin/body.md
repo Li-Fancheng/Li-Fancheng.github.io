@@ -58,14 +58,14 @@ $$
 
 这里的 \(A\) 衡量随机力的强度。虽然随机力的平均值为零，但在短时间 \(h\) 内，它仍会给粒子带来随机冲量，其均方为 \(\langle[\int_t^{t+h}\eta(s)\,ds]^2\rangle=Ah\)，类似随机游走。因此，随机冲量的典型大小随 \(\sqrt{h}\) 增长，而恒定外力产生的冲量随 \(h\) 增长。
 
-为了简化问题，先不考虑外部势能，并记速度弛豫时间 $\tau_m=m/\zeta$。引入速度得到一个一阶线性微分方程，使用积分因子 $\mu(t) = e^{t/\tau_m}$ 求解得到
+为了简化问题，先不考虑外部势能，并记速度弛豫时间 $\tau_m=m/\zeta$。引入速度得到一个一阶线性微分方程，使用积分因子 $e^{t/\tau_m}$ 求解得到（逐步推导见[附录 A.1](#integrating-factor)）
 
 $$
 v(t)=v_0e^{-t/\tau_m}
 +\frac1m\int_0^t e^{-(t-s)/\tau_m}\eta(s)ds.
 $$
 
-这个解表明，粒子在时刻 \(t\) 的速度由两部分组成：初速度的贡献，以及此后不断受到的随机冲量。初速度的影响按 \(e^{-t/\tau_m}\) 衰减，而发生在时刻 \(s\) 的随机冲量，对之后速度的影响则按指数记忆核 \(e^{-(t-s)/\tau_m}\) 衰减。回顾前面提到的 Markov 性，有意思的是粒子并不会立刻忘记过去的扰动，而是在特征时间 \(\tau_m=m/\zeta\) 上逐渐失去速度记忆，环境的扰动没有记忆，但受到扰动的粒子仍存在记忆。如果初速度与后续随机力相互独立，两部分对速度方差的贡献便可以分别计算。利用前面给出的白噪声关联函数，可以得到
+这个解表明，粒子在时刻 \(t\) 的速度由两部分组成：初速度的贡献，以及此后不断受到的随机冲量。初速度的影响按 \(e^{-t/\tau_m}\) 衰减，而发生在时刻 \(s\) 的随机冲量，对之后速度的影响则按指数记忆核 \(e^{-(t-s)/\tau_m}\) 衰减。回顾前面提到的 Markov 性，有意思的是粒子并不会立刻忘记过去的扰动，而是在特征时间 \(\tau_m=m/\zeta\) 上逐渐失去速度记忆，环境的扰动没有记忆，但受到扰动的粒子仍存在记忆。如果初速度与后续随机力相互独立，两部分对速度方差的贡献便可以分别计算。将随机积分的平方写成重积分，再利用白噪声关联函数（见[附录 A.2](#squared-integral)），可以得到
 
 $$
 \begin{aligned}
@@ -117,7 +117,7 @@ C_v(t)=\langle v(t)v_0\rangle_{\mathrm{st}}
 
 这个长度称为速度持续长度（persistence length），描述粒子在逐渐失去原来速度记忆的过程中，典型能够运动多远。因此，\(\tau_m\) 和 \(\ell_p\) 分别给出了从短时间弹道运动向长时间扩散运动过渡的时间尺度和空间尺度。
 
-接下来，我们计算粒子的均方位移。由于位移是速度在时间上的积分，\(\Delta x(t)=\int_0^t v(s)\,ds\)，将其平方并取平均后，自然会出现不同时刻的速度乘积 \(\langle v(t_1)v(t_2)\rangle\)，也就是速度关联函数。因此，粒子位移的增长不仅取决于速度的大小，还取决于不同时刻的速度能够保持多强的关联。
+接下来，我们计算粒子的均方位移。由于位移是速度在时间上的积分，\(\Delta x(t)=\int_0^t v(s)\,ds\)，将其平方并取平均后，自然会出现不同时刻的速度乘积 \(\langle v(t_1)v(t_2)\rangle\)，也就是速度关联函数。因此，粒子位移的增长不仅取决于速度的大小，还取决于不同时刻的速度能够保持多强的关联。平方展开、积分区域对称性及换序的完整步骤见[附录 A.2](#squared-integral)。
 
 前面我们已经假设初速度服从热平衡分布，因此速度过程从一开始就是平稳的（stationary）。平稳性意味着速度的统计性质不随时间改变，两个时刻的速度关联只取决于它们之间的时间差，而与具体的观测时刻无关，即 \(\langle v(t_1)v(t_2)\rangle=C_v(|t_1-t_2|)\)。利用这一性质，我们可以将位移的积分表达式代入均方位移，得到两个时间积分。由于交换 \(t_1\) 和 \(t_2\) 的先后顺序不会改变速度乘积的平均值，因此只需要计算 \(t_1\geq t_2\) 的部分。于是
 
@@ -136,7 +136,7 @@ C_v(t)=\langle v(t)v_0\rangle_{\mathrm{st}}
 
 ![惯性 Brownian 粒子的速度相关与弹道到扩散跨越](../figures/09_inertial_crossover.svg)
 
-*图 1｜左图展示均方位移从短时 \(t^2\) 增长到长时 \(t\) 增长的过渡；右图展示速度关联函数在时间尺度 \(\tau_m\) 上的指数衰减。时间以 \(\tau_m\) 为单位，均方位移以 \(D\tau_m\) 为单位。*
+*Fig. 1. 左图展示均方位移从短时 \(t^2\) 增长到长时 \(t\) 增长的过渡；右图展示速度关联函数在时间尺度 \(\tau_m\) 上的指数衰减。时间以 \(\tau_m\) 为单位，均方位移以 \(D\tau_m\) 为单位。*
 
 除了得到完整的均方位移，我们还可以从速度关联函数直接确定长时间的扩散系数。对均方位移关于时间求导，有 \(\frac{d}{dt}\langle\Delta x^2(t)\rangle=2\int_0^t C_v(s)\,ds\)。当观察时间远大于速度关联时间时，积分已经接近一个常数，而此时均方位移的增长率正是 \(2D\)。因此，
 
@@ -146,7 +146,7 @@ D=\int_0^\infty C_v(s)\,ds
 =\frac{k_{\mathrm B}T}{\zeta}.
 \]
 
-这就是扩散系数的 Green–Kubo 关系。它给出了一个很直观的物理图像：粒子的速度涨落越强，或者速度能够在同一方向上保持得越久，位置扩散就越快。在当前模型中，质量较大的粒子具有较小的热速度，但其速度弛豫时间 \(\tau_m=m/\zeta\) 也更长。这两种质量依赖恰好相互抵消，因此长时间的扩散系数 \(D\) 与粒子质量无关。不过，质量仍然决定了从弹道运动过渡到扩散运动所需的时间。
+这就是扩散系数的 Green–Kubo 关系。它给出了一个很直观的物理图像：粒子的速度涨落越强，或者速度能够在同一方向上保持得越久，位置扩散就越快。在当前模型中，质量较大的粒子具有较小的热速度，但其速度弛豫时间 \(\tau_m=m/\zeta\) 也更长。这两种质量依赖恰好相互抵消，因此长时间的扩散系数 \(D\) 与粒子质量无关。不过，质量仍然决定了从弹道运动过渡到扩散运动所需的时间。[附录 C](#green-kubo-extension)进一步将这个积分与迁移率、多维扩散及其他输运系数联系起来。
 
 最后，我们还可以将扩散与粒子受到外力时的响应联系起来。假设对粒子施加一个恒定的外力 \(f\)，那么平均速度满足 \(m\,d\langle v\rangle/dt=-\zeta\langle v\rangle+f\)。经过足够长的时间，粒子达到稳定的漂移速度 \(\langle v\rangle_{\mathrm{st}}=f/\zeta\)。因此，定义迁移率（mobility）为单位外力引起的稳态速度响应，就有 \(\mu=\partial\langle v\rangle_{\mathrm{st}}/\partial f=1/\zeta\)。
 
@@ -237,7 +237,7 @@ b(x)\simeq b'(x_*)(x-x_*),
 
 为了理解 OU 过程的运动，我们先暂时忽略随机扰动。此时方程退化为普通的确定性回复运动，$\dot x=-\gamma x$，其解为 $x(t)=x_0e^{-\gamma t}$。这表明，如果粒子最初偏离平衡位置，它会逐渐返回原点，偏离量以指数形式衰减。相应的回复时间为 $\tau=1/\gamma$。
 
-加入随机扰动后，情况变得更加有趣。粒子在返回平衡位置的过程中，仍然不断受到环境的随机推动。每一次扰动都会使位置发生微小变化，而这些变化在后续运动中又受到回复力的作用，逐渐衰减。因此，粒子在某一时刻的位置，既包含初始位置尚未衰减的部分，也包含此后所有随机扰动留下的影响。由于 OU 方程是线性的，我们可以直接求出它的精确解：
+加入随机扰动后，情况变得更加有趣。粒子在返回平衡位置的过程中，仍然不断受到环境的随机推动。每一次扰动都会使位置发生微小变化，而这些变化在后续运动中又受到回复力的作用，逐渐衰减。因此，粒子在某一时刻的位置，既包含初始位置尚未衰减的部分，也包含此后所有随机扰动留下的影响。由于 OU 方程是线性的，用[附录 A.1](#integrating-factor)中的积分因子法可以直接求出它的精确解：
 
 \[
 x(t)=x_0e^{-\gamma t}
@@ -315,7 +315,7 @@ OU 过程还可以用来描述其他具有线性回复机制的涨落。例如�
 
 ![OU 过程的随机轨迹、方差、时间关联与响应](../figures/01_ou_fluctuations.svg)
 
-*图 2｜取 $\gamma=1,D=0.4$。左上图展示从 $x_0=2$ 出发的随机轨迹及其集合平均，阴影表示平均值两侧一个标准差的范围；右上图展示位置方差逐渐趋于 $D/\gamma$ 的过程。下方分别给出稳态位置关联函数与受外力扰动后的响应，它们将在下一节讨论。轨迹采用 OU 过程的精确转移分布采样。*
+*Fig. 2. 取 $\gamma=1,D=0.4$。左上图展示从 $x_0=2$ 出发的随机轨迹及其集合平均，阴影表示平均值两侧一个标准差的范围；右上图展示位置方差逐渐趋于 $D/\gamma$ 的过程。下方分别给出稳态位置关联函数与受外力扰动后的响应，它们将在下一节讨论。轨迹采用 OU 过程的精确转移分布采样。*
 
 到这里，我们已经知道回复力如何决定粒子的位置涨落及其弛豫时间。但如果只观察长期的位置分布，就无法判断粒子究竟运动得快还是慢。要获得这些动力学信息，就必须进一步研究不同时刻的位置之间存在怎样的关联。更进一步，这些自发产生的涨落与粒子受到外力时的响应之间，是否存在某种联系？这正是下一节要讨论的问题。
 
@@ -423,7 +423,7 @@ R_f(\tau)
 }
 \]
 
-这就是涨落–耗散定理（fluctuation–dissipation theorem）在当前模型中的一个具体形式。
+这就是涨落–耗散定理（fluctuation–dissipation theorem）在当前模型中的一个具体形式。[附录 B](#fdt-extension)给出不依赖谐势的平衡推导，并将它写成频谱与耗散响应之间的关系。
 
 它告诉我们，在热平衡条件下，即使不对系统施加任何外力，也可以通过测量粒子自发涨落的时间关联，推断它受到微小外力时将如何响应。关联函数与响应函数原本对应两种不同的实验，却因为热平衡条件而受到同一个关系约束。
 
@@ -433,9 +433,141 @@ R_f(\tau)
 
 通过 Langevin 描述，我们已经能够从单条粒子的随机运动出发，计算扩散、弛豫、时间关联和外力响应。接下来如果希望直接研究许多次随机运动所形成的概率分布，就需要转向 Fokker–Planck 描述。
 
-<span id="附录-a怎样模拟怎样判断结果可信"></span>
+## 附录 A：反复用到的计算工具 {#calculation-tools}
 
-## 附录 A：数值小步怎样保留正确涨落
+正文中的速度弛豫、OU 解、方差与均方位移，都用到了下面两个计算步骤。先从普通积分说明，再写出白噪声对应的随机积分形式。
+
+### A.1 一阶线性微分方程的积分因子法 {#integrating-factor}
+
+考虑初值问题
+
+\[
+\frac{dy}{dt}+a(t)y=b(t),\qquad y(t_0)=y_0.
+\]
+
+我们希望把左边写成一个乘积的导数。将方程乘以一个只依赖时间的函数 $\mathcal I(t)$，根据乘积求导法则，
+
+\[
+\frac{d}{dt}[\mathcal I(t)y(t)]
+=\mathcal I(t)\frac{dy}{dt}+\mathcal I'(t)y(t).
+\]
+
+因此只要选取 $\mathcal I'=a\mathcal I$，就能把原方程左边的两项合起来。取 $\mathcal I(t_0)=1$，得到积分因子
+
+\[
+\mathcal I(t)=\exp\left[\int_{t_0}^t a(u)\,du\right],
+\qquad
+\frac{d}{dt}[\mathcal I(t)y(t)]=\mathcal I(t)b(t).
+\]
+
+从 $t_0$ 积分到 $t$，再除以 $\mathcal I(t)$，便得到
+
+\[
+\boxed{
+y(t)=y_0\exp\left[-\int_{t_0}^t a(u)\,du\right]
++\int_{t_0}^t\exp\left[-\int_s^t a(u)\,du\right]b(s)\,ds.
+}
+\]
+
+这里用 $\mathcal I$ 表示积分因子，以免与正文表示迁移率的 $\mu$ 混淆。若 $a(t)=a$ 为常数，公式简化为
+
+\[
+y(t)=y_0e^{-a(t-t_0)}+\int_{t_0}^t e^{-a(t-s)}b(s)\,ds.
+\]
+
+对正文的自由粒子，$\dot v+v/\tau_m=\eta/m$，因此取 $a=1/\tau_m$、$b=\eta/m$，便得到速度解。对受外力的平均位置，取 $a=\gamma$、$b=\mu f(t)$，就得到线性响应的卷积表达式；令初始时刻趋于 $-\infty$，衰减的初值项也随之消失。
+
+理想白噪声不是普通的时间函数，更严格的写法是
+
+\[
+dy=[-a(t)y+b(t)]\,dt+\sigma(t)\,dW_t,
+\]
+
+其中 $a,b,\sigma$ 为确定性函数。由于积分因子没有随机增量，Itô 乘积公式中不会多出二次变差项，因此仍有
+
+\[
+d(\mathcal I y)=\mathcal I b\,dt+\mathcal I\sigma\,dW_t.
+\]
+
+积分以后，通解只需在确定性解后再加上
+
+\[
+\int_{t_0}^t\exp\left[-\int_s^t a(u)\,du\right]\sigma(s)\,dW_s.
+\]
+
+令 $a=\gamma$、$b=0$、$\sigma=\sqrt{2D}$，就得到 OU 的精确解。这说明指数核的来源是线性回复项；随机性改变的是被指数核累积的输入。
+
+### A.2 积分的平方为什么变成二重积分 {#squared-integral}
+
+先考虑一个普通的可积函数 $g$。平方就是两个相同积分相乘，但两个积分各有自己的积分变量：
+
+\[
+\begin{aligned}
+\left[\int_0^t g(s)\,ds\right]^2
+&=\left[\int_0^t g(s)\,ds\right]
+  \left[\int_0^t g(u)\,du\right]\\
+&=\int_0^t ds\int_0^t du\,g(s)g(u).
+\end{aligned}
+\]
+
+用离散求和看得更直接：$[\sum_i g_i\Delta t]^2=\sum_{i,j}g_i g_j(\Delta t)^2$。平方展开包含每一对时刻的乘积，而不只是 $i=j$ 的项，因此一般不能写成 $\int_0^t g(s)^2\,ds$。
+
+对随机过程 $X$，定义 $Y(t)=\int_0^t K(s)X(s)\,ds$，其中 $K$ 为确定性权重。在二阶矩有限、可交换平均与积分的条件下，
+
+\[
+\begin{aligned}
+\langle Y(t)^2\rangle
+&=\int_0^t ds\int_0^t du\,
+K(s)K(u)\langle X(s)X(u)\rangle,\\
+\operatorname{Var}Y(t)
+&=\int_0^t ds\int_0^t du\,
+K(s)K(u)\operatorname{Cov}[X(s),X(u)].
+\end{aligned}
+\]
+
+第二行通过对 $X$ 去均值得到。若过程均值非零，二阶矩与方差必须区分；正文中自由平衡粒子的平均速度为零，因此均方位移就是位移方差。
+
+**白噪声怎样把重积分缩成单积分？** 对 $\langle\eta(s)\eta(u)\rangle=A\delta(s-u)$，在随机积分意义下有
+
+\[
+\begin{aligned}
+\left\langle\left[\int_0^t K(s)\eta(s)\,ds\right]^2\right\rangle
+&=A\int_0^t ds\int_0^t du\,K(s)K(u)\delta(s-u)\\
+&=A\int_0^t K(s)^2\,ds.
+\end{aligned}
+\]
+
+这里的 $\delta$ 将两个时刻约束为同一时刻。严格地说，$\eta(s)\,ds=\sqrt A\,dW_s$，上式就是确定性被积函数的 Itô 等距关系。它也可以从独立增量推出：$\langle\Delta W_i\Delta W_j\rangle=\delta_{ij}\Delta t$，因此平方求和中只留下同一时间格的方差。
+
+例如，速度解的随机部分权重为 $K(s)=m^{-1}e^{-(t-s)/\tau_m}$，因此
+
+\[
+\operatorname{Var}\left[\frac1m\int_0^t e^{-(t-s)/\tau_m}\eta(s)\,ds\right]
+=\frac A{m^2}\int_0^t e^{-2(t-s)/\tau_m}\,ds
+=\frac A{2\zeta m}(1-e^{-2t/\tau_m}).
+\]
+
+如果初速度与后续噪声独立，交叉协方差为零，再加上 $e^{-2t/\tau_m}\operatorname{Var}(v_0)$，就回到正文的速度方差。同理，OU 随机积分的方差为 $2D\int_0^t e^{-2\gamma(t-s)}ds$。
+
+**平稳关联怎样再化成 $2\int_0^t(t-\tau)C(\tau)d\tau$？** 对均值为零的平稳标量速度，$\langle v(s)v(u)\rangle=C_v(s-u)$，而交换两个经典随机变量给出 $C_v(-\tau)=C_v(\tau)$。对普通可积的速度关联函数，正方形积分区域可沿对角线分成两个贡献相等的三角形：
+
+\[
+\begin{aligned}
+\left\langle\left[\int_0^t v(s)\,ds\right]^2\right\rangle
+&=\int_0^t ds\int_0^t du\,C_v(s-u)\\
+&=2\int_0^t ds\int_0^s du\,C_v(s-u)\\
+&=2\int_0^t ds\int_0^s d\tau\,C_v(\tau)\\
+&=2\int_0^t d\tau\int_\tau^t ds\,C_v(\tau)\\
+&=2\int_0^t(t-\tau)C_v(\tau)\,d\tau.
+\end{aligned}
+\]
+
+第三行令 $\tau=s-u$；第四行交换积分次序，区域 $0\leq\tau\leq s\leq t$ 变成先固定 $\tau$，再让 $s$ 从 $\tau$ 取到 $t$。所以权重 $t-\tau$ 表示观测窗口中具有同一时间差的时间对所占的长度。这里速度关联在对角线上没有奇异项；若直接处理理想白噪声，应使用前面的 $\delta$ 积分或 Itô 等距关系。
+
+<span id="附录-a怎样模拟怎样判断结果可信"></span>
+<span id="附录-a数值小步怎样保留正确涨落"></span>
+
+### A.3 数值小步怎样保留正确涨落 {#numerical-checks}
 
 对加性噪声，记 $x_n=x(t_n)$、$t_n=nh$。Euler–Maruyama 更新为 $x_{n+1}=x_n+b(x_n)h+\sqrt{2Dh}Z_n$，其中每步的 $Z_n$ 独立服从标准高斯。随机项必须按 $\sqrt h$ 缩放，才能使固定时长内累积的方差保持有限。
 
@@ -453,5 +585,181 @@ $$
 $$
 
 稳定并不等于精确：接近稳定边界时，方差会显著偏大。比较减半步长后的宽度和关联时间，比判断一条轨迹“看起来会抖”更有判别力。
+
+## 附录 B：拓展——涨落耗散关系 {#fdt-extension}
+
+正文用谐势中的 OU 过程验证了 $R_f(\tau)=-C'(\tau)/(k_{\mathrm B}T)$。这个关系并不要求回复力一定是线性的；它来自平衡分布与微扰方式之间的联系。以下讨论经典热平衡系统，外力通过能量项 $-f(t)x$ 与位置耦合，并假设位置方差有限、关联最终衰减。线性响应的一般背景可参阅 [Kubo（1966）](https://www.zib.de/userpage/donati/stochastics2023/06/references/Kubo1966.pdf)。
+
+### B.1 从撤去小外力后的弛豫推导
+
+记 $\beta=1/(k_{\mathrm B}T)$、$\delta x=x-\langle x\rangle_{\mathrm{eq}}$，以及
+
+\[
+C_x(\tau)=\langle\delta x(\tau)\delta x(0)\rangle_{\mathrm{eq}}.
+\]
+
+设在 $t<0$ 时施加恒定的小外力 $f_0$，并等待系统在扰动后的能量 $H_0-f_0x$ 下达到平衡。在 $t=0$ 突然撤去外力，此后按原来的无扰动动力学演化。用 $z$ 表示完整状态，撤去外力时的分布为
+
+\[
+\begin{aligned}
+p_{f_0}(z)
+&=\frac{p_{\mathrm{eq}}(z)e^{\beta f_0x(z)}}
+{\langle e^{\beta f_0x}\rangle_{\mathrm{eq}}}\\
+&=p_{\mathrm{eq}}(z)[1+\beta f_0\delta x(z)]+O(f_0^2).
+\end{aligned}
+\]
+
+初始分布的一阶偏离正比于初始位置涨落。将这个分布按无扰动动力学推进到时刻 $t>0$，便得到平均位置的弛豫
+
+\[
+\delta\langle x(t)\rangle=\beta f_0 C_x(t)+O(f_0^2).
+\]
+
+另一方面，按照线性响应的定义，同一次“先施加、后撤去”的实验满足
+
+\[
+\begin{aligned}
+\delta\langle x(t)\rangle
+&=f_0\int_{-\infty}^0 R_f(t-s)\,ds\\
+&=f_0\int_t^\infty R_f(\tau)\,d\tau.
+\end{aligned}
+\]
+
+比较两式并对 $t$ 求导，得到
+
+\[
+\boxed{R_f(t)=-\beta\frac{dC_x(t)}{dt},\qquad t>0.}
+\]
+
+这个推导说明，自发涨落之所以能预测外力响应，是因为一个小的平衡外力恰好以 $\delta x$ 为权重改变初始状态的概率。只要无扰动系统及其受力扰动属于同一温度下的平衡动力学，这个结论就可用于一般的束缚势。若改用其他观测量，响应所对应的关联函数也要与外场在能量中耦合的变量相匹配。
+
+若 $C_x(\infty)=0$，积分还给出静态易感率
+
+\[
+\chi(0)=\int_0^\infty R_f(t)\,dt
+=\beta C_x(0)=\frac{\operatorname{Var}_{\mathrm{eq}}x}{k_{\mathrm B}T}.
+\]
+
+在谐势中，$C_x(0)=k_{\mathrm B}T/\kappa$，所以 $\chi(0)=1/\kappa$，与恒力导致的位置移动 $f_0/\kappa$ 一致。
+
+### B.2 频率空间中，为什么叫“耗散”
+
+沿用正文的双边 Fourier 变换约定，定义
+
+\[
+S_x(\omega)=\int_{-\infty}^{\infty}C_x(t)e^{i\omega t}\,dt,
+\qquad
+\chi(\omega)=\int_0^\infty R_f(t)e^{i\omega t}\,dt.
+\]
+
+利用 $C_x(t)$ 的偶对称性及分部积分，可得
+
+\[
+\begin{aligned}
+\operatorname{Im}\chi(\omega)
+&=-\beta\int_0^\infty C_x'(t)\sin(\omega t)\,dt\\
+&=\beta\omega\int_0^\infty C_x(t)\cos(\omega t)\,dt\\
+&=\frac{\beta\omega}{2}S_x(\omega).
+\end{aligned}
+\]
+
+于是经典涨落耗散关系也可以写成
+
+\[
+\boxed{S_x(\omega)=\frac{2k_{\mathrm B}T}{\omega}
+\operatorname{Im}\chi(\omega),\qquad\omega\ne0.}
+\]
+
+若零频极限存在，可取 $\omega\to0$ 理解。系数 $2$ 对应这里的双边功率谱定义。响应的虚部与耗散的联系及其经典极限，见 [Tong 的线性响应讲义，第 4.2.2、4.3.2 节](https://www.damtp.cam.ac.uk/user/tong/kintheory/four.pdf)。
+
+例如，施加 $f(t)=f_0\cos\omega t$，经过瞬态后，外力平均输入功率为 $\overline{f(t)\,d\langle x(t)\rangle/dt}=f_0^2\omega\operatorname{Im}\chi(\omega)/2$。虚部决定每个周期中净输入并耗散掉的能量，因此称为耗散响应。对正文的 OU 模型，
+
+\[
+\chi(\omega)=\frac{\mu}{\gamma-i\omega},
+\qquad
+S_x(\omega)=\frac{2\mu k_{\mathrm B}T}{\gamma^2+\omega^2}
+=\frac{2D}{\gamma^2+\omega^2},
+\]
+
+恰好回到正文的 Lorentzian 频谱。正文的噪声强度 $A=2\zeta k_{\mathrm B}T$ 约束热浴的随机力与摩擦；这里的关系约束粒子的自发关联与受力响应。两种形式表达的是同一个平衡热浴对涨落与耗散的限制。对主动驱动等非平衡环境，不能仅凭稳态或指数关联就套用这些平衡公式。
+
+## 附录 C：拓展——Green–Kubo 关系 {#green-kubo-extension}
+
+Green–Kubo 关系把输运系数写成平衡态中相应运动或流的时间关联积分。对粒子扩散，先由位移的统计得到扩散系数，再由小外力响应得到迁移率，可以看清它与涨落耗散关系、Einstein 关系之间的联系。
+
+### C.1 从均方位移到扩散系数
+
+考虑零平均速度的平稳过程。由[附录 A.2](#squared-integral)，
+
+\[
+\frac{\langle\Delta x(t)^2\rangle}{2t}
+=\int_0^t\left(1-\frac{\tau}{t}\right)C_v(\tau)\,d\tau.
+\]
+
+若速度二阶矩有限，且 $\int_0^\infty|C_v(\tau)|d\tau<\infty$，便可取长时间极限，得到
+
+\[
+\boxed{D=\lim_{t\to\infty}\frac{\langle\Delta x(t)^2\rangle}{2t}
+=\int_0^\infty\langle v(\tau)v(0)\rangle_{\mathrm{eq}}\,d\tau.}
+\]
+
+对这个积分恒等式，平稳性和可积的关联已经足够；将它进一步与热力学响应联系起来，才需要平衡条件。如果存在平均漂移，应先使用 $\delta v=v-\langle v\rangle$，并从位移中减去平均漂移。若关联尾部不可积，或速度二阶矩不存在，上述有限扩散系数的推导便不能直接使用，可能出现第四篇讨论的反常输运。
+
+### C.2 从冲量响应到迁移率
+
+对正文的惯性粒子，在 $t=0$ 施加一个很短的力脉冲，总冲量为 $I$，速度便瞬间增加 $I/m$。平衡速度密度 $p_{\mathrm{eq}}(v)\propto e^{-\beta mv^2/2}$ 因而变成
+
+\[
+p_I(v)=p_{\mathrm{eq}}(v-I/m)
+=p_{\mathrm{eq}}(v)[1+\beta I v]+O(I^2).
+\]
+
+脉冲之后按无外力动力学演化，将这个初始分布代入平均速度，得到
+
+\[
+\delta\langle v(t)\rangle
+=\beta I\langle v(t)v(0)\rangle_{\mathrm{eq}}+O(I^2).
+\]
+
+所以速度对外力的响应核是 $R_{vf}(t)=\beta C_v(t)$（$t>0$）。对持续施加的小恒力，将历次冲量的响应相加；若响应可积，就有
+
+\[
+\boxed{
+\mu=\lim_{f\to0}\frac{\langle v\rangle_{\mathrm{st},f}}{f}
+=\int_0^\infty R_{vf}(t)\,dt
+=\frac1{k_{\mathrm B}T}\int_0^\infty C_v(t)\,dt.
+}
+\]
+
+与上一节的扩散系数比较，便得到 $D=\mu k_{\mathrm B}T$。在正文的模型中，$C_v(t)=(k_{\mathrm B}T/m)e^{-t/\tau_m}$，因此 $D=(k_{\mathrm B}T/m)\tau_m$、$\mu=\tau_m/m=1/\zeta$。平衡速度关联不仅记录粒子怎样忘记初速度，也决定它受小外力时能产生多大的持续漂移。
+
+### C.3 多维扩散与其他输运系数
+
+在 $d$ 维各向同性系统中，$\langle|\Delta\boldsymbol r(t)|^2\rangle\sim2dDt$，因此
+
+\[
+D=\frac1d\int_0^\infty
+\langle\boldsymbol v(t)\cdot\boldsymbol v(0)\rangle_{\mathrm{eq}}\,dt.
+\]
+
+若系统各向异性，则用 $\langle\Delta r_i\Delta r_j\rangle\sim2D_{ij}t$ 定义对称扩散张量，
+
+\[
+D_{ij}=\frac12\int_0^\infty
+\left[\langle\delta v_i(t)\delta v_j(0)\rangle
++\langle\delta v_j(t)\delta v_i(0)\rangle\right]_{\mathrm{eq}}dt.
+\]
+
+类似结构也出现在其他输运现象中。例如，对体积 $V$ 的平衡流体，若 $P_{xy}$ 表示瞬时的体积平均剪切应力分量，则剪切黏度可以写成
+
+\[
+\eta_{\mathrm{sh}}=\frac{V}{k_{\mathrm B}T}
+\int_0^\infty
+\langle\delta P_{xy}(t)\delta P_{xy}(0)\rangle_{\mathrm{eq}}\,dt.
+\]
+
+这里的 $\eta_{\mathrm{sh}}$ 是黏度，不是正文的随机力 $\eta(t)$。应力记录动量输运，正如速度记录粒子位移；黏度的平衡关联计算及应力归一化示例见 [LAMMPS 的黏度说明](https://docs.lammps.org/Howto_viscosity.html)。不同输运问题的流及其共轭驱动具有不同量纲，前面的体积和温度因子需要随定义确定。
+
+在数值计算中，可以检查截断积分 $D(t_c)=\int_0^{t_c}C_v(t)dt$ 是否在关联衰减后出现稳定区间，并与均方位移的长时斜率比较。更长的积分上限也会累积更多关联尾部的采样噪声，因此应同时增加独立轨迹或观测时长来判断收敛。
 
 **下一篇：**[Fokker–Planck Dynamics：从随机轨迹到概率流](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/fokker_planck/)。
