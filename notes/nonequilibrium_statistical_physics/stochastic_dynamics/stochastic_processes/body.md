@@ -29,6 +29,8 @@
 
 这里的“平稳”还须区分对象：位置本身的联合分布不随整体平移时间改变，才叫过程平稳；只要求等时长增量的分布相同，则是增量平稳。Wiener 属于后者，稳态准备的 OU 才属于前者。过程模型还须同计算工具分开：Itô/Stratonovich 是积分规则，Fokker–Planck 描述密度，路径积分组织历史；它们不是与 OU、Poisson 并列的运动模型。
 
+按运动机制阅读时，可从第 4.2 节的独立增量出发，经第 4.4–4.9 节比较回复、事件、持续运动与异常扩散，再用第 4.10 节的观测量选择模型。若眼前的问题是位置依赖的噪声强度，则可先读第 4.3 节的 Itô 公式及积分约定，再返回具体模型。
+
 ## 4.2 Wiener：连续扩散怎样由小步组成 {#wiener}
 
 要具体生成一条自由 Brownian 记录，选择步长 $h$，独立抽取 $Z_k\sim\mathcal N(0,1)$，令 $\Delta W_k=\sqrt h Z_k$，再累加这些增量。缩小步长时，这个构造趋向标准 Wiener 过程：
@@ -259,9 +261,9 @@ $$
 \end{aligned}
 $$
 
-短时为 $v^2t^2$，长时为 $2D_{\mathrm{eff}}t$，其中 $D_{\mathrm{eff}}=v^2/(2\alpha)$。保持速度不变而减少翻转率，粒子沿同一方向走得更久，长时扩散反而更快。这里没有靠增大每步噪声来加快展宽，改变的是方向持续的时间。
+短时为 $v^2t^2$，长时为 $2D_{\mathrm{eff}}t$，其中 $D_{\mathrm{eff}}=v^2/(2\alpha)$。到时间 $t$ 一次也未翻转的概率为 $e^{-\alpha t}$；这部分路径恰好位于 $X_0\pm vt$ 的两个弹道峰，初始方向等概率时每个峰各占一半。保持速度不变而减少翻转率，粒子沿同一方向走得更久，长时扩散反而更快。
 
-这个跨越与[惯性粒子的 Fig. 1 左图](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#inertial-msd)形式相同；将相关时间换成 $1/(2\alpha)$、速度方差换成 $v^2$，速度关联的积分便相同。但一个来自热速度弛豫，一个来自随机换向；即使完整 MSD 恰好一致，速度分布和单条记录仍能区分它们。
+这个跨越与[惯性粒子的 Fig. 1 左图](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/langevin/#inertial-msd)形式相同。若取 $2\alpha=1/\tau_m$、$v^2=k_{\mathrm B}T/m$，两者的速度关联及完整 MSD 都相同；但持续游走的瞬时速度只取 $\pm v$，热平衡惯性粒子的速度服从 Gaussian 分布。弹道峰和分段直行也与惯性粒子的连续速度变化不同。
 
 单独的位置一般不足以预测下一小步，因为还需要知道向哪边走；联合状态 $(X,\sigma)$ 才闭合。最简模拟也不必每步抽 Gaussian 数：独立抽指数等待 $-\log U/\alpha$，沿当前方向走完这一段，再翻转方向。持续游走和扩散近似的联系可对照 [MIT 随机游走讲义](https://ocw.mit.edu/courses/18-366-random-walks-and-diffusion-fall-2006/pages/lecture-notes/)。
 
@@ -280,7 +282,7 @@ $$
 
 $K$ 的单位是长度的 $\alpha$ 次方除以时间。特征函数依赖 $k(Kt)^{1/\alpha}$，故分位宽度等典型尺度正比于 $t^{1/\alpha}$。独立小步相加后仍保持这种稳定分布的形状，只改变尺度；普通 Gaussian 极限所需的有限步长方差在这里已失效。
 
-因此这个宽度不能解释成均方位移：$\alpha\lt2$ 时二阶矩发散。有限样本当然能算出一个平方平均，但偶然出现的一次极大跳跃就可能将它大幅改写；增加样本也不会使它收敛到一个有限理论 MSD。较合适的是分位宽度或 $0\lt q\lt\alpha$ 的绝对矩。
+因此这个宽度不能解释成均方位移：$\alpha\lt2$ 时二阶矩发散。有限样本当然能算出一个平方平均，但偶然出现的一次极大跳跃就可能将它大幅改写；增加样本也不会使它收敛到一个有限理论 MSD。较合适的是分位宽度或 $0\lt q\lt\alpha$ 的绝对矩，后者满足 $\mathbb E|X_t-X_0|^q\propto t^{q/\alpha}$。
 
 这个过程是非 Gaussian、含跳跃的 Markov 过程，有独立增量；它没有规定最大传播速度。不能因平均图像像“更快扩散”，就继续使用 Brownian 的局部小步解释。
 
@@ -388,6 +390,7 @@ $H>1/2$ 时正相关，前一步的方向较易延续；$H\lt1/2$ 时负相关�
 | --- | --- | --- |
 | 轨迹形状 | 长直行、平台、跳跃或连续粗糙 | 有限分辨率不能证明真正瞬时跳跃 |
 | MSD 与有效斜率 | 展宽随时间增长的快慢 | 相同指数不固定机制；稳定 flight 无有限二阶矩 |
+| 短时位移分布 | 弹道峰、Gaussian 核或等待造成的零位移峰 | 定位噪声与有限采样会模糊峰形，需比较不同时间窗 |
 | 位移尾部、分位宽度 | Gaussian、重尾、有限速度前沿 | 有限样本尾部拟合可能很不稳定 |
 | 速度或增量关联 | 持续、反持续与记忆时间 | 有关联不等于非 Markov |
 | 等待和停留时间 | 陷获与年龄依赖 | 需要先定义一次事件或一个区域 |
@@ -397,6 +400,8 @@ $H>1/2$ 时正相关，前一步的方向较易延续；$H\lt1/2$ 时负相关�
 不必同时拟合所有模型。若看到了明显长直行，先测方向关联和速度；若看到了长平台，先检查事件识别与等待分布，再比较制备后不同时段的活动。若轨迹连续却有次扩散，可以测等时间增量的正负关联。前面的 CTRW 与 fBm 便会在这些检查中分开。
 
 另一个实用问题是：把同一条记录延长，测得的活动强度会不会系统改变？这需要把“许多次实验在同一时刻平均”与“同一条实验沿时间平均”区分开。下面的计算比较同一条记录在不同测量时长下给出的结果。
+
+对上面的标准模型，固定延迟 $\Delta$、记录长度为 $\mathcal T$：fBm 因增量平稳，其时间平均 MSD 的系综期望为 $\Delta^{2H}$，与 $\mathcal T$ 无关；从新等待开始的重尾 CTRW 在 $\mathcal T\gg\Delta$ 的长时极限下，该期望则正比于 $\Delta\mathcal T^{\beta-1}$。两者可以有相同的系综 MSD 指数，却对测量时长表现不同。这些结论依赖所述初始准备、独立无偏有限方差跳幅和等待尾部，不能直接推广到任意有平台的轨迹；有限记录的单条结果也会波动。推导与数值比较见下方选读。
 
 <details class="qbio-derivations" id="time-average-msd">
 <summary>选读计算：时间平均 MSD 怎样区分 CTRW 与 fBm</summary>
@@ -432,7 +437,7 @@ $$
 \end{aligned}
 $$
 
-最后一步取 $\mathcal T\gg\Delta$ 的长时极限，使用 $m(t)\sim t^\beta/[a_\beta\Gamma(1+\beta)]$。固定延迟时，测量值的期望随记录延长而减小，因为后期窗口平均包含的更新更少。它还对 $\Delta$ 近似线性，而非系综 MSD 的 $\Delta^\beta$。同一个幂律系综展宽，可以伴随不同的时间平均行为；更完整的有限记录统计可参见 [Deng 与 Barkai 的原始研究](https://arxiv.org/abs/0809.2430)。
+最后一步取 $\mathcal T\gg\Delta$ 的长时极限，使用 $m(t)\sim t^\beta/[a_\beta\Gamma(1+\beta)]$。固定延迟时，测量值的期望随记录延长而减小，因为后期窗口平均包含的更新更少。它还对 $\Delta$ 近似线性，而非系综 MSD 的 $\Delta^\beta$。CTRW 的时间平均统计可参见 [He 等（2008）](https://doi.org/10.1103/PhysRevLett.101.058101)，fBm 的有限记录涨落可参见 [Deng 与 Barkai](https://arxiv.org/abs/0809.2430)。
 
 在 Fig. 2 的同一组无量纲记录里，取延迟 $\Delta=0.2$，1024 条实现给出下表。比较同一行随测量时长的变化，而非将不同模型的绝对幅度相互等同：
 
@@ -446,5 +451,14 @@ fBm 理论值为 $0.2^{0.6}\simeq0.381$；CTRW 则随记录延长而减小。这
 </details>
 
 从 Brownian 游走出发，我们依次改动了回复、事件时刻、方向持续、跳幅尾部、长位移的耗时、等待分布和增量关联。选择模型时，可以沿相反顺序工作：先找记录中普通独立小步解释不了的特征，再决定应当修改哪条运动规则。方差随时间的幂律只是其中一项证据。
+
+## 参考文献 {#references}
+
+1. Pavliotis, G. A. (2014). [Stochastic Processes and Applications](https://www.ma.imperial.ac.uk/~pavl/PavliotisBook.pdf). Wiener、OU、Markov 过程与随机微分方程的背景。
+2. Bazant, M. Z. 等. [Random Walks and Diffusion](https://ocw.mit.edu/courses/18-366-random-walks-and-diffusion-fall-2006/pages/lecture-notes/). MIT 课程讲义。随机游走、持续运动与 CTRW 的联系。
+3. Zaburdaev, V., Denisov, S. & Klafter, J. (2015). [Lévy walks](https://doi.org/10.1103/RevModPhys.87.483). *Reviews of Modern Physics* **87**, 483. 有限速度 Lévy walk 与瞬时跳跃模型的机制比较。
+4. Mandelbrot, B. B. & Van Ness, J. W. (1968). [Fractional Brownian Motions, Fractional Noises and Applications](https://courses.physics.ucsd.edu/2016/Spring/physics235/Mandelbrot%20Van%20Ness.pdf). *SIAM Review* **10**. fBm 与相关增量的经典来源。
+5. He, Y., Burov, S., Metzler, R. & Barkai, E. (2008). [Random Time-Scale Invariant Diffusion and Transport Coefficients](https://doi.org/10.1103/PhysRevLett.101.058101). *Physical Review Letters* **101**, 058101. 重尾等待 CTRW 的时间平均与系综统计。
+6. Deng, W. & Barkai, E. (2009). [Ergodic Properties of Fractional Brownian-Langevin Motion](https://arxiv.org/abs/0809.2430). fBm 及相关运动的有限记录时间平均统计。
 
 **上一篇：**[Path Integrals](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/path_integrals/) · **[返回专题首页](/notes/nonequilibrium_statistical_physics/stochastic_dynamics/)**。
