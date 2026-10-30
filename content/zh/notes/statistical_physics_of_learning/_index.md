@@ -34,7 +34,14 @@ tags:
 
 ## 1. Scaling laws：四个区间背后的机制
 
-**Bahri, Dyer, Kaplan, Lee & Sharma, [Explaining neural scaling laws](https://doi.org/10.1073/pnas.2311878121)**，*PNAS* **121**, e2311878121 (2024)。
+### Bahri, Dyer, Kaplan, Lee & Sharma, [Explaining neural scaling laws](https://doi.org/10.1073/pnas.2311878121)
+
+*PNAS* **121**, e2311878121 (2024)。
+
+**物理图像：** 把目标函数想成由从粗到细的空间纹理叠加而成。有限数据或有限表示相当于一台分辨率有限的仪器：能辨认粗结构，细节留在误差中。另一种误差则像反复测量同一量时的采样涨落；当分辨率已足够、其他资源固定时，增加测量次数会减小这一涨落。四个区间正是两种资源限制与两种误差机制的组合；这只是图像，不是说真实数据必然有均匀的空间尺度。
+
+**近似链与可检验性：** 先选定有限随机特征，再将训练化为特征系数的回归；通过随机性平均和谱结构，将资源有限的影响与未覆盖模态关联。流形估计是另一条思路，不能把它和随机特征中的确切计算混成同一个定理。实验上应分别固定数据量或模型规模，找误差相对于相应极限的增量，再改变目标平滑性、数据几何与噪声。观察到一个幂律本身无法判定属于哪个区间，因为不同机制可能在有限范围内给出相近斜率。
+
 
 - **问题与模型：** 测试误差随数据量 $D$ 和模型大小 $P$ 的幂律从哪里来？作者先分辨数据量和模型大小各自的 **variance-limited** 与 **resolution-limited** 区间，共四种情形。
 - **近似的关键：** 在随机特征 teacher–student 模型中，将非线性学习问题化为线性特征上的回归，并用核算子的特征值与目标在各模态上的分量描述误差。另一条论证把数据视为平滑低维流形，估计有限资源能解析的空间尺度。方差受限区间则考察趋近无限数据或无限宽度极限的有限规模修正。
@@ -45,7 +52,14 @@ tags:
 
 **一个最小推演：** 若数据协方差/核算子特征值为 $\lambda_k$，目标在对应特征函数上的系数为 $a_k$，则截断在第 $m$ 个模态后的未解析误差可示意为 $R_{\rm tail}\sim\sum_{k>m} a_k^2$（此处系数按目标函数在输入分布的正交基展开定义）。若 $a_k^2\sim k^{-1-\beta}$，则尾和 $R_{\rm tail}\sim m^{-\beta}$。这不是论文所有指数的完整推导：真正的 $m(D,P)$、噪声、核谱和正则化决定分辨率。**幂律来自目标的尺度结构与可解析尺度之间的关系；模型不创造那个尾部假设。** 方差受限部分则是趋向无限数据或无限宽极限的有限规模涨落；这两种来源不能只看 log-log 直线区分。可检验的办法是改变目标谱或输入结构、固定训练算法，看指数是否跟着变化；再与训练表示会改变的网络对照。
 
-**Bordelon, Atanasov & Pehlevan, [A Dynamical Model of Neural Scaling Laws](https://proceedings.mlr.press/v235/bordelon24a.html)**，*ICML* (2024)。
+### Bordelon, Atanasov & Pehlevan, [A Dynamical Model of Neural Scaling Laws](https://proceedings.mlr.press/v235/bordelon24a.html)
+
+*ICML* (2024)。
+
+**物理图像：** 可以把学习看成一组松弛时间不同的模式：容易的方向先被消除，慢模式在长时间后仍保留误差。有限宽度像给模式空间设置了资源瓶颈；训练数据被反复使用时，系统不断受到同一组样本形成的相关作用，而不是每次都遇到独立环境。时间、样本与宽度的瓶颈何时成为主导，决定了观察到的不同标度。
+
+**如何近似、为何重要：** 随机特征使参数优化线性化到固定基底；在作者的高维随机模型中，动力学可以通过集体量组织，跟踪训练与测试误差随时间的变化。可验证的区分是：保持输入谱和目标不变，分别改变训练步数、特征数和重复使用数据的程度，检查交叉尺度；若实际网络的特征核明显变化，再比较它与固定特征模型的差值，才有依据判断表示学习贡献了什么。
+
 
 - **近似：** 用梯度下降训练的随机特征模型代替完整网络，并在高维极限下跟踪训练时间、数据和特征数共同决定的学习动力学；数据重复使用带来的时间相关性不能简单当作每一步独立采样。
 - **收获与边界：** 模型解释训练时间和模型大小指数为何可能不同，并给出计算最优分配的示例；它是固定特征模型，不能直接说明深网络的特征演化。可与 PNAS 文比较：一个强调收敛后四个区域，另一个把**时间**带回来。
@@ -54,10 +68,17 @@ tags:
 
 ## 2. 扩散生成：从经验 score 到玻璃凝聚
 
-**Biroli, Bonnaire, De Bortoli & Mézard, [Dynamical regimes of diffusion models](https://www.nature.com/articles/s41467-024-54281-3)**，*Nature Communications* **15**, 9957 (2024)。
+### Biroli, Bonnaire, De Bortoli & Mézard, [Dynamical regimes of diffusion models](https://www.nature.com/articles/s41467-024-54281-3)
+
+*Nature Communications* **15**, 9957 (2024)。
+
+**物理图像：** 加噪后的每个训练点都是一团不断变宽的云。生成时沿反方向去噪：云先形成包含多个类别的共同团块，随后轨迹选定一个类别，最后可能被某个训练样本附近的一团云俘获。第二次变化可类比无序系统中的凝聚：众多候选样本的权重最初共同贡献，后来少数权重占主导。类别分化与样本凝聚是不同尺度、不同机制，不应笼统称为同一个相变。
+
+**推导的支点：** 精确经验 score 是加噪经验密度的对数梯度，使反向漂移直接由所有训练点的权重决定；高维时用谱判断类别方向的失稳，用训练点权重的典型指数规模及熵平衡判断坍缩。这里的熵判据和相变图像是在指定假设下建立的；真实训练模型可以通过不拟合经验 score、正则化或有限时间采样避开相同的末期行为。分别测类别承诺时间、样本邻近程度及 score 误差，才能检验不同环节。
+
 
 - **近似的第一步：** 假设模型学到训练集的**精确经验 score**，再同时考虑高维和大量样本。这样反向扩散可以由加噪经验分布来分析，而无需解神经网络训练本身。高斯混合提供可解析例子；更一般的数据再通过谱和熵分析并与数值实验比较。
-- **物理图像：** 反向过程中依次出现噪声、类别分化和向具体训练点坍缩三个区域。前者的分化与协方差最大特征值有关；后者可用训练点权重的凝聚与随机能量模型类比来理解。论文时间 $t$ 从**正向**加噪起点计，因此生成过程沿时间反向走。
+- **时间约定：** 论文时间 $t$ 从**正向**加噪起点计，因此生成过程沿时间反向走。
 - **一个可检查的式子：** 在论文的约定下，分化时间满足 $\Lambda e^{-2t_S}=1$，其中 $\Lambda$ 是数据协方差的最大特征值。它展示了如何把高维动力学问题降到一个谱不稳定性判据。
 - **边界：** 精确经验 score 最终回到经验分布，因此末期记忆是该设定内的结果；实际有限网络、提前停止和正则化可能偏离这一极限。玻璃凝聚类比不意味着所有实际扩散模型都会按同样方式坍缩。**值得细读：** 分离目标训练点与其他点的权重之和，为什么指数权重使普通中心极限定理不够用？
 
@@ -65,7 +86,14 @@ tags:
 
 ## 3. 层次数据：把复杂世界换成可控生成规则
 
-**Cagnetta, Petrini, Tomasini, Favero & Wyart, [How Deep Neural Networks Learn Compositional Data: The Random Hierarchy Model](https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.031001)**，*Physical Review X* **14**, 031001 (2024)。
+### Cagnetta, Petrini, Tomasini, Favero & Wyart, [How Deep Neural Networks Learn Compositional Data: The Random Hierarchy Model](https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.031001)
+
+*Physical Review X* **14**, 031001 (2024)。
+
+**物理图像：** 像观察由多个尺度组成的材料：底层局部排列各不相同，却可能对应同一个较粗层次的结构。层级规则让多种低层“微观态”对应同一高层特征；如果模型把这些替代识别为等价，便可压缩掉无关的微观细节。这里的不变性来自构造的数据生成规则，不是网络天然获得的守恒律。
+
+**机制如何落到样本数：** 随机规则使某个局部特征对标签留下弱相关；有限训练集的统计波动可能掩盖这条信号。比较信号与波动，估算局部结构何时可被分辨，再结合卷积网络的逐层表示与不变性测量，讨论数据量随层级结构的变化。这个估计抓住了统计可见性，却没有单独证明梯度下降一定会沿预想路径学到每一层。保留词汇大小与网络架构、改变同义展开数或树深，是检查结构机制的直接办法。
+
 
 - **模型替换：** 用随机层次模型（RHM）生成分类数据：高层特征通过规则逐层展开成低层特征，同一高层特征可有多个等价展开。它保留组合结构和局部不变性，却去掉真实语言、图像中的大量细节。
 - **近似与观察：** 通过随机规则的统计性质估计标签与局部特征的相关及其有限样本涨落，再将可检测相关与学习所需样本数联系起来；训练网络并观察逐层表示及不变性。其力量在于把**数据结构**显式放入问题，而不仅仅取随机标签或各向同性高斯输入。
@@ -75,47 +103,101 @@ tags:
 
 ## 4. 从固定特征到可学习表示
 
-**Barbier 等, [Statistical Physics of Deep Learning: Optimal Learning of a Multilayer Perceptron near Interpolation](https://journals.aps.org/prx/abstract/10.1103/56sb-pdh6)**，*Physical Review X* **16**, 031014 (2026)。
+### Barbier 等, [Statistical Physics of Deep Learning: Optimal Learning of a Multilayer Perceptron near Interpolation](https://journals.aps.org/prx/abstract/10.1103/56sb-pdh6)
+
+*Physical Review X* **16**, 031014 (2026)。
+
+**物理图像：** 学生网络面对一组由教师生成的样本，像从许多互相重叠的观测中重建隐藏结构。样本少时，多个隐藏单元之间难以逐一配对，模型可能只恢复它们的整体组合；信息足够后，学生单元才与教师特征逐渐建立对应。这个“特化”类似对称性破缺：原本可互换的隐藏单元获得不同角色，但这只是帮助理解的图像，具体相变须由模型内的序参量和鞍点判定。
+
+**近似链与判断：** teacher–student 和匹配先验将任务变成 Bayes-optimal 推断；输入维度、宽度和样本数共同增长，使泛化误差可由宏观矩阵量与鞍点求解。replica 处理随机样本的典型自由能，HCIZ 相关方法处理不能被简单标量平均掉的矩阵结构。该工作抓住了“信息足够时什么可被重建”，但最优后验不等于有限时间 SGD。要区分两者，可在相同教师数据上分别比较理论、后验采样和多次随机初始化的训练结果。
+
 
 - **设定与方法：** teacher–student 的贝叶斯最优学习；宽度与输入维度同比增长，样本数与参数数目处于可比较的插值尺度。作者结合 replica 与随机矩阵的 HCIZ 方法，保留这一区域中重要的矩阵结构及相关性。
 - **物理内容：** 在所研究模型中，随着样本增加，先出现利用特征组合的阶段，之后出现单元对教师特征的特化；深层结构中也可讨论特化的逐层传播。
 - **边界：** 这是指定生成模型和先验下的 Bayes-optimal 泛化，而非对实际 SGD 训练速度的直接计算；replica 鞍点及其稳定性、输入分布和激活函数都是阅读时需要检查的条件。
 
-**Lauditi, Bordelon & Pehlevan, [Adaptive kernel predictors from feature-learning infinite limits of neural networks](https://proceedings.mlr.press/v267/lauditi25a.html)**，*ICML* (2025)。
+### Lauditi, Bordelon & Pehlevan, [Adaptive kernel predictors from feature-learning infinite limits of neural networks](https://proceedings.mlr.press/v267/lauditi25a.html)
 
-- **方法：** 在特征学习的无限宽度极限研究带权重衰减的梯度流，以动态平均场理论（DMFT）的自洽方程描述表征和核；固定点定义任务适应的核预测器。
+*ICML* (2025)。
+
+**物理图像：** 初始化时的核像一张预先印好的地图，输入间距离已经固定；特征学习则像边观察任务边重画地图，把与预测相关的方向拉开。最终预测仍可写成核的形式，但这张核不是任务出现之前就固定的，而要与学到的表示、训练数据一起自洽确定。用核表达结果本身并不意味着训练过程没有特征学习。
+
+**两条路径与边界：** 论文一条路径讨论大宽度的贝叶斯网络，层核和前激活分布由鞍点构成的优化问题确定；另一条路径讨论带权重衰减的梯度流，使用 DMFT 固定点求任务适应的表示。二者的核都依赖问题和极限，不能把贝叶斯平衡与训练动力学固定点视为同一个计算。比较初始核、最终核及其特征方向与目标的对齐，能检验预测改善是否伴随实际的表征适应。
+
+
+- **方法：** 论文分别研究特征学习的贝叶斯大宽度极限与带权重衰减的梯度流；后者以动态平均场理论（DMFT）的自洽固定点描述任务适应的核预测器。
 - **为什么值得比较：** 同样取无限宽度，不同参数化和极限可以得到固定的 lazy kernel，也可以得到适应任务的表示。极限宽度本身不等于没有特征学习。其固定点预测仍依赖指定动力学与极限，并不自动刻画有限网络所有训练路径。
 
-**[Predictive Power of a Bayesian Effective Action for Fully Connected One Hidden Layer Neural Networks in the Proportional Limit](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.027301)**，*Physical Review Letters* **133**, 027301 (2024)。
+### Baglioni, Pacelli 等, [Predictive Power of a Bayesian Effective Action for Fully Connected One Hidden Layer Neural Networks in the Proportional Limit](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.027301)
+
+*Physical Review Letters* **133**, 027301 (2024)。
+
+**物理图像：** 核极限像把很多随机神经元的贡献平均成一条固定的响应曲线；当样本数与隐藏层宽度一起增长时，数据对整体分布的反作用不一定消失，核的有效尺度可以被自洽地改写。它更像介质对外场的整体响应被重整化，并不必然表示核的各个方向都发生了任意重排。
+
+**这篇究竟在检验什么：** 论文以离散 Langevin 动力学数值实验测试此前提出的单隐藏层贝叶斯有效作用量，变化温度、先验强度、样本数及宽度，并比较泛化误差。它的主要贡献是检验理论的预测范围，而不是从头证明所有神经网络的核都只会整体缩放。平衡采样是否充分、离散步长、先验与温度都可能影响对照；还可以比较核矩阵的特征向量及不同方向的变化，检验单一尺度是否足够。
+
 
 - **方法：** 对单隐藏层贝叶斯网络采用样本数与宽度同比增长的有效作用量，并与 Langevin 训练的数值实验比较。该理论中无限宽核的整体重标度是重要机制。
 - **边界：** 有效理论、先验、温度和采样动力学均属于问题定义；与实验吻合应理解为所测试范围内的支持，不能替代对其他架构和训练方式的验证。
 
-**[Statistical Mechanics of Transfer Learning in Fully Connected Networks in the Proportional Limit](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.177301)**，*Physical Review Letters* **134**, 177301 (2025)。
+### Ingrosso, Pacelli, Rotondo & Gerace, [Statistical Mechanics of Transfer Learning in Fully Connected Networks in the Proportional Limit](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.177301)
+
+*Physical Review Letters* **134**, 177301 (2025)。
+
+**物理图像：** 把源任务训练后的网络看成已经适应某种地形的材料；目标任务施加新约束时，能否沿已有软方向调整，取决于两种任务的结构是否相容。源任务留下的偏置可能帮助目标任务，也可能把模型推向无关方向。这个类比强调跨任务的相关性，而不是保证所有预训练都有效。
+
+**近似的作用：** 论文在样本数与宽度同比增长的贝叶斯设定中，用单实例 Franz–Parisi 形式将源任务与目标任务联系起来，得到描述两者关系的重整化核；相应的惰性极限在该设定中失去这种迁移机制。它回答给定模型中的迁移收益与任务相关性如何联系，并不直接描述所有预训练—微调的非平衡路径。检验时可固定目标任务，连续改变源任务对齐程度与源样本数，分别测目标泛化改善和跨任务核的变化。
+
 
 - **方法：** 比例极限下用单样本 Franz–Parisi 形式描述源任务与目标任务之间的关联，得到重整化的跨任务核，判断迁移何时有益。
 - **边界：** 在这一设定下有效的迁移依赖任务关系与贝叶斯模型；它给出可计算的机制，并不意味着所有迁移学习都可归结为同一个核。
 
 ## 5. 动力学闭合与现象论
 
-**Kramp, Lindner & Helias, [Dynamics of neural scaling laws in random feature regression with powerlaw-distributed kernel eigenvalues](https://proceedings.mlr.press/v306/kramp26a.html)**，*ICML* (2026)。
+### Kramp, Lindner & Helias, [Dynamics of neural scaling laws in random feature regression with powerlaw-distributed kernel eigenvalues](https://proceedings.mlr.press/v306/kramp26a.html)
+
+*ICML* (2026)。
+
+**物理图像：** 每个核模态像有自己松弛时间的自由度，但它们并非在完全独立的浴中运动：有限样本和共同训练过程形成共享的有效噪声与响应。慢模态可以长期留存误差；模式之间即使在有效描述中逐个演化，也仍通过这些集体统计量相互联系。
+
+**近似链与判断：** 固定随机特征及幂律谱定义基线模型；DMFT 将高维随机问题改写为模态动力学与响应、噪声统计的自洽问题，使梯度流、权重衰减和 Langevin 训练可以在共同框架比较。幂律谱和目标结构属于输入，并非从数据第一性原理推出。检验关键是同时比较训练曲线、测试曲线和早停最优时间；若只匹配一个幂律指数，无法确定有效噪声与记忆核是否正确。
+
 
 - **近似与方法：** 对幂律核谱的随机特征回归建立 DMFT，用集体响应函数和有效噪声的自洽统计连接各谱模态，讨论梯度流、权重衰减和 Langevin 动力学。
 - **边界：** 谱及目标结构是输入；谱模态在有效描述中仍通过集体量耦合。它展示怎样把许多自由度约化为少数时间相关函数，不是完整深网络特征学习的通解。
 
-**Shi, Pan & Dokmanić, [Spring-Block Theory of Feature Learning in Deep Neural Networks](https://journals.aps.org/prl/abstract/10.1103/ys4n-2tj3)**，*Physical Review Letters* **134**, 257301 (2025)。
+### Shi, Pan & Dokmanić, [Spring-Block Theory of Feature Learning in Deep Neural Networks](https://journals.aps.org/prl/abstract/10.1103/ys4n-2tj3)
+
+*Physical Review Letters* **134**, 257301 (2025)。
+
+**物理图像：** 把层间数据分离程度的变化想成一串弹簧连接的滑块：经验风险提供驱动力，层与层之间互相牵引，摩擦使位移存在阈值，噪声可帮助跨越阈值。摩擦的非对称性与噪声共同决定哪些层先明显移动，从而给浅层或深层较强学习的不同区域提供直观图像。
+
+**性质与检验：** 论文先测量深网中类间与类内分离，并构造能重现噪声—非线性相图的宏观随机力学模型；滑块不是神经元，摩擦也不是对单个激活函数的严格微观推导。价值在于提出可比较的集体变量和机制，而不是建立唯一的微观解释。应保留参数测量方法，检查同一组映射能否预测未拟合的训练轨迹、层间传播与不同架构中的相界；如果需要每次重新任意拟合，解释力会下降。
+
 
 - **方法：** 从层间数据分离的宏观现象出发，构造具有非对称摩擦的随机弹簧—滑块链，组织噪声和非线性下的特征学习相图。
 - **边界：** 这是自上而下的**现象模型**；它重现相关现象，但不是从每个神经元的微观训练方程严格推出的等价映射。与 DMFT 或 replica 对照，恰好能看到“拟合宏观机制”和“从微观模型推导”之间的不同。
 
-**Biehl 等, [Dynamics and Generalization Ability of LVQ Algorithms](https://www.jmlr.org/beta/papers/v8/biehl07a.html)**，*Journal of Machine Learning Research* **8**, 323–360 (2007)。
+### Biehl 等, [Dynamics and Generalization Ability of LVQ Algorithms](https://www.jmlr.org/beta/papers/v8/biehl07a.html)
+
+*Journal of Machine Learning Research* **8**, 323–360 (2007)。
+
+**物理图像：** 两个原型像两个在高维空间中移动的探针：每次只看到一个来自高斯混合的新样本，再按分类结果更新位置。虽然每个探针有许多坐标，对典型分类性能而言，更重要的是它与类别中心的投影以及两个原型之间的相对几何，这些就是可跟踪的宏观量。
+
+**何处闭合：** 各向同性高斯混合和在线独立样本让投影分布由有限个重叠与范数表征；在适当的高维和时间缩放下，单步随机增量可以自平均，得到序参量的确定性动力学及泛化误差。闭合依赖数据与更新规则，不能把它当成任意数据上的普适事实。把在线新样本改为反复使用同一有限数据集，是检验记忆相关性何时破坏该近似的直接对照。
+
 
 - **方法：** 在线学习中用两个竞争原型处理高斯混合数据，在高维极限描述原型与数据结构的重叠，得到封闭的学习动力学和泛化曲线。
 - **边界：** 它是早期且很简洁的原型分类模型，非现代深网络；适合作为入门练习，看清自平均、在线新样本和序参量闭合各自起什么作用。
 
 ## 6. NTK：把参数优化变成函数空间的线性动力学
 
-**Jacot, Gabriel & Hongler, [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://papers.nips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html)**，*NeurIPS* (2018)。
+### Jacot, Gabriel & Hongler, [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://papers.nips.cc/paper_files/paper/2018/hash/5a4be1fa34e62bb8a6ec6b91d2462f5a-Abstract.html)
+
+*NeurIPS* (2018)。
+
+**物理图像：** 初始参数附近有一组“可推动输出的方向”，每个训练样本的参数梯度描述它受到这些方向作用的方式；两样本梯度的内积构成耦合矩阵。宽度极限下这张耦合网近似不随训练改变，于是残差像线性耗散系统一样沿不同本征方向以不同速率松弛。注意这是函数空间的动力学类比，核的静止来自特定极限，并非训练时参数完全不动。
+
 
 **真正的操作：** 不先分析非凸参数空间里的每一条轨道，而是观察参数变化如何推动网络输出。对训练集上的预测向量 $f$，连续时间梯度下降和平方损失给出
 
@@ -129,21 +211,47 @@ $$
 
 **合理性与边界：** 宽度、初始化、输出归一化、学习率、数据量和观察时间要一起说明。固定有限训练集、有限时间的宽度极限不自动保证有限宽网络的长期训练或大数据极限也准确；$K_t$ 在训练中明显变化，或网络显著优于对应固定核，是需要超出该基线的证据。初始化输出一般不为零，最终预测也需计入它。
 
-**Chizat, Oyallon & Bach, [On Lazy Training in Differentiable Programming](https://papers.nips.cc/paper_files/paper/2019/hash/ae614c557843b1df326cb29c57225459-Abstract.html)**，*NeurIPS* (2019)。
+### Chizat, Oyallon & Bach, [On Lazy Training in Differentiable Programming](https://papers.nips.cc/paper_files/paper/2019/hash/ae614c557843b1df326cb29c57225459-Abstract.html)
+
+*NeurIPS* (2019)。
+
+**物理图像：** 将一张弯曲的函数流形局部近似为切平面。如果参数尺度使得达到目标输出所需的位移相对曲率半径很小，模型沿切平面就能完成大部分训练；反之，即使初始时切平面准确，走远后曲率也可能改变有效方向。关键是比较路径长度和模型曲率的组合，而不是只说“参数变化看起来小”。
+
+**近似如何工作：** 比较真实模型与初始化处的一阶 Taylor 模型，用尺度参数及正则条件控制两条优化轨迹的偏差。缩放可以诱导 lazy 行为，所以“训练容易”与“学到合适表示”是两件需要分别验证的事。改变输出尺度而保持任务和其他条件可比，记录非线性模型与线性化模型的预测差距，是理解该近似何时成立的直接实验。
+
 
 **为什么紧接 NTK 读：** 这篇把“核化”解释为一种由缩放控制的局部线性化，而不是“足够宽的网络自然就是核机器”。其思想实验是改变输出尺度，使模型在函数值改变足够多之前只需很小的参数位移，再比较真实路径与初始化处的线性化路径。一个锋利的结论是：容易优化可以来自选择了一个几乎不学习新表示的极限；作者在特定视觉实验中也观察到 lazy regime 的性能下降。不能将这一实验推广成所有任务上核都不好；应比较任务、架构、参数化和计算预算一致时的核与训练网络。
 
-**Bordelon, Canatar & Pehlevan, [Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks](https://proceedings.mlr.press/v119/bordelon20a.html)**，*ICML* (2020)。
+### Bordelon, Canatar & Pehlevan, [Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks](https://proceedings.mlr.press/v119/bordelon20a.html)
+
+*ICML* (2020)。
+
+**物理图像：** 将目标拆成不同波长的信号，核对某些方向更敏感，而随机样本像从目标函数上抽取的一组观测。随着样本增加，强核模态通常更早得到约束，弱模态仍可藏在样本之间；目标在各方向的能量决定这些尚未解析的模式造成多大误差。训练时间谱与样本数谱虽可使用相同的模式语言，却对应不同实验。
+
+**近似链与反例：** 论文给出连续学习曲线近似，也以 replica 鞍点得到对应表达，再与合成数据及 MNIST 数值比较。它对随机训练集的平均泛化进行近似，而不是仅凭单个经验核矩阵就能精确求解所有有限样本问题。如果目标几乎只投影在很弱的核模态上，即使核有几个很大的特征值，也不保证快速泛化；比较不同目标的谱投影可直接检验这一点。
+
 
 **一针见血：** NTK 的时间谱解决“给定数据集，训练先拟合哪些方向”；这篇核学习曲线研究另一个问题：“随机增加数据，测试误差如何下降？”作者用连续学习曲线近似，并给出 replica 鞍点的另一推导，将目标分解到核特征模态。这里模态随**样本数**被解析，不等同于上面的模态随**训练时间**衰减；两者都由谱影响，但不是同一过程。核谱之外还要知道目标投影和噪声；只给出一个特征值幂律一般不足以确定泛化误差。其对神经网络的联系依赖固定 NTK 对应的宽网络极限。
 
-**Mei, Misiakiewicz & Montanari, [Mean-field theory of two-layers neural networks: dimension-free bounds and kernel limit](https://proceedings.mlr.press/v99/mei19a.html)**，*COLT* (2019)。
+### Mei, Misiakiewicz & Montanari, [Mean-field theory of two-layers neural networks: dimension-free bounds and kernel limit](https://proceedings.mlr.press/v99/mei19a.html)
+
+*COLT* (2019)。
+
+**物理图像：** 把大量隐藏神经元当成参数空间里的粒子群；每个粒子受当前整体分布产生的场驱动，而粒子群的分布又随之移动。宽度大时，不必追踪每个粒子的具体编号，可以追踪密度的演化。相比冻结的 NTK 切方向，这个粒子云可以重新排列，因而能够承载特征学习。
+
+**控制在哪里：** 文中研究适当缩放下两层网络的 SGD，用分布动力学近似宽网络，并在正则性假设下给出有限宽误差控制，也讨论从平均场描述得到核极限。所谓维度无关界并非对所有高维数据无条件有效，常数仍可依赖模型和数据的正则性质；该分布方程维度也可能很高。改变宽度、参数化和训练时间，比较粒子分布与预测函数，是检查极限是否有用的方式。
+
 
 **对照 NTK 的关键：** 不把神经元冻结在初始切特征，而把两层网络的神经元参数经验分布视为随训练演化的整体；宽度增大后用分布上的非线性动力学近似。核方法还可作为进一步极限出现。因此“无限宽”并不唯一指定物理：**参数化及学习率如何随宽度缩放**决定保留的是固定核还是移动的特征分布。代价是得到一个函数空间中的偏微分方程，未必天然是几个标量的可解理论；有限宽修正、有限样本复用和深层推广仍需分别处理。
 
 ## 7. 深度线性网络：线性函数，非线性学习
 
-**Saxe, McClelland & Ganguli, [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120)**，*ICLR* (2014)。
+### Saxe, McClelland & Ganguli, [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120)
+
+*ICLR* (2014)。
+
+**物理图像：** 一条信号要连续穿过多个可调的“增益器”。哪怕每一层本身线性，整体增益是各层增益的乘积；一层很弱时，其他层得到的更新也会受到牵制。小初始化因此可以形成缓慢积累，再进入快速增长。训练平台不一定需要复杂能垒或非线性激活，也可能来自分层参数化的乘法反馈。
+
 
 **真正的近似：** 把激活函数设为线性，但保留网络的多层矩阵乘积 $W_L\cdots W_1$。输入输出映射是线性的，参数化却是乘法的，梯度流因此仍然非线性。对输入白化、在输入—输出相关矩阵的奇异向量基中对齐且层间平衡的特殊轨道，二维模式可化为标量动力学。以下取两层单模态 $f(x)=abx$、目标奇异值 $s>0$，吸收损失和时间归一化后：
 
@@ -157,7 +265,14 @@ $$
 
 **验证建议：** 固定数据奇异谱，改变初始化尺度与层数，测试平台时间和模式学习次序；再加入非线性或破坏对齐，看预测何时失效。如果目标现象在这些扰动下消失，模式独立近似可能抓住的是特殊轨道而非稳健机制。已有站内 [深度线性网络笔记](/notes/neural_network_theory/deep_optimization/#deep-linear) 可继续对照。
 
-**Bordelon & Pehlevan, [Deep Linear Network Training Dynamics from Random Initialization: Data, Width, Depth, and Hyperparameter Transfer](https://proceedings.mlr.press/v267/bordelon25a.html)**，*ICML* (2025)。
+### Bordelon & Pehlevan, [Deep Linear Network Training Dynamics from Random Initialization: Data, Width, Depth, and Hyperparameter Transfer](https://proceedings.mlr.press/v267/bordelon25a.html)
+
+*ICML* (2025)。
+
+**物理图像：** 随机初始化使每一层最初携带许多无序方向，学习过程逐渐将其中部分方向与任务对齐；在大宽度描述中，个别权重的随机变化由少数相关与响应统计汇总。重复训练同一数据会留下记忆，一次遍历的新样本则形成不同的有效环境。线性输出并不妨碍内部表示和层间相关随训练变化。
+
+**近似与边界：** 作者分析大宽度随机初始化及大量随机数据下的梯度下降，比较不同参数化、残差和非残差结构，以及一次遍历和数据复用；特定残差缩放使无限深极限可讨论。这比特殊对齐轨道更贴近典型随机初始化，但仍须满足其大规模缩放和数据假设。可同时测训练误差、层间核/相关和不同宽度下学习率转移，而非只比较最终损失。
+
 
 **为什么值得接着读：** 相比从对齐模态出发的可解轨道，这篇用大宽度理论研究随机初始化和随机数据，并对比不同参数化、有限数据重复使用及深度效应。它更接近“随机初始化时会发生什么”，但仍是线性输入输出映射以及相应大规模极限。两篇的差别提醒我们：**精确解的简洁与典型初始化的代表性是两种不同的优点**；不能把特殊精确轨道自动当作典型轨道。
 
