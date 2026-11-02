@@ -30,9 +30,10 @@ tags:
 | [SGD 随机动力学](/notes/statistical_physics_of_learning/stochastic_dynamics/) | 局部涨落或全程学习；曲率、噪声及两时响应 | OU 协方差、带记忆的自洽有效过程 |
 | [层间现象论](/notes/statistical_physics_of_learning/phenomenological_model/) | 表示怎样联动；可测分离与候选耦合 | 阈值动力学、启动时间及跨条件预测 |
 | [两层随机规则计算](/notes/statistical_physics_of_learning/hierarchy_exercise/) | 规则平均能否代表固定世界的可检测性 | 超几何矩、信号分布、有限样本实验与复现代码 |
+| [第十篇：Li₂ 与 grokking](/notes/statistical_physics_of_learning/grokking_li2/) | 延迟泛化与特征选择；反传信号、神经元相关和群结构 | 输出层消元、独立能量景观、Fourier 选频与后期反馈 |
 
 精确变量重写、受控极限和机制模型支持的结论不同。函数动力学的链式法则本身不冻结核，SVD 本身不消去模式竞争，统计信号可检测也不保证网络学会它。各篇沿现象、自由度、近似、计算、检验和解释缺口展开，并标明原文结果与自构例子的关系。
 
 ## 延伸阅读
 
-[文献地图](/notes/statistical_physics_of_learning/literature_map/)按科学问题比较 27 篇工作，帮助查找某个解释缺口对应的变量和理论。相关站内材料包括[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层级学习](/notes/hierarchical_data/)和[扩散模型动力学](/notes/diffusion_dynamics/)。
+[文献地图](/notes/statistical_physics_of_learning/literature_map/)按科学问题比较 28 篇工作，帮助查找某个解释缺口对应的变量和理论。相关站内材料包括[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层级学习](/notes/hierarchical_data/)和[扩散模型动力学](/notes/diffusion_dynamics/)。

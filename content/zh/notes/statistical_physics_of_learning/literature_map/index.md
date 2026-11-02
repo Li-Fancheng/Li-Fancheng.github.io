@@ -3,7 +3,7 @@ title: "神经网络统计物理：文献地图"
 subtitle: "Scaling laws、生成模型、特征学习与物理方法"
 date: 2026-10-30
 lastmod: 2026-11-02
-summary: "按科学问题组织 27 篇工作，比较观测量、自由度、理论转化与机制差异。"
+summary: "按科学问题组织 28 篇工作，比较观测量、自由度、理论转化与机制差异。"
 layout: cell-cycle
 article_class: neural-theory-note
 math: true
@@ -43,6 +43,16 @@ toc: true
 | Barbier 等，[Statistical Physics of Deep Learning: Optimal Learning of a Multilayer Perceptron near Interpolation](https://journals.aps.org/prx/abstract/10.1103/56sb-pdh6)；*Physical Review X* **16**, 031014 (2026)。 | 教师结构、矩阵序参量与特化。 | replica 与随机矩阵方法计算最优推断；不能直接当作有限时间 SGD 的轨迹。 |
 
 一个具体缺口是，相同测试误差能否对应完全不同的表示几何。应同时比较对齐、核方向及算法可达性，而非仅按是否存在闭式解评价模型。参见[深度线性](/notes/statistical_physics_of_learning/deep_linear_model/)与 [NTK/平均场](/notes/statistical_physics_of_learning/changing_variables/)。
+
+## 训练集已拟合，为什么特征仍在变化？
+
+延迟泛化需要区分输出层拟合与隐藏层结构形成。固定核可以解释初始方向的利用，Li₂ 则保留输出层对移动特征的反馈，分析哪些任务结构会被选择。
+
+| 工作 | 观测与自由度 | 可计算问题与机制差异 |
+| --- | --- | --- |
+| Tian，[Provable Scaling Laws of Feature Emergence from Learning Dynamics of Grokking](https://arxiv.org/abs/2509.21519)；Li₂，*ICLR* (2026)，此处按 arXiv v5 分析。 | 隐藏激活、标签相关的反传信号、节点相关与群表示。 | 输出层消元后作独立特征近似，将节点运动化为能量上升；群 Fourier 分解分析特征极值，经验景观扰动分析样本需求。 |
+
+单节点的频率选择与全网的特征覆盖需要分开检验；能量极值的稳定不单独决定到达它的时间。独立近似省去的去冗余和残差反馈在后期重新重要。推导与可区分这些机制的对照见[第十篇 Li₂ 与 grokking](/notes/statistical_physics_of_learning/grokking_li2/)。
 
 ## 数据结构怎样进入学习阈值？
 
