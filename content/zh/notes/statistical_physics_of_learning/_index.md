@@ -1,7 +1,8 @@
 ---
-title: "神经网络的统计物理：好工作的近似方法"
+title: "从神经网络问题到可解理论：问题重构与物理近似"
 date: 2026-10-30
-summary: "以近似和可解极限为线索，阅读 scaling laws、扩散模型、层次数据与特征学习中的统计物理工作。"
+lastmod: 2026-11-02
+summary: "通过问题转译和自己的最小计算，理解神经网络研究怎样与统计学习、动力系统及统计物理建立联系。"
 layout: series
 show_article_cards: false
 article_class: neural-theory-note
@@ -12,19 +13,23 @@ tags:
   - 文献阅读
 ---
 
-做理论研究时，我常觉得最困难的不是计算，而是不知道应该计算什么。面对复杂系统，有很多因素可以舍弃，也有很多极限可以取：哪些结构必须留下？一个简化究竟能回答什么问题？
+做理论研究时，困难有时在工具之前：即使知道怎样求一个自由能、怎样分析随机矩阵，也未必知道如何把眼前的神经网络问题变成它们能处理的形式。
 
-这里想从几篇有启发性的工作出发，练习理解研究者怎样把复杂问题变成有物理内容的简单问题。不同做法不一定是同一种意义上的近似：有的是受控极限，有的是隔离机制的最小模型，还有的是人为设计数据。它们能支持的结论也不同。
+这里记录的是中间那一步：原来的问题为什么难？换成什么变量、模型或极限后，哪项计算突然变得可行？得到的答案又能解释原现象的什么？有些转化是精确重写，有些是渐近闭合，也有些只是值得检验的机制模型。把这些关系弄清楚，才知道什么时候可以借用已有理论。
 
-## 从问题出发的案例
+## 问题怎样转过去，工具怎样接上来？
 
-- [深度线性网络：去掉非线性，为什么还能看到复杂的学习动力学？](/notes/statistical_physics_of_learning/deep_linear_model/) 从平台期出发，保留层间乘法，分离深度参数化造成的动力学。
-- [NTK 与平均场：先换变量，再决定怎样闭合](/notes/statistical_physics_of_learning/changing_variables/) 从函数动力学的恒等式出发，比较固定切核与移动的神经元分布。
-- [RHM：如果想研究层次结构，应该怎样造数据？](/notes/statistical_physics_of_learning/designing_hierarchy/) 从高斯混合开始，构造包含组合与等价替换的数据世界。
+| 案例 | 最值得追踪的转化 | 接上的理论 |
+| --- | --- | --- |
+| [Scaling laws](/notes/statistical_physics_of_learning/spectral_scaling/) | 网络资源与泛化 → 固定特征的随机设计回归 | 统计估计、核谱与随机矩阵 |
+| [深度线性网络](/notes/statistical_physics_of_learning/deep_linear_model/) | 多层训练 → 矩阵分解动力学 → 特殊条件下的独立模式 | SVD 与非线性常微分方程 |
+| [NTK 与平均场](/notes/statistical_physics_of_learning/changing_variables/) | 参数运动 → 预测函数或神经元分布的演化 | 核方法、谱松弛与平均场 |
+| [在线学习的重叠变量](/notes/statistical_physics_of_learning/online_order_parameters/) | 权重更新 → 局部场分布 → 协方差闭合 | 高斯概率与自平均动力学 |
+| [RHM](/notes/statistical_physics_of_learning/designing_hierarchy/) | 层次表示 → 随机规则 → 局部信号的可检测性 | 组合概率与统计涨落 |
+| [扩散模型](/notes/statistical_physics_of_learning/diffusion_score/) | 经验 score → 对数配分函数梯度 → 样本权重凝聚 | 高维概率与玻璃统计物理 |
+| [SGD 随机动力学](/notes/statistical_physics_of_learning/stochastic_dynamics/) | 局部轨迹或随机高维系统 → 对应的有效随机过程 | OU 与非平衡 DMFT |
+| [层间现象论](/notes/statistical_physics_of_learning/phenomenological_model/) | 表示的集体变化 → 可测宏观变量的候选耦合 | 阈值动力学与弹簧—滑块模型 |
 
-- [扩散模型：如果先假设 score 已经学好，还剩下什么问题？](/notes/statistical_physics_of_learning/diffusion_score/) 用可写出的加噪分布分离生成动力学与网络训练。
-- [SGD 的噪声什么时候能当成热噪声？](/notes/statistical_physics_of_learning/stochastic_dynamics/) 从离散局部模型到 OU 近似，再问何时需要记忆和自洽反馈。
-- [Scaling laws：一条幂律背后，究竟是哪种资源在受限？](/notes/statistical_physics_of_learning/spectral_scaling/) 分别计算样本涨落与未解析模态的最小模型。
-- [微观方程太复杂时，怎样构造现象论？](/notes/statistical_physics_of_learning/phenomenological_model/) 从可测层间变化出发，试探阈值与耦合如何形成可检验模型。
+各篇开头用一张简短的“问题转译卡”标明入口，正文保留不同的展开方式。对原论文逻辑的重构不等于作者真实的发现历史；自己的玩具模型与实验则另外注明。尤其是 [RHM 的研究练习](/notes/statistical_physics_of_learning/hierarchy_exercise/)，完整记录了两层规则计算、固定世界的检测与代码。
 
-[文献地图](/notes/statistical_physics_of_learning/literature_map/)保留了原来的论文资料，可在需要时按主题继续查阅。也可参看[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层次结构数据](/notes/hierarchical_data/) 和 [扩散模型的动力学](/notes/diffusion_dynamics/)。
+[文献地图](/notes/statistical_physics_of_learning/literature_map/)保留按主题组织的阅读资料。相关站内材料还有[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层次结构数据](/notes/hierarchical_data/)和[扩散模型的动力学](/notes/diffusion_dynamics/)。
