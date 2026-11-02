@@ -2,7 +2,7 @@
 title: "从神经网络问题到可解理论：问题重构与物理近似"
 date: 2026-10-30
 lastmod: 2026-11-02
-summary: "通过问题转译和自己的最小计算，理解神经网络研究怎样与统计学习、动力系统及统计物理建立联系。"
+summary: "从学习现象出发，分析自由度选择、物理近似与可计算理论怎样共同构成机制解释。"
 layout: series
 show_article_cards: false
 article_class: neural-theory-note
@@ -13,23 +13,26 @@ tags:
   - 文献阅读
 ---
 
-做理论研究时，困难有时在工具之前：即使知道怎样求一个自由能、怎样分析随机矩阵，也未必知道如何把眼前的神经网络问题变成它们能处理的形式。
+神经网络的理论问题常有多个相互纠缠的来源：训练改变表示，有限数据限制可估计的方向，随机更新带来历史相关，而数据本身又含多层结构。研究首先需要确定要解释哪一项现象，以及哪些自由度控制它。
 
-这里记录的是中间那一步：原来的问题为什么难？换成什么变量、模型或极限后，哪项计算突然变得可行？得到的答案又能解释原现象的什么？有些转化是精确重写，有些是渐近闭合，也有些只是值得检验的机制模型。把这些关系弄清楚，才知道什么时候可以借用已有理论。
+这个专题分析具体工作怎样选择变量、构造模型或取极限，让原来难以计算的问题获得新的数学结构。随机协方差的逆矩阵、独立模式的动力学、局部场的自洽过程、样本能量的配分函数，分别计算不同的观测。最终还要回到测试误差、训练时间、表示几何或生成记忆，判断理论解释了什么，以及什么实验能区分剩余机制。
 
-## 问题怎样转过去，工具怎样接上来？
+## 从现象到理论对象
 
-| 案例 | 最值得追踪的转化 | 接上的理论 |
+| 研究笔记 | 要解释的现象与保留的自由度 | 转化后的计算 |
 | --- | --- | --- |
-| [Scaling laws](/notes/statistical_physics_of_learning/spectral_scaling/) | 网络资源与泛化 → 固定特征的随机设计回归 | 统计估计、核谱与随机矩阵 |
-| [深度线性网络](/notes/statistical_physics_of_learning/deep_linear_model/) | 多层训练 → 矩阵分解动力学 → 特殊条件下的独立模式 | SVD 与非线性常微分方程 |
-| [NTK 与平均场](/notes/statistical_physics_of_learning/changing_variables/) | 参数运动 → 预测函数或神经元分布的演化 | 核方法、谱松弛与平均场 |
-| [在线学习的重叠变量](/notes/statistical_physics_of_learning/online_order_parameters/) | 权重更新 → 局部场分布 → 协方差闭合 | 高斯概率与自平均动力学 |
-| [RHM](/notes/statistical_physics_of_learning/designing_hierarchy/) | 层次表示 → 随机规则 → 局部信号的可检测性 | 组合概率与统计涨落 |
-| [扩散模型](/notes/statistical_physics_of_learning/diffusion_score/) | 经验 score → 对数配分函数梯度 → 样本权重凝聚 | 高维概率与玻璃统计物理 |
-| [SGD 随机动力学](/notes/statistical_physics_of_learning/stochastic_dynamics/) | 局部轨迹或随机高维系统 → 对应的有效随机过程 | OU 与非平衡 DMFT |
-| [层间现象论](/notes/statistical_physics_of_learning/phenomenological_model/) | 表示的集体变化 → 可测宏观变量的候选耦合 | 阈值动力学与弹簧—滑块模型 |
+| [Scaling laws](/notes/statistical_physics_of_learning/spectral_scaling/) | 有限数据与有限表示怎样改善泛化；协方差、随机投影与目标谱 | 固定特征回归、Wishart 逆矩阵、未解析方向的风险 |
+| [深度线性网络](/notes/statistical_physics_of_learning/deep_linear_model/) | 平台和快速学习；数据奇异模态与分层增益 | 特殊对齐轨道的非线性 ODE、初始化时间尺度 |
+| [NTK 与平均场](/notes/statistical_physics_of_learning/changing_variables/) | 预测怎样演化，表示是否移动；切核或神经元分布 | 核谱松弛、测试预测、分布输运 |
+| [在线学习的重叠变量](/notes/statistical_physics_of_learning/online_order_parameters/) | 随机输入流中的对齐和泛化；局部场协方差 | 高斯积分、宏观闭合、观测量所需的最小变量 |
+| [RHM 与层级学习](/notes/statistical_physics_of_learning/designing_hierarchy/) | 组合结构怎样改变数据需求；固定规则与局部相关 | 概率传播、信号与样本涨落、检测与学习的比较 |
+| [扩散模型](/notes/statistical_physics_of_learning/diffusion_score/) | 类别分化与样本记忆；经验 score、能量和权重 | 对数配分函数、典型能量鞍点与凝聚 |
+| [SGD 随机动力学](/notes/statistical_physics_of_learning/stochastic_dynamics/) | 局部涨落或全程学习；曲率、噪声及两时响应 | OU 协方差、带记忆的自洽有效过程 |
+| [层间现象论](/notes/statistical_physics_of_learning/phenomenological_model/) | 表示怎样联动；可测分离与候选耦合 | 阈值动力学、启动时间及跨条件预测 |
+| [两层随机规则计算](/notes/statistical_physics_of_learning/hierarchy_exercise/) | 规则平均能否代表固定世界的可检测性 | 超几何矩、信号分布、有限样本实验与复现代码 |
 
-各篇开头用一张简短的“问题转译卡”标明入口，正文保留不同的展开方式。对原论文逻辑的重构不等于作者真实的发现历史；自己的玩具模型与实验则另外注明。尤其是 [RHM 的研究练习](/notes/statistical_physics_of_learning/hierarchy_exercise/)，完整记录了两层规则计算、固定世界的检测与代码。
+精确变量重写、受控极限和机制模型支持的结论不同。函数动力学的链式法则本身不冻结核，SVD 本身不消去模式竞争，统计信号可检测也不保证网络学会它。各篇沿现象、自由度、近似、计算、检验和解释缺口展开，并标明原文结果与自构例子的关系。
 
-[文献地图](/notes/statistical_physics_of_learning/literature_map/)保留按主题组织的阅读资料。相关站内材料还有[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层次结构数据](/notes/hierarchical_data/)和[扩散模型的动力学](/notes/diffusion_dynamics/)。
+## 延伸阅读
+
+[文献地图](/notes/statistical_physics_of_learning/literature_map/)按科学问题比较 27 篇工作，帮助查找某个解释缺口对应的变量和理论。相关站内材料包括[神经网络理论与可解模型](/notes/neural_network_theory/)、[Scaling Laws](/notes/scaling_laws/)、[层级学习](/notes/hierarchical_data/)和[扩散模型动力学](/notes/diffusion_dynamics/)。
