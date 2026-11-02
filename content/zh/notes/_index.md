@@ -9,6 +9,7 @@ summary: 统计物理、生物系统与机器学习的课程笔记、文献阅�
 
 - **定量生物学**：[2026 秋季课程笔记](/notes/qbio_course/)，涵盖单细胞生长与群体增长、基因调控网络与趋化模型。
 - **非平衡统计物理**：[进入专题目录](/notes/nonequilibrium_statistical_physics/)，从随机轨道、概率输运与路径统计出发，理解涨落、弛豫和稀有事件；首个小专题为非平衡统计物理中的随机动力学。
+- **生物系统中的可解问题**：[涨落、几何与集体行为](/notes/solvable_biology/)，从分子运动到生态群落，比较八种把生物现象转化为可检验模型的方式。
 - **神经网络的统计物理**：[问题重构与物理近似](/notes/statistical_physics_of_learning/)，从 scaling laws、扩散模型和层次学习出发，追踪问题怎样转成统计学习、动力系统与统计物理中的可计算对象。
 - **神经网络理论**：[神经网络理论与可解模型](/notes/neural_network_theory/)，四卷 10 篇，从高维泛化、NTK 和深度线性动力学，到特征学习、随机优化与集体动力学，附完整推导与数值图。
 - **学习与泛化系列**：[进入总目录](/notes/learning_and_generalization/)，下设 Grokking、Scaling Laws 和层次结构数据三个 topic，每个 topic 是一个独立系列，共 18 篇笔记，连接训练动力学、学习曲线与数据结构。
